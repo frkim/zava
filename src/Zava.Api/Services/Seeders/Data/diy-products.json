@@ -1,0 +1,2760 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Perceuse-visseuse Bosch GSR 18V-60",
+    "nameEn": "Bosch GSR 18V-60 Drill/Driver",
+    "description": "Perceuse-visseuse sans fil 18V avec 2 batteries 4.0Ah et coffret.",
+    "descriptionEn": "18V cordless drill/driver with 2x 4.0Ah batteries and case.",
+    "price": 189.00,
+    "promoPrice": 159.00,
+    "brand": "Bosch Pro",
+    "sku": "BOS-GSR18V60",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1,
+        "name": "2x 4.0Ah",
+        "nameEn": "2x 4.0Ah",
+        "value": "4Ah",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Visseuse \u00E0 chocs Makita DTD153",
+    "nameEn": "Makita DTD153 Impact Driver",
+    "description": "Visseuse \u00E0 chocs 18V 170Nm avec variateur \u00E9lectronique.",
+    "descriptionEn": "18V 170Nm impact driver with electronic speed control.",
+    "price": 149.00,
+    "brand": "Makita",
+    "sku": "MAK-DTD153",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 2,
+        "name": "Nue (sans batterie)",
+        "nameEn": "Bare tool",
+        "value": "Nue",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 3,
+        "name": "Avec 2 bat. 5.0Ah",
+        "nameEn": "With 2x 5.0Ah",
+        "value": "5Ah",
+        "priceAdjustment": 100,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Perforateur SDS\u002B Bosch GBH 2-26",
+    "nameEn": "Bosch GBH 2-26 SDS\u002B Rotary Hammer",
+    "description": "Perforateur 830W 3 modes : per\u00E7age, percussion, burinage.",
+    "descriptionEn": "830W rotary hammer 3 modes: drilling, hammering, chiseling.",
+    "price": 199.00,
+    "promoPrice": 175.00,
+    "brand": "Bosch Pro",
+    "sku": "BOS-GBH226",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 4,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Perceuse colonne Scheppach DP16VLS",
+    "nameEn": "Scheppach DP16VLS Pillar Drill",
+    "description": "Perceuse \u00E0 colonne 500W avec vitesse variable et laser.",
+    "descriptionEn": "500W pillar drill with variable speed and laser.",
+    "price": 139.00,
+    "brand": "Scheppach",
+    "sku": "SCH-DP16VLS",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 5,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Visseuse plaquiste Makita DFS452Z",
+    "nameEn": "Makita DFS452Z Drywall Screwdriver",
+    "description": "Visseuse \u00E0 plaque de pl\u00E2tre 18V avec r\u00E9glage profondeur.",
+    "descriptionEn": "18V drywall screwdriver with depth adjustment.",
+    "price": 129.00,
+    "promoPrice": 109.00,
+    "brand": "Makita",
+    "sku": "MAK-DFS452",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 6,
+        "name": "Nue",
+        "nameEn": "Bare tool",
+        "value": "Nue",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Perceuse \u00E0 percussion Bosch PSB 750",
+    "nameEn": "Bosch PSB 750 Hammer Drill",
+    "description": "Perceuse \u00E0 percussion filaire 750W polyvalente.",
+    "descriptionEn": "Versatile 750W corded hammer drill.",
+    "price": 69.00,
+    "promoPrice": 55.00,
+    "brand": "Bosch",
+    "sku": "BOS-PSB750",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 7,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "Meuleuse angulaire Bosch GWS 7-125",
+    "nameEn": "Bosch GWS 7-125 Angle Grinder",
+    "description": "Meuleuse 720W disque 125mm avec protection anti-red\u00E9marrage.",
+    "descriptionEn": "720W 125mm grinder with restart protection.",
+    "price": 59.00,
+    "brand": "Bosch Pro",
+    "sku": "BOS-GWS7125",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 8,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Ponceuse excentrique Makita BO5031",
+    "nameEn": "Makita BO5031 Random Orbit Sander",
+    "description": "Ponceuse excentrique 300W avec aspiration int\u00E9gr\u00E9e.",
+    "descriptionEn": "300W random orbit sander with built-in dust extraction.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Makita",
+    "sku": "MAK-BO5031",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 9,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Scie sauteuse Bosch PST 700 E",
+    "nameEn": "Bosch PST 700 E Jigsaw",
+    "description": "Scie sauteuse 500W avec syst\u00E8me SDS pour changement rapide de lame.",
+    "descriptionEn": "500W jigsaw with SDS system for quick blade change.",
+    "price": 65.00,
+    "brand": "Bosch",
+    "sku": "BOS-PST700",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 10,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "D\u00E9fonceuse Makita RT0702C",
+    "nameEn": "Makita RT0702C Compact Router",
+    "description": "D\u00E9fonceuse compacte 710W avec variateur de vitesse.",
+    "descriptionEn": "Compact 710W router with speed control.",
+    "price": 119.00,
+    "promoPrice": 99.00,
+    "brand": "Makita",
+    "sku": "MAK-RT0702",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 11,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Peinture murale blanche V33 10L",
+    "nameEn": "V33 White Wall Paint 10L",
+    "description": "Peinture acrylique monocouche blanc mat lessivable.",
+    "descriptionEn": "Washable matt white single-coat acrylic paint.",
+    "price": 49.90,
+    "promoPrice": 39.90,
+    "brand": "V33",
+    "sku": "V33-BLANC10",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 12,
+        "name": "10L",
+        "nameEn": "10L",
+        "value": "10L",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 13,
+        "name": "2.5L",
+        "nameEn": "2.5L",
+        "value": "2.5L",
+        "priceAdjustment": -35,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Peinture Dulux Valentine Cr\u00E8me de Couleur",
+    "nameEn": "Dulux Valentine Cream of Color",
+    "description": "Peinture satin int\u00E9rieure avec \u002B700 coloris disponibles.",
+    "descriptionEn": "Satin interior paint with 700\u002B available colors.",
+    "price": 35.90,
+    "brand": "Dulux Valentine",
+    "sku": "DUL-CDC",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 14,
+        "name": "2.5L - Blanc Cass\u00E9",
+        "nameEn": "2.5L - Off White",
+        "value": "2.5L-BC",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 15,
+        "name": "2.5L - Gris Perle",
+        "nameEn": "2.5L - Pearl Grey",
+        "value": "2.5L-GP",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Lasure bois ext\u00E9rieur V33 2.5L",
+    "nameEn": "V33 Exterior Wood Stain 2.5L",
+    "description": "Lasure haute protection UV et pluie pour bois ext\u00E9rieur.",
+    "descriptionEn": "High UV and rain protection stain for exterior wood.",
+    "price": 39.90,
+    "promoPrice": 33.90,
+    "brand": "V33",
+    "sku": "V33-LASE25",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 16,
+        "name": "Ch\u00EAne dor\u00E9",
+        "nameEn": "Golden Oak",
+        "value": "Ch\u00EAne",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 17,
+        "name": "Teck",
+        "nameEn": "Teak",
+        "value": "Teck",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Enduit de rebouchage Toupret 1.5kg",
+    "nameEn": "Toupret Filler 1.5kg",
+    "description": "Enduit en poudre pour reboucher trous et fissures.",
+    "descriptionEn": "Powder filler for filling holes and cracks.",
+    "price": 9.90,
+    "brand": "Toupret",
+    "sku": "TOU-REB15",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 18,
+        "name": "1.5kg",
+        "nameEn": "1.5kg",
+        "value": "1.5kg",
+        "priceAdjustment": 0,
+        "stock": 60
+      },
+      {
+        "id": 19,
+        "name": "4kg",
+        "nameEn": "4kg",
+        "value": "4kg",
+        "priceAdjustment": 10,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "Sous-couche universelle Zolpan 10L",
+    "nameEn": "Zolpan Universal Primer 10L",
+    "description": "Sous-couche blanche multi-supports pour bonne accroche.",
+    "descriptionEn": "White multi-surface primer for good adhesion.",
+    "price": 45.00,
+    "promoPrice": 38.00,
+    "brand": "Zolpan",
+    "sku": "ZOL-SC10",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 20,
+        "name": "10L",
+        "nameEn": "10L",
+        "value": "10L",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Peinture sol garage V33 2.5L",
+    "nameEn": "V33 Garage Floor Paint 2.5L",
+    "description": "Peinture epoxy bi-composant r\u00E9sistante au passage des roues.",
+    "descriptionEn": "Two-component epoxy paint resistant to tire marks.",
+    "price": 55.00,
+    "brand": "V33",
+    "sku": "V33-SOLG",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 21,
+        "name": "Gris clair",
+        "nameEn": "Light Grey",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Rouleau peinture professionnel 180mm",
+    "nameEn": "Professional Paint Roller 180mm",
+    "description": "Rouleau anti-goutte polyamide 12mm pour murs et plafonds.",
+    "descriptionEn": "12mm polyamid anti-drip roller for walls and ceilings.",
+    "price": 8.90,
+    "promoPrice": 6.90,
+    "brand": "Nespoli",
+    "sku": "NES-ROUL180",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 22,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "B\u00E2che de protection 4x5m",
+    "nameEn": "Protection Sheet 4x5m",
+    "description": "B\u00E2che plastique \u00E9paisse pour protection lors des travaux.",
+    "descriptionEn": "Thick plastic sheet for protection during work.",
+    "price": 5.90,
+    "brand": "GEB",
+    "sku": "GEB-BACHE",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 23,
+        "name": "4x5m",
+        "nameEn": "4x5m",
+        "value": "4x5m",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "Ruban de masquage 50m",
+    "nameEn": "Masking Tape 50m",
+    "description": "Ruban de masquage 36mm haute pr\u00E9cision pour lignes nettes.",
+    "descriptionEn": "36mm high precision masking tape for clean lines.",
+    "price": 4.90,
+    "promoPrice": 3.90,
+    "brand": "Scotch",
+    "sku": "SCO-MASK50",
+    "stock": 120,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 24,
+        "name": "36mm",
+        "nameEn": "36mm",
+        "value": "36mm",
+        "priceAdjustment": 0,
+        "stock": 120
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Pistolet \u00E0 peinture HVLP 500W",
+    "nameEn": "HVLP Paint Spray Gun 500W",
+    "description": "Pistolet pulv\u00E9risateur basse pression pour finitions parfaites.",
+    "descriptionEn": "Low pressure spray gun for perfect finishes.",
+    "price": 79.00,
+    "promoPrice": 65.00,
+    "brand": "Wagner",
+    "sku": "WAG-HVLP500",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 25,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Coffret tournevis Stanley 42 pi\u00E8ces",
+    "nameEn": "Stanley 42-Piece Screwdriver Set",
+    "description": "Assortiment complet tournevis plats, cruciformes et Torx.",
+    "descriptionEn": "Complete assortment of flat, Phillips and Torx screwdrivers.",
+    "price": 29.90,
+    "promoPrice": 24.90,
+    "brand": "Stanley",
+    "sku": "STA-TV42",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 26,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Marteau arrache-clou 20oz Stanley",
+    "nameEn": "Stanley 20oz Claw Hammer",
+    "description": "Marteau menuisier manche fibre de verre anti-vibration.",
+    "descriptionEn": "Carpenter hammer fiberglass handle anti-vibration.",
+    "price": 19.90,
+    "brand": "Stanley",
+    "sku": "STA-MAR20",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 27,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Jeu de cl\u00E9s mixtes 8-19mm Facom",
+    "nameEn": "Facom 8-19mm Combination Wrench Set",
+    "description": "12 cl\u00E9s mixtes forg\u00E9es avec finition OGV.",
+    "descriptionEn": "12 forged combination wrenches with OGV profile.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Facom",
+    "sku": "FAC-CM12",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 28,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Niveau \u00E0 bulle 80cm Stanley",
+    "nameEn": "Stanley 80cm Spirit Level",
+    "description": "Niveau aluminium 3 fioles avec pr\u00E9cision 0.5mm/m.",
+    "descriptionEn": "3-vial aluminum spirit level with 0.5mm/m accuracy.",
+    "price": 22.90,
+    "brand": "Stanley",
+    "sku": "STA-NIV80",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 29,
+        "name": "80cm",
+        "nameEn": "80cm",
+        "value": "80cm",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 30,
+        "name": "120cm",
+        "nameEn": "120cm",
+        "value": "120cm",
+        "priceAdjustment": 8,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "M\u00E8tre ruban 5m Stanley",
+    "nameEn": "Stanley 5m Tape Measure",
+    "description": "M\u00E8tre ruban bi-mati\u00E8re avec crochet magn\u00E9tique.",
+    "descriptionEn": "Bi-material tape measure with magnetic hook.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Stanley",
+    "sku": "STA-MET5",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 31,
+        "name": "5m",
+        "nameEn": "5m",
+        "value": "5m",
+        "priceAdjustment": 0,
+        "stock": 80
+      },
+      {
+        "id": 32,
+        "name": "8m",
+        "nameEn": "8m",
+        "value": "8m",
+        "priceAdjustment": 4,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Pince multiprise Knipex Cobra 250mm",
+    "nameEn": "Knipex Cobra 250mm Water Pump Pliers",
+    "description": "Pince multiprise auto-bloquante avec 25 positions.",
+    "descriptionEn": "Self-locking water pump pliers with 25 positions.",
+    "price": 35.00,
+    "brand": "Knipex",
+    "sku": "KNP-COBRA250",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 33,
+        "name": "250mm",
+        "nameEn": "250mm",
+        "value": "250mm",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "Cutter professionnel 18mm",
+    "nameEn": "Professional 18mm Utility Knife",
+    "description": "Cutter \u00E0 lame r\u00E9tractable avec magasin de lames.",
+    "descriptionEn": "Retractable blade utility knife with blade magazine.",
+    "price": 12.90,
+    "promoPrice": 9.90,
+    "brand": "Stanley",
+    "sku": "STA-CUT18",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 34,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Coffret douilles 1/2\u0022 32 pi\u00E8ces",
+    "nameEn": "32-Piece 1/2\u0022 Socket Set",
+    "description": "Coffret complet cl\u00E9 \u00E0 cliquet \u002B douilles 10-32mm.",
+    "descriptionEn": "Complete ratchet wrench \u002B 10-32mm socket set.",
+    "price": 59.00,
+    "brand": "Facom",
+    "sku": "FAC-DOUL32",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 35,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Serre-joints 300mm lot de 4",
+    "nameEn": "300mm Clamp Set of 4",
+    "description": "Serre-joints rapides une main 300mm.",
+    "descriptionEn": "Quick-release one-hand 300mm clamps.",
+    "price": 22.90,
+    "promoPrice": 18.90,
+    "brand": "Wolfcraft",
+    "sku": "WOL-SJ300",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 36,
+        "name": "Lot de 4",
+        "nameEn": "Pack of 4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "\u00C9tabli pliant multifonction",
+    "nameEn": "Folding Multifunction Workbench",
+    "description": "\u00C9tabli portable avec \u00E9tau int\u00E9gr\u00E9 et plateau bambou.",
+    "descriptionEn": "Portable workbench with built-in vise and bamboo top.",
+    "price": 79.00,
+    "promoPrice": 65.00,
+    "brand": "Wolfcraft",
+    "sku": "WOL-ETAB",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 37,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Scie circulaire Bosch PKS 55",
+    "nameEn": "Bosch PKS 55 Circular Saw",
+    "description": "Scie circulaire 1200W lame 160mm avec guide parall\u00E8le.",
+    "descriptionEn": "1200W circular saw 160mm blade with parallel guide.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Bosch",
+    "sku": "BOS-PKS55",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 38,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Panneau contreplaqu\u00E9 peuplier 244x122cm",
+    "nameEn": "Poplar Plywood Panel 244x122cm",
+    "description": "Panneau contreplaqu\u00E9 15mm pour am\u00E9nagement int\u00E9rieur.",
+    "descriptionEn": "15mm plywood panel for interior fitting.",
+    "price": 32.00,
+    "brand": "Joubert",
+    "sku": "JOU-CP15",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 39,
+        "name": "15mm",
+        "nameEn": "15mm",
+        "value": "15mm",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 40,
+        "name": "18mm",
+        "nameEn": "18mm",
+        "value": "18mm",
+        "priceAdjustment": 5,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Tasseau rabot\u00E9 sapin 27x27mm 2.40m",
+    "nameEn": "Planed Spruce Batten 27x27mm 2.40m",
+    "description": "Tasseau bois rabot\u00E9 pour ossature et finition.",
+    "descriptionEn": "Planed wood batten for framework and finishing.",
+    "price": 2.90,
+    "promoPrice": 2.20,
+    "brand": "Silverwood",
+    "sku": "SIL-TAS27",
+    "stock": 200,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 41,
+        "name": "27x27mm",
+        "nameEn": "27x27mm",
+        "value": "27x27",
+        "priceAdjustment": 0,
+        "stock": 200
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Lame de scie circulaire 160mm 24 dents",
+    "nameEn": "Circular Saw Blade 160mm 24T",
+    "description": "Lame carbure pour coupe rapide du bois.",
+    "descriptionEn": "Carbide blade for fast wood cutting.",
+    "price": 12.90,
+    "brand": "Bosch",
+    "sku": "BOS-LAME160",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 42,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "Colle \u00E0 bois PU D4 750ml",
+    "nameEn": "PU D4 Wood Glue 750ml",
+    "description": "Colle polyur\u00E9thane r\u00E9sistante \u00E0 l\u0027eau pour ext\u00E9rieur.",
+    "descriptionEn": "Waterproof polyurethane glue for outdoor use.",
+    "price": 14.90,
+    "promoPrice": 11.90,
+    "brand": "Sader",
+    "sku": "SAD-COLP",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 43,
+        "name": "750ml",
+        "nameEn": "750ml",
+        "value": "750ml",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "D\u00E9fonceuse table de fraisage Bosch",
+    "nameEn": "Bosch Router Table",
+    "description": "Table de fraisage compatible d\u00E9fonceuse POF 1400.",
+    "descriptionEn": "Router table compatible with POF 1400 router.",
+    "price": 79.00,
+    "brand": "Bosch",
+    "sku": "BOS-TDF",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 44,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Panneau OSB3 244x122cm 18mm",
+    "nameEn": "OSB3 Panel 244x122cm 18mm",
+    "description": "Panneau structural OSB pour cloisons et planchers.",
+    "descriptionEn": "Structural OSB panel for partitions and floors.",
+    "price": 22.90,
+    "promoPrice": 18.90,
+    "brand": "Kronospan",
+    "sku": "KRO-OSB318",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 45,
+        "name": "18mm",
+        "nameEn": "18mm",
+        "value": "18mm",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Rabot \u00E9lectrique Makita KP0800",
+    "nameEn": "Makita KP0800 Electric Planer",
+    "description": "Rabot 620W avec largeur de coupe 82mm.",
+    "descriptionEn": "620W planer with 82mm cutting width.",
+    "price": 119.00,
+    "brand": "Makita",
+    "sku": "MAK-KP0800",
+    "stock": 14,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 46,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Papier abrasif grain 120 lot de 25",
+    "nameEn": "Sandpaper Grit 120 Pack of 25",
+    "description": "Feuilles abrasives 230x280mm pour pon\u00E7age fin.",
+    "descriptionEn": "230x280mm sanding sheets for fine sanding.",
+    "price": 8.90,
+    "promoPrice": 6.90,
+    "brand": "Norton",
+    "sku": "NOR-P120",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 47,
+        "name": "Grain 120",
+        "nameEn": "Grit 120",
+        "value": "120",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "Moulure MDF blanc 70mm 2.40m",
+    "nameEn": "White MDF Moulding 70mm 2.40m",
+    "description": "Plinthe MDF pr\u00E9-peinte blanche pr\u00EAte \u00E0 poser.",
+    "descriptionEn": "Pre-painted white MDF skirting board ready to install.",
+    "price": 4.90,
+    "brand": "Chemin\u00E9es",
+    "sku": "CHE-PLINT70",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 48,
+        "name": "70mm",
+        "nameEn": "70mm",
+        "value": "70mm",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "Mitigeur \u00E9vier Grohe Eurosmart",
+    "nameEn": "Grohe Eurosmart Sink Mixer",
+    "description": "Mitigeur monocommande chrom\u00E9 avec technologie SilkMove.",
+    "descriptionEn": "Chrome single-lever mixer with SilkMove technology.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Grohe",
+    "sku": "GRO-EUROS",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 49,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "WC suspendu Grohe Pack Bau Ceramic",
+    "nameEn": "Grohe Bau Ceramic Wall-Hung Toilet Pack",
+    "description": "Pack complet WC suspendu avec b\u00E2ti-support et plaque.",
+    "descriptionEn": "Complete wall-hung toilet pack with frame and flush plate.",
+    "price": 299.00,
+    "promoPrice": 249.00,
+    "brand": "Grohe",
+    "sku": "GRO-BAUPACK",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 50,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Tube PER 16x1.5mm 100m",
+    "nameEn": "PEX Pipe 16x1.5mm 100m",
+    "description": "Tube PER gain\u00E9 pour alimentation eau chaude et froide.",
+    "descriptionEn": "Sheathed PEX pipe for hot and cold water supply.",
+    "price": 55.00,
+    "brand": "Comap",
+    "sku": "COM-PER16",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 51,
+        "name": "Bleu (froid)",
+        "nameEn": "Blue (cold)",
+        "value": "Bleu",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 52,
+        "name": "Rouge (chaud)",
+        "nameEn": "Red (hot)",
+        "value": "Rouge",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Siphon \u00E9vier 1 cuve",
+    "nameEn": "Single Bowl Sink Trap",
+    "description": "Siphon \u00E0 culot d\u00E9montable avec sortie \u00D840mm.",
+    "descriptionEn": "Bottle trap with removable base, \u00D840mm outlet.",
+    "price": 8.90,
+    "promoPrice": 6.90,
+    "brand": "Wirquin",
+    "sku": "WIR-SIPEV",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 53,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Chauffe-eau \u00E9lectrique 200L",
+    "nameEn": "Electric Water Heater 200L",
+    "description": "Chauffe-eau vertical mural avec r\u00E9sistance st\u00E9atite.",
+    "descriptionEn": "Vertical wall-mounted water heater with steatite element.",
+    "price": 349.00,
+    "promoPrice": 299.00,
+    "brand": "Atlantic",
+    "sku": "ATL-CE200",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 54,
+        "name": "200L",
+        "nameEn": "200L",
+        "value": "200L",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Robinet de chasse WC",
+    "nameEn": "Toilet Flush Valve",
+    "description": "M\u00E9canisme de chasse universelle 3/6L double touche.",
+    "descriptionEn": "Universal 3/6L dual flush mechanism.",
+    "price": 15.90,
+    "brand": "Wirquin",
+    "sku": "WIR-CHASSE",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 55,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Flexible inox 80cm lot de 2",
+    "nameEn": "Stainless Steel Hose 80cm Pack of 2",
+    "description": "Flexible d\u0027alimentation eau pour robinetterie.",
+    "descriptionEn": "Water supply hose for taps.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Comap",
+    "sku": "COM-FLEX80",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 56,
+        "name": "Lot de 2",
+        "nameEn": "Pack of 2",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Tube cuivre 14/16mm 5m",
+    "nameEn": "Copper Pipe 14/16mm 5m",
+    "description": "Tube cuivre recuit pour alimentation eau et gaz.",
+    "descriptionEn": "Annealed copper pipe for water and gas supply.",
+    "price": 35.00,
+    "brand": "KME",
+    "sku": "KME-CU1416",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 57,
+        "name": "5m",
+        "nameEn": "5m",
+        "value": "5m",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Colonne de douche thermostatique",
+    "nameEn": "Thermostatic Shower Column",
+    "description": "Colonne de douche avec douchette, pomme 25cm et mitigeur thermostatique.",
+    "descriptionEn": "Shower column with handset, 25cm head and thermostatic mixer.",
+    "price": 149.00,
+    "promoPrice": 125.00,
+    "brand": "Grohe",
+    "sku": "GRO-COLTHERME",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 58,
+        "name": "Chrom\u00E9",
+        "nameEn": "Chrome",
+        "value": "Chrome",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Mastic silicone sanitaire blanc 300ml",
+    "nameEn": "White Sanitary Silicone Sealant 300ml",
+    "description": "Silicone anti-moisissures pour joints salle de bain.",
+    "descriptionEn": "Anti-mould silicone for bathroom joints.",
+    "price": 6.90,
+    "brand": "Rubson",
+    "sku": "RUB-SILSAN",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 59,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 90
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Coffret vis \u00E0 bois 1000 pi\u00E8ces",
+    "nameEn": "1000-Piece Wood Screw Kit",
+    "description": "Assortiment vis \u00E0 bois acier zingu\u00E9 de 3x20 \u00E0 5x70mm.",
+    "descriptionEn": "Zinc-plated steel wood screw assortment from 3x20 to 5x70mm.",
+    "price": 29.90,
+    "promoPrice": 24.90,
+    "brand": "Fischer",
+    "sku": "FIS-VB1000",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 60,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Chevilles \u00E0 expansion Fischer SX 8x40 lot de 100",
+    "nameEn": "Fischer SX 8x40 Expansion Plugs 100-Pack",
+    "description": "Chevilles nylon universelles tous mat\u00E9riaux.",
+    "descriptionEn": "Universal nylon plugs for all materials.",
+    "price": 12.90,
+    "brand": "Fischer",
+    "sku": "FIS-SX8",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 61,
+        "name": "8x40mm",
+        "nameEn": "8x40mm",
+        "value": "8x40",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Charni\u00E8re de porte inox 100mm lot de 2",
+    "nameEn": "Stainless Steel Door Hinge 100mm 2-Pack",
+    "description": "Charni\u00E8res \u00E0 billes inox pour portes int\u00E9rieures.",
+    "descriptionEn": "Stainless steel ball bearing hinges for interior doors.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Vachette",
+    "sku": "VAC-CHAR100",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 62,
+        "name": "Lot de 2",
+        "nameEn": "Pack of 2",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Colle n\u00E9opr\u00E8ne universelle 250ml",
+    "nameEn": "Universal Neoprene Glue 250ml",
+    "description": "Colle contact pour multiples mat\u00E9riaux, prise rapide.",
+    "descriptionEn": "Contact adhesive for multiple materials, quick bond.",
+    "price": 8.90,
+    "brand": "Pattex",
+    "sku": "PAT-NEO250",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 63,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "\u00C9querre de fixation 50x50mm lot de 10",
+    "nameEn": "50x50mm Fixing Bracket 10-Pack",
+    "description": "\u00C9querres renforc\u00E9es acier galvanis\u00E9.",
+    "descriptionEn": "Reinforced galvanized steel brackets.",
+    "price": 7.90,
+    "promoPrice": 5.90,
+    "brand": "Simpson",
+    "sku": "SIM-EQ50",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 64,
+        "name": "Lot de 10",
+        "nameEn": "Pack of 10",
+        "value": "x10",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Serrure \u00E0 encastrer Vachette",
+    "nameEn": "Vachette Mortise Lock",
+    "description": "Serrure axe 40mm pour porte d\u0027int\u00E9rieur \u00E0 condamnation.",
+    "descriptionEn": "40mm axis mortise lock for interior door with thumbturn.",
+    "price": 25.00,
+    "brand": "Vachette",
+    "sku": "VAC-SER40",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 65,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Poign\u00E9e de porte rosace inox",
+    "nameEn": "Stainless Steel Door Handle on Rose",
+    "description": "Poign\u00E9e b\u00E9quille design inox bross\u00E9 sur rosace.",
+    "descriptionEn": "Brushed stainless steel lever handle on rose.",
+    "price": 19.90,
+    "promoPrice": 16.90,
+    "brand": "Hoppe",
+    "sku": "HOP-POIG",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 66,
+        "name": "Inox bross\u00E9",
+        "nameEn": "Brushed SS",
+        "value": "Inox",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "Boulons M8x50 lot de 20",
+    "nameEn": "M8x50 Bolts 20-Pack",
+    "description": "Boulons hexagonaux acier zingu\u00E9 avec \u00E9crous.",
+    "descriptionEn": "Zinc-plated hexagonal bolts with nuts.",
+    "price": 6.90,
+    "brand": "GFD",
+    "sku": "GFD-M8X50",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 67,
+        "name": "Lot de 20",
+        "nameEn": "Pack of 20",
+        "value": "x20",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Mousse expansive PU 750ml",
+    "nameEn": "PU Expanding Foam 750ml",
+    "description": "Mousse polyur\u00E9thane pour calfeutrage et isolation.",
+    "descriptionEn": "Polyurethane foam for sealing and insulation.",
+    "price": 8.90,
+    "promoPrice": 6.90,
+    "brand": "Sika",
+    "sku": "SIK-MOUSS",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 68,
+        "name": "750ml",
+        "nameEn": "750ml",
+        "value": "750ml",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Ruban adh\u00E9sif am\u00E9ricain 50m",
+    "nameEn": "Duct Tape 50m",
+    "description": "Ruban toile ultra-r\u00E9sistant \u00E9tanche multi-usage.",
+    "descriptionEn": "Ultra-strong waterproof multi-purpose cloth tape.",
+    "price": 7.90,
+    "brand": "Scotch",
+    "sku": "SCO-DUCT50",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 69,
+        "name": "Gris",
+        "nameEn": "Grey",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Parquet stratifi\u00E9 ch\u00EAne naturel 2.49m\u00B2",
+    "nameEn": "Natural Oak Laminate Flooring 2.49m\u00B2",
+    "description": "Parquet 8mm AC4 avec syst\u00E8me clic facile \u00E0 poser.",
+    "descriptionEn": "8mm AC4 click-system laminate easy to install.",
+    "price": 12.90,
+    "promoPrice": 10.90,
+    "brand": "Artens",
+    "sku": "ART-PARQ",
+    "stock": 50,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 70,
+        "name": "Ch\u00EAne naturel",
+        "nameEn": "Natural Oak",
+        "value": "Ch\u00EAne",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 71,
+        "name": "Gris c\u00E9rus\u00E9",
+        "nameEn": "Grey Limed",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Carrelage gr\u00E8s c\u00E9rame 60x60cm effet b\u00E9ton",
+    "nameEn": "Concrete-Effect Porcelain Tile 60x60cm",
+    "description": "Carrelage int\u00E9rieur/ext\u00E9rieur R10 \u00E9paisseur 9mm.",
+    "descriptionEn": "R10 indoor/outdoor tile 9mm thickness.",
+    "price": 19.90,
+    "brand": "Artens",
+    "sku": "ART-BETON60",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 72,
+        "name": "Gris clair",
+        "nameEn": "Light Grey",
+        "value": "GrisClair",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 73,
+        "name": "Anthracite",
+        "nameEn": "Anthracite",
+        "value": "Anthracite",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Papier peint intiss\u00E9 uni blanc",
+    "nameEn": "Plain White Non-Woven Wallpaper",
+    "description": "Papier peint \u00E0 peindre intiss\u00E9 10.05m x 0.53m.",
+    "descriptionEn": "Paintable non-woven wallpaper 10.05m x 0.53m.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Leroy Merlin",
+    "sku": "LM-PPUNI",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 74,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Colle carrelage C2 25kg",
+    "nameEn": "C2 Tile Adhesive 25kg",
+    "description": "Mortier-colle d\u00E9formable pour grand format int\u00E9rieur/ext\u00E9rieur.",
+    "descriptionEn": "Deformable adhesive mortar for large format indoor/outdoor.",
+    "price": 15.90,
+    "brand": "Weber",
+    "sku": "WEB-COLC2",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 75,
+        "name": "25kg",
+        "nameEn": "25kg",
+        "value": "25kg",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Joint carrelage gris 5kg",
+    "nameEn": "Grey Tile Grout 5kg",
+    "description": "Joint fin ciment pour carrelage int\u00E9rieur largeur 2-5mm.",
+    "descriptionEn": "Fine cement grout for indoor tiles, 2-5mm width.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Weber",
+    "sku": "WEB-JGRIS5",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 76,
+        "name": "Gris",
+        "nameEn": "Grey",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "Sous-couche parquet 3mm 15m\u00B2",
+    "nameEn": "Parquet Underlay 3mm 15m\u00B2",
+    "description": "Sous-couche isolation acoustique en mousse PE.",
+    "descriptionEn": "PE foam acoustic insulation underlay.",
+    "price": 15.90,
+    "brand": "Axton",
+    "sku": "AXN-SCPAR3",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 77,
+        "name": "3mm",
+        "nameEn": "3mm",
+        "value": "3mm",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Lame PVC clipsable imitation bois 1.49m\u00B2",
+    "nameEn": "Click Vinyl Plank Wood-Look 1.49m\u00B2",
+    "description": "Sol vinyle LVT \u00E9paisseur 4mm ultra-r\u00E9sistant.",
+    "descriptionEn": "4mm ultra-resistant LVT vinyl flooring.",
+    "price": 16.90,
+    "promoPrice": 13.90,
+    "brand": "Gerflor",
+    "sku": "GER-LVT4",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 78,
+        "name": "Ch\u00EAne blond",
+        "nameEn": "Blond Oak",
+        "value": "Ch\u00EAne",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Croisillons carrelage 3mm lot de 200",
+    "nameEn": "Tile Spacers 3mm 200-Pack",
+    "description": "Croisillons en croix pour joints r\u00E9guliers.",
+    "descriptionEn": "Cross spacers for regular joints.",
+    "price": 3.90,
+    "brand": "Axton",
+    "sku": "AXN-CROIS3",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 79,
+        "name": "3mm",
+        "nameEn": "3mm",
+        "value": "3mm",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Mosa\u00EFque verre blanc 30x30cm",
+    "nameEn": "White Glass Mosaic 30x30cm",
+    "description": "Mosa\u00EFque en plaque pour cr\u00E9dence et salle de bain.",
+    "descriptionEn": "Sheet mosaic for splashback and bathroom.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Artens",
+    "sku": "ART-MOS30",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 80,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Ragr\u00E9age autolissant 25kg",
+    "nameEn": "Self-Leveling Screed 25kg",
+    "description": "Enduit de sol autolissant pour rattraper les irr\u00E9gularit\u00E9s.",
+    "descriptionEn": "Self-leveling floor compound to correct unevenness.",
+    "price": 18.90,
+    "brand": "Weber",
+    "sku": "WEB-RAG25",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 81,
+        "name": "25kg",
+        "nameEn": "25kg",
+        "value": "25kg",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Tondeuse \u00E9lectrique Bosch Rotak 37",
+    "nameEn": "Bosch Rotak 37 Electric Mower",
+    "description": "Tondeuse filaire 1400W largeur de coupe 37cm.",
+    "descriptionEn": "1400W corded mower with 37cm cutting width.",
+    "price": 149.00,
+    "promoPrice": 125.00,
+    "brand": "Bosch",
+    "sku": "BOS-ROT37",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 82,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Taille-haies sans fil Stihl HSA 56",
+    "nameEn": "Stihl HSA 56 Cordless Hedge Trimmer",
+    "description": "Taille-haies 36V l\u00E9g\u00E8re avec lame 45cm double coupe.",
+    "descriptionEn": "Lightweight 36V hedge trimmer with 45cm double-sided blade.",
+    "price": 199.00,
+    "brand": "Stihl",
+    "sku": "STI-HSA56",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 83,
+        "name": "Avec batterie",
+        "nameEn": "With battery",
+        "value": "Kit",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Salon de jardin r\u00E9sine tress\u00E9e 4 places",
+    "nameEn": "4-Seat Woven Resin Garden Set",
+    "description": "Ensemble canap\u00E9 \u002B 2 fauteuils \u002B table basse en r\u00E9sine tress\u00E9e.",
+    "descriptionEn": "Sofa \u002B 2 armchairs \u002B coffee table set in woven resin.",
+    "price": 399.00,
+    "promoPrice": 329.00,
+    "brand": "Allibert",
+    "sku": "ALB-SALON4",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 84,
+        "name": "Gris",
+        "nameEn": "Grey",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Brouette 100L roue gonflable",
+    "nameEn": "100L Wheelbarrow with Pneumatic Wheel",
+    "description": "Brouette de chantier caisse galvanis\u00E9e capacit\u00E9 100L.",
+    "descriptionEn": "Galvanized tray construction wheelbarrow 100L capacity.",
+    "price": 49.00,
+    "brand": "Haemmerlin",
+    "sku": "HAE-BROU100",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 85,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Tuyau d\u0027arrosage 25m extensible",
+    "nameEn": "25m Expandable Garden Hose",
+    "description": "Tuyau extensible 3x avec pistolet 8 jets.",
+    "descriptionEn": "3x expandable hose with 8-pattern spray gun.",
+    "price": 29.90,
+    "promoPrice": 24.90,
+    "brand": "Gardena",
+    "sku": "GAR-TUY25",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 86,
+        "name": "25m",
+        "nameEn": "25m",
+        "value": "25m",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Barbecue charbon Weber Compact 57cm",
+    "nameEn": "Weber Compact Charcoal BBQ 57cm",
+    "description": "Barbecue \u00E0 charbon avec couvercle et thermom\u00E8tre int\u00E9gr\u00E9.",
+    "descriptionEn": "Charcoal BBQ with lid and built-in thermometer.",
+    "price": 149.00,
+    "brand": "Weber",
+    "sku": "WEB-COMP57",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 87,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "S\u00E9cateur Felco 2",
+    "nameEn": "Felco 2 Pruning Shears",
+    "description": "S\u00E9cateur professionnel \u00E0 lame franche pour taille d\u0027entretien.",
+    "descriptionEn": "Professional bypass pruning shears for maintenance cutting.",
+    "price": 49.00,
+    "promoPrice": 42.00,
+    "brand": "Felco",
+    "sku": "FEL-2",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 88,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Abri de jardin bois 5m\u00B2",
+    "nameEn": "5m\u00B2 Wooden Garden Shed",
+    "description": "Abri en bois trait\u00E9 autoclave avec plancher int\u00E9gr\u00E9.",
+    "descriptionEn": "Autoclave-treated wooden shed with integrated floor.",
+    "price": 699.00,
+    "brand": "Forest Style",
+    "sku": "FOR-ABR5",
+    "stock": 5,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 89,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Terreau universel 50L",
+    "nameEn": "Universal Potting Soil 50L",
+    "description": "Terreau enrichi pour plantes d\u0027int\u00E9rieur et d\u0027ext\u00E9rieur.",
+    "descriptionEn": "Enriched potting soil for indoor and outdoor plants.",
+    "price": 7.90,
+    "promoPrice": 5.90,
+    "brand": "Fertilig\u00E8ne",
+    "sku": "FER-TERR50",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 90,
+        "name": "50L",
+        "nameEn": "50L",
+        "value": "50L",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "D\u00E9sherbeur thermique \u00E0 gaz",
+    "nameEn": "Gas Thermal Weeder",
+    "description": "D\u00E9sherbeur \u00E9cologique sans produit chimique, flamme 1300\u00B0C.",
+    "descriptionEn": "Eco-friendly chemical-free weeder, 1300\u00B0C flame.",
+    "price": 35.00,
+    "brand": "Gloria",
+    "sku": "GLO-DETH",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 91,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "\u00C9tag\u00E8re m\u00E9tallique 5 niveaux 180x90x40cm",
+    "nameEn": "5-Tier Metal Shelf 180x90x40cm",
+    "description": "\u00C9tag\u00E8re charge lourde 175kg/niveau en acier galvanis\u00E9.",
+    "descriptionEn": "Heavy-duty 175kg/tier galvanized steel shelf.",
+    "price": 49.90,
+    "promoPrice": 39.90,
+    "brand": "Spaceo",
+    "sku": "SPC-ETAG5",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 92,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Bo\u00EEte de rangement 62L avec couvercle",
+    "nameEn": "62L Storage Box with Lid",
+    "description": "Bac empilable transparent r\u00E9sistant aux chocs.",
+    "descriptionEn": "Stackable transparent impact-resistant container.",
+    "price": 12.90,
+    "brand": "Really Useful Box",
+    "sku": "RUB-62L",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 93,
+        "name": "62L",
+        "nameEn": "62L",
+        "value": "62L",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 94,
+        "name": "35L",
+        "nameEn": "35L",
+        "value": "35L",
+        "priceAdjustment": -5,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Panneau perfor\u00E9 atelier 120x60cm",
+    "nameEn": "Workshop Pegboard 120x60cm",
+    "description": "Panneau acier avec lot de 30 crochets et accessoires.",
+    "descriptionEn": "Steel panel with 30 hooks and accessories set.",
+    "price": 29.90,
+    "promoPrice": 24.90,
+    "brand": "Facom",
+    "sku": "FAC-PANPERF",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 95,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Armoire haute r\u00E9sine 2 portes",
+    "nameEn": "2-Door Tall Resin Cabinet",
+    "description": "Armoire rangement balai/jardin 68x38x163cm.",
+    "descriptionEn": "Broom/garden storage cabinet 68x38x163cm.",
+    "price": 69.00,
+    "brand": "Keter",
+    "sku": "KET-ARM2P",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 96,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Caisse \u00E0 outils Stanley 19\u0022",
+    "nameEn": "Stanley 19\u0022 Toolbox",
+    "description": "Caisse \u00E0 outils avec bac amovible et fermeture m\u00E9tal.",
+    "descriptionEn": "Toolbox with removable tray and metal closures.",
+    "price": 22.90,
+    "promoPrice": 18.90,
+    "brand": "Stanley",
+    "sku": "STA-CAISSE19",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 97,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Servante d\u0027atelier 7 tiroirs",
+    "nameEn": "7-Drawer Workshop Trolley",
+    "description": "Servante roulante verrouillable charge 250kg.",
+    "descriptionEn": "Lockable rolling trolley 250kg load.",
+    "price": 249.00,
+    "brand": "Facom",
+    "sku": "FAC-SERV7",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 98,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Crochets de rangement muraux lot de 12",
+    "nameEn": "Wall Storage Hooks 12-Pack",
+    "description": "Crochets acier pour garage et atelier.",
+    "descriptionEn": "Steel hooks for garage and workshop.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Spaceo",
+    "sku": "SPC-CROCHET",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 99,
+        "name": "Lot de 12",
+        "nameEn": "Pack of 12",
+        "value": "x12",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Coffre de rangement ext\u00E9rieur 350L",
+    "nameEn": "350L Outdoor Storage Chest",
+    "description": "Coffre r\u00E9sine \u00E9tanche pour coussins et outils de jardin.",
+    "descriptionEn": "Waterproof resin chest for cushions and garden tools.",
+    "price": 79.00,
+    "brand": "Keter",
+    "sku": "KET-COF350",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 100,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Organiseur mural modulaire",
+    "nameEn": "Modular Wall Organizer",
+    "description": "Syst\u00E8me rails \u002B bacs \u002B crochets pour garage.",
+    "descriptionEn": "Rail \u002B bin \u002B hook system for garage.",
+    "price": 35.00,
+    "promoPrice": 29.00,
+    "brand": "Raaco",
+    "sku": "RAA-ORGMOD",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 101,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Casier vestiaire m\u00E9tal 3 cases",
+    "nameEn": "3-Compartment Metal Locker",
+    "description": "Casier vestiaire acier avec serrure pour atelier ou buanderie.",
+    "descriptionEn": "Steel locker with lock for workshop or laundry room.",
+    "price": 119.00,
+    "brand": "Pierre Henry",
+    "sku": "PH-CAS3",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 102,
+        "name": "Gris",
+        "nameEn": "Grey",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "Serrure 3 points A2P* certifi\u00E9e",
+    "nameEn": "A2P* Certified 3-Point Lock",
+    "description": "Serrure de porte d\u0027entr\u00E9e anti-effraction avec cylindre haute s\u00E9curit\u00E9.",
+    "descriptionEn": "Anti-break-in front door lock with high-security cylinder.",
+    "price": 149.00,
+    "promoPrice": 125.00,
+    "brand": "Vachette",
+    "sku": "VAC-3PTS",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 103,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Alarme maison sans fil 5 zones",
+    "nameEn": "5-Zone Wireless Home Alarm",
+    "description": "Syst\u00E8me d\u0027alarme avec sir\u00E8ne, d\u00E9tecteurs et t\u00E9l\u00E9commandes.",
+    "descriptionEn": "Alarm system with siren, sensors and remote controls.",
+    "price": 199.00,
+    "brand": "Somfy",
+    "sku": "SOM-ALR5Z",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 104,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "D\u00E9tecteur de fum\u00E9e NF 10 ans",
+    "nameEn": "NF Certified 10-Year Smoke Detector",
+    "description": "D\u00E9tecteur autonome pile lithium 10 ans certifi\u00E9 NF.",
+    "descriptionEn": "Autonomous smoke detector with 10-year lithium battery, NF certified.",
+    "price": 15.90,
+    "promoPrice": 12.90,
+    "brand": "Kidde",
+    "sku": "KID-DFNF10",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 105,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Cadenas haute s\u00E9curit\u00E9 50mm",
+    "nameEn": "50mm High Security Padlock",
+    "description": "Cadenas acier tremp\u00E9 avec anse prot\u00E9g\u00E9e anti-coupe.",
+    "descriptionEn": "Hardened steel padlock with anti-cut protected shackle.",
+    "price": 25.00,
+    "brand": "Abus",
+    "sku": "ABU-CAD50",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 106,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Cam\u00E9ra de surveillance WiFi ext\u00E9rieure",
+    "nameEn": "Outdoor WiFi Security Camera",
+    "description": "Cam\u00E9ra IP65 vision nocturne 30m avec stockage cloud.",
+    "descriptionEn": "IP65 camera 30m night vision with cloud storage.",
+    "price": 79.00,
+    "promoPrice": 65.00,
+    "brand": "Ezviz",
+    "sku": "EZV-CAMEXT",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 107,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Extincteur poudre ABC 6kg",
+    "nameEn": "ABC Powder Fire Extinguisher 6kg",
+    "description": "Extincteur certifi\u00E9 NF avec support mural.",
+    "descriptionEn": "NF certified fire extinguisher with wall bracket.",
+    "price": 35.00,
+    "brand": "Sicli",
+    "sku": "SIC-EXT6",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 108,
+        "name": "6kg",
+        "nameEn": "6kg",
+        "value": "6kg",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Coffre-fort \u00E9lectronique 16L",
+    "nameEn": "16L Electronic Safe",
+    "description": "Coffre-fort \u00E0 code digital avec fixation murale.",
+    "descriptionEn": "Digital code safe with wall mounting.",
+    "price": 59.00,
+    "promoPrice": 49.00,
+    "brand": "Burg-W\u00E4chter",
+    "sku": "BW-COF16",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 109,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Casque de chantier blanc",
+    "nameEn": "White Construction Helmet",
+    "description": "Casque de protection EN397 avec jugulaire r\u00E9glable.",
+    "descriptionEn": "EN397 safety helmet with adjustable chin strap.",
+    "price": 9.90,
+    "brand": "3M",
+    "sku": "3M-CASQUE",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 110,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "Lunettes de protection anti-projections",
+    "nameEn": "Anti-Splash Safety Glasses",
+    "description": "Lunettes panoramiques avec traitement anti-bu\u00E9e.",
+    "descriptionEn": "Panoramic glasses with anti-fog coating.",
+    "price": 7.90,
+    "promoPrice": 5.90,
+    "brand": "Boll\u00E9",
+    "sku": "BOL-LUN",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 111,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Gants de travail cuir taille L",
+    "nameEn": "Leather Work Gloves Size L",
+    "description": "Gants de manutention cuir et cro\u00FBte de cuir.",
+    "descriptionEn": "Leather and split leather handling gloves.",
+    "price": 12.90,
+    "brand": "Mapa",
+    "sku": "MAP-GANTL",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 112,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 70
+      },
+      {
+        "id": 113,
+        "name": "Taille XL",
+        "nameEn": "Size XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  }
+]

@@ -1,0 +1,3173 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Chanel N\u00B05 Eau de Parfum",
+    "nameEn": "Chanel No.5 Eau de Parfum",
+    "description": "L\u0027iconique parfum floral ald\u00E9hyd\u00E9, symbole intemporel d\u0027\u00E9l\u00E9gance.",
+    "descriptionEn": "The iconic aldehyde floral fragrance, timeless symbol of elegance.",
+    "price": 135.00,
+    "brand": "Chanel",
+    "sku": "CHA-N5EDP",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 2,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 50,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Dior J\u0027adore Eau de Parfum",
+    "nameEn": "Dior J\u0027adore Eau de Parfum",
+    "description": "Bouquet floral solaire avec ylang-ylang, rose et jasmin.",
+    "descriptionEn": "Solar floral bouquet with ylang-ylang, rose and jasmine.",
+    "price": 129.00,
+    "promoPrice": 115.00,
+    "brand": "Dior",
+    "sku": "DIO-JADORE",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 3,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 4,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 45,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Lanc\u00F4me La Vie Est Belle",
+    "nameEn": "Lancome La Vie Est Belle",
+    "description": "Parfum gourmand iris avec notes de praline et vanille.",
+    "descriptionEn": "Gourmand iris fragrance with praline and vanilla notes.",
+    "price": 119.00,
+    "brand": "Lanc\u00F4me",
+    "sku": "LAN-LVEB",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 5,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 6,
+        "name": "75ml",
+        "nameEn": "75ml",
+        "value": "75ml",
+        "priceAdjustment": 30,
+        "stock": 22
+      },
+      {
+        "id": 7,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 50,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Yves Saint Laurent Libre",
+    "nameEn": "Yves Saint Laurent Libre",
+    "description": "Eau de parfum florale foug\u00E8re avec lavande fran\u00E7aise et fleur d\u0027oranger.",
+    "descriptionEn": "Floral foug\u00E8re eau de parfum with French lavender and orange blossom.",
+    "price": 115.00,
+    "promoPrice": 99.00,
+    "brand": "YSL",
+    "sku": "YSL-LIBRE",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 8,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": -30,
+        "stock": 35
+      },
+      {
+        "id": 9,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 10,
+        "name": "90ml",
+        "nameEn": "90ml",
+        "value": "90ml",
+        "priceAdjustment": 40,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Guerlain Shalimar",
+    "nameEn": "Guerlain Shalimar",
+    "description": "Parfum oriental vanill\u00E9 l\u00E9gendaire, cr\u00E9\u00E9 en 1925.",
+    "descriptionEn": "Legendary vanilla oriental fragrance, created in 1925.",
+    "price": 125.00,
+    "brand": "Guerlain",
+    "sku": "GUE-SHAL",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 11,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 12,
+        "name": "90ml",
+        "nameEn": "90ml",
+        "value": "90ml",
+        "priceAdjustment": 45,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Chlo\u00E9 Eau de Parfum",
+    "nameEn": "Chloe Eau de Parfum",
+    "description": "Parfum floral frais avec rose de mai et pivoine.",
+    "descriptionEn": "Fresh floral fragrance with May rose and peony.",
+    "price": 99.00,
+    "promoPrice": 85.00,
+    "brand": "Chlo\u00E9",
+    "sku": "CHL-EDP",
+    "stock": 32,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 13,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": -25,
+        "stock": 40
+      },
+      {
+        "id": 14,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 15,
+        "name": "75ml",
+        "nameEn": "75ml",
+        "value": "75ml",
+        "priceAdjustment": 30,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "Herm\u00E8s Twilly d\u0027Herm\u00E8s",
+    "nameEn": "Hermes Twilly d\u0027Hermes",
+    "description": "Parfum \u00E9pic\u00E9 floral avec gingembre, tub\u00E9reuse et santal.",
+    "descriptionEn": "Spicy floral fragrance with ginger, tuberose and sandalwood.",
+    "price": 109.00,
+    "brand": "Herm\u00E8s",
+    "sku": "HER-TWILLY",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 16,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": -25,
+        "stock": 25
+      },
+      {
+        "id": 17,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 18,
+        "name": "85ml",
+        "nameEn": "85ml",
+        "value": "85ml",
+        "priceAdjustment": 40,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Versace Bright Crystal",
+    "nameEn": "Versace Bright Crystal",
+    "description": "Eau de toilette fra\u00EEche et florale avec magnolia et musc.",
+    "descriptionEn": "Fresh floral eau de toilette with magnolia and musk.",
+    "price": 79.00,
+    "promoPrice": 65.00,
+    "brand": "Versace",
+    "sku": "VER-BRIGHT",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 19,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": -20,
+        "stock": 50
+      },
+      {
+        "id": 20,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 21,
+        "name": "90ml",
+        "nameEn": "90ml",
+        "value": "90ml",
+        "priceAdjustment": 30,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Mugler Angel Eau de Parfum",
+    "nameEn": "Mugler Angel Eau de Parfum",
+    "description": "Parfum oriental gourmand avec praline, chocolat et patchouli.",
+    "descriptionEn": "Gourmand oriental fragrance with praline, chocolate and patchouli.",
+    "price": 95.00,
+    "brand": "Mugler",
+    "sku": "MUG-ANGEL",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 22,
+        "name": "25ml",
+        "nameEn": "25ml",
+        "value": "25ml",
+        "priceAdjustment": -20,
+        "stock": 30
+      },
+      {
+        "id": 23,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Prada Paradoxe",
+    "nameEn": "Prada Paradoxe",
+    "description": "Eau de parfum ambr\u00E9e florale avec notes de n\u00E9roli et musc ambr\u00E9.",
+    "descriptionEn": "Amber floral eau de parfum with neroli and amber musk notes.",
+    "price": 105.00,
+    "promoPrice": 89.00,
+    "brand": "Prada",
+    "sku": "PRA-PARADOXE",
+    "stock": 26,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 24,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": -25,
+        "stock": 35
+      },
+      {
+        "id": 25,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 26,
+        "name": "90ml",
+        "nameEn": "90ml",
+        "value": "90ml",
+        "priceAdjustment": 40,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Dior Sauvage Eau de Parfum",
+    "nameEn": "Dior Sauvage Eau de Parfum",
+    "description": "Parfum bois\u00E9 ambr\u00E9 frais avec ambroxan et poivre de Calabre.",
+    "descriptionEn": "Fresh amber woody fragrance with ambroxan and Calabrian pepper.",
+    "price": 115.00,
+    "brand": "Dior",
+    "sku": "DIO-SAUVAGE",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 27,
+        "name": "60ml",
+        "nameEn": "60ml",
+        "value": "60ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 28,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 35,
+        "stock": 22
+      },
+      {
+        "id": 29,
+        "name": "200ml",
+        "nameEn": "200ml",
+        "value": "200ml",
+        "priceAdjustment": 75,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Bleu de Chanel Eau de Parfum",
+    "nameEn": "Bleu de Chanel Eau de Parfum",
+    "description": "Parfum bois\u00E9 aromatique avec c\u00E8dre, santal et labdanum.",
+    "descriptionEn": "Aromatic woody fragrance with cedar, sandalwood and labdanum.",
+    "price": 125.00,
+    "promoPrice": 109.00,
+    "brand": "Chanel",
+    "sku": "CHA-BLEU",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 30,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 31,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 40,
+        "stock": 18
+      },
+      {
+        "id": 32,
+        "name": "150ml",
+        "nameEn": "150ml",
+        "value": "150ml",
+        "priceAdjustment": 65,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Jean Paul Gaultier Le M\u00E2le Elixir",
+    "nameEn": "Jean Paul Gaultier Le Male Elixir",
+    "description": "Parfum oriental vanill\u00E9 intense avec lavande et ambre.",
+    "descriptionEn": "Intense vanilla oriental fragrance with lavender and amber.",
+    "price": 99.00,
+    "brand": "Jean Paul Gaultier",
+    "sku": "JPG-MALE-ELIX",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 33,
+        "name": "75ml",
+        "nameEn": "75ml",
+        "value": "75ml",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 34,
+        "name": "125ml",
+        "nameEn": "125ml",
+        "value": "125ml",
+        "priceAdjustment": 30,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Armani Acqua di Gi\u00F2 Profondo",
+    "nameEn": "Armani Acqua di Gio Profondo",
+    "description": "Eau de parfum aquatique avec notes marines et patchouli.",
+    "descriptionEn": "Aquatic eau de parfum with marine notes and patchouli.",
+    "price": 105.00,
+    "promoPrice": 89.00,
+    "brand": "Armani",
+    "sku": "ARM-ADGP",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 35,
+        "name": "40ml",
+        "nameEn": "40ml",
+        "value": "40ml",
+        "priceAdjustment": -20,
+        "stock": 35
+      },
+      {
+        "id": 36,
+        "name": "75ml",
+        "nameEn": "75ml",
+        "value": "75ml",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 37,
+        "name": "125ml",
+        "nameEn": "125ml",
+        "value": "125ml",
+        "priceAdjustment": 35,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "Paco Rabanne 1 Million Elixir",
+    "nameEn": "Paco Rabanne 1 Million Elixir",
+    "description": "Parfum intense cuir ambr\u00E9 avec notes fum\u00E9es et vanille.",
+    "descriptionEn": "Intense amber leather fragrance with smoky and vanilla notes.",
+    "price": 95.00,
+    "brand": "Paco Rabanne",
+    "sku": "PAC-1MELIX",
+    "stock": 22,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 38,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 39,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 35,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Hugo Boss Bottled Eau de Parfum",
+    "nameEn": "Hugo Boss Bottled Eau de Parfum",
+    "description": "Parfum bois\u00E9 \u00E9l\u00E9gant avec pomme, cannelle et bois de c\u00E8dre.",
+    "descriptionEn": "Elegant woody fragrance with apple, cinnamon and cedarwood.",
+    "price": 85.00,
+    "promoPrice": 72.00,
+    "brand": "Hugo Boss",
+    "sku": "HUG-BOTTLED",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 40,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 41,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 30,
+        "stock": 25
+      },
+      {
+        "id": 42,
+        "name": "200ml",
+        "nameEn": "200ml",
+        "value": "200ml",
+        "priceAdjustment": 55,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Valentino Uomo Born in Roma",
+    "nameEn": "Valentino Uomo Born in Roma",
+    "description": "Eau de toilette aromatique \u00E9pic\u00E9e avec geni\u00E8vre et sauge.",
+    "descriptionEn": "Spicy aromatic eau de toilette with juniper and sage.",
+    "price": 89.00,
+    "brand": "Valentino",
+    "sku": "VAL-BIR",
+    "stock": 24,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 43,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 44,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 30,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Versace Pour Homme",
+    "nameEn": "Versace Pour Homme",
+    "description": "Eau de toilette fra\u00EEche m\u00E9diterran\u00E9enne avec n\u00E9roli, citron et ambre.",
+    "descriptionEn": "Fresh Mediterranean eau de toilette with neroli, lemon and amber.",
+    "price": 69.00,
+    "promoPrice": 55.00,
+    "brand": "Versace",
+    "sku": "VER-PH",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 45,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 46,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 25,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "YSL Y Eau de Parfum",
+    "nameEn": "YSL Y Eau de Parfum",
+    "description": "Parfum bois\u00E9 frais avec pomme de Granny Smith et bois d\u0027ambre.",
+    "descriptionEn": "Fresh woody fragrance with Granny Smith apple and amberwood.",
+    "price": 99.00,
+    "brand": "YSL",
+    "sku": "YSL-Y",
+    "stock": 26,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 47,
+        "name": "60ml",
+        "nameEn": "60ml",
+        "value": "60ml",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 48,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 30,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Montblanc Explorer Ultra Blue",
+    "nameEn": "Montblanc Explorer Ultra Blue",
+    "description": "Eau de parfum marine fra\u00EEche avec bergamote et bois flott\u00E9.",
+    "descriptionEn": "Fresh marine eau de parfum with bergamot and driftwood.",
+    "price": 75.00,
+    "promoPrice": 62.00,
+    "brand": "Montblanc",
+    "sku": "MBL-EXUB",
+    "stock": 32,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 49,
+        "name": "60ml",
+        "nameEn": "60ml",
+        "value": "60ml",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 50,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 20,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "MAC Lipstick Matte Ruby Woo",
+    "nameEn": "MAC Lipstick Matte Ruby Woo",
+    "description": "Rouge \u00E0 l\u00E8vres mat iconique, rouge vif r\u00E9tro.",
+    "descriptionEn": "Iconic matte lipstick, retro vivid red.",
+    "price": 23.50,
+    "brand": "MAC",
+    "sku": "MAC-RW",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 51,
+        "name": "Ruby Woo",
+        "nameEn": "Ruby Woo",
+        "value": "Ruby Woo",
+        "priceAdjustment": 0,
+        "stock": 60
+      },
+      {
+        "id": 52,
+        "name": "Lady Danger",
+        "nameEn": "Lady Danger",
+        "value": "Lady Danger",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Dior Addict Lip Maximizer",
+    "nameEn": "Dior Addict Lip Maximizer",
+    "description": "Gloss repulpant avec acide hyaluronique pour l\u00E8vres pulpeuses.",
+    "descriptionEn": "Plumping gloss with hyaluronic acid for fuller lips.",
+    "price": 38.00,
+    "promoPrice": 33.00,
+    "brand": "Dior",
+    "sku": "DIO-ADLM",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 53,
+        "name": "001 Rose P\u00E2le",
+        "nameEn": "001 Pale Pink",
+        "value": "001",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 54,
+        "name": "012 Rosewood",
+        "nameEn": "012 Rosewood",
+        "value": "012",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Charlotte Tilbury Pillow Talk",
+    "nameEn": "Charlotte Tilbury Pillow Talk",
+    "description": "Rouge \u00E0 l\u00E8vres nude-rose best-seller avec fini velout\u00E9.",
+    "descriptionEn": "Best-selling nude-pink lipstick with velvety finish.",
+    "price": 35.00,
+    "brand": "Charlotte Tilbury",
+    "sku": "CT-PT",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 55,
+        "name": "Original",
+        "nameEn": "Original",
+        "value": "Original",
+        "priceAdjustment": 0,
+        "stock": 45
+      },
+      {
+        "id": 56,
+        "name": "Medium",
+        "nameEn": "Medium",
+        "value": "Medium",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "YSL Rouge Pur Couture",
+    "nameEn": "YSL Rouge Pur Couture",
+    "description": "Rouge \u00E0 l\u00E8vres satin\u00E9 avec soin l\u00E8vres enrichi en huile de grenade.",
+    "descriptionEn": "Satin lipstick with lip care enriched with pomegranate oil.",
+    "price": 40.00,
+    "promoPrice": 35.00,
+    "brand": "YSL",
+    "sku": "YSL-RPC",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 57,
+        "name": "N\u00B01 Le Rouge",
+        "nameEn": "No.1 Le Rouge",
+        "value": "N1",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 58,
+        "name": "N\u00B013 Le Orange",
+        "nameEn": "No.13 Le Orange",
+        "value": "N13",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Fenty Beauty Gloss Bomb",
+    "nameEn": "Fenty Beauty Gloss Bomb",
+    "description": "Gloss universel brillance explosive avec vitamine E.",
+    "descriptionEn": "Universal explosive shine gloss with vitamin E.",
+    "price": 22.00,
+    "brand": "Fenty Beauty",
+    "sku": "FEN-GB",
+    "stock": 50,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 59,
+        "name": "Fenty Glow",
+        "nameEn": "Fenty Glow",
+        "value": "Glow",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 60,
+        "name": "Fu$$y",
+        "nameEn": "Fu$$y",
+        "value": "Fussy",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "NARS Powermatte Lipstick",
+    "nameEn": "NARS Powermatte Lipstick",
+    "description": "Rouge \u00E0 l\u00E8vres longue tenue mat intense, 12h de tenue.",
+    "descriptionEn": "Intense matte long-lasting lipstick, 12h wear.",
+    "price": 30.00,
+    "promoPrice": 25.00,
+    "brand": "NARS",
+    "sku": "NAR-PML",
+    "stock": 38,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 61,
+        "name": "Dragon Girl",
+        "nameEn": "Dragon Girl",
+        "value": "Dragon",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 62,
+        "name": "American Woman",
+        "nameEn": "American Woman",
+        "value": "American",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "L\u0027Or\u00E9al Paris Color Riche Satin",
+    "nameEn": "L\u0027Oreal Paris Color Riche Satin",
+    "description": "Rouge \u00E0 l\u00E8vres satin\u00E9 enrichi en huile d\u0027argan, 4h de confort.",
+    "descriptionEn": "Satin lipstick enriched with argan oil, 4h comfort.",
+    "price": 12.90,
+    "promoPrice": 9.90,
+    "brand": "L\u0027Or\u00E9al Paris",
+    "sku": "LOR-CRS",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 63,
+        "name": "377 Perfect Red",
+        "nameEn": "377 Perfect Red",
+        "value": "377",
+        "priceAdjustment": 0,
+        "stock": 80
+      },
+      {
+        "id": 64,
+        "name": "235 Nude",
+        "nameEn": "235 Nude",
+        "value": "235",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Rare Beauty Soft Pinch Liquid Blush",
+    "nameEn": "Rare Beauty Soft Pinch Liquid Blush",
+    "description": "Blush liquide ultra-pigment\u00E9 avec fini naturel a\u00E9rien.",
+    "descriptionEn": "Ultra-pigmented liquid blush with airy natural finish.",
+    "price": 24.00,
+    "brand": "Rare Beauty",
+    "sku": "RAR-SPLB",
+    "stock": 42,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 65,
+        "name": "Joy",
+        "nameEn": "Joy",
+        "value": "Joy",
+        "priceAdjustment": 0,
+        "stock": 42
+      },
+      {
+        "id": 66,
+        "name": "Grateful",
+        "nameEn": "Grateful",
+        "value": "Grateful",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Givenchy Le Rouge Deep Velvet",
+    "nameEn": "Givenchy Le Rouge Deep Velvet",
+    "description": "Rouge \u00E0 l\u00E8vres poudr\u00E9 mat avec pigment velours.",
+    "descriptionEn": "Powdery matte lipstick with velvet pigment.",
+    "price": 42.00,
+    "brand": "Givenchy",
+    "sku": "GIV-LRDV",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 67,
+        "name": "N\u00B037 Rouge Grain\u00E9",
+        "nameEn": "No.37 Rouge Graine",
+        "value": "N37",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Too Faced Lip Injection Extreme",
+    "nameEn": "Too Faced Lip Injection Extreme",
+    "description": "Gloss repulpant effet piment avec r\u00E9sultats imm\u00E9diats.",
+    "descriptionEn": "Plumping gloss with chili effect and immediate results.",
+    "price": 29.00,
+    "promoPrice": 24.00,
+    "brand": "Too Faced",
+    "sku": "TF-LIE",
+    "stock": 36,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 68,
+        "name": "Rose",
+        "nameEn": "Pink",
+        "value": "Rose",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 69,
+        "name": "Corail",
+        "nameEn": "Coral",
+        "value": "Corail",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Lanc\u00F4me Hypn\u00F4se Mascara",
+    "nameEn": "Lancome Hypnose Mascara",
+    "description": "Mascara volume sur mesure avec brosse S brevet\u00E9e.",
+    "descriptionEn": "Custom volume mascara with patented S-shaped brush.",
+    "price": 32.00,
+    "promoPrice": 27.00,
+    "brand": "Lanc\u00F4me",
+    "sku": "LAN-HYP",
+    "stock": 45,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 70,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Maybelline Lash Sensational Sky High",
+    "nameEn": "Maybelline Lash Sensational Sky High",
+    "description": "Mascara allongeant avec brosse flexible et formule infus\u00E9e de bambou.",
+    "descriptionEn": "Lengthening mascara with flexible brush and bamboo-infused formula.",
+    "price": 12.90,
+    "promoPrice": 9.90,
+    "brand": "Maybelline",
+    "sku": "MAY-LSSH",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 71,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Urban Decay Naked3 Palette",
+    "nameEn": "Urban Decay Naked3 Palette",
+    "description": "Palette 12 fards \u00E0 paupi\u00E8res ros\u00E9s avec finis mat, satin\u00E9 et shimmer.",
+    "descriptionEn": "12-shade rose-hued eyeshadow palette with matte, satin and shimmer finishes.",
+    "price": 52.00,
+    "brand": "Urban Decay",
+    "sku": "UD-NK3",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 72,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Chanel Le Volume de Chanel",
+    "nameEn": "Chanel Le Volume de Chanel",
+    "description": "Mascara volume intense avec brosse sculptante brevet\u00E9e.",
+    "descriptionEn": "Intense volume mascara with patented sculpting brush.",
+    "price": 35.00,
+    "brand": "Chanel",
+    "sku": "CHA-LVC",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 73,
+        "name": "10 Noir",
+        "nameEn": "10 Noir",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "Charlotte Tilbury Eyes to Mesmerise",
+    "nameEn": "Charlotte Tilbury Eyes to Mesmerise",
+    "description": "Fard \u00E0 paupi\u00E8res cr\u00E8me longue tenue avec fini soyeux.",
+    "descriptionEn": "Long-lasting cream eyeshadow with silky finish.",
+    "price": 29.00,
+    "promoPrice": 24.00,
+    "brand": "Charlotte Tilbury",
+    "sku": "CT-ETM",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 74,
+        "name": "Champagne",
+        "nameEn": "Champagne",
+        "value": "Champagne",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 75,
+        "name": "Bronze",
+        "nameEn": "Bronze",
+        "value": "Bronze",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "Benefit Roller Lash Mascara",
+    "nameEn": "Benefit Roller Lash Mascara",
+    "description": "Mascara recourbant avec brosse Hook\u0027n\u0027Roll pour cils recourb\u00E9s.",
+    "descriptionEn": "Curling mascara with Hook\u0027n\u0027Roll brush for curled lashes.",
+    "price": 28.00,
+    "brand": "Benefit",
+    "sku": "BEN-RL",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 76,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Too Faced Better Than Sex Mascara",
+    "nameEn": "Too Faced Better Than Sex Mascara",
+    "description": "Mascara volume collag\u00E8ne avec brosse sablier.",
+    "descriptionEn": "Collagen volume mascara with hourglass-shaped brush.",
+    "price": 26.00,
+    "promoPrice": 22.00,
+    "brand": "Too Faced",
+    "sku": "TF-BTS",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 77,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Dior Diorshow Iconic Overcurl",
+    "nameEn": "Dior Diorshow Iconic Overcurl",
+    "description": "Mascara courbe spectaculaire avec formule enrichie en soins.",
+    "descriptionEn": "Spectacular curl mascara with care-enriched formula.",
+    "price": 36.00,
+    "brand": "Dior",
+    "sku": "DIO-DIOC",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 78,
+        "name": "090 Noir",
+        "nameEn": "090 Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "NYX Epic Ink Liner",
+    "nameEn": "NYX Epic Ink Liner",
+    "description": "Eye-liner feutre waterproof ultra-pr\u00E9cis et longue tenue.",
+    "descriptionEn": "Ultra-precise waterproof felt-tip eyeliner, long-lasting.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "NYX",
+    "sku": "NYX-EIL",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 79,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "Huda Beauty Rose Gold Palette",
+    "nameEn": "Huda Beauty Rose Gold Palette",
+    "description": "Palette 18 fards or rose avec textures mattes, shimmer et paillet\u00E9es.",
+    "descriptionEn": "18-shade rose gold palette with matte, shimmer and glitter textures.",
+    "price": 65.00,
+    "brand": "Huda Beauty",
+    "sku": "HUD-RGP",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 80,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "La Roche-Posay Effaclar Duo\u002B",
+    "nameEn": "La Roche-Posay Effaclar Duo\u002B",
+    "description": "Soin anti-imperfections avec niacinamide et acide salicylique.",
+    "descriptionEn": "Anti-blemish care with niacinamide and salicylic acid.",
+    "price": 17.90,
+    "promoPrice": 14.90,
+    "brand": "La Roche-Posay",
+    "sku": "LRP-EFF",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 81,
+        "name": "40ml",
+        "nameEn": "40ml",
+        "value": "40ml",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "CeraVe Cr\u00E8me Hydratante Visage",
+    "nameEn": "CeraVe Moisturizing Face Cream",
+    "description": "Cr\u00E8me hydratante avec 3 c\u00E9ramides essentiels et acide hyaluronique.",
+    "descriptionEn": "Moisturizing cream with 3 essential ceramides and hyaluronic acid.",
+    "price": 14.90,
+    "brand": "CeraVe",
+    "sku": "CER-CHV",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 82,
+        "name": "52ml",
+        "nameEn": "52ml",
+        "value": "52ml",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Est\u00E9e Lauder Advanced Night Repair",
+    "nameEn": "Estee Lauder Advanced Night Repair",
+    "description": "S\u00E9rum r\u00E9parateur nuit avec technologie Chronolux Power Signal.",
+    "descriptionEn": "Night repair serum with Chronolux Power Signal technology.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Est\u00E9e Lauder",
+    "sku": "EL-ANR",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 83,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 84,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 40,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "The Ordinary Niacinamide 10% \u002B Zinc 1%",
+    "nameEn": "The Ordinary Niacinamide 10% \u002B Zinc 1%",
+    "description": "S\u00E9rum anti-pores et anti-imperfections haute concentration.",
+    "descriptionEn": "High-concentration anti-pore and anti-blemish serum.",
+    "price": 6.80,
+    "brand": "The Ordinary",
+    "sku": "TO-NIAZ",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 85,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": 0,
+        "stock": 100
+      },
+      {
+        "id": 86,
+        "name": "60ml",
+        "nameEn": "60ml",
+        "value": "60ml",
+        "priceAdjustment": 4,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Clinique Moisture Surge 100H",
+    "nameEn": "Clinique Moisture Surge 100H",
+    "description": "Gel-cr\u00E8me hydratant 100 heures avec technologie Auto-Replenishing.",
+    "descriptionEn": "100-hour hydrating gel-cream with Auto-Replenishing technology.",
+    "price": 42.00,
+    "promoPrice": 35.00,
+    "brand": "Clinique",
+    "sku": "CLI-MS100",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 87,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": -10,
+        "stock": 45
+      },
+      {
+        "id": 88,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Vichy Min\u00E9ral 89 Booster",
+    "nameEn": "Vichy Mineral 89 Booster",
+    "description": "S\u00E9rum fortifiant avec 89% d\u0027eau volcanique de Vichy et acide hyaluronique.",
+    "descriptionEn": "Fortifying serum with 89% Vichy volcanic water and hyaluronic acid.",
+    "price": 22.90,
+    "promoPrice": 18.90,
+    "brand": "Vichy",
+    "sku": "VIC-M89",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 89,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": 0,
+        "stock": 55
+      },
+      {
+        "id": 90,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 8,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Kiehl\u0027s Ultra Facial Cream",
+    "nameEn": "Kiehl\u0027s Ultra Facial Cream",
+    "description": "Cr\u00E8me hydratante 24h l\u00E9g\u00E8re avec squalane glaciaire.",
+    "descriptionEn": "24h lightweight moisturizing cream with glacial glycoprotein.",
+    "price": 32.00,
+    "brand": "Kiehl\u0027s",
+    "sku": "KIE-UFC",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 91,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 92,
+        "name": "125ml",
+        "nameEn": "125ml",
+        "value": "125ml",
+        "priceAdjustment": 20,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Bioderma Sensibio H2O",
+    "nameEn": "Bioderma Sensibio H2O",
+    "description": "Eau micellaire peaux sensibles, nettoyant doux sans rin\u00E7age.",
+    "descriptionEn": "Micellar water for sensitive skin, gentle no-rinse cleanser.",
+    "price": 12.90,
+    "promoPrice": 9.90,
+    "brand": "Bioderma",
+    "sku": "BIO-SH2O",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 93,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 90
+      },
+      {
+        "id": 94,
+        "name": "500ml",
+        "nameEn": "500ml",
+        "value": "500ml",
+        "priceAdjustment": 5,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Drunk Elephant Protini Polypeptide",
+    "nameEn": "Drunk Elephant Protini Polypeptide",
+    "description": "Cr\u00E8me prot\u00E9in\u00E9e aux peptides pour peau rebondie et ferme.",
+    "descriptionEn": "Protein-rich peptide cream for bouncy, firm skin.",
+    "price": 68.00,
+    "brand": "Drunk Elephant",
+    "sku": "DE-PPC",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 95,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Caudalie Vinoperfect S\u00E9rum",
+    "nameEn": "Caudalie Vinoperfect Serum",
+    "description": "S\u00E9rum \u00E9clat anti-taches avec Vinif\u00E9rine, 62x plus efficace que la vitamine C.",
+    "descriptionEn": "Radiance anti-dark spot serum with Viniferine, 62x more effective than vitamin C.",
+    "price": 39.90,
+    "promoPrice": 33.90,
+    "brand": "Caudalie",
+    "sku": "CAU-VPS",
+    "stock": 28,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 96,
+        "name": "30ml",
+        "nameEn": "30ml",
+        "value": "30ml",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Nivea Lait Corps Nourrissant",
+    "nameEn": "Nivea Nourishing Body Lotion",
+    "description": "Lait corporel nourrissant pour peaux s\u00E8ches avec beurre de karit\u00E9.",
+    "descriptionEn": "Nourishing body lotion for dry skin with shea butter.",
+    "price": 6.90,
+    "promoPrice": 4.90,
+    "brand": "Nivea",
+    "sku": "NIV-LCN",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 97,
+        "name": "400ml",
+        "nameEn": "400ml",
+        "value": "400ml",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Nuxe Huile Prodigieuse",
+    "nameEn": "Nuxe Huile Prodigieuse",
+    "description": "Huile s\u00E8che multi-usage visage-corps-cheveux avec 7 huiles pr\u00E9cieuses.",
+    "descriptionEn": "Multi-purpose dry oil for face-body-hair with 7 precious oils.",
+    "price": 29.90,
+    "brand": "Nuxe",
+    "sku": "NUX-HP",
+    "stock": 45,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 98,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": -10,
+        "stock": 60
+      },
+      {
+        "id": 99,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Sol de Janeiro Brazilian Bum Bum Cream",
+    "nameEn": "Sol de Janeiro Brazilian Bum Bum Cream",
+    "description": "Cr\u00E8me corps raffermissante au cupua\u00E7u et guaran\u00E1 avec scent signature.",
+    "descriptionEn": "Firming body cream with cupua\u00E7u and guaran\u00E1 with signature scent.",
+    "price": 48.00,
+    "promoPrice": 40.00,
+    "brand": "Sol de Janeiro",
+    "sku": "SDJ-BBC",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 100,
+        "name": "240ml",
+        "nameEn": "240ml",
+        "value": "240ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "L\u0027Occitane Beurre de Karit\u00E9",
+    "nameEn": "L\u0027Occitane Shea Butter",
+    "description": "Beurre de karit\u00E9 pur \u00E0 100% pour nourrir intens\u00E9ment la peau.",
+    "descriptionEn": "100% pure shea butter for intense skin nourishment.",
+    "price": 38.00,
+    "brand": "L\u0027Occitane",
+    "sku": "LOC-BK",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 101,
+        "name": "150ml",
+        "nameEn": "150ml",
+        "value": "150ml",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "Dove Gel Douche Soin",
+    "nameEn": "Dove Care Body Wash",
+    "description": "Gel douche hydratant avec 1/4 de cr\u00E8me hydratante.",
+    "descriptionEn": "Moisturizing body wash with 1/4 moisturizing cream.",
+    "price": 4.50,
+    "promoPrice": 3.50,
+    "brand": "Dove",
+    "sku": "DOV-GDS",
+    "stock": 120,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 102,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 120
+      },
+      {
+        "id": 103,
+        "name": "500ml",
+        "nameEn": "500ml",
+        "value": "500ml",
+        "priceAdjustment": 2,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Rituals Sakura Body Cream",
+    "nameEn": "Rituals Sakura Body Cream",
+    "description": "Cr\u00E8me corps fleur de cerisier avec lait de riz pour peau soyeuse.",
+    "descriptionEn": "Cherry blossom body cream with rice milk for silky skin.",
+    "price": 19.90,
+    "brand": "Rituals",
+    "sku": "RIT-SBC",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 104,
+        "name": "220ml",
+        "nameEn": "220ml",
+        "value": "220ml",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Biotherm Lait Corporel",
+    "nameEn": "Biotherm Body Milk",
+    "description": "Lait corporel anti-dess\u00E8chement avec extrait d\u0027algue thermale.",
+    "descriptionEn": "Anti-dryness body milk with thermal algae extract.",
+    "price": 25.90,
+    "promoPrice": 21.90,
+    "brand": "Biotherm",
+    "sku": "BIO-LC",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 105,
+        "name": "200ml",
+        "nameEn": "200ml",
+        "value": "200ml",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 106,
+        "name": "400ml",
+        "nameEn": "400ml",
+        "value": "400ml",
+        "priceAdjustment": 12,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "The Body Shop Moringa Body Butter",
+    "nameEn": "The Body Shop Moringa Body Butter",
+    "description": "Beurre corporel au moringa du commerce \u00E9quitable pour peau nourrie.",
+    "descriptionEn": "Moringa body butter from fair trade for nourished skin.",
+    "price": 22.00,
+    "brand": "The Body Shop",
+    "sku": "TBS-MBB",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 107,
+        "name": "200ml",
+        "nameEn": "200ml",
+        "value": "200ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Mixa Lait Corps Peaux S\u00E8ches",
+    "nameEn": "Mixa Body Lotion Dry Skin",
+    "description": "Lait corps nutritif intensif avec panth\u00E9nol et huile d\u0027onagre.",
+    "descriptionEn": "Intensive nourishing body lotion with panthenol and evening primrose oil.",
+    "price": 5.90,
+    "promoPrice": 4.50,
+    "brand": "Mixa",
+    "sku": "MIX-LCPS",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 108,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 90
+      },
+      {
+        "id": 109,
+        "name": "400ml",
+        "nameEn": "400ml",
+        "value": "400ml",
+        "priceAdjustment": 2,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Roger \u0026 Gallet Gel Douche Feuille de Figuier",
+    "nameEn": "Roger \u0026 Gallet Fig Leaf Shower Gel",
+    "description": "Gel douche frais et vivifiant \u00E0 la feuille de figuier.",
+    "descriptionEn": "Fresh and invigorating fig leaf shower gel.",
+    "price": 9.90,
+    "brand": "Roger \u0026 Gallet",
+    "sku": "RG-GDFF",
+    "stock": 50,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 110,
+        "name": "200ml",
+        "nameEn": "200ml",
+        "value": "200ml",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Fenty Beauty Pro Filt\u0027r Soft Matte",
+    "nameEn": "Fenty Beauty Pro Filt\u0027r Soft Matte",
+    "description": "Fond de teint longue tenue 50 teintes avec fini mat naturel.",
+    "descriptionEn": "Long-wear 50-shade foundation with natural matte finish.",
+    "price": 39.00,
+    "promoPrice": 33.00,
+    "brand": "Fenty Beauty",
+    "sku": "FEN-PF",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 111,
+        "name": "130 Clair",
+        "nameEn": "130 Light",
+        "value": "130",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 112,
+        "name": "240 Moyen",
+        "nameEn": "240 Medium",
+        "value": "240",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 113,
+        "name": "385 Fonc\u00E9",
+        "nameEn": "385 Dark",
+        "value": "385",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "NARS Sheer Glow Foundation",
+    "nameEn": "NARS Sheer Glow Foundation",
+    "description": "Fond de teint lumineux avec fini satin\u00E9 et formule enrichie.",
+    "descriptionEn": "Luminous foundation with satin finish and enriched formula.",
+    "price": 47.00,
+    "brand": "NARS",
+    "sku": "NAR-SGF",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 114,
+        "name": "Deauville",
+        "nameEn": "Deauville",
+        "value": "Deauville",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 115,
+        "name": "Barcelona",
+        "nameEn": "Barcelona",
+        "value": "Barcelona",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Maybelline Fit Me Matte\u002BPoreless",
+    "nameEn": "Maybelline Fit Me Matte\u002BPoreless",
+    "description": "Fond de teint matifiant anti-pores \u00E0 prix accessible.",
+    "descriptionEn": "Mattifying anti-pore foundation at an accessible price.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Maybelline",
+    "sku": "MAY-FMMP",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 116,
+        "name": "110 Porcelaine",
+        "nameEn": "110 Porcelain",
+        "value": "110",
+        "priceAdjustment": 0,
+        "stock": 80
+      },
+      {
+        "id": 117,
+        "name": "220 Natural Beige",
+        "nameEn": "220 Natural Beige",
+        "value": "220",
+        "priceAdjustment": 0,
+        "stock": 70
+      },
+      {
+        "id": 118,
+        "name": "330 Toffee",
+        "nameEn": "330 Toffee",
+        "value": "330",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Charlotte Tilbury Airbrush Flawless",
+    "nameEn": "Charlotte Tilbury Airbrush Flawless",
+    "description": "Fond de teint full cover longue tenue avec fini poudreux.",
+    "descriptionEn": "Full coverage long-wearing foundation with powdery finish.",
+    "price": 44.00,
+    "brand": "Charlotte Tilbury",
+    "sku": "CT-AF",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 119,
+        "name": "3 Neutral",
+        "nameEn": "3 Neutral",
+        "value": "3N",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 120,
+        "name": "6 Warm",
+        "nameEn": "6 Warm",
+        "value": "6W",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "L\u0027Or\u00E9al True Match Fond de Teint",
+    "nameEn": "L\u0027Oreal True Match Foundation",
+    "description": "Fond de teint soin avec acide hyaluronique et 98% d\u0027ingr\u00E9dients naturels.",
+    "descriptionEn": "Skincare foundation with hyaluronic acid and 98% natural ingredients.",
+    "price": 13.90,
+    "promoPrice": 10.90,
+    "brand": "L\u0027Or\u00E9al Paris",
+    "sku": "LOR-TM",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 121,
+        "name": "2.R Vanille Ros\u00E9",
+        "nameEn": "2.R Vanilla Rose",
+        "value": "2R",
+        "priceAdjustment": 0,
+        "stock": 75
+      },
+      {
+        "id": 122,
+        "name": "5.N Sable",
+        "nameEn": "5.N Sand",
+        "value": "5N",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "MAC Studio Fix Fluid SPF15",
+    "nameEn": "MAC Studio Fix Fluid SPF15",
+    "description": "Fond de teint fluide mat naturel avec SPF15 et 67 teintes.",
+    "descriptionEn": "Natural matte fluid foundation with SPF15 and 67 shades.",
+    "price": 38.00,
+    "brand": "MAC",
+    "sku": "MAC-SFF",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 123,
+        "name": "NC15",
+        "nameEn": "NC15",
+        "value": "NC15",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 124,
+        "name": "NC30",
+        "nameEn": "NC30",
+        "value": "NC30",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 125,
+        "name": "NC42",
+        "nameEn": "NC42",
+        "value": "NC42",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Dior Forever Foundation",
+    "nameEn": "Dior Forever Foundation",
+    "description": "Fond de teint haute perfection 24h avec soin floral et transfert z\u00E9ro.",
+    "descriptionEn": "24h high-perfection foundation with floral skincare and zero transfer.",
+    "price": 52.00,
+    "promoPrice": 45.00,
+    "brand": "Dior",
+    "sku": "DIO-DFF",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 126,
+        "name": "1N Neutre",
+        "nameEn": "1N Neutral",
+        "value": "1N",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 127,
+        "name": "3W Warm",
+        "nameEn": "3W Warm",
+        "value": "3W",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Tarte Shape Tape Concealer",
+    "nameEn": "Tarte Shape Tape Concealer",
+    "description": "Correcteur full cover best-seller avec applicateur sculptant.",
+    "descriptionEn": "Best-selling full coverage concealer with sculpting applicator.",
+    "price": 29.00,
+    "brand": "Tarte",
+    "sku": "TAR-STC",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 128,
+        "name": "Fair Light",
+        "nameEn": "Fair Light",
+        "value": "FairLight",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 129,
+        "name": "Medium",
+        "nameEn": "Medium",
+        "value": "Medium",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Hourglass Veil Translucent Powder",
+    "nameEn": "Hourglass Veil Translucent Powder",
+    "description": "Poudre fixatrice translucide avec fini flouteur et ultra-fine.",
+    "descriptionEn": "Translucent setting powder with blurring finish and ultra-fine texture.",
+    "price": 48.00,
+    "promoPrice": 40.00,
+    "brand": "Hourglass",
+    "sku": "HG-VTP",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 130,
+        "name": "Translucent",
+        "nameEn": "Translucent",
+        "value": "Translucent",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "NYX HD Finishing Powder",
+    "nameEn": "NYX HD Finishing Powder",
+    "description": "Poudre libre min\u00E9rale HD pour fini photographique impeccable.",
+    "descriptionEn": "HD mineral loose powder for flawless photographic finish.",
+    "price": 9.90,
+    "brand": "NYX",
+    "sku": "NYX-HDFP",
+    "stock": 65,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 131,
+        "name": "Translucide",
+        "nameEn": "Translucent",
+        "value": "Translucide",
+        "priceAdjustment": 0,
+        "stock": 65
+      },
+      {
+        "id": 132,
+        "name": "Banana",
+        "nameEn": "Banana",
+        "value": "Banana",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "K\u00E9rastase Elixir Ultime L\u0027Huile Originale",
+    "nameEn": "Kerastase Elixir Ultime L\u0027Huile Originale",
+    "description": "Huile capillaire sublimante aux 4 huiles pour tous types de cheveux.",
+    "descriptionEn": "Sublime hair oil with 4 oils for all hair types.",
+    "price": 42.00,
+    "promoPrice": 35.00,
+    "brand": "K\u00E9rastase",
+    "sku": "KER-EU",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 133,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Olaplex No.3 Hair Perfector",
+    "nameEn": "Olaplex No.3 Hair Perfector",
+    "description": "Soin r\u00E9parateur profond qui reconstruit les liaisons capillaires.",
+    "descriptionEn": "Deep repair treatment that rebuilds hair bonds.",
+    "price": 28.00,
+    "brand": "Olaplex",
+    "sku": "OLA-N3",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 134,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Garnier Fructis Hair Food Banane",
+    "nameEn": "Garnier Fructis Hair Food Banana",
+    "description": "Masque nourrissant 3-en-1 pour cheveux secs avec extrait de banane.",
+    "descriptionEn": "3-in-1 nourishing mask for dry hair with banana extract.",
+    "price": 5.90,
+    "promoPrice": 4.50,
+    "brand": "Garnier",
+    "sku": "GAR-HFB",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 135,
+        "name": "390ml",
+        "nameEn": "390ml",
+        "value": "390ml",
+        "priceAdjustment": 0,
+        "stock": 90
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Moroccanoil Original Treatment",
+    "nameEn": "Moroccanoil Original Treatment",
+    "description": "Huile d\u0027argan traitante pour cheveux brillants et soyeux.",
+    "descriptionEn": "Argan oil treatment for shiny and silky hair.",
+    "price": 35.90,
+    "brand": "Moroccanoil",
+    "sku": "MOR-OT",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 136,
+        "name": "25ml",
+        "nameEn": "25ml",
+        "value": "25ml",
+        "priceAdjustment": -15,
+        "stock": 35
+      },
+      {
+        "id": 137,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "L\u0027Or\u00E9al Professionnel S\u00E9rie Expert",
+    "nameEn": "L\u0027Oreal Professionnel Serie Expert",
+    "description": "Shampoing Golden Repair pour cheveux ab\u00EEm\u00E9s.",
+    "descriptionEn": "Golden Repair shampoo for damaged hair.",
+    "price": 16.90,
+    "promoPrice": 13.90,
+    "brand": "L\u0027Or\u00E9al Professionnel",
+    "sku": "LORP-SE",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 138,
+        "name": "300ml",
+        "nameEn": "300ml",
+        "value": "300ml",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 139,
+        "name": "500ml",
+        "nameEn": "500ml",
+        "value": "500ml",
+        "priceAdjustment": 6,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Ren\u00E9 Furterer Huile 5 Sens",
+    "nameEn": "Rene Furterer 5 Sens Oil",
+    "description": "Huile sublimatrice s\u00E8che pour corps et cheveux aux 5 huiles v\u00E9g\u00E9tales.",
+    "descriptionEn": "Beautifying dry oil for body and hair with 5 plant oils.",
+    "price": 22.90,
+    "brand": "Ren\u00E9 Furterer",
+    "sku": "RF-H5S",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 140,
+        "name": "100ml",
+        "nameEn": "100ml",
+        "value": "100ml",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Head \u0026 Shoulders Classic Clean",
+    "nameEn": "Head \u0026 Shoulders Classic Clean",
+    "description": "Shampooing antipelliculaire classique au zinc pyrithione.",
+    "descriptionEn": "Classic anti-dandruff shampoo with zinc pyrithione.",
+    "price": 4.90,
+    "promoPrice": 3.50,
+    "brand": "Head \u0026 Shoulders",
+    "sku": "HS-CC",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 141,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 100
+      },
+      {
+        "id": 142,
+        "name": "500ml",
+        "nameEn": "500ml",
+        "value": "500ml",
+        "priceAdjustment": 3,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "K\u00E9rastase Discipline Bain Fluidealiste",
+    "nameEn": "Kerastase Discipline Bain Fluidealiste",
+    "description": "Shampoing lissant antifrisottis \u00E0 la morpho-k\u00E9ratine.",
+    "descriptionEn": "Anti-frizz smoothing shampoo with Morpho-Keratin.",
+    "price": 29.00,
+    "brand": "K\u00E9rastase",
+    "sku": "KER-DBF",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 143,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Christophe Robin Masque Prickly Pear",
+    "nameEn": "Christophe Robin Prickly Pear Mask",
+    "description": "Masque capillaire r\u00E9g\u00E9n\u00E9rant \u00E0 l\u0027huile de figue de barbarie.",
+    "descriptionEn": "Regenerating hair mask with prickly pear seed oil.",
+    "price": 45.00,
+    "promoPrice": 38.00,
+    "brand": "Christophe Robin",
+    "sku": "CR-MPP",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 144,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "Aussie 3 Minute Miracle Moist",
+    "nameEn": "Aussie 3 Minute Miracle Moist",
+    "description": "Apr\u00E8s-shampoing intensif 3 minutes pour cheveux d\u00E9shydrat\u00E9s.",
+    "descriptionEn": "3-minute intensive conditioner for dehydrated hair.",
+    "price": 5.90,
+    "brand": "Aussie",
+    "sku": "AUS-3MM",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 145,
+        "name": "250ml",
+        "nameEn": "250ml",
+        "value": "250ml",
+        "priceAdjustment": 0,
+        "stock": 75
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Dior Coffret J\u0027adore",
+    "nameEn": "Dior J\u0027adore Gift Set",
+    "description": "Coffret EDP 50ml \u002B lait corps 75ml dans \u00E9crin Dior.",
+    "descriptionEn": "EDP 50ml \u002B body milk 75ml gift set in Dior case.",
+    "price": 105.00,
+    "promoPrice": 89.00,
+    "brand": "Dior",
+    "sku": "DIO-CJAD",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 146,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Chanel Coffret Coco Mademoiselle",
+    "nameEn": "Chanel Coco Mademoiselle Gift Set",
+    "description": "Coffret EDP 50ml \u002B cr\u00E8me corps 150ml en \u00E9dition limit\u00E9e.",
+    "descriptionEn": "EDP 50ml \u002B body cream 150ml limited edition gift set.",
+    "price": 125.00,
+    "brand": "Chanel",
+    "sku": "CHA-CCM",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 147,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "YSL Black Opium Coffret",
+    "nameEn": "YSL Black Opium Gift Set",
+    "description": "Coffret EDP 30ml \u002B lait corps 50ml \u002B trousse beaut\u00E9.",
+    "descriptionEn": "EDP 30ml \u002B body lotion 50ml \u002B beauty pouch gift set.",
+    "price": 79.00,
+    "promoPrice": 69.00,
+    "brand": "YSL",
+    "sku": "YSL-CBOP",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 148,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Lanc\u00F4me Coffret La Vie Est Belle",
+    "nameEn": "Lancome La Vie Est Belle Gift Set",
+    "description": "Coffret EDP 50ml \u002B lait 50ml \u002B mascara Hypn\u00F4se mini.",
+    "descriptionEn": "EDP 50ml \u002B body milk 50ml \u002B mini Hypnose mascara gift set.",
+    "price": 89.00,
+    "brand": "Lanc\u00F4me",
+    "sku": "LAN-CLVEB",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 149,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Sephora Calendrier de l\u0027Avent Beaut\u00E9",
+    "nameEn": "Sephora Beauty Advent Calendar",
+    "description": "Calendrier de l\u0027Avent 24 surprises beaut\u00E9 de grandes marques.",
+    "descriptionEn": "24-day beauty advent calendar with premium brand surprises.",
+    "price": 79.99,
+    "promoPrice": 59.99,
+    "brand": "Sephora",
+    "sku": "SEP-CAB",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 150,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Guerlain Coffret Aqua Allegoria",
+    "nameEn": "Guerlain Aqua Allegoria Gift Set",
+    "description": "Coffret d\u00E9couverte 5 miniatures Aqua Allegoria.",
+    "descriptionEn": "Discovery set of 5 Aqua Allegoria miniatures.",
+    "price": 55.00,
+    "brand": "Guerlain",
+    "sku": "GUE-CAA",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 151,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Armani Coffret Si Passione",
+    "nameEn": "Armani Si Passione Gift Set",
+    "description": "Coffret EDP 50ml \u002B gel douche 75ml \u002B lait corps 75ml.",
+    "descriptionEn": "EDP 50ml \u002B shower gel 75ml \u002B body lotion 75ml gift set.",
+    "price": 95.00,
+    "promoPrice": 82.00,
+    "brand": "Armani",
+    "sku": "ARM-CSP",
+    "stock": 16,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 152,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "L\u0027Occitane Coffret Mains",
+    "nameEn": "L\u0027Occitane Hand Cream Gift Set",
+    "description": "Coffret 6 cr\u00E8mes mains 30ml aux senteurs proven\u00E7ales.",
+    "descriptionEn": "6-piece 30ml hand cream gift set with Proven\u00E7al scents.",
+    "price": 35.00,
+    "brand": "L\u0027Occitane",
+    "sku": "LOC-CM",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 153,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Paco Rabanne Coffret 1 Million",
+    "nameEn": "Paco Rabanne 1 Million Gift Set",
+    "description": "Coffret EDT 100ml \u002B d\u00E9odorant 150ml \u002B voyage 10ml.",
+    "descriptionEn": "EDT 100ml \u002B deodorant 150ml \u002B travel spray 10ml gift set.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Paco Rabanne",
+    "sku": "PAC-C1M",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 154,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Rituals Coffret The Ritual of Sakura",
+    "nameEn": "Rituals The Ritual of Sakura Gift Set",
+    "description": "Coffret 4 pi\u00E8ces fleur de cerisier : gel douche, cr\u00E8me, gommage, bougie.",
+    "descriptionEn": "4-piece cherry blossom set: shower gel, cream, scrub, candle.",
+    "price": 29.90,
+    "brand": "Rituals",
+    "sku": "RIT-CRS",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 155,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "La Roche-Posay Anthelios UVMune 400 SPF50\u002B",
+    "nameEn": "La Roche-Posay Anthelios UVMune 400 SPF50\u002B",
+    "description": "Cr\u00E8me solaire visage tr\u00E8s haute protection avec Mexoryl 400.",
+    "descriptionEn": "Very high protection face sunscreen with Mexoryl 400.",
+    "price": 18.90,
+    "promoPrice": 15.90,
+    "brand": "La Roche-Posay",
+    "sku": "LRP-ANT",
+    "stock": 50,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 156,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Av\u00E8ne Solaire Fluide SPF50\u002B",
+    "nameEn": "Avene Sun Fluid SPF50\u002B",
+    "description": "Fluide solaire ultra-l\u00E9ger tr\u00E8s haute protection sans parfum.",
+    "descriptionEn": "Ultra-light very high protection sun fluid, fragrance-free.",
+    "price": 16.90,
+    "brand": "Av\u00E8ne",
+    "sku": "AVE-SFSPF50",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 157,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "Bioderma Photoderm MAX SPF50\u002B",
+    "nameEn": "Bioderma Photoderm MAX SPF50\u002B",
+    "description": "Cr\u00E8me solaire tr\u00E8s haute protection UVA/UVB avec texture invisible.",
+    "descriptionEn": "Very high UVA/UVB protection sunscreen with invisible texture.",
+    "price": 15.90,
+    "promoPrice": 12.90,
+    "brand": "Bioderma",
+    "sku": "BIO-PMAX",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 158,
+        "name": "40ml",
+        "nameEn": "40ml",
+        "value": "40ml",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Nuxe Sun Huile Bronzante SPF30",
+    "nameEn": "Nuxe Sun Tanning Oil SPF30",
+    "description": "Huile bronzante haute protection visage et corps.",
+    "descriptionEn": "High protection tanning oil for face and body.",
+    "price": 22.90,
+    "brand": "Nuxe",
+    "sku": "NUX-SHB",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 159,
+        "name": "150ml",
+        "nameEn": "150ml",
+        "value": "150ml",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Garnier Ambre Solaire Sensitive Expert\u002B SPF50\u002B",
+    "nameEn": "Garnier Ambre Solaire Sensitive Expert\u002B SPF50\u002B",
+    "description": "Brume s\u00E8che protectrice SPF50\u002B peaux sensibles.",
+    "descriptionEn": "Protective dry mist SPF50\u002B for sensitive skin.",
+    "price": 12.90,
+    "promoPrice": 9.90,
+    "brand": "Garnier",
+    "sku": "GAR-ASSE",
+    "stock": 65,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 160,
+        "name": "200ml",
+        "nameEn": "200ml",
+        "value": "200ml",
+        "priceAdjustment": 0,
+        "stock": 65
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Vichy Capital Soleil SPF50",
+    "nameEn": "Vichy Capital Soleil SPF50",
+    "description": "Lait solaire multi-protection corps SPF50 avec eau volcanique.",
+    "descriptionEn": "Multi-protection body sun milk SPF50 with volcanic water.",
+    "price": 17.90,
+    "brand": "Vichy",
+    "sku": "VIC-CSSPF50",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 161,
+        "name": "300ml",
+        "nameEn": "300ml",
+        "value": "300ml",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Lancaster Sun Beauty Satin Dry Oil SPF30",
+    "nameEn": "Lancaster Sun Beauty Satin Dry Oil SPF30",
+    "description": "Huile s\u00E8che satin\u00E9e bronzage sublime avec Full Light Technology.",
+    "descriptionEn": "Sublime tan satin dry oil with Full Light Technology.",
+    "price": 32.00,
+    "promoPrice": 27.00,
+    "brand": "Lancaster",
+    "sku": "LAN-SBSDO",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 162,
+        "name": "150ml",
+        "nameEn": "150ml",
+        "value": "150ml",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Hawaiian Tropic Silk Hydration SPF30",
+    "nameEn": "Hawaiian Tropic Silk Hydration SPF30",
+    "description": "Lotion solaire ultra-hydratante avec rubans de soie.",
+    "descriptionEn": "Ultra-moisturizing sun lotion with silk hydration ribbons.",
+    "price": 10.90,
+    "brand": "Hawaiian Tropic",
+    "sku": "HT-SHSPF30",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 163,
+        "name": "180ml",
+        "nameEn": "180ml",
+        "value": "180ml",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "St. Tropez Self Tan Classic Bronzing Mousse",
+    "nameEn": "St. Tropez Self Tan Classic Bronzing Mousse",
+    "description": "Mousse autobronzante pour un teint dor\u00E9 naturel en 4-8h.",
+    "descriptionEn": "Self-tanning mousse for a natural golden tan in 4-8h.",
+    "price": 32.00,
+    "promoPrice": 27.00,
+    "brand": "St. Tropez",
+    "sku": "STT-STCBM",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 164,
+        "name": "240ml",
+        "nameEn": "240ml",
+        "value": "240ml",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Institut Esthederm Bronz Repair Sunkissed SPF15",
+    "nameEn": "Institut Esthederm Bronz Repair Sunkissed SPF15",
+    "description": "Cr\u00E8me bronz repair teint\u00E9e pour peau prot\u00E9g\u00E9e et r\u00E9sistante au soleil.",
+    "descriptionEn": "Tinted bronz repair cream for protected and sun-resistant skin.",
+    "price": 42.00,
+    "brand": "Institut Esthederm",
+    "sku": "EST-BRSPF15",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 165,
+        "name": "50ml",
+        "nameEn": "50ml",
+        "value": "50ml",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  }
+]

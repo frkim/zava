@@ -1,0 +1,2659 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Pommes Gala Bio 1kg",
+    "nameEn": "Organic Gala Apples 1kg",
+    "description": "Pommes Gala croquantes issues de l\u0027agriculture biologique.",
+    "descriptionEn": "Crunchy organic Gala apples.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Vergers de France",
+    "sku": "VDF-GALA1K",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Bananes 1kg",
+    "nameEn": "Bananas 1kg",
+    "description": "Bananes jaunes m\u00FBres \u00E0 point, origine C\u00F4te d\u0027Ivoire.",
+    "descriptionEn": "Ripe yellow bananas from Ivory Coast.",
+    "price": 1.89,
+    "brand": "Cavendish",
+    "sku": "CAV-BAN1K",
+    "stock": 150,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 2,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 150
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Tomates grappe 1kg",
+    "nameEn": "Vine Tomatoes 1kg",
+    "description": "Tomates rouges sur grappe cultiv\u00E9es sous serre en France.",
+    "descriptionEn": "Red vine tomatoes greenhouse-grown in France.",
+    "price": 2.99,
+    "promoPrice": 2.49,
+    "brand": "Sav\u00E9ol",
+    "sku": "SAV-TGRA1K",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 3,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Salade laitue iceberg",
+    "nameEn": "Iceberg Lettuce",
+    "description": "Laitue iceberg croquante fra\u00EEche du jour.",
+    "descriptionEn": "Fresh crispy iceberg lettuce, daily harvest.",
+    "price": 1.29,
+    "brand": "Florette",
+    "sku": "FLO-ICE",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 4,
+        "name": "Pi\u00E8ce",
+        "nameEn": "Unit",
+        "value": "Pi\u00E8ce",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Avocat Hass m\u00FBr lot de 2",
+    "nameEn": "Ripe Hass Avocado 2-Pack",
+    "description": "Avocats Hass m\u00FBrs \u00E0 point, pr\u00EAts \u00E0 consommer.",
+    "descriptionEn": "Ready-to-eat ripe Hass avocados.",
+    "price": 2.99,
+    "promoPrice": 2.49,
+    "brand": "Peru",
+    "sku": "PER-AVO2",
+    "stock": 70,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 5,
+        "name": "Lot de 2",
+        "nameEn": "2-Pack",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Carottes France 1kg",
+    "nameEn": "French Carrots 1kg",
+    "description": "Carottes lav\u00E9es de cat\u00E9gorie I, origine France.",
+    "descriptionEn": "Category I washed carrots, French origin.",
+    "price": 1.49,
+    "brand": "Primeurs France",
+    "sku": "PRI-CAR1K",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 6,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 90
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "Fraises Gariguette barquette 250g",
+    "nameEn": "Gariguette Strawberries 250g",
+    "description": "Fraises fran\u00E7aises parfum\u00E9es de vari\u00E9t\u00E9 Gariguette.",
+    "descriptionEn": "Fragrant French Gariguette strawberries.",
+    "price": 3.99,
+    "brand": "France",
+    "sku": "FRA-GARIG",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 7,
+        "name": "250g",
+        "nameEn": "250g",
+        "value": "250g",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Pommes de terre Agata 2.5kg",
+    "nameEn": "Agata Potatoes 2.5kg",
+    "description": "Pommes de terre chair ferme id\u00E9ales pour rissol\u00E9es.",
+    "descriptionEn": "Firm-flesh potatoes ideal for saut\u00E9ing.",
+    "price": 2.99,
+    "promoPrice": 2.49,
+    "brand": "La Ferme France",
+    "sku": "LFF-PDT25",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 8,
+        "name": "2.5kg",
+        "nameEn": "2.5kg",
+        "value": "2.5kg",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Citrons jaunes Bio lot de 4",
+    "nameEn": "Organic Yellow Lemons 4-Pack",
+    "description": "Citrons biologiques non trait\u00E9s apr\u00E8s r\u00E9colte.",
+    "descriptionEn": "Organic lemons untreated after harvest.",
+    "price": 2.49,
+    "brand": "Bio Provence",
+    "sku": "BIO-CIT4",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 9,
+        "name": "Lot de 4",
+        "nameEn": "4-Pack",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Champignons de Paris 500g",
+    "nameEn": "Button Mushrooms 500g",
+    "description": "Champignons blancs frais de culture fran\u00E7aise.",
+    "descriptionEn": "Fresh white mushrooms from French cultivation.",
+    "price": 1.99,
+    "promoPrice": 1.59,
+    "brand": "Bonduelle",
+    "sku": "BON-CHAMP",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 10,
+        "name": "500g",
+        "nameEn": "500g",
+        "value": "500g",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Lait demi-\u00E9cr\u00E9m\u00E9 Bio 1L",
+    "nameEn": "Organic Semi-Skimmed Milk 1L",
+    "description": "Lait demi-\u00E9cr\u00E9m\u00E9 UHT biologique fran\u00E7ais.",
+    "descriptionEn": "French organic UHT semi-skimmed milk.",
+    "price": 1.29,
+    "brand": "Lactel Bio",
+    "sku": "LAC-BIO1L",
+    "stock": 120,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 11,
+        "name": "1L",
+        "nameEn": "1L",
+        "value": "1L",
+        "priceAdjustment": 0,
+        "stock": 120
+      },
+      {
+        "id": 12,
+        "name": "Lot de 6",
+        "nameEn": "6-Pack",
+        "value": "x6",
+        "priceAdjustment": 5,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Yaourts nature Danone x12",
+    "nameEn": "Danone Plain Yogurt 12-Pack",
+    "description": "Yaourts nature au lait entier, texture onctueuse.",
+    "descriptionEn": "Whole milk plain yogurts, smooth texture.",
+    "price": 3.29,
+    "promoPrice": 2.79,
+    "brand": "Danone",
+    "sku": "DAN-NAT12",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 13,
+        "name": "x12",
+        "nameEn": "x12",
+        "value": "x12",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Camembert Pr\u00E9sident",
+    "nameEn": "President Camembert",
+    "description": "Camembert au lait pasteuris\u00E9 moul\u00E9 \u00E0 la louche.",
+    "descriptionEn": "Pasteurized milk Camembert, ladle-moulded.",
+    "price": 2.59,
+    "brand": "Pr\u00E9sident",
+    "sku": "PRE-CAME",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 14,
+        "name": "250g",
+        "nameEn": "250g",
+        "value": "250g",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Comt\u00E9 AOP 12 mois 200g",
+    "nameEn": "AOP Comte 12 Months 200g",
+    "description": "Comt\u00E9 affin\u00E9 12 mois au lait cru du Jura.",
+    "descriptionEn": "12-month aged Comt\u00E9 from Jura raw milk.",
+    "price": 5.99,
+    "promoPrice": 4.99,
+    "brand": "Juraflore",
+    "sku": "JUR-COM12",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 15,
+        "name": "200g",
+        "nameEn": "200g",
+        "value": "200g",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "Beurre doux Pr\u00E9sident 250g",
+    "nameEn": "President Unsalted Butter 250g",
+    "description": "Beurre extra-fin doux gastronomique.",
+    "descriptionEn": "Extra-fine unsalted gourmet butter.",
+    "price": 2.29,
+    "brand": "Pr\u00E9sident",
+    "sku": "PRE-BEUR",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 16,
+        "name": "250g",
+        "nameEn": "250g",
+        "value": "250g",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Cr\u00E8me fra\u00EEche \u00E9paisse 30cl",
+    "nameEn": "Thick Cream 30cl",
+    "description": "Cr\u00E8me fra\u00EEche \u00E9paisse enti\u00E8re 30% MG.",
+    "descriptionEn": "Whole thick cream 30% fat.",
+    "price": 1.89,
+    "promoPrice": 1.49,
+    "brand": "Elle \u0026 Vire",
+    "sku": "EV-CREME30",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 17,
+        "name": "30cl",
+        "nameEn": "30cl",
+        "value": "30cl",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Mozzarella Di Bufala 125g",
+    "nameEn": "Buffalo Mozzarella 125g",
+    "description": "Mozzarella au lait de bufflonne AOP Campanie.",
+    "descriptionEn": "AOP Campania buffalo milk mozzarella.",
+    "price": 3.49,
+    "brand": "Galbani",
+    "sku": "GAL-MDBUF",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 18,
+        "name": "125g",
+        "nameEn": "125g",
+        "value": "125g",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Fromage r\u00E2p\u00E9 emmental 200g",
+    "nameEn": "Grated Emmental 200g",
+    "description": "Emmental fran\u00E7ais r\u00E2p\u00E9 pour gratins et plats chauds.",
+    "descriptionEn": "French grated emmental for gratins and hot dishes.",
+    "price": 1.99,
+    "promoPrice": 1.59,
+    "brand": "Entremont",
+    "sku": "ENT-RAPE200",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 19,
+        "name": "200g",
+        "nameEn": "200g",
+        "value": "200g",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "Skyr nature Siggi\u0027s 450g",
+    "nameEn": "Siggi\u0027s Plain Skyr 450g",
+    "description": "Skyr islandais riche en prot\u00E9ines, 0% MG.",
+    "descriptionEn": "Icelandic skyr rich in protein, 0% fat.",
+    "price": 3.99,
+    "brand": "Siggi\u0027s",
+    "sku": "SIG-SKYR",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 20,
+        "name": "450g",
+        "nameEn": "450g",
+        "value": "450g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Petit suisse Gervais x6",
+    "nameEn": "Gervais Petit Suisse 6-Pack",
+    "description": "Petits suisses au lait entier nature pour enfants.",
+    "descriptionEn": "Whole milk plain petit suisse for children.",
+    "price": 1.99,
+    "promoPrice": 1.69,
+    "brand": "Gervais",
+    "sku": "GER-PS6",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 21,
+        "name": "x6",
+        "nameEn": "x6",
+        "value": "x6",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Baguette tradition fran\u00E7aise",
+    "nameEn": "Traditional French Baguette",
+    "description": "Baguette de tradition fran\u00E7aise sur levain, cro\u00FBte dor\u00E9e.",
+    "descriptionEn": "Traditional French sourdough baguette, golden crust.",
+    "price": 1.29,
+    "brand": "Artisan",
+    "sku": "ART-BAG",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 22,
+        "name": "Pi\u00E8ce",
+        "nameEn": "Unit",
+        "value": "Pi\u00E8ce",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Croissants pur beurre x6",
+    "nameEn": "All-Butter Croissants 6-Pack",
+    "description": "Croissants feuillet\u00E9s au beurre AOP Charentes-Poitou.",
+    "descriptionEn": "Flaky croissants with AOP Charentes-Poitou butter.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "La Fourn\u00E9e Dor\u00E9e",
+    "sku": "LFD-CROIS6",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 23,
+        "name": "x6",
+        "nameEn": "x6",
+        "value": "x6",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Pain de mie complet 500g",
+    "nameEn": "Whole Wheat Sliced Bread 500g",
+    "description": "Pain de mie moelleux aux c\u00E9r\u00E9ales compl\u00E8tes.",
+    "descriptionEn": "Soft whole grain sliced bread.",
+    "price": 2.29,
+    "brand": "Harry\u0027s",
+    "sku": "HAR-PDM500",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 24,
+        "name": "500g",
+        "nameEn": "500g",
+        "value": "500g",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Pains au chocolat x8",
+    "nameEn": "Chocolate Croissants 8-Pack",
+    "description": "Pains au chocolat pur beurre avec chocolat noir.",
+    "descriptionEn": "All-butter chocolate croissants with dark chocolate.",
+    "price": 3.99,
+    "promoPrice": 3.49,
+    "brand": "La Fourn\u00E9e Dor\u00E9e",
+    "sku": "LFD-PAC8",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 25,
+        "name": "x8",
+        "nameEn": "x8",
+        "value": "x8",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Brioche tranch\u00E9e 400g",
+    "nameEn": "Sliced Brioche 400g",
+    "description": "Brioche moelleuse tranch\u00E9e au beurre frais.",
+    "descriptionEn": "Soft sliced brioche with fresh butter.",
+    "price": 2.99,
+    "brand": "Pasquier",
+    "sku": "PAS-BRIO",
+    "stock": 55,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 26,
+        "name": "400g",
+        "nameEn": "400g",
+        "value": "400g",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Tarte aux pommes 6 parts",
+    "nameEn": "Apple Tart 6 Portions",
+    "description": "Tarte aux pommes p\u00E2te feuillet\u00E9e avec compote.",
+    "descriptionEn": "Puff pastry apple tart with compote.",
+    "price": 5.99,
+    "promoPrice": 4.99,
+    "brand": "Marie",
+    "sku": "MAR-TAP6",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 27,
+        "name": "6 parts",
+        "nameEn": "6 portions",
+        "value": "6P",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "Wraps nature lot de 6",
+    "nameEn": "Plain Wraps 6-Pack",
+    "description": "Galettes souples de bl\u00E9 pour wraps et fajitas.",
+    "descriptionEn": "Soft wheat tortillas for wraps and fajitas.",
+    "price": 2.49,
+    "brand": "Old El Paso",
+    "sku": "OEP-WRAP6",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 28,
+        "name": "x6",
+        "nameEn": "x6",
+        "value": "x6",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Cookies p\u00E9pites chocolat x8",
+    "nameEn": "Chocolate Chip Cookies 8-Pack",
+    "description": "Cookies moelleux aux grosses p\u00E9pites de chocolat.",
+    "descriptionEn": "Soft cookies with large chocolate chips.",
+    "price": 2.79,
+    "promoPrice": 2.29,
+    "brand": "Michel et Augustin",
+    "sku": "MEA-COOK8",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 29,
+        "name": "x8",
+        "nameEn": "x8",
+        "value": "x8",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Cr\u00EApes fra\u00EEches x12",
+    "nameEn": "Fresh Cr\u00EApes 12-Pack",
+    "description": "Cr\u00EApes de froment extra-fines pr\u00EAtes \u00E0 garnir.",
+    "descriptionEn": "Extra-thin wheat cr\u00EApes ready to fill.",
+    "price": 2.99,
+    "brand": "Whaou!",
+    "sku": "WHA-CREP12",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 30,
+        "name": "x12",
+        "nameEn": "x12",
+        "value": "x12",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Galette des rois frangipane",
+    "nameEn": "Frangipane King Cake",
+    "description": "Galette feuillet\u00E9e \u00E0 la cr\u00E8me d\u0027amande avec f\u00E8ve.",
+    "descriptionEn": "Puff pastry cake with almond cream and charm.",
+    "price": 12.90,
+    "brand": "Artisan",
+    "sku": "ART-GALDR",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 31,
+        "name": "6 parts",
+        "nameEn": "6 portions",
+        "value": "6P",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Steak hach\u00E9 5% MG x4",
+    "nameEn": "Lean Ground Beef Patties 5% Fat 4-Pack",
+    "description": "Steaks hach\u00E9s pur b\u0153uf fran\u00E7ais 5% mati\u00E8re grasse.",
+    "descriptionEn": "French pure beef patties 5% fat.",
+    "price": 5.99,
+    "promoPrice": 4.99,
+    "brand": "Charal",
+    "sku": "CHA-SH5X4",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 32,
+        "name": "x4",
+        "nameEn": "x4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Filets de poulet fermier x2",
+    "nameEn": "Free-Range Chicken Breast x2",
+    "description": "Filets de poulet fermier Label Rouge \u00E9lev\u00E9 en plein air.",
+    "descriptionEn": "Label Rouge free-range outdoor chicken breasts.",
+    "price": 7.99,
+    "brand": "Lou\u00E9",
+    "sku": "LOU-FILET2",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 33,
+        "name": "x2 (~400g)",
+        "nameEn": "x2 (~400g)",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Jambon blanc Le Bon Paris x6",
+    "nameEn": "Le Bon Paris Ham 6 Slices",
+    "description": "Jambon cuit sup\u00E9rieur sans couenne ni cartilage.",
+    "descriptionEn": "Superior cooked ham without rind or cartilage.",
+    "price": 3.99,
+    "promoPrice": 3.29,
+    "brand": "Herta",
+    "sku": "HER-JBP6",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 34,
+        "name": "x6 tranches",
+        "nameEn": "x6 slices",
+        "value": "x6",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Saucisses de Toulouse x4",
+    "nameEn": "Toulouse Sausages 4-Pack",
+    "description": "Saucisses de porc \u00E0 la recette traditionnelle.",
+    "descriptionEn": "Pork sausages with traditional recipe.",
+    "price": 4.99,
+    "brand": "Bigard",
+    "sku": "BIG-STOUL4",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 35,
+        "name": "x4",
+        "nameEn": "x4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "R\u00F4ti de b\u0153uf 1kg",
+    "nameEn": "Beef Roast 1kg",
+    "description": "R\u00F4ti de b\u0153uf fran\u00E7ais cat\u00E9gorie race \u00E0 viande.",
+    "descriptionEn": "French beef roast, meat breed category.",
+    "price": 16.90,
+    "promoPrice": 14.90,
+    "brand": "Charal",
+    "sku": "CHA-ROTI1K",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 36,
+        "name": "~1kg",
+        "nameEn": "~1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "Lardons fum\u00E9s 150g x2",
+    "nameEn": "Smoked Bacon Lardons 150g 2-Pack",
+    "description": "Lardons fum\u00E9s au bois de h\u00EAtre, sans antibiotiques.",
+    "descriptionEn": "Beechwood-smoked bacon lardons, antibiotic-free.",
+    "price": 2.99,
+    "brand": "Herta",
+    "sku": "HER-LARD2",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 37,
+        "name": "2x150g",
+        "nameEn": "2x150g",
+        "value": "2x150g",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Merguez x6",
+    "nameEn": "Merguez Sausages 6-Pack",
+    "description": "Merguez b\u0153uf et agneau au piment doux.",
+    "descriptionEn": "Beef and lamb merguez with mild chili.",
+    "price": 4.49,
+    "promoPrice": 3.79,
+    "brand": "Socopa",
+    "sku": "SOC-MERG6",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 38,
+        "name": "x6",
+        "nameEn": "x6",
+        "value": "x6",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Coppa italienne 100g",
+    "nameEn": "Italian Coppa 100g",
+    "description": "Coppa s\u00E9ch\u00E9e et affin\u00E9e \u00E0 l\u0027italienne.",
+    "descriptionEn": "Italian-style dried and aged coppa.",
+    "price": 3.49,
+    "brand": "Casa Azzurra",
+    "sku": "CAZ-COPPA",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 39,
+        "name": "100g",
+        "nameEn": "100g",
+        "value": "100g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Escalopes de dinde x2",
+    "nameEn": "Turkey Cutlets 2-Pack",
+    "description": "Escalopes de dinde fran\u00E7aise maigres.",
+    "descriptionEn": "Lean French turkey cutlets.",
+    "price": 5.49,
+    "promoPrice": 4.79,
+    "brand": "Le Gaulois",
+    "sku": "LGA-ESDX2",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 40,
+        "name": "x2 (~300g)",
+        "nameEn": "x2 (~300g)",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "P\u00E2t\u00E9 de campagne 200g",
+    "nameEn": "Country P\u00E2t\u00E9 200g",
+    "description": "P\u00E2t\u00E9 de campagne breton au poivre vert.",
+    "descriptionEn": "Breton country p\u00E2t\u00E9 with green pepper.",
+    "price": 2.99,
+    "brand": "H\u00E9naff",
+    "sku": "HEN-PATC",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 41,
+        "name": "200g",
+        "nameEn": "200g",
+        "value": "200g",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "Filets de saumon frais x2",
+    "nameEn": "Fresh Salmon Fillets x2",
+    "description": "Filets de saumon Atlantique frais, \u00E9levage Norv\u00E8ge Label Rouge.",
+    "descriptionEn": "Fresh Atlantic salmon fillets, Label Rouge Norwegian farming.",
+    "price": 9.99,
+    "promoPrice": 8.49,
+    "brand": "Labeyrie",
+    "sku": "LAB-SAUM2",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 42,
+        "name": "x2 (~300g)",
+        "nameEn": "x2 (~300g)",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "Crevettes roses cuites 300g",
+    "nameEn": "Cooked Pink Shrimps 300g",
+    "description": "Crevettes roses d\u00E9cortiqu\u00E9es cuites pr\u00EAtes \u00E0 d\u00E9guster.",
+    "descriptionEn": "Peeled cooked pink shrimps ready to eat.",
+    "price": 6.99,
+    "brand": "Delpierre",
+    "sku": "DEL-CREV300",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 43,
+        "name": "300g",
+        "nameEn": "300g",
+        "value": "300g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Dos de cabillaud frais x2",
+    "nameEn": "Fresh Cod Loin x2",
+    "description": "Dos de cabillaud p\u00EAch\u00E9 en Atlantique Nord-Est.",
+    "descriptionEn": "Cod loin caught in North-East Atlantic.",
+    "price": 8.99,
+    "promoPrice": 7.49,
+    "brand": "P\u00EAche Oc\u00E9an",
+    "sku": "PO-CAB2",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 44,
+        "name": "x2 (~350g)",
+        "nameEn": "x2 (~350g)",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Saumon fum\u00E9 Labeyrie 4 tranches",
+    "nameEn": "Labeyrie Smoked Salmon 4 Slices",
+    "description": "Saumon fum\u00E9 au bois de h\u00EAtre, tranch\u00E9 main.",
+    "descriptionEn": "Beechwood-smoked salmon, hand-sliced.",
+    "price": 7.49,
+    "brand": "Labeyrie",
+    "sku": "LAB-SFUME4",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 45,
+        "name": "4 tranches",
+        "nameEn": "4 slices",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Moules de bouchot AOP 1kg",
+    "nameEn": "AOP Bouchot Mussels 1kg",
+    "description": "Moules de bouchot de la Baie du Mont-Saint-Michel.",
+    "descriptionEn": "Bouchot mussels from Mont-Saint-Michel Bay.",
+    "price": 4.99,
+    "promoPrice": 3.99,
+    "brand": "Le Vivier",
+    "sku": "LV-MOULE1K",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 46,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Thon albacore steak x2",
+    "nameEn": "Albacore Tuna Steak x2",
+    "description": "Steaks de thon frais p\u00EAche responsable MSC.",
+    "descriptionEn": "Fresh MSC-certified responsibly fished tuna steaks.",
+    "price": 10.99,
+    "brand": "P\u00EAche Oc\u00E9an",
+    "sku": "PO-THON2",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 47,
+        "name": "x2 (~280g)",
+        "nameEn": "x2 (~280g)",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Hu\u00EEtres creuses n\u00B03 douzaine",
+    "nameEn": "No.3 Cupped Oysters Dozen",
+    "description": "Hu\u00EEtres creuses de Marennes-Ol\u00E9ron fine de claire.",
+    "descriptionEn": "Marennes-Ol\u00E9ron fine de claire cupped oysters.",
+    "price": 12.90,
+    "brand": "Gillardeau",
+    "sku": "GIL-HUIT12",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 48,
+        "name": "Douzaine",
+        "nameEn": "Dozen",
+        "value": "x12",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Filets de truite fum\u00E9e 120g",
+    "nameEn": "Smoked Trout Fillets 120g",
+    "description": "Filets de truite fum\u00E9e de source fran\u00E7aise.",
+    "descriptionEn": "French spring water smoked trout fillets.",
+    "price": 4.99,
+    "promoPrice": 3.99,
+    "brand": "Ovive",
+    "sku": "OVI-TRUFU",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 49,
+        "name": "120g",
+        "nameEn": "120g",
+        "value": "120g",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Plateau sushi 14 pi\u00E8ces",
+    "nameEn": "Sushi Platter 14 Pieces",
+    "description": "Assortiment sushi et maki : saumon, thon, crevette.",
+    "descriptionEn": "Sushi and maki assortment: salmon, tuna, shrimp.",
+    "price": 10.99,
+    "brand": "Sushi Shop",
+    "sku": "SS-PLAT14",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 50,
+        "name": "14 pi\u00E8ces",
+        "nameEn": "14 pieces",
+        "value": "14P",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Tarama artisanal 150g",
+    "nameEn": "Artisanal Taramasalata 150g",
+    "description": "Tarama fait maison aux \u0153ufs de cabillaud fum\u00E9s.",
+    "descriptionEn": "Homemade tarama with smoked cod roe.",
+    "price": 3.99,
+    "promoPrice": 3.29,
+    "brand": "Blini",
+    "sku": "BLI-TARA150",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 51,
+        "name": "150g",
+        "nameEn": "150g",
+        "value": "150g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "P\u00E2tes Barilla Spaghetti 500g",
+    "nameEn": "Barilla Spaghetti 500g",
+    "description": "Spaghetti n\u00B05 de bl\u00E9 dur, cuisson 8 minutes.",
+    "descriptionEn": "No.5 durum wheat spaghetti, 8-minute cooking.",
+    "price": 1.29,
+    "promoPrice": 0.99,
+    "brand": "Barilla",
+    "sku": "BAR-SPAG500",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 52,
+        "name": "500g",
+        "nameEn": "500g",
+        "value": "500g",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Riz basmati Taureau Ail\u00E9 1kg",
+    "nameEn": "Taureau Aile Basmati Rice 1kg",
+    "description": "Riz basmati long grain parfum\u00E9.",
+    "descriptionEn": "Fragrant long grain basmati rice.",
+    "price": 2.69,
+    "brand": "Taureau Ail\u00E9",
+    "sku": "TA-BAS1K",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 53,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Sauce tomate Mutti Passata 700ml",
+    "nameEn": "Mutti Passata Tomato Sauce 700ml",
+    "description": "Pur\u00E9e de tomates 100% italiennes.",
+    "descriptionEn": "100% Italian tomato pur\u00E9e.",
+    "price": 2.49,
+    "promoPrice": 1.99,
+    "brand": "Mutti",
+    "sku": "MUT-PASS700",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 54,
+        "name": "700ml",
+        "nameEn": "700ml",
+        "value": "700ml",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Huile d\u0027olive extra vierge Puget 75cl",
+    "nameEn": "Puget Extra Virgin Olive Oil 75cl",
+    "description": "Huile d\u0027olive vierge extra de premi\u00E8re pression \u00E0 froid.",
+    "descriptionEn": "First cold-pressed extra virgin olive oil.",
+    "price": 6.99,
+    "brand": "Puget",
+    "sku": "PUG-HVEX75",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 55,
+        "name": "75cl",
+        "nameEn": "75cl",
+        "value": "75cl",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "Lentilles vertes du Puy AOP 500g",
+    "nameEn": "AOP Green Lentils du Puy 500g",
+    "description": "Lentilles vertes AOP \u00E0 la peau fine et texture fondante.",
+    "descriptionEn": "AOP green lentils with thin skin and melting texture.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Sabarot",
+    "sku": "SAB-LENT500",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 56,
+        "name": "500g",
+        "nameEn": "500g",
+        "value": "500g",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Thon en bo\u00EEte au naturel 3x80g",
+    "nameEn": "Natural Canned Tuna 3x80g",
+    "description": "Thon albacore au naturel p\u00EAche responsable.",
+    "descriptionEn": "Responsibly fished natural albacore tuna.",
+    "price": 3.99,
+    "brand": "Petit Navire",
+    "sku": "PN-THON380",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 57,
+        "name": "3x80g",
+        "nameEn": "3x80g",
+        "value": "3x80g",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Moutarde de Dijon 350g",
+    "nameEn": "Dijon Mustard 350g",
+    "description": "Moutarde forte de Dijon \u00E0 l\u0027ancienne.",
+    "descriptionEn": "Strong old-fashioned Dijon mustard.",
+    "price": 1.99,
+    "promoPrice": 1.49,
+    "brand": "Maille",
+    "sku": "MAI-MOUST",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 58,
+        "name": "350g",
+        "nameEn": "350g",
+        "value": "350g",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "Sel de Gu\u00E9rande gros 1kg",
+    "nameEn": "Guerande Coarse Salt 1kg",
+    "description": "Gros sel marin naturel de Gu\u00E9rande.",
+    "descriptionEn": "Natural coarse sea salt from Gu\u00E9rande.",
+    "price": 2.29,
+    "brand": "Le Gu\u00E9randais",
+    "sku": "LGU-SEL1K",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 59,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Vinaigre balsamique de Mod\u00E8ne 50cl",
+    "nameEn": "Balsamic Vinegar of Modena 50cl",
+    "description": "Vinaigre balsamique IGP de Mod\u00E8ne vieilli en f\u00FBts.",
+    "descriptionEn": "IGP balsamic vinegar of Modena aged in barrels.",
+    "price": 3.99,
+    "promoPrice": 3.29,
+    "brand": "Mazzetti",
+    "sku": "MAZ-VIN50",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 60,
+        "name": "50cl",
+        "nameEn": "50cl",
+        "value": "50cl",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Pesto alla Genovese Barilla 190g",
+    "nameEn": "Barilla Genovese Pesto 190g",
+    "description": "Pesto basilic genovese au parmesan et pignons.",
+    "descriptionEn": "Genovese basil pesto with parmesan and pine nuts.",
+    "price": 2.49,
+    "brand": "Barilla",
+    "sku": "BAR-PEST190",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 61,
+        "name": "190g",
+        "nameEn": "190g",
+        "value": "190g",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Nutella 750g",
+    "nameEn": "Nutella 750g",
+    "description": "P\u00E2te \u00E0 tartiner aux noisettes et au cacao.",
+    "descriptionEn": "Hazelnut and cocoa spread.",
+    "price": 4.99,
+    "promoPrice": 3.99,
+    "brand": "Ferrero",
+    "sku": "FER-NUT750",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 62,
+        "name": "750g",
+        "nameEn": "750g",
+        "value": "750g",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Tablette chocolat noir 70% Lindt 100g",
+    "nameEn": "Lindt 70% Dark Chocolate Bar 100g",
+    "description": "Chocolat noir extra-fin 70% cacao Lindt Excellence.",
+    "descriptionEn": "Extra-fine 70% cocoa dark chocolate Lindt Excellence.",
+    "price": 2.99,
+    "brand": "Lindt",
+    "sku": "LIN-N70100",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 63,
+        "name": "100g",
+        "nameEn": "100g",
+        "value": "100g",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "C\u00E9r\u00E9ales Lion Nestl\u00E9 480g",
+    "nameEn": "Nestle Lion Cereals 480g",
+    "description": "C\u00E9r\u00E9ales caramel et chocolat croustillantes.",
+    "descriptionEn": "Crunchy caramel and chocolate cereals.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Nestl\u00E9",
+    "sku": "NES-LION480",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 64,
+        "name": "480g",
+        "nameEn": "480g",
+        "value": "480g",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Confiture fraises Bonne Maman 370g",
+    "nameEn": "Bonne Maman Strawberry Jam 370g",
+    "description": "Confiture extra de fraises avec morceaux de fruits.",
+    "descriptionEn": "Extra strawberry jam with fruit pieces.",
+    "price": 2.99,
+    "brand": "Bonne Maman",
+    "sku": "BM-CF370",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 65,
+        "name": "370g",
+        "nameEn": "370g",
+        "value": "370g",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Biscuits Petit Beurre LU x36",
+    "nameEn": "LU Petit Beurre Biscuits x36",
+    "description": "Biscuits sabl\u00E9s au beurre, recette traditionnelle.",
+    "descriptionEn": "Traditional recipe butter shortbread biscuits.",
+    "price": 1.99,
+    "promoPrice": 1.49,
+    "brand": "LU",
+    "sku": "LU-PB36",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 66,
+        "name": "x36",
+        "nameEn": "x36",
+        "value": "x36",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "Miel de fleurs Bio 375g",
+    "nameEn": "Organic Flower Honey 375g",
+    "description": "Miel multi-fleurs biologique fran\u00E7ais.",
+    "descriptionEn": "French organic multi-flower honey.",
+    "price": 5.99,
+    "brand": "Lune de Miel",
+    "sku": "LDM-BIO375",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 67,
+        "name": "375g",
+        "nameEn": "375g",
+        "value": "375g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Galettes de riz complet Bio x15",
+    "nameEn": "Organic Brown Rice Cakes x15",
+    "description": "Galettes de riz souffl\u00E9 complet l\u00E9g\u00E8res et croustillantes.",
+    "descriptionEn": "Light and crispy puffed brown rice cakes.",
+    "price": 1.79,
+    "promoPrice": 1.29,
+    "brand": "Bjorg",
+    "sku": "BJO-GALRIZ",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 68,
+        "name": "x15",
+        "nameEn": "x15",
+        "value": "x15",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Madeleines Saint-Michel x12",
+    "nameEn": "Saint-Michel Madeleines x12",
+    "description": "Madeleines moelleuses au beurre frais, recette originale.",
+    "descriptionEn": "Soft fresh butter madeleines, original recipe.",
+    "price": 2.49,
+    "brand": "Saint-Michel",
+    "sku": "SM-MAD12",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 69,
+        "name": "x12",
+        "nameEn": "x12",
+        "value": "x12",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "P\u00E2te \u00E0 tartiner noisette maison 200g",
+    "nameEn": "Homemade Hazelnut Spread 200g",
+    "description": "P\u00E2te \u00E0 tartiner artisanale 55% noisettes du Pi\u00E9mont.",
+    "descriptionEn": "Artisanal spread with 55% Piedmont hazelnuts.",
+    "price": 6.99,
+    "promoPrice": 5.99,
+    "brand": "Nocciolata",
+    "sku": "NOC-PAT200",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 70,
+        "name": "200g",
+        "nameEn": "200g",
+        "value": "200g",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Compote pomme-banane gourde x4",
+    "nameEn": "Apple-Banana Pouch Compote x4",
+    "description": "Compotes sans sucres ajout\u00E9s en gourdes pour enfants.",
+    "descriptionEn": "No added sugar pouch compotes for kids.",
+    "price": 2.49,
+    "brand": "Pom\u0027Potes",
+    "sku": "POM-GOUR4",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 71,
+        "name": "x4",
+        "nameEn": "x4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Eau min\u00E9rale Evian 6x1.5L",
+    "nameEn": "Evian Mineral Water 6x1.5L",
+    "description": "Eau min\u00E9rale naturelle des Alpes, pack de 6.",
+    "descriptionEn": "Natural Alpine mineral water, 6-pack.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Evian",
+    "sku": "EVI-6X15",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 72,
+        "name": "6x1.5L",
+        "nameEn": "6x1.5L",
+        "value": "6x1.5L",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Jus d\u0027orange press\u00E9 Tropicana 1L",
+    "nameEn": "Tropicana Fresh Orange Juice 1L",
+    "description": "Pur jus d\u0027orange press\u00E9 avec pulpe.",
+    "descriptionEn": "Pure fresh squeezed orange juice with pulp.",
+    "price": 3.29,
+    "brand": "Tropicana",
+    "sku": "TRO-JOJ1L",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 73,
+        "name": "1L",
+        "nameEn": "1L",
+        "value": "1L",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Coca-Cola Original 1.5L",
+    "nameEn": "Coca-Cola Original 1.5L",
+    "description": "Soda cola original, recette inchang\u00E9e depuis 1886.",
+    "descriptionEn": "Original cola, unchanged recipe since 1886.",
+    "price": 1.99,
+    "promoPrice": 1.49,
+    "brand": "Coca-Cola",
+    "sku": "CC-ORIG15",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 74,
+        "name": "1.5L",
+        "nameEn": "1.5L",
+        "value": "1.5L",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Caf\u00E9 moulu Carte Noire 250g",
+    "nameEn": "Carte Noire Ground Coffee 250g",
+    "description": "Caf\u00E9 100% arabica torr\u00E9fi\u00E9 en France, mouture fine.",
+    "descriptionEn": "100% arabica coffee roasted in France, fine grind.",
+    "price": 4.99,
+    "brand": "Carte Noire",
+    "sku": "CN-MOULU250",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 75,
+        "name": "250g",
+        "nameEn": "250g",
+        "value": "250g",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Th\u00E9 vert Lipton Green Intense x25",
+    "nameEn": "Lipton Green Intense Tea x25",
+    "description": "Th\u00E9 vert intense en sachets pyramides.",
+    "descriptionEn": "Intense green tea in pyramid sachets.",
+    "price": 2.99,
+    "promoPrice": 2.49,
+    "brand": "Lipton",
+    "sku": "LIP-GRINT25",
+    "stock": 55,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 76,
+        "name": "x25",
+        "nameEn": "x25",
+        "value": "x25",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Perrier fines bulles 6x50cl",
+    "nameEn": "Perrier Sparkling Water 6x50cl",
+    "description": "Eau gazeuse finement p\u00E9tillante, source Verg\u00E8ze.",
+    "descriptionEn": "Finely sparkling water from Verg\u00E8ze spring.",
+    "price": 3.49,
+    "brand": "Perrier",
+    "sku": "PER-6X50",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 77,
+        "name": "6x50cl",
+        "nameEn": "6x50cl",
+        "value": "6x50cl",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Oasis Tropical 2L",
+    "nameEn": "Oasis Tropical 2L",
+    "description": "Boisson aux fruits tropicaux : mangue, goyave, passion.",
+    "descriptionEn": "Tropical fruit drink: mango, guava, passion fruit.",
+    "price": 1.79,
+    "promoPrice": 1.39,
+    "brand": "Oasis",
+    "sku": "OAS-TROP2",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 78,
+        "name": "2L",
+        "nameEn": "2L",
+        "value": "2L",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Capsules Nespresso Lungo x10",
+    "nameEn": "Nespresso Lungo Capsules x10",
+    "description": "Capsules aluminium compatibles Nespresso, intensit\u00E9 6.",
+    "descriptionEn": "Nespresso-compatible aluminum capsules, intensity 6.",
+    "price": 4.90,
+    "brand": "Nespresso",
+    "sku": "NES-LUNG10",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 79,
+        "name": "x10",
+        "nameEn": "x10",
+        "value": "x10",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Lait d\u0027amande Bio 1L",
+    "nameEn": "Organic Almond Milk 1L",
+    "description": "Boisson v\u00E9g\u00E9tale amande sans sucres ajout\u00E9s.",
+    "descriptionEn": "Unsweetened organic almond plant-based drink.",
+    "price": 2.49,
+    "promoPrice": 1.99,
+    "brand": "Bjorg",
+    "sku": "BJO-LAMB1L",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 80,
+        "name": "1L",
+        "nameEn": "1L",
+        "value": "1L",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "Bi\u00E8re blonde 1664 pack 6x25cl",
+    "nameEn": "1664 Lager Beer 6x25cl",
+    "description": "Bi\u00E8re blonde brass\u00E9e avec houblon d\u0027Alsace.",
+    "descriptionEn": "Lager beer brewed with Alsatian hops.",
+    "price": 4.99,
+    "brand": "Kronenbourg",
+    "sku": "KRO-1664-6",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 81,
+        "name": "6x25cl",
+        "nameEn": "6x25cl",
+        "value": "6x25cl",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Pizza surgel\u00E9e 4 fromages",
+    "nameEn": "Frozen 4-Cheese Pizza",
+    "description": "Pizza p\u00E2te fine aux 4 fromages italiens.",
+    "descriptionEn": "Thin-crust pizza with 4 Italian cheeses.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Buitoni",
+    "sku": "BUI-P4FR",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 82,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Po\u00EAl\u00E9e de l\u00E9gumes surgel\u00E9e 750g",
+    "nameEn": "Frozen Vegetable Stir-Fry 750g",
+    "description": "M\u00E9lange courgettes, poivrons, oignons pr\u00EAt \u00E0 po\u00EAler.",
+    "descriptionEn": "Zucchini, pepper, onion mix ready to stir-fry.",
+    "price": 3.99,
+    "brand": "Picard",
+    "sku": "PIC-POEL750",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 83,
+        "name": "750g",
+        "nameEn": "750g",
+        "value": "750g",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Glace vanille H\u00E4agen-Dazs 460ml",
+    "nameEn": "Haagen-Dazs Vanilla Ice Cream 460ml",
+    "description": "Cr\u00E8me glac\u00E9e vanille de Madagascar premium.",
+    "descriptionEn": "Premium Madagascar vanilla ice cream.",
+    "price": 5.99,
+    "promoPrice": 4.99,
+    "brand": "H\u00E4agen-Dazs",
+    "sku": "HD-VAN460",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 84,
+        "name": "460ml",
+        "nameEn": "460ml",
+        "value": "460ml",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Frites allumettes surgel\u00E9es 1kg",
+    "nameEn": "Frozen Thin French Fries 1kg",
+    "description": "Frites tradition allumettes croustillantes au four.",
+    "descriptionEn": "Traditional crispy oven-baked thin fries.",
+    "price": 2.49,
+    "brand": "McCain",
+    "sku": "MCC-FRIT1K",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 85,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Colin d\u0027Alaska pan\u00E9 x4",
+    "nameEn": "Breaded Alaska Pollock x4",
+    "description": "Filets de colin pan\u00E9s dor\u00E9s et croustillants.",
+    "descriptionEn": "Golden and crispy breaded pollock fillets.",
+    "price": 3.99,
+    "promoPrice": 3.29,
+    "brand": "Findus",
+    "sku": "FIN-COL4",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 86,
+        "name": "x4",
+        "nameEn": "x4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Magnum Classic x4",
+    "nameEn": "Magnum Classic 4-Pack",
+    "description": "B\u00E2tonnets glac\u00E9s vanille enrob\u00E9s chocolat au lait.",
+    "descriptionEn": "Vanilla ice cream bars coated in milk chocolate.",
+    "price": 4.49,
+    "brand": "Magnum",
+    "sku": "MAG-CLASS4",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 87,
+        "name": "x4",
+        "nameEn": "x4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "\u00C9pinards hach\u00E9s surgel\u00E9s 1kg",
+    "nameEn": "Frozen Chopped Spinach 1kg",
+    "description": "\u00C9pinards hach\u00E9s en portions, pratiques et nutritifs.",
+    "descriptionEn": "Chopped spinach in portions, convenient and nutritious.",
+    "price": 2.29,
+    "promoPrice": 1.79,
+    "brand": "Bonduelle",
+    "sku": "BON-EPIN1K",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 88,
+        "name": "1kg",
+        "nameEn": "1kg",
+        "value": "1kg",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Plat cuisin\u00E9 lasagnes bolognaise 900g",
+    "nameEn": "Frozen Bolognese Lasagna 900g",
+    "description": "Lasagnes \u00E0 la bolognaise gratin\u00E9es pr\u00EAtes en 10min.",
+    "descriptionEn": "Gratin bolognese lasagna ready in 10 minutes.",
+    "price": 5.49,
+    "brand": "Marie",
+    "sku": "MAR-LAS900",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 89,
+        "name": "900g",
+        "nameEn": "900g",
+        "value": "900g",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Cordon bleu de dinde x4",
+    "nameEn": "Turkey Cordon Bleu 4-Pack",
+    "description": "Cordons bleus de dinde au fromage fondant.",
+    "descriptionEn": "Turkey cordon bleu with melting cheese.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Le Gaulois",
+    "sku": "LGA-CBD4",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 90,
+        "name": "x4",
+        "nameEn": "x4",
+        "value": "x4",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Baguette pr\u00E9cuite surgel\u00E9e x2",
+    "nameEn": "Frozen Pre-Baked Baguette x2",
+    "description": "Baguettes \u00E0 four en 10 minutes, cro\u00FBte croustillante.",
+    "descriptionEn": "Oven-ready baguettes in 10 minutes, crispy crust.",
+    "price": 1.99,
+    "brand": "Picard",
+    "sku": "PIC-BAG2",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 91,
+        "name": "x2",
+        "nameEn": "x2",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "Granola bio chocolat-noisettes 375g",
+    "nameEn": "Organic Chocolate-Hazelnut Granola 375g",
+    "description": "Granola crunchy bio au chocolat noir et noisettes torr\u00E9fi\u00E9es.",
+    "descriptionEn": "Organic crunchy granola with dark chocolate and roasted hazelnuts.",
+    "price": 4.99,
+    "promoPrice": 3.99,
+    "brand": "Jordans",
+    "sku": "JOR-GRANBIO",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 92,
+        "name": "375g",
+        "nameEn": "375g",
+        "value": "375g",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Lait d\u0027avoine bio 1L",
+    "nameEn": "Organic Oat Milk 1L",
+    "description": "Boisson v\u00E9g\u00E9tale avoine bio sans sucres ajout\u00E9s.",
+    "descriptionEn": "Organic oat plant-based drink, no added sugars.",
+    "price": 2.29,
+    "brand": "Oatly",
+    "sku": "OAT-BIO1L",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 93,
+        "name": "1L",
+        "nameEn": "1L",
+        "value": "1L",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "P\u00E2tes compl\u00E8tes bio penne 500g",
+    "nameEn": "Organic Whole Wheat Penne 500g",
+    "description": "Penne rigate bl\u00E9 dur complet biologique.",
+    "descriptionEn": "Organic whole durum wheat penne rigate.",
+    "price": 1.99,
+    "promoPrice": 1.49,
+    "brand": "Bjorg",
+    "sku": "BJO-PENNE",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 94,
+        "name": "500g",
+        "nameEn": "500g",
+        "value": "500g",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Tofu nature bio 400g",
+    "nameEn": "Organic Natural Tofu 400g",
+    "description": "Tofu ferme au soja fran\u00E7ais issu de l\u0027agriculture biologique.",
+    "descriptionEn": "Firm tofu from organic French soybeans.",
+    "price": 2.99,
+    "brand": "Soy",
+    "sku": "SOY-TOFU400",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 95,
+        "name": "400g",
+        "nameEn": "400g",
+        "value": "400g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Quinoa blanc bio 500g",
+    "nameEn": "Organic White Quinoa 500g",
+    "description": "Quinoa royal de Bolivie issu du commerce \u00E9quitable.",
+    "descriptionEn": "Royal quinoa from Bolivia, fair trade certified.",
+    "price": 3.99,
+    "promoPrice": 3.29,
+    "brand": "Bjorg",
+    "sku": "BJO-QUIN500",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 96,
+        "name": "500g",
+        "nameEn": "500g",
+        "value": "500g",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Spiruline bio comprim\u00E9s x200",
+    "nameEn": "Organic Spirulina Tablets x200",
+    "description": "Compl\u00E9ment alimentaire spiruline bio riche en prot\u00E9ines.",
+    "descriptionEn": "Organic spirulina food supplement rich in protein.",
+    "price": 12.90,
+    "brand": "Naturactive",
+    "sku": "NAT-SPIR200",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 97,
+        "name": "x200",
+        "nameEn": "x200",
+        "value": "x200",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Galettes de pois chiches bio x2",
+    "nameEn": "Organic Chickpea Patties x2",
+    "description": "Galettes v\u00E9g\u00E9tales pois chiches et l\u00E9gumes bio.",
+    "descriptionEn": "Organic chickpea and vegetable plant-based patties.",
+    "price": 3.49,
+    "promoPrice": 2.99,
+    "brand": "Garden Gourmet",
+    "sku": "GG-GALPC2",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 98,
+        "name": "x2",
+        "nameEn": "x2",
+        "value": "x2",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Beurre de cacahu\u00E8tes bio 350g",
+    "nameEn": "Organic Peanut Butter 350g",
+    "description": "Beurre de cacahu\u00E8tes 100% arachides sans huile de palme.",
+    "descriptionEn": "100% peanut butter without palm oil.",
+    "price": 4.49,
+    "brand": "Whole Earth",
+    "sku": "WE-BC350",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 99,
+        "name": "350g",
+        "nameEn": "350g",
+        "value": "350g",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "Galettes de riz bio sans gluten x12",
+    "nameEn": "Organic Gluten-Free Rice Cakes x12",
+    "description": "Galettes de riz souffl\u00E9 certifi\u00E9es sans gluten.",
+    "descriptionEn": "Certified gluten-free puffed rice cakes.",
+    "price": 1.99,
+    "promoPrice": 1.49,
+    "brand": "Bjorg",
+    "sku": "BJO-GALSG12",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 100,
+        "name": "x12",
+        "nameEn": "x12",
+        "value": "x12",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Chocolat noir 85% bio 100g",
+    "nameEn": "Organic 85% Dark Chocolate 100g",
+    "description": "Tablette chocolat noir intense 85% cacao biologique.",
+    "descriptionEn": "Organic intense 85% cocoa dark chocolate bar.",
+    "price": 2.99,
+    "brand": "Alter Eco",
+    "sku": "ALT-N85100",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 101,
+        "name": "100g",
+        "nameEn": "100g",
+        "value": "100g",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  }
+]

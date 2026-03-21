@@ -1,0 +1,3451 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Samsung QE65S95D OLED 4K 65\u0022",
+    "nameEn": "Samsung QE65S95D OLED 4K 65 inch",
+    "description": "T\u00E9l\u00E9viseur OLED 4K 65 pouces avec processeur Neural Quantum 4K, Dolby Atmos et design ultra-fin.",
+    "descriptionEn": "65-inch OLED 4K TV with Neural Quantum 4K processor, Dolby Atmos and ultra-thin design.",
+    "price": 1899.99,
+    "promoPrice": 1699.99,
+    "brand": "Samsung",
+    "sku": "SAM-QE65S95D",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -400,
+        "stock": 20
+      },
+      {
+        "id": 2,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 3,
+        "name": "77 pouces",
+        "nameEn": "77 inch",
+        "value": "77\u0022",
+        "priceAdjustment": 800,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "LG OLED65C4 4K 65\u0022",
+    "nameEn": "LG OLED65C4 4K 65 inch",
+    "description": "T\u00E9l\u00E9viseur OLED evo 4K avec processeur \u03B19 Gen7, webOS 24 et Dolby Vision IQ.",
+    "descriptionEn": "OLED evo 4K TV with \u03B19 Gen7 processor, webOS 24 and Dolby Vision IQ.",
+    "price": 1599.99,
+    "brand": "LG",
+    "sku": "LG-OLED65C4",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 4,
+        "name": "48 pouces",
+        "nameEn": "48 inch",
+        "value": "48\u0022",
+        "priceAdjustment": -500,
+        "stock": 18
+      },
+      {
+        "id": 5,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -200,
+        "stock": 25
+      },
+      {
+        "id": 6,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Sony Bravia XR-65A95L OLED",
+    "nameEn": "Sony Bravia XR-65A95L OLED",
+    "description": "T\u00E9l\u00E9viseur QD-OLED 4K avec Cognitive Processor XR et Acoustic Surface Audio\u002B.",
+    "descriptionEn": "QD-OLED 4K TV with Cognitive Processor XR and Acoustic Surface Audio\u002B.",
+    "price": 2499.99,
+    "promoPrice": 2199.99,
+    "brand": "Sony",
+    "sku": "SONY-XR65A95L",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 7,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -500,
+        "stock": 12
+      },
+      {
+        "id": 8,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "TCL 65C845 Mini LED 4K",
+    "nameEn": "TCL 65C845 Mini LED 4K",
+    "description": "T\u00E9l\u00E9viseur Mini LED 4K QLED avec Google TV et barre de son Onkyo int\u00E9gr\u00E9e.",
+    "descriptionEn": "Mini LED 4K QLED TV with Google TV and built-in Onkyo soundbar.",
+    "price": 899.99,
+    "promoPrice": 749.99,
+    "brand": "TCL",
+    "sku": "TCL-65C845",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 9,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -150,
+        "stock": 35
+      },
+      {
+        "id": 10,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 11,
+        "name": "75 pouces",
+        "nameEn": "75 inch",
+        "value": "75\u0022",
+        "priceAdjustment": 400,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Philips 65OLED808 Ambilight",
+    "nameEn": "Philips 65OLED808 Ambilight",
+    "description": "T\u00E9l\u00E9viseur OLED 4K avec Ambilight 3 c\u00F4t\u00E9s, P5 AI Intelligent et son Bowers \u0026 Wilkins.",
+    "descriptionEn": "OLED 4K TV with 3-sided Ambilight, P5 AI Intelligent and Bowers \u0026 Wilkins sound.",
+    "price": 1799.99,
+    "brand": "Philips",
+    "sku": "PHI-65OLED808",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 12,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -300,
+        "stock": 18
+      },
+      {
+        "id": 13,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Samsung QE55Q80D QLED 4K",
+    "nameEn": "Samsung QE55Q80D QLED 4K",
+    "description": "TV QLED 4K avec Direct Full Array et Object Tracking Sound.",
+    "descriptionEn": "QLED 4K TV with Direct Full Array and Object Tracking Sound.",
+    "price": 999.99,
+    "promoPrice": 849.99,
+    "brand": "Samsung",
+    "sku": "SAM-QE55Q80D",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 14,
+        "name": "50 pouces",
+        "nameEn": "50 inch",
+        "value": "50\u0022",
+        "priceAdjustment": -100,
+        "stock": 45
+      },
+      {
+        "id": 15,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 16,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 300,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "LG 55NANO81 NanoCell 4K",
+    "nameEn": "LG 55NANO81 NanoCell 4K",
+    "description": "T\u00E9l\u00E9viseur NanoCell 4K avec Active HDR et AI ThinQ.",
+    "descriptionEn": "NanoCell 4K TV with Active HDR and AI ThinQ.",
+    "price": 549.99,
+    "brand": "LG",
+    "sku": "LG-55NANO81",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 17,
+        "name": "43 pouces",
+        "nameEn": "43 inch",
+        "value": "43\u0022",
+        "priceAdjustment": -100,
+        "stock": 60
+      },
+      {
+        "id": 18,
+        "name": "50 pouces",
+        "nameEn": "50 inch",
+        "value": "50\u0022",
+        "priceAdjustment": -50,
+        "stock": 55
+      },
+      {
+        "id": 19,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Hisense 65U8KQ Mini LED",
+    "nameEn": "Hisense 65U8KQ Mini LED",
+    "description": "TV Mini LED 4K avec Hi-View Engine X et Dolby Vision IQ.",
+    "descriptionEn": "Mini LED 4K TV with Hi-View Engine X and Dolby Vision IQ.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Hisense",
+    "sku": "HIS-65U8KQ",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 20,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -100,
+        "stock": 30
+      },
+      {
+        "id": 21,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Panasonic TX-65MZ2000 OLED",
+    "nameEn": "Panasonic TX-65MZ2000 OLED",
+    "description": "T\u00E9l\u00E9viseur OLED Master 4K avec HCX Pro AI Processor MK II et son Technics.",
+    "descriptionEn": "OLED Master 4K TV with HCX Pro AI Processor MK II and Technics sound.",
+    "price": 2799.99,
+    "brand": "Panasonic",
+    "sku": "PAN-TX65MZ2000",
+    "stock": 5,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 22,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": -500,
+        "stock": 8
+      },
+      {
+        "id": 23,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Samsung The Frame QE55LS03B",
+    "nameEn": "Samsung The Frame QE55LS03B",
+    "description": "TV QLED 4K au design tableau avec Art Mode et cadre personnalisable.",
+    "descriptionEn": "QLED 4K TV with Art Mode and customizable frame.",
+    "price": 1299.99,
+    "promoPrice": 1099.99,
+    "brand": "Samsung",
+    "sku": "SAM-LS03B55",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 24,
+        "name": "43 pouces",
+        "nameEn": "43 inch",
+        "value": "43\u0022",
+        "priceAdjustment": -300,
+        "stock": 30
+      },
+      {
+        "id": 25,
+        "name": "55 pouces",
+        "nameEn": "55 inch",
+        "value": "55\u0022",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 26,
+        "name": "65 pouces",
+        "nameEn": "65 inch",
+        "value": "65\u0022",
+        "priceAdjustment": 400,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Apple MacBook Pro 16\u0022 M3 Pro",
+    "nameEn": "Apple MacBook Pro 16 inch M3 Pro",
+    "description": "MacBook Pro 16 pouces avec puce M3 Pro, 18 Go RAM, 512 Go SSD et \u00E9cran Liquid Retina XDR.",
+    "descriptionEn": "MacBook Pro 16 inch with M3 Pro chip, 18GB RAM, 512GB SSD and Liquid Retina XDR display.",
+    "price": 2799.99,
+    "brand": "Apple",
+    "sku": "APL-MBP16M3P",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 27,
+        "name": "512 Go SSD",
+        "nameEn": "512GB SSD",
+        "value": "512Go",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 28,
+        "name": "1 To SSD",
+        "nameEn": "1TB SSD",
+        "value": "1To",
+        "priceAdjustment": 230,
+        "stock": 12
+      },
+      {
+        "id": 29,
+        "name": "2 To SSD",
+        "nameEn": "2TB SSD",
+        "value": "2To",
+        "priceAdjustment": 690,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "ASUS ROG Strix G16 2024",
+    "nameEn": "ASUS ROG Strix G16 2024",
+    "description": "PC portable gaming avec Intel Core i9-14900HX, RTX 4070, 16 Go RAM et \u00E9cran 240Hz.",
+    "descriptionEn": "Gaming laptop with Intel Core i9-14900HX, RTX 4070, 16GB RAM and 240Hz display.",
+    "price": 1999.99,
+    "promoPrice": 1799.99,
+    "brand": "ASUS",
+    "sku": "ASUS-G614JV",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 30,
+        "name": "RTX 4060",
+        "nameEn": "RTX 4060",
+        "value": "RTX4060",
+        "priceAdjustment": -300,
+        "stock": 20
+      },
+      {
+        "id": 31,
+        "name": "RTX 4070",
+        "nameEn": "RTX 4070",
+        "value": "RTX4070",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 32,
+        "name": "RTX 4080",
+        "nameEn": "RTX 4080",
+        "value": "RTX4080",
+        "priceAdjustment": 500,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Dell XPS 15 9530",
+    "nameEn": "Dell XPS 15 9530",
+    "description": "Ultrabook 15.6\u0022 avec Intel Core i7-13700H, 16 Go RAM, 512 Go SSD et \u00E9cran OLED 3.5K.",
+    "descriptionEn": "15.6\u0022 ultrabook with Intel Core i7-13700H, 16GB RAM, 512GB SSD and 3.5K OLED display.",
+    "price": 1699.99,
+    "brand": "Dell",
+    "sku": "DELL-XPS159530",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 33,
+        "name": "16 Go RAM",
+        "nameEn": "16GB RAM",
+        "value": "16Go",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 34,
+        "name": "32 Go RAM",
+        "nameEn": "32GB RAM",
+        "value": "32Go",
+        "priceAdjustment": 200,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+    "nameEn": "Lenovo ThinkPad X1 Carbon Gen 11",
+    "description": "Ultrabook professionnel 14\u0022 avec Intel Core i7 vPro, 16 Go RAM et clavier r\u00E9tro\u00E9clair\u00E9.",
+    "descriptionEn": "14\u0022 professional ultrabook with Intel Core i7 vPro, 16GB RAM and backlit keyboard.",
+    "price": 1599.99,
+    "promoPrice": 1399.99,
+    "brand": "Lenovo",
+    "sku": "LEN-X1C11",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 35,
+        "name": "256 Go SSD",
+        "nameEn": "256GB SSD",
+        "value": "256Go",
+        "priceAdjustment": -200,
+        "stock": 30
+      },
+      {
+        "id": 36,
+        "name": "512 Go SSD",
+        "nameEn": "512GB SSD",
+        "value": "512Go",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 37,
+        "name": "1 To SSD",
+        "nameEn": "1TB SSD",
+        "value": "1To",
+        "priceAdjustment": 150,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "HP Spectre x360 16",
+    "nameEn": "HP Spectre x360 16",
+    "description": "PC portable convertible 16\u0022 avec Intel Core i7-13700H, \u00E9cran OLED tactile et stylet inclus.",
+    "descriptionEn": "16\u0022 convertible laptop with Intel Core i7-13700H, OLED touchscreen and included stylus.",
+    "price": 1899.99,
+    "brand": "HP",
+    "sku": "HP-SPECTRE360-16",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 38,
+        "name": "16 Go RAM",
+        "nameEn": "16GB RAM",
+        "value": "16Go",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 39,
+        "name": "32 Go RAM",
+        "nameEn": "32GB RAM",
+        "value": "32Go",
+        "priceAdjustment": 250,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Acer Swift Go 14",
+    "nameEn": "Acer Swift Go 14",
+    "description": "Ultrabook l\u00E9ger 14\u0022 avec Intel Core i5-1340P, 8 Go RAM et \u00E9cran 2.8K OLED.",
+    "descriptionEn": "Lightweight 14\u0022 ultrabook with Intel Core i5-1340P, 8GB RAM and 2.8K OLED display.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Acer",
+    "sku": "ACER-SFG14",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 40,
+        "name": "8 Go RAM",
+        "nameEn": "8GB RAM",
+        "value": "8Go",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 41,
+        "name": "16 Go RAM",
+        "nameEn": "16GB RAM",
+        "value": "16Go",
+        "priceAdjustment": 100,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "MSI Creator Z16 HX Studio",
+    "nameEn": "MSI Creator Z16 HX Studio",
+    "description": "PC portable cr\u00E9atif 16\u0022 avec Intel Core i9-13950HX, RTX 4070 et \u00E9cran Mini LED.",
+    "descriptionEn": "16\u0022 creative laptop with Intel Core i9-13950HX, RTX 4070 and Mini LED display.",
+    "price": 2999.99,
+    "brand": "MSI",
+    "sku": "MSI-Z16HXS",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 42,
+        "name": "32 Go RAM",
+        "nameEn": "32GB RAM",
+        "value": "32Go",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 43,
+        "name": "64 Go RAM",
+        "nameEn": "64GB RAM",
+        "value": "64Go",
+        "priceAdjustment": 400,
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Apple MacBook Air 15\u0022 M3",
+    "nameEn": "Apple MacBook Air 15 inch M3",
+    "description": "MacBook Air 15 pouces avec puce M3, 8 Go RAM, 256 Go SSD et autonomie 18h.",
+    "descriptionEn": "MacBook Air 15 inch with M3 chip, 8GB RAM, 256GB SSD and 18h battery life.",
+    "price": 1499.99,
+    "promoPrice": 1399.99,
+    "brand": "Apple",
+    "sku": "APL-MBA15M3",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 44,
+        "name": "256 Go SSD",
+        "nameEn": "256GB SSD",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 45,
+        "name": "512 Go SSD",
+        "nameEn": "512GB SSD",
+        "value": "512Go",
+        "priceAdjustment": 115,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "Lenovo IdeaPad Slim 5 16",
+    "nameEn": "Lenovo IdeaPad Slim 5 16",
+    "description": "PC portable 16\u0022 avec AMD Ryzen 7 7730U, 16 Go RAM et \u00E9cran 2.5K.",
+    "descriptionEn": "16\u0022 laptop with AMD Ryzen 7 7730U, 16GB RAM and 2.5K display.",
+    "price": 699.99,
+    "promoPrice": 599.99,
+    "brand": "Lenovo",
+    "sku": "LEN-IP516",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 46,
+        "name": "8 Go RAM",
+        "nameEn": "8GB RAM",
+        "value": "8Go",
+        "priceAdjustment": -100,
+        "stock": 50
+      },
+      {
+        "id": 47,
+        "name": "16 Go RAM",
+        "nameEn": "16GB RAM",
+        "value": "16Go",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "ASUS ZenBook 14 OLED",
+    "nameEn": "ASUS ZenBook 14 OLED",
+    "description": "Ultrabook compact 14\u0022 avec Intel Core i5-1340P, 16 Go RAM et \u00E9cran OLED 2.8K.",
+    "descriptionEn": "Compact 14\u0022 ultrabook with Intel Core i5-1340P, 16GB RAM and 2.8K OLED display.",
+    "price": 899.99,
+    "brand": "ASUS",
+    "sku": "ASUS-ZB14OLED",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 48,
+        "name": "512 Go SSD",
+        "nameEn": "512GB SSD",
+        "value": "512Go",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 49,
+        "name": "1 To SSD",
+        "nameEn": "1TB SSD",
+        "value": "1To",
+        "priceAdjustment": 100,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Apple iPhone 15 Pro Max",
+    "nameEn": "Apple iPhone 15 Pro Max",
+    "description": "iPhone 15 Pro Max avec puce A17 Pro, syst\u00E8me photo 48 Mpx et titane.",
+    "descriptionEn": "iPhone 15 Pro Max with A17 Pro chip, 48MP camera system and titanium.",
+    "price": 1479.99,
+    "brand": "Apple",
+    "sku": "APL-IP15PM",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 50,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 51,
+        "name": "512 Go",
+        "nameEn": "512GB",
+        "value": "512Go",
+        "priceAdjustment": 120,
+        "stock": 15
+      },
+      {
+        "id": 52,
+        "name": "1 To",
+        "nameEn": "1TB",
+        "value": "1To",
+        "priceAdjustment": 350,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Samsung Galaxy S24 Ultra",
+    "nameEn": "Samsung Galaxy S24 Ultra",
+    "description": "Galaxy S24 Ultra avec Galaxy AI, S Pen int\u00E9gr\u00E9, appareil photo 200 Mpx et cadre en titane.",
+    "descriptionEn": "Galaxy S24 Ultra with Galaxy AI, built-in S Pen, 200MP camera and titanium frame.",
+    "price": 1419.99,
+    "promoPrice": 1299.99,
+    "brand": "Samsung",
+    "sku": "SAM-S24U",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 53,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 54,
+        "name": "512 Go",
+        "nameEn": "512GB",
+        "value": "512Go",
+        "priceAdjustment": 120,
+        "stock": 12
+      },
+      {
+        "id": 55,
+        "name": "1 To",
+        "nameEn": "1TB",
+        "value": "1To",
+        "priceAdjustment": 360,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Google Pixel 8 Pro",
+    "nameEn": "Google Pixel 8 Pro",
+    "description": "Pixel 8 Pro avec Tensor G3, Magic Eraser et 7 ans de mises \u00E0 jour.",
+    "descriptionEn": "Pixel 8 Pro with Tensor G3, Magic Eraser and 7 years of updates.",
+    "price": 1099.99,
+    "promoPrice": 999.99,
+    "brand": "Google",
+    "sku": "GOO-PX8P",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 56,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 57,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 60,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Xiaomi 14 Ultra",
+    "nameEn": "Xiaomi 14 Ultra",
+    "description": "Xiaomi 14 Ultra avec capteur Leica Summilux, Snapdragon 8 Gen 3 et charge 90W.",
+    "descriptionEn": "Xiaomi 14 Ultra with Leica Summilux sensor, Snapdragon 8 Gen 3 and 90W charging.",
+    "price": 1299.99,
+    "brand": "Xiaomi",
+    "sku": "XIA-14U",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 58,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 59,
+        "name": "512 Go",
+        "nameEn": "512GB",
+        "value": "512Go",
+        "priceAdjustment": 100,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Samsung Galaxy A55 5G",
+    "nameEn": "Samsung Galaxy A55 5G",
+    "description": "Galaxy A55 5G avec \u00E9cran Super AMOLED 120Hz et batterie 5000 mAh.",
+    "descriptionEn": "Galaxy A55 5G with Super AMOLED 120Hz display and 5000mAh battery.",
+    "price": 449.99,
+    "promoPrice": 379.99,
+    "brand": "Samsung",
+    "sku": "SAM-A55",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 60,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 61,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 30,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Apple iPhone 15",
+    "nameEn": "Apple iPhone 15",
+    "description": "iPhone 15 avec Dynamic Island, puce A16 Bionic et USB-C.",
+    "descriptionEn": "iPhone 15 with Dynamic Island, A16 Bionic chip and USB-C.",
+    "price": 969.99,
+    "promoPrice": 899.99,
+    "brand": "Apple",
+    "sku": "APL-IP15",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 62,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 63,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 100,
+        "stock": 25
+      },
+      {
+        "id": 64,
+        "name": "512 Go",
+        "nameEn": "512GB",
+        "value": "512Go",
+        "priceAdjustment": 230,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "OnePlus 12",
+    "nameEn": "OnePlus 12",
+    "description": "OnePlus 12 avec Snapdragon 8 Gen 3, \u00E9cran 2K LTPO et charge 100W SUPERVOOC.",
+    "descriptionEn": "OnePlus 12 with Snapdragon 8 Gen 3, 2K LTPO display and 100W SUPERVOOC charging.",
+    "price": 899.99,
+    "brand": "OnePlus",
+    "sku": "OP-12",
+    "stock": 22,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 65,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 66,
+        "name": "512 Go",
+        "nameEn": "512GB",
+        "value": "512Go",
+        "priceAdjustment": 100,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Nothing Phone (2)",
+    "nameEn": "Nothing Phone (2)",
+    "description": "Nothing Phone (2) avec interface Glyph, Snapdragon 8\u002B Gen 1 et design transparent.",
+    "descriptionEn": "Nothing Phone (2) with Glyph Interface, Snapdragon 8\u002B Gen 1 and transparent design.",
+    "price": 599.99,
+    "promoPrice": 549.99,
+    "brand": "Nothing",
+    "sku": "NTH-P2",
+    "stock": 28,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 67,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": -50,
+        "stock": 35
+      },
+      {
+        "id": 68,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Google Pixel 8a",
+    "nameEn": "Google Pixel 8a",
+    "description": "Pixel 8a avec Tensor G3, \u00E9cran OLED 120Hz et photo mode nuit.",
+    "descriptionEn": "Pixel 8a with Tensor G3, 120Hz OLED display and night mode camera.",
+    "price": 499.99,
+    "brand": "Google",
+    "sku": "GOO-PX8A",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 69,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 70,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 60,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Xiaomi Redmi Note 13 Pro\u002B",
+    "nameEn": "Xiaomi Redmi Note 13 Pro\u002B",
+    "description": "Redmi Note 13 Pro\u002B avec \u00E9cran AMOLED 120Hz, charge 120W et capteur 200 Mpx.",
+    "descriptionEn": "Redmi Note 13 Pro\u002B with 120Hz AMOLED display, 120W charging and 200MP sensor.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Xiaomi",
+    "sku": "XIA-RN13PP",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 71,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": -50,
+        "stock": 70
+      },
+      {
+        "id": 72,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Sony WH-1000XM5",
+    "nameEn": "Sony WH-1000XM5",
+    "description": "Casque sans fil \u00E0 r\u00E9duction de bruit avec 30h d\u0027autonomie et audio Hi-Res.",
+    "descriptionEn": "Wireless noise-cancelling headphones with 30h battery and Hi-Res audio.",
+    "price": 379.99,
+    "promoPrice": 329.99,
+    "brand": "Sony",
+    "sku": "SONY-WH1000XM5",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 73,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 74,
+        "name": "Argent",
+        "nameEn": "Silver",
+        "value": "Argent",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 75,
+        "name": "Bleu nuit",
+        "nameEn": "Midnight Blue",
+        "value": "Bleu",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Apple AirPods Pro 2",
+    "nameEn": "Apple AirPods Pro 2",
+    "description": "AirPods Pro 2\u00E8me g\u00E9n\u00E9ration avec puce H2, r\u00E9duction active du bruit et USB-C.",
+    "descriptionEn": "AirPods Pro 2nd gen with H2 chip, active noise cancellation and USB-C.",
+    "price": 279.99,
+    "brand": "Apple",
+    "sku": "APL-APP2",
+    "stock": 45,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 76,
+        "name": "USB-C",
+        "nameEn": "USB-C",
+        "value": "USB-C",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Bose QuietComfort Ultra",
+    "nameEn": "Bose QuietComfort Ultra",
+    "description": "Casque circum-aural sans fil avec Immersive Audio et CustomTune.",
+    "descriptionEn": "Over-ear wireless headphones with Immersive Audio and CustomTune.",
+    "price": 449.99,
+    "promoPrice": 399.99,
+    "brand": "Bose",
+    "sku": "BOSE-QCUL",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 77,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 78,
+        "name": "Blanc fum\u00E9",
+        "nameEn": "White Smoke",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Sennheiser Momentum 4 Wireless",
+    "nameEn": "Sennheiser Momentum 4 Wireless",
+    "description": "Casque audiophile sans fil avec 60h d\u0027autonomie et ANC adaptatif.",
+    "descriptionEn": "Audiophile wireless headphones with 60h battery and adaptive ANC.",
+    "price": 349.99,
+    "brand": "Sennheiser",
+    "sku": "SENN-M4W",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 79,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 80,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "JBL Tune 770NC",
+    "nameEn": "JBL Tune 770NC",
+    "description": "Casque sans fil avec r\u00E9duction de bruit adaptative et JBL Pure Bass.",
+    "descriptionEn": "Wireless headphones with adaptive noise cancellation and JBL Pure Bass.",
+    "price": 99.99,
+    "promoPrice": 79.99,
+    "brand": "JBL",
+    "sku": "JBL-T770NC",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 81,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 60
+      },
+      {
+        "id": 82,
+        "name": "Bleu",
+        "nameEn": "Blue",
+        "value": "Bleu",
+        "priceAdjustment": 0,
+        "stock": 50
+      },
+      {
+        "id": 83,
+        "name": "Violet",
+        "nameEn": "Purple",
+        "value": "Violet",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "Samsung Galaxy Buds3 Pro",
+    "nameEn": "Samsung Galaxy Buds3 Pro",
+    "description": "\u00C9couteurs intra-auriculaires avec ANC intelligent et son Hi-Fi 24-bit.",
+    "descriptionEn": "In-ear earbuds with intelligent ANC and 24-bit Hi-Fi sound.",
+    "price": 249.99,
+    "brand": "Samsung",
+    "sku": "SAM-GB3P",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 84,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 85,
+        "name": "Gris",
+        "nameEn": "Gray",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Sony WF-1000XM5",
+    "nameEn": "Sony WF-1000XM5",
+    "description": "\u00C9couteurs sans fil premium avec r\u00E9duction de bruit et puce V2.",
+    "descriptionEn": "Premium wireless earbuds with noise cancellation and V2 chip.",
+    "price": 299.99,
+    "promoPrice": 269.99,
+    "brand": "Sony",
+    "sku": "SONY-WF1000XM5",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 86,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 87,
+        "name": "Argent",
+        "nameEn": "Silver",
+        "value": "Argent",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Jabra Elite 85t",
+    "nameEn": "Jabra Elite 85t",
+    "description": "\u00C9couteurs avec ANC avanc\u00E9, 6 microphones et compatibilit\u00E9 multipoint.",
+    "descriptionEn": "Earbuds with advanced ANC, 6 microphones and multipoint connectivity.",
+    "price": 199.99,
+    "promoPrice": 149.99,
+    "brand": "Jabra",
+    "sku": "JAB-E85T",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 88,
+        "name": "Titanium Noir",
+        "nameEn": "Titanium Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 89,
+        "name": "Or Beige",
+        "nameEn": "Gold Beige",
+        "value": "Beige",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Bose QuietComfort Earbuds II",
+    "nameEn": "Bose QuietComfort Earbuds II",
+    "description": "\u00C9couteurs avec la meilleure r\u00E9duction de bruit, CustomTune et Son immersif.",
+    "descriptionEn": "Earbuds with best-in-class noise cancellation, CustomTune and Immersive Sound.",
+    "price": 299.99,
+    "brand": "Bose",
+    "sku": "BOSE-QCEB2",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 90,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 91,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "AKG N400NC TWS",
+    "nameEn": "AKG N400NC TWS",
+    "description": "\u00C9couteurs sans fil avec son studio AKG et r\u00E9duction active du bruit.",
+    "descriptionEn": "True wireless earbuds with AKG studio sound and active noise cancellation.",
+    "price": 129.99,
+    "promoPrice": 99.99,
+    "brand": "AKG",
+    "sku": "AKG-N400NC",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 92,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "Sony Alpha 7 IV",
+    "nameEn": "Sony Alpha 7 IV",
+    "description": "Appareil photo hybride plein format 33 Mpx avec autofocus IA et vid\u00E9o 4K 60p.",
+    "descriptionEn": "Full-frame 33MP mirrorless camera with AI autofocus and 4K 60p video.",
+    "price": 2499.99,
+    "promoPrice": 2299.99,
+    "brand": "Sony",
+    "sku": "SONY-A7IV",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 93,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 94,
+        "name": "Kit 28-70mm",
+        "nameEn": "28-70mm kit",
+        "value": "Kit",
+        "priceAdjustment": 300,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "Canon EOS R6 Mark II",
+    "nameEn": "Canon EOS R6 Mark II",
+    "description": "Hybride plein format 24.2 Mpx avec stabilisation 8 stops et vid\u00E9o 4K 60p oversampled.",
+    "descriptionEn": "24.2MP full-frame mirrorless with 8-stop stabilization and oversampled 4K 60p video.",
+    "price": 2699.99,
+    "brand": "Canon",
+    "sku": "CAN-R6MK2",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 95,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 96,
+        "name": "Kit 24-105mm",
+        "nameEn": "24-105mm kit",
+        "value": "Kit",
+        "priceAdjustment": 500,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Nikon Z8",
+    "nameEn": "Nikon Z8",
+    "description": "Hybride plein format 45.7 Mpx avec processeur EXPEED 7 et vid\u00E9o 8K.",
+    "descriptionEn": "45.7MP full-frame mirrorless with EXPEED 7 processor and 8K video.",
+    "price": 3999.99,
+    "brand": "Nikon",
+    "sku": "NIK-Z8",
+    "stock": 6,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 97,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Fujifilm X-T5",
+    "nameEn": "Fujifilm X-T5",
+    "description": "Hybride APS-C r\u00E9tro 40 Mpx avec simulation de film et viseur OLED.",
+    "descriptionEn": "Retro-style 40MP APS-C mirrorless with film simulation and OLED viewfinder.",
+    "price": 1699.99,
+    "promoPrice": 1499.99,
+    "brand": "Fujifilm",
+    "sku": "FUJ-XT5",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 98,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 99,
+        "name": "Kit 18-55mm",
+        "nameEn": "18-55mm kit",
+        "value": "Kit",
+        "priceAdjustment": 250,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Sony Alpha 7C II",
+    "nameEn": "Sony Alpha 7C II",
+    "description": "Hybride plein format compact 33 Mpx avec autofocus IA avanc\u00E9.",
+    "descriptionEn": "Compact 33MP full-frame mirrorless with advanced AI autofocus.",
+    "price": 2199.99,
+    "brand": "Sony",
+    "sku": "SONY-A7C2",
+    "stock": 14,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 100,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 101,
+        "name": "Kit 28-60mm",
+        "nameEn": "28-60mm kit",
+        "value": "Kit",
+        "priceAdjustment": 200,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Canon EOS R50",
+    "nameEn": "Canon EOS R50",
+    "description": "Hybride APS-C compact id\u00E9al pour d\u00E9buter avec vid\u00E9o 4K et autofocus Dual Pixel.",
+    "descriptionEn": "Compact APS-C mirrorless ideal for beginners with 4K video and Dual Pixel autofocus.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Canon",
+    "sku": "CAN-R50",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 102,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 103,
+        "name": "Kit 18-45mm",
+        "nameEn": "18-45mm kit",
+        "value": "Kit",
+        "priceAdjustment": 100,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Nikon Zf",
+    "nameEn": "Nikon Zf",
+    "description": "Hybride plein format r\u00E9tro 24.5 Mpx avec bo\u00EEtier en magn\u00E9sium et design vintage.",
+    "descriptionEn": "Retro-style 24.5MP full-frame mirrorless with magnesium body and vintage design.",
+    "price": 2499.99,
+    "brand": "Nikon",
+    "sku": "NIK-ZF",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 104,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "GoPro HERO12 Black",
+    "nameEn": "GoPro HERO12 Black",
+    "description": "Cam\u00E9ra d\u0027action avec HyperSmooth 6.0, vid\u00E9o 5.3K et HDR photos.",
+    "descriptionEn": "Action camera with HyperSmooth 6.0, 5.3K video and HDR photos.",
+    "price": 399.99,
+    "promoPrice": 349.99,
+    "brand": "GoPro",
+    "sku": "GP-H12B",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 105,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 106,
+        "name": "Bundle cr\u00E9ateur",
+        "nameEn": "Creator Bundle",
+        "value": "Bundle",
+        "priceAdjustment": 100,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "DJI Osmo Pocket 3",
+    "nameEn": "DJI Osmo Pocket 3",
+    "description": "Cam\u00E9ra stabilis\u00E9e de poche avec capteur 1\u0022 CMOS et \u00E9cran rotatif 2\u0022.",
+    "descriptionEn": "Pocket stabilized camera with 1\u0022 CMOS sensor and 2\u0022 rotating screen.",
+    "price": 519.99,
+    "brand": "DJI",
+    "sku": "DJI-OP3",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 107,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 108,
+        "name": "Combo cr\u00E9ateur",
+        "nameEn": "Creator Combo",
+        "value": "Combo",
+        "priceAdjustment": 80,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Panasonic Lumix S5 IIX",
+    "nameEn": "Panasonic Lumix S5 IIX",
+    "description": "Hybride plein format vid\u00E9aste avec phase AF et sorties vid\u00E9o pro.",
+    "descriptionEn": "Full-frame video-focused mirrorless with phase AF and pro video outputs.",
+    "price": 1999.99,
+    "promoPrice": 1799.99,
+    "brand": "Panasonic",
+    "sku": "PAN-S5IIX",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 109,
+        "name": "Bo\u00EEtier nu",
+        "nameEn": "Body only",
+        "value": "Nu",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 110,
+        "name": "Kit 20-60mm",
+        "nameEn": "20-60mm kit",
+        "value": "Kit",
+        "priceAdjustment": 300,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Sony PlayStation 5 Slim",
+    "nameEn": "Sony PlayStation 5 Slim",
+    "description": "Console de salon nouvelle g\u00E9n\u00E9ration avec SSD ultra-rapide et manette DualSense.",
+    "descriptionEn": "Next-gen home console with ultra-fast SSD and DualSense controller.",
+    "price": 549.99,
+    "promoPrice": 499.99,
+    "brand": "Sony",
+    "sku": "SONY-PS5S",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 111,
+        "name": "\u00C9dition Standard",
+        "nameEn": "Standard Edition",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 112,
+        "name": "\u00C9dition Digitale",
+        "nameEn": "Digital Edition",
+        "value": "Digital",
+        "priceAdjustment": -100,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Microsoft Xbox Series X",
+    "nameEn": "Microsoft Xbox Series X",
+    "description": "Console la plus puissante avec 12 TFLOPS, SSD 1 To et Game Pass.",
+    "descriptionEn": "Most powerful console with 12 TFLOPS, 1TB SSD and Game Pass.",
+    "price": 499.99,
+    "brand": "Microsoft",
+    "sku": "MS-XBSX",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 113,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Nintendo Switch OLED",
+    "nameEn": "Nintendo Switch OLED",
+    "description": "Console hybride avec \u00E9cran OLED 7\u0022, dock avec port Ethernet et 64 Go de stockage.",
+    "descriptionEn": "Hybrid console with 7\u0022 OLED screen, dock with Ethernet port and 64GB storage.",
+    "price": 349.99,
+    "promoPrice": 319.99,
+    "brand": "Nintendo",
+    "sku": "NIN-SWOLED",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 114,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 115,
+        "name": "Bleu/Rouge n\u00E9on",
+        "nameEn": "Neon Blue/Red",
+        "value": "N\u00E9on",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Razer Wolverine V3 Pro",
+    "nameEn": "Razer Wolverine V3 Pro",
+    "description": "Manette gaming pro Xbox/PC avec boutons m\u00E9caniques et stick Hall Effect.",
+    "descriptionEn": "Pro Xbox/PC controller with mechanical buttons and Hall Effect sticks.",
+    "price": 199.99,
+    "brand": "Razer",
+    "sku": "RAZ-WV3P",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 116,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 117,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "SteelSeries Arctis Nova Pro",
+    "nameEn": "SteelSeries Arctis Nova Pro",
+    "description": "Casque gaming premium avec ANC, double batterie et DAC externe.",
+    "descriptionEn": "Premium gaming headset with ANC, dual battery and external DAC.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "SteelSeries",
+    "sku": "SS-ANP",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 118,
+        "name": "Filaire",
+        "nameEn": "Wired",
+        "value": "Filaire",
+        "priceAdjustment": -100,
+        "stock": 25
+      },
+      {
+        "id": 119,
+        "name": "Sans fil",
+        "nameEn": "Wireless",
+        "value": "Wifi",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Elgato Stream Deck MK.2",
+    "nameEn": "Elgato Stream Deck MK.2",
+    "description": "Contr\u00F4leur de streaming 15 touches LCD personnalisables avec int\u00E9gration OBS.",
+    "descriptionEn": "Streaming controller with 15 customizable LCD keys and OBS integration.",
+    "price": 149.99,
+    "brand": "Elgato",
+    "sku": "ELG-SDMK2",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 120,
+        "name": "15 touches",
+        "nameEn": "15 keys",
+        "value": "15",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 121,
+        "name": "32 touches",
+        "nameEn": "32 keys",
+        "value": "32",
+        "priceAdjustment": 100,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Hogwarts Legacy PS5",
+    "nameEn": "Hogwarts Legacy PS5",
+    "description": "Jeu d\u0027action RPG en monde ouvert dans l\u0027univers Harry Potter pour PS5.",
+    "descriptionEn": "Open-world action RPG in the Harry Potter universe for PS5.",
+    "price": 49.99,
+    "promoPrice": 34.99,
+    "brand": "Warner Bros",
+    "sku": "WB-HLPS5",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 122,
+        "name": "PS5",
+        "nameEn": "PS5",
+        "value": "PS5",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "The Legend of Zelda: TotK",
+    "nameEn": "The Legend of Zelda: TotK",
+    "description": "Suite de Breath of the Wild avec exploration a\u00E9rienne et pouvoirs in\u00E9dits.",
+    "descriptionEn": "Sequel to Breath of the Wild with aerial exploration and new powers.",
+    "price": 59.99,
+    "brand": "Nintendo",
+    "sku": "NIN-ZELDATOTK",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 123,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Logitech G502 X Plus",
+    "nameEn": "Logitech G502 X Plus",
+    "description": "Souris gaming sans fil avec capteur HERO 25K, switches LIGHTFORCE et LIGHTSYNC RGB.",
+    "descriptionEn": "Wireless gaming mouse with HERO 25K sensor, LIGHTFORCE switches and LIGHTSYNC RGB.",
+    "price": 159.99,
+    "promoPrice": 129.99,
+    "brand": "Logitech",
+    "sku": "LOG-G502XP",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 124,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 125,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Corsair K100 RGB",
+    "nameEn": "Corsair K100 RGB",
+    "description": "Clavier gaming m\u00E9canique avec switches OPX optiques et repose-poignet magn\u00E9tique.",
+    "descriptionEn": "Mechanical gaming keyboard with OPX optical switches and magnetic wrist rest.",
+    "price": 229.99,
+    "brand": "Corsair",
+    "sku": "COR-K100",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 126,
+        "name": "AZERTY",
+        "nameEn": "AZERTY",
+        "value": "AZERTY",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 127,
+        "name": "QWERTY",
+        "nameEn": "QWERTY",
+        "value": "QWERTY",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Apple iPad Pro 12.9\u0022 M2",
+    "nameEn": "Apple iPad Pro 12.9 inch M2",
+    "description": "iPad Pro 12.9\u0022 avec puce M2, \u00E9cran Liquid Retina XDR et Apple Pencil hover.",
+    "descriptionEn": "iPad Pro 12.9 inch with M2 chip, Liquid Retina XDR display and Apple Pencil hover.",
+    "price": 1329.99,
+    "brand": "Apple",
+    "sku": "APL-IPADP129",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 128,
+        "name": "128 Go WiFi",
+        "nameEn": "128GB WiFi",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 129,
+        "name": "256 Go WiFi",
+        "nameEn": "256GB WiFi",
+        "value": "256Go",
+        "priceAdjustment": 120,
+        "stock": 12
+      },
+      {
+        "id": 130,
+        "name": "256 Go WiFi\u002BCell",
+        "nameEn": "256GB WiFi\u002BCell",
+        "value": "256Go\u002BCell",
+        "priceAdjustment": 270,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Samsung Galaxy Tab S9 Ultra",
+    "nameEn": "Samsung Galaxy Tab S9 Ultra",
+    "description": "Tablette 14.6\u0022 avec Snapdragon 8 Gen 2, S Pen inclus et Dynamic AMOLED 2X.",
+    "descriptionEn": "14.6\u0022 tablet with Snapdragon 8 Gen 2, included S Pen and Dynamic AMOLED 2X.",
+    "price": 1179.99,
+    "promoPrice": 1049.99,
+    "brand": "Samsung",
+    "sku": "SAM-TABS9U",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 131,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 132,
+        "name": "512 Go",
+        "nameEn": "512GB",
+        "value": "512Go",
+        "priceAdjustment": 120,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Apple iPad Air 5 M1",
+    "nameEn": "Apple iPad Air 5 M1",
+    "description": "iPad Air 10.9\u0022 avec puce M1, Touch ID et compatibilit\u00E9 Apple Pencil 2.",
+    "descriptionEn": "iPad Air 10.9 inch with M1 chip, Touch ID and Apple Pencil 2 compatibility.",
+    "price": 699.99,
+    "promoPrice": 649.99,
+    "brand": "Apple",
+    "sku": "APL-IPADA5",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 133,
+        "name": "64 Go WiFi",
+        "nameEn": "64GB WiFi",
+        "value": "64Go",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 134,
+        "name": "256 Go WiFi",
+        "nameEn": "256GB WiFi",
+        "value": "256Go",
+        "priceAdjustment": 100,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Lenovo Tab P12 Pro",
+    "nameEn": "Lenovo Tab P12 Pro",
+    "description": "Tablette 12.6\u0022 AMOLED 120Hz avec Snapdragon 870 et quad speakers JBL.",
+    "descriptionEn": "12.6\u0022 AMOLED 120Hz tablet with Snapdragon 870 and JBL quad speakers.",
+    "price": 549.99,
+    "brand": "Lenovo",
+    "sku": "LEN-TABP12P",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 135,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 136,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 50,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Apple iPad 10\u00E8me g\u00E9n\u00E9ration",
+    "nameEn": "Apple iPad 10th generation",
+    "description": "iPad 10.9\u0022 avec puce A14 Bionic, USB-C et design modernis\u00E9.",
+    "descriptionEn": "iPad 10.9 inch with A14 Bionic chip, USB-C and modernized design.",
+    "price": 409.99,
+    "promoPrice": 379.99,
+    "brand": "Apple",
+    "sku": "APL-IPAD10",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 137,
+        "name": "64 Go WiFi",
+        "nameEn": "64GB WiFi",
+        "value": "64Go",
+        "priceAdjustment": 0,
+        "stock": 45
+      },
+      {
+        "id": 138,
+        "name": "256 Go WiFi",
+        "nameEn": "256GB WiFi",
+        "value": "256Go",
+        "priceAdjustment": 100,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "Samsung Galaxy Tab S9 FE",
+    "nameEn": "Samsung Galaxy Tab S9 FE",
+    "description": "Tablette 10.9\u0022 avec Exynos 1380, S Pen inclus et certification IP68.",
+    "descriptionEn": "10.9\u0022 tablet with Exynos 1380, included S Pen and IP68 certification.",
+    "price": 449.99,
+    "promoPrice": 399.99,
+    "brand": "Samsung",
+    "sku": "SAM-TABS9FE",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 139,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 140,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 50,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Xiaomi Pad 6",
+    "nameEn": "Xiaomi Pad 6",
+    "description": "Tablette 11\u0022 avec Snapdragon 870, \u00E9cran 144Hz et quad speakers Dolby Atmos.",
+    "descriptionEn": "11\u0022 tablet with Snapdragon 870, 144Hz display and Dolby Atmos quad speakers.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Xiaomi",
+    "sku": "XIA-PAD6",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 141,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 142,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 50,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Huawei MatePad Pro 11",
+    "nameEn": "Huawei MatePad Pro 11",
+    "description": "Tablette 11\u0022 OLED 120Hz avec M-Pencil 2 et clavier magn\u00E9tique.",
+    "descriptionEn": "11\u0022 120Hz OLED tablet with M-Pencil 2 and magnetic keyboard.",
+    "price": 499.99,
+    "brand": "Huawei",
+    "sku": "HUA-MPP11",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 143,
+        "name": "128 Go",
+        "nameEn": "128GB",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 144,
+        "name": "256 Go",
+        "nameEn": "256GB",
+        "value": "256Go",
+        "priceAdjustment": 60,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Amazon Fire HD 10",
+    "nameEn": "Amazon Fire HD 10",
+    "description": "Tablette 10.1\u0022 avec processeur octa-core et Alexa int\u00E9gr\u00E9e.",
+    "descriptionEn": "10.1\u0022 tablet with octa-core processor and built-in Alexa.",
+    "price": 149.99,
+    "promoPrice": 109.99,
+    "brand": "Amazon",
+    "sku": "AMZ-FHD10",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 145,
+        "name": "32 Go",
+        "nameEn": "32GB",
+        "value": "32Go",
+        "priceAdjustment": 0,
+        "stock": 55
+      },
+      {
+        "id": 146,
+        "name": "64 Go",
+        "nameEn": "64GB",
+        "value": "64Go",
+        "priceAdjustment": 20,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Microsoft Surface Pro 9",
+    "nameEn": "Microsoft Surface Pro 9",
+    "description": "Tablette PC 2-en-1 13\u0022 avec Intel Core i5, Windows 11 et kickstand int\u00E9gr\u00E9.",
+    "descriptionEn": "13\u0022 2-in-1 tablet PC with Intel Core i5, Windows 11 and built-in kickstand.",
+    "price": 1199.99,
+    "brand": "Microsoft",
+    "sku": "MS-SP9",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 147,
+        "name": "128 Go / 8 Go RAM",
+        "nameEn": "128GB / 8GB RAM",
+        "value": "128Go",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 148,
+        "name": "256 Go / 16 Go RAM",
+        "nameEn": "256GB / 16GB RAM",
+        "value": "256Go",
+        "priceAdjustment": 230,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Sonos Era 300",
+    "nameEn": "Sonos Era 300",
+    "description": "Enceinte spatiale avec Dolby Atmos, WiFi 6 et design acoustique enveloppant.",
+    "descriptionEn": "Spatial speaker with Dolby Atmos, WiFi 6 and immersive acoustic design.",
+    "price": 449.99,
+    "promoPrice": 399.99,
+    "brand": "Sonos",
+    "sku": "SON-ERA300",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 149,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 150,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "JBL Charge 5",
+    "nameEn": "JBL Charge 5",
+    "description": "Enceinte Bluetooth portable \u00E9tanche IP67 avec powerbank int\u00E9gr\u00E9e et 20h d\u0027autonomie.",
+    "descriptionEn": "Portable IP67 waterproof Bluetooth speaker with power bank and 20h battery.",
+    "price": 179.99,
+    "promoPrice": 149.99,
+    "brand": "JBL",
+    "sku": "JBL-CH5",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 151,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 152,
+        "name": "Bleu",
+        "nameEn": "Blue",
+        "value": "Bleu",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 153,
+        "name": "Rouge",
+        "nameEn": "Red",
+        "value": "Rouge",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Bose SoundLink Max",
+    "nameEn": "Bose SoundLink Max",
+    "description": "Enceinte portable avec son st\u00E9r\u00E9o puissant et mode outdoor.",
+    "descriptionEn": "Portable speaker with powerful stereo sound and outdoor mode.",
+    "price": 399.99,
+    "brand": "Bose",
+    "sku": "BOSE-SLM",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 154,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 155,
+        "name": "Bleu",
+        "nameEn": "Blue",
+        "value": "Bleu",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Marshall Stanmore III",
+    "nameEn": "Marshall Stanmore III",
+    "description": "Enceinte Bluetooth au design r\u00E9tro Marshall avec son signature et \u00E9galiseur dynamique.",
+    "descriptionEn": "Retro Marshall design Bluetooth speaker with signature sound and dynamic EQ.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Marshall",
+    "sku": "MAR-STAN3",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 156,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 157,
+        "name": "Cr\u00E8me",
+        "nameEn": "Cream",
+        "value": "Cr\u00E8me",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Ultimate Ears BOOM 3",
+    "nameEn": "Ultimate Ears BOOM 3",
+    "description": "Enceinte Bluetooth 360\u00B0 \u00E9tanche avec son \u00E0 360 degr\u00E9s et 15h d\u0027autonomie.",
+    "descriptionEn": "360\u00B0 waterproof Bluetooth speaker with 360-degree sound and 15h battery.",
+    "price": 129.99,
+    "promoPrice": 99.99,
+    "brand": "Ultimate Ears",
+    "sku": "UE-BOOM3",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 158,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 45
+      },
+      {
+        "id": 159,
+        "name": "Bleu lagon",
+        "nameEn": "Lagoon Blue",
+        "value": "Bleu",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 160,
+        "name": "Rouge coucher",
+        "nameEn": "Sunset Red",
+        "value": "Rouge",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Sonos Beam Gen 2",
+    "nameEn": "Sonos Beam Gen 2",
+    "description": "Barre de son compacte avec Dolby Atmos, eARC et commande vocale.",
+    "descriptionEn": "Compact soundbar with Dolby Atmos, eARC and voice control.",
+    "price": 499.99,
+    "promoPrice": 449.99,
+    "brand": "Sonos",
+    "sku": "SON-BEAM2",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 161,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 162,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Samsung HW-Q990D Soundbar",
+    "nameEn": "Samsung HW-Q990D Soundbar",
+    "description": "Barre de son 11.1.4 canaux avec caisson sans fil, Dolby Atmos et Q-Symphony.",
+    "descriptionEn": "11.1.4 channel soundbar with wireless sub, Dolby Atmos and Q-Symphony.",
+    "price": 1299.99,
+    "brand": "Samsung",
+    "sku": "SAM-HWQ990D",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 163,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Harman Kardon Aura Studio 4",
+    "nameEn": "Harman Kardon Aura Studio 4",
+    "description": "Enceinte design avec \u00E9clairage ambient et son omnidirectionnel 360\u00B0.",
+    "descriptionEn": "Design speaker with ambient lighting and 360\u00B0 omnidirectional sound.",
+    "price": 299.99,
+    "promoPrice": 249.99,
+    "brand": "Harman Kardon",
+    "sku": "HK-AS4",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 164,
+        "name": "Noir/Transparent",
+        "nameEn": "Black/Transparent",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "JBL PartyBox Encore",
+    "nameEn": "JBL PartyBox Encore",
+    "description": "Enceinte de f\u00EAte portable avec microphone sans fil inclus et effets lumineux.",
+    "descriptionEn": "Portable party speaker with included wireless mic and light effects.",
+    "price": 299.99,
+    "brand": "JBL",
+    "sku": "JBL-PBE",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 165,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "Devialet Phantom I 108 dB",
+    "nameEn": "Devialet Phantom I 108 dB",
+    "description": "Enceinte Hi-Fi haut de gamme 1100W avec technologie ADH\u00AE et SAM\u00AE.",
+    "descriptionEn": "High-end 1100W Hi-Fi speaker with ADH\u00AE and SAM\u00AE technology.",
+    "price": 2190.00,
+    "brand": "Devialet",
+    "sku": "DEV-PH1",
+    "stock": 6,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 166,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 167,
+        "name": "Noir mat",
+        "nameEn": "Matte Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Apple Watch Ultra 2",
+    "nameEn": "Apple Watch Ultra 2",
+    "description": "Montre connect\u00E9e pour sports extr\u00EAmes avec puce S9, GPS bi-fr\u00E9quence et bo\u00EEtier titane.",
+    "descriptionEn": "Smartwatch for extreme sports with S9 chip, dual-frequency GPS and titanium case.",
+    "price": 899.99,
+    "brand": "Apple",
+    "sku": "APL-AWU2",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 168,
+        "name": "49mm Titane",
+        "nameEn": "49mm Titanium",
+        "value": "49mm",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Samsung Galaxy Watch6 Classic",
+    "nameEn": "Samsung Galaxy Watch6 Classic",
+    "description": "Montre connect\u00E9e avec lunette rotative, BioActive Sensor et Wear OS.",
+    "descriptionEn": "Smartwatch with rotating bezel, BioActive Sensor and Wear OS.",
+    "price": 429.99,
+    "promoPrice": 369.99,
+    "brand": "Samsung",
+    "sku": "SAM-GW6C",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 169,
+        "name": "43mm Argent",
+        "nameEn": "43mm Silver",
+        "value": "43mm.Argent",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 170,
+        "name": "47mm Noir",
+        "nameEn": "47mm Black",
+        "value": "47mm.Noir",
+        "priceAdjustment": 20,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Apple Watch Series 9",
+    "nameEn": "Apple Watch Series 9",
+    "description": "Montre connect\u00E9e avec puce S9, Double Tap et \u00E9cran toujours allum\u00E9 2000 nits.",
+    "descriptionEn": "Smartwatch with S9 chip, Double Tap and 2000 nit always-on display.",
+    "price": 449.99,
+    "promoPrice": 399.99,
+    "brand": "Apple",
+    "sku": "APL-AWS9",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 171,
+        "name": "41mm Aluminium",
+        "nameEn": "41mm Aluminum",
+        "value": "41mm",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 172,
+        "name": "45mm Aluminium",
+        "nameEn": "45mm Aluminum",
+        "value": "45mm",
+        "priceAdjustment": 30,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Garmin Fenix 7 Pro",
+    "nameEn": "Garmin Fenix 7 Pro",
+    "description": "Montre GPS multisports avec lampe LED, \u00E9cran MIP et autonomie 22 jours.",
+    "descriptionEn": "Multi-sport GPS watch with LED flashlight, MIP display and 22-day battery.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Garmin",
+    "sku": "GAR-F7P",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 173,
+        "name": "47mm Noir",
+        "nameEn": "47mm Black",
+        "value": "47mm.Noir",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 174,
+        "name": "51mm Titane",
+        "nameEn": "51mm Titanium",
+        "value": "51mm.Titane",
+        "priceAdjustment": 200,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Fitbit Sense 2",
+    "nameEn": "Fitbit Sense 2",
+    "description": "Montre sant\u00E9 avec EDA/ECG, GPS int\u00E9gr\u00E9 et suivi du stress en continu.",
+    "descriptionEn": "Health smartwatch with EDA/ECG, built-in GPS and continuous stress tracking.",
+    "price": 249.99,
+    "promoPrice": 199.99,
+    "brand": "Fitbit",
+    "sku": "FIT-S2",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 175,
+        "name": "Gris",
+        "nameEn": "Gray",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 176,
+        "name": "Noir/Graphite",
+        "nameEn": "Black/Graphite",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Google Pixel Watch 2",
+    "nameEn": "Google Pixel Watch 2",
+    "description": "Montre connect\u00E9e Google avec Fitbit int\u00E9gr\u00E9, Wear OS 4 et puce Snapdragon W5.",
+    "descriptionEn": "Google smartwatch with built-in Fitbit, Wear OS 4 and Snapdragon W5 chip.",
+    "price": 399.99,
+    "promoPrice": 349.99,
+    "brand": "Google",
+    "sku": "GOO-PW2",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 177,
+        "name": "Argent/Porcelaine",
+        "nameEn": "Silver/Porcelain",
+        "value": "Argent",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 178,
+        "name": "Noir/Obsidienne",
+        "nameEn": "Black/Obsidian",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Huawei Watch GT 4",
+    "nameEn": "Huawei Watch GT 4",
+    "description": "Montre connect\u00E9e \u00E9l\u00E9gante avec suivi sant\u00E9 TruSeen 5.5\u002B et 14 jours d\u0027autonomie.",
+    "descriptionEn": "Elegant smartwatch with TruSeen 5.5\u002B health tracking and 14-day battery.",
+    "price": 249.99,
+    "brand": "Huawei",
+    "sku": "HUA-WGT4",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 179,
+        "name": "41mm Blanc",
+        "nameEn": "41mm White",
+        "value": "41mm.Blanc",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 180,
+        "name": "46mm Noir",
+        "nameEn": "46mm Black",
+        "value": "46mm.Noir",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Amazfit T-Rex Ultra",
+    "nameEn": "Amazfit T-Rex Ultra",
+    "description": "Montre outdoor avec certification MIL-STD-810G, plong\u00E9e libre et GPS double bande.",
+    "descriptionEn": "Outdoor watch with MIL-STD-810G certification, freediving and dual-band GPS.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Amazfit",
+    "sku": "AMZ-TRU",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 181,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Withings ScanWatch 2",
+    "nameEn": "Withings ScanWatch 2",
+    "description": "Montre hybride avec ECG, SpO2 et d\u00E9tection de la fibrillation auriculaire.",
+    "descriptionEn": "Hybrid watch with ECG, SpO2 and atrial fibrillation detection.",
+    "price": 349.99,
+    "brand": "Withings",
+    "sku": "WTH-SW2",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 182,
+        "name": "38mm Noir",
+        "nameEn": "38mm Black",
+        "value": "38mm.Noir",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 183,
+        "name": "42mm Blanc",
+        "nameEn": "42mm White",
+        "value": "42mm.Blanc",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Samsung Galaxy Watch FE",
+    "nameEn": "Samsung Galaxy Watch FE",
+    "description": "Montre connect\u00E9e accessible avec BioActive Sensor et suivi du sommeil.",
+    "descriptionEn": "Affordable smartwatch with BioActive Sensor and sleep tracking.",
+    "price": 199.99,
+    "promoPrice": 169.99,
+    "brand": "Samsung",
+    "sku": "SAM-GWFE",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 184,
+        "name": "40mm Noir",
+        "nameEn": "40mm Black",
+        "value": "40mm.Noir",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 185,
+        "name": "40mm Or Rose",
+        "nameEn": "40mm Rose Gold",
+        "value": "40mm.Or",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "Dune \u2013 Tome 1 de Frank Herbert",
+    "nameEn": "Dune - Volume 1 by Frank Herbert",
+    "description": "L\u0027\u00E9pop\u00E9e de science-fiction culte sur la plan\u00E8te Arrakis. \u00C9dition poche.",
+    "descriptionEn": "The cult sci-fi epic on the planet Arrakis. Pocket edition.",
+    "price": 9.90,
+    "promoPrice": 7.90,
+    "brand": "Pocket",
+    "sku": "LIV-DUNE1",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 186,
+        "name": "Poche",
+        "nameEn": "Pocket",
+        "value": "Poche",
+        "priceAdjustment": 0,
+        "stock": 100
+      },
+      {
+        "id": 187,
+        "name": "Grand format",
+        "nameEn": "Hardcover",
+        "value": "Grand",
+        "priceAdjustment": 10,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Le Petit Prince \u2013 Antoine de Saint-Exup\u00E9ry",
+    "nameEn": "The Little Prince - Antoine de Saint-Exupery",
+    "description": "Le classique intemporel de la litt\u00E9rature fran\u00E7aise. \u00C9dition illustr\u00E9e.",
+    "descriptionEn": "The timeless classic of French literature. Illustrated edition.",
+    "price": 7.50,
+    "brand": "Gallimard",
+    "sku": "LIV-PP",
+    "stock": 150,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 188,
+        "name": "Poche",
+        "nameEn": "Pocket",
+        "value": "Poche",
+        "priceAdjustment": 0,
+        "stock": 150
+      },
+      {
+        "id": 189,
+        "name": "Illustr\u00E9",
+        "nameEn": "Illustrated",
+        "value": "Illustr\u00E9",
+        "priceAdjustment": 12,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "One Piece Tome 107 \u2013 Eiichiro Oda",
+    "nameEn": "One Piece Volume 107 - Eiichiro Oda",
+    "description": "Dernier tome de la saga manga culte One Piece par Eiichiro Oda.",
+    "descriptionEn": "Latest volume of the cult manga saga One Piece by Eiichiro Oda.",
+    "price": 7.20,
+    "brand": "Gl\u00E9nat",
+    "sku": "LIV-OP107",
+    "stock": 80,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 190,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Naruto Int\u00E9grale Coffret 1",
+    "nameEn": "Naruto Complete Box Set 1",
+    "description": "Coffret int\u00E9grale des tomes 1 \u00E0 27 de Naruto en \u00E9dition collector.",
+    "descriptionEn": "Complete box set of Naruto volumes 1-27 in collector edition.",
+    "price": 149.99,
+    "promoPrice": 129.99,
+    "brand": "Kana",
+    "sku": "LIV-NARUCF1",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 191,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "L\u0027Anomalie \u2013 Herv\u00E9 Le Tellier (Goncourt 2020)",
+    "nameEn": "The Anomaly - Herve Le Tellier (Goncourt 2020)",
+    "description": "Roman Prix Goncourt 2020. Un vol Paris-New York confront\u00E9 \u00E0 l\u0027impossible.",
+    "descriptionEn": "Goncourt Prize 2020 novel. A Paris-New York flight confronted with the impossible.",
+    "price": 8.90,
+    "brand": "Folio",
+    "sku": "LIV-ANOMALIE",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 192,
+        "name": "Poche",
+        "nameEn": "Pocket",
+        "value": "Poche",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Sapiens \u2013 Yuval Noah Harari",
+    "nameEn": "Sapiens - Yuval Noah Harari",
+    "description": "L\u0027histoire de l\u0027humanit\u00E9 des origines \u00E0 nos jours. Best-seller mondial.",
+    "descriptionEn": "The history of humankind from origins to present day. Worldwide best-seller.",
+    "price": 12.90,
+    "promoPrice": 9.90,
+    "brand": "Albin Michel",
+    "sku": "LIV-SAPIENS",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 193,
+        "name": "Poche",
+        "nameEn": "Pocket",
+        "value": "Poche",
+        "priceAdjustment": 0,
+        "stock": 70
+      },
+      {
+        "id": 194,
+        "name": "Grand format",
+        "nameEn": "Hardcover",
+        "value": "Grand",
+        "priceAdjustment": 12,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Ast\u00E9rix Tome 40 \u2013 L\u0027Iris blanc",
+    "nameEn": "Asterix Volume 40 - The White Iris",
+    "description": "Derni\u00E8re aventure d\u0027Ast\u00E9rix et Ob\u00E9lix par Fabcaro.",
+    "descriptionEn": "Latest adventure of Asterix and Obelix by Fabcaro.",
+    "price": 10.50,
+    "brand": "Albert Ren\u00E9",
+    "sku": "LIV-AST40",
+    "stock": 45,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 195,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Devenir \u2013 Michelle Obama",
+    "nameEn": "Becoming - Michelle Obama",
+    "description": "L\u0027autobiographie de l\u0027ancienne Premi\u00E8re dame des \u00C9tats-Unis.",
+    "descriptionEn": "The autobiography of the former First Lady of the United States.",
+    "price": 8.90,
+    "promoPrice": 6.90,
+    "brand": "Le Livre de Poche",
+    "sku": "LIV-DEVENIR",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 196,
+        "name": "Poche",
+        "nameEn": "Pocket",
+        "value": "Poche",
+        "priceAdjustment": 0,
+        "stock": 55
+      },
+      {
+        "id": 197,
+        "name": "Grand format",
+        "nameEn": "Hardcover",
+        "value": "Grand",
+        "priceAdjustment": 15,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "Jujutsu Kaisen Tome 25",
+    "nameEn": "Jujutsu Kaisen Volume 25",
+    "description": "Dernier tome du manga ph\u00E9nom\u00E8ne Jujutsu Kaisen.",
+    "descriptionEn": "Latest volume of the phenomenon manga Jujutsu Kaisen.",
+    "price": 7.20,
+    "brand": "Ki-oon",
+    "sku": "LIV-JJK25",
+    "stock": 65,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 198,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 65
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Le Guide du Routard France 2024",
+    "nameEn": "Lonely Planet France 2024",
+    "description": "Guide de voyage complet avec itin\u00E9raires, bonnes adresses et carte d\u00E9tachable.",
+    "descriptionEn": "Complete travel guide with itineraries, top picks and detachable map.",
+    "price": 16.95,
+    "promoPrice": 14.95,
+    "brand": "Hachette",
+    "sku": "LIV-ROUTFR24",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 199,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  }
+]

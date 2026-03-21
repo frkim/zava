@@ -1,0 +1,2806 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "C\u00E2ble R2V 3G2.5 100m",
+    "nameEn": "R2V 3G2.5 Cable 100m",
+    "description": "C\u00E2ble rigide 3 conducteurs 2.5mm\u00B2 pour installation fixe.",
+    "descriptionEn": "Rigid 3-conductor 2.5mm\u00B2 cable for fixed installation.",
+    "price": 89.90,
+    "promoPrice": 75.90,
+    "brand": "Nexans",
+    "sku": "NEX-R2V325",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 2,
+        "name": "50m",
+        "nameEn": "50m",
+        "value": "50m",
+        "priceAdjustment": -40,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "C\u00E2ble H07V-U 2.5mm\u00B2 Bleu 100m",
+    "nameEn": "H07V-U 2.5mm\u00B2 Blue Wire 100m",
+    "description": "Fil rigide bleu pour circuits de puissance.",
+    "descriptionEn": "Rigid blue wire for power circuits.",
+    "price": 29.90,
+    "brand": "Nexans",
+    "sku": "NEX-H07VU25B",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 3,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Gaine ICTA 20mm 100m",
+    "nameEn": "ICTA Conduit 20mm 100m",
+    "description": "Gaine annel\u00E9e TPC pour encastrement des c\u00E2bles.",
+    "descriptionEn": "Corrugated conduit for cable embedding.",
+    "price": 22.90,
+    "promoPrice": 18.90,
+    "brand": "Legrex",
+    "sku": "LEG-ICTA20",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 4,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 60
+      },
+      {
+        "id": 5,
+        "name": "25m",
+        "nameEn": "25m",
+        "value": "25m",
+        "priceAdjustment": -15,
+        "stock": 90
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "C\u00E2ble Ethernet Cat6 UTP 100m",
+    "nameEn": "Cat6 UTP Ethernet Cable 100m",
+    "description": "C\u00E2ble r\u00E9seau cat\u00E9gorie 6 pour installation domotique et informatique.",
+    "descriptionEn": "Category 6 network cable for home automation and IT.",
+    "price": 59.90,
+    "brand": "Belden",
+    "sku": "BEL-CAT6100",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 6,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "C\u00E2ble coaxial 17VATC 100m",
+    "nameEn": "17VATC Coaxial Cable 100m",
+    "description": "C\u00E2ble coaxial blind\u00E9 pour antenne TV et satellite.",
+    "descriptionEn": "Shielded coaxial cable for TV antenna and satellite.",
+    "price": 35.90,
+    "promoPrice": 29.90,
+    "brand": "Nexans",
+    "sku": "NEX-17VATC",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 7,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 45
+      },
+      {
+        "id": 8,
+        "name": "25m",
+        "nameEn": "25m",
+        "value": "25m",
+        "priceAdjustment": -25,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "C\u00E2ble souple H07RN-F 3G2.5 50m",
+    "nameEn": "H07RN-F 3G2.5 Flexible Cable 50m",
+    "description": "C\u00E2ble souple caoutchouc pour usage ext\u00E9rieur et chantier.",
+    "descriptionEn": "Flexible rubber cable for outdoor and construction use.",
+    "price": 75.00,
+    "brand": "Nexans",
+    "sku": "NEX-H07RNF",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 9,
+        "name": "50m",
+        "nameEn": "50m",
+        "value": "50m",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "C\u00E2ble t\u00E9l\u00E9phone 298 4P 100m",
+    "nameEn": "Telephone Cable 298 4P 100m",
+    "description": "C\u00E2ble t\u00E9l\u00E9phonique 4 paires pour liaison int\u00E9rieure.",
+    "descriptionEn": "4-pair telephone cable for interior connection.",
+    "price": 19.90,
+    "promoPrice": 15.90,
+    "brand": "Nexans",
+    "sku": "NEX-TEL4P",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 10,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "C\u00E2ble R2V 5G1.5 50m",
+    "nameEn": "R2V 5G1.5 Cable 50m",
+    "description": "C\u00E2ble 5 conducteurs 1.5mm\u00B2 pour volets roulants et VMC.",
+    "descriptionEn": "5-conductor 1.5mm\u00B2 cable for roller shutters and ventilation.",
+    "price": 55.00,
+    "brand": "Nexans",
+    "sku": "NEX-R2V5G15",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 11,
+        "name": "50m",
+        "nameEn": "50m",
+        "value": "50m",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "C\u00E2ble bus KNX 2P 100m",
+    "nameEn": "KNX Bus Cable 2P 100m",
+    "description": "C\u00E2ble bus EIB/KNX pour installation domotique.",
+    "descriptionEn": "EIB/KNX bus cable for home automation installation.",
+    "price": 95.00,
+    "brand": "Hager",
+    "sku": "HAG-KNX2P",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 12,
+        "name": "100m",
+        "nameEn": "100m",
+        "value": "100m",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Prolongateur 25m 3G1.5 IP44",
+    "nameEn": "Extension Cord 25m 3G1.5 IP44",
+    "description": "Enrouleur prolongateur professionnel r\u00E9sistant aux projections.",
+    "descriptionEn": "Professional extension reel splash-resistant.",
+    "price": 39.90,
+    "promoPrice": 33.90,
+    "brand": "Brennenstuhl",
+    "sku": "BRS-P25",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 13,
+        "name": "25m",
+        "nameEn": "25m",
+        "value": "25m",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 14,
+        "name": "50m",
+        "nameEn": "50m",
+        "value": "50m",
+        "priceAdjustment": 20,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Disjoncteur Legrand DX\u00B3 20A courbe C",
+    "nameEn": "Legrand DX3 20A Circuit Breaker Curve C",
+    "description": "Disjoncteur modulaire unipolaire\u002Bneutre 20A pour prises.",
+    "descriptionEn": "Single-pole\u002Bneutral modular circuit breaker 20A for outlets.",
+    "price": 12.90,
+    "promoPrice": 10.50,
+    "brand": "Legrand",
+    "sku": "LEG-DX320A",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 15,
+        "name": "Uni\u002BN 20A",
+        "nameEn": "SP\u002BN 20A",
+        "value": "20A",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Disjoncteur Legrand DX\u00B3 16A courbe C",
+    "nameEn": "Legrand DX3 16A Circuit Breaker",
+    "description": "Disjoncteur modulaire uni\u002Bneutre 16A pour \u00E9clairage.",
+    "descriptionEn": "Single-pole\u002Bneutral circuit breaker 16A for lighting.",
+    "price": 12.90,
+    "brand": "Legrand",
+    "sku": "LEG-DX316A",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 16,
+        "name": "Uni\u002BN 16A",
+        "nameEn": "SP\u002BN 16A",
+        "value": "16A",
+        "priceAdjustment": 0,
+        "stock": 90
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Interrupteur diff\u00E9rentiel Legrand 63A 30mA Type AC",
+    "nameEn": "Legrand 63A 30mA RCD Type AC",
+    "description": "Interrupteur diff\u00E9rentiel 2P 63A sensibilit\u00E9 30mA.",
+    "descriptionEn": "2-pole 63A RCD with 30mA sensitivity.",
+    "price": 45.90,
+    "promoPrice": 39.90,
+    "brand": "Legrand",
+    "sku": "LEG-ID63AC",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 17,
+        "name": "Type AC",
+        "nameEn": "Type AC",
+        "value": "AC",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Interrupteur diff\u00E9rentiel Schneider 40A 30mA Type A",
+    "nameEn": "Schneider 40A 30mA RCD Type A",
+    "description": "Diff\u00E9rentiel type A pour circuits sp\u00E9cialis\u00E9s (plaque, lave-linge).",
+    "descriptionEn": "Type A RCD for dedicated circuits (cooktop, washing machine).",
+    "price": 65.00,
+    "brand": "Schneider Electric",
+    "sku": "SCH-ID40A",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 18,
+        "name": "Type A",
+        "nameEn": "Type A",
+        "value": "A",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "Disjoncteur Schneider iC60N 32A courbe C",
+    "nameEn": "Schneider iC60N 32A Circuit Breaker",
+    "description": "Disjoncteur 32A pour circuits sp\u00E9cialis\u00E9s (four, plaque).",
+    "descriptionEn": "32A breaker for dedicated circuits (oven, cooktop).",
+    "price": 18.90,
+    "brand": "Schneider Electric",
+    "sku": "SCH-IC60N32",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 19,
+        "name": "Uni\u002BN 32A",
+        "nameEn": "SP\u002BN 32A",
+        "value": "32A",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Parafoudre Hager SPN115",
+    "nameEn": "Hager SPN115 Surge Protector",
+    "description": "Parafoudre type 2 monophas\u00E9 pour tableau principal.",
+    "descriptionEn": "Type 2 single-phase surge protector for main panel.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Hager",
+    "sku": "HAG-SPN115",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 20,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Disjoncteur diff\u00E9rentiel Legrand DX\u00B3 20A 30mA",
+    "nameEn": "Legrand DX3 20A 30mA RCBO",
+    "description": "Disjoncteur diff\u00E9rentiel combin\u00E9 1P\u002BN 20A 30mA.",
+    "descriptionEn": "Combined RCBO 1P\u002BN 20A 30mA.",
+    "price": 55.00,
+    "brand": "Legrand",
+    "sku": "LEG-DD20A",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 21,
+        "name": "Type AC",
+        "nameEn": "Type AC",
+        "value": "AC",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Interrupteur sectionneur Legrand 63A",
+    "nameEn": "Legrand 63A Isolator Switch",
+    "description": "Interrupteur de coupure g\u00E9n\u00E9rale en t\u00EAte de tableau.",
+    "descriptionEn": "Main isolator switch at panel head.",
+    "price": 22.90,
+    "promoPrice": 18.90,
+    "brand": "Legrand",
+    "sku": "LEG-IS63",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 22,
+        "name": "2P 63A",
+        "nameEn": "2P 63A",
+        "value": "63A",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "Fusible cylindrique 10A 8.5x31.5",
+    "nameEn": "10A Cylindrical Fuse 8.5x31.5",
+    "description": "Lot de 10 fusibles cylindriques avec voyant de fusion.",
+    "descriptionEn": "Pack of 10 cylindrical fuses with blown indicator.",
+    "price": 5.90,
+    "brand": "Legrand",
+    "sku": "LEG-FUS10A",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 23,
+        "name": "Lot de 10",
+        "nameEn": "Pack of 10",
+        "value": "x10",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Contacteur jour/nuit Legrand 25A",
+    "nameEn": "Legrand 25A Day/Night Contactor",
+    "description": "Contacteur heures creuses pour ballon d\u0027eau chaude.",
+    "descriptionEn": "Off-peak hours contactor for water heater.",
+    "price": 29.90,
+    "promoPrice": 24.90,
+    "brand": "Legrand",
+    "sku": "LEG-CJN25",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 24,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Prise Legrand C\u00E9liane Blanc",
+    "nameEn": "Legrand Celiane White Outlet",
+    "description": "Prise de courant 2P\u002BT 16A avec terre, finition blanc.",
+    "descriptionEn": "2P\u002BE 16A power outlet with earth, white finish.",
+    "price": 8.90,
+    "brand": "Legrand",
+    "sku": "LEG-CEL-P",
+    "stock": 120,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 25,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 120
+      },
+      {
+        "id": 26,
+        "name": "Titane",
+        "nameEn": "Titanium",
+        "value": "Titane",
+        "priceAdjustment": 2,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Interrupteur Legrand C\u00E9liane va-et-vient",
+    "nameEn": "Legrand Celiane Two-Way Switch",
+    "description": "Interrupteur va-et-vient 10A, m\u00E9canisme \u002B enjoliveur blanc.",
+    "descriptionEn": "10A two-way switch, mechanism \u002B white trim plate.",
+    "price": 7.90,
+    "promoPrice": 6.50,
+    "brand": "Legrand",
+    "sku": "LEG-CEL-VV",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 27,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Prise Schneider Odace Blanc",
+    "nameEn": "Schneider Odace White Outlet",
+    "description": "Prise 2P\u002BT encastr\u00E9e avec volet et connexion auto.",
+    "descriptionEn": "2P\u002BE flush-mounted outlet with shutter and auto connection.",
+    "price": 6.90,
+    "brand": "Schneider Electric",
+    "sku": "SCH-ODA-P",
+    "stock": 90,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 28,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 90
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Double prise Legrand Mosaic 2\u00D72P\u002BT",
+    "nameEn": "Legrand Mosaic 2x2P\u002BE Double Outlet",
+    "description": "Double prise horizontale pour bo\u00EEte d\u0027encastrement.",
+    "descriptionEn": "Double horizontal outlet for flush box.",
+    "price": 14.90,
+    "promoPrice": 12.50,
+    "brand": "Legrand",
+    "sku": "LEG-MOS-2P",
+    "stock": 70,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 29,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 70
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Prise \u00E9tanche Plexo IP55",
+    "nameEn": "Plexo IP55 Weatherproof Outlet",
+    "description": "Prise ext\u00E9rieure avec clapet et \u00E9tanch\u00E9it\u00E9 IP55.",
+    "descriptionEn": "Outdoor outlet with flap and IP55 waterproofing.",
+    "price": 12.90,
+    "brand": "Legrand",
+    "sku": "LEG-PLEX-P",
+    "stock": 50,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 30,
+        "name": "Gris",
+        "nameEn": "Grey",
+        "value": "Gris",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Variateur Legrand C\u00E9liane 400W",
+    "nameEn": "Legrand Celiane 400W Dimmer",
+    "description": "Variateur rotatif compatible LED et halog\u00E8ne.",
+    "descriptionEn": "Rotary dimmer compatible with LED and halogen.",
+    "price": 35.00,
+    "promoPrice": 29.00,
+    "brand": "Legrand",
+    "sku": "LEG-CEL-VAR",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 31,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "Prise USB double Legrand",
+    "nameEn": "Legrand Double USB Outlet",
+    "description": "Prise encastr\u00E9e 2 USB-A 2.4A pour recharge rapide.",
+    "descriptionEn": "Flush-mounted 2x USB-A 2.4A for fast charging.",
+    "price": 25.90,
+    "brand": "Legrand",
+    "sku": "LEG-USB2",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 32,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Prise TV/SAT Legrand C\u00E9liane",
+    "nameEn": "Legrand Celiane TV/SAT Outlet",
+    "description": "Prise coaxiale TV-Satellite encastr\u00E9e.",
+    "descriptionEn": "Flush-mounted TV-Satellite coaxial outlet.",
+    "price": 15.90,
+    "promoPrice": 12.90,
+    "brand": "Legrand",
+    "sku": "LEG-CEL-TV",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 33,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Interrupteur automatique Legrand",
+    "nameEn": "Legrand Automatic Switch",
+    "description": "D\u00E9tecteur de mouvement 3 fils avec minuterie r\u00E9glable.",
+    "descriptionEn": "3-wire motion detector with adjustable timer.",
+    "price": 45.00,
+    "brand": "Legrand",
+    "sku": "LEG-AUTO",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 34,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Plaque triple Legrand C\u00E9liane",
+    "nameEn": "Legrand Celiane Triple Plate",
+    "description": "Plaque 3 postes horizontale finition verre Miroir.",
+    "descriptionEn": "3-gang horizontal plate glass Mirror finish.",
+    "price": 18.90,
+    "promoPrice": 15.90,
+    "brand": "Legrand",
+    "sku": "LEG-CEL-P3",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 35,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 45
+      },
+      {
+        "id": 36,
+        "name": "Verre Miroir",
+        "nameEn": "Mirror Glass",
+        "value": "Miroir",
+        "priceAdjustment": 12,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Ampoule LED E27 10W 2700K",
+    "nameEn": "LED Bulb E27 10W 2700K",
+    "description": "Ampoule LED blanc chaud \u00E9quivalent 75W, 1055 lumens.",
+    "descriptionEn": "Warm white LED bulb equivalent to 75W, 1055 lumens.",
+    "price": 3.90,
+    "promoPrice": 2.90,
+    "brand": "Philips",
+    "sku": "PHI-LED10W",
+    "stock": 200,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 37,
+        "name": "Lot de 1",
+        "nameEn": "Single",
+        "value": "x1",
+        "priceAdjustment": 0,
+        "stock": 200
+      },
+      {
+        "id": 38,
+        "name": "Lot de 6",
+        "nameEn": "6-Pack",
+        "value": "x6",
+        "priceAdjustment": 16,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Spot encastr\u00E9 LED GU10 5W",
+    "nameEn": "LED Recessed Spot GU10 5W",
+    "description": "Spot LED orientable blanc chaud avec transformateur int\u00E9gr\u00E9.",
+    "descriptionEn": "Adjustable warm white LED spot with integrated transformer.",
+    "price": 8.90,
+    "brand": "Philips",
+    "sku": "PHI-SPOTGU10",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 39,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 80
+      },
+      {
+        "id": 40,
+        "name": "Nickel",
+        "nameEn": "Nickel",
+        "value": "Nickel",
+        "priceAdjustment": 2,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Plafonnier LED rond 24W",
+    "nameEn": "Round LED Ceiling Light 24W",
+    "description": "Plafonnier slim 2400 lumens avec driver int\u00E9gr\u00E9, \u00D840cm.",
+    "descriptionEn": "2400 lumen slim ceiling light with integrated driver, \u00D840cm.",
+    "price": 29.90,
+    "promoPrice": 24.90,
+    "brand": "Ledvance",
+    "sku": "LED-PLF24",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 41,
+        "name": "4000K",
+        "nameEn": "4000K",
+        "value": "4000K",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 42,
+        "name": "3000K",
+        "nameEn": "3000K",
+        "value": "3000K",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Bandeau LED 5m Blanc Chaud",
+    "nameEn": "LED Strip 5m Warm White",
+    "description": "Ruban LED autocollant 300 LEDs avec alimentation 12V.",
+    "descriptionEn": "Self-adhesive LED strip 300 LEDs with 12V power supply.",
+    "price": 24.90,
+    "brand": "Paulmann",
+    "sku": "PAU-BAND5M",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 43,
+        "name": "Blanc chaud",
+        "nameEn": "Warm white",
+        "value": "2700K",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 44,
+        "name": "Multicolore RGB",
+        "nameEn": "RGB Multicolor",
+        "value": "RGB",
+        "priceAdjustment": 10,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "Suspension luminaire E27 noir",
+    "nameEn": "Pendant Light E27 Black",
+    "description": "Suspension design industriel avec c\u00E2ble textile 1.5m.",
+    "descriptionEn": "Industrial design pendant with 1.5m textile cable.",
+    "price": 19.90,
+    "promoPrice": 15.90,
+    "brand": "Eglo",
+    "sku": "EGL-SUSP",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 45,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 46,
+        "name": "Cuivre",
+        "nameEn": "Copper",
+        "value": "Cuivre",
+        "priceAdjustment": 5,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "R\u00E9glette LED T5 60cm 8W",
+    "nameEn": "LED T5 Batten 60cm 8W",
+    "description": "R\u00E9glette sous meuble 800 lumens avec interrupteur int\u00E9gr\u00E9.",
+    "descriptionEn": "Under-cabinet batten 800 lumens with integrated switch.",
+    "price": 12.90,
+    "brand": "Osram",
+    "sku": "OSR-T560",
+    "stock": 55,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 47,
+        "name": "4000K",
+        "nameEn": "4000K",
+        "value": "4000K",
+        "priceAdjustment": 0,
+        "stock": 55
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Lampe de bureau LED tactile",
+    "nameEn": "LED Touch Desk Lamp",
+    "description": "Lampe articul\u00E9e avec 5 intensit\u00E9s et 3 temp\u00E9ratures de couleur.",
+    "descriptionEn": "Articulated lamp with 5 brightness levels and 3 color temperatures.",
+    "price": 35.00,
+    "promoPrice": 29.00,
+    "brand": "Aluminor",
+    "sku": "ALU-LBTACT",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 48,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 49,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Ampoule LED filament E27 vintage",
+    "nameEn": "Vintage Filament LED Bulb E27",
+    "description": "Ampoule d\u00E9co filament ambr\u00E9e 4W forme Edison ST64.",
+    "descriptionEn": "Amber decorative filament bulb 4W Edison shape ST64.",
+    "price": 6.90,
+    "brand": "Philips",
+    "sku": "PHI-FILM4W",
+    "stock": 65,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 50,
+        "name": "2200K ambr\u00E9e",
+        "nameEn": "2200K amber",
+        "value": "2200K",
+        "priceAdjustment": 0,
+        "stock": 65
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Hublot LED rond IP65 18W",
+    "nameEn": "LED Round Bulkhead IP65 18W",
+    "description": "Hublot \u00E9tanche pour salle de bain et ext\u00E9rieur couvert.",
+    "descriptionEn": "Waterproof bulkhead for bathroom and covered outdoor.",
+    "price": 18.90,
+    "promoPrice": 14.90,
+    "brand": "Sarlam",
+    "sku": "SAR-HUB18",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 51,
+        "name": "4000K",
+        "nameEn": "4000K",
+        "value": "4000K",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "Spot sur rail LED 20W noir",
+    "nameEn": "LED Track Spot 20W Black",
+    "description": "Spot orientable sur rail pour commerce et habitat.",
+    "descriptionEn": "Adjustable track spot for retail and residential.",
+    "price": 29.90,
+    "brand": "SLV",
+    "sku": "SLV-RAIL20",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 52,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 53,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "Applique ext\u00E9rieure LED 12W IP65",
+    "nameEn": "LED Outdoor Wall Light 12W IP65",
+    "description": "Applique murale anthracite avec double faisceau haut/bas.",
+    "descriptionEn": "Anthracite wall light with dual up/down beam.",
+    "price": 32.00,
+    "promoPrice": 27.00,
+    "brand": "Philips",
+    "sku": "PHI-APPEXT",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 54,
+        "name": "Anthracite",
+        "nameEn": "Anthracite",
+        "value": "Anthracite",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "Projecteur LED 30W IP65",
+    "nameEn": "LED Floodlight 30W IP65",
+    "description": "Projecteur ext\u00E9rieur 2700 lumens avec d\u00E9tecteur de mouvement.",
+    "descriptionEn": "Outdoor floodlight 2700 lumens with motion detector.",
+    "price": 35.90,
+    "brand": "Ledvance",
+    "sku": "LED-PROJ30",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 55,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Borne solaire LED jardin",
+    "nameEn": "Solar LED Garden Bollard",
+    "description": "Borne solaire automatique avec batterie Li-Ion rechargeable.",
+    "descriptionEn": "Automatic solar bollard with rechargeable Li-Ion battery.",
+    "price": 19.90,
+    "promoPrice": 15.90,
+    "brand": "Inspire",
+    "sku": "INS-BSOL",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 56,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Guirlande LED ext\u00E9rieure 10m",
+    "nameEn": "Outdoor LED String Lights 10m",
+    "description": "Guirlande festive IP44 avec 20 ampoules LED blanc chaud.",
+    "descriptionEn": "IP44 festive string lights with 20 warm white LED bulbs.",
+    "price": 24.90,
+    "brand": "Blach\u00E8re",
+    "sku": "BLA-GUIR10",
+    "stock": 35,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 57,
+        "name": "Blanc chaud",
+        "nameEn": "Warm white",
+        "value": "2700K",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Lampadaire solaire puissant 1500lm",
+    "nameEn": "Powerful Solar Lamp Post 1500lm",
+    "description": "Cand\u00E9labre solaire avec panneau 25W et t\u00E9l\u00E9commande.",
+    "descriptionEn": "Solar lamp post with 25W panel and remote control.",
+    "price": 89.00,
+    "promoPrice": 75.00,
+    "brand": "Steinel",
+    "sku": "STE-LSS1500",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 58,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Spot \u00E0 piquer LED solaire",
+    "nameEn": "Solar LED Spike Spot",
+    "description": "Spot de jardin solaire orientable avec piquet.",
+    "descriptionEn": "Adjustable solar garden spot with ground spike.",
+    "price": 12.90,
+    "brand": "Inspire",
+    "sku": "INS-SPSOL",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 59,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Projecteur LED 50W IP65 avec d\u00E9tecteur",
+    "nameEn": "LED Floodlight 50W IP65 with Sensor",
+    "description": "Projecteur puissant avec d\u00E9tecteur de mouvement 12m.",
+    "descriptionEn": "Powerful floodlight with 12m motion sensor.",
+    "price": 49.90,
+    "promoPrice": 42.90,
+    "brand": "Brennenstuhl",
+    "sku": "BRS-PROJ50",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 60,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Applique solaire LED d\u00E9tecteur",
+    "nameEn": "Solar LED Wall Light with Sensor",
+    "description": "Applique solaire grand angle avec d\u00E9tecteur cr\u00E9pusculaire.",
+    "descriptionEn": "Wide-angle solar wall light with dusk sensor.",
+    "price": 22.90,
+    "brand": "Steinel",
+    "sku": "STE-ASLD",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 61,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Ruban LED ext\u00E9rieur IP67 5m",
+    "nameEn": "Outdoor LED Strip IP67 5m",
+    "description": "Ruban LED \u00E9tanche silicone pour terrasse et contour piscine.",
+    "descriptionEn": "Silicone waterproof LED strip for terrace and pool surround.",
+    "price": 39.90,
+    "promoPrice": 33.90,
+    "brand": "Paulmann",
+    "sku": "PAU-RBEXT5",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 62,
+        "name": "Blanc chaud",
+        "nameEn": "Warm white",
+        "value": "2700K",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 63,
+        "name": "RGB",
+        "nameEn": "RGB",
+        "value": "RGB",
+        "priceAdjustment": 15,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Lanterne solaire d\u00E9corative",
+    "nameEn": "Decorative Solar Lantern",
+    "description": "Lanterne suspendue avec bougie LED et effet flamme.",
+    "descriptionEn": "Hanging lantern with LED candle and flame effect.",
+    "price": 15.90,
+    "brand": "Inspire",
+    "sku": "INS-LSOL",
+    "stock": 40,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 64,
+        "name": "Noir",
+        "nameEn": "Black",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Coffret Legrand Drivia 13 modules 2 rang\u00E9es",
+    "nameEn": "Legrand Drivia Panel 13 Modules 2 Rows",
+    "description": "Coffret d\u0027habillage avec porte opaque pour tableau DIY.",
+    "descriptionEn": "Trim enclosure with opaque door for DIY panel.",
+    "price": 35.90,
+    "promoPrice": 29.90,
+    "brand": "Legrand",
+    "sku": "LEG-DRIV2R",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 65,
+        "name": "2 rang\u00E9es",
+        "nameEn": "2 rows",
+        "value": "2R",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Coffret Legrand Drivia 13 modules 3 rang\u00E9es",
+    "nameEn": "Legrand Drivia Panel 13 Modules 3 Rows",
+    "description": "Coffret 3 rang\u00E9es pour installation T3-T4 compl\u00E8te.",
+    "descriptionEn": "3-row enclosure for complete T3-T4 installation.",
+    "price": 45.90,
+    "brand": "Legrand",
+    "sku": "LEG-DRIV3R",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 66,
+        "name": "3 rang\u00E9es",
+        "nameEn": "3 rows",
+        "value": "3R",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Coffret Schneider Resi9 2 rang\u00E9es",
+    "nameEn": "Schneider Resi9 Panel 2 Rows",
+    "description": "Tableau \u00E9lectrique pr\u00E9-\u00E9quip\u00E9 avec borniers et peigne.",
+    "descriptionEn": "Pre-equipped electrical panel with terminals and comb.",
+    "price": 42.00,
+    "promoPrice": 35.00,
+    "brand": "Schneider Electric",
+    "sku": "SCH-RESI2R",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 67,
+        "name": "2 rang\u00E9es",
+        "nameEn": "2 rows",
+        "value": "2R",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Peigne d\u0027alimentation horizontal Legrand",
+    "nameEn": "Legrand Horizontal Comb Busbar",
+    "description": "Peigne horizontal 1P\u002BN pour connexion rapide des modules.",
+    "descriptionEn": "Horizontal 1P\u002BN comb busbar for quick module connection.",
+    "price": 15.90,
+    "brand": "Legrand",
+    "sku": "LEG-PEIGNH",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 68,
+        "name": "13 modules",
+        "nameEn": "13 modules",
+        "value": "13M",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "Bornier de terre 25mm\u00B2",
+    "nameEn": "25mm\u00B2 Earth Terminal",
+    "description": "Bornier de terre rail DIN pour tableau \u00E9lectrique.",
+    "descriptionEn": "DIN rail earth terminal for electrical panel.",
+    "price": 8.90,
+    "promoPrice": 6.90,
+    "brand": "Legrand",
+    "sku": "LEG-BORNT",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 69,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Coffret de communication Grade 2",
+    "nameEn": "Grade 2 Communication Panel",
+    "description": "Coffret multim\u00E9dia pour distribution TV, RJ45 et fibre.",
+    "descriptionEn": "Multimedia enclosure for TV, RJ45 and fiber distribution.",
+    "price": 89.00,
+    "brand": "Legrand",
+    "sku": "LEG-COMM-G2",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 70,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "GTL (Gaine Technique Logement) 2.60m",
+    "nameEn": "GTL Housing Technical Duct 2.60m",
+    "description": "Goulotte technique pour passage des c\u00E2bles du tableau.",
+    "descriptionEn": "Technical trunking for panel cable routing.",
+    "price": 42.00,
+    "promoPrice": 35.00,
+    "brand": "Legrand",
+    "sku": "LEG-GTL260",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 71,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "Porte transparente Drivia 2 rang\u00E9es",
+    "nameEn": "Drivia Transparent Door 2 Rows",
+    "description": "Porte de coffret avec vision directe sur les modules.",
+    "descriptionEn": "Enclosure door with direct view of modules.",
+    "price": 18.90,
+    "brand": "Legrand",
+    "sku": "LEG-PORTD2",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 72,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Kit de mise \u00E0 la terre",
+    "nameEn": "Earthing Kit",
+    "description": "Kit complet : piquet, c\u00E2ble cuivre 25mm\u00B2 et barrette de coupure.",
+    "descriptionEn": "Complete kit: rod, 25mm\u00B2 copper cable and disconnect bar.",
+    "price": 35.00,
+    "promoPrice": 29.00,
+    "brand": "Legrand",
+    "sku": "LEG-KMAT",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 73,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Tableau pr\u00E9-c\u00E2bl\u00E9 T2 Legrand",
+    "nameEn": "Legrand Pre-Wired T2 Panel",
+    "description": "Tableau complet pr\u00E9-c\u00E2bl\u00E9 pour logement T2, NF C 15-100.",
+    "descriptionEn": "Complete pre-wired panel for T2 housing, NF C 15-100 compliant.",
+    "price": 189.00,
+    "promoPrice": 159.00,
+    "brand": "Legrand",
+    "sku": "LEG-PRT2",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 74,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Prise connect\u00E9e Legrand with Netatmo",
+    "nameEn": "Legrand Connected Outlet with Netatmo",
+    "description": "Prise 16A pilotable par app avec mesure de consommation.",
+    "descriptionEn": "16A app-controlled outlet with consumption monitoring.",
+    "price": 69.00,
+    "promoPrice": 59.00,
+    "brand": "Legrand",
+    "sku": "LEG-WNET-P",
+    "stock": 25,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 75,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Thermostat connect\u00E9 Netatmo",
+    "nameEn": "Netatmo Smart Thermostat",
+    "description": "Thermostat intelligent avec programme auto-adapt et contr\u00F4le vocal.",
+    "descriptionEn": "Smart thermostat with auto-adapt schedule and voice control.",
+    "price": 179.00,
+    "brand": "Netatmo",
+    "sku": "NET-THERM",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 76,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Interrupteur connect\u00E9 Legrand with Netatmo",
+    "nameEn": "Legrand Connected Switch with Netatmo",
+    "description": "Interrupteur va-et-vient connect\u00E9 avec commande vocale.",
+    "descriptionEn": "Connected two-way switch with voice control.",
+    "price": 59.00,
+    "promoPrice": 49.00,
+    "brand": "Legrand",
+    "sku": "LEG-WNET-I",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 77,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Module volet roulant connect\u00E9 Delta Dore",
+    "nameEn": "Delta Dore Connected Roller Shutter Module",
+    "description": "Module Tydom pour pilotage des volets roulants \u00E0 distance.",
+    "descriptionEn": "Tydom module for remote roller shutter control.",
+    "price": 59.00,
+    "brand": "Delta Dore",
+    "sku": "DD-VOLCON",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 78,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Cam\u00E9ra int\u00E9rieure connect\u00E9e Netatmo",
+    "nameEn": "Netatmo Smart Indoor Camera",
+    "description": "Cam\u00E9ra de s\u00E9curit\u00E9 avec reconnaissance faciale et alertes.",
+    "descriptionEn": "Security camera with facial recognition and alerts.",
+    "price": 199.00,
+    "promoPrice": 169.00,
+    "brand": "Netatmo",
+    "sku": "NET-CAM",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 79,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "D\u00E9tecteur fum\u00E9e connect\u00E9 Netatmo",
+    "nameEn": "Netatmo Smart Smoke Alarm",
+    "description": "D\u00E9tecteur de fum\u00E9e intelligent avec alerte smartphone.",
+    "descriptionEn": "Smart smoke detector with smartphone alert.",
+    "price": 99.00,
+    "brand": "Netatmo",
+    "sku": "NET-FUMEE",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 80,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Ampoule connect\u00E9e Philips Hue E27",
+    "nameEn": "Philips Hue Smart Bulb E27",
+    "description": "Ampoule LED connect\u00E9e White and Color 9W, 16 millions de couleurs.",
+    "descriptionEn": "Connected White and Color 9W LED bulb, 16 million colors.",
+    "price": 49.90,
+    "promoPrice": 39.90,
+    "brand": "Philips",
+    "sku": "PHI-HUE-E27",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 81,
+        "name": "White and Color",
+        "nameEn": "White and Color",
+        "value": "WC",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 82,
+        "name": "White Ambiance",
+        "nameEn": "White Ambiance",
+        "value": "WA",
+        "priceAdjustment": -15,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Pont Philips Hue Bridge",
+    "nameEn": "Philips Hue Bridge",
+    "description": "Passerelle Zigbee pour contr\u00F4ler jusqu\u0027\u00E0 50 ampoules Hue.",
+    "descriptionEn": "Zigbee gateway to control up to 50 Hue bulbs.",
+    "price": 49.90,
+    "brand": "Philips",
+    "sku": "PHI-HUE-BR",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 83,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Sonnette vid\u00E9o connect\u00E9e Ring",
+    "nameEn": "Ring Video Doorbell",
+    "description": "Sonnette vid\u00E9o HD avec d\u00E9tection de mouvement et vision nocturne.",
+    "descriptionEn": "HD video doorbell with motion detection and night vision.",
+    "price": 99.00,
+    "promoPrice": 85.00,
+    "brand": "Ring",
+    "sku": "RNG-VD",
+    "stock": 22,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 84,
+        "name": "Nickel satin\u00E9",
+        "nameEn": "Satin Nickel",
+        "value": "Nickel",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Prise connect\u00E9e TP-Link Tapo P110",
+    "nameEn": "TP-Link Tapo P110 Smart Plug",
+    "description": "Prise WiFi avec suivi de consommation en temps r\u00E9el.",
+    "descriptionEn": "WiFi plug with real-time energy monitoring.",
+    "price": 14.90,
+    "brand": "TP-Link",
+    "sku": "TPL-P110",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 85,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Multim\u00E8tre digital Fluke 117",
+    "nameEn": "Fluke 117 Digital Multimeter",
+    "description": "Multim\u00E8tre TRMS avec d\u00E9tection de tension sans contact.",
+    "descriptionEn": "True-RMS multimeter with non-contact voltage detection.",
+    "price": 189.00,
+    "promoPrice": 165.00,
+    "brand": "Fluke",
+    "sku": "FLK-117",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 86,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Tournevis testeur Wera",
+    "nameEn": "Wera Voltage Tester Screwdriver",
+    "description": "Tournevis testeur de phase 100-250V avec lame isol\u00E9e.",
+    "descriptionEn": "Phase voltage tester screwdriver 100-250V with insulated blade.",
+    "price": 8.90,
+    "brand": "Wera",
+    "sku": "WER-TEST",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 87,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Pince coupante diagonale VDE 160mm",
+    "nameEn": "VDE Diagonal Cutting Pliers 160mm",
+    "description": "Pince coupante isol\u00E9e 1000V pour travaux sous tension.",
+    "descriptionEn": "1000V insulated cutting pliers for live working.",
+    "price": 25.90,
+    "promoPrice": 21.90,
+    "brand": "Knipex",
+    "sku": "KNP-DIG160",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 88,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Pince \u00E0 d\u00E9nuder automatique Jokari",
+    "nameEn": "Jokari Automatic Wire Stripper",
+    "description": "Pince \u00E0 d\u00E9nuder auto-ajustable 0.2-6mm\u00B2.",
+    "descriptionEn": "Auto-adjustable wire stripper 0.2-6mm\u00B2.",
+    "price": 19.90,
+    "brand": "Jokari",
+    "sku": "JOK-DEN",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 89,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Coffret embouts isol\u00E9s",
+    "nameEn": "Insulated Ferrule Kit",
+    "description": "Coffret 800 embouts de c\u00E2blage avec pince \u00E0 sertir.",
+    "descriptionEn": "800-piece wiring ferrule kit with crimping tool.",
+    "price": 39.90,
+    "promoPrice": 33.90,
+    "brand": "Weidm\u00FCller",
+    "sku": "WDM-EMBKIT",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 90,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "D\u00E9tecteur de c\u00E2bles et m\u00E9taux",
+    "nameEn": "Cable and Metal Detector",
+    "description": "D\u00E9tecteur mural pour c\u00E2bles sous tension et canalisations.",
+    "descriptionEn": "Wall detector for live cables and pipes.",
+    "price": 49.90,
+    "brand": "Bosch",
+    "sku": "BOS-DET",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 91,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Niveau laser vert Bosch",
+    "nameEn": "Bosch Green Laser Level",
+    "description": "Niveau laser croix autonivelant avec port\u00E9e 15m.",
+    "descriptionEn": "Self-leveling cross-line laser level with 15m range.",
+    "price": 79.00,
+    "promoPrice": 65.00,
+    "brand": "Bosch",
+    "sku": "BOS-LASER",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 92,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Coffret tournevis isol\u00E9s 1000V Wera",
+    "nameEn": "Wera 1000V Insulated Screwdriver Set",
+    "description": "Coffret 7 tournevis VDE plat et cruciforme.",
+    "descriptionEn": "7-piece VDE flat and Phillips insulated screwdriver set.",
+    "price": 55.00,
+    "brand": "Wera",
+    "sku": "WER-VDE7",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 93,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Testeur de prise Chauvin Arnoux",
+    "nameEn": "Chauvin Arnoux Socket Tester",
+    "description": "Contr\u00F4leur de prise avec test diff\u00E9rentiel 30mA.",
+    "descriptionEn": "Socket tester with 30mA RCD test.",
+    "price": 35.00,
+    "promoPrice": 29.00,
+    "brand": "Chauvin Arnoux",
+    "sku": "CA-TESTP",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 94,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "Sac \u00E0 outils \u00E9lectricien",
+    "nameEn": "Electrician Tool Bag",
+    "description": "Sacoche professionnelle 20 compartiments fond renforc\u00E9.",
+    "descriptionEn": "Professional tool bag 20 compartments reinforced bottom.",
+    "price": 45.00,
+    "brand": "Facom",
+    "sku": "FAC-SACEL",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 95,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Radiateur inertie s\u00E8che 1500W",
+    "nameEn": "Dry Inertia Radiator 1500W",
+    "description": "Radiateur \u00E0 inertie c\u00E9ramique programmable avec \u00E9cran LCD.",
+    "descriptionEn": "Programmable ceramic inertia radiator with LCD display.",
+    "price": 249.00,
+    "promoPrice": 209.00,
+    "brand": "Atlantic",
+    "sku": "ATL-INE1500",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 96,
+        "name": "1500W",
+        "nameEn": "1500W",
+        "value": "1500W",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 97,
+        "name": "1000W",
+        "nameEn": "1000W",
+        "value": "1000W",
+        "priceAdjustment": -50,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Radiateur inertie fluide 1000W",
+    "nameEn": "Fluid Inertia Radiator 1000W",
+    "description": "Radiateur \u00E0 fluide caloporteur avec chaleur douce et homog\u00E8ne.",
+    "descriptionEn": "Heat transfer fluid radiator with gentle and even heat.",
+    "price": 199.00,
+    "brand": "Acova",
+    "sku": "ACO-INF1000",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 98,
+        "name": "1000W",
+        "nameEn": "1000W",
+        "value": "1000W",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Panneau rayonnant 1500W",
+    "nameEn": "Radiant Panel 1500W",
+    "description": "Panneau rayonnant programmable tr\u00E8s plat, \u00E9paisseur 7.5cm.",
+    "descriptionEn": "Ultra-slim programmable radiant panel, 7.5cm thick.",
+    "price": 149.00,
+    "promoPrice": 125.00,
+    "brand": "Atlantic",
+    "sku": "ATL-RAY1500",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 99,
+        "name": "1500W",
+        "nameEn": "1500W",
+        "value": "1500W",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 100,
+        "name": "1000W",
+        "nameEn": "1000W",
+        "value": "1000W",
+        "priceAdjustment": -30,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Convecteur \u00E9lectrique 2000W",
+    "nameEn": "Electric Convector 2000W",
+    "description": "Convecteur mural silencieux avec thermostat m\u00E9canique.",
+    "descriptionEn": "Silent wall-mounted convector with mechanical thermostat.",
+    "price": 59.00,
+    "brand": "Atlantic",
+    "sku": "ATL-CONV2000",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 101,
+        "name": "2000W",
+        "nameEn": "2000W",
+        "value": "2000W",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "S\u00E8che-serviettes soufflant 1500W",
+    "nameEn": "Towel Warmer with Fan 1500W",
+    "description": "S\u00E8che-serviettes \u00E9lectrique avec soufflerie 500W boost.",
+    "descriptionEn": "Electric towel warmer with 500W fan boost.",
+    "price": 199.00,
+    "promoPrice": 169.00,
+    "brand": "Sauter",
+    "sku": "SAU-SS1500",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 102,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Radiateur \u00E0 bain d\u0027huile 2500W",
+    "nameEn": "Oil-Filled Radiator 2500W",
+    "description": "Radiateur mobile 11 \u00E9l\u00E9ments avec minuterie 24h.",
+    "descriptionEn": "Mobile 11-element radiator with 24h timer.",
+    "price": 79.00,
+    "brand": "De\u0027Longhi",
+    "sku": "DLG-HUILE2500",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 103,
+        "name": "2500W",
+        "nameEn": "2500W",
+        "value": "2500W",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Chemin\u00E9e \u00E9lectrique d\u00E9corative",
+    "nameEn": "Decorative Electric Fireplace",
+    "description": "Chemin\u00E9e murale avec effet flamme LED et chauffage 2000W.",
+    "descriptionEn": "Wall-mounted fireplace with LED flame effect and 2000W heating.",
+    "price": 349.00,
+    "promoPrice": 299.00,
+    "brand": "Carrera",
+    "sku": "CAR-CHEMEL",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 104,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Radiateur s\u00E8che-serviettes pivotant",
+    "nameEn": "Pivoting Towel Warmer Radiator",
+    "description": "S\u00E8che-serviettes eau chaude pivotant en acier chrom\u00E9.",
+    "descriptionEn": "Pivoting hot water towel warmer in chrome steel.",
+    "price": 159.00,
+    "brand": "Acova",
+    "sku": "ACO-SSPIV",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 105,
+        "name": "Chrom\u00E9",
+        "nameEn": "Chrome",
+        "value": "Chrome",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Plancher chauffant \u00E9lectrique 5m\u00B2",
+    "nameEn": "Electric Underfloor Heating 5m\u00B2",
+    "description": "Trame chauffante en nappe pour r\u00E9novation, 150W/m\u00B2.",
+    "descriptionEn": "Heating mat for renovation, 150W/m\u00B2.",
+    "price": 129.00,
+    "promoPrice": 109.00,
+    "brand": "Thermor",
+    "sku": "THE-PCH5",
+    "stock": 16,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 106,
+        "name": "5m\u00B2",
+        "nameEn": "5m\u00B2",
+        "value": "5m\u00B2",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 107,
+        "name": "10m\u00B2",
+        "nameEn": "10m\u00B2",
+        "value": "10m\u00B2",
+        "priceAdjustment": 80,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Soufflant c\u00E9ramique 2000W",
+    "nameEn": "Ceramic Fan Heater 2000W",
+    "description": "Chauffage soufflant d\u0027appoint avec oscillation et minuterie.",
+    "descriptionEn": "Supplementary fan heater with oscillation and timer.",
+    "price": 39.90,
+    "brand": "Rowenta",
+    "sku": "ROW-SOUF2000",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 108,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "VMC simple flux auto Aldes",
+    "nameEn": "Aldes Single Flow Self-Adjusting MEV",
+    "description": "VMC autor\u00E9glable 2 vitesses pour T2-T5 avec bouches.",
+    "descriptionEn": "Self-regulating 2-speed MEV for T2-T5 with vents.",
+    "price": 129.00,
+    "promoPrice": 109.00,
+    "brand": "Aldes",
+    "sku": "ALD-VMCAUTO",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 109,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "VMC double flux haut rendement",
+    "nameEn": "High Efficiency Heat Recovery MEV",
+    "description": "VMC double flux avec r\u00E9cup\u00E9ration de chaleur 90%.",
+    "descriptionEn": "Dual-flow MEV with 90% heat recovery.",
+    "price": 899.00,
+    "brand": "Aldes",
+    "sku": "ALD-DF90",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 110,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "Extracteur salle de bain 15W",
+    "nameEn": "Bathroom Extractor Fan 15W",
+    "description": "Extracteur silencieux 26dB avec temporisateur et clapet anti-retour.",
+    "descriptionEn": "Silent 26dB extractor with timer and backdraft shutter.",
+    "price": 39.90,
+    "promoPrice": 33.90,
+    "brand": "Aldes",
+    "sku": "ALD-EXTSDB",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 111,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Climatiseur split inverter 2.5kW",
+    "nameEn": "Inverter Split AC 2.5kW",
+    "description": "Climatiseur r\u00E9versible chaud/froid pour pi\u00E8ce 25m\u00B2, classe A\u002B\u002B.",
+    "descriptionEn": "Reversible hot/cold AC for 25m\u00B2 room, A\u002B\u002B rated.",
+    "price": 599.00,
+    "promoPrice": 499.00,
+    "brand": "Daikin",
+    "sku": "DAI-SPLIT25",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 112,
+        "name": "2.5kW",
+        "nameEn": "2.5kW",
+        "value": "2.5kW",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Climatiseur mobile 2.6kW",
+    "nameEn": "Portable Air Conditioner 2.6kW",
+    "description": "Climatiseur monobloc mobile avec d\u00E9shumidification 46L/jour.",
+    "descriptionEn": "Mobile monobloc AC with 46L/day dehumidification.",
+    "price": 399.00,
+    "brand": "De\u0027Longhi",
+    "sku": "DLG-CLIMOB",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 113,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Ventilateur colonne tour 45W",
+    "nameEn": "Tower Fan 45W",
+    "description": "Ventilateur colonne silencieux avec oscillation et t\u00E9l\u00E9commande.",
+    "descriptionEn": "Silent tower fan with oscillation and remote control.",
+    "price": 59.00,
+    "promoPrice": 49.00,
+    "brand": "Dyson",
+    "sku": "DYS-TOWER45",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 114,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Bouche VMC hygro cuisine",
+    "nameEn": "Humidity-Sensitive Kitchen MEV Vent",
+    "description": "Bouche d\u0027extraction hygror\u00E9glable 10-45 m\u00B3/h pour cuisine.",
+    "descriptionEn": "Humidity-adjustable extract vent 10-45 m\u00B3/h for kitchen.",
+    "price": 29.90,
+    "brand": "Aldes",
+    "sku": "ALD-BCUISINE",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 115,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Grille de ventilation r\u00E9glable 150mm",
+    "nameEn": "Adjustable Ventilation Grille 150mm",
+    "description": "Grille d\u0027a\u00E9ration murale avec volet r\u00E9glable.",
+    "descriptionEn": "Wall ventilation grille with adjustable shutter.",
+    "price": 5.90,
+    "promoPrice": 4.50,
+    "brand": "Nicoll",
+    "sku": "NIC-GRILL150",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 116,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "D\u00E9shumidificateur 20L/jour",
+    "nameEn": "Dehumidifier 20L/day",
+    "description": "D\u00E9shumidificateur \u00E9lectrique avec hygrostat et mode buanderie.",
+    "descriptionEn": "Electric dehumidifier with hygrostat and laundry mode.",
+    "price": 199.00,
+    "promoPrice": 169.00,
+    "brand": "De\u0027Longhi",
+    "sku": "DLG-DESHUM20",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 117,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Ventilateur plafond avec lumi\u00E8re LED",
+    "nameEn": "Ceiling Fan with LED Light",
+    "description": "Ventilateur de plafond 3 vitesses avec LED 18W int\u00E9gr\u00E9e.",
+    "descriptionEn": "3-speed ceiling fan with integrated 18W LED.",
+    "price": 89.00,
+    "brand": "Westinghouse",
+    "sku": "WST-VPCLLED",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 118,
+        "name": "Blanc",
+        "nameEn": "White",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 119,
+        "name": "Nickel",
+        "nameEn": "Nickel",
+        "value": "Nickel",
+        "priceAdjustment": 10,
+        "stock": 10
+      }
+    ]
+  }
+]

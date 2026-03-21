@@ -1,0 +1,2657 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Samsung RB38C775CS9 Bespoke",
+    "nameEn": "Samsung RB38C775CS9 Bespoke",
+    "description": "R\u00E9frig\u00E9rateur combin\u00E9 390L avec cong\u00E9lateur en bas, No Frost int\u00E9gral et Wi-Fi.",
+    "descriptionEn": "390L bottom-freezer combi with Total No Frost and Wi-Fi.",
+    "price": 899.99,
+    "promoPrice": 799.99,
+    "brand": "Samsung",
+    "sku": "SAM-RB38C",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 10,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Bosch KGN39AIAT S\u00E9rie 6",
+    "nameEn": "Bosch KGN39AIAT Series 6",
+    "description": "Combin\u00E9 r\u00E9frig\u00E9rateur-cong\u00E9lateur 363L, VitaFresh et compresseur inverter.",
+    "descriptionEn": "363L fridge-freezer combi, VitaFresh and inverter compressor.",
+    "price": 799.99,
+    "brand": "Bosch",
+    "sku": "BOS-KGN39",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 20,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "LG GBV3200DSW",
+    "nameEn": "LG GBV3200DSW",
+    "description": "R\u00E9frig\u00E9rateur combin\u00E9 387L avec Linear Cooling et DoorCooling\u002B.",
+    "descriptionEn": "387L combi fridge with Linear Cooling and DoorCooling\u002B.",
+    "price": 699.99,
+    "promoPrice": 599.99,
+    "brand": "LG",
+    "sku": "LG-GBV3200",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 30,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Whirlpool W7 931T MX H",
+    "nameEn": "Whirlpool W7 931T MX H",
+    "description": "R\u00E9frig\u00E9rateur combin\u00E9 368L avec 6\u00E8me Sens et Total No Frost.",
+    "descriptionEn": "368L combi fridge with 6th Sense and Total No Frost.",
+    "price": 649.99,
+    "brand": "Whirlpool",
+    "sku": "WHP-W7931",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 40,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Liebherr CNsfd 5743",
+    "nameEn": "Liebherr CNsfd 5743",
+    "description": "Combin\u00E9 NoFrost 371L avec EasyFresh et SuperCool.",
+    "descriptionEn": "371L NoFrost combi with EasyFresh and SuperCool.",
+    "price": 1099.99,
+    "promoPrice": 949.99,
+    "brand": "Liebherr",
+    "sku": "LIE-CNSFD5743",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 50,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Samsung RF65A967FS9 Family Hub",
+    "nameEn": "Samsung RF65A967FS9 Family Hub",
+    "description": "R\u00E9frig\u00E9rateur am\u00E9ricain 641L avec \u00E9cran tactile Family Hub et distributeur d\u0027eau.",
+    "descriptionEn": "641L American fridge with Family Hub touchscreen and water dispenser.",
+    "price": 2499.99,
+    "brand": "Samsung",
+    "sku": "SAM-RF65A",
+    "stock": 8,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 60,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "Beko RCSE300K40SN",
+    "nameEn": "Beko RCSE300K40SN",
+    "description": "R\u00E9frig\u00E9rateur combin\u00E9 291L \u00E9conomique classe A\u002B.",
+    "descriptionEn": "291L budget combi fridge A\u002B rated.",
+    "price": 399.99,
+    "promoPrice": 349.99,
+    "brand": "Beko",
+    "sku": "BEK-RCSE300",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 70,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Electrolux LNT7ME34G1",
+    "nameEn": "Electrolux LNT7ME34G1",
+    "description": "Combin\u00E9 TwinTech 360L avec CustomFlex et FreshMode.",
+    "descriptionEn": "360L TwinTech combi with CustomFlex and FreshMode.",
+    "price": 899.99,
+    "brand": "Electrolux",
+    "sku": "ELX-LNT7ME",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 80,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Haier HB20FPAAA",
+    "nameEn": "Haier HB20FPAAA",
+    "description": "R\u00E9frig\u00E9rateur 4 portes 547L avec MyZone et ABT antibact\u00E9rien.",
+    "descriptionEn": "4-door 547L fridge with MyZone and ABT antibacterial.",
+    "price": 1199.99,
+    "promoPrice": 999.99,
+    "brand": "Haier",
+    "sku": "HAI-HB20F",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 90,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Miele KFN 4898 AD",
+    "nameEn": "Miele KFN 4898 AD",
+    "description": "Combin\u00E9 FreshAir 362L avec DailyFresh et NoFrost.",
+    "descriptionEn": "362L FreshAir combi with DailyFresh and NoFrost.",
+    "price": 1599.99,
+    "brand": "Miele",
+    "sku": "MIE-KFN4898",
+    "stock": 6,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 100,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Bosch WQB245B0FF S\u00E9rie 8",
+    "nameEn": "Bosch WQB245B0FF Series 8",
+    "description": "S\u00E8che-linge pompe \u00E0 chaleur 9kg avec SelfCleaning Condenser et AutoDry.",
+    "descriptionEn": "9kg heat pump dryer with SelfCleaning Condenser and AutoDry.",
+    "price": 899.99,
+    "promoPrice": 799.99,
+    "brand": "Bosch",
+    "sku": "BOS-WQB245",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 110,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Samsung WW11BBA046AW",
+    "nameEn": "Samsung WW11BBA046AW",
+    "description": "Lave-linge 11kg avec EcoBubble, Add Wash et moteur Digital Inverter.",
+    "descriptionEn": "11kg washing machine with EcoBubble, Add Wash and Digital Inverter motor.",
+    "price": 699.99,
+    "brand": "Samsung",
+    "sku": "SAM-WW11BBA",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 120,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Miele WSD 663 WCS",
+    "nameEn": "Miele WSD 663 WCS",
+    "description": "Lave-linge 8kg avec TwinDos et syst\u00E8me QuickPowerWash.",
+    "descriptionEn": "8kg washing machine with TwinDos and QuickPowerWash system.",
+    "price": 1299.99,
+    "promoPrice": 1099.99,
+    "brand": "Miele",
+    "sku": "MIE-WSD663",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 130,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "LG F94V35WHS",
+    "nameEn": "LG F94V35WHS",
+    "description": "Lave-linge 9kg avec AI DD, vapeur et Wi-Fi connect\u00E9.",
+    "descriptionEn": "9kg washing machine with AI DD, steam and Wi-Fi connected.",
+    "price": 599.99,
+    "promoPrice": 499.99,
+    "brand": "LG",
+    "sku": "LG-F94V35",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 140,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "Electrolux EW7F3921RL PerfectCare",
+    "nameEn": "Electrolux EW7F3921RL PerfectCare",
+    "description": "Lave-linge 9kg avec vapeur SteamCare et programme UltraWash.",
+    "descriptionEn": "9kg washing machine with SteamCare steam and UltraWash program.",
+    "price": 549.99,
+    "brand": "Electrolux",
+    "sku": "ELX-EW7F39",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 150,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Whirlpool FFDB 9469 BSV FR",
+    "nameEn": "Whirlpool FFDB 9469 BSV FR",
+    "description": "Lave-linge 9kg avec FreshCare\u002B et moteur SenseInverter.",
+    "descriptionEn": "9kg washing machine with FreshCare\u002B and SenseInverter motor.",
+    "price": 479.99,
+    "promoPrice": 399.99,
+    "brand": "Whirlpool",
+    "sku": "WHP-FFDB9469",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 160,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Beko WUE8736XST",
+    "nameEn": "Beko WUE8736XST",
+    "description": "Lave-linge 8kg avec SteamCure et moteur ProSmart Inverter.",
+    "descriptionEn": "8kg washing machine with SteamCure and ProSmart Inverter motor.",
+    "price": 399.99,
+    "brand": "Beko",
+    "sku": "BEK-WUE8736",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 170,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Samsung WD90T534DBN Lavante-s\u00E9chante",
+    "nameEn": "Samsung WD90T534DBN Washer-dryer",
+    "description": "Lavante-s\u00E9chante 9/6kg avec EcoBubble et AirWash.",
+    "descriptionEn": "9/6kg washer-dryer with EcoBubble and AirWash.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Samsung",
+    "sku": "SAM-WD90T534",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 180,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "Haier HW80-BP14636N",
+    "nameEn": "Haier HW80-BP14636N",
+    "description": "Lave-linge 8kg avec I-Refresh vapeur et ABT antibact\u00E9rien.",
+    "descriptionEn": "8kg washing machine with I-Refresh steam and ABT antibacterial.",
+    "price": 449.99,
+    "brand": "Haier",
+    "sku": "HAI-HW80",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 190,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Indesit BWE 91496X WK FR N",
+    "nameEn": "Indesit BWE 91496X WK FR N",
+    "description": "Lave-linge 9kg Push \u0026 Wash avec programme rapide 30 min.",
+    "descriptionEn": "9kg Push \u0026 Wash washing machine with 30-min quick program.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Indesit",
+    "sku": "IND-BWE914",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 200,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Bosch SMV6ZCX49E S\u00E9rie 6",
+    "nameEn": "Bosch SMV6ZCX49E Series 6",
+    "description": "Lave-vaisselle tout int\u00E9grable 14 couverts avec PerfectDry Zeolith.",
+    "descriptionEn": "14-place fully integrated dishwasher with PerfectDry Zeolith.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Bosch",
+    "sku": "BOS-SMV6ZC",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 210,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Miele G 7110 SC AutoDos",
+    "nameEn": "Miele G 7110 SC AutoDos",
+    "description": "Lave-vaisselle 14 couverts avec dosage automatique AutoDos.",
+    "descriptionEn": "14-place dishwasher with AutoDos automatic dispensing.",
+    "price": 1299.99,
+    "brand": "Miele",
+    "sku": "MIE-G7110",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 220,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Samsung DW60A8060FS",
+    "nameEn": "Samsung DW60A8060FS",
+    "description": "Lave-vaisselle 14 couverts avec Auto Relieve et Zone Flex.",
+    "descriptionEn": "14-place dishwasher with Auto Relieve and Flex Zone.",
+    "price": 599.99,
+    "promoPrice": 499.99,
+    "brand": "Samsung",
+    "sku": "SAM-DW60A",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 230,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Siemens SN65ZX49CE",
+    "nameEn": "Siemens SN65ZX49CE",
+    "description": "Lave-vaisselle encastrable 14 couverts avec varioSpeed Plus et Zeolith.",
+    "descriptionEn": "14-place built-in dishwasher with varioSpeed Plus and Zeolith.",
+    "price": 899.99,
+    "brand": "Siemens",
+    "sku": "SIE-SN65ZX",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 240,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Beko DEN48420WDOS",
+    "nameEn": "Beko DEN48420WDOS",
+    "description": "Lave-vaisselle 14 couverts avec AutoDose et CornerIntense.",
+    "descriptionEn": "14-place dishwasher with AutoDose and CornerIntense.",
+    "price": 449.99,
+    "promoPrice": 379.99,
+    "brand": "Beko",
+    "sku": "BEK-DEN484",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 250,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Whirlpool WFC 3C42 P",
+    "nameEn": "Whirlpool WFC 3C42 P",
+    "description": "Lave-vaisselle pose libre 14 couverts avec PowerClean Pro.",
+    "descriptionEn": "14-place freestanding dishwasher with PowerClean Pro.",
+    "price": 499.99,
+    "brand": "Whirlpool",
+    "sku": "WHP-WFC3C42",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 260,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "Electrolux EEM48320L GlassCare",
+    "nameEn": "Electrolux EEM48320L GlassCare",
+    "description": "Lave-vaisselle 14 couverts avec GlassCare et SatelliteClean.",
+    "descriptionEn": "14-place dishwasher with GlassCare and SatelliteClean.",
+    "price": 649.99,
+    "promoPrice": 549.99,
+    "brand": "Electrolux",
+    "sku": "ELX-EEM483",
+    "stock": 16,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 270,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "LG DF455HMS",
+    "nameEn": "LG DF455HMS",
+    "description": "Lave-vaisselle 14 couverts avec TrueSteam et moteur Inverter Direct Drive.",
+    "descriptionEn": "14-place dishwasher with TrueSteam and Inverter Direct Drive motor.",
+    "price": 699.99,
+    "brand": "LG",
+    "sku": "LG-DF455",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 280,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Hotpoint HFC 3T232 WG X",
+    "nameEn": "Hotpoint HFC 3T232 WG X",
+    "description": "Lave-vaisselle pose libre 14 couverts avec 3\u00E8me panier.",
+    "descriptionEn": "14-place freestanding dishwasher with 3rd basket.",
+    "price": 399.99,
+    "promoPrice": 349.99,
+    "brand": "Hotpoint",
+    "sku": "HOT-HFC3T",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 290,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Candy CF 5C7F0W",
+    "nameEn": "Candy CF 5C7F0W",
+    "description": "Lave-vaisselle 15 couverts connect\u00E9 Wi-Fi avec programme rapide 39 min.",
+    "descriptionEn": "15-place Wi-Fi connected dishwasher with 39-min quick program.",
+    "price": 349.99,
+    "brand": "Candy",
+    "sku": "CND-CF5C7",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 300,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Dyson V15 Detect Absolute",
+    "nameEn": "Dyson V15 Detect Absolute",
+    "description": "Aspirateur balai sans fil avec laser de d\u00E9tection de poussi\u00E8re et \u00E9cran LCD.",
+    "descriptionEn": "Cordless stick vacuum with dust detection laser and LCD screen.",
+    "price": 699.99,
+    "promoPrice": 599.99,
+    "brand": "Dyson",
+    "sku": "DYS-V15DA",
+    "stock": 20,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 310,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "iRobot Roomba j9\u002B",
+    "nameEn": "iRobot Roomba j9\u002B",
+    "description": "Robot aspirateur avec vidange automatique, navigation PrecisionVision et lavage.",
+    "descriptionEn": "Robot vacuum with auto-empty, PrecisionVision navigation and mopping.",
+    "price": 899.99,
+    "promoPrice": 799.99,
+    "brand": "iRobot",
+    "sku": "IRO-J9P",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 320,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Roborock S8 MaxV Ultra",
+    "nameEn": "Roborock S8 MaxV Ultra",
+    "description": "Robot aspirateur laveur avec double brosse, station tout-en-un et IA ReactiveAI 2.0.",
+    "descriptionEn": "Robot vacuum-mop with dual brush, all-in-one dock and ReactiveAI 2.0.",
+    "price": 1199.99,
+    "brand": "Roborock",
+    "sku": "ROB-S8MVU",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 330,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Dyson Gen5detect Absolute",
+    "nameEn": "Dyson Gen5detect Absolute",
+    "description": "Aspirateur balai sans fil nouvelle g\u00E9n\u00E9ration avec filtration HEPA et 70 min d\u0027autonomie.",
+    "descriptionEn": "Next-gen cordless vacuum with HEPA filtration and 70-min runtime.",
+    "price": 899.99,
+    "brand": "Dyson",
+    "sku": "DYS-G5DA",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 340,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "Rowenta X-Force Flex 14.60",
+    "nameEn": "Rowenta X-Force Flex 14.60",
+    "description": "Aspirateur balai sans fil flexible avec tube articul\u00E9 et brosse LED.",
+    "descriptionEn": "Flexible cordless stick vacuum with articulated tube and LED brush.",
+    "price": 399.99,
+    "promoPrice": 349.99,
+    "brand": "Rowenta",
+    "sku": "ROW-XFF1460",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 350,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "Miele Complete C3 Silence",
+    "nameEn": "Miele Complete C3 Silence",
+    "description": "Aspirateur tra\u00EEneau ultra-silencieux avec brosse Parquet Twister et filtre AirClean Plus.",
+    "descriptionEn": "Ultra-quiet canister vacuum with Parquet Twister brush and AirClean Plus filter.",
+    "price": 449.99,
+    "brand": "Miele",
+    "sku": "MIE-C3SIL",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 360,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Xiaomi Robot Vacuum X10\u002B",
+    "nameEn": "Xiaomi Robot Vacuum X10\u002B",
+    "description": "Robot aspirateur laveur avec station de vidange et serpilli\u00E8re auto-nettoyante.",
+    "descriptionEn": "Robot vacuum-mop with auto-empty station and self-cleaning mop.",
+    "price": 499.99,
+    "promoPrice": 429.99,
+    "brand": "Xiaomi",
+    "sku": "XIA-RVX10P",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 370,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Bosch Unlimited 7 ProAnimal",
+    "nameEn": "Bosch Unlimited 7 ProAnimal",
+    "description": "Aspirateur balai sans fil avec batterie interchangeable et brosse sp\u00E9ciale animaux.",
+    "descriptionEn": "Cordless stick vacuum with interchangeable battery and pet hair brush.",
+    "price": 349.99,
+    "brand": "Bosch",
+    "sku": "BOS-UNL7PA",
+    "stock": 28,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 380,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Samsung Bespoke Jet AI",
+    "nameEn": "Samsung Bespoke Jet AI",
+    "description": "Aspirateur balai sans fil avec station All-in-One et d\u00E9tection IA de poussi\u00E8re.",
+    "descriptionEn": "Cordless vacuum with All-in-One station and AI dust detection.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Samsung",
+    "sku": "SAM-BJAI",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 390,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "K\u00E4rcher WD 6 Premium",
+    "nameEn": "Karcher WD 6 Premium",
+    "description": "Aspirateur eau et poussi\u00E8re professionnel 30L avec d\u00E9colmatage automatique.",
+    "descriptionEn": "30L professional wet \u0026 dry vacuum with automatic filter cleaning.",
+    "price": 249.99,
+    "promoPrice": 219.99,
+    "brand": "K\u00E4rcher",
+    "sku": "KAR-WD6P",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 400,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "Bosch HBA574BR0 S\u00E9rie 4",
+    "nameEn": "Bosch HBA574BR0 Series 4",
+    "description": "Four encastrable pyrolyse 71L avec chaleur tournante 3D et \u00E9cran TFT.",
+    "descriptionEn": "71L pyrolytic built-in oven with 3D hot air and TFT display.",
+    "price": 599.99,
+    "promoPrice": 499.99,
+    "brand": "Bosch",
+    "sku": "BOS-HBA574",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 410,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "Samsung NV7B5775XAK Dual Cook Flex",
+    "nameEn": "Samsung NV7B5775XAK Dual Cook Flex",
+    "description": "Four encastrable 76L avec s\u00E9paration Dual Cook et nettoyage vapeur.",
+    "descriptionEn": "76L built-in oven with Dual Cook separation and steam cleaning.",
+    "price": 699.99,
+    "brand": "Samsung",
+    "sku": "SAM-NV7B57",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 420,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "De\u0027Longhi GEMMA 96 GVB ED",
+    "nameEn": "De\u0027Longhi GEMMA 96 GVB ED",
+    "description": "Cuisini\u00E8re mixte 5 feux gaz \u002B four \u00E9lectrique 113L multifonction.",
+    "descriptionEn": "Mixed range cooker with 5 gas burners \u002B 113L multifunction electric oven.",
+    "price": 899.99,
+    "promoPrice": 799.99,
+    "brand": "De\u0027Longhi",
+    "sku": "DEL-GEMMA96",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 430,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Whirlpool AKZ9 6230 IX",
+    "nameEn": "Whirlpool AKZ9 6230 IX",
+    "description": "Four encastrable pyrolyse 73L avec sonde de cuisson et 6\u00E8me Sens.",
+    "descriptionEn": "73L pyrolytic built-in oven with cooking probe and 6th Sense.",
+    "price": 499.99,
+    "promoPrice": 429.99,
+    "brand": "Whirlpool",
+    "sku": "WHP-AKZ9623",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 440,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Miele H 7264 BP",
+    "nameEn": "Miele H 7264 BP",
+    "description": "Four encastrable pyrolyse 76L avec PerfectClean et programme Pain.",
+    "descriptionEn": "76L pyrolytic built-in oven with PerfectClean and Bread program.",
+    "price": 1399.99,
+    "brand": "Miele",
+    "sku": "MIE-H7264",
+    "stock": 6,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 450,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Sauter SOP5564X",
+    "nameEn": "Sauter SOP5564X",
+    "description": "Four encastrable pyrolyse 73L multifonction avec chaleur puls\u00E9e.",
+    "descriptionEn": "73L multifunction pyrolytic built-in oven with pulsed heat.",
+    "price": 449.99,
+    "promoPrice": 399.99,
+    "brand": "Sauter",
+    "sku": "SAU-SOP5564",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 460,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Siemens HB674GBS1 iQ700",
+    "nameEn": "Siemens HB674GBS1 iQ700",
+    "description": "Four encastrable 71L avec activeClean pyrolyse et cookControl Plus.",
+    "descriptionEn": "71L built-in oven with activeClean pyrolysis and cookControl Plus.",
+    "price": 799.99,
+    "brand": "Siemens",
+    "sku": "SIE-HB674",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 470,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Electrolux EOD6P77WZ SteamBake",
+    "nameEn": "Electrolux EOD6P77WZ SteamBake",
+    "description": "Four encastrable vapeur 72L avec programme SteamBake et pyrolyse.",
+    "descriptionEn": "72L steam built-in oven with SteamBake program and pyrolysis.",
+    "price": 549.99,
+    "promoPrice": 479.99,
+    "brand": "Electrolux",
+    "sku": "ELX-EOD6P77",
+    "stock": 16,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 480,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Brandt BXE5532X",
+    "nameEn": "Brandt BXE5532X",
+    "description": "Four encastrable catalyse 73L avec tournebroche et 8 modes de cuisson.",
+    "descriptionEn": "73L catalytic built-in oven with rotisserie and 8 cooking modes.",
+    "price": 349.99,
+    "brand": "Brandt",
+    "sku": "BRA-BXE5532",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 490,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Smeg SF6922XPZE Victoria",
+    "nameEn": "Smeg SF6922XPZE Victoria",
+    "description": "Four encastrable pyrolyse 70L style r\u00E9tro avec vapeur int\u00E9gr\u00E9e.",
+    "descriptionEn": "70L retro-style pyrolytic built-in oven with integrated steam.",
+    "price": 999.99,
+    "brand": "Smeg",
+    "sku": "SME-SF6922",
+    "stock": 8,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 500,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Samsung MC28A5135CK Smart Oven",
+    "nameEn": "Samsung MC28A5135CK Smart Oven",
+    "description": "Micro-ondes combin\u00E9 28L avec chaleur tournante et grill.",
+    "descriptionEn": "28L combination microwave with hot air and grill.",
+    "price": 199.99,
+    "promoPrice": 169.99,
+    "brand": "Samsung",
+    "sku": "SAM-MC28A5",
+    "stock": 30,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 510,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Panasonic NN-DS596M",
+    "nameEn": "Panasonic NN-DS596M",
+    "description": "Micro-ondes combin\u00E9 vapeur 27L avec technologie Inverter.",
+    "descriptionEn": "27L steam combination microwave with Inverter technology.",
+    "price": 349.99,
+    "brand": "Panasonic",
+    "sku": "PAN-NNDS596",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 520,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Whirlpool MWP 3391 SX",
+    "nameEn": "Whirlpool MWP 3391 SX",
+    "description": "Micro-ondes grill 33L avec Crisp et fonction vapeur.",
+    "descriptionEn": "33L grill microwave with Crisp and steam function.",
+    "price": 249.99,
+    "promoPrice": 219.99,
+    "brand": "Whirlpool",
+    "sku": "WHP-MWP3391",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 530,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Bosch BFL634GS1 S\u00E9rie 8",
+    "nameEn": "Bosch BFL634GS1 Series 8",
+    "description": "Micro-ondes encastrable 21L avec AutoPilot 8 et ouverture \u00E0 gauche.",
+    "descriptionEn": "21L built-in microwave with AutoPilot 8 and left-side opening.",
+    "price": 399.99,
+    "brand": "Bosch",
+    "sku": "BOS-BFL634",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 540,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "Sharp R-860S",
+    "nameEn": "Sharp R-860S",
+    "description": "Micro-ondes combin\u00E9 25L avec grill et chaleur tournante.",
+    "descriptionEn": "25L combination microwave with grill and convection.",
+    "price": 159.99,
+    "promoPrice": 129.99,
+    "brand": "Sharp",
+    "sku": "SHA-R860S",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 550,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "LG MJ3965ACS NeoChef",
+    "nameEn": "LG MJ3965ACS NeoChef",
+    "description": "Micro-ondes combin\u00E9 39L avec Smart Inverter et EasyClean.",
+    "descriptionEn": "39L combination microwave with Smart Inverter and EasyClean.",
+    "price": 299.99,
+    "brand": "LG",
+    "sku": "LG-MJ3965",
+    "stock": 18,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 560,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Severin MW 7763",
+    "nameEn": "Severin MW 7763",
+    "description": "Micro-ondes design 20L avec 8 niveaux de puissance.",
+    "descriptionEn": "20L design microwave with 8 power levels.",
+    "price": 79.99,
+    "promoPrice": 59.99,
+    "brand": "Severin",
+    "sku": "SEV-MW7763",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 570,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "Siemens BE634LGS1 iQ700",
+    "nameEn": "Siemens BE634LGS1 iQ700",
+    "description": "Micro-ondes encastrable 21L avec cookControl Plus.",
+    "descriptionEn": "21L built-in microwave with cookControl Plus.",
+    "price": 449.99,
+    "brand": "Siemens",
+    "sku": "SIE-BE634",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 580,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Candy CMXG25DCS",
+    "nameEn": "Candy CMXG25DCS",
+    "description": "Micro-ondes grill 25L avec fonction Cook-in-App.",
+    "descriptionEn": "25L grill microwave with Cook-in-App function.",
+    "price": 119.99,
+    "promoPrice": 99.99,
+    "brand": "Candy",
+    "sku": "CND-CMXG25",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 590,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Brandt SE2616B",
+    "nameEn": "Brandt SE2616B",
+    "description": "Micro-ondes solo 26L compact avec plateau 31.5 cm.",
+    "descriptionEn": "26L compact solo microwave with 31.5cm turntable.",
+    "price": 89.99,
+    "brand": "Brandt",
+    "sku": "BRA-SE2616",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 600,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "De\u0027Longhi Magnifica Evo ECAM290.61.SB",
+    "nameEn": "De\u0027Longhi Magnifica Evo ECAM290.61.SB",
+    "description": "Machine \u00E0 caf\u00E9 automatique avec broyeur, LatteCrema et 7 boissons.",
+    "descriptionEn": "Automatic bean-to-cup coffee machine with LatteCrema and 7 drinks.",
+    "price": 599.99,
+    "promoPrice": 499.99,
+    "brand": "De\u0027Longhi",
+    "sku": "DEL-ECAM290",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 610,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Krups Evidence EA891C10",
+    "nameEn": "Krups Evidence EA891C10",
+    "description": "Expresso broyeur compact avec \u00E9cran OLED et 15 boissons.",
+    "descriptionEn": "Compact bean-to-cup espresso with OLED display and 15 drinks.",
+    "price": 499.99,
+    "brand": "Krups",
+    "sku": "KRU-EA891C",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 620,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Nespresso Vertuo Next",
+    "nameEn": "Nespresso Vertuo Next",
+    "description": "Machine \u00E0 caf\u00E9 Nespresso Vertuo avec lecture code-barres et 5 tailles de tasses.",
+    "descriptionEn": "Nespresso Vertuo machine with barcode scanning and 5 cup sizes.",
+    "price": 149.99,
+    "promoPrice": 99.99,
+    "brand": "Nespresso",
+    "sku": "NES-VN",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 630,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Jura E8 (EB) 2024",
+    "nameEn": "Jura E8 (EB) 2024",
+    "description": "Machine automatique haut de gamme avec 17 sp\u00E9cialit\u00E9s et \u00E9cran couleur TFT.",
+    "descriptionEn": "Premium automatic machine with 17 specialties and color TFT screen.",
+    "price": 1299.99,
+    "brand": "Jura",
+    "sku": "JUR-E8-2024",
+    "stock": 8,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 640,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Philips S\u00E9rie 3200 EP3246/70",
+    "nameEn": "Philips Series 3200 EP3246/70",
+    "description": "Expresso broyeur avec LatteGo et r\u00E9glage ar\u00F4me sur 12 niveaux.",
+    "descriptionEn": "Bean-to-cup espresso with LatteGo and 12-level aroma adjustment.",
+    "price": 449.99,
+    "promoPrice": 399.99,
+    "brand": "Philips",
+    "sku": "PHI-EP3246",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 650,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "Nespresso CitiZ\u0026Milk",
+    "nameEn": "Nespresso CitiZ and Milk",
+    "description": "Machine Nespresso avec mousseur \u00E0 lait Aeroccino int\u00E9gr\u00E9.",
+    "descriptionEn": "Nespresso machine with integrated Aeroccino milk frother.",
+    "price": 199.99,
+    "promoPrice": 169.99,
+    "brand": "Nespresso",
+    "sku": "NES-CZM",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 660,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Sage Barista Express Impress",
+    "nameEn": "Sage Barista Express Impress",
+    "description": "Machine expresso manuelle avec broyeur int\u00E9gr\u00E9 et tassage assist\u00E9.",
+    "descriptionEn": "Manual espresso machine with built-in grinder and assisted tamping.",
+    "price": 699.99,
+    "brand": "Sage",
+    "sku": "SAG-BEI",
+    "stock": 12,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 670,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Melitta Caffeo Barista TS Smart",
+    "nameEn": "Melitta Caffeo Barista TS Smart",
+    "description": "Machine automatique connect\u00E9e avec 21 recettes et double bac \u00E0 grains.",
+    "descriptionEn": "Connected automatic machine with 21 recipes and dual bean hopper.",
+    "price": 799.99,
+    "promoPrice": 699.99,
+    "brand": "Melitta",
+    "sku": "MEL-CBTS",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 680,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Tassimo Happy TAS1002",
+    "nameEn": "Tassimo Happy TAS1002",
+    "description": "Machine \u00E0 capsules T-Disc compacte avec INTELLIBREW.",
+    "descriptionEn": "Compact T-Disc capsule machine with INTELLIBREW.",
+    "price": 49.99,
+    "promoPrice": 34.99,
+    "brand": "Tassimo",
+    "sku": "TAS-1002",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 690,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Bialetti Moka Express 6 Tasses",
+    "nameEn": "Bialetti Moka Express 6 Cups",
+    "description": "Cafeti\u00E8re italienne iconique en aluminium pour 6 tasses.",
+    "descriptionEn": "Iconic Italian aluminum moka pot for 6 cups.",
+    "price": 34.99,
+    "brand": "Bialetti",
+    "sku": "BIA-ME6",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 700,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 80
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Thermomix TM6",
+    "nameEn": "Thermomix TM6",
+    "description": "Robot cuiseur multifonction avec \u00E9cran tactile, Wi-Fi et plus de 92 000 recettes.",
+    "descriptionEn": "Multifunction food processor with touchscreen, Wi-Fi and 92,000\u002B recipes.",
+    "price": 1499.00,
+    "brand": "Vorwerk",
+    "sku": "VOR-TM6",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 710,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Moulinex Companion XL HF80CB10",
+    "nameEn": "Moulinex Companion XL HF80CB10",
+    "description": "Robot cuiseur 4.5L avec 12 programmes automatiques et cuisson jusqu\u0027\u00E0 150\u00B0C.",
+    "descriptionEn": "4.5L food processor with 12 auto programs and cooking up to 150\u00B0C.",
+    "price": 699.99,
+    "promoPrice": 599.99,
+    "brand": "Moulinex",
+    "sku": "MOU-COMPXL",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 720,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "KitchenAid Artisan 5KSM175",
+    "nameEn": "KitchenAid Artisan 5KSM175",
+    "description": "Robot p\u00E2tissier 4.8L avec moteur \u00E0 transmission directe et 10 vitesses.",
+    "descriptionEn": "4.8L stand mixer with direct-drive motor and 10 speeds.",
+    "price": 599.99,
+    "brand": "KitchenAid",
+    "sku": "KA-5KSM175",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 730,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Magimix Cook Expert Premium XL",
+    "nameEn": "Magimix Cook Expert Premium XL",
+    "description": "Robot cuiseur multifonction 3.5L avec 50 programmes et cuisson sous vide.",
+    "descriptionEn": "3.5L multifunction food processor with 50 programs and sous vide.",
+    "price": 1199.99,
+    "promoPrice": 999.99,
+    "brand": "Magimix",
+    "sku": "MAG-CEPXL",
+    "stock": 8,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 740,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Kenwood Cooking Chef XL KCL95",
+    "nameEn": "Kenwood Cooking Chef XL KCL95",
+    "description": "Robot cuiseur 6.7L avec cuisson par induction jusqu\u0027\u00E0 180\u00B0C.",
+    "descriptionEn": "6.7L food processor with induction cooking up to 180\u00B0C.",
+    "price": 999.99,
+    "brand": "Kenwood",
+    "sku": "KNW-KCL95",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 750,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Moulinex ClickChef HF456810",
+    "nameEn": "Moulinex ClickChef HF456810",
+    "description": "Robot cuiseur compact 3.6L avec 32 fonctions et recettes guid\u00E9es.",
+    "descriptionEn": "Compact 3.6L food processor with 32 functions and guided recipes.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Moulinex",
+    "sku": "MOU-HF456",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 760,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Ninja Foodi MAX 15-in-1",
+    "nameEn": "Ninja Foodi MAX 15-in-1",
+    "description": "Multicuiseur 7.5L avec air fryer, cuisson sous pression et d\u00E9shydrateur.",
+    "descriptionEn": "7.5L multi-cooker with air fryer, pressure cooking and dehydrator.",
+    "price": 249.99,
+    "promoPrice": 199.99,
+    "brand": "Ninja",
+    "sku": "NIN-FMAX15",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 770,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Bosch MUM Serie 4 MUM4880",
+    "nameEn": "Bosch MUM Series 4 MUM4880",
+    "description": "Robot p\u00E2tissier 3.9L avec hachoir \u00E0 viande et presse-agrumes.",
+    "descriptionEn": "3.9L stand mixer with meat grinder and citrus press.",
+    "price": 199.99,
+    "brand": "Bosch",
+    "sku": "BOS-MUM4880",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 780,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Philips Airfryer XXL HD9285/90",
+    "nameEn": "Philips Airfryer XXL HD9285/90",
+    "description": "Friteuse sans huile 7.3L avec technologie Smart Sensing.",
+    "descriptionEn": "7.3L oil-free fryer with Smart Sensing technology.",
+    "price": 299.99,
+    "promoPrice": 249.99,
+    "brand": "Philips",
+    "sku": "PHI-HD9285",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 790,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "SEB Clipso Minut Perfect 9L",
+    "nameEn": "SEB Clipso Minut Perfect 9L",
+    "description": "Autocuiseur 9L avec ouverture/fermeture facile et minuteur.",
+    "descriptionEn": "9L pressure cooker with easy open/close and timer.",
+    "price": 129.99,
+    "brand": "SEB",
+    "sku": "SEB-CMP9L",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 800,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Dyson Purifier Hot\u002BCool HP09",
+    "nameEn": "Dyson Purifier Hot\u002BCool HP09",
+    "description": "Purificateur d\u0027air chauffant/ventilateur avec filtration HEPA H13 et d\u00E9tection de formald\u00E9hyde.",
+    "descriptionEn": "Heating/cooling air purifier with HEPA H13 filtration and formaldehyde detection.",
+    "price": 649.99,
+    "promoPrice": 549.99,
+    "brand": "Dyson",
+    "sku": "DYS-HP09",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 810,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Daikin FTXM35R Perfera",
+    "nameEn": "Daikin FTXM35R Perfera",
+    "description": "Climatiseur mural inverter 3.5kW avec purificateur d\u0027air int\u00E9gr\u00E9.",
+    "descriptionEn": "3.5kW wall-mounted inverter air conditioner with integrated air purifier.",
+    "price": 1299.99,
+    "brand": "Daikin",
+    "sku": "DAI-FTXM35R",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 820,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Dyson Pure Cool TP07",
+    "nameEn": "Dyson Pure Cool TP07",
+    "description": "Purificateur d\u0027air ventilateur tour avec filtration HEPA et connect\u00E9 Wi-Fi.",
+    "descriptionEn": "Tower fan air purifier with HEPA filtration and Wi-Fi connected.",
+    "price": 549.99,
+    "promoPrice": 449.99,
+    "brand": "Dyson",
+    "sku": "DYS-TP07",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 830,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "De\u0027Longhi Pinguino PAC EX100",
+    "nameEn": "De\u0027Longhi Pinguino PAC EX100",
+    "description": "Climatiseur mobile 10 000 BTU avec mode d\u00E9shumidificateur et t\u00E9l\u00E9commande.",
+    "descriptionEn": "10,000 BTU portable air conditioner with dehumidifier mode and remote.",
+    "price": 599.99,
+    "brand": "De\u0027Longhi",
+    "sku": "DEL-PACEX100",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 840,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Rowenta Turbo Silence VU5640",
+    "nameEn": "Rowenta Turbo Silence VU5640",
+    "description": "Ventilateur colonne ultra-silencieux avec oscillation automatique et timer.",
+    "descriptionEn": "Ultra-quiet tower fan with automatic oscillation and timer.",
+    "price": 79.99,
+    "promoPrice": 59.99,
+    "brand": "Rowenta",
+    "sku": "ROW-VU5640",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 850,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 45
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Xiaomi Smart Air Purifier 4 Pro",
+    "nameEn": "Xiaomi Smart Air Purifier 4 Pro",
+    "description": "Purificateur d\u0027air connect\u00E9 avec filtre HEPA et affichage OLED.",
+    "descriptionEn": "Connected air purifier with HEPA filter and OLED display.",
+    "price": 249.99,
+    "promoPrice": 199.99,
+    "brand": "Xiaomi",
+    "sku": "XIA-SAP4P",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 860,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Mitsubishi MSZ-AY35VGKP",
+    "nameEn": "Mitsubishi MSZ-AY35VGKP",
+    "description": "Climatiseur mural 3.5kW avec WiFi et filtre plasma.",
+    "descriptionEn": "3.5kW wall air conditioner with WiFi and plasma filter.",
+    "price": 1099.99,
+    "brand": "Mitsubishi",
+    "sku": "MIT-MSZAY35",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 870,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Philips Series 2000i AC2939/10",
+    "nameEn": "Philips Series 2000i AC2939/10",
+    "description": "Purificateur air connect\u00E9 pour pi\u00E8ces 98m\u00B2 avec capteurs VitaShield IPS.",
+    "descriptionEn": "Connected air purifier for 98m\u00B2 rooms with VitaShield IPS sensors.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Philips",
+    "sku": "PHI-AC2939",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 880,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Dimplex Opti-Myst Pro 1500",
+    "nameEn": "Dimplex Opti-Myst Pro 1500",
+    "description": "Chemin\u00E9e \u00E9lectrique d\u00E9corative avec effet flamme et brume d\u0027eau.",
+    "descriptionEn": "Decorative electric fireplace with flame effect and water mist.",
+    "price": 499.99,
+    "brand": "Dimplex",
+    "sku": "DIM-OMP1500",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 890,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Atlantic Nirvana Digital 1000W",
+    "nameEn": "Atlantic Nirvana Digital 1000W",
+    "description": "Radiateur \u00E9lectrique \u00E0 inertie fluide connect\u00E9 avec d\u00E9tection de fen\u00EAtre.",
+    "descriptionEn": "Connected fluid inertia electric radiator with window detection.",
+    "price": 399.99,
+    "promoPrice": 349.99,
+    "brand": "Atlantic",
+    "sku": "ATL-NIRV1000",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 900,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "Philips PerfectCare Elite Plus GC9682",
+    "nameEn": "Philips PerfectCare Elite Plus GC9682",
+    "description": "Centrale vapeur avec technologie OptimalTEMP et r\u00E9servoir 1.8L.",
+    "descriptionEn": "Steam generator with OptimalTEMP technology and 1.8L tank.",
+    "price": 349.99,
+    "promoPrice": 299.99,
+    "brand": "Philips",
+    "sku": "PHI-GC9682",
+    "stock": 15,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 910,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Calor Pro Express Ultimate GV9620",
+    "nameEn": "Calor Pro Express Ultimate GV9620",
+    "description": "Centrale vapeur haute pression avec d\u00E9bit vapeur 155g/min et semelle Durilium.",
+    "descriptionEn": "High-pressure steam generator with 155g/min steam flow and Durilium soleplate.",
+    "price": 299.99,
+    "brand": "Calor",
+    "sku": "CAL-GV9620",
+    "stock": 20,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 920,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "SteamOne S-Nomad Plus",
+    "nameEn": "SteamOne S-Nomad Plus",
+    "description": "D\u00E9froisseur vapeur portable nomade avec temps de chauffe 25 secondes.",
+    "descriptionEn": "Portable handheld steamer with 25-second heat-up time.",
+    "price": 69.99,
+    "promoPrice": 59.99,
+    "brand": "SteamOne",
+    "sku": "STM-SNP",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 930,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Rowenta DG8960 Silence Steam",
+    "nameEn": "Rowenta DG8960 Silence Steam",
+    "description": "Centrale vapeur silencieuse avec Eco Intelligence et semelle Microsteam.",
+    "descriptionEn": "Silent steam generator with Eco Intelligence and Microsteam soleplate.",
+    "price": 249.99,
+    "brand": "Rowenta",
+    "sku": "ROW-DG8960",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 940,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Braun CareStyle 7 Pro IS 7286",
+    "nameEn": "Braun CareStyle 7 Pro IS 7286",
+    "description": "Centrale vapeur avec FreeGlide 3D et protection iCare.",
+    "descriptionEn": "Steam generator with FreeGlide 3D and iCare protection.",
+    "price": 329.99,
+    "promoPrice": 279.99,
+    "brand": "Braun",
+    "sku": "BRA-IS7286",
+    "stock": 14,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 950,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Philips GC4541/20 Azur",
+    "nameEn": "Philips GC4541/20 Azur",
+    "description": "Fer vapeur 2400W avec semelle SteamGlide Plus et syst\u00E8me anti-calcaire.",
+    "descriptionEn": "2400W steam iron with SteamGlide Plus soleplate and anti-calc system.",
+    "price": 59.99,
+    "promoPrice": 49.99,
+    "brand": "Philips",
+    "sku": "PHI-GC4541",
+    "stock": 50,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 960,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 50
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Laurastar Lift Plus",
+    "nameEn": "Laurastar Lift Plus",
+    "description": "Syst\u00E8me de repassage professionnel portable avec semelle 3D et vapeur active.",
+    "descriptionEn": "Portable professional ironing system with 3D soleplate and active steam.",
+    "price": 599.99,
+    "brand": "Laurastar",
+    "sku": "LAU-LP",
+    "stock": 8,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 970,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Calor Tweeny 2-en-1 NI5010C0",
+    "nameEn": "Calor Tweeny 2-en-1 NI5010C0",
+    "description": "Fer \u00E0 repasser et d\u00E9froisseur 2-en-1 compact.",
+    "descriptionEn": "Compact 2-in-1 iron and steamer.",
+    "price": 39.99,
+    "promoPrice": 29.99,
+    "brand": "Calor",
+    "sku": "CAL-NI5010",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 980,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 60
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "Bosch TDS6040 S\u00E9rie 6",
+    "nameEn": "Bosch TDS6040 Series 6",
+    "description": "Centrale vapeur avec i-Temp et DripStop syst\u00E8me.",
+    "descriptionEn": "Steam generator with i-Temp and DripStop system.",
+    "price": 199.99,
+    "brand": "Bosch",
+    "sku": "BOS-TDS6040",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 990,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Polti Vaporetto SV660",
+    "nameEn": "Polti Vaporetto SV660",
+    "description": "Nettoyeur vapeur balai 2-en-1 avec 18 accessoires et vapeur d\u00E9sinfectante.",
+    "descriptionEn": "2-in-1 steam mop with 18 accessories and disinfecting steam.",
+    "price": 149.99,
+    "promoPrice": 129.99,
+    "brand": "Polti",
+    "sku": "POL-SV660",
+    "stock": 25,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1000,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  }
+]
