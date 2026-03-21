@@ -1,6 +1,229 @@
 @Zava.Api_HostAddress = http://localhost:5014
 
-GET {{Zava.Api_HostAddress}}/weatherforecast/
+### Config
+GET {{Zava.Api_HostAddress}}/api/config
+Accept: application/json
+
+###
+
+### Change site type
+PUT {{Zava.Api_HostAddress}}/api/config/site-type
+Content-Type: application/json
+
+{
+  "siteType": "Cosmetics"
+}
+
+###
+
+### Reset data
+POST {{Zava.Api_HostAddress}}/api/config/reset
+Content-Type: application/json
+
+###
+
+### Homepage
+GET {{Zava.Api_HostAddress}}/api/homepage
+Accept: application/json
+
+###
+
+### All products
+GET {{Zava.Api_HostAddress}}/api/products
+Accept: application/json
+
+###
+
+### Product detail (id=1)
+GET {{Zava.Api_HostAddress}}/api/products/1
+Accept: application/json
+
+###
+
+### Create product
+POST {{Zava.Api_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Produit Test",
+  "description": "Description du produit test",
+  "price": 49.99,
+  "categoryId": 1,
+  "brand": "TestBrand",
+  "stock": 100
+}
+
+###
+
+### Categories
+GET {{Zava.Api_HostAddress}}/api/categories
+Accept: application/json
+
+###
+
+### Category detail (id=1)
+GET {{Zava.Api_HostAddress}}/api/categories/1
+Accept: application/json
+
+###
+
+### Search products
+POST {{Zava.Api_HostAddress}}/api/search
+Content-Type: application/json
+
+{
+  "query": "Samsung",
+  "page": 1,
+  "pageSize": 10
+}
+
+###
+
+### Search with filters
+POST {{Zava.Api_HostAddress}}/api/search
+Content-Type: application/json
+
+{
+  "categoryId": 1,
+  "minPrice": 100,
+  "maxPrice": 1000,
+  "sortBy": "price",
+  "sortDescending": false,
+  "page": 1,
+  "pageSize": 20
+}
+
+###
+
+### Search suggestions
+GET {{Zava.Api_HostAddress}}/api/search/suggestions?q=sam
+Accept: application/json
+
+###
+
+### Get cart
+GET {{Zava.Api_HostAddress}}/api/cart
+Accept: application/json
+
+###
+
+### Add to cart
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "variantId": 1,
+  "quantity": 2
+}
+
+###
+
+### Update cart item quantity
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{
+  "quantity": 3
+}
+
+###
+
+### Remove cart item
+DELETE {{Zava.Api_HostAddress}}/api/cart/items/1
+
+###
+
+### Clear cart
+DELETE {{Zava.Api_HostAddress}}/api/cart
+
+###
+
+### Checkout (success)
+POST {{Zava.Api_HostAddress}}/api/checkout
+Content-Type: application/json
+
+{
+  "shippingAddress": {
+    "street": "15 Rue de la Paix",
+    "city": "Paris",
+    "postalCode": "75002",
+    "country": "France"
+  },
+  "paymentMethod": "CreditCard",
+  "cardNumber": "4242424242424242",
+  "cardHolder": "Marie Dupont",
+  "cardExpiry": "12/26"
+}
+
+###
+
+### Checkout (forced failure - card ending 0000)
+POST {{Zava.Api_HostAddress}}/api/checkout
+Content-Type: application/json
+
+{
+  "shippingAddress": {
+    "street": "15 Rue de la Paix",
+    "city": "Paris",
+    "postalCode": "75002",
+    "country": "France"
+  },
+  "paymentMethod": "CreditCard",
+  "cardNumber": "4242424242420000",
+  "cardHolder": "Marie Dupont",
+  "cardExpiry": "12/26"
+}
+
+###
+
+### Orders
+GET {{Zava.Api_HostAddress}}/api/orders
+Accept: application/json
+
+###
+
+### Order detail (id=1)
+GET {{Zava.Api_HostAddress}}/api/orders/1
+Accept: application/json
+
+###
+
+### User profile
+GET {{Zava.Api_HostAddress}}/api/user
+Accept: application/json
+
+###
+
+### Update user profile
+PUT {{Zava.Api_HostAddress}}/api/user
+Content-Type: application/json
+
+{
+  "id": 1,
+  "email": "demo@zava.fr",
+  "firstName": "Marie",
+  "lastName": "Dupont",
+  "phone": "06 12 34 56 78",
+  "shippingAddress": {
+    "street": "15 Rue de la Paix",
+    "city": "Paris",
+    "postalCode": "75002",
+    "country": "France"
+  },
+  "isPremium": true
+}
+
+###
+
+### Product reviews
+GET {{Zava.Api_HostAddress}}/api/products/1/reviews
+Accept: application/json
+
+###
+
+### Analytics dashboard
+GET {{Zava.Api_HostAddress}}/api/analytics
 Accept: application/json
 
 ###

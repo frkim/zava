@@ -6,7 +6,15 @@ public enum SiteType
     Appliances,     // Boulanger/Darty-like
     Cosmetics,      // Sephora/L'Oréal-like
     Electrical,     // Rexel/Sonepar-like
-    DIY             // Leroy Merlin-like
+    DIY,            // Leroy Merlin-like
+    Grocery         // Carrefour/Leclerc/Auchan-like
+}
+
+public enum PaymentStatus
+{
+    Pending,
+    Success,
+    Failed
 }
 
 public enum OrderStatus
