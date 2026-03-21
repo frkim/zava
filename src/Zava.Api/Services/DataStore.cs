@@ -55,12 +55,12 @@ public class DataStore
             CurrentSiteType = CurrentSiteType,
             AvailableSiteTypes = new List<SiteTypeInfo>
             {
-                new() { Type = SiteType.Electronics, Name = "Électronique & Livres", Description = "Comme Fnac.com" },
-                new() { Type = SiteType.Appliances, Name = "Électroménager", Description = "Comme Boulanger / Darty" },
-                new() { Type = SiteType.Cosmetics, Name = "Beauté & Parfums", Description = "Comme Sephora / L'Oréal" },
-                new() { Type = SiteType.Electrical, Name = "Matériel Électrique", Description = "Comme Rexel / Sonepar" },
-                new() { Type = SiteType.DIY, Name = "Bricolage", Description = "Comme Leroy Merlin" },
-                new() { Type = SiteType.Grocery, Name = "Alimentaire", Description = "Comme Carrefour / Leclerc / Auchan" }
+                new() { Type = SiteType.Electronics, Name = "Électronique & Livres", NameEn = "Electronics & Books", Description = "Comme Fnac.com", DescriptionEn = "Like Fnac.com" },
+                new() { Type = SiteType.Appliances, Name = "Électroménager", NameEn = "Appliances", Description = "Comme Boulanger / Darty", DescriptionEn = "Like Boulanger / Darty" },
+                new() { Type = SiteType.Cosmetics, Name = "Beauté & Parfums", NameEn = "Beauty & Fragrances", Description = "Comme Sephora / L'Oréal", DescriptionEn = "Like Sephora / L'Oréal" },
+                new() { Type = SiteType.Electrical, Name = "Matériel Électrique", NameEn = "Electrical Equipment", Description = "Comme Rexel / Sonepar", DescriptionEn = "Like Rexel / Sonepar" },
+                new() { Type = SiteType.DIY, Name = "Bricolage", NameEn = "DIY", Description = "Comme Leroy Merlin", DescriptionEn = "Like Leroy Merlin" },
+                new() { Type = SiteType.Grocery, Name = "Alimentaire", NameEn = "Grocery", Description = "Comme Carrefour / Leclerc / Auchan", DescriptionEn = "Like Carrefour / Leclerc / Auchan" }
             }
         };
     }

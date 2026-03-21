@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme';
 import { SiteProvider } from './context/SiteContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
@@ -18,9 +19,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
-        <SiteProvider>
-          <Layout>
+      <LanguageProvider>
+        <BrowserRouter>
+          <SiteProvider>
+            <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/search" element={<SearchPage />} />
@@ -36,6 +38,7 @@ function App() {
           </Layout>
         </SiteProvider>
       </BrowserRouter>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

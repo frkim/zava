@@ -67,7 +67,9 @@ public class SiteTypeInfo
 {
     public SiteType Type { get; set; }
     public string Name { get; set; } = string.Empty;
+    public string NameEn { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
+    public string DescriptionEn { get; set; } = string.Empty;
 }
 
 public class CheckoutRequest

@@ -7,9 +7,11 @@ import {
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 import { getCart, updateCartItem, removeCartItem, clearCart } from '../api';
 import type { Cart } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function CartPage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [cart, setCart] = useState<Cart | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -43,28 +45,28 @@ export default function CartPage() {
     return (
       <Box sx={{ textAlign: 'center', py: 8 }}>
         <ShoppingCart sx={{ fontSize: 64, color: 'text.secondary', opacity: 0.3, mb: 2 }} />
-        <Typography variant="h5" gutterBottom>Votre panier est vide</Typography>
+        <Typography variant="h5" gutterBottom>{t('cart.empty')}</Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-          Parcourez notre catalogue et ajoutez des produits
+          {t('cart.emptyDesc')}
         </Typography>
-        <Button variant="contained" onClick={() => navigate('/')}>Continuer mes achats</Button>
+        <Button variant="contained" onClick={() => navigate('/')}>{t('cart.continueShopping')}</Button>
       </Box>
     );
   }
 
   return (
     <Box>
-      <Typography variant="h5" sx={{ mb: 3 }}>Mon panier ({cart.itemCount} article{cart.itemCount > 1 ? 's' : ''})</Typography>
+      <Typography variant="h5" sx={{ mb: 3 }}>{t('cart.title')} ({cart.itemCount} {cart.itemCount > 1 ? t('cart.articles') : t('cart.article')})</Typography>
 
       <Box sx={{ display: 'flex', gap: 3, flexDirection: { xs: 'column', md: 'row' } }}>
         <TableContainer component={Paper} sx={{ flex: 1 }}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Produit</TableCell>
-                <TableCell align="right">Prix unitaire</TableCell>
-                <TableCell align="center">Quantité</TableCell>
-                <TableCell align="right">Sous-total</TableCell>
+                <TableCell>{t('cart.product')}</TableCell>
+                <TableCell align="right">{t('cart.unitPrice')}</TableCell>
+                <TableCell align="center">{t('cart.quantity')}</TableCell>
+                <TableCell align="right">{t('cart.subtotal')}</TableCell>
                 <TableCell align="center" />
               </TableRow>
             </TableHead>
@@ -111,27 +113,27 @@ export default function CartPage() {
 
         {/* Order summary */}
         <Paper sx={{ p: 3, width: { xs: '100%', md: 320 }, alignSelf: 'flex-start' }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>Résumé de la commande</Typography>
+          <Typography variant="h6" sx={{ mb: 2 }}>{t('cart.orderSummary')}</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-            <Typography>Sous-total</Typography>
+            <Typography>{t('cart.subtotal')}</Typography>
             <Typography>{cart.total.toFixed(2)} €</Typography>
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-            <Typography>Livraison</Typography>
-            <Typography color="success.main">Gratuite</Typography>
+            <Typography>{t('cart.delivery')}</Typography>
+            <Typography color="success.main">{t('cart.free')}</Typography>
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2, pt: 1, borderTop: '1px solid', borderColor: 'divider' }}>
-            <Typography variant="h6">Total</Typography>
+            <Typography variant="h6">{t('cart.total')}</Typography>
             <Typography variant="h6" fontWeight={700}>{cart.total.toFixed(2)} €</Typography>
           </Box>
           <Button variant="contained" fullWidth size="large" onClick={() => navigate('/checkout')}>
-            Passer la commande
+            {t('cart.checkout')}
           </Button>
           <Button fullWidth sx={{ mt: 1 }} onClick={() => navigate('/')}>
-            Continuer mes achats
+            {t('cart.continueShopping')}
           </Button>
           <Button fullWidth color="error" size="small" sx={{ mt: 1 }} onClick={handleClear}>
-            Vider le panier
+            {t('cart.clear')}
           </Button>
         </Paper>
       </Box>

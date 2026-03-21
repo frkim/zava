@@ -121,7 +121,9 @@ export interface Order {
 export interface SiteTypeInfo {
   type: SiteType;
   name: string;
+  nameEn: string;
   description: string;
+  descriptionEn: string;
 }
 
 export interface SiteConfig {

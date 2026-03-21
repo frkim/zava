@@ -4,6 +4,7 @@ import {
 } from '@mui/material';
 import { ShoppingCart, FiberNew, LocalOffer, Star } from '@mui/icons-material';
 import type { Product } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProductCardProps {
   product: Product;
@@ -12,11 +13,13 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
   const navigate = useNavigate();
+  const { lang, t } = useLanguage();
 
   const effectivePrice = product.promoPrice ?? product.price;
   const discount = product.promoPrice
     ? Math.round((1 - product.promoPrice / product.price) * 100)
     : 0;
+  const productName = lang === 'en' && product.nameEn ? product.nameEn : product.name;
 
   return (
     <Card
@@ -35,12 +38,12 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         }}
       >
         <Typography variant="h3" sx={{ opacity: 0.2, fontWeight: 700 }}>
-          {product.name.charAt(0)}
+          {productName.charAt(0)}
         </Typography>
         <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 8, left: 8 }}>
-          {product.isNew && <Chip label="Nouveau" size="small" color="info" icon={<FiberNew />} />}
+          {product.isNew && <Chip label={t('product.new')} size="small" color="info" icon={<FiberNew />} />}
           {product.isPromo && <Chip label={`-${discount}%`} size="small" color="error" icon={<LocalOffer />} />}
-          {product.isBestSeller && <Chip label="Best-seller" size="small" color="secondary" icon={<Star />} />}
+          {product.isBestSeller && <Chip label={t('product.bestSeller')} size="small" color="secondary" icon={<Star />} />}
         </Stack>
       </Box>
 
@@ -49,7 +52,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
           {product.brand}
         </Typography>
         <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1, lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-          {product.name}
+          {productName}
         </Typography>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 1 }}>
@@ -69,7 +72,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         </Box>
 
         {product.stock === 0 && (
-          <Typography variant="caption" color="error" fontWeight={600}>Rupture de stock</Typography>
+          <Typography variant="caption" color="error" fontWeight={600}>{t('product.outOfStock')}</Typography>
         )}
       </CardContent>
 
@@ -85,7 +88,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
             onAddToCart?.(product);
           }}
         >
-          Ajouter au panier
+          {t('product.addToCart')}
         </Button>
       </CardActions>
     </Card>

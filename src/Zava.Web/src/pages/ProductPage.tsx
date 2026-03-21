@@ -8,10 +8,12 @@ import {
 import { ShoppingCart, LocalOffer, FiberNew, ArrowBack } from '@mui/icons-material';
 import { getProduct, addToCart } from '../api';
 import type { Product, Review } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { lang, t } = useLanguage();
   const [product, setProduct] = useState<Product | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
@@ -41,20 +43,22 @@ export default function ProductPage() {
     if (!product) return;
     try {
       await addToCart(product.id, quantity, selectedVariant ?? undefined);
-      setSnackbar('Produit ajouté au panier');
+      setSnackbar(t('product.addedToCart'));
     } catch {
-      setSnackbar('Erreur lors de l\'ajout');
+      setSnackbar(t('product.addError'));
     }
   };
 
   if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
   if (error) return <Alert severity="error">{error}</Alert>;
-  if (!product) return <Alert severity="error">Produit introuvable</Alert>;
+  if (!product) return <Alert severity="error">{t('product.notFound')}</Alert>;
 
   const effectivePrice = product.promoPrice ?? product.price;
   const selectedVar = product.variants.find(v => v.id === selectedVariant);
   const finalPrice = effectivePrice + (selectedVar?.priceAdjustment ?? 0);
   const discount = product.promoPrice ? Math.round((1 - product.promoPrice / product.price) * 100) : 0;
+  const productName = lang === 'en' && product.nameEn ? product.nameEn : product.name;
+  const productDescription = lang === 'en' && product.descriptionEn ? product.descriptionEn : product.description;
 
   const ratingDistribution = [5, 4, 3, 2, 1].map(r => ({
     stars: r,
@@ -64,31 +68,31 @@ export default function ProductPage() {
 
   return (
     <Box>
-      <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} sx={{ mb: 2 }}>Retour</Button>
+      <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} sx={{ mb: 2 }}>{t('product.back')}</Button>
 
       <Grid container spacing={4}>
         {/* Image placeholder */}
         <Grid size={{ xs: 12, md: 5 }}>
           <Paper sx={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'grey.100' }}>
-            <Typography variant="h1" sx={{ opacity: 0.15, fontWeight: 700 }}>{product.name.charAt(0)}</Typography>
+            <Typography variant="h1" sx={{ opacity: 0.15, fontWeight: 700 }}>{productName.charAt(0)}</Typography>
           </Paper>
         </Grid>
 
         {/* Product info */}
         <Grid size={{ xs: 12, md: 7 }}>
           <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-            {product.isNew && <Chip label="Nouveau" size="small" color="info" icon={<FiberNew />} />}
+            {product.isNew && <Chip label={t('product.new')} size="small" color="info" icon={<FiberNew />} />}
             {product.isPromo && <Chip label={`-${discount}%`} size="small" color="error" icon={<LocalOffer />} />}
-            {product.isBestSeller && <Chip label="Best-seller" size="small" color="secondary" />}
+            {product.isBestSeller && <Chip label={t('product.bestSeller')} size="small" color="secondary" />}
           </Stack>
 
           <Typography variant="caption" color="text.secondary">{product.brand} · SKU: {product.sku}</Typography>
-          <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>{product.name}</Typography>
+          <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>{productName}</Typography>
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
             <Rating value={product.rating} precision={0.1} readOnly />
             <Typography variant="body2" color="text.secondary">
-              {product.rating.toFixed(1)} ({product.reviewCount} avis)
+              {product.rating.toFixed(1)} ({product.reviewCount} {t('product.reviews')})
             </Typography>
           </Box>
 
@@ -101,12 +105,12 @@ export default function ProductPage() {
             )}
           </Box>
 
-          <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>{product.description}</Typography>
+          <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>{productDescription}</Typography>
 
           {/* Variants */}
           {product.variants.length > 0 && (
             <Box sx={{ mb: 3 }}>
-              <Typography variant="subtitle2" sx={{ mb: 1 }}>Variante</Typography>
+              <Typography variant="subtitle2" sx={{ mb: 1 }}>{t('product.variant')}</Typography>
               <ToggleButtonGroup
                 value={selectedVariant}
                 exclusive
@@ -115,7 +119,7 @@ export default function ProductPage() {
               >
                 {product.variants.map((v) => (
                   <ToggleButton key={v.id} value={v.id}>
-                    {v.name}
+                    {lang === 'en' && v.nameEn ? v.nameEn : v.name}
                     {v.priceAdjustment !== 0 && (
                       <Typography variant="caption" sx={{ ml: 0.5 }}>
                         ({v.priceAdjustment > 0 ? '+' : ''}{v.priceAdjustment.toFixed(2)} €)
@@ -129,7 +133,7 @@ export default function ProductPage() {
 
           {/* Stock & Add to cart */}
           <Typography variant="body2" sx={{ mb: 2 }} color={product.stock > 0 ? 'success.main' : 'error.main'}>
-            {product.stock > 0 ? `En stock (${product.stock} disponibles)` : 'Rupture de stock'}
+            {product.stock > 0 ? `${t('product.inStock')} (${product.stock} ${t('product.available')})` : t('product.outOfStock')}
           </Typography>
 
           <Stack direction="row" spacing={2} alignItems="center">
@@ -143,7 +147,7 @@ export default function ProductPage() {
               disabled={product.stock === 0}
               onClick={handleAddToCart}
             >
-              Ajouter au panier — {(finalPrice * quantity).toFixed(2)} €
+              {t('product.addToCart')} — {(finalPrice * quantity).toFixed(2)} €
             </Button>
           </Stack>
 
@@ -159,7 +163,7 @@ export default function ProductPage() {
       <Divider sx={{ my: 4 }} />
 
       {/* Reviews Section */}
-      <Typography variant="h5" sx={{ mb: 2 }}>Avis clients ({reviews.length})</Typography>
+      <Typography variant="h5" sx={{ mb: 2 }}>{t('product.customerReviews')} ({reviews.length})</Typography>
 
       <Grid container spacing={3}>
         <Grid size={{ xs: 12, md: 4 }}>
@@ -167,7 +171,7 @@ export default function ProductPage() {
             <Typography variant="h2" fontWeight={700}>{product.rating.toFixed(1)}</Typography>
             <Rating value={product.rating} precision={0.1} readOnly size="large" />
             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-              Basé sur {reviews.length} avis
+              {t('product.basedOn')} {reviews.length} {t('product.reviewsCount')}
             </Typography>
             <Divider sx={{ my: 2 }} />
             {ratingDistribution.map(({ stars, count, pct }) => (
@@ -190,14 +194,14 @@ export default function ProductPage() {
                     <Box>
                       <Typography variant="subtitle2" fontWeight={600}>{review.title}</Typography>
                       <Typography variant="caption" color="text.secondary">
-                        {review.userName} {review.verified && '✓ Achat vérifié'}
+                        {review.userName} {review.verified && `✓ ${t('product.verifiedPurchase')}`}
                       </Typography>
                     </Box>
                     <Rating value={review.rating} size="small" readOnly />
                   </Box>
                   <Typography variant="body2">{review.comment}</Typography>
                   <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-                    {new Date(review.createdAt).toLocaleDateString('fr-FR')} · {review.helpfulCount} personnes ont trouvé cet avis utile
+                    {new Date(review.createdAt).toLocaleDateString(lang === 'en' ? 'en-GB' : 'fr-FR')} · {review.helpfulCount} {t('product.helpfulCount')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -209,7 +213,7 @@ export default function ProductPage() {
       {/* Related products */}
       {relatedProducts.length > 0 && (
         <Box sx={{ mt: 4 }}>
-          <Typography variant="h5" sx={{ mb: 2 }}>Produits similaires</Typography>
+          <Typography variant="h5" sx={{ mb: 2 }}>{t('product.relatedProducts')}</Typography>
           <Grid container spacing={2}>
             {relatedProducts.slice(0, 4).map((p) => (
               <Grid key={p.id} size={{ xs: 6, sm: 3 }}>
@@ -218,11 +222,11 @@ export default function ProductPage() {
                   onClick={() => navigate(`/products/${p.id}`)}
                 >
                   <Box sx={{ height: 120, bgcolor: 'grey.100', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Typography variant="h3" sx={{ opacity: 0.15 }}>{p.name.charAt(0)}</Typography>
+                    <Typography variant="h3" sx={{ opacity: 0.15 }}>{(lang === 'en' && p.nameEn ? p.nameEn : p.name).charAt(0)}</Typography>
                   </Box>
                   <CardContent>
                     <Typography variant="caption" color="text.secondary">{p.brand}</Typography>
-                    <Typography variant="subtitle2" noWrap>{p.name}</Typography>
+                    <Typography variant="subtitle2" noWrap>{lang === 'en' && p.nameEn ? p.nameEn : p.name}</Typography>
                     <Typography variant="subtitle1" color="primary" fontWeight={700}>
                       {(p.promoPrice ?? p.price).toFixed(2)} €
                     </Typography>

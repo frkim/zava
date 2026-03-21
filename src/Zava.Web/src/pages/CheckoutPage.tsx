@@ -7,11 +7,11 @@ import {
 import { CreditCard, CheckCircle, ErrorOutline } from '@mui/icons-material';
 import { getCart, getUser, checkout } from '../api';
 import type { Cart, User, PaymentResult, PaymentMethod, Address } from '../types';
-
-const steps = ['Livraison', 'Paiement', 'Confirmation'];
+import { useLanguage } from '../context/LanguageContext';
 
 export default function CheckoutPage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [activeStep, setActiveStep] = useState(0);
   const [cart, setCart] = useState<Cart | null>(null);
   const [, setUser] = useState<User | null>(null);
@@ -65,18 +65,18 @@ export default function CheckoutPage() {
   if (!cart || cart.items.length === 0) {
     return (
       <Box sx={{ textAlign: 'center', py: 8 }}>
-        <Typography variant="h5" gutterBottom>Votre panier est vide</Typography>
-        <Button variant="contained" onClick={() => navigate('/')}>Retour à l'accueil</Button>
+        <Typography variant="h5" gutterBottom>{t('cart.empty')}</Typography>
+        <Button variant="contained" onClick={() => navigate('/')}>{t('checkout.backToHome')}</Button>
       </Box>
     );
   }
 
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto' }}>
-      <Typography variant="h5" sx={{ mb: 3 }}>Commande</Typography>
+      <Typography variant="h5" sx={{ mb: 3 }}>{t('checkout.title')}</Typography>
 
       <Stepper activeStep={activeStep} sx={{ mb: 4 }}>
-        {steps.map((label) => (
+        {[t('checkout.shipping'), t('checkout.payment'), t('checkout.confirmation')].map((label) => (
           <Step key={label}><StepLabel>{label}</StepLabel></Step>
         ))}
       </Stepper>
@@ -84,22 +84,22 @@ export default function CheckoutPage() {
       {/* Step 0: Shipping */}
       {activeStep === 0 && (
         <Paper sx={{ p: 3 }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>Adresse de livraison</Typography>
+          <Typography variant="h6" sx={{ mb: 2 }}>{t('checkout.shippingAddress')}</Typography>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12 }}>
-              <TextField fullWidth label="Rue" value={address.street}
+              <TextField fullWidth label={t('checkout.street')} value={address.street}
                 onChange={(e) => setAddress({ ...address, street: e.target.value })} required />
             </Grid>
             <Grid size={{ xs: 12, sm: 6 }}>
-              <TextField fullWidth label="Ville" value={address.city}
+              <TextField fullWidth label={t('checkout.city')} value={address.city}
                 onChange={(e) => setAddress({ ...address, city: e.target.value })} required />
             </Grid>
             <Grid size={{ xs: 12, sm: 3 }}>
-              <TextField fullWidth label="Code postal" value={address.postalCode}
+              <TextField fullWidth label={t('checkout.postalCode')} value={address.postalCode}
                 onChange={(e) => setAddress({ ...address, postalCode: e.target.value })} required />
             </Grid>
             <Grid size={{ xs: 12, sm: 3 }}>
-              <TextField fullWidth label="Pays" value={address.country}
+              <TextField fullWidth label={t('checkout.country')} value={address.country}
                 onChange={(e) => setAddress({ ...address, country: e.target.value })} required />
             </Grid>
           </Grid>
@@ -107,16 +107,16 @@ export default function CheckoutPage() {
           {/* Order summary */}
           <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
             <Typography variant="subtitle2" sx={{ mb: 1 }}>
-              {cart.itemCount} article{cart.itemCount > 1 ? 's' : ''} — Total : {cart.total.toFixed(2)} €
+              {cart.itemCount} {cart.itemCount > 1 ? t('cart.articles') : t('cart.article')} — {t('cart.total')} : {cart.total.toFixed(2)} €
             </Typography>
           </Box>
 
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
-            <Button onClick={() => navigate('/cart')}>Retour au panier</Button>
+            <Button onClick={() => navigate('/cart')}>{t('checkout.backToCart')}</Button>
             <Button variant="contained" onClick={() => setActiveStep(1)}
               disabled={!address.street || !address.city || !address.postalCode}
             >
-              Continuer
+              {t('checkout.continue')}
             </Button>
           </Box>
         </Paper>
@@ -125,7 +125,7 @@ export default function CheckoutPage() {
       {/* Step 1: Payment */}
       {activeStep === 1 && (
         <Paper sx={{ p: 3 }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>Moyen de paiement</Typography>
+          <Typography variant="h6" sx={{ mb: 2 }}>{t('checkout.paymentMethod')}</Typography>
 
           <ToggleButtonGroup
             value={paymentMethod}
@@ -133,7 +133,7 @@ export default function CheckoutPage() {
             onChange={(_, v) => v && setPaymentMethod(v)}
             sx={{ mb: 3 }}
           >
-            <ToggleButton value="CreditCard">💳 Carte bancaire</ToggleButton>
+            <ToggleButton value="CreditCard">{t('checkout.creditCard')}</ToggleButton>
             <ToggleButton value="PayPal">🅿️ PayPal</ToggleButton>
             <ToggleButton value="ApplePay"> Apple Pay</ToggleButton>
             <ToggleButton value="GooglePay">🔵 Google Pay</ToggleButton>
@@ -142,32 +142,32 @@ export default function CheckoutPage() {
           {paymentMethod === 'CreditCard' && (
             <Grid container spacing={2}>
               <Grid size={{ xs: 12 }}>
-                <TextField fullWidth label="Numéro de carte" value={cardNumber}
+                <TextField fullWidth label={t('checkout.cardNumber')} value={cardNumber}
                   onChange={(e) => setCardNumber(e.target.value)}
                   placeholder="4242 4242 4242 4242"
-                  helperText="Terminez par 0000 pour simuler un échec de paiement" />
+                  helperText={t('checkout.cardNumberHint')} />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label="Titulaire" value={cardHolder}
+                <TextField fullWidth label={t('checkout.cardHolder')} value={cardHolder}
                   onChange={(e) => setCardHolder(e.target.value)} />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label="Expiration" value={cardExpiry}
+                <TextField fullWidth label={t('checkout.cardExpiry')} value={cardExpiry}
                   onChange={(e) => setCardExpiry(e.target.value)} placeholder="MM/AA" />
               </Grid>
             </Grid>
           )}
 
           <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
-            <Typography variant="h6">Total à payer : {cart.total.toFixed(2)} €</Typography>
+            <Typography variant="h6">{t('checkout.totalToPay')} : {cart.total.toFixed(2)} €</Typography>
           </Box>
 
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
-            <Button onClick={() => setActiveStep(0)}>Retour</Button>
+            <Button onClick={() => setActiveStep(0)}>{t('checkout.back')}</Button>
             <Button variant="contained" onClick={handleCheckout} disabled={processing}
               startIcon={processing ? <CircularProgress size={20} /> : <CreditCard />}
             >
-              {processing ? 'Traitement...' : 'Payer'}
+              {processing ? t('checkout.processing') : t('checkout.pay')}
             </Button>
           </Box>
         </Paper>
@@ -179,36 +179,36 @@ export default function CheckoutPage() {
           {result.success ? (
             <>
               <CheckCircle sx={{ fontSize: 64, color: 'success.main', mb: 2 }} />
-              <Typography variant="h5" gutterBottom>Commande confirmée !</Typography>
+              <Typography variant="h5" gutterBottom>{t('checkout.confirmed')}</Typography>
               <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
                 {result.message}
               </Typography>
               {result.orderId && (
                 <Typography variant="body2" sx={{ mb: 1 }}>
-                  Numéro de commande : <strong>#{result.orderId}</strong>
+                  {t('checkout.orderNumber')} : <strong>#{result.orderId}</strong>
                 </Typography>
               )}
               {result.transactionId && (
                 <Typography variant="caption" color="text.secondary">
-                  Transaction : {result.transactionId}
+                  {t('checkout.transaction')} : {result.transactionId}
                 </Typography>
               )}
               <Box sx={{ mt: 3, display: 'flex', gap: 2, justifyContent: 'center' }}>
                 <Button variant="contained" onClick={() => navigate('/orders')}>
-                  Voir mes commandes
+                  {t('checkout.viewOrders')}
                 </Button>
-                <Button onClick={() => navigate('/')}>Retour à l'accueil</Button>
+                <Button onClick={() => navigate('/')}>{t('checkout.backToHome')}</Button>
               </Box>
             </>
           ) : (
             <>
               <ErrorOutline sx={{ fontSize: 64, color: 'error.main', mb: 2 }} />
-              <Typography variant="h5" gutterBottom>Paiement échoué</Typography>
+              <Typography variant="h5" gutterBottom>{t('checkout.paymentFailed')}</Typography>
               <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
                 {result.message}
               </Typography>
               <Button variant="contained" onClick={() => setActiveStep(1)}>
-                Réessayer
+                {t('checkout.retry')}
               </Button>
             </>
           )}

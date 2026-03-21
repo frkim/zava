@@ -9,11 +9,13 @@ import { ExpandMore } from '@mui/icons-material';
 import ProductCard from '../components/ProductCard';
 import { searchProducts, addToCart } from '../api';
 import type { SearchResult, SearchRequest, Product } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [result, setResult] = useState<SearchResult | null>(null);
   const [loading, setLoading] = useState(true);
+  const { lang, t } = useLanguage();
 
   const q = searchParams.get('q') ?? '';
   const categoryId = searchParams.get('categoryId');
@@ -60,34 +62,34 @@ export default function SearchPage() {
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: 2 }}>
-        {q ? `Résultats pour "${q}"` : 'Tous les produits'}
-        {result && <Typography component="span" variant="body2" color="text.secondary" sx={{ ml: 1 }}>({result.totalCount} résultats)</Typography>}
+        {q ? `${t('search.resultsFor')} "${q}"` : t('search.allProducts')}
+        {result && <Typography component="span" variant="body2" color="text.secondary" sx={{ ml: 1 }}>({result.totalCount} {t('search.results')})</Typography>}
       </Typography>
 
       <Grid container spacing={3}>
         {/* Sidebar Filters */}
         <Grid size={{ xs: 12, md: 3 }}>
           <Paper sx={{ p: 2 }}>
-            <Typography variant="subtitle1" fontWeight={600} sx={{ mb: 1 }}>Filtres</Typography>
+            <Typography variant="subtitle1" fontWeight={600} sx={{ mb: 1 }}>{t('search.filters')}</Typography>
 
             <FormControl fullWidth size="small" sx={{ mb: 2 }}>
-              <InputLabel>Trier par</InputLabel>
+              <InputLabel>{t('search.sortBy')}</InputLabel>
               <Select
                 value={sortBy}
-                label="Trier par"
+                label={t('search.sortBy')}
                 onChange={(e) => updateParam('sortBy', e.target.value || null)}
               >
-                <MenuItem value="">Pertinence</MenuItem>
-                <MenuItem value="price">Prix croissant</MenuItem>
-                <MenuItem value="rating">Meilleures notes</MenuItem>
-                <MenuItem value="newest">Nouveautés</MenuItem>
-                <MenuItem value="name">Nom A-Z</MenuItem>
+                <MenuItem value="">{t('search.relevance')}</MenuItem>
+                <MenuItem value="price">{t('search.priceAsc')}</MenuItem>
+                <MenuItem value="rating">{t('search.bestRated')}</MenuItem>
+                <MenuItem value="newest">{t('search.newest')}</MenuItem>
+                <MenuItem value="name">{t('search.nameAZ')}</MenuItem>
               </Select>
             </FormControl>
 
             <FormControlLabel
               control={<Checkbox checked={inStock} onChange={(e) => updateParam('inStock', e.target.checked ? 'true' : null)} />}
-              label="En stock uniquement"
+              label={t('search.inStockOnly')}
               sx={{ mb: 2 }}
             />
 
@@ -95,7 +97,7 @@ export default function SearchPage() {
             {result?.facets.map((facet) => (
               <Accordion key={facet.nameEn} defaultExpanded disableGutters elevation={0}>
                 <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography variant="subtitle2" fontWeight={600}>{facet.name}</Typography>
+                  <Typography variant="subtitle2" fontWeight={600}>{lang === 'en' && facet.nameEn ? facet.nameEn : facet.name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ pt: 0 }}>
                   <Stack spacing={0.5}>
@@ -147,7 +149,7 @@ export default function SearchPage() {
               )}
             </>
           ) : (
-            <Alert severity="info">Aucun produit trouvé</Alert>
+            <Alert severity="info">{t('search.noResults')}</Alert>
           )}
         </Grid>
       </Grid>

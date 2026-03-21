@@ -3,8 +3,9 @@ import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import {
   AppBar, Toolbar, Typography, IconButton, Badge, Box, InputBase, Container,
   Drawer, List, ListItemButton, ListItemText, ListItemIcon, Divider, Paper,
-  MenuItem,
+  MenuItem, Select,
 } from '@mui/material';
+import type { SelectChangeEvent } from '@mui/material';
 import {
   ShoppingCart, Person, Search, Menu as MenuIcon, Home, Category,
   Settings, Analytics, Close, Inventory,
@@ -12,7 +13,9 @@ import {
 import { alpha, styled } from '@mui/material/styles';
 import { getCart, getSuggestions } from '../api';
 import { useSite } from '../context/SiteContext';
+import { useLanguage } from '../context/LanguageContext';
 import type { Cart, SearchSuggestion } from '../types';
+import type { Lang } from '../i18n';
 
 const SearchBox = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,6 +55,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
   const { siteName, siteVersion } = useSite();
+  const { lang, setLang, t } = useLanguage();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [cart, setCart] = useState<Cart | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -102,12 +106,12 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   const navItems = [
-    { text: 'Accueil', icon: <Home />, path: '/' },
-    { text: 'Catégories', icon: <Category />, path: '/categories' },
-    { text: 'Tous les produits', icon: <Inventory />, path: '/search' },
-    { text: 'Mon profil', icon: <Person />, path: '/profile' },
-    { text: 'Analytics', icon: <Analytics />, path: '/analytics' },
-    { text: 'Paramètres', icon: <Settings />, path: '/settings' },
+    { text: t('nav.home'), icon: <Home />, path: '/' },
+    { text: t('nav.categories'), icon: <Category />, path: '/categories' },
+    { text: t('nav.allProducts'), icon: <Inventory />, path: '/search' },
+    { text: t('nav.profile'), icon: <Person />, path: '/profile' },
+    { text: t('nav.analytics'), icon: <Analytics />, path: '/analytics' },
+    { text: t('nav.settings'), icon: <Settings />, path: '/settings' },
   ];
 
   return (
@@ -130,7 +134,7 @@ export default function Layout({ children }: LayoutProps) {
             <SearchBox>
               <SearchIconWrapper><Search /></SearchIconWrapper>
               <StyledInputBase
-                placeholder="Rechercher un produit..."
+                placeholder={t('search.placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => suggestions.length > 0 && setShowSuggestions(true)}
@@ -151,6 +155,18 @@ export default function Layout({ children }: LayoutProps) {
             </SearchBox>
           </Box>
 
+          <Select
+            value={lang}
+            onChange={(e: SelectChangeEvent) => setLang(e.target.value as Lang)}
+            size="small"
+            variant="standard"
+            disableUnderline
+            sx={{ color: 'white', ml: 1, '& .MuiSelect-icon': { color: 'white' }, '& .MuiSelect-select': { py: 0.5 } }}
+          >
+            <MenuItem value="fr">🇫🇷</MenuItem>
+            <MenuItem value="en">🇬🇧</MenuItem>
+          </Select>
+
           <IconButton color="inherit" onClick={() => navigate('/profile')} sx={{ ml: 1 }}>
             <Person />
           </IconButton>
@@ -165,7 +181,7 @@ export default function Layout({ children }: LayoutProps) {
       <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <Box sx={{ width: 280, pt: 1 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, py: 1 }}>
-            <Typography variant="h6" fontWeight={700}>Menu</Typography>
+            <Typography variant="h6" fontWeight={700}>{t('nav.menu')}</Typography>
             <IconButton onClick={() => setDrawerOpen(false)}><Close /></IconButton>
           </Box>
           <Divider />
@@ -192,24 +208,24 @@ export default function Layout({ children }: LayoutProps) {
       <Box component="footer" sx={{ bgcolor: 'primary.dark', color: 'white', py: 4, mt: 'auto' }}>
         <Container maxWidth="xl">
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center', mb: 3 }}>
-            {[
-              '🚚 Livraison offerte* — Partout en France',
-              '⭐ Abonnement Premium — Tous les avantages',
-              '↩️ Retours sous 15 jours',
-              '🛠️ Service après-vente',
-              '💰 Meilleurs prix garantis',
-              '🚗 Le Drive — Gagner du temps',
-            ].map((text) => (
-              <Typography key={text} variant="body2" sx={{ opacity: 0.8 }}>{text}</Typography>
+            {([
+              t('footer.freeDelivery'),
+              t('footer.premium'),
+              t('footer.returns'),
+              t('footer.support'),
+              t('footer.bestPrices'),
+              t('footer.drive'),
+            ] as string[]).map((text, i) => (
+              <Typography key={i} variant="body2" sx={{ opacity: 0.8 }}>{text}</Typography>
             ))}
           </Box>
           <Divider sx={{ bgcolor: 'rgba(255,255,255,0.2)', my: 2 }} />
           <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
             <Typography variant="caption" sx={{ opacity: 0.6 }}>
-              © {new Date().getFullYear()} Zava — Site de démonstration e-commerce
+              © {new Date().getFullYear()} Zava — {t('footer.demo')}
             </Typography>
             <Typography variant="caption" sx={{ opacity: 0.6 }}>
-              Conditions Générales · Mentions Légales · Politique de Confidentialité
+              {t('footer.legal')}
             </Typography>
           </Box>
         </Container>

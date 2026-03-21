@@ -6,9 +6,11 @@ import {
 import ProductGrid from '../components/ProductGrid';
 import { getHomepage, addToCart } from '../api';
 import type { HomepageData, Product } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const { lang, t } = useLanguage();
   const [data, setData] = useState<HomepageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -43,21 +45,21 @@ export default function HomePage() {
           borderRadius: 2,
         }}
       >
-        <Typography variant="h4" gutterBottom>Bienvenue sur Zava</Typography>
+        <Typography variant="h4" gutterBottom>{t('home.welcome')}</Typography>
         <Typography variant="body1" sx={{ opacity: 0.9 }}>
-          Découvrez nos sélections, meilleures ventes et nouveautés. Profitez de la livraison offerte et de nos prix garantis.
+          {t('home.intro')}
         </Typography>
       </Paper>
 
       {/* Top Categories */}
       {data.topCategories.length > 0 && (
         <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" sx={{ mb: 2 }}>Top Catégories</Typography>
+          <Typography variant="h5" sx={{ mb: 2 }}>{t('home.topCategories')}</Typography>
           <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
             {data.topCategories.map((cat) => (
               <Chip
                 key={cat.id}
-                label={`${cat.name} (${cat.productCount})`}
+                label={`${lang === 'en' && cat.nameEn ? cat.nameEn : cat.name} (${cat.productCount})`}
                 onClick={() => navigate(`/search?categoryId=${cat.id}`)}
                 variant="outlined"
                 sx={{ mb: 1 }}
@@ -67,16 +69,16 @@ export default function HomePage() {
         </Box>
       )}
 
-      <ProductGrid title="⭐ Sélection pour vous" products={data.selectionProducts} onAddToCart={handleAddToCart} />
-      <ProductGrid title="🏆 Meilleures ventes" products={data.bestSellers} onAddToCart={handleAddToCart} />
-      <ProductGrid title="🆕 Nouveautés" products={data.newProducts} onAddToCart={handleAddToCart} />
-      <ProductGrid title="🔥 Promotions" products={data.promoProducts} onAddToCart={handleAddToCart} />
-      <ProductGrid title="💎 Produits en avant" products={data.featuredProducts} onAddToCart={handleAddToCart} />
+      <ProductGrid title={t('home.selection')} products={data.selectionProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
+      <ProductGrid title={t('home.bestSellers')} products={data.bestSellers.slice(0, 5)} onAddToCart={handleAddToCart} />
+      <ProductGrid title={t('home.newArrivals')} products={data.newProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
+      <ProductGrid title={t('home.promotions')} products={data.promoProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
+      <ProductGrid title={t('home.featured')} products={data.featuredProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
 
       {/* Brands */}
       {data.brands.length > 0 && (
         <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" sx={{ mb: 2 }}>Nos Marques</Typography>
+          <Typography variant="h5" sx={{ mb: 2 }}>{t('home.brands')}</Typography>
           <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
             {data.brands.map((brand) => (
               <Chip
@@ -93,9 +95,9 @@ export default function HomePage() {
 
       {/* Premium banner */}
       <Paper sx={{ p: 3, mb: 4, bgcolor: 'secondary.main', color: 'white', borderRadius: 2 }}>
-        <Typography variant="h6" gutterBottom>⭐ Abonnement Premium</Typography>
+        <Typography variant="h6" gutterBottom>{t('home.premium')}</Typography>
         <Typography variant="body2">
-          Livraison express gratuite, accès aux ventes privées, retours étendus à 30 jours, et bien plus encore.
+          {t('home.premiumDesc')}
         </Typography>
       </Paper>
     </Box>
