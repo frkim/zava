@@ -10,6 +10,8 @@ public class User
     public Address? ShippingAddress { get; set; }
     public Address? BillingAddress { get; set; }
     public PaymentInfo? PaymentInfo { get; set; }
+    public DeliveryMethod PreferredDeliveryMethod { get; set; } = DeliveryMethod.Home;
+    public PaymentMethod PreferredPaymentMethod { get; set; } = PaymentMethod.CreditCard;
     public bool IsPremium { get; set; }
     public DateTime CreatedAt { get; set; }
 }

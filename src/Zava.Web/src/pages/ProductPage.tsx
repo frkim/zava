@@ -5,9 +5,9 @@ import {
   Paper, Divider, Stack, ToggleButtonGroup, ToggleButton, Snackbar,
   Card, CardContent,
 } from '@mui/material';
-import { ShoppingCart, LocalOffer, FiberNew, ArrowBack } from '@mui/icons-material';
+import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon } from '@mui/icons-material';
 import { getProduct, addToCart } from '../api';
-import type { Product, Review } from '../types';
+import type { Product, Review, Category } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ProductPage() {
@@ -17,11 +17,13 @@ export default function ProductPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+  const [category, setCategory] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [selectedVariant, setSelectedVariant] = useState<number | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [snackbar, setSnackbar] = useState('');
+  const [visibleReviews, setVisibleReviews] = useState(3);
 
   useEffect(() => {
     if (!id) return;
@@ -31,6 +33,7 @@ export default function ProductPage() {
         setProduct(data.product);
         setReviews(data.reviews);
         setRelatedProducts(data.relatedProducts);
+        setCategory(data.category);
         if (data.product.variants.length > 0) {
           setSelectedVariant(data.product.variants[0].id);
         }
@@ -86,7 +89,19 @@ export default function ProductPage() {
             {product.isBestSeller && <Chip label={t('product.bestSeller')} size="small" color="secondary" />}
           </Stack>
 
-          <Typography variant="caption" color="text.secondary">{product.brand} · SKU: {product.sku}</Typography>
+          <Stack direction="row" spacing={1} alignItems="center">
+            <Typography variant="caption" color="text.secondary">{product.brand} · SKU: {product.sku}</Typography>
+            {category && (
+              <Chip
+                icon={<CategoryIcon />}
+                label={lang === 'en' && category.nameEn ? category.nameEn : category.name}
+                size="small"
+                variant="outlined"
+                clickable
+                onClick={() => navigate(`/search?categoryId=${category.id}`)}
+              />
+            )}
+          </Stack>
           <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>{productName}</Typography>
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
@@ -187,7 +202,7 @@ export default function ProductPage() {
         </Grid>
         <Grid size={{ xs: 12, md: 8 }}>
           <Stack spacing={2}>
-            {reviews.slice(0, 10).map((review) => (
+            {reviews.slice(0, visibleReviews).map((review) => (
               <Card key={review.id} variant="outlined">
                 <CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
@@ -206,6 +221,15 @@ export default function ProductPage() {
                 </CardContent>
               </Card>
             ))}
+            {reviews.length > visibleReviews && (
+              <Button
+                variant="outlined"
+                onClick={() => setVisibleReviews((prev) => prev + 5)}
+                sx={{ alignSelf: 'center' }}
+              >
+                {t('product.viewMoreReviews')} ({reviews.length - visibleReviews})
+              </Button>
+            )}
           </Stack>
         </Grid>
       </Grid>

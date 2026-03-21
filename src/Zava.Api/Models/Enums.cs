@@ -31,5 +31,17 @@ public enum PaymentMethod
     CreditCard,
     PayPal,
     ApplePay,
-    GooglePay
+    GooglePay,
+    BankTransfer,
+    GiftCard
+}
+
+public enum DeliveryMethod
+{
+    Home,
+    Relay,
+    Locker,
+    Store,
+    Drive,
+    Express
 }

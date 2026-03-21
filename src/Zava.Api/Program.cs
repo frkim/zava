@@ -88,8 +88,9 @@ app.MapGet("/api/products/{id:int}", (int id, DataStore store) =>
     var related = store.Products
         .Where(p => product.RelatedProductIds.Contains(p.Id))
         .ToList();
+    var category = store.Categories.FirstOrDefault(c => c.Id == product.CategoryId);
 
-    return Results.Ok(new { product, reviews, relatedProducts = related });
+    return Results.Ok(new { product, reviews, relatedProducts = related, category });
 });
 
 app.MapPost("/api/products", (CreateProductRequest req, DataStore store) =>

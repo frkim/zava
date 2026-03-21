@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { getConfig } from '../api';
 import type { SiteConfig } from '../types';
+import { useLanguage } from './LanguageContext';
 
 interface SiteContextValue {
   config: SiteConfig | null;
@@ -20,6 +21,7 @@ const SiteContext = createContext<SiteContextValue>({
 export function SiteProvider({ children }: { children: React.ReactNode }) {
   const [config, setConfig] = useState<SiteConfig | null>(null);
   const [siteVersion, setSiteVersion] = useState(0);
+  const { lang } = useLanguage();
 
   const refreshConfig = useCallback(async () => {
     try {
@@ -33,8 +35,11 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
     refreshConfig();
   }, [refreshConfig]);
 
-  const siteName = config
-    ? config.availableSiteTypes.find((s) => s.type === config.currentSiteType)?.name ?? 'Zava'
+  const siteInfo = config
+    ? config.availableSiteTypes.find((s) => s.type === config.currentSiteType)
+    : null;
+  const siteName = siteInfo
+    ? (lang === 'en' && siteInfo.nameEn ? siteInfo.nameEn : siteInfo.name)
     : 'Zava';
 
   return (

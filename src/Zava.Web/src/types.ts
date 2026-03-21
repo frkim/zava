@@ -2,7 +2,9 @@ export type SiteType = 'Electronics' | 'Appliances' | 'Cosmetics' | 'Electrical'
 
 export type OrderStatus = 'Pending' | 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
 
-export type PaymentMethod = 'CreditCard' | 'PayPal' | 'ApplePay' | 'GooglePay';
+export type PaymentMethod = 'CreditCard' | 'PayPal' | 'ApplePay' | 'GooglePay' | 'BankTransfer' | 'GiftCard';
+
+export type DeliveryMethod = 'Home' | 'Relay' | 'Locker' | 'Store' | 'Drive' | 'Express';
 
 export type PaymentStatus = 'Pending' | 'Success' | 'Failed';
 
@@ -102,6 +104,8 @@ export interface User {
   shippingAddress: Address | null;
   billingAddress: Address | null;
   paymentInfo: PaymentInfo | null;
+  preferredDeliveryMethod: DeliveryMethod;
+  preferredPaymentMethod: PaymentMethod;
   isPremium: boolean;
   createdAt: string;
 }

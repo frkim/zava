@@ -3,9 +3,28 @@ import { useNavigate } from 'react-router-dom';
 import {
   Typography, Box, Grid, Card, CardContent, CardActionArea, CircularProgress,
 } from '@mui/material';
+import type { SvgIconComponent } from '@mui/icons-material';
+import {
+  Tv, Laptop, Smartphone, Headphones, CameraAlt, SportsEsports, Tablet, Speaker, Watch, MenuBook,
+  Kitchen, LocalLaundryService, Countertops, CleaningServices, Microwave, CoffeeMaker, Blender, AcUnit, Iron,
+  Spa, Face, Brush, Visibility, FaceRetouchingNatural, Palette, ContentCut, CardGiftcard, WbSunny,
+  Cable, ElectricalServices, Power, Lightbulb, LightMode, Dashboard, SmartToy, Build, Thermostat,
+  EggAlt, BakeryDining, LunchDining, SetMeal, RiceBowl, Cookie, LocalDrink, EnergySavingsLeaf,
+  Hardware, FormatPaint, Carpenter, Plumbing, Settings, GridView, Grass, Inventory, Security,
+  Category as CategoryFallback,
+} from '@mui/icons-material';
 import { getCategories } from '../api';
 import type { Category } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+
+const iconMap: Record<string, SvgIconComponent> = {
+  Tv, Laptop, Smartphone, Headphones, CameraAlt, SportsEsports, Tablet, Speaker, Watch, MenuBook,
+  Kitchen, LocalLaundryService, Countertops, CleaningServices, Microwave, CoffeeMaker, Blender, AcUnit, Iron,
+  Spa, Face, Brush, Visibility, FaceRetouchingNatural, Palette, ContentCut, CardGiftcard, WbSunny,
+  Cable, ElectricalServices, Power, Lightbulb, LightMode, Dashboard, SmartToy, Build, Thermostat,
+  EggAlt, BakeryDining, LunchDining, SetMeal, RiceBowl, Cookie, LocalDrink, Eco: EnergySavingsLeaf,
+  Hardware, FormatPaint, Carpenter, Plumbing, Settings, GridView, Grass, Inventory, Security,
+};
 
 export default function CategoriesPage() {
   const navigate = useNavigate();
@@ -33,8 +52,13 @@ export default function CategoriesPage() {
           <Grid key={cat.id} size={{ xs: 6, sm: 4, md: 3 }}>
             <Card>
               <CardActionArea onClick={() => navigate(`/search?categoryId=${cat.id}`)}>
-                <Box sx={{ height: 120, bgcolor: 'primary.main', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Typography variant="h2" sx={{ color: 'white', opacity: 0.3 }}>{cat.icon || catName.charAt(0)}</Typography>
+                <Box sx={{ height: 140, bgcolor: 'primary.main', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {(() => {
+                    const IconComp = cat.icon ? iconMap[cat.icon] : null;
+                    return IconComp
+                      ? <IconComp sx={{ fontSize: 64, color: 'white', opacity: 0.85 }} />
+                      : <CategoryFallback sx={{ fontSize: 64, color: 'white', opacity: 0.3 }} />;
+                  })()}
                 </Box>
                 <CardContent>
                   <Typography variant="subtitle1" fontWeight={600}>{catName}</Typography>

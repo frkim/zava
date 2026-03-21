@@ -9,6 +9,7 @@ import type { SelectChangeEvent } from '@mui/material';
 import {
   ShoppingCart, Person, Search, Menu as MenuIcon, Home, Category,
   Settings, Analytics, Close, Inventory,
+  Devices, Kitchen, Spa, ElectricalServices, Construction, LocalGroceryStore,
 } from '@mui/icons-material';
 import { alpha, styled } from '@mui/material/styles';
 import { getCart, getSuggestions } from '../api';
@@ -16,6 +17,17 @@ import { useSite } from '../context/SiteContext';
 import { useLanguage } from '../context/LanguageContext';
 import type { Cart, SearchSuggestion } from '../types';
 import type { Lang } from '../i18n';
+import type { SvgIconComponent } from '@mui/icons-material';
+import type { SiteType } from '../types';
+
+const siteTypeIcons: Record<SiteType, SvgIconComponent> = {
+  Electronics: Devices,
+  Appliances: Kitchen,
+  Cosmetics: Spa,
+  Electrical: ElectricalServices,
+  DIY: Construction,
+  Grocery: LocalGroceryStore,
+};
 
 const SearchBox = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,7 +66,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
-  const { siteName, siteVersion } = useSite();
+  const { config, siteName, siteVersion } = useSite();
   const { lang, setLang, t } = useLanguage();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [cart, setCart] = useState<Cart | null>(null);
@@ -125,8 +137,12 @@ export default function Layout({ children }: LayoutProps) {
             variant="h6"
             component={RouterLink}
             to="/"
-            sx={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap' }}
+            sx={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 1 }}
           >
+            {config?.currentSiteType && (() => {
+              const SiteIcon = siteTypeIcons[config.currentSiteType];
+              return SiteIcon ? <SiteIcon fontSize="small" /> : null;
+            })()}
             {siteName}
           </Typography>
 
@@ -209,14 +225,22 @@ export default function Layout({ children }: LayoutProps) {
         <Container maxWidth="xl">
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center', mb: 3 }}>
             {([
-              t('footer.freeDelivery'),
-              t('footer.premium'),
-              t('footer.returns'),
-              t('footer.support'),
-              t('footer.bestPrices'),
-              t('footer.drive'),
-            ] as string[]).map((text, i) => (
-              <Typography key={i} variant="body2" sx={{ opacity: 0.8 }}>{text}</Typography>
+              { label: t('footer.freeDelivery'), path: '/info/delivery' },
+              { label: t('footer.premium'), path: '/info/premium' },
+              { label: t('footer.returns'), path: '/info/returns' },
+              { label: t('footer.support'), path: '/info/after-sales' },
+              { label: t('footer.bestPrices'), path: '/info/best-prices' },
+              { label: t('footer.drive'), path: '/info/drive' },
+            ]).map((item, i) => (
+              <Typography
+                key={i}
+                variant="body2"
+                component={RouterLink}
+                to={item.path}
+                sx={{ opacity: 0.8, color: 'inherit', textDecoration: 'none', '&:hover': { opacity: 1, textDecoration: 'underline' } }}
+              >
+                {item.label}
+              </Typography>
             ))}
           </Box>
           <Divider sx={{ bgcolor: 'rgba(255,255,255,0.2)', my: 2 }} />
@@ -224,9 +248,20 @@ export default function Layout({ children }: LayoutProps) {
             <Typography variant="caption" sx={{ opacity: 0.6 }}>
               © {new Date().getFullYear()} Zava — {t('footer.demo')}
             </Typography>
-            <Typography variant="caption" sx={{ opacity: 0.6 }}>
-              {t('footer.legal')}
-            </Typography>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              {([
+                { label: t('footer.terms'), path: '/info/terms' },
+                { label: t('footer.legalNotice'), path: '/info/legal' },
+                { label: t('footer.privacy'), path: '/info/privacy' },
+              ]).map((item, i, arr) => (
+                <Typography key={i} variant="caption" sx={{ opacity: 0.6 }}>
+                  <RouterLink to={item.path} style={{ color: 'inherit', textDecoration: 'none' }}>
+                    {item.label}
+                  </RouterLink>
+                  {i < arr.length - 1 ? ' · ' : ''}
+                </Typography>
+              ))}
+            </Box>
           </Box>
         </Container>
       </Box>

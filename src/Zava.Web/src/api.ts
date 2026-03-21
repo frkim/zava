@@ -34,7 +34,7 @@ export const getHomepage = () => request<HomepageData>(`${API}/homepage`);
 // Products
 export const getProducts = () => request<Product[]>(`${API}/products`);
 export const getProduct = (id: number) =>
-  request<{ product: Product; reviews: Review[]; relatedProducts: Product[] }>(`${API}/products/${id}`);
+  request<{ product: Product; reviews: Review[]; relatedProducts: Product[]; category: Category | null }>(`${API}/products/${id}`);
 export const createProduct = (data: {
   name: string; description: string; price: number; categoryId: number; brand: string; stock: number;
 }) =>

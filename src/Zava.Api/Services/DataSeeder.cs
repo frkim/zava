@@ -122,6 +122,8 @@ public static class DataSeeder
                     ExpiryDate = "12/27",
                     CardHolderName = "MARIE DUPONT"
                 },
+                PreferredDeliveryMethod = DeliveryMethod.Home,
+                PreferredPaymentMethod = PaymentMethod.CreditCard,
                 IsPremium = true,
                 CreatedAt = DateTime.Now.AddMonths(-6)
             }
