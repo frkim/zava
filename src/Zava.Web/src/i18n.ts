@@ -45,6 +45,10 @@ const translations = {
   'product.addedToCart': { fr: 'Produit ajouté au panier', en: 'Product added to cart' },
   'product.addError': { fr: "Erreur lors de l'ajout", en: 'Error adding to cart' },
   'product.notFound': { fr: 'Produit introuvable', en: 'Product not found' },
+  'product.photos': { fr: 'Photos', en: 'Photos' },
+  'product.close': { fr: 'Fermer', en: 'Close' },
+  'product.previousImage': { fr: 'Image précédente', en: 'Previous image' },
+  'product.nextImage': { fr: 'Image suivante', en: 'Next image' },
 
   // ─── Home ──────────────────────────────────────────────────────────────────
   'home.welcome': { fr: 'Bienvenue sur Zava', en: 'Welcome to Zava' },

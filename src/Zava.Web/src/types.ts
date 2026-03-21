@@ -65,6 +65,13 @@ export interface Review {
   helpfulCount: number;
 }
 
+export interface ProductImage {
+  index: number;
+  main: string;
+  medium: string;
+  thumb: string;
+}
+
 export interface CartItem {
   productId: number;
   productName: string;

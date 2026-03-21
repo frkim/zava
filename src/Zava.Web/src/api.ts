@@ -1,10 +1,11 @@
 import type {
   SiteConfig, HomepageData, Product, Category, SearchRequest, SearchResult,
   SearchSuggestion, Cart, PaymentResult, CheckoutRequest, Order, User,
-  AnalyticsDashboard, Review,
+  AnalyticsDashboard, Review, ProductImage,
 } from './types';
 
-const API = 'http://localhost:5014/api';
+export const API_BASE = 'http://localhost:5014';
+const API = `${API_BASE}/api`;
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(url, {
@@ -34,7 +35,7 @@ export const getHomepage = () => request<HomepageData>(`${API}/homepage`);
 // Products
 export const getProducts = () => request<Product[]>(`${API}/products`);
 export const getProduct = (id: number) =>
-  request<{ product: Product; reviews: Review[]; relatedProducts: Product[]; category: Category | null }>(`${API}/products/${id}`);
+  request<{ product: Product; reviews: Review[]; relatedProducts: Product[]; category: Category | null; images: ProductImage[] }>(`${API}/products/${id}`);
 export const createProduct = (data: {
   name: string; description: string; price: number; categoryId: number; brand: string; stock: number;
 }) =>

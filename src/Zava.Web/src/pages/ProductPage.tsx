@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   Typography, Box, Grid, Chip, Rating, Button, CircularProgress, Alert,
   Paper, Divider, Stack, ToggleButtonGroup, ToggleButton, Snackbar,
-  Card, CardContent,
+  Card, CardContent, Dialog, IconButton,
 } from '@mui/material';
-import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon } from '@mui/icons-material';
-import { getProduct, addToCart } from '../api';
-import type { Product, Review, Category } from '../types';
+import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon, Close, ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { getProduct, addToCart, API_BASE } from '../api';
+import type { Product, Review, Category, ProductImage } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ProductPage() {
@@ -18,12 +18,18 @@ export default function ProductPage() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [category, setCategory] = useState<Category | null>(null);
+  const [images, setImages] = useState<ProductImage[]>([]);
+  const [selectedImageIdx, setSelectedImageIdx] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [selectedVariant, setSelectedVariant] = useState<number | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [snackbar, setSnackbar] = useState('');
   const [visibleReviews, setVisibleReviews] = useState(3);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [zoomVisible, setZoomVisible] = useState(false);
+  const [zoomPos, setZoomPos] = useState({ x: 0, y: 0 });
+  const mainImageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!id) return;
@@ -34,6 +40,8 @@ export default function ProductPage() {
         setReviews(data.reviews);
         setRelatedProducts(data.relatedProducts);
         setCategory(data.category);
+        setImages(data.images ?? []);
+        setSelectedImageIdx(0);
         if (data.product.variants.length > 0) {
           setSelectedVariant(data.product.variants[0].id);
         }
@@ -74,11 +82,173 @@ export default function ProductPage() {
       <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} sx={{ mb: 2 }}>{t('product.back')}</Button>
 
       <Grid container spacing={4}>
-        {/* Image placeholder */}
+        {/* Image gallery */}
         <Grid size={{ xs: 12, md: 5 }}>
-          <Paper sx={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'grey.100' }}>
-            <Typography variant="h1" sx={{ opacity: 0.15, fontWeight: 700 }}>{productName.charAt(0)}</Typography>
-          </Paper>
+          {images.length > 0 ? (
+            <Box>
+              {/* Main image with zoom */}
+              <Paper
+                ref={mainImageRef}
+                sx={{
+                  height: 400,
+                  position: 'relative',
+                  overflow: 'hidden',
+                  cursor: 'crosshair',
+                  bgcolor: 'grey.50',
+                }}
+                onMouseEnter={() => setZoomVisible(true)}
+                onMouseLeave={() => setZoomVisible(false)}
+                onMouseMove={(e) => {
+                  if (!mainImageRef.current) return;
+                  const rect = mainImageRef.current.getBoundingClientRect();
+                  setZoomPos({
+                    x: ((e.clientX - rect.left) / rect.width) * 100,
+                    y: ((e.clientY - rect.top) / rect.height) * 100,
+                  });
+                }}
+                onClick={() => setLightboxOpen(true)}
+              >
+                <Box
+                  component="img"
+                  src={`${API_BASE}${images[selectedImageIdx].main}`}
+                  alt={productName}
+                  sx={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
+                {/* Zoom lens overlay */}
+                {zoomVisible && (
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      pointerEvents: 'none',
+                      backgroundImage: `url(${API_BASE}${images[selectedImageIdx].main})`,
+                      backgroundSize: '250%',
+                      backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`,
+                      backgroundRepeat: 'no-repeat',
+                      opacity: 1,
+                      zIndex: 2,
+                    }}
+                  />
+                )}
+              </Paper>
+
+              {/* Thumbnails */}
+              {images.length > 1 && (
+                <Stack direction="row" spacing={1} sx={{ mt: 1, justifyContent: 'center' }}>
+                  {images.map((img, idx) => (
+                    <Box
+                      key={img.index}
+                      onClick={() => setSelectedImageIdx(idx)}
+                      sx={{
+                        width: 64,
+                        height: 64,
+                        border: idx === selectedImageIdx ? '2px solid' : '2px solid transparent',
+                        borderColor: idx === selectedImageIdx ? 'primary.main' : 'transparent',
+                        borderRadius: 1,
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        opacity: idx === selectedImageIdx ? 1 : 0.6,
+                        transition: 'all 0.2s',
+                        '&:hover': { opacity: 1 },
+                      }}
+                    >
+                      <Box
+                        component="img"
+                        src={`${API_BASE}${img.thumb}`}
+                        alt={`${productName} ${idx + 1}`}
+                        sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                    </Box>
+                  ))}
+                </Stack>
+              )}
+            </Box>
+          ) : (
+            <Paper sx={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'grey.100' }}>
+              <Typography variant="h1" sx={{ opacity: 0.15, fontWeight: 700 }}>{productName.charAt(0)}</Typography>
+            </Paper>
+          )}
+
+          {/* Lightbox dialog */}
+          <Dialog
+            open={lightboxOpen}
+            onClose={() => setLightboxOpen(false)}
+            maxWidth="lg"
+            fullWidth
+            PaperProps={{ sx: { bgcolor: 'black', position: 'relative' } }}
+          >
+            <IconButton
+              onClick={() => setLightboxOpen(false)}
+              sx={{ position: 'absolute', top: 8, right: 8, color: 'white', zIndex: 10 }}
+              aria-label={t('product.close')}
+            >
+              <Close />
+            </IconButton>
+
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '70vh', position: 'relative' }}>
+              {images.length > 1 && (
+                <IconButton
+                  onClick={() => setSelectedImageIdx((prev) => (prev - 1 + images.length) % images.length)}
+                  sx={{ position: 'absolute', left: 8, color: 'white', bgcolor: 'rgba(255,255,255,0.15)', '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' } }}
+                  aria-label={t('product.previousImage')}
+                >
+                  <ChevronLeft fontSize="large" />
+                </IconButton>
+              )}
+
+              {images.length > 0 && (
+                <Box
+                  component="img"
+                  src={`${API_BASE}${images[selectedImageIdx].main}`}
+                  alt={productName}
+                  sx={{ maxWidth: '90%', maxHeight: '70vh', objectFit: 'contain' }}
+                />
+              )}
+
+              {images.length > 1 && (
+                <IconButton
+                  onClick={() => setSelectedImageIdx((prev) => (prev + 1) % images.length)}
+                  sx={{ position: 'absolute', right: 8, color: 'white', bgcolor: 'rgba(255,255,255,0.15)', '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' } }}
+                  aria-label={t('product.nextImage')}
+                >
+                  <ChevronRight fontSize="large" />
+                </IconButton>
+              )}
+            </Box>
+
+            {/* Lightbox thumbnails */}
+            {images.length > 1 && (
+              <Stack direction="row" spacing={1} sx={{ justifyContent: 'center', py: 2 }}>
+                {images.map((img, idx) => (
+                  <Box
+                    key={img.index}
+                    onClick={() => setSelectedImageIdx(idx)}
+                    sx={{
+                      width: 56,
+                      height: 56,
+                      border: idx === selectedImageIdx ? '2px solid white' : '2px solid transparent',
+                      borderRadius: 1,
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      opacity: idx === selectedImageIdx ? 1 : 0.5,
+                      transition: 'all 0.2s',
+                      '&:hover': { opacity: 1 },
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={`${API_BASE}${img.thumb}`}
+                      alt={`${productName} ${idx + 1}`}
+                      sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </Box>
+                ))}
+              </Stack>
+            )}
+          </Dialog>
         </Grid>
 
         {/* Product info */}
@@ -245,8 +415,14 @@ export default function ProductPage() {
                   sx={{ cursor: 'pointer', '&:hover': { boxShadow: 4 } }}
                   onClick={() => navigate(`/products/${p.id}`)}
                 >
-                  <Box sx={{ height: 120, bgcolor: 'grey.100', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Typography variant="h3" sx={{ opacity: 0.15 }}>{(lang === 'en' && p.nameEn ? p.nameEn : p.name).charAt(0)}</Typography>
+                  <Box sx={{ height: 120, bgcolor: 'grey.100', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                    <Box
+                      component="img"
+                      src={`${API_BASE}/images/products/${product.siteType}/${p.id}/1_medium.jpg`}
+                      alt={(lang === 'en' && p.nameEn ? p.nameEn : p.name)}
+                      onError={(e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.style.display = 'none'; }}
+                      sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
                   </Box>
                   <CardContent>
                     <Typography variant="caption" color="text.secondary">{p.brand}</Typography>

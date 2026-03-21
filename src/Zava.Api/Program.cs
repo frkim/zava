@@ -38,6 +38,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors();
+app.UseStaticFiles(); // Serves wwwroot/ (images, etc.)
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
@@ -79,7 +80,7 @@ app.MapGet("/api/homepage", (DataStore store) =>
 
 app.MapGet("/api/products", (DataStore store) => Results.Ok(store.Products));
 
-app.MapGet("/api/products/{id:int}", (int id, DataStore store) =>
+app.MapGet("/api/products/{id:int}", (int id, DataStore store, IWebHostEnvironment env) =>
 {
     var product = store.Products.FirstOrDefault(p => p.Id == id);
     if (product is null) return Results.NotFound();
@@ -90,7 +91,22 @@ app.MapGet("/api/products/{id:int}", (int id, DataStore store) =>
         .ToList();
     var category = store.Categories.FirstOrDefault(c => c.Id == product.CategoryId);
 
-    return Results.Ok(new { product, reviews, relatedProducts = related, category });
+    // Discover product images from filesystem
+    var images = new List<object>();
+    var imgDir = Path.Combine(env.WebRootPath ?? "", "images", "products", store.CurrentSiteType.ToString(), id.ToString());
+    if (Directory.Exists(imgDir))
+    {
+        var mainFiles = Directory.GetFiles(imgDir, "*_main.jpg").OrderBy(f => f).ToArray();
+        foreach (var f in mainFiles)
+        {
+            var fileName = Path.GetFileName(f);
+            var idx = fileName.Split('_')[0];
+            var basePath = $"/images/products/{store.CurrentSiteType}/{id}";
+            images.Add(new { index = int.Parse(idx), main = $"{basePath}/{idx}_main.jpg", medium = $"{basePath}/{idx}_medium.jpg", thumb = $"{basePath}/{idx}_thumb.jpg" });
+        }
+    }
+
+    return Results.Ok(new { product, reviews, relatedProducts = related, category, images });
 });
 
 app.MapPost("/api/products", (CreateProductRequest req, DataStore store) =>

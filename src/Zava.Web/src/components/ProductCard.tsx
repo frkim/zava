@@ -5,6 +5,9 @@ import {
 import { ShoppingCart, FiberNew, LocalOffer, Star } from '@mui/icons-material';
 import type { Product } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import { useSite } from '../context/SiteContext';
+import { API_BASE } from '../api';
+import { useState } from 'react';
 
 interface ProductCardProps {
   product: Product;
@@ -14,19 +17,22 @@ interface ProductCardProps {
 export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
+  const { config } = useSite();
+  const [imgError, setImgError] = useState(false);
 
   const effectivePrice = product.promoPrice ?? product.price;
   const discount = product.promoPrice
     ? Math.round((1 - product.promoPrice / product.price) * 100)
     : 0;
   const productName = lang === 'en' && product.nameEn ? product.nameEn : product.name;
+  const siteType = config?.currentSiteType ?? 'Electronics';
+  const thumbUrl = `${API_BASE}/images/products/${siteType}/${product.id}/1_medium.jpg`;
 
   return (
     <Card
       sx={{ height: '100%', display: 'flex', flexDirection: 'column', cursor: 'pointer', transition: 'transform 0.2s', '&:hover': { transform: 'translateY(-4px)' } }}
       onClick={() => navigate(`/products/${product.id}`)}
     >
-      {/* Placeholder visuel au lieu d'une image */}
       <Box
         sx={{
           height: 180,
@@ -35,11 +41,22 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        <Typography variant="h3" sx={{ opacity: 0.2, fontWeight: 700 }}>
-          {productName.charAt(0)}
-        </Typography>
+        {!imgError ? (
+          <Box
+            component="img"
+            src={thumbUrl}
+            alt={productName}
+            onError={() => setImgError(true)}
+            sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          <Typography variant="h3" sx={{ opacity: 0.2, fontWeight: 700 }}>
+            {productName.charAt(0)}
+          </Typography>
+        )}
         <Stack direction="row" spacing={0.5} sx={{ position: 'absolute', top: 8, left: 8 }}>
           {product.isNew && <Chip label={t('product.new')} size="small" color="info" icon={<FiberNew />} />}
           {product.isPromo && <Chip label={`-${discount}%`} size="small" color="error" icon={<LocalOffer />} />}
