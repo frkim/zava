@@ -30,8 +30,8 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 |--------|-------------|
 | Backend | .NET 10 — Minimal API |
 | Frontend | React 19 + TypeScript + Vite |
-| UI | Material UI 6 |
-| Graphiques | Recharts |
+| UI | Material UI 7 |
+| Graphiques | ECharts |
 | Routing | React Router DOM |
 | Données | In-memory (seed déterministe `Random(42)`) |
 

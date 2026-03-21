@@ -3,14 +3,14 @@ import {
   Typography, Box, Paper, Grid, CircularProgress, Alert,
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
 } from '@mui/material';
-import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart, Line, Legend,
-} from 'recharts';
+import ReactECharts from 'echarts-for-react';
 import { getAnalytics } from '../api';
 import type { AnalyticsDashboard } from '../types';
 
-const COLORS = ['#1a237e', '#534bae', '#ff6f00', '#ffa040', '#4caf50', '#2196f3', '#9c27b0', '#f44336', '#607d8b', '#795548'];
+const COLORS = [
+  '#6366f1', '#f59e0b', '#10b981', '#06b6d4', '#f97316',
+  '#8b5cf6', '#ec4899', '#14b8a6', '#84cc16', '#f43f5e',
+];
 
 export default function AnalyticsPage() {
   const [data, setData] = useState<AnalyticsDashboard | null>(null);
@@ -36,11 +36,11 @@ export default function AnalyticsPage() {
       {/* KPI Cards */}
       <Grid container spacing={2} sx={{ mb: 3 }}>
         {[
-          { label: 'Chiffre d\'affaires', value: `${data.totalRevenue.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €`, color: '#1a237e' },
-          { label: 'Commandes', value: data.totalOrders.toString(), color: '#ff6f00' },
-          { label: 'Panier moyen', value: `${data.averageOrderValue.toFixed(2)} €`, color: '#4caf50' },
-          { label: 'Produits', value: data.totalProducts.toString(), color: '#2196f3' },
-          { label: 'Clients', value: data.totalCustomers.toString(), color: '#9c27b0' },
+          { label: 'Chiffre d\'affaires', value: `${data.totalRevenue.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €`, color: '#6366f1' },
+          { label: 'Commandes', value: data.totalOrders.toString(), color: '#f59e0b' },
+          { label: 'Panier moyen', value: `${data.averageOrderValue.toFixed(2)} €`, color: '#10b981' },
+          { label: 'Produits', value: data.totalProducts.toString(), color: '#06b6d4' },
+          { label: 'Clients', value: data.totalCustomers.toString(), color: '#8b5cf6' },
         ].map((kpi) => (
           <Grid key={kpi.label} size={{ xs: 6, sm: 4, md: 2.4 }}>
             <Paper sx={{ p: 2, borderTop: `4px solid ${kpi.color}` }}>
@@ -56,19 +56,18 @@ export default function AnalyticsPage() {
         <Grid size={{ xs: 12, md: 6 }}>
           <Paper sx={{ p: 2 }}>
             <Typography variant="h6" sx={{ mb: 2 }}>CA par catégorie</Typography>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={categoryData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" tick={{ fontSize: 10 }} angle={-45} textAnchor="end" height={80} />
-                <YAxis />
-                <Tooltip formatter={(v) => `${Number(v).toFixed(2)} €`} />
-                <Bar dataKey="revenue" fill="#1a237e">
-                  {categoryData.map((_, index) => (
-                    <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            <ReactECharts style={{ height: 300 }} option={{
+              color: COLORS,
+              tooltip: { trigger: 'axis', formatter: (params: { name: string; value: number }[]) => `${params[0].name}: ${params[0].value.toFixed(2)} €` },
+              grid: { bottom: 80 },
+              xAxis: { type: 'category', data: categoryData.map(d => d.name), axisLabel: { rotate: 45, fontSize: 10 } },
+              yAxis: { type: 'value' },
+              series: [{
+                type: 'bar',
+                data: categoryData.map((d, i) => ({ value: d.revenue, itemStyle: { color: COLORS[i % COLORS.length] } })),
+                animationDelay: (idx: number) => idx * 50,
+              }],
+            }} />
           </Paper>
         </Grid>
 
@@ -76,17 +75,18 @@ export default function AnalyticsPage() {
         <Grid size={{ xs: 12, md: 6 }}>
           <Paper sx={{ p: 2 }}>
             <Typography variant="h6" sx={{ mb: 2 }}>Commandes par statut</Typography>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie data={statusData} dataKey="count" nameKey="name" cx="50%" cy="50%" outerRadius={100} label>
-                  {statusData.map((_, index) => (
-                    <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
+            <ReactECharts style={{ height: 300 }} option={{
+              color: COLORS,
+              tooltip: { trigger: 'item' },
+              legend: { bottom: 0 },
+              series: [{
+                type: 'pie',
+                radius: '65%',
+                data: statusData.map(d => ({ name: d.name, value: d.count })),
+                label: { show: true },
+                emphasis: { itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.2)' } },
+              }],
+            }} />
           </Paper>
         </Grid>
 
@@ -95,18 +95,20 @@ export default function AnalyticsPage() {
           <Grid size={{ xs: 12 }}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h6" sx={{ mb: 2 }}>Ventes récentes (30 derniers jours)</Typography>
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={data.recentSales}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-                  <YAxis yAxisId="left" />
-                  <YAxis yAxisId="right" orientation="right" />
-                  <Tooltip />
-                  <Legend />
-                  <Line yAxisId="left" type="monotone" dataKey="revenue" stroke="#1a237e" name="CA (€)" />
-                  <Line yAxisId="right" type="monotone" dataKey="orders" stroke="#ff6f00" name="Commandes" />
-                </LineChart>
-              </ResponsiveContainer>
+              <ReactECharts style={{ height: 300 }} option={{
+                color: ['#6366f1', '#f59e0b'],
+                tooltip: { trigger: 'axis' },
+                legend: { data: ['CA (€)', 'Commandes'] },
+                xAxis: { type: 'category', data: data.recentSales.map(d => d.date), axisLabel: { fontSize: 10 } },
+                yAxis: [
+                  { type: 'value', name: 'CA (€)' },
+                  { type: 'value', name: 'Commandes' },
+                ],
+                series: [
+                  { name: 'CA (€)', type: 'line', smooth: true, data: data.recentSales.map(d => d.revenue) },
+                  { name: 'Commandes', type: 'line', smooth: true, yAxisIndex: 1, data: data.recentSales.map(d => d.orders) },
+                ],
+              }} />
             </Paper>
           </Grid>
         )}
