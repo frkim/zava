@@ -339,7 +339,20 @@ export default function ProductPage() {
           {/* Tags */}
           {product.tags.length > 0 && (
             <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ mt: 2 }}>
-              {product.tags.map((tag) => <Chip key={tag} label={tag} size="small" variant="outlined" />)}
+              {product.tags.map((tag) => (
+                <Chip
+                  key={tag}
+                  label={tag}
+                  size="small"
+                  variant="outlined"
+                  clickable
+                  onClick={() => navigate(
+                    tag === product.brand
+                      ? `/search?brand=${encodeURIComponent(tag)}`
+                      : `/search?q=${encodeURIComponent(tag)}`
+                  )}
+                />
+              ))}
             </Stack>
           )}
         </Grid>

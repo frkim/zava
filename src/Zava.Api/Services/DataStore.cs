@@ -55,12 +55,12 @@ public class DataStore
             CurrentSiteType = CurrentSiteType,
             AvailableSiteTypes = new List<SiteTypeInfo>
             {
-                new() { Type = SiteType.Electronics, Name = "Électronique & Livres", NameEn = "Electronics & Books", Description = "Comme Fnac.com", DescriptionEn = "Like Fnac.com" },
-                new() { Type = SiteType.Appliances, Name = "Électroménager", NameEn = "Appliances", Description = "Comme Boulanger / Darty", DescriptionEn = "Like Boulanger / Darty" },
-                new() { Type = SiteType.Cosmetics, Name = "Beauté & Parfums", NameEn = "Beauty & Fragrances", Description = "Comme Sephora / L'Oréal", DescriptionEn = "Like Sephora / L'Oréal" },
-                new() { Type = SiteType.Electrical, Name = "Matériel Électrique", NameEn = "Electrical Equipment", Description = "Comme Rexel / Sonepar", DescriptionEn = "Like Rexel / Sonepar" },
-                new() { Type = SiteType.DIY, Name = "Bricolage", NameEn = "DIY", Description = "Comme Leroy Merlin", DescriptionEn = "Like Leroy Merlin" },
-                new() { Type = SiteType.Grocery, Name = "Alimentaire", NameEn = "Grocery", Description = "Comme Carrefour / Leclerc / Auchan", DescriptionEn = "Like Carrefour / Leclerc / Auchan" }
+                new() { Type = SiteType.Electronics, Name = "Électronique", NameEn = "Electronics", Description = "Smartphones, laptops, livres", DescriptionEn = "Smartphones, laptops, books" },
+                new() { Type = SiteType.Appliances, Name = "Électroménager", NameEn = "Appliances", Description = "Lave-linge, réfrigérateurs", DescriptionEn = "Washing machines, refrigerators" },
+                new() { Type = SiteType.Cosmetics, Name = "Beauté & Parfums", NameEn = "Beauty & Fragrances", Description = "Maquillage, soins, parfums", DescriptionEn = "Makeup, skincare, fragrances" },
+                new() { Type = SiteType.Electrical, Name = "Matériel Électrique", NameEn = "Electrical Equipment", Description = "Câbles, disjoncteurs, outillage", DescriptionEn = "Cables, circuit breakers, tools" },
+                new() { Type = SiteType.DIY, Name = "Bricolage", NameEn = "DIY", Description = "Perceuses, peinture, plomberie", DescriptionEn = "Drills, paint, plumbing" },
+                new() { Type = SiteType.Grocery, Name = "Alimentaire", NameEn = "Grocery", Description = "Épicerie, frais, boissons", DescriptionEn = "Groceries, fresh food, beverages" }
             }
         };
     }

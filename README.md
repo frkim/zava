@@ -6,7 +6,7 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 
 | Type | Exemple |
 |------|---------|
-| Électronique & Livres | Smartphones, laptops, livres |
+| Électronique | Smartphones, laptops, livres |
 | Électroménager | Lave-linge, réfrigérateurs |
 | Beauté & Parfums | Maquillage, soins, parfums |
 | Matériel Électrique | Câbles, disjoncteurs, outillage |

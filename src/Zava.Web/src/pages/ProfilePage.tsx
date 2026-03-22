@@ -6,6 +6,10 @@ import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
   Tabs, Tab, RadioGroup, Radio, FormControl, FormLabel,
 } from '@mui/material';
+import {
+  Person, LocalShipping, Payment, ShoppingBag, Home, Store, Lock,
+  DirectionsCar, Speed, CreditCard, AccountBalanceWallet,
+} from '@mui/icons-material';
 import { getUser, updateUser, getOrders } from '../api';
 import type { User, Order, DeliveryMethod, PaymentMethod as PaymentMethodType } from '../types';
 import { useLanguage } from '../context/LanguageContext';
@@ -57,22 +61,22 @@ export default function ProfilePage() {
     Pending: t('status.Pending'), Processing: t('status.Processing'), Shipped: t('status.Shipped'), Delivered: t('status.Delivered'), Cancelled: t('status.Cancelled'),
   };
 
-  const deliveryOptions: { value: DeliveryMethod; labelKey: TranslationKey }[] = [
-    { value: 'Home', labelKey: 'profile.delivery.home' },
-    { value: 'Relay', labelKey: 'profile.delivery.relay' },
-    { value: 'Locker', labelKey: 'profile.delivery.locker' },
-    { value: 'Store', labelKey: 'profile.delivery.store' },
-    { value: 'Drive', labelKey: 'profile.delivery.drive' },
-    { value: 'Express', labelKey: 'profile.delivery.express' },
+  const deliveryOptions: { value: DeliveryMethod; labelKey: TranslationKey; icon: React.ReactNode }[] = [
+    { value: 'Home', labelKey: 'profile.delivery.home', icon: <Home /> },
+    { value: 'Relay', labelKey: 'profile.delivery.relay', icon: <Store /> },
+    { value: 'Locker', labelKey: 'profile.delivery.locker', icon: <Lock /> },
+    { value: 'Store', labelKey: 'profile.delivery.store', icon: <Store /> },
+    { value: 'Drive', labelKey: 'profile.delivery.drive', icon: <DirectionsCar /> },
+    { value: 'Express', labelKey: 'profile.delivery.express', icon: <Speed /> },
   ];
 
-  const paymentOptions: { value: PaymentMethodType; labelKey: TranslationKey }[] = [
-    { value: 'CreditCard', labelKey: 'profile.payment.creditCard' },
-    { value: 'PayPal', labelKey: 'profile.payment.paypal' },
-    { value: 'ApplePay', labelKey: 'profile.payment.applePay' },
-    { value: 'GooglePay', labelKey: 'profile.payment.googlePay' },
-    { value: 'BankTransfer', labelKey: 'profile.payment.bankTransfer' },
-    { value: 'GiftCard', labelKey: 'profile.payment.giftCard' },
+  const paymentOptions: { value: PaymentMethodType; labelKey: TranslationKey; icon: React.ReactNode }[] = [
+    { value: 'CreditCard', labelKey: 'profile.payment.creditCard', icon: <CreditCard /> },
+    { value: 'PayPal', labelKey: 'profile.payment.paypal', icon: <AccountBalanceWallet /> },
+    { value: 'ApplePay', labelKey: 'profile.payment.applePay', icon: <Payment /> },
+    { value: 'GooglePay', labelKey: 'profile.payment.googlePay', icon: <Payment /> },
+    { value: 'BankTransfer', labelKey: 'profile.payment.bankTransfer', icon: <AccountBalanceWallet /> },
+    { value: 'GiftCard', labelKey: 'profile.payment.giftCard', icon: <CreditCard /> },
   ];
 
   return (
@@ -81,14 +85,21 @@ export default function ProfilePage() {
 
       <Paper sx={{ mb: 3 }}>
         <Tabs value={tab} onChange={(_, v) => setTab(v)} variant="fullWidth">
-          <Tab label={t('profile.tab.personal')} />
-          <Tab label={t('profile.tab.delivery')} />
-          <Tab label={t('profile.tab.payment')} />
+          <Tab icon={<Person />} iconPosition="start" label={t('profile.tab.personal')} />
+          <Tab icon={<LocalShipping />} iconPosition="start" label={t('profile.tab.delivery')} />
+          <Tab icon={<Payment />} iconPosition="start" label={t('profile.tab.payment')} />
         </Tabs>
 
         {/* Tab 0 — Personal information */}
         <TabPanel value={tab} index={0}>
           <Box sx={{ p: 3 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+              <Person sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+              <Box>
+                <Typography variant="h6">{t('profile.personalInfo')}</Typography>
+                <Typography variant="body2" color="text.secondary">{user.firstName} {user.lastName}</Typography>
+              </Box>
+            </Box>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField fullWidth label={t('profile.firstName')} value={user.firstName}
@@ -118,7 +129,13 @@ export default function ProfilePage() {
         {/* Tab 1 — Delivery address + preferred method */}
         <TabPanel value={tab} index={1}>
           <Box sx={{ p: 3 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>{t('profile.shippingAddress')}</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+              <LocalShipping sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+              <Box>
+                <Typography variant="h6">{t('profile.shippingAddress')}</Typography>
+                <Typography variant="body2" color="text.secondary">{user.shippingAddress?.city ?? ''}</Typography>
+              </Box>
+            </Box>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12 }}>
                 <TextField fullWidth label={t('checkout.street')} value={user.shippingAddress?.street ?? ''}
@@ -147,7 +164,8 @@ export default function ProfilePage() {
                 onChange={(e) => setUser({ ...user, preferredDeliveryMethod: e.target.value as DeliveryMethod })}
               >
                 {deliveryOptions.map((opt) => (
-                  <FormControlLabel key={opt.value} value={opt.value} control={<Radio />} label={t(opt.labelKey)} />
+                  <FormControlLabel key={opt.value} value={opt.value} control={<Radio />}
+                    label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>{opt.icon} {t(opt.labelKey)}</Box>} />
                 ))}
               </RadioGroup>
             </FormControl>
@@ -157,7 +175,13 @@ export default function ProfilePage() {
         {/* Tab 2 — Payment info + preferred method */}
         <TabPanel value={tab} index={2}>
           <Box sx={{ p: 3 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>{t('profile.paymentInfo')}</Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+              <Payment sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+              <Box>
+                <Typography variant="h6">{t('profile.paymentInfo')}</Typography>
+                <Typography variant="body2" color="text.secondary">{user.paymentInfo?.cardType ?? ''} ····{user.paymentInfo?.lastFourDigits ?? ''}</Typography>
+              </Box>
+            </Box>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <TextField fullWidth label={t('profile.cardType')} value={user.paymentInfo?.cardType ?? ''} disabled />
@@ -182,7 +206,8 @@ export default function ProfilePage() {
                 onChange={(e) => setUser({ ...user, preferredPaymentMethod: e.target.value as PaymentMethodType })}
               >
                 {paymentOptions.map((opt) => (
-                  <FormControlLabel key={opt.value} value={opt.value} control={<Radio />} label={t(opt.labelKey)} />
+                  <FormControlLabel key={opt.value} value={opt.value} control={<Radio />}
+                    label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>{opt.icon} {t(opt.labelKey)}</Box>} />
                 ))}
               </RadioGroup>
             </FormControl>
@@ -197,7 +222,10 @@ export default function ProfilePage() {
       <Divider sx={{ my: 4 }} />
 
       {/* Orders */}
-      <Typography variant="h5" sx={{ mb: 2 }}>{t('profile.orders')}</Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+        <ShoppingBag sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+        <Typography variant="h5">{t('profile.orders')}</Typography>
+      </Box>
       {orders.length === 0 ? (
         <Alert severity="info">{t('profile.noOrders')}</Alert>
       ) : (

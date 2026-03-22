@@ -2,12 +2,12 @@ namespace Zava.Api.Models;
 
 public enum SiteType
 {
-    Electronics,    // Fnac-like
-    Appliances,     // Boulanger/Darty-like
-    Cosmetics,      // Sephora/L'Oréal-like
-    Electrical,     // Rexel/Sonepar-like
-    DIY,            // Leroy Merlin-like
-    Grocery         // Carrefour/Leclerc/Auchan-like
+    Electronics,
+    Appliances,
+    Cosmetics,
+    Electrical,
+    DIY,
+    Grocery
 }
 
 public enum PaymentStatus

@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from './theme';
-import { SiteProvider } from './context/SiteContext';
+import theme, { siteThemes } from './theme';
+import { SiteProvider, useSite } from './context/SiteContext';
 import { LanguageProvider } from './context/LanguageContext';
+import type { SiteType } from './types';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
@@ -24,13 +25,25 @@ import TermsPage from './pages/info/TermsPage';
 import LegalNoticePage from './pages/info/LegalNoticePage';
 import PrivacyPolicyPage from './pages/info/PrivacyPolicyPage';
 
+function ThemedApp({ children }: { children: React.ReactNode }) {
+  const { config } = useSite();
+  const currentTheme = config
+    ? siteThemes[config.currentSiteType as SiteType] ?? theme
+    : theme;
+  return (
+    <ThemeProvider theme={currentTheme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  );
+}
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <LanguageProvider>
-        <BrowserRouter>
-          <SiteProvider>
+    <LanguageProvider>
+      <BrowserRouter>
+        <SiteProvider>
+          <ThemedApp>
             <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -54,10 +67,10 @@ function App() {
               <Route path="/info/privacy" element={<PrivacyPolicyPage />} />
             </Routes>
           </Layout>
-        </SiteProvider>
-      </BrowserRouter>
-      </LanguageProvider>
-    </ThemeProvider>
+        </ThemedApp>
+      </SiteProvider>
+    </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
