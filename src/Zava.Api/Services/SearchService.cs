@@ -125,7 +125,7 @@ public class SearchService
             .Select(g =>
             {
                 var cat = _store.Categories.FirstOrDefault(c => c.Id == g.Key);
-                return new FacetValue { Value = cat?.Name ?? $"Cat {g.Key}", Count = g.Count() };
+                return new FacetValue { Value = cat?.Name ?? $"Cat {g.Key}", FilterValue = g.Key.ToString(), Count = g.Count() };
             })
             .OrderByDescending(v => v.Count)
             .ToList();
@@ -146,6 +146,7 @@ public class SearchService
             .Select(r => new FacetValue
             {
                 Value = r.Label,
+                FilterValue = $"{r.Min}-{(r.Max == decimal.MaxValue ? "" : r.Max.ToString())}",
                 Count = products.Count(p => (p.PromoPrice ?? p.Price) >= r.Min && (p.PromoPrice ?? p.Price) < r.Max)
             })
             .Where(v => v.Count > 0)
@@ -159,6 +160,7 @@ public class SearchService
             .Select(r => new FacetValue
             {
                 Value = $"{r} étoiles et plus",
+                FilterValue = r.ToString(),
                 Count = products.Count(p => p.Rating >= r)
             })
             .Where(v => v.Count > 0)

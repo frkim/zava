@@ -177,10 +177,32 @@ export default function Layout({ children }: LayoutProps) {
             size="small"
             variant="standard"
             disableUnderline
+            renderValue={(value) => (
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <img
+                  src={`https://flagcdn.com/w40/${value === 'fr' ? 'fr' : 'gb'}.png`}
+                  alt={value === 'fr' ? 'FR' : 'EN'}
+                  width={20}
+                  height={15}
+                  style={{ borderRadius: 2 }}
+                />
+                {value.toUpperCase()}
+              </Box>
+            )}
             sx={{ color: 'white', ml: 1, '& .MuiSelect-icon': { color: 'white' }, '& .MuiSelect-select': { py: 0.5 } }}
           >
-            <MenuItem value="fr">🇫🇷</MenuItem>
-            <MenuItem value="en">🇬🇧</MenuItem>
+            <MenuItem value="fr">
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <img src="https://flagcdn.com/w40/fr.png" alt="FR" width={20} height={15} style={{ borderRadius: 2 }} />
+                Français
+              </Box>
+            </MenuItem>
+            <MenuItem value="en">
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <img src="https://flagcdn.com/w40/gb.png" alt="EN" width={20} height={15} style={{ borderRadius: 2 }} />
+                English
+              </Box>
+            </MenuItem>
           </Select>
 
           <IconButton color="inherit" onClick={() => navigate('/profile')} sx={{ ml: 1 }}>

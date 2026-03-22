@@ -35,6 +35,7 @@ public class FacetGroup
 public class FacetValue
 {
     public string Value { get; set; } = string.Empty;
+    public string? FilterValue { get; set; }
     public int Count { get; set; }
 }
 

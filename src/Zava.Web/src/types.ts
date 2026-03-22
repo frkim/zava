@@ -158,6 +158,7 @@ export interface SearchRequest {
 
 export interface FacetValue {
   value: string;
+  filterValue?: string;
   count: number;
 }
 

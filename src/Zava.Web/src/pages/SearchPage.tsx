@@ -26,6 +26,7 @@ export default function SearchPage() {
   const inStock = searchParams.get('inStock') === 'true';
   const minPrice = searchParams.get('minPrice');
   const maxPrice = searchParams.get('maxPrice');
+  const minRating = searchParams.get('minRating');
 
   useEffect(() => {
     setLoading(true);
@@ -40,18 +41,29 @@ export default function SearchPage() {
       inStock: inStock || undefined,
       minPrice: minPrice ? parseFloat(minPrice) : undefined,
       maxPrice: maxPrice ? parseFloat(maxPrice) : undefined,
+      minRating: minRating ? parseInt(minRating) : undefined,
     };
     searchProducts(req)
       .then(setResult)
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, [q, categoryId, brand, page, sortBy, sortDesc, inStock, minPrice, maxPrice]);
+  }, [q, categoryId, brand, page, sortBy, sortDesc, inStock, minPrice, maxPrice, minRating]);
 
   const updateParam = (key: string, value: string | null) => {
     const params = new URLSearchParams(searchParams);
     if (value) params.set(key, value);
     else params.delete(key);
     if (key !== 'page') params.delete('page');
+    setSearchParams(params);
+  };
+
+  const updateParams = (updates: Record<string, string | null>) => {
+    const params = new URLSearchParams(searchParams);
+    for (const [key, value] of Object.entries(updates)) {
+      if (value) params.set(key, value);
+      else params.delete(key);
+    }
+    params.delete('page');
     setSearchParams(params);
   };
 
@@ -101,22 +113,39 @@ export default function SearchPage() {
                 </AccordionSummary>
                 <AccordionDetails sx={{ pt: 0 }}>
                   <Stack spacing={0.5}>
-                    {facet.values.slice(0, 10).map((v) => (
-                      <Chip
-                        key={v.value}
-                        label={`${v.value} (${v.count})`}
-                        size="small"
-                        variant={
-                          (facet.nameEn === 'Brand' && brand === v.value) ||
-                          (facet.nameEn === 'Category' && categoryId === v.value)
-                            ? 'filled' : 'outlined'
-                        }
-                        onClick={() => {
-                          if (facet.nameEn === 'Brand') updateParam('brand', brand === v.value ? null : v.value);
-                        }}
-                        sx={{ justifyContent: 'flex-start' }}
-                      />
-                    ))}
+                    {facet.values.slice(0, 10).map((v) => {
+                      const fKey = v.filterValue ?? v.value;
+                      const isActive =
+                        (facet.nameEn === 'Brand' && brand === fKey) ||
+                        (facet.nameEn === 'Category' && categoryId === fKey) ||
+                        (facet.nameEn === 'Price' && minPrice === fKey.split('-')[0]) ||
+                        (facet.nameEn === 'Rating' && minRating === fKey);
+                      return (
+                        <Chip
+                          key={v.value}
+                          label={`${v.value} (${v.count})`}
+                          size="small"
+                          variant={isActive ? 'filled' : 'outlined'}
+                          onClick={() => {
+                            if (facet.nameEn === 'Brand') {
+                              updateParam('brand', brand === fKey ? null : fKey);
+                            } else if (facet.nameEn === 'Category') {
+                              updateParam('categoryId', categoryId === fKey ? null : fKey);
+                            } else if (facet.nameEn === 'Price') {
+                              const [min, max] = fKey.split('-');
+                              if (minPrice === min) {
+                                updateParams({ minPrice: null, maxPrice: null });
+                              } else {
+                                updateParams({ minPrice: min, maxPrice: max || null });
+                              }
+                            } else if (facet.nameEn === 'Rating') {
+                              updateParam('minRating', minRating === fKey ? null : fKey);
+                            }
+                          }}
+                          sx={{ justifyContent: 'flex-start' }}
+                        />
+                      );
+                    })}
                   </Stack>
                 </AccordionDetails>
               </Accordion>
