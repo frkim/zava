@@ -1,4 +1,4 @@
-import { Paper, Typography, Button, Box } from '@mui/material';
+import { Paper, Typography, Button } from '@mui/material';
 import {
   Star, LocalShipping, ShoppingBag, AssignmentReturn, SupportAgent, Savings,
 } from '@mui/icons-material';

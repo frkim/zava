@@ -1,9 +1,6 @@
-import { Typography } from '@mui/material';
 import InfoPage from './InfoSection';
-import { useLanguage } from '../../context/LanguageContext';
 
 export default function TermsPage() {
-  const { t } = useLanguage();
 
   return (
     <InfoPage

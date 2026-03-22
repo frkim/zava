@@ -1,0 +1,55 @@
+name: Deploy to Azure Container Apps
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_ENV_NAME: zava-prod
+  AZURE_LOCATION: swedencentral
+  AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install azd
+        uses: Azure/setup-azd@v2
+
+      - name: Log in with Azure (Federated Credentials)
+        if: ${{ env.AZURE_CLIENT_ID != '' }}
+        run: |
+          azd auth login `
+            --client-id "${{ secrets.AZURE_CLIENT_ID }}" `
+            --federated-credential-provider "github" `
+            --tenant-id "${{ secrets.AZURE_TENANT_ID }}"
+        shell: pwsh
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+
+      - name: Log in with Azure (Client Secret)
+        if: ${{ env.AZURE_CREDENTIALS != '' }}
+        run: |
+          $info = $env:AZURE_CREDENTIALS | ConvertFrom-Json
+          azd auth login `
+            --client-id $info.clientId `
+            --client-secret $info.clientSecret `
+            --tenant-id $info.tenantId
+        shell: pwsh
+        env:
+          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Provision and Deploy
+        run: azd up --no-prompt
+        env:
+          AZURE_ENV_NAME: ${{ env.AZURE_ENV_NAME }}
+          AZURE_LOCATION: ${{ env.AZURE_LOCATION }}
+          AZURE_SUBSCRIPTION_ID: ${{ env.AZURE_SUBSCRIPTION_ID }}

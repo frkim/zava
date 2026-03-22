@@ -4,7 +4,7 @@ import type {
   AnalyticsDashboard, Review, ProductImage,
 } from './types';
 
-export const API_BASE = 'http://localhost:5014';
+export const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5014';
 const API = `${API_BASE}/api`;
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {

@@ -1,0 +1,6 @@
+{
+  "operationalInsightsWorkspaces": "log-",
+  "containerRegistryRegistries": "cr",
+  "appManagedEnvironments": "cae-",
+  "appContainerApps": "ca-"
+}
