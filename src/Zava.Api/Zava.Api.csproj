@@ -16,4 +16,13 @@
     </Content>
   </ItemGroup>
 
+  <!-- Exclude bulk product images from build copy to avoid slow builds (3600+ files).
+       They are still served at runtime via UseStaticFiles() from the source wwwroot/. -->
+  <ItemGroup>
+    <Content Update="wwwroot\images\products\**">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

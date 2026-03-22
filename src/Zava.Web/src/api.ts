@@ -8,10 +8,17 @@ export const API_BASE = 'http://localhost:5014';
 const API = `${API_BASE}/api`;
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
-    headers: { 'Content-Type': 'application/json' },
-    ...options,
-  });
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      headers: { 'Content-Type': 'application/json' },
+      ...options,
+    });
+  } catch {
+    throw new Error(
+      'Le serveur ne répond pas. Vérifiez que le backend est lancé sur ' + API_BASE
+    );
+  }
   if (!res.ok) {
     const text = await res.text();
     throw new Error(text || res.statusText);

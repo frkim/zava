@@ -34,7 +34,7 @@ if (-not (Test-Path (Join-Path $frontendDir "node_modules"))) {
 
 # Build backend
 Write-Host "[2/4] Build du backend..." -ForegroundColor Yellow
-dotnet build $backendProject --nologo -q
+dotnet build $backendProject --nologo
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[ERREUR] Le build du backend a échoué." -ForegroundColor Red
     Read-Host "Appuyez sur Entrée pour quitter"

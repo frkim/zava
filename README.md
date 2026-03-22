@@ -4,14 +4,14 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 
 ## 6 types de boutique
 
-| Type | Inspiration | Exemple |
-|------|-------------|---------|
-| Électronique & Livres | Fnac | Smartphones, laptops, livres |
-| Électroménager | Boulanger / Darty | Lave-linge, réfrigérateurs |
-| Beauté & Parfums | Sephora / L'Oréal | Maquillage, soins, parfums |
-| Matériel Électrique | Rexel / Sonepar | Câbles, disjoncteurs, outillage |
-| Bricolage | Leroy Merlin | Perceuses, peinture, plomberie |
-| Alimentaire | Carrefour / Leclerc | Épicerie, frais, boissons |
+| Type | Exemple |
+|------|---------|
+| Électronique & Livres | Smartphones, laptops, livres |
+| Électroménager | Lave-linge, réfrigérateurs |
+| Beauté & Parfums | Maquillage, soins, parfums |
+| Matériel Électrique | Câbles, disjoncteurs, outillage |
+| Bricolage | Perceuses, peinture, plomberie |
+| Alimentaire | Épicerie, frais, boissons |
 
 ## Fonctionnalités
 
