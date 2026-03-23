@@ -15,7 +15,7 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policy =>
     {
         var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()
-            ?? ["http://localhost:5173", "http://localhost:5174"];
+            ?? ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"];
         policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod();
@@ -139,6 +139,92 @@ app.MapPost("/api/products", (CreateProductRequest req, DataStore store) =>
     if (cat is not null) cat.ProductCount++;
 
     return Results.Created($"/api/products/{product.Id}", product);
+});
+
+// ─── Cross-sell ──────────────────────────────────────────────────────────────
+
+app.MapGet("/api/products/{id:int}/cross-sell", (int id, DataStore store) =>
+{
+    // Only for Electronics and Appliances
+    if (store.CurrentSiteType is not (SiteType.Electronics or SiteType.Appliances))
+        return Results.Ok(new CrossSellOffer());
+
+    var product = store.Products.FirstOrDefault(p => p.Id == id);
+    if (product is null) return Results.NotFound();
+
+    var offer = new CrossSellOffer();
+
+    // Complementary product: pick first related product with stock
+    if (product.RelatedProductIds.Count > 0)
+    {
+        var complementary = store.Products
+            .Where(p => product.RelatedProductIds.Contains(p.Id) && p.Stock > 0 && p.Id != id)
+            .OrderByDescending(p => p.IsBestSeller)
+            .ThenBy(p => p.Price)
+            .FirstOrDefault();
+
+        if (complementary is not null)
+        {
+            const int discountPercent = 10;
+            var basePrice = complementary.PromoPrice ?? complementary.Price;
+            var discountedPrice = Math.Round(basePrice * (1 - discountPercent / 100m), 2);
+
+            offer.ComplementaryProduct = new CrossSellProduct
+            {
+                Product = complementary,
+                DiscountPercent = discountPercent,
+                DiscountedPrice = discountedPrice
+            };
+        }
+    }
+
+    // Warranty offer based on product price
+    var effectivePrice = product.PromoPrice ?? product.Price;
+    var warrantyPrice = effectivePrice switch
+    {
+        < 100m => 9.99m,
+        < 300m => 19.99m,
+        < 500m => 29.99m,
+        < 1000m => 49.99m,
+        _ => 79.99m
+    };
+
+    offer.Warranty = new WarrantyOffer
+    {
+        Name = "Garantie Réparation 3 ans / Casse 1 an",
+        NameEn = "3-Year Repair / 1-Year Accidental Damage Warranty",
+        Description = $"Protégez votre {product.Name} contre les pannes pendant 3 ans et la casse accidentelle pendant 1 an.",
+        DescriptionEn = $"Protect your {product.NameEn} against breakdowns for 3 years and accidental damage for 1 year.",
+        Price = warrantyPrice
+    };
+
+    return Results.Ok(offer);
+});
+
+app.MapPost("/api/cart/warranty", (AddWarrantyToCartRequest req, DataStore store) =>
+{
+    var product = store.Products.FirstOrDefault(p => p.Id == req.ProductId);
+    if (product is null) return Results.NotFound(new { message = "Produit introuvable" });
+
+    // Avoid adding duplicate warranty for same product
+    var warrantyLabel = $"🛡️ {req.WarrantyName} — {product.Name}";
+    var existing = store.Cart.Items.FirstOrDefault(i =>
+        i.ProductName == warrantyLabel);
+
+    if (existing is null)
+    {
+        store.Cart.Items.Add(new CartItem
+        {
+            ProductId = -req.ProductId, // Negative ID = warranty item
+            ProductName = warrantyLabel,
+            VariantId = null,
+            VariantName = null,
+            UnitPrice = req.WarrantyPrice,
+            Quantity = 1
+        });
+    }
+
+    return Results.Ok(store.Cart);
 });
 
 // ─── Categories ──────────────────────────────────────────────────────────────

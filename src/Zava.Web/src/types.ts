@@ -235,3 +235,22 @@ export interface DailySales {
   orders: number;
   revenue: number;
 }
+
+export interface CrossSellOffer {
+  complementaryProduct?: CrossSellProduct;
+  warranty?: WarrantyOffer;
+}
+
+export interface CrossSellProduct {
+  product: Product;
+  discountPercent: number;
+  discountedPrice: number;
+}
+
+export interface WarrantyOffer {
+  name: string;
+  nameEn: string;
+  description: string;
+  descriptionEn: string;
+  price: number;
+}

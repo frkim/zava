@@ -162,3 +162,32 @@ public class SiteSettings
 {
     public SiteType SiteType { get; set; }
 }
+
+public class CrossSellOffer
+{
+    public CrossSellProduct? ComplementaryProduct { get; set; }
+    public WarrantyOffer? Warranty { get; set; }
+}
+
+public class CrossSellProduct
+{
+    public Product Product { get; set; } = null!;
+    public int DiscountPercent { get; set; }
+    public decimal DiscountedPrice { get; set; }
+}
+
+public class WarrantyOffer
+{
+    public string Name { get; set; } = string.Empty;
+    public string NameEn { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public string DescriptionEn { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+}
+
+public class AddWarrantyToCartRequest
+{
+    public int ProductId { get; set; }
+    public string WarrantyName { get; set; } = string.Empty;
+    public decimal WarrantyPrice { get; set; }
+}

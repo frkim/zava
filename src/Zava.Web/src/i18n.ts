@@ -50,6 +50,20 @@ const translations = {
   'product.previousImage': { fr: 'Image précédente', en: 'Previous image' },
   'product.nextImage': { fr: 'Image suivante', en: 'Next image' },
 
+  // ─── Cross-sell ────────────────────────────────────────────────────────────
+  'crossSell.title': { fr: 'Produit ajouté au panier !', en: 'Product added to cart!' },
+  'crossSell.complementaryTitle': { fr: '🎯 Complétez votre achat', en: '🎯 Complete your purchase' },
+  'crossSell.complementaryDesc': { fr: 'Profitez d\'une réduction exclusive sur ce produit complémentaire :', en: 'Get an exclusive discount on this complementary product:' },
+  'crossSell.discount': { fr: 'de réduction', en: 'off' },
+  'crossSell.insteadOf': { fr: 'au lieu de', en: 'instead of' },
+  'crossSell.addComplement': { fr: 'Ajouter au panier', en: 'Add to cart' },
+  'crossSell.warrantyTitle': { fr: '🛡️ Protégez votre achat', en: '🛡️ Protect your purchase' },
+  'crossSell.addWarranty': { fr: 'Ajouter la garantie', en: 'Add warranty' },
+  'crossSell.noThanks': { fr: 'Non merci, continuer', en: 'No thanks, continue' },
+  'crossSell.goToCart': { fr: 'Voir mon panier', en: 'View my cart' },
+  'crossSell.complementAdded': { fr: 'Produit complémentaire ajouté !', en: 'Complementary product added!' },
+  'crossSell.warrantyAdded': { fr: 'Garantie ajoutée !', en: 'Warranty added!' },
+
   // ─── Home ──────────────────────────────────────────────────────────────────
   'home.welcome': { fr: 'Bienvenue sur Zava', en: 'Welcome to Zava' },
   'home.intro': {

@@ -6,9 +6,10 @@ import {
   Card, CardContent, Dialog, IconButton,
 } from '@mui/material';
 import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon, Close, ChevronLeft, ChevronRight } from '@mui/icons-material';
-import { getProduct, addToCart, API_BASE } from '../api';
-import type { Product, Review, Category, ProductImage } from '../types';
+import { getProduct, addToCart, getCrossSell, API_BASE } from '../api';
+import type { Product, Review, Category, ProductImage, CrossSellOffer } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import CrossSellDialog from '../components/CrossSellDialog';
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
@@ -30,6 +31,8 @@ export default function ProductPage() {
   const [zoomVisible, setZoomVisible] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 0, y: 0 });
   const mainImageRef = useRef<HTMLDivElement>(null);
+  const [crossSellOffer, setCrossSellOffer] = useState<CrossSellOffer | null>(null);
+  const [crossSellOpen, setCrossSellOpen] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -54,6 +57,15 @@ export default function ProductPage() {
     if (!product) return;
     try {
       await addToCart(product.id, quantity, selectedVariant ?? undefined);
+      // Fetch cross-sell offers for Electronics & Appliances
+      try {
+        const offer = await getCrossSell(product.id);
+        if (offer.complementaryProduct || offer.warranty) {
+          setCrossSellOffer(offer);
+          setCrossSellOpen(true);
+          return; // Don't show snackbar, the dialog handles it
+        }
+      } catch { /* no cross-sell available, fall through to snackbar */ }
       setSnackbar(t('product.addedToCart'));
     } catch {
       setSnackbar(t('product.addError'));
@@ -449,6 +461,17 @@ export default function ProductPage() {
             ))}
           </Grid>
         </Box>
+      )}
+
+      {/* Cross-sell dialog */}
+      {crossSellOffer && product && (
+        <CrossSellDialog
+          open={crossSellOpen}
+          onClose={() => setCrossSellOpen(false)}
+          offer={crossSellOffer}
+          productId={product.id}
+          productName={lang === 'en' && product.nameEn ? product.nameEn : product.name}
+        />
       )}
 
       <Snackbar

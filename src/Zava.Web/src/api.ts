@@ -1,7 +1,7 @@
 import type {
   SiteConfig, HomepageData, Product, Category, SearchRequest, SearchResult,
   SearchSuggestion, Cart, PaymentResult, CheckoutRequest, Order, User,
-  AnalyticsDashboard, Review, ProductImage,
+  AnalyticsDashboard, Review, ProductImage, CrossSellOffer,
 } from './types';
 
 export const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5014';
@@ -74,6 +74,15 @@ export const updateCartItem = (productId: number, quantity: number) =>
 export const removeCartItem = (productId: number) =>
   request<Cart>(`${API}/cart/items/${productId}`, { method: 'DELETE' });
 export const clearCart = () => request<Cart>(`${API}/cart`, { method: 'DELETE' });
+
+// Cross-sell
+export const getCrossSell = (productId: number) =>
+  request<CrossSellOffer>(`${API}/products/${productId}/cross-sell`);
+export const addWarrantyToCart = (productId: number, warrantyName: string, warrantyPrice: number) =>
+  request<Cart>(`${API}/cart/warranty`, {
+    method: 'POST',
+    body: JSON.stringify({ productId, warrantyName, warrantyPrice }),
+  });
 
 // Checkout
 export const checkout = (data: CheckoutRequest) =>
