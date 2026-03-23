@@ -5,7 +5,7 @@ import {
   Paper, Divider, Stack, ToggleButtonGroup, ToggleButton, Snackbar,
   Card, CardContent, Dialog, IconButton,
 } from '@mui/material';
-import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon, Close, ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon, Close, ChevronLeft, ChevronRight, Recycling } from '@mui/icons-material';
 import { getProduct, addToCart, getCrossSell, API_BASE } from '../api';
 import type { Product, Review, Category, ProductImage, CrossSellOffer } from '../types';
 import { useLanguage } from '../context/LanguageContext';
@@ -300,6 +300,11 @@ export default function ProductPage() {
                 {product.price.toFixed(2)} €
               </Typography>
             )}
+            {product.isSecondLife && product.secondLife && !product.promoPrice && (
+              <Typography variant="h6" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+                {product.secondLife.originalPrice.toFixed(2)} €
+              </Typography>
+            )}
           </Box>
 
           <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>{productDescription}</Typography>
@@ -366,6 +371,55 @@ export default function ProductPage() {
                 />
               ))}
             </Stack>
+          )}
+
+          {/* Second Life Section */}
+          {product.isSecondLife && product.secondLife && (
+            <Paper sx={{ mt: 3, p: 2, border: '1px solid #00796b', borderRadius: 2 }}>
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 2 }}>
+                <Chip
+                  icon={<Recycling />}
+                  label={t('secondLife.sectionTitle')}
+                  sx={{ bgcolor: '#00796b', color: 'white', '& .MuiChip-icon': { color: 'white' } }}
+                />
+              </Stack>
+              <Grid container spacing={2}>
+                <Grid size={{ xs: 6 }}>
+                  <Typography variant="caption" color="text.secondary">{t('secondLife.condition')}</Typography>
+                  <Typography variant="body2" fontWeight={600}>
+                    {lang === 'en' ? product.secondLife.conditionEn : product.secondLife.condition}
+                  </Typography>
+                </Grid>
+                <Grid size={{ xs: 6 }}>
+                  <Typography variant="caption" color="text.secondary">{t('secondLife.savings')}</Typography>
+                  <Typography variant="body2" fontWeight={700} color="success.main">
+                    -{Math.round((1 - product.price / product.secondLife.originalPrice) * 100)}%
+                  </Typography>
+                </Grid>
+                {product.secondLife.warrantyMonths && (
+                  <Grid size={{ xs: 6 }}>
+                    <Typography variant="caption" color="text.secondary">{t('secondLife.warranty')}</Typography>
+                    <Typography variant="body2" fontWeight={600}>
+                      {product.secondLife.warrantyMonths} {t('secondLife.months')}
+                    </Typography>
+                  </Grid>
+                )}
+                {product.secondLife.sellerType && (
+                  <Grid size={{ xs: 6 }}>
+                    <Typography variant="caption" color="text.secondary">{t('secondLife.seller')}</Typography>
+                    <Typography variant="body2" fontWeight={600}>
+                      {lang === 'en' ? product.secondLife.sellerTypeEn : product.secondLife.sellerType}
+                    </Typography>
+                  </Grid>
+                )}
+                <Grid size={{ xs: 12 }}>
+                  <Typography variant="caption" color="text.secondary">{t('secondLife.originalPrice')}</Typography>
+                  <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
+                    {product.secondLife.originalPrice.toFixed(2)} €
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Paper>
           )}
         </Grid>
       </Grid>

@@ -72,6 +72,7 @@ app.MapGet("/api/homepage", (DataStore store) =>
         NewProducts = products.Where(p => p.IsNew).Take(8).ToList(),
         PromoProducts = products.Where(p => p.IsPromo).Take(8).ToList(),
         SelectionProducts = products.OrderByDescending(p => p.Rating).Take(8).ToList(),
+        SecondLifeProducts = products.Where(p => p.IsSecondLife).Take(8).ToList(),
         TopCategories = categories.OrderByDescending(c => c.ProductCount).Take(6).ToList(),
         Brands = products.Select(p => p.Brand).Distinct().OrderBy(b => b).ToList()
     };

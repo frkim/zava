@@ -251,7 +251,71 @@ public static class DataSeeder
             p.CreatedAt = RandomRecentDate();
         }
 
+        ApplySecondLife(products);
+
         return products;
+    }
+
+    private static readonly (string Condition, string ConditionEn)[] _conditions =
+    [
+        ("Comme neuf", "Like New"),
+        ("Très bon état", "Very Good"),
+        ("Bon état", "Good"),
+        ("État correct", "Fair"),
+    ];
+
+    private static readonly (string Seller, string SellerEn)[] _sellerTypes =
+    [
+        ("Vendeur Pro", "Professional Seller"),
+        ("Particulier", "Individual"),
+        ("Reconditionné constructeur", "Manufacturer Refurbished"),
+    ];
+
+    private static readonly int[] _warrantyOptions = [6, 12, 24];
+
+    private static void ApplySecondLife(List<Product> products)
+    {
+        // Mark ~12% of products as SecondLife
+        var candidates = products.OrderBy(_ => _random.Next()).ToList();
+        int count = Math.Max(1, (int)(products.Count * 0.12));
+
+        foreach (var p in candidates.Take(count))
+        {
+            var condition = _conditions[_random.Next(_conditions.Length)];
+            var seller = _sellerTypes[_random.Next(_sellerTypes.Length)];
+            var warranty = _warrantyOptions[_random.Next(_warrantyOptions.Length)];
+
+            // Discount between 20-40%
+            var discountPercent = 20 + _random.Next(21); // 20 to 40
+            var originalPrice = p.Price;
+            p.Price = Math.Round(originalPrice * (1 - discountPercent / 100m), 2);
+            p.PromoPrice = null; // SecondLife products don't have promo on top
+
+            p.IsSecondLife = true;
+            p.SecondLife = new SecondLifeInfo
+            {
+                Condition = condition.Condition,
+                ConditionEn = condition.ConditionEn,
+                OriginalPrice = originalPrice,
+                WarrantyMonths = warranty,
+                SellerType = seller.Seller,
+                SellerTypeEn = seller.SellerEn,
+            };
+
+            // Ensure high sustainability score
+            p.Sustainability ??= new SustainabilityRating();
+            p.Sustainability.OverallScore = Math.Max(7.0, p.Sustainability.OverallScore);
+            if (p.Sustainability.RecyclabilityPercent == null || p.Sustainability.RecyclabilityPercent < 70)
+                p.Sustainability.RecyclabilityPercent = 70 + _random.Next(31);
+            if (!p.Sustainability.Labels.Contains("Seconde Vie"))
+                p.Sustainability.Labels.Add("Seconde Vie");
+
+            // Add tags
+            if (!p.Tags.Contains("seconde-vie"))
+                p.Tags.Add("seconde-vie");
+            if (!p.Tags.Contains("second-life"))
+                p.Tags.Add("second-life");
+        }
     }
 
     private static List<string> GenerateTags(Product p)

@@ -24,7 +24,12 @@ public class SearchService
                 p.NameEn.Contains(t, StringComparison.OrdinalIgnoreCase) ||
                 p.Description.Contains(t, StringComparison.OrdinalIgnoreCase) ||
                 p.Brand.Contains(t, StringComparison.OrdinalIgnoreCase) ||
-                p.Tags.Any(tag => tag.Contains(t, StringComparison.OrdinalIgnoreCase))
+                p.Tags.Any(tag => tag.Contains(t, StringComparison.OrdinalIgnoreCase)) ||
+                (p.IsSecondLife && (
+                    "reconditionné".Contains(t, StringComparison.OrdinalIgnoreCase) ||
+                    "refurbished".Contains(t, StringComparison.OrdinalIgnoreCase) ||
+                    (p.SecondLife != null && p.SecondLife.Condition.Contains(t, StringComparison.OrdinalIgnoreCase))
+                ))
             ));
         }
 
@@ -49,6 +54,9 @@ public class SearchService
 
         if (request.EcoResponsible == true)
             query = query.Where(p => p.Sustainability != null && p.Sustainability.OverallScore >= 6.0);
+
+        if (request.SecondLife == true)
+            query = query.Where(p => p.IsSecondLife);
 
         var filtered = query.ToList();
 
@@ -180,6 +188,18 @@ public class SearchService
                 Name = "Écoresponsable",
                 NameEn = "Eco-Responsible",
                 Values = [new FacetValue { Value = "Produit écoresponsable", FilterValue = "true", Count = ecoCount }]
+            });
+        }
+
+        // Second Life facet
+        var secondLifeCount = products.Count(p => p.IsSecondLife);
+        if (secondLifeCount > 0)
+        {
+            facets.Add(new FacetGroup
+            {
+                Name = "Seconde Vie",
+                NameEn = "Second Life",
+                Values = [new FacetValue { Value = "Produit seconde vie", FilterValue = "true", Count = secondLifeCount }]
             });
         }
 

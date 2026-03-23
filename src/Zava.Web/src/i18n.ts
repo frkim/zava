@@ -554,6 +554,22 @@ const translations = {
     fr: 'Ce site utilise des cookies pour améliorer votre expérience. Vous pouvez gérer vos préférences de cookies à tout moment depuis les paramètres de votre navigateur.',
     en: 'This website uses cookies to improve your experience. You can manage your cookie preferences at any time from your browser settings.',
   },
+  // ─── Second Life ─────────────────────────────────────────────────────────
+  'secondLife.badge': { fr: 'Seconde Vie', en: 'Second Life' },
+  'secondLife.condition': { fr: 'État', en: 'Condition' },
+  'secondLife.savings': { fr: 'Économie', en: 'Savings' },
+  'secondLife.warranty': { fr: 'Garantie', en: 'Warranty' },
+  'secondLife.seller': { fr: 'Vendeur', en: 'Seller' },
+  'secondLife.originalPrice': { fr: 'Prix neuf', en: 'Original price' },
+  'secondLife.filterLabel': { fr: 'Seconde Vie uniquement', en: 'Second Life only' },
+  'secondLife.conditionLikeNew': { fr: 'Comme neuf', en: 'Like New' },
+  'secondLife.conditionVeryGood': { fr: 'Très bon état', en: 'Very Good' },
+  'secondLife.conditionGood': { fr: 'Bon état', en: 'Good' },
+  'secondLife.conditionFair': { fr: 'État correct', en: 'Fair' },
+  'secondLife.months': { fr: 'mois', en: 'months' },
+  'secondLife.sectionTitle': { fr: 'Produit Seconde Vie', en: 'Second Life Product' },
+  'secondLife.homeSection': { fr: '♻️ Seconde Vie — Les bonnes affaires', en: '♻️ Second Life — Great deals' },
+
   // ─── Common ────────────────────────────────────────────────────────────────
   'common.loading': { fr: 'Chargement...', en: 'Loading...' },
   'common.error': { fr: 'Erreur de chargement', en: 'Loading error' },
