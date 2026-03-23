@@ -9,6 +9,7 @@ public class SearchRequest
     public string? Brand { get; set; }
     public double? MinRating { get; set; }
     public bool? InStock { get; set; }
+    public bool? EcoResponsible { get; set; }
     public string? SortBy { get; set; }
     public bool SortDescending { get; set; }
     public int Page { get; set; } = 1;

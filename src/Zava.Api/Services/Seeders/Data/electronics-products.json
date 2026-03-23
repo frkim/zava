@@ -2,9 +2,9 @@
   {
     "id": 1,
     "categoryId": 1,
-    "name": "Samsung QE65S95D OLED 4K 65\u0022",
+    "name": "Samsung QE65S95D OLED 4K 65\"",
     "nameEn": "Samsung QE65S95D OLED 4K 65 inch",
-    "description": "T\u00E9l\u00E9viseur OLED 4K 65 pouces avec processeur Neural Quantum 4K, Dolby Atmos et design ultra-fin.",
+    "description": "Téléviseur OLED 4K 65 pouces avec processeur Neural Quantum 4K, Dolby Atmos et design ultra-fin.",
     "descriptionEn": "65-inch OLED 4K TV with Neural Quantum 4K processor, Dolby Atmos and ultra-thin design.",
     "price": 1899.99,
     "promoPrice": 1699.99,
@@ -20,7 +20,7 @@
         "id": 1,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -400,
         "stock": 20
       },
@@ -28,7 +28,7 @@
         "id": 2,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 15
       },
@@ -36,19 +36,29 @@
         "id": 3,
         "name": "77 pouces",
         "nameEn": "77 inch",
-        "value": "77\u0022",
+        "value": "77\"",
         "priceAdjustment": 800,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 71,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 8.2,
+      "energyClass": "F"
+    }
   },
   {
     "id": 2,
     "categoryId": 1,
-    "name": "LG OLED65C4 4K 65\u0022",
+    "name": "LG OLED65C4 4K 65\"",
     "nameEn": "LG OLED65C4 4K 65 inch",
-    "description": "T\u00E9l\u00E9viseur OLED evo 4K avec processeur \u03B19 Gen7, webOS 24 et Dolby Vision IQ.",
-    "descriptionEn": "OLED evo 4K TV with \u03B19 Gen7 processor, webOS 24 and Dolby Vision IQ.",
+    "description": "Téléviseur OLED evo 4K avec processeur α9 Gen7, webOS 24 et Dolby Vision IQ.",
+    "descriptionEn": "OLED evo 4K TV with α9 Gen7 processor, webOS 24 and Dolby Vision IQ.",
     "price": 1599.99,
     "brand": "LG",
     "sku": "LG-OLED65C4",
@@ -62,7 +72,7 @@
         "id": 4,
         "name": "48 pouces",
         "nameEn": "48 inch",
-        "value": "48\u0022",
+        "value": "48\"",
         "priceAdjustment": -500,
         "stock": 18
       },
@@ -70,7 +80,7 @@
         "id": 5,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -200,
         "stock": 25
       },
@@ -78,19 +88,29 @@
         "id": 6,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.7,
+      "repairabilityIndex": 7.9,
+      "recyclabilityPercent": 73,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": "F"
+    }
   },
   {
     "id": 3,
     "categoryId": 1,
     "name": "Sony Bravia XR-65A95L OLED",
     "nameEn": "Sony Bravia XR-65A95L OLED",
-    "description": "T\u00E9l\u00E9viseur QD-OLED 4K avec Cognitive Processor XR et Acoustic Surface Audio\u002B.",
-    "descriptionEn": "QD-OLED 4K TV with Cognitive Processor XR and Acoustic Surface Audio\u002B.",
+    "description": "Téléviseur QD-OLED 4K avec Cognitive Processor XR et Acoustic Surface Audio+.",
+    "descriptionEn": "QD-OLED 4K TV with Cognitive Processor XR and Acoustic Surface Audio+.",
     "price": 2499.99,
     "promoPrice": 2199.99,
     "brand": "Sony",
@@ -105,7 +125,7 @@
         "id": 7,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -500,
         "stock": 12
       },
@@ -113,18 +133,26 @@
         "id": 8,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.0,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 56,
+      "labels": [],
+      "durabilityIndex": 8.0,
+      "energyClass": "E"
+    }
   },
   {
     "id": 4,
     "categoryId": 1,
     "name": "TCL 65C845 Mini LED 4K",
     "nameEn": "TCL 65C845 Mini LED 4K",
-    "description": "T\u00E9l\u00E9viseur Mini LED 4K QLED avec Google TV et barre de son Onkyo int\u00E9gr\u00E9e.",
+    "description": "Téléviseur Mini LED 4K QLED avec Google TV et barre de son Onkyo intégrée.",
     "descriptionEn": "Mini LED 4K QLED TV with Google TV and built-in Onkyo soundbar.",
     "price": 899.99,
     "promoPrice": 749.99,
@@ -140,7 +168,7 @@
         "id": 9,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -150,
         "stock": 35
       },
@@ -148,7 +176,7 @@
         "id": 10,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 30
       },
@@ -156,19 +184,27 @@
         "id": 11,
         "name": "75 pouces",
         "nameEn": "75 inch",
-        "value": "75\u0022",
+        "value": "75\"",
         "priceAdjustment": 400,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.5,
+      "repairabilityIndex": 6.1,
+      "recyclabilityPercent": 40,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": "D"
+    }
   },
   {
     "id": 5,
     "categoryId": 1,
     "name": "Philips 65OLED808 Ambilight",
     "nameEn": "Philips 65OLED808 Ambilight",
-    "description": "T\u00E9l\u00E9viseur OLED 4K avec Ambilight 3 c\u00F4t\u00E9s, P5 AI Intelligent et son Bowers \u0026 Wilkins.",
-    "descriptionEn": "OLED 4K TV with 3-sided Ambilight, P5 AI Intelligent and Bowers \u0026 Wilkins sound.",
+    "description": "Téléviseur OLED 4K avec Ambilight 3 côtés, P5 AI Intelligent et son Bowers & Wilkins.",
+    "descriptionEn": "OLED 4K TV with 3-sided Ambilight, P5 AI Intelligent and Bowers & Wilkins sound.",
     "price": 1799.99,
     "brand": "Philips",
     "sku": "PHI-65OLED808",
@@ -182,7 +218,7 @@
         "id": 12,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -300,
         "stock": 18
       },
@@ -190,11 +226,21 @@
         "id": 13,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": 7.6,
+      "recyclabilityPercent": 79,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": "F"
+    }
   },
   {
     "id": 6,
@@ -217,7 +263,7 @@
         "id": 14,
         "name": "50 pouces",
         "nameEn": "50 inch",
-        "value": "50\u0022",
+        "value": "50\"",
         "priceAdjustment": -100,
         "stock": 45
       },
@@ -225,7 +271,7 @@
         "id": 15,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": 0,
         "stock": 40
       },
@@ -233,18 +279,28 @@
         "id": 16,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 300,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": 7.8,
+      "recyclabilityPercent": 81,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": "D"
+    }
   },
   {
     "id": 7,
     "categoryId": 1,
     "name": "LG 55NANO81 NanoCell 4K",
     "nameEn": "LG 55NANO81 NanoCell 4K",
-    "description": "T\u00E9l\u00E9viseur NanoCell 4K avec Active HDR et AI ThinQ.",
+    "description": "Téléviseur NanoCell 4K avec Active HDR et AI ThinQ.",
     "descriptionEn": "NanoCell 4K TV with Active HDR and AI ThinQ.",
     "price": 549.99,
     "brand": "LG",
@@ -259,7 +315,7 @@
         "id": 17,
         "name": "43 pouces",
         "nameEn": "43 inch",
-        "value": "43\u0022",
+        "value": "43\"",
         "priceAdjustment": -100,
         "stock": 60
       },
@@ -267,7 +323,7 @@
         "id": 18,
         "name": "50 pouces",
         "nameEn": "50 inch",
-        "value": "50\u0022",
+        "value": "50\"",
         "priceAdjustment": -50,
         "stock": 55
       },
@@ -275,11 +331,21 @@
         "id": 19,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": 0,
         "stock": 50
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 83,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": "E"
+    }
   },
   {
     "id": 8,
@@ -302,7 +368,7 @@
         "id": 20,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -100,
         "stock": 30
       },
@@ -310,18 +376,26 @@
         "id": 21,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.6,
+      "repairabilityIndex": 5.9,
+      "recyclabilityPercent": 51,
+      "labels": [],
+      "durabilityIndex": 6.6,
+      "energyClass": "D"
+    }
   },
   {
     "id": 9,
     "categoryId": 1,
     "name": "Panasonic TX-65MZ2000 OLED",
     "nameEn": "Panasonic TX-65MZ2000 OLED",
-    "description": "T\u00E9l\u00E9viseur OLED Master 4K avec HCX Pro AI Processor MK II et son Technics.",
+    "description": "Téléviseur OLED Master 4K avec HCX Pro AI Processor MK II et son Technics.",
     "descriptionEn": "OLED Master 4K TV with HCX Pro AI Processor MK II and Technics sound.",
     "price": 2799.99,
     "brand": "Panasonic",
@@ -336,7 +410,7 @@
         "id": 22,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": -500,
         "stock": 8
       },
@@ -344,11 +418,21 @@
         "id": 23,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 0,
         "stock": 5
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.8,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 87,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.3,
+      "energyClass": "F"
+    }
   },
   {
     "id": 10,
@@ -371,7 +455,7 @@
         "id": 24,
         "name": "43 pouces",
         "nameEn": "43 inch",
-        "value": "43\u0022",
+        "value": "43\"",
         "priceAdjustment": -300,
         "stock": 30
       },
@@ -379,7 +463,7 @@
         "id": 25,
         "name": "55 pouces",
         "nameEn": "55 inch",
-        "value": "55\u0022",
+        "value": "55\"",
         "priceAdjustment": 0,
         "stock": 20
       },
@@ -387,18 +471,29 @@
         "id": 26,
         "name": "65 pouces",
         "nameEn": "65 inch",
-        "value": "65\u0022",
+        "value": "65\"",
         "priceAdjustment": 400,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 89,
+      "labels": [
+        "EPEAT Gold",
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": "E"
+    }
   },
   {
     "id": 11,
     "categoryId": 2,
-    "name": "Apple MacBook Pro 16\u0022 M3 Pro",
+    "name": "Apple MacBook Pro 16\" M3 Pro",
     "nameEn": "Apple MacBook Pro 16 inch M3 Pro",
-    "description": "MacBook Pro 16 pouces avec puce M3 Pro, 18 Go RAM, 512 Go SSD et \u00E9cran Liquid Retina XDR.",
+    "description": "MacBook Pro 16 pouces avec puce M3 Pro, 18 Go RAM, 512 Go SSD et écran Liquid Retina XDR.",
     "descriptionEn": "MacBook Pro 16 inch with M3 Pro chip, 18GB RAM, 512GB SSD and Liquid Retina XDR display.",
     "price": 2799.99,
     "brand": "Apple",
@@ -433,14 +528,25 @@
         "priceAdjustment": 690,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.2,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EPEAT Gold",
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 12,
     "categoryId": 2,
     "name": "ASUS ROG Strix G16 2024",
     "nameEn": "ASUS ROG Strix G16 2024",
-    "description": "PC portable gaming avec Intel Core i9-14900HX, RTX 4070, 16 Go RAM et \u00E9cran 240Hz.",
+    "description": "PC portable gaming avec Intel Core i9-14900HX, RTX 4070, 16 Go RAM et écran 240Hz.",
     "descriptionEn": "Gaming laptop with Intel Core i9-14900HX, RTX 4070, 16GB RAM and 240Hz display.",
     "price": 1999.99,
     "promoPrice": 1799.99,
@@ -476,15 +582,23 @@
         "priceAdjustment": 500,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.4,
+      "repairabilityIndex": 6.9,
+      "recyclabilityPercent": 50,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 13,
     "categoryId": 2,
     "name": "Dell XPS 15 9530",
     "nameEn": "Dell XPS 15 9530",
-    "description": "Ultrabook 15.6\u0022 avec Intel Core i7-13700H, 16 Go RAM, 512 Go SSD et \u00E9cran OLED 3.5K.",
-    "descriptionEn": "15.6\u0022 ultrabook with Intel Core i7-13700H, 16GB RAM, 512GB SSD and 3.5K OLED display.",
+    "description": "Ultrabook 15.6\" avec Intel Core i7-13700H, 16 Go RAM, 512 Go SSD et écran OLED 3.5K.",
+    "descriptionEn": "15.6\" ultrabook with Intel Core i7-13700H, 16GB RAM, 512GB SSD and 3.5K OLED display.",
     "price": 1699.99,
     "brand": "Dell",
     "sku": "DELL-XPS159530",
@@ -510,15 +624,25 @@
         "priceAdjustment": 200,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.8,
+      "recyclabilityPercent": 72,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 14,
     "categoryId": 2,
     "name": "Lenovo ThinkPad X1 Carbon Gen 11",
     "nameEn": "Lenovo ThinkPad X1 Carbon Gen 11",
-    "description": "Ultrabook professionnel 14\u0022 avec Intel Core i7 vPro, 16 Go RAM et clavier r\u00E9tro\u00E9clair\u00E9.",
-    "descriptionEn": "14\u0022 professional ultrabook with Intel Core i7 vPro, 16GB RAM and backlit keyboard.",
+    "description": "Ultrabook professionnel 14\" avec Intel Core i7 vPro, 16 Go RAM et clavier rétroéclairé.",
+    "descriptionEn": "14\" professional ultrabook with Intel Core i7 vPro, 16GB RAM and backlit keyboard.",
     "price": 1599.99,
     "promoPrice": 1399.99,
     "brand": "Lenovo",
@@ -553,15 +677,25 @@
         "priceAdjustment": 150,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": 8.1,
+      "recyclabilityPercent": 73,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 8.8,
+      "energyClass": null
+    }
   },
   {
     "id": 15,
     "categoryId": 2,
     "name": "HP Spectre x360 16",
     "nameEn": "HP Spectre x360 16",
-    "description": "PC portable convertible 16\u0022 avec Intel Core i7-13700H, \u00E9cran OLED tactile et stylet inclus.",
-    "descriptionEn": "16\u0022 convertible laptop with Intel Core i7-13700H, OLED touchscreen and included stylus.",
+    "description": "PC portable convertible 16\" avec Intel Core i7-13700H, écran OLED tactile et stylet inclus.",
+    "descriptionEn": "16\" convertible laptop with Intel Core i7-13700H, OLED touchscreen and included stylus.",
     "price": 1899.99,
     "brand": "HP",
     "sku": "HP-SPECTRE360-16",
@@ -587,15 +721,25 @@
         "priceAdjustment": 250,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 57,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.6,
+      "energyClass": null
+    }
   },
   {
     "id": 16,
     "categoryId": 2,
     "name": "Acer Swift Go 14",
     "nameEn": "Acer Swift Go 14",
-    "description": "Ultrabook l\u00E9ger 14\u0022 avec Intel Core i5-1340P, 8 Go RAM et \u00E9cran 2.8K OLED.",
-    "descriptionEn": "Lightweight 14\u0022 ultrabook with Intel Core i5-1340P, 8GB RAM and 2.8K OLED display.",
+    "description": "Ultrabook léger 14\" avec Intel Core i5-1340P, 8 Go RAM et écran 2.8K OLED.",
+    "descriptionEn": "Lightweight 14\" ultrabook with Intel Core i5-1340P, 8GB RAM and 2.8K OLED display.",
     "price": 799.99,
     "promoPrice": 699.99,
     "brand": "Acer",
@@ -622,15 +766,25 @@
         "priceAdjustment": 100,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.0,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 60,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 17,
     "categoryId": 2,
     "name": "MSI Creator Z16 HX Studio",
     "nameEn": "MSI Creator Z16 HX Studio",
-    "description": "PC portable cr\u00E9atif 16\u0022 avec Intel Core i9-13950HX, RTX 4070 et \u00E9cran Mini LED.",
-    "descriptionEn": "16\u0022 creative laptop with Intel Core i9-13950HX, RTX 4070 and Mini LED display.",
+    "description": "PC portable créatif 16\" avec Intel Core i9-13950HX, RTX 4070 et écran Mini LED.",
+    "descriptionEn": "16\" creative laptop with Intel Core i9-13950HX, RTX 4070 and Mini LED display.",
     "price": 2999.99,
     "brand": "MSI",
     "sku": "MSI-Z16HXS",
@@ -656,12 +810,20 @@
         "priceAdjustment": 400,
         "stock": 4
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.7,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 44,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 18,
     "categoryId": 2,
-    "name": "Apple MacBook Air 15\u0022 M3",
+    "name": "Apple MacBook Air 15\" M3",
     "nameEn": "Apple MacBook Air 15 inch M3",
     "description": "MacBook Air 15 pouces avec puce M3, 8 Go RAM, 256 Go SSD et autonomie 18h.",
     "descriptionEn": "MacBook Air 15 inch with M3 chip, 8GB RAM, 256GB SSD and 18h battery life.",
@@ -691,15 +853,25 @@
         "priceAdjustment": 115,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": 5.6,
+      "recyclabilityPercent": 81,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 8.2,
+      "energyClass": null
+    }
   },
   {
     "id": 19,
     "categoryId": 2,
     "name": "Lenovo IdeaPad Slim 5 16",
     "nameEn": "Lenovo IdeaPad Slim 5 16",
-    "description": "PC portable 16\u0022 avec AMD Ryzen 7 7730U, 16 Go RAM et \u00E9cran 2.5K.",
-    "descriptionEn": "16\u0022 laptop with AMD Ryzen 7 7730U, 16GB RAM and 2.5K display.",
+    "description": "PC portable 16\" avec AMD Ryzen 7 7730U, 16 Go RAM et écran 2.5K.",
+    "descriptionEn": "16\" laptop with AMD Ryzen 7 7730U, 16GB RAM and 2.5K display.",
     "price": 699.99,
     "promoPrice": 599.99,
     "brand": "Lenovo",
@@ -726,15 +898,23 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.6,
+      "recyclabilityPercent": 83,
+      "labels": [],
+      "durabilityIndex": 7.4,
+      "energyClass": null
+    }
   },
   {
     "id": 20,
     "categoryId": 2,
     "name": "ASUS ZenBook 14 OLED",
     "nameEn": "ASUS ZenBook 14 OLED",
-    "description": "Ultrabook compact 14\u0022 avec Intel Core i5-1340P, 16 Go RAM et \u00E9cran OLED 2.8K.",
-    "descriptionEn": "Compact 14\u0022 ultrabook with Intel Core i5-1340P, 16GB RAM and 2.8K OLED display.",
+    "description": "Ultrabook compact 14\" avec Intel Core i5-1340P, 16 Go RAM et écran OLED 2.8K.",
+    "descriptionEn": "Compact 14\" ultrabook with Intel Core i5-1340P, 16GB RAM and 2.8K OLED display.",
     "price": 899.99,
     "brand": "ASUS",
     "sku": "ASUS-ZB14OLED",
@@ -760,14 +940,22 @@
         "priceAdjustment": 100,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.8,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 70,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 21,
     "categoryId": 3,
     "name": "Apple iPhone 15 Pro Max",
     "nameEn": "Apple iPhone 15 Pro Max",
-    "description": "iPhone 15 Pro Max avec puce A17 Pro, syst\u00E8me photo 48 Mpx et titane.",
+    "description": "iPhone 15 Pro Max avec puce A17 Pro, système photo 48 Mpx et titane.",
     "descriptionEn": "iPhone 15 Pro Max with A17 Pro chip, 48MP camera system and titanium.",
     "price": 1479.99,
     "brand": "Apple",
@@ -802,14 +990,25 @@
         "priceAdjustment": 350,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": 6.4,
+      "recyclabilityPercent": 87,
+      "labels": [
+        "EPEAT Gold",
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 22,
     "categoryId": 3,
     "name": "Samsung Galaxy S24 Ultra",
     "nameEn": "Samsung Galaxy S24 Ultra",
-    "description": "Galaxy S24 Ultra avec Galaxy AI, S Pen int\u00E9gr\u00E9, appareil photo 200 Mpx et cadre en titane.",
+    "description": "Galaxy S24 Ultra avec Galaxy AI, S Pen intégré, appareil photo 200 Mpx et cadre en titane.",
     "descriptionEn": "Galaxy S24 Ultra with Galaxy AI, built-in S Pen, 200MP camera and titanium frame.",
     "price": 1419.99,
     "promoPrice": 1299.99,
@@ -845,14 +1044,25 @@
         "priceAdjustment": 360,
         "stock": 5
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.4,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 89,
+      "labels": [
+        "EPEAT Gold",
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 23,
     "categoryId": 3,
     "name": "Google Pixel 8 Pro",
     "nameEn": "Google Pixel 8 Pro",
-    "description": "Pixel 8 Pro avec Tensor G3, Magic Eraser et 7 ans de mises \u00E0 jour.",
+    "description": "Pixel 8 Pro avec Tensor G3, Magic Eraser et 7 ans de mises à jour.",
     "descriptionEn": "Pixel 8 Pro with Tensor G3, Magic Eraser and 7 years of updates.",
     "price": 1099.99,
     "promoPrice": 999.99,
@@ -880,7 +1090,18 @@
         "priceAdjustment": 60,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.5,
+      "repairabilityIndex": 8.2,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EPEAT Gold",
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.6,
+      "energyClass": null
+    }
   },
   {
     "id": 24,
@@ -914,14 +1135,22 @@
         "priceAdjustment": 100,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.5,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 31,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 25,
     "categoryId": 3,
     "name": "Samsung Galaxy A55 5G",
     "nameEn": "Samsung Galaxy A55 5G",
-    "description": "Galaxy A55 5G avec \u00E9cran Super AMOLED 120Hz et batterie 5000 mAh.",
+    "description": "Galaxy A55 5G avec écran Super AMOLED 120Hz et batterie 5000 mAh.",
     "descriptionEn": "Galaxy A55 5G with Super AMOLED 120Hz display and 5000mAh battery.",
     "price": 449.99,
     "promoPrice": 379.99,
@@ -949,7 +1178,17 @@
         "priceAdjustment": 30,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 7.6,
+      "recyclabilityPercent": 72,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 26,
@@ -992,14 +1231,24 @@
         "priceAdjustment": 230,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 74,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 27,
     "categoryId": 3,
     "name": "OnePlus 12",
     "nameEn": "OnePlus 12",
-    "description": "OnePlus 12 avec Snapdragon 8 Gen 3, \u00E9cran 2K LTPO et charge 100W SUPERVOOC.",
+    "description": "OnePlus 12 avec Snapdragon 8 Gen 3, écran 2K LTPO et charge 100W SUPERVOOC.",
     "descriptionEn": "OnePlus 12 with Snapdragon 8 Gen 3, 2K LTPO display and 100W SUPERVOOC charging.",
     "price": 899.99,
     "brand": "OnePlus",
@@ -1026,15 +1275,23 @@
         "priceAdjustment": 100,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.5,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 39,
+      "labels": [],
+      "durabilityIndex": 6.2,
+      "energyClass": null
+    }
   },
   {
     "id": 28,
     "categoryId": 3,
     "name": "Nothing Phone (2)",
     "nameEn": "Nothing Phone (2)",
-    "description": "Nothing Phone (2) avec interface Glyph, Snapdragon 8\u002B Gen 1 et design transparent.",
-    "descriptionEn": "Nothing Phone (2) with Glyph Interface, Snapdragon 8\u002B Gen 1 and transparent design.",
+    "description": "Nothing Phone (2) avec interface Glyph, Snapdragon 8+ Gen 1 et design transparent.",
+    "descriptionEn": "Nothing Phone (2) with Glyph Interface, Snapdragon 8+ Gen 1 and transparent design.",
     "price": 599.99,
     "promoPrice": 549.99,
     "brand": "Nothing",
@@ -1061,14 +1318,24 @@
         "priceAdjustment": 0,
         "stock": 28
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.3,
+      "repairabilityIndex": 7.1,
+      "recyclabilityPercent": 42,
+      "labels": [
+        "Recycled Materials"
+      ],
+      "durabilityIndex": 5.8,
+      "energyClass": null
+    }
   },
   {
     "id": 29,
     "categoryId": 3,
     "name": "Google Pixel 8a",
     "nameEn": "Google Pixel 8a",
-    "description": "Pixel 8a avec Tensor G3, \u00E9cran OLED 120Hz et photo mode nuit.",
+    "description": "Pixel 8a avec Tensor G3, écran OLED 120Hz et photo mode nuit.",
     "descriptionEn": "Pixel 8a with Tensor G3, 120Hz OLED display and night mode camera.",
     "price": 499.99,
     "brand": "Google",
@@ -1095,15 +1362,25 @@
         "priceAdjustment": 60,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 80,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 30,
     "categoryId": 3,
-    "name": "Xiaomi Redmi Note 13 Pro\u002B",
-    "nameEn": "Xiaomi Redmi Note 13 Pro\u002B",
-    "description": "Redmi Note 13 Pro\u002B avec \u00E9cran AMOLED 120Hz, charge 120W et capteur 200 Mpx.",
-    "descriptionEn": "Redmi Note 13 Pro\u002B with 120Hz AMOLED display, 120W charging and 200MP sensor.",
+    "name": "Xiaomi Redmi Note 13 Pro+",
+    "nameEn": "Xiaomi Redmi Note 13 Pro+",
+    "description": "Redmi Note 13 Pro+ avec écran AMOLED 120Hz, charge 120W et capteur 200 Mpx.",
+    "descriptionEn": "Redmi Note 13 Pro+ with 120Hz AMOLED display, 120W charging and 200MP sensor.",
     "price": 349.99,
     "promoPrice": 299.99,
     "brand": "Xiaomi",
@@ -1130,14 +1407,22 @@
         "priceAdjustment": 0,
         "stock": 60
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.6,
+      "repairabilityIndex": 6.6,
+      "recyclabilityPercent": 48,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": null
+    }
   },
   {
     "id": 31,
     "categoryId": 4,
     "name": "Sony WH-1000XM5",
     "nameEn": "Sony WH-1000XM5",
-    "description": "Casque sans fil \u00E0 r\u00E9duction de bruit avec 30h d\u0027autonomie et audio Hi-Res.",
+    "description": "Casque sans fil à réduction de bruit avec 30h d'autonomie et audio Hi-Res.",
     "descriptionEn": "Wireless noise-cancelling headphones with 30h battery and Hi-Res audio.",
     "price": 379.99,
     "promoPrice": 329.99,
@@ -1173,14 +1458,22 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 68,
+      "labels": [],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 32,
     "categoryId": 4,
     "name": "Apple AirPods Pro 2",
     "nameEn": "Apple AirPods Pro 2",
-    "description": "AirPods Pro 2\u00E8me g\u00E9n\u00E9ration avec puce H2, r\u00E9duction active du bruit et USB-C.",
+    "description": "AirPods Pro 2ème génération avec puce H2, réduction active du bruit et USB-C.",
     "descriptionEn": "AirPods Pro 2nd gen with H2 chip, active noise cancellation and USB-C.",
     "price": 279.99,
     "brand": "Apple",
@@ -1199,7 +1492,17 @@
         "priceAdjustment": 0,
         "stock": 45
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 86,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 33,
@@ -1228,20 +1531,28 @@
       },
       {
         "id": 78,
-        "name": "Blanc fum\u00E9",
+        "name": "Blanc fumé",
         "nameEn": "White Smoke",
         "value": "Blanc",
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 73,
+      "labels": [],
+      "durabilityIndex": 8.2,
+      "energyClass": null
+    }
   },
   {
     "id": 34,
     "categoryId": 4,
     "name": "Sennheiser Momentum 4 Wireless",
     "nameEn": "Sennheiser Momentum 4 Wireless",
-    "description": "Casque audiophile sans fil avec 60h d\u0027autonomie et ANC adaptatif.",
+    "description": "Casque audiophile sans fil avec 60h d'autonomie et ANC adaptatif.",
     "descriptionEn": "Audiophile wireless headphones with 60h battery and adaptive ANC.",
     "price": 349.99,
     "brand": "Sennheiser",
@@ -1268,14 +1579,22 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 75,
+      "labels": [],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 35,
     "categoryId": 4,
     "name": "JBL Tune 770NC",
     "nameEn": "JBL Tune 770NC",
-    "description": "Casque sans fil avec r\u00E9duction de bruit adaptative et JBL Pure Bass.",
+    "description": "Casque sans fil avec réduction de bruit adaptative et JBL Pure Bass.",
     "descriptionEn": "Wireless headphones with adaptive noise cancellation and JBL Pure Bass.",
     "price": 99.99,
     "promoPrice": 79.99,
@@ -1311,14 +1630,22 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.1,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 62,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 36,
     "categoryId": 4,
     "name": "Samsung Galaxy Buds3 Pro",
     "nameEn": "Samsung Galaxy Buds3 Pro",
-    "description": "\u00C9couteurs intra-auriculaires avec ANC intelligent et son Hi-Fi 24-bit.",
+    "description": "Écouteurs intra-auriculaires avec ANC intelligent et son Hi-Fi 24-bit.",
     "descriptionEn": "In-ear earbuds with intelligent ANC and 24-bit Hi-Fi sound.",
     "price": 249.99,
     "brand": "Samsung",
@@ -1345,14 +1672,24 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 71,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 37,
     "categoryId": 4,
     "name": "Sony WF-1000XM5",
     "nameEn": "Sony WF-1000XM5",
-    "description": "\u00C9couteurs sans fil premium avec r\u00E9duction de bruit et puce V2.",
+    "description": "Écouteurs sans fil premium avec réduction de bruit et puce V2.",
     "descriptionEn": "Premium wireless earbuds with noise cancellation and V2 chip.",
     "price": 299.99,
     "promoPrice": 269.99,
@@ -1380,14 +1717,22 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 54,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 38,
     "categoryId": 4,
     "name": "Jabra Elite 85t",
     "nameEn": "Jabra Elite 85t",
-    "description": "\u00C9couteurs avec ANC avanc\u00E9, 6 microphones et compatibilit\u00E9 multipoint.",
+    "description": "Écouteurs avec ANC avancé, 6 microphones et compatibilité multipoint.",
     "descriptionEn": "Earbuds with advanced ANC, 6 microphones and multipoint connectivity.",
     "price": 199.99,
     "promoPrice": 149.99,
@@ -1415,14 +1760,22 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.1,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 37,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 39,
     "categoryId": 4,
     "name": "Bose QuietComfort Earbuds II",
     "nameEn": "Bose QuietComfort Earbuds II",
-    "description": "\u00C9couteurs avec la meilleure r\u00E9duction de bruit, CustomTune et Son immersif.",
+    "description": "Écouteurs avec la meilleure réduction de bruit, CustomTune et Son immersif.",
     "descriptionEn": "Earbuds with best-in-class noise cancellation, CustomTune and Immersive Sound.",
     "price": 299.99,
     "brand": "Bose",
@@ -1449,14 +1802,24 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.1,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 59,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 40,
     "categoryId": 4,
     "name": "AKG N400NC TWS",
     "nameEn": "AKG N400NC TWS",
-    "description": "\u00C9couteurs sans fil avec son studio AKG et r\u00E9duction active du bruit.",
+    "description": "Écouteurs sans fil avec son studio AKG et réduction active du bruit.",
     "descriptionEn": "True wireless earbuds with AKG studio sound and active noise cancellation.",
     "price": 129.99,
     "promoPrice": 99.99,
@@ -1476,14 +1839,22 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.0,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 43,
+      "labels": [],
+      "durabilityIndex": 5.8,
+      "energyClass": null
+    }
   },
   {
     "id": 41,
     "categoryId": 5,
     "name": "Sony Alpha 7 IV",
     "nameEn": "Sony Alpha 7 IV",
-    "description": "Appareil photo hybride plein format 33 Mpx avec autofocus IA et vid\u00E9o 4K 60p.",
+    "description": "Appareil photo hybride plein format 33 Mpx avec autofocus IA et vidéo 4K 60p.",
     "descriptionEn": "Full-frame 33MP mirrorless camera with AI autofocus and 4K 60p video.",
     "price": 2499.99,
     "promoPrice": 2299.99,
@@ -1497,7 +1868,7 @@
     "variants": [
       {
         "id": 93,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
@@ -1511,14 +1882,24 @@
         "priceAdjustment": 300,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 64,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 9.0,
+      "energyClass": null
+    }
   },
   {
     "id": 42,
     "categoryId": 5,
     "name": "Canon EOS R6 Mark II",
     "nameEn": "Canon EOS R6 Mark II",
-    "description": "Hybride plein format 24.2 Mpx avec stabilisation 8 stops et vid\u00E9o 4K 60p oversampled.",
+    "description": "Hybride plein format 24.2 Mpx avec stabilisation 8 stops et vidéo 4K 60p oversampled.",
     "descriptionEn": "24.2MP full-frame mirrorless with 8-stop stabilization and oversampled 4K 60p video.",
     "price": 2699.99,
     "brand": "Canon",
@@ -1531,7 +1912,7 @@
     "variants": [
       {
         "id": 95,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
@@ -1545,14 +1926,24 @@
         "priceAdjustment": 500,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 66,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 8.8,
+      "energyClass": null
+    }
   },
   {
     "id": 43,
     "categoryId": 5,
     "name": "Nikon Z8",
     "nameEn": "Nikon Z8",
-    "description": "Hybride plein format 45.7 Mpx avec processeur EXPEED 7 et vid\u00E9o 8K.",
+    "description": "Hybride plein format 45.7 Mpx avec processeur EXPEED 7 et vidéo 8K.",
     "descriptionEn": "45.7MP full-frame mirrorless with EXPEED 7 processor and 8K video.",
     "price": 3999.99,
     "brand": "Nikon",
@@ -1565,20 +1956,28 @@
     "variants": [
       {
         "id": 97,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 69,
+      "labels": [],
+      "durabilityIndex": 9.2,
+      "energyClass": null
+    }
   },
   {
     "id": 44,
     "categoryId": 5,
     "name": "Fujifilm X-T5",
     "nameEn": "Fujifilm X-T5",
-    "description": "Hybride APS-C r\u00E9tro 40 Mpx avec simulation de film et viseur OLED.",
+    "description": "Hybride APS-C rétro 40 Mpx avec simulation de film et viseur OLED.",
     "descriptionEn": "Retro-style 40MP APS-C mirrorless with film simulation and OLED viewfinder.",
     "price": 1699.99,
     "promoPrice": 1499.99,
@@ -1592,7 +1991,7 @@
     "variants": [
       {
         "id": 98,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
@@ -1606,14 +2005,22 @@
         "priceAdjustment": 250,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 71,
+      "labels": [],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 45,
     "categoryId": 5,
     "name": "Sony Alpha 7C II",
     "nameEn": "Sony Alpha 7C II",
-    "description": "Hybride plein format compact 33 Mpx avec autofocus IA avanc\u00E9.",
+    "description": "Hybride plein format compact 33 Mpx avec autofocus IA avancé.",
     "descriptionEn": "Compact 33MP full-frame mirrorless with advanced AI autofocus.",
     "price": 2199.99,
     "brand": "Sony",
@@ -1626,7 +2033,7 @@
     "variants": [
       {
         "id": 100,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
@@ -1640,14 +2047,22 @@
         "priceAdjustment": 200,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 74,
+      "labels": [],
+      "durabilityIndex": 8.2,
+      "energyClass": null
+    }
   },
   {
     "id": 46,
     "categoryId": 5,
     "name": "Canon EOS R50",
     "nameEn": "Canon EOS R50",
-    "description": "Hybride APS-C compact id\u00E9al pour d\u00E9buter avec vid\u00E9o 4K et autofocus Dual Pixel.",
+    "description": "Hybride APS-C compact idéal pour débuter avec vidéo 4K et autofocus Dual Pixel.",
     "descriptionEn": "Compact APS-C mirrorless ideal for beginners with 4K video and Dual Pixel autofocus.",
     "price": 799.99,
     "promoPrice": 699.99,
@@ -1661,7 +2076,7 @@
     "variants": [
       {
         "id": 102,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
@@ -1675,14 +2090,22 @@
         "priceAdjustment": 100,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 76,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 47,
     "categoryId": 5,
     "name": "Nikon Zf",
     "nameEn": "Nikon Zf",
-    "description": "Hybride plein format r\u00E9tro 24.5 Mpx avec bo\u00EEtier en magn\u00E9sium et design vintage.",
+    "description": "Hybride plein format rétro 24.5 Mpx avec boîtier en magnésium et design vintage.",
     "descriptionEn": "Retro-style 24.5MP full-frame mirrorless with magnesium body and vintage design.",
     "price": 2499.99,
     "brand": "Nikon",
@@ -1695,20 +2118,28 @@
     "variants": [
       {
         "id": 104,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.9,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 50,
+      "labels": [],
+      "durabilityIndex": 8.8,
+      "energyClass": null
+    }
   },
   {
     "id": 48,
     "categoryId": 5,
     "name": "GoPro HERO12 Black",
     "nameEn": "GoPro HERO12 Black",
-    "description": "Cam\u00E9ra d\u0027action avec HyperSmooth 6.0, vid\u00E9o 5.3K et HDR photos.",
+    "description": "Caméra d'action avec HyperSmooth 6.0, vidéo 5.3K et HDR photos.",
     "descriptionEn": "Action camera with HyperSmooth 6.0, 5.3K video and HDR photos.",
     "price": 399.99,
     "promoPrice": 349.99,
@@ -1730,21 +2161,29 @@
       },
       {
         "id": 106,
-        "name": "Bundle cr\u00E9ateur",
+        "name": "Bundle créateur",
         "nameEn": "Creator Bundle",
         "value": "Bundle",
         "priceAdjustment": 100,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.9,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 33,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 49,
     "categoryId": 5,
     "name": "DJI Osmo Pocket 3",
     "nameEn": "DJI Osmo Pocket 3",
-    "description": "Cam\u00E9ra stabilis\u00E9e de poche avec capteur 1\u0022 CMOS et \u00E9cran rotatif 2\u0022.",
-    "descriptionEn": "Pocket stabilized camera with 1\u0022 CMOS sensor and 2\u0022 rotating screen.",
+    "description": "Caméra stabilisée de poche avec capteur 1\" CMOS et écran rotatif 2\".",
+    "descriptionEn": "Pocket stabilized camera with 1\" CMOS sensor and 2\" rotating screen.",
     "price": 519.99,
     "brand": "DJI",
     "sku": "DJI-OP3",
@@ -1764,20 +2203,28 @@
       },
       {
         "id": 108,
-        "name": "Combo cr\u00E9ateur",
+        "name": "Combo créateur",
         "nameEn": "Creator Combo",
         "value": "Combo",
         "priceAdjustment": 80,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 36,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 50,
     "categoryId": 5,
     "name": "Panasonic Lumix S5 IIX",
     "nameEn": "Panasonic Lumix S5 IIX",
-    "description": "Hybride plein format vid\u00E9aste avec phase AF et sorties vid\u00E9o pro.",
+    "description": "Hybride plein format vidéaste avec phase AF et sorties vidéo pro.",
     "descriptionEn": "Full-frame video-focused mirrorless with phase AF and pro video outputs.",
     "price": 1999.99,
     "promoPrice": 1799.99,
@@ -1791,7 +2238,7 @@
     "variants": [
       {
         "id": 109,
-        "name": "Bo\u00EEtier nu",
+        "name": "Boîtier nu",
         "nameEn": "Body only",
         "value": "Nu",
         "priceAdjustment": 0,
@@ -1805,14 +2252,24 @@
         "priceAdjustment": 300,
         "stock": 5
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 76,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 51,
     "categoryId": 6,
     "name": "Sony PlayStation 5 Slim",
     "nameEn": "Sony PlayStation 5 Slim",
-    "description": "Console de salon nouvelle g\u00E9n\u00E9ration avec SSD ultra-rapide et manette DualSense.",
+    "description": "Console de salon nouvelle génération avec SSD ultra-rapide et manette DualSense.",
     "descriptionEn": "Next-gen home console with ultra-fast SSD and DualSense controller.",
     "price": 549.99,
     "promoPrice": 499.99,
@@ -1826,7 +2283,7 @@
     "variants": [
       {
         "id": 111,
-        "name": "\u00C9dition Standard",
+        "name": "Édition Standard",
         "nameEn": "Standard Edition",
         "value": "Standard",
         "priceAdjustment": 0,
@@ -1834,13 +2291,23 @@
       },
       {
         "id": 112,
-        "name": "\u00C9dition Digitale",
+        "name": "Édition Digitale",
         "nameEn": "Digital Edition",
         "value": "Digital",
         "priceAdjustment": -100,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 60,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 52,
@@ -1866,15 +2333,23 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.1,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 44,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 53,
     "categoryId": 6,
     "name": "Nintendo Switch OLED",
     "nameEn": "Nintendo Switch OLED",
-    "description": "Console hybride avec \u00E9cran OLED 7\u0022, dock avec port Ethernet et 64 Go de stockage.",
-    "descriptionEn": "Hybrid console with 7\u0022 OLED screen, dock with Ethernet port and 64GB storage.",
+    "description": "Console hybride avec écran OLED 7\", dock avec port Ethernet et 64 Go de stockage.",
+    "descriptionEn": "Hybrid console with 7\" OLED screen, dock with Ethernet port and 64GB storage.",
     "price": 349.99,
     "promoPrice": 319.99,
     "brand": "Nintendo",
@@ -1895,20 +2370,28 @@
       },
       {
         "id": 115,
-        "name": "Bleu/Rouge n\u00E9on",
+        "name": "Bleu/Rouge néon",
         "nameEn": "Neon Blue/Red",
-        "value": "N\u00E9on",
+        "value": "Néon",
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 47,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 54,
     "categoryId": 6,
     "name": "Razer Wolverine V3 Pro",
     "nameEn": "Razer Wolverine V3 Pro",
-    "description": "Manette gaming pro Xbox/PC avec boutons m\u00E9caniques et stick Hall Effect.",
+    "description": "Manette gaming pro Xbox/PC avec boutons mécaniques et stick Hall Effect.",
     "descriptionEn": "Pro Xbox/PC controller with mechanical buttons and Hall Effect sticks.",
     "price": 199.99,
     "brand": "Razer",
@@ -1935,7 +2418,15 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.2,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 50,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": null
+    }
   },
   {
     "id": 55,
@@ -1970,14 +2461,22 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 53,
+      "labels": [],
+      "durabilityIndex": 6.2,
+      "energyClass": null
+    }
   },
   {
     "id": 56,
     "categoryId": 6,
     "name": "Elgato Stream Deck MK.2",
     "nameEn": "Elgato Stream Deck MK.2",
-    "description": "Contr\u00F4leur de streaming 15 touches LCD personnalisables avec int\u00E9gration OBS.",
+    "description": "Contrôleur de streaming 15 touches LCD personnalisables avec intégration OBS.",
     "descriptionEn": "Streaming controller with 15 customizable LCD keys and OBS integration.",
     "price": 149.99,
     "brand": "Elgato",
@@ -2004,14 +2503,22 @@
         "priceAdjustment": 100,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.2,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 56,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 57,
     "categoryId": 6,
     "name": "Hogwarts Legacy PS5",
     "nameEn": "Hogwarts Legacy PS5",
-    "description": "Jeu d\u0027action RPG en monde ouvert dans l\u0027univers Harry Potter pour PS5.",
+    "description": "Jeu d'action RPG en monde ouvert dans l'univers Harry Potter pour PS5.",
     "descriptionEn": "Open-world action RPG in the Harry Potter universe for PS5.",
     "price": 49.99,
     "promoPrice": 34.99,
@@ -2038,7 +2545,7 @@
     "categoryId": 6,
     "name": "The Legend of Zelda: TotK",
     "nameEn": "The Legend of Zelda: TotK",
-    "description": "Suite de Breath of the Wild avec exploration a\u00E9rienne et pouvoirs in\u00E9dits.",
+    "description": "Suite de Breath of the Wild avec exploration aérienne et pouvoirs inédits.",
     "descriptionEn": "Sequel to Breath of the Wild with aerial exploration and new powers.",
     "price": 59.99,
     "brand": "Nintendo",
@@ -2092,14 +2599,22 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.6,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 31,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 60,
     "categoryId": 6,
     "name": "Corsair K100 RGB",
     "nameEn": "Corsair K100 RGB",
-    "description": "Clavier gaming m\u00E9canique avec switches OPX optiques et repose-poignet magn\u00E9tique.",
+    "description": "Clavier gaming mécanique avec switches OPX optiques et repose-poignet magnétique.",
     "descriptionEn": "Mechanical gaming keyboard with OPX optical switches and magnetic wrist rest.",
     "price": 229.99,
     "brand": "Corsair",
@@ -2126,14 +2641,22 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.3,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 34,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 61,
     "categoryId": 7,
-    "name": "Apple iPad Pro 12.9\u0022 M2",
+    "name": "Apple iPad Pro 12.9\" M2",
     "nameEn": "Apple iPad Pro 12.9 inch M2",
-    "description": "iPad Pro 12.9\u0022 avec puce M2, \u00E9cran Liquid Retina XDR et Apple Pencil hover.",
+    "description": "iPad Pro 12.9\" avec puce M2, écran Liquid Retina XDR et Apple Pencil hover.",
     "descriptionEn": "iPad Pro 12.9 inch with M2 chip, Liquid Retina XDR display and Apple Pencil hover.",
     "price": 1329.99,
     "brand": "Apple",
@@ -2162,21 +2685,31 @@
       },
       {
         "id": 130,
-        "name": "256 Go WiFi\u002BCell",
-        "nameEn": "256GB WiFi\u002BCell",
-        "value": "256Go\u002BCell",
+        "name": "256 Go WiFi+Cell",
+        "nameEn": "256GB WiFi+Cell",
+        "value": "256Go+Cell",
         "priceAdjustment": 270,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 5.9,
+      "recyclabilityPercent": 75,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 62,
     "categoryId": 7,
     "name": "Samsung Galaxy Tab S9 Ultra",
     "nameEn": "Samsung Galaxy Tab S9 Ultra",
-    "description": "Tablette 14.6\u0022 avec Snapdragon 8 Gen 2, S Pen inclus et Dynamic AMOLED 2X.",
-    "descriptionEn": "14.6\u0022 tablet with Snapdragon 8 Gen 2, included S Pen and Dynamic AMOLED 2X.",
+    "description": "Tablette 14.6\" avec Snapdragon 8 Gen 2, S Pen inclus et Dynamic AMOLED 2X.",
+    "descriptionEn": "14.6\" tablet with Snapdragon 8 Gen 2, included S Pen and Dynamic AMOLED 2X.",
     "price": 1179.99,
     "promoPrice": 1049.99,
     "brand": "Samsung",
@@ -2203,14 +2736,24 @@
         "priceAdjustment": 120,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 77,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 63,
     "categoryId": 7,
     "name": "Apple iPad Air 5 M1",
     "nameEn": "Apple iPad Air 5 M1",
-    "description": "iPad Air 10.9\u0022 avec puce M1, Touch ID et compatibilit\u00E9 Apple Pencil 2.",
+    "description": "iPad Air 10.9\" avec puce M1, Touch ID et compatibilité Apple Pencil 2.",
     "descriptionEn": "iPad Air 10.9 inch with M1 chip, Touch ID and Apple Pencil 2 compatibility.",
     "price": 699.99,
     "promoPrice": 649.99,
@@ -2238,15 +2781,25 @@
         "priceAdjustment": 100,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 6.0,
+      "recyclabilityPercent": 78,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 64,
     "categoryId": 7,
     "name": "Lenovo Tab P12 Pro",
     "nameEn": "Lenovo Tab P12 Pro",
-    "description": "Tablette 12.6\u0022 AMOLED 120Hz avec Snapdragon 870 et quad speakers JBL.",
-    "descriptionEn": "12.6\u0022 AMOLED 120Hz tablet with Snapdragon 870 and JBL quad speakers.",
+    "description": "Tablette 12.6\" AMOLED 120Hz avec Snapdragon 870 et quad speakers JBL.",
+    "descriptionEn": "12.6\" AMOLED 120Hz tablet with Snapdragon 870 and JBL quad speakers.",
     "price": 549.99,
     "brand": "Lenovo",
     "sku": "LEN-TABP12P",
@@ -2272,14 +2825,24 @@
         "priceAdjustment": 50,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 80,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 65,
     "categoryId": 7,
-    "name": "Apple iPad 10\u00E8me g\u00E9n\u00E9ration",
+    "name": "Apple iPad 10ème génération",
     "nameEn": "Apple iPad 10th generation",
-    "description": "iPad 10.9\u0022 avec puce A14 Bionic, USB-C et design modernis\u00E9.",
+    "description": "iPad 10.9\" avec puce A14 Bionic, USB-C et design modernisé.",
     "descriptionEn": "iPad 10.9 inch with A14 Bionic chip, USB-C and modernized design.",
     "price": 409.99,
     "promoPrice": 379.99,
@@ -2307,15 +2870,25 @@
         "priceAdjustment": 100,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": 6.3,
+      "recyclabilityPercent": 82,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 7.6,
+      "energyClass": null
+    }
   },
   {
     "id": 66,
     "categoryId": 7,
     "name": "Samsung Galaxy Tab S9 FE",
     "nameEn": "Samsung Galaxy Tab S9 FE",
-    "description": "Tablette 10.9\u0022 avec Exynos 1380, S Pen inclus et certification IP68.",
-    "descriptionEn": "10.9\u0022 tablet with Exynos 1380, included S Pen and IP68 certification.",
+    "description": "Tablette 10.9\" avec Exynos 1380, S Pen inclus et certification IP68.",
+    "descriptionEn": "10.9\" tablet with Exynos 1380, included S Pen and IP68 certification.",
     "price": 449.99,
     "promoPrice": 399.99,
     "brand": "Samsung",
@@ -2342,15 +2915,23 @@
         "priceAdjustment": 50,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 84,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 67,
     "categoryId": 7,
     "name": "Xiaomi Pad 6",
     "nameEn": "Xiaomi Pad 6",
-    "description": "Tablette 11\u0022 avec Snapdragon 870, \u00E9cran 144Hz et quad speakers Dolby Atmos.",
-    "descriptionEn": "11\u0022 tablet with Snapdragon 870, 144Hz display and Dolby Atmos quad speakers.",
+    "description": "Tablette 11\" avec Snapdragon 870, écran 144Hz et quad speakers Dolby Atmos.",
+    "descriptionEn": "11\" tablet with Snapdragon 870, 144Hz display and Dolby Atmos quad speakers.",
     "price": 349.99,
     "promoPrice": 299.99,
     "brand": "Xiaomi",
@@ -2377,15 +2958,23 @@
         "priceAdjustment": 50,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.1,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 54,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 68,
     "categoryId": 7,
     "name": "Huawei MatePad Pro 11",
     "nameEn": "Huawei MatePad Pro 11",
-    "description": "Tablette 11\u0022 OLED 120Hz avec M-Pencil 2 et clavier magn\u00E9tique.",
-    "descriptionEn": "11\u0022 120Hz OLED tablet with M-Pencil 2 and magnetic keyboard.",
+    "description": "Tablette 11\" OLED 120Hz avec M-Pencil 2 et clavier magnétique.",
+    "descriptionEn": "11\" 120Hz OLED tablet with M-Pencil 2 and magnetic keyboard.",
     "price": 499.99,
     "brand": "Huawei",
     "sku": "HUA-MPP11",
@@ -2411,15 +3000,23 @@
         "priceAdjustment": 60,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.9,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 57,
+      "labels": [],
+      "durabilityIndex": 6.2,
+      "energyClass": null
+    }
   },
   {
     "id": 69,
     "categoryId": 7,
     "name": "Amazon Fire HD 10",
     "nameEn": "Amazon Fire HD 10",
-    "description": "Tablette 10.1\u0022 avec processeur octa-core et Alexa int\u00E9gr\u00E9e.",
-    "descriptionEn": "10.1\u0022 tablet with octa-core processor and built-in Alexa.",
+    "description": "Tablette 10.1\" avec processeur octa-core et Alexa intégrée.",
+    "descriptionEn": "10.1\" tablet with octa-core processor and built-in Alexa.",
     "price": 149.99,
     "promoPrice": 109.99,
     "brand": "Amazon",
@@ -2446,15 +3043,23 @@
         "priceAdjustment": 20,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.4,
+      "repairabilityIndex": 4.8,
+      "recyclabilityPercent": 59,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": null
+    }
   },
   {
     "id": 70,
     "categoryId": 7,
     "name": "Microsoft Surface Pro 9",
     "nameEn": "Microsoft Surface Pro 9",
-    "description": "Tablette PC 2-en-1 13\u0022 avec Intel Core i5, Windows 11 et kickstand int\u00E9gr\u00E9.",
-    "descriptionEn": "13\u0022 2-in-1 tablet PC with Intel Core i5, Windows 11 and built-in kickstand.",
+    "description": "Tablette PC 2-en-1 13\" avec Intel Core i5, Windows 11 et kickstand intégré.",
+    "descriptionEn": "13\" 2-in-1 tablet PC with Intel Core i5, Windows 11 and built-in kickstand.",
     "price": 1199.99,
     "brand": "Microsoft",
     "sku": "MS-SP9",
@@ -2480,7 +3085,15 @@
         "priceAdjustment": 230,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.0,
+      "repairabilityIndex": 7.1,
+      "recyclabilityPercent": 62,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 71,
@@ -2515,14 +3128,22 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.7,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 52,
+      "labels": [],
+      "durabilityIndex": 8.2,
+      "energyClass": null
+    }
   },
   {
     "id": 72,
     "categoryId": 8,
     "name": "JBL Charge 5",
     "nameEn": "JBL Charge 5",
-    "description": "Enceinte Bluetooth portable \u00E9tanche IP67 avec powerbank int\u00E9gr\u00E9e et 20h d\u0027autonomie.",
+    "description": "Enceinte Bluetooth portable étanche IP67 avec powerbank intégrée et 20h d'autonomie.",
     "descriptionEn": "Portable IP67 waterproof Bluetooth speaker with power bank and 20h battery.",
     "price": 179.99,
     "promoPrice": 149.99,
@@ -2558,14 +3179,22 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.2,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 35,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 73,
     "categoryId": 8,
     "name": "Bose SoundLink Max",
     "nameEn": "Bose SoundLink Max",
-    "description": "Enceinte portable avec son st\u00E9r\u00E9o puissant et mode outdoor.",
+    "description": "Enceinte portable avec son stéréo puissant et mode outdoor.",
     "descriptionEn": "Portable speaker with powerful stereo sound and outdoor mode.",
     "price": 399.99,
     "brand": "Bose",
@@ -2592,14 +3221,24 @@
         "priceAdjustment": 0,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 57,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 74,
     "categoryId": 8,
     "name": "Marshall Stanmore III",
     "nameEn": "Marshall Stanmore III",
-    "description": "Enceinte Bluetooth au design r\u00E9tro Marshall avec son signature et \u00E9galiseur dynamique.",
+    "description": "Enceinte Bluetooth au design rétro Marshall avec son signature et égaliseur dynamique.",
     "descriptionEn": "Retro Marshall design Bluetooth speaker with signature sound and dynamic EQ.",
     "price": 349.99,
     "promoPrice": 299.99,
@@ -2621,21 +3260,29 @@
       },
       {
         "id": 157,
-        "name": "Cr\u00E8me",
+        "name": "Crème",
         "nameEn": "Cream",
-        "value": "Cr\u00E8me",
+        "value": "Crème",
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.3,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 41,
+      "labels": [],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 75,
     "categoryId": 8,
     "name": "Ultimate Ears BOOM 3",
     "nameEn": "Ultimate Ears BOOM 3",
-    "description": "Enceinte Bluetooth 360\u00B0 \u00E9tanche avec son \u00E0 360 degr\u00E9s et 15h d\u0027autonomie.",
-    "descriptionEn": "360\u00B0 waterproof Bluetooth speaker with 360-degree sound and 15h battery.",
+    "description": "Enceinte Bluetooth 360° étanche avec son à 360 degrés et 15h d'autonomie.",
+    "descriptionEn": "360° waterproof Bluetooth speaker with 360-degree sound and 15h battery.",
     "price": 129.99,
     "promoPrice": 99.99,
     "brand": "Ultimate Ears",
@@ -2670,7 +3317,15 @@
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.9,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 43,
+      "labels": [],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 76,
@@ -2705,7 +3360,17 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 64,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 77,
@@ -2731,15 +3396,23 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 83,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 78,
     "categoryId": 8,
     "name": "Harman Kardon Aura Studio 4",
     "nameEn": "Harman Kardon Aura Studio 4",
-    "description": "Enceinte design avec \u00E9clairage ambient et son omnidirectionnel 360\u00B0.",
-    "descriptionEn": "Design speaker with ambient lighting and 360\u00B0 omnidirectional sound.",
+    "description": "Enceinte design avec éclairage ambient et son omnidirectionnel 360°.",
+    "descriptionEn": "Design speaker with ambient lighting and 360° omnidirectional sound.",
     "price": 299.99,
     "promoPrice": 249.99,
     "brand": "Harman Kardon",
@@ -2758,14 +3431,22 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.5,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 52,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 79,
     "categoryId": 8,
     "name": "JBL PartyBox Encore",
     "nameEn": "JBL PartyBox Encore",
-    "description": "Enceinte de f\u00EAte portable avec microphone sans fil inclus et effets lumineux.",
+    "description": "Enceinte de fête portable avec microphone sans fil inclus et effets lumineux.",
     "descriptionEn": "Portable party speaker with included wireless mic and light effects.",
     "price": 299.99,
     "brand": "JBL",
@@ -2784,16 +3465,24 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.0,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 55,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 80,
     "categoryId": 8,
     "name": "Devialet Phantom I 108 dB",
     "nameEn": "Devialet Phantom I 108 dB",
-    "description": "Enceinte Hi-Fi haut de gamme 1100W avec technologie ADH\u00AE et SAM\u00AE.",
-    "descriptionEn": "High-end 1100W Hi-Fi speaker with ADH\u00AE and SAM\u00AE technology.",
-    "price": 2190.00,
+    "description": "Enceinte Hi-Fi haut de gamme 1100W avec technologie ADH® et SAM®.",
+    "descriptionEn": "High-end 1100W Hi-Fi speaker with ADH® and SAM® technology.",
+    "price": 2190.0,
     "brand": "Devialet",
     "sku": "DEV-PH1",
     "stock": 6,
@@ -2818,14 +3507,22 @@
         "priceAdjustment": 0,
         "stock": 4
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": null,
+      "recyclabilityPercent": 58,
+      "labels": [],
+      "durabilityIndex": 9.0,
+      "energyClass": null
+    }
   },
   {
     "id": 81,
     "categoryId": 9,
     "name": "Apple Watch Ultra 2",
     "nameEn": "Apple Watch Ultra 2",
-    "description": "Montre connect\u00E9e pour sports extr\u00EAmes avec puce S9, GPS bi-fr\u00E9quence et bo\u00EEtier titane.",
+    "description": "Montre connectée pour sports extrêmes avec puce S9, GPS bi-fréquence et boîtier titane.",
     "descriptionEn": "Smartwatch for extreme sports with S9 chip, dual-frequency GPS and titanium case.",
     "price": 899.99,
     "brand": "Apple",
@@ -2844,14 +3541,25 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 5.4,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EPEAT Gold",
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 82,
     "categoryId": 9,
     "name": "Samsung Galaxy Watch6 Classic",
     "nameEn": "Samsung Galaxy Watch6 Classic",
-    "description": "Montre connect\u00E9e avec lunette rotative, BioActive Sensor et Wear OS.",
+    "description": "Montre connectée avec lunette rotative, BioActive Sensor et Wear OS.",
     "descriptionEn": "Smartwatch with rotating bezel, BioActive Sensor and Wear OS.",
     "price": 429.99,
     "promoPrice": 369.99,
@@ -2879,14 +3587,24 @@
         "priceAdjustment": 20,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.9,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 70,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 83,
     "categoryId": 9,
     "name": "Apple Watch Series 9",
     "nameEn": "Apple Watch Series 9",
-    "description": "Montre connect\u00E9e avec puce S9, Double Tap et \u00E9cran toujours allum\u00E9 2000 nits.",
+    "description": "Montre connectée avec puce S9, Double Tap et écran toujours allumé 2000 nits.",
     "descriptionEn": "Smartwatch with S9 chip, Double Tap and 2000 nit always-on display.",
     "price": 449.99,
     "promoPrice": 399.99,
@@ -2914,14 +3632,24 @@
         "priceAdjustment": 30,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.8,
+      "repairabilityIndex": 5.6,
+      "recyclabilityPercent": 72,
+      "labels": [
+        "EPEAT Gold"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 84,
     "categoryId": 9,
     "name": "Garmin Fenix 7 Pro",
     "nameEn": "Garmin Fenix 7 Pro",
-    "description": "Montre GPS multisports avec lampe LED, \u00E9cran MIP et autonomie 22 jours.",
+    "description": "Montre GPS multisports avec lampe LED, écran MIP et autonomie 22 jours.",
     "descriptionEn": "Multi-sport GPS watch with LED flashlight, MIP display and 22-day battery.",
     "price": 799.99,
     "promoPrice": 699.99,
@@ -2949,14 +3677,22 @@
         "priceAdjustment": 200,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 55,
+      "labels": [],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 85,
     "categoryId": 9,
     "name": "Fitbit Sense 2",
     "nameEn": "Fitbit Sense 2",
-    "description": "Montre sant\u00E9 avec EDA/ECG, GPS int\u00E9gr\u00E9 et suivi du stress en continu.",
+    "description": "Montre santé avec EDA/ECG, GPS intégré et suivi du stress en continu.",
     "descriptionEn": "Health smartwatch with EDA/ECG, built-in GPS and continuous stress tracking.",
     "price": 249.99,
     "promoPrice": 199.99,
@@ -2984,14 +3720,22 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.8,
+      "repairabilityIndex": 4.9,
+      "recyclabilityPercent": 39,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": null
+    }
   },
   {
     "id": 86,
     "categoryId": 9,
     "name": "Google Pixel Watch 2",
     "nameEn": "Google Pixel Watch 2",
-    "description": "Montre connect\u00E9e Google avec Fitbit int\u00E9gr\u00E9, Wear OS 4 et puce Snapdragon W5.",
+    "description": "Montre connectée Google avec Fitbit intégré, Wear OS 4 et puce Snapdragon W5.",
     "descriptionEn": "Google smartwatch with built-in Fitbit, Wear OS 4 and Snapdragon W5 chip.",
     "price": 399.99,
     "promoPrice": 349.99,
@@ -3019,15 +3763,25 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.1,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 78,
+      "labels": [
+        "TCO Certified"
+      ],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 87,
     "categoryId": 9,
     "name": "Huawei Watch GT 4",
     "nameEn": "Huawei Watch GT 4",
-    "description": "Montre connect\u00E9e \u00E9l\u00E9gante avec suivi sant\u00E9 TruSeen 5.5\u002B et 14 jours d\u0027autonomie.",
-    "descriptionEn": "Elegant smartwatch with TruSeen 5.5\u002B health tracking and 14-day battery.",
+    "description": "Montre connectée élégante avec suivi santé TruSeen 5.5+ et 14 jours d'autonomie.",
+    "descriptionEn": "Elegant smartwatch with TruSeen 5.5+ health tracking and 14-day battery.",
     "price": 249.99,
     "brand": "Huawei",
     "sku": "HUA-WGT4",
@@ -3053,14 +3807,22 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.3,
+      "repairabilityIndex": 5.3,
+      "recyclabilityPercent": 45,
+      "labels": [],
+      "durabilityIndex": 6.2,
+      "energyClass": null
+    }
   },
   {
     "id": 88,
     "categoryId": 9,
     "name": "Amazfit T-Rex Ultra",
     "nameEn": "Amazfit T-Rex Ultra",
-    "description": "Montre outdoor avec certification MIL-STD-810G, plong\u00E9e libre et GPS double bande.",
+    "description": "Montre outdoor avec certification MIL-STD-810G, plongée libre et GPS double bande.",
     "descriptionEn": "Outdoor watch with MIL-STD-810G certification, freediving and dual-band GPS.",
     "price": 349.99,
     "promoPrice": 299.99,
@@ -3080,14 +3842,22 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.6,
+      "repairabilityIndex": 4.6,
+      "recyclabilityPercent": 47,
+      "labels": [],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 89,
     "categoryId": 9,
     "name": "Withings ScanWatch 2",
     "nameEn": "Withings ScanWatch 2",
-    "description": "Montre hybride avec ECG, SpO2 et d\u00E9tection de la fibrillation auriculaire.",
+    "description": "Montre hybride avec ECG, SpO2 et détection de la fibrillation auriculaire.",
     "descriptionEn": "Hybrid watch with ECG, SpO2 and atrial fibrillation detection.",
     "price": 349.99,
     "brand": "Withings",
@@ -3114,14 +3884,22 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 84,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 90,
     "categoryId": 9,
     "name": "Samsung Galaxy Watch FE",
     "nameEn": "Samsung Galaxy Watch FE",
-    "description": "Montre connect\u00E9e accessible avec BioActive Sensor et suivi du sommeil.",
+    "description": "Montre connectée accessible avec BioActive Sensor et suivi du sommeil.",
     "descriptionEn": "Affordable smartwatch with BioActive Sensor and sleep tracking.",
     "price": 199.99,
     "promoPrice": 169.99,
@@ -3149,17 +3927,27 @@
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.0,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 86,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 5.8,
+      "energyClass": null
+    }
   },
   {
     "id": 91,
     "categoryId": 10,
-    "name": "Dune \u2013 Tome 1 de Frank Herbert",
+    "name": "Dune – Tome 1 de Frank Herbert",
     "nameEn": "Dune - Volume 1 by Frank Herbert",
-    "description": "L\u0027\u00E9pop\u00E9e de science-fiction culte sur la plan\u00E8te Arrakis. \u00C9dition poche.",
+    "description": "L'épopée de science-fiction culte sur la planète Arrakis. Édition poche.",
     "descriptionEn": "The cult sci-fi epic on the planet Arrakis. Pocket edition.",
-    "price": 9.90,
-    "promoPrice": 7.90,
+    "price": 9.9,
+    "promoPrice": 7.9,
     "brand": "Pocket",
     "sku": "LIV-DUNE1",
     "stock": 100,
@@ -3189,11 +3977,11 @@
   {
     "id": 92,
     "categoryId": 10,
-    "name": "Le Petit Prince \u2013 Antoine de Saint-Exup\u00E9ry",
+    "name": "Le Petit Prince – Antoine de Saint-Exupéry",
     "nameEn": "The Little Prince - Antoine de Saint-Exupery",
-    "description": "Le classique intemporel de la litt\u00E9rature fran\u00E7aise. \u00C9dition illustr\u00E9e.",
+    "description": "Le classique intemporel de la littérature française. Édition illustrée.",
     "descriptionEn": "The timeless classic of French literature. Illustrated edition.",
-    "price": 7.50,
+    "price": 7.5,
     "brand": "Gallimard",
     "sku": "LIV-PP",
     "stock": 150,
@@ -3212,9 +4000,9 @@
       },
       {
         "id": 189,
-        "name": "Illustr\u00E9",
+        "name": "Illustré",
         "nameEn": "Illustrated",
-        "value": "Illustr\u00E9",
+        "value": "Illustré",
         "priceAdjustment": 12,
         "stock": 60
       }
@@ -3223,12 +4011,12 @@
   {
     "id": 93,
     "categoryId": 10,
-    "name": "One Piece Tome 107 \u2013 Eiichiro Oda",
+    "name": "One Piece Tome 107 – Eiichiro Oda",
     "nameEn": "One Piece Volume 107 - Eiichiro Oda",
     "description": "Dernier tome de la saga manga culte One Piece par Eiichiro Oda.",
     "descriptionEn": "Latest volume of the cult manga saga One Piece by Eiichiro Oda.",
-    "price": 7.20,
-    "brand": "Gl\u00E9nat",
+    "price": 7.2,
+    "brand": "Glénat",
     "sku": "LIV-OP107",
     "stock": 80,
     "isNew": true,
@@ -3249,9 +4037,9 @@
   {
     "id": 94,
     "categoryId": 10,
-    "name": "Naruto Int\u00E9grale Coffret 1",
+    "name": "Naruto Intégrale Coffret 1",
     "nameEn": "Naruto Complete Box Set 1",
-    "description": "Coffret int\u00E9grale des tomes 1 \u00E0 27 de Naruto en \u00E9dition collector.",
+    "description": "Coffret intégrale des tomes 1 à 27 de Naruto en édition collector.",
     "descriptionEn": "Complete box set of Naruto volumes 1-27 in collector edition.",
     "price": 149.99,
     "promoPrice": 129.99,
@@ -3276,11 +4064,11 @@
   {
     "id": 95,
     "categoryId": 10,
-    "name": "L\u0027Anomalie \u2013 Herv\u00E9 Le Tellier (Goncourt 2020)",
+    "name": "L'Anomalie – Hervé Le Tellier (Goncourt 2020)",
     "nameEn": "The Anomaly - Herve Le Tellier (Goncourt 2020)",
-    "description": "Roman Prix Goncourt 2020. Un vol Paris-New York confront\u00E9 \u00E0 l\u0027impossible.",
+    "description": "Roman Prix Goncourt 2020. Un vol Paris-New York confronté à l'impossible.",
     "descriptionEn": "Goncourt Prize 2020 novel. A Paris-New York flight confronted with the impossible.",
-    "price": 8.90,
+    "price": 8.9,
     "brand": "Folio",
     "sku": "LIV-ANOMALIE",
     "stock": 60,
@@ -3302,12 +4090,12 @@
   {
     "id": 96,
     "categoryId": 10,
-    "name": "Sapiens \u2013 Yuval Noah Harari",
+    "name": "Sapiens – Yuval Noah Harari",
     "nameEn": "Sapiens - Yuval Noah Harari",
-    "description": "L\u0027histoire de l\u0027humanit\u00E9 des origines \u00E0 nos jours. Best-seller mondial.",
+    "description": "L'histoire de l'humanité des origines à nos jours. Best-seller mondial.",
     "descriptionEn": "The history of humankind from origins to present day. Worldwide best-seller.",
-    "price": 12.90,
-    "promoPrice": 9.90,
+    "price": 12.9,
+    "promoPrice": 9.9,
     "brand": "Albin Michel",
     "sku": "LIV-SAPIENS",
     "stock": 70,
@@ -3337,12 +4125,12 @@
   {
     "id": 97,
     "categoryId": 10,
-    "name": "Ast\u00E9rix Tome 40 \u2013 L\u0027Iris blanc",
+    "name": "Astérix Tome 40 – L'Iris blanc",
     "nameEn": "Asterix Volume 40 - The White Iris",
-    "description": "Derni\u00E8re aventure d\u0027Ast\u00E9rix et Ob\u00E9lix par Fabcaro.",
+    "description": "Dernière aventure d'Astérix et Obélix par Fabcaro.",
     "descriptionEn": "Latest adventure of Asterix and Obelix by Fabcaro.",
-    "price": 10.50,
-    "brand": "Albert Ren\u00E9",
+    "price": 10.5,
+    "brand": "Albert René",
     "sku": "LIV-AST40",
     "stock": 45,
     "isNew": true,
@@ -3363,12 +4151,12 @@
   {
     "id": 98,
     "categoryId": 10,
-    "name": "Devenir \u2013 Michelle Obama",
+    "name": "Devenir – Michelle Obama",
     "nameEn": "Becoming - Michelle Obama",
-    "description": "L\u0027autobiographie de l\u0027ancienne Premi\u00E8re dame des \u00C9tats-Unis.",
+    "description": "L'autobiographie de l'ancienne Première dame des États-Unis.",
     "descriptionEn": "The autobiography of the former First Lady of the United States.",
-    "price": 8.90,
-    "promoPrice": 6.90,
+    "price": 8.9,
+    "promoPrice": 6.9,
     "brand": "Le Livre de Poche",
     "sku": "LIV-DEVENIR",
     "stock": 55,
@@ -3400,9 +4188,9 @@
     "categoryId": 10,
     "name": "Jujutsu Kaisen Tome 25",
     "nameEn": "Jujutsu Kaisen Volume 25",
-    "description": "Dernier tome du manga ph\u00E9nom\u00E8ne Jujutsu Kaisen.",
+    "description": "Dernier tome du manga phénomène Jujutsu Kaisen.",
     "descriptionEn": "Latest volume of the phenomenon manga Jujutsu Kaisen.",
-    "price": 7.20,
+    "price": 7.2,
     "brand": "Ki-oon",
     "sku": "LIV-JJK25",
     "stock": 65,
@@ -3426,7 +4214,7 @@
     "categoryId": 10,
     "name": "Le Guide du Routard France 2024",
     "nameEn": "Lonely Planet France 2024",
-    "description": "Guide de voyage complet avec itin\u00E9raires, bonnes adresses et carte d\u00E9tachable.",
+    "description": "Guide de voyage complet avec itinéraires, bonnes adresses et carte détachable.",
     "descriptionEn": "Complete travel guide with itineraries, top picks and detachable map.",
     "price": 16.95,
     "promoPrice": 14.95,

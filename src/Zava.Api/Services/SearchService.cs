@@ -47,6 +47,9 @@ public class SearchService
         if (request.InStock == true)
             query = query.Where(p => p.Stock > 0);
 
+        if (request.EcoResponsible == true)
+            query = query.Where(p => p.Sustainability != null && p.Sustainability.OverallScore >= 6.0);
+
         var filtered = query.ToList();
 
         // Build facets from filtered results (before pagination)
@@ -167,6 +170,18 @@ public class SearchService
             .ToList();
         if (ratingValues.Count > 0)
             facets.Add(new FacetGroup { Name = "Avis clients", NameEn = "Rating", Values = ratingValues });
+
+        // Eco-responsible facet
+        var ecoCount = products.Count(p => p.Sustainability != null && p.Sustainability.OverallScore >= 6.0);
+        if (ecoCount > 0)
+        {
+            facets.Add(new FacetGroup
+            {
+                Name = "Écoresponsable",
+                NameEn = "Eco-Responsible",
+                Values = [new FacetValue { Value = "Produit écoresponsable", FilterValue = "true", Count = ecoCount }]
+            });
+        }
 
         return facets;
     }

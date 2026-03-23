@@ -24,6 +24,17 @@ public class Product
     public List<int> RelatedProductIds { get; set; } = new();
     public DateTime CreatedAt { get; set; }
     public SiteType SiteType { get; set; }
+    public SustainabilityRating? Sustainability { get; set; }
+}
+
+public class SustainabilityRating
+{
+    public double? RepairabilityIndex { get; set; }
+    public double? DurabilityIndex { get; set; }
+    public string? EnergyClass { get; set; }
+    public int? RecyclabilityPercent { get; set; }
+    public List<string> Labels { get; set; } = new();
+    public double OverallScore { get; set; }
 }
 
 public class ProductVariant

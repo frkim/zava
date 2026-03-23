@@ -4,7 +4,7 @@
     "categoryId": 1,
     "name": "Samsung RB38C775CS9 Bespoke",
     "nameEn": "Samsung RB38C775CS9 Bespoke",
-    "description": "R\u00E9frig\u00E9rateur combin\u00E9 390L avec cong\u00E9lateur en bas, No Frost int\u00E9gral et Wi-Fi.",
+    "description": "Réfrigérateur combiné 390L avec congélateur en bas, No Frost intégral et Wi-Fi.",
     "descriptionEn": "390L bottom-freezer combi with Total No Frost and Wi-Fi.",
     "price": 899.99,
     "promoPrice": 799.99,
@@ -24,14 +24,24 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": 7.8,
+      "recyclabilityPercent": 76,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 2,
     "categoryId": 1,
-    "name": "Bosch KGN39AIAT S\u00E9rie 6",
+    "name": "Bosch KGN39AIAT Série 6",
     "nameEn": "Bosch KGN39AIAT Series 6",
-    "description": "Combin\u00E9 r\u00E9frig\u00E9rateur-cong\u00E9lateur 363L, VitaFresh et compresseur inverter.",
+    "description": "Combiné réfrigérateur-congélateur 363L, VitaFresh et compresseur inverter.",
     "descriptionEn": "363L fridge-freezer combi, VitaFresh and inverter compressor.",
     "price": 799.99,
     "brand": "Bosch",
@@ -50,15 +60,25 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": 8.4,
+      "recyclabilityPercent": 77,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 3,
     "categoryId": 1,
     "name": "LG GBV3200DSW",
     "nameEn": "LG GBV3200DSW",
-    "description": "R\u00E9frig\u00E9rateur combin\u00E9 387L avec Linear Cooling et DoorCooling\u002B.",
-    "descriptionEn": "387L combi fridge with Linear Cooling and DoorCooling\u002B.",
+    "description": "Réfrigérateur combiné 387L avec Linear Cooling et DoorCooling+.",
+    "descriptionEn": "387L combi fridge with Linear Cooling and DoorCooling+.",
     "price": 699.99,
     "promoPrice": 599.99,
     "brand": "LG",
@@ -77,14 +97,24 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": 7.6,
+      "recyclabilityPercent": 79,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": "D"
+    }
   },
   {
     "id": 4,
     "categoryId": 1,
     "name": "Whirlpool W7 931T MX H",
     "nameEn": "Whirlpool W7 931T MX H",
-    "description": "R\u00E9frig\u00E9rateur combin\u00E9 368L avec 6\u00E8me Sens et Total No Frost.",
+    "description": "Réfrigérateur combiné 368L avec 6ème Sens et Total No Frost.",
     "descriptionEn": "368L combi fridge with 6th Sense and Total No Frost.",
     "price": 649.99,
     "brand": "Whirlpool",
@@ -103,14 +133,24 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.2,
+      "repairabilityIndex": 6.9,
+      "recyclabilityPercent": 63,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": "E"
+    }
   },
   {
     "id": 5,
     "categoryId": 1,
     "name": "Liebherr CNsfd 5743",
     "nameEn": "Liebherr CNsfd 5743",
-    "description": "Combin\u00E9 NoFrost 371L avec EasyFresh et SuperCool.",
+    "description": "Combiné NoFrost 371L avec EasyFresh et SuperCool.",
     "descriptionEn": "371L NoFrost combi with EasyFresh and SuperCool.",
     "price": 1099.99,
     "promoPrice": 949.99,
@@ -130,14 +170,24 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": 8.2,
+      "recyclabilityPercent": 83,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 8.8,
+      "energyClass": "C"
+    }
   },
   {
     "id": 6,
     "categoryId": 1,
     "name": "Samsung RF65A967FS9 Family Hub",
     "nameEn": "Samsung RF65A967FS9 Family Hub",
-    "description": "R\u00E9frig\u00E9rateur am\u00E9ricain 641L avec \u00E9cran tactile Family Hub et distributeur d\u0027eau.",
+    "description": "Réfrigérateur américain 641L avec écran tactile Family Hub et distributeur d'eau.",
     "descriptionEn": "641L American fridge with Family Hub touchscreen and water dispenser.",
     "price": 2499.99,
     "brand": "Samsung",
@@ -156,15 +206,25 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 85,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": "D"
+    }
   },
   {
     "id": 7,
     "categoryId": 1,
     "name": "Beko RCSE300K40SN",
     "nameEn": "Beko RCSE300K40SN",
-    "description": "R\u00E9frig\u00E9rateur combin\u00E9 291L \u00E9conomique classe A\u002B.",
-    "descriptionEn": "291L budget combi fridge A\u002B rated.",
+    "description": "Réfrigérateur combiné 291L économique classe A+.",
+    "descriptionEn": "291L budget combi fridge A+ rated.",
     "price": 399.99,
     "promoPrice": 349.99,
     "brand": "Beko",
@@ -183,14 +243,24 @@
         "priceAdjustment": 0,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.5,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 86,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.0,
+      "energyClass": "E"
+    }
   },
   {
     "id": 8,
     "categoryId": 1,
     "name": "Electrolux LNT7ME34G1",
     "nameEn": "Electrolux LNT7ME34G1",
-    "description": "Combin\u00E9 TwinTech 360L avec CustomFlex et FreshMode.",
+    "description": "Combiné TwinTech 360L avec CustomFlex et FreshMode.",
     "descriptionEn": "360L TwinTech combi with CustomFlex and FreshMode.",
     "price": 899.99,
     "brand": "Electrolux",
@@ -209,14 +279,22 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 88,
+      "labels": [],
+      "durabilityIndex": 7.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 9,
     "categoryId": 1,
     "name": "Haier HB20FPAAA",
     "nameEn": "Haier HB20FPAAA",
-    "description": "R\u00E9frig\u00E9rateur 4 portes 547L avec MyZone et ABT antibact\u00E9rien.",
+    "description": "Réfrigérateur 4 portes 547L avec MyZone et ABT antibactérien.",
     "descriptionEn": "4-door 547L fridge with MyZone and ABT antibacterial.",
     "price": 1199.99,
     "promoPrice": 999.99,
@@ -236,14 +314,22 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.9,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 61,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": "D"
+    }
   },
   {
     "id": 10,
     "categoryId": 1,
     "name": "Miele KFN 4898 AD",
     "nameEn": "Miele KFN 4898 AD",
-    "description": "Combin\u00E9 FreshAir 362L avec DailyFresh et NoFrost.",
+    "description": "Combiné FreshAir 362L avec DailyFresh et NoFrost.",
     "descriptionEn": "362L FreshAir combi with DailyFresh and NoFrost.",
     "price": 1599.99,
     "brand": "Miele",
@@ -262,14 +348,25 @@
         "priceAdjustment": 0,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.9,
+      "repairabilityIndex": 9.0,
+      "recyclabilityPercent": 92,
+      "labels": [
+        "EU Ecolabel",
+        "Miele@home Connected"
+      ],
+      "durabilityIndex": 9.2,
+      "energyClass": "B"
+    }
   },
   {
     "id": 11,
     "categoryId": 2,
-    "name": "Bosch WQB245B0FF S\u00E9rie 8",
+    "name": "Bosch WQB245B0FF Série 8",
     "nameEn": "Bosch WQB245B0FF Series 8",
-    "description": "S\u00E8che-linge pompe \u00E0 chaleur 9kg avec SelfCleaning Condenser et AutoDry.",
+    "description": "Sèche-linge pompe à chaleur 9kg avec SelfCleaning Condenser et AutoDry.",
     "descriptionEn": "9kg heat pump dryer with SelfCleaning Condenser and AutoDry.",
     "price": 899.99,
     "promoPrice": 799.99,
@@ -289,7 +386,17 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 9.0,
+      "repairabilityIndex": 8.6,
+      "recyclabilityPercent": 94,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.8,
+      "energyClass": "A"
+    }
   },
   {
     "id": 12,
@@ -315,14 +422,24 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 75,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": "B"
+    }
   },
   {
     "id": 13,
     "categoryId": 2,
     "name": "Miele WSD 663 WCS",
     "nameEn": "Miele WSD 663 WCS",
-    "description": "Lave-linge 8kg avec TwinDos et syst\u00E8me QuickPowerWash.",
+    "description": "Lave-linge 8kg avec TwinDos et système QuickPowerWash.",
     "descriptionEn": "8kg washing machine with TwinDos and QuickPowerWash system.",
     "price": 1299.99,
     "promoPrice": 1099.99,
@@ -342,14 +459,25 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.9,
+      "repairabilityIndex": 8.9,
+      "recyclabilityPercent": 76,
+      "labels": [
+        "EU Ecolabel",
+        "Miele@home Connected"
+      ],
+      "durabilityIndex": 9.0,
+      "energyClass": "A"
+    }
   },
   {
     "id": 14,
     "categoryId": 2,
     "name": "LG F94V35WHS",
     "nameEn": "LG F94V35WHS",
-    "description": "Lave-linge 9kg avec AI DD, vapeur et Wi-Fi connect\u00E9.",
+    "description": "Lave-linge 9kg avec AI DD, vapeur et Wi-Fi connecté.",
     "descriptionEn": "9kg washing machine with AI DD, steam and Wi-Fi connected.",
     "price": 599.99,
     "promoPrice": 499.99,
@@ -369,7 +497,17 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 78,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": "B"
+    }
   },
   {
     "id": 15,
@@ -395,15 +533,25 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": 7.8,
+      "recyclabilityPercent": 80,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.6,
+      "energyClass": "B"
+    }
   },
   {
     "id": 16,
     "categoryId": 2,
     "name": "Whirlpool FFDB 9469 BSV FR",
     "nameEn": "Whirlpool FFDB 9469 BSV FR",
-    "description": "Lave-linge 9kg avec FreshCare\u002B et moteur SenseInverter.",
-    "descriptionEn": "9kg washing machine with FreshCare\u002B and SenseInverter motor.",
+    "description": "Lave-linge 9kg avec FreshCare+ et moteur SenseInverter.",
+    "descriptionEn": "9kg washing machine with FreshCare+ and SenseInverter motor.",
     "price": 479.99,
     "promoPrice": 399.99,
     "brand": "Whirlpool",
@@ -422,7 +570,17 @@
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.9,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 64,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 17,
@@ -448,14 +606,24 @@
         "priceAdjustment": 0,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.1,
+      "repairabilityIndex": 6.4,
+      "recyclabilityPercent": 84,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.2,
+      "energyClass": "C"
+    }
   },
   {
     "id": 18,
     "categoryId": 2,
-    "name": "Samsung WD90T534DBN Lavante-s\u00E9chante",
+    "name": "Samsung WD90T534DBN Lavante-séchante",
     "nameEn": "Samsung WD90T534DBN Washer-dryer",
-    "description": "Lavante-s\u00E9chante 9/6kg avec EcoBubble et AirWash.",
+    "description": "Lavante-séchante 9/6kg avec EcoBubble et AirWash.",
     "descriptionEn": "9/6kg washer-dryer with EcoBubble and AirWash.",
     "price": 799.99,
     "promoPrice": 699.99,
@@ -475,14 +643,24 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 85,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": "B"
+    }
   },
   {
     "id": 19,
     "categoryId": 2,
     "name": "Haier HW80-BP14636N",
     "nameEn": "Haier HW80-BP14636N",
-    "description": "Lave-linge 8kg avec I-Refresh vapeur et ABT antibact\u00E9rien.",
+    "description": "Lave-linge 8kg avec I-Refresh vapeur et ABT antibactérien.",
     "descriptionEn": "8kg washing machine with I-Refresh steam and ABT antibacterial.",
     "price": 449.99,
     "brand": "Haier",
@@ -501,15 +679,23 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.1,
+      "repairabilityIndex": 6.0,
+      "recyclabilityPercent": 57,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": "C"
+    }
   },
   {
     "id": 20,
     "categoryId": 2,
     "name": "Indesit BWE 91496X WK FR N",
     "nameEn": "Indesit BWE 91496X WK FR N",
-    "description": "Lave-linge 9kg Push \u0026 Wash avec programme rapide 30 min.",
-    "descriptionEn": "9kg Push \u0026 Wash washing machine with 30-min quick program.",
+    "description": "Lave-linge 9kg Push & Wash avec programme rapide 30 min.",
+    "descriptionEn": "9kg Push & Wash washing machine with 30-min quick program.",
     "price": 349.99,
     "promoPrice": 299.99,
     "brand": "Indesit",
@@ -528,14 +714,22 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.6,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 60,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": "D"
+    }
   },
   {
     "id": 21,
     "categoryId": 3,
-    "name": "Bosch SMV6ZCX49E S\u00E9rie 6",
+    "name": "Bosch SMV6ZCX49E Série 6",
     "nameEn": "Bosch SMV6ZCX49E Series 6",
-    "description": "Lave-vaisselle tout int\u00E9grable 14 couverts avec PerfectDry Zeolith.",
+    "description": "Lave-vaisselle tout intégrable 14 couverts avec PerfectDry Zeolith.",
     "descriptionEn": "14-place fully integrated dishwasher with PerfectDry Zeolith.",
     "price": 799.99,
     "promoPrice": 699.99,
@@ -555,7 +749,17 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.4,
+      "repairabilityIndex": 8.2,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": "B"
+    }
   },
   {
     "id": 22,
@@ -581,7 +785,18 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 9.2,
+      "repairabilityIndex": 8.8,
+      "recyclabilityPercent": 93,
+      "labels": [
+        "EU Ecolabel",
+        "Miele@home Connected"
+      ],
+      "durabilityIndex": 9.0,
+      "energyClass": "A"
+    }
   },
   {
     "id": 23,
@@ -608,7 +823,17 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 94,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": "C"
+    }
   },
   {
     "id": 24,
@@ -634,7 +859,17 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.2,
+      "repairabilityIndex": 8.5,
+      "recyclabilityPercent": 75,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": "B"
+    }
   },
   {
     "id": 25,
@@ -661,7 +896,17 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.8,
+      "repairabilityIndex": 6.6,
+      "recyclabilityPercent": 77,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": "D"
+    }
   },
   {
     "id": 26,
@@ -687,7 +932,15 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.5,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 60,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 27,
@@ -714,7 +967,17 @@
         "priceAdjustment": 0,
         "stock": 16
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": 7.6,
+      "recyclabilityPercent": 81,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": "B"
+    }
   },
   {
     "id": 28,
@@ -740,14 +1003,24 @@
         "priceAdjustment": 0,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 82,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": "C"
+    }
   },
   {
     "id": 29,
     "categoryId": 3,
     "name": "Hotpoint HFC 3T232 WG X",
     "nameEn": "Hotpoint HFC 3T232 WG X",
-    "description": "Lave-vaisselle pose libre 14 couverts avec 3\u00E8me panier.",
+    "description": "Lave-vaisselle pose libre 14 couverts avec 3ème panier.",
     "descriptionEn": "14-place freestanding dishwasher with 3rd basket.",
     "price": 399.99,
     "promoPrice": 349.99,
@@ -767,14 +1040,22 @@
         "priceAdjustment": 0,
         "stock": 28
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.2,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 53,
+      "labels": [],
+      "durabilityIndex": 5.2,
+      "energyClass": "D"
+    }
   },
   {
     "id": 30,
     "categoryId": 3,
     "name": "Candy CF 5C7F0W",
     "nameEn": "Candy CF 5C7F0W",
-    "description": "Lave-vaisselle 15 couverts connect\u00E9 Wi-Fi avec programme rapide 39 min.",
+    "description": "Lave-vaisselle 15 couverts connecté Wi-Fi avec programme rapide 39 min.",
     "descriptionEn": "15-place Wi-Fi connected dishwasher with 39-min quick program.",
     "price": 349.99,
     "brand": "Candy",
@@ -793,14 +1074,22 @@
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.8,
+      "repairabilityIndex": 5.2,
+      "recyclabilityPercent": 55,
+      "labels": [],
+      "durabilityIndex": 5.0,
+      "energyClass": "E"
+    }
   },
   {
     "id": 31,
     "categoryId": 4,
     "name": "Dyson V15 Detect Absolute",
     "nameEn": "Dyson V15 Detect Absolute",
-    "description": "Aspirateur balai sans fil avec laser de d\u00E9tection de poussi\u00E8re et \u00E9cran LCD.",
+    "description": "Aspirateur balai sans fil avec laser de détection de poussière et écran LCD.",
     "descriptionEn": "Cordless stick vacuum with dust detection laser and LCD screen.",
     "price": 699.99,
     "promoPrice": 599.99,
@@ -820,13 +1109,23 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 88,
+      "labels": [
+        "Recycled ABS Plastics"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 32,
     "categoryId": 4,
-    "name": "iRobot Roomba j9\u002B",
-    "nameEn": "iRobot Roomba j9\u002B",
+    "name": "iRobot Roomba j9+",
+    "nameEn": "iRobot Roomba j9+",
     "description": "Robot aspirateur avec vidange automatique, navigation PrecisionVision et lavage.",
     "descriptionEn": "Robot vacuum with auto-empty, PrecisionVision navigation and mopping.",
     "price": 899.99,
@@ -847,7 +1146,15 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.7,
+      "repairabilityIndex": 5.2,
+      "recyclabilityPercent": 60,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 33,
@@ -873,14 +1180,22 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.1,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 63,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 34,
     "categoryId": 4,
     "name": "Dyson Gen5detect Absolute",
     "nameEn": "Dyson Gen5detect Absolute",
-    "description": "Aspirateur balai sans fil nouvelle g\u00E9n\u00E9ration avec filtration HEPA et 70 min d\u0027autonomie.",
+    "description": "Aspirateur balai sans fil nouvelle génération avec filtration HEPA et 70 min d'autonomie.",
     "descriptionEn": "Next-gen cordless vacuum with HEPA filtration and 70-min runtime.",
     "price": 899.99,
     "brand": "Dyson",
@@ -899,14 +1214,25 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.3,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 93,
+      "labels": [
+        "EU Ecolabel",
+        "Recycled ABS Plastics"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 35,
     "categoryId": 4,
     "name": "Rowenta X-Force Flex 14.60",
     "nameEn": "Rowenta X-Force Flex 14.60",
-    "description": "Aspirateur balai sans fil flexible avec tube articul\u00E9 et brosse LED.",
+    "description": "Aspirateur balai sans fil flexible avec tube articulé et brosse LED.",
     "descriptionEn": "Flexible cordless stick vacuum with articulated tube and LED brush.",
     "price": 399.99,
     "promoPrice": 349.99,
@@ -926,14 +1252,22 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 82,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 36,
     "categoryId": 4,
     "name": "Miele Complete C3 Silence",
     "nameEn": "Miele Complete C3 Silence",
-    "description": "Aspirateur tra\u00EEneau ultra-silencieux avec brosse Parquet Twister et filtre AirClean Plus.",
+    "description": "Aspirateur traîneau ultra-silencieux avec brosse Parquet Twister et filtre AirClean Plus.",
     "descriptionEn": "Ultra-quiet canister vacuum with Parquet Twister brush and AirClean Plus filter.",
     "price": 449.99,
     "brand": "Miele",
@@ -952,14 +1286,25 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.3,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 76,
+      "labels": [
+        "EU Ecolabel",
+        "Miele@home Connected"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 37,
     "categoryId": 4,
-    "name": "Xiaomi Robot Vacuum X10\u002B",
-    "nameEn": "Xiaomi Robot Vacuum X10\u002B",
-    "description": "Robot aspirateur laveur avec station de vidange et serpilli\u00E8re auto-nettoyante.",
+    "name": "Xiaomi Robot Vacuum X10+",
+    "nameEn": "Xiaomi Robot Vacuum X10+",
+    "description": "Robot aspirateur laveur avec station de vidange et serpillière auto-nettoyante.",
     "descriptionEn": "Robot vacuum-mop with auto-empty station and self-cleaning mop.",
     "price": 499.99,
     "promoPrice": 429.99,
@@ -979,14 +1324,22 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.9,
+      "repairabilityIndex": 4.8,
+      "recyclabilityPercent": 44,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": null
+    }
   },
   {
     "id": 38,
     "categoryId": 4,
     "name": "Bosch Unlimited 7 ProAnimal",
     "nameEn": "Bosch Unlimited 7 ProAnimal",
-    "description": "Aspirateur balai sans fil avec batterie interchangeable et brosse sp\u00E9ciale animaux.",
+    "description": "Aspirateur balai sans fil avec batterie interchangeable et brosse spéciale animaux.",
     "descriptionEn": "Cordless stick vacuum with interchangeable battery and pet hair brush.",
     "price": 349.99,
     "brand": "Bosch",
@@ -1005,14 +1358,25 @@
         "priceAdjustment": 0,
         "stock": 28
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 80,
+      "labels": [
+        "EU Ecolabel",
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 39,
     "categoryId": 4,
     "name": "Samsung Bespoke Jet AI",
     "nameEn": "Samsung Bespoke Jet AI",
-    "description": "Aspirateur balai sans fil avec station All-in-One et d\u00E9tection IA de poussi\u00E8re.",
+    "description": "Aspirateur balai sans fil avec station All-in-One et détection IA de poussière.",
     "descriptionEn": "Cordless vacuum with All-in-One station and AI dust detection.",
     "price": 799.99,
     "promoPrice": 699.99,
@@ -1032,18 +1396,28 @@
         "priceAdjustment": 0,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 81,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 40,
     "categoryId": 4,
-    "name": "K\u00E4rcher WD 6 Premium",
+    "name": "Kärcher WD 6 Premium",
     "nameEn": "Karcher WD 6 Premium",
-    "description": "Aspirateur eau et poussi\u00E8re professionnel 30L avec d\u00E9colmatage automatique.",
-    "descriptionEn": "30L professional wet \u0026 dry vacuum with automatic filter cleaning.",
+    "description": "Aspirateur eau et poussière professionnel 30L avec décolmatage automatique.",
+    "descriptionEn": "30L professional wet & dry vacuum with automatic filter cleaning.",
     "price": 249.99,
     "promoPrice": 219.99,
-    "brand": "K\u00E4rcher",
+    "brand": "Kärcher",
     "sku": "KAR-WD6P",
     "stock": 35,
     "isNew": false,
@@ -1059,14 +1433,22 @@
         "priceAdjustment": 0,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.9,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 51,
+      "labels": [],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 41,
     "categoryId": 5,
-    "name": "Bosch HBA574BR0 S\u00E9rie 4",
+    "name": "Bosch HBA574BR0 Série 4",
     "nameEn": "Bosch HBA574BR0 Series 4",
-    "description": "Four encastrable pyrolyse 71L avec chaleur tournante 3D et \u00E9cran TFT.",
+    "description": "Four encastrable pyrolyse 71L avec chaleur tournante 3D et écran TFT.",
     "descriptionEn": "71L pyrolytic built-in oven with 3D hot air and TFT display.",
     "price": 599.99,
     "promoPrice": 499.99,
@@ -1086,14 +1468,24 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.6,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 85,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": "A"
+    }
   },
   {
     "id": 42,
     "categoryId": 5,
     "name": "Samsung NV7B5775XAK Dual Cook Flex",
     "nameEn": "Samsung NV7B5775XAK Dual Cook Flex",
-    "description": "Four encastrable 76L avec s\u00E9paration Dual Cook et nettoyage vapeur.",
+    "description": "Four encastrable 76L avec séparation Dual Cook et nettoyage vapeur.",
     "descriptionEn": "76L built-in oven with Dual Cook separation and steam cleaning.",
     "price": 699.99,
     "brand": "Samsung",
@@ -1112,18 +1504,28 @@
         "priceAdjustment": 0,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.3,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 87,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": "A"
+    }
   },
   {
     "id": 43,
     "categoryId": 5,
-    "name": "De\u0027Longhi GEMMA 96 GVB ED",
-    "nameEn": "De\u0027Longhi GEMMA 96 GVB ED",
-    "description": "Cuisini\u00E8re mixte 5 feux gaz \u002B four \u00E9lectrique 113L multifonction.",
-    "descriptionEn": "Mixed range cooker with 5 gas burners \u002B 113L multifunction electric oven.",
+    "name": "De'Longhi GEMMA 96 GVB ED",
+    "nameEn": "De'Longhi GEMMA 96 GVB ED",
+    "description": "Cuisinière mixte 5 feux gaz + four électrique 113L multifonction.",
+    "descriptionEn": "Mixed range cooker with 5 gas burners + 113L multifunction electric oven.",
     "price": 899.99,
     "promoPrice": 799.99,
-    "brand": "De\u0027Longhi",
+    "brand": "De'Longhi",
     "sku": "DEL-GEMMA96",
     "stock": 10,
     "isNew": false,
@@ -1139,14 +1541,22 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.9,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 59,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": "B"
+    }
   },
   {
     "id": 44,
     "categoryId": 5,
     "name": "Whirlpool AKZ9 6230 IX",
     "nameEn": "Whirlpool AKZ9 6230 IX",
-    "description": "Four encastrable pyrolyse 73L avec sonde de cuisson et 6\u00E8me Sens.",
+    "description": "Four encastrable pyrolyse 73L avec sonde de cuisson et 6ème Sens.",
     "descriptionEn": "73L pyrolytic built-in oven with cooking probe and 6th Sense.",
     "price": 499.99,
     "promoPrice": 429.99,
@@ -1166,7 +1576,15 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 76,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": "B"
+    }
   },
   {
     "id": 45,
@@ -1192,14 +1610,25 @@
         "priceAdjustment": 0,
         "stock": 6
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 9.2,
+      "repairabilityIndex": 8.8,
+      "recyclabilityPercent": 92,
+      "labels": [
+        "EU Ecolabel",
+        "Miele@home Connected"
+      ],
+      "durabilityIndex": 9.0,
+      "energyClass": "A"
+    }
   },
   {
     "id": 46,
     "categoryId": 5,
     "name": "Sauter SOP5564X",
     "nameEn": "Sauter SOP5564X",
-    "description": "Four encastrable pyrolyse 73L multifonction avec chaleur puls\u00E9e.",
+    "description": "Four encastrable pyrolyse 73L multifonction avec chaleur pulsée.",
     "descriptionEn": "73L multifunction pyrolytic built-in oven with pulsed heat.",
     "price": 449.99,
     "promoPrice": 399.99,
@@ -1219,7 +1648,15 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 66,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": "B"
+    }
   },
   {
     "id": 47,
@@ -1245,7 +1682,17 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.4,
+      "repairabilityIndex": 8.2,
+      "recyclabilityPercent": 75,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": "A"
+    }
   },
   {
     "id": 48,
@@ -1272,7 +1719,17 @@
         "priceAdjustment": 0,
         "stock": 16
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.2,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 77,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": "A"
+    }
   },
   {
     "id": 49,
@@ -1298,14 +1755,22 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.8,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 45,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": "C"
+    }
   },
   {
     "id": 50,
     "categoryId": 5,
     "name": "Smeg SF6922XPZE Victoria",
     "nameEn": "Smeg SF6922XPZE Victoria",
-    "description": "Four encastrable pyrolyse 70L style r\u00E9tro avec vapeur int\u00E9gr\u00E9e.",
+    "description": "Four encastrable pyrolyse 70L style rétro avec vapeur intégrée.",
     "descriptionEn": "70L retro-style pyrolytic built-in oven with integrated steam.",
     "price": 999.99,
     "brand": "Smeg",
@@ -1324,14 +1789,22 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": 6.0,
+      "recyclabilityPercent": 47,
+      "labels": [],
+      "durabilityIndex": 7.5,
+      "energyClass": "B"
+    }
   },
   {
     "id": 51,
     "categoryId": 6,
     "name": "Samsung MC28A5135CK Smart Oven",
     "nameEn": "Samsung MC28A5135CK Smart Oven",
-    "description": "Micro-ondes combin\u00E9 28L avec chaleur tournante et grill.",
+    "description": "Micro-ondes combiné 28L avec chaleur tournante et grill.",
     "descriptionEn": "28L combination microwave with hot air and grill.",
     "price": 199.99,
     "promoPrice": 169.99,
@@ -1351,14 +1824,24 @@
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 82,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 52,
     "categoryId": 6,
     "name": "Panasonic NN-DS596M",
     "nameEn": "Panasonic NN-DS596M",
-    "description": "Micro-ondes combin\u00E9 vapeur 27L avec technologie Inverter.",
+    "description": "Micro-ondes combiné vapeur 27L avec technologie Inverter.",
     "descriptionEn": "27L steam combination microwave with Inverter technology.",
     "price": 349.99,
     "brand": "Panasonic",
@@ -1377,7 +1860,17 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 84,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 53,
@@ -1404,14 +1897,24 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.7,
+      "repairabilityIndex": 6.0,
+      "recyclabilityPercent": 69,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 54,
     "categoryId": 6,
-    "name": "Bosch BFL634GS1 S\u00E9rie 8",
+    "name": "Bosch BFL634GS1 Série 8",
     "nameEn": "Bosch BFL634GS1 Series 8",
-    "description": "Micro-ondes encastrable 21L avec AutoPilot 8 et ouverture \u00E0 gauche.",
+    "description": "Micro-ondes encastrable 21L avec AutoPilot 8 et ouverture à gauche.",
     "descriptionEn": "21L built-in microwave with AutoPilot 8 and left-side opening.",
     "price": 399.99,
     "brand": "Bosch",
@@ -1430,14 +1933,24 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.1,
+      "repairabilityIndex": 7.8,
+      "recyclabilityPercent": 87,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 55,
     "categoryId": 6,
     "name": "Sharp R-860S",
     "nameEn": "Sharp R-860S",
-    "description": "Micro-ondes combin\u00E9 25L avec grill et chaleur tournante.",
+    "description": "Micro-ondes combiné 25L avec grill et chaleur tournante.",
     "descriptionEn": "25L combination microwave with grill and convection.",
     "price": 159.99,
     "promoPrice": 129.99,
@@ -1457,14 +1970,22 @@
         "priceAdjustment": 0,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.7,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 60,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": null
+    }
   },
   {
     "id": 56,
     "categoryId": 6,
     "name": "LG MJ3965ACS NeoChef",
     "nameEn": "LG MJ3965ACS NeoChef",
-    "description": "Micro-ondes combin\u00E9 39L avec Smart Inverter et EasyClean.",
+    "description": "Micro-ondes combiné 39L avec Smart Inverter et EasyClean.",
     "descriptionEn": "39L combination microwave with Smart Inverter and EasyClean.",
     "price": 299.99,
     "brand": "LG",
@@ -1483,7 +2004,17 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 57,
@@ -1510,7 +2041,15 @@
         "priceAdjustment": 0,
         "stock": 50
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.5,
+      "repairabilityIndex": 5.0,
+      "recyclabilityPercent": 65,
+      "labels": [],
+      "durabilityIndex": 5.0,
+      "energyClass": null
+    }
   },
   {
     "id": 58,
@@ -1536,7 +2075,17 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.1,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 95,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 59,
@@ -1563,7 +2112,15 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.5,
+      "repairabilityIndex": 4.8,
+      "recyclabilityPercent": 41,
+      "labels": [],
+      "durabilityIndex": 4.5,
+      "energyClass": null
+    }
   },
   {
     "id": 60,
@@ -1589,18 +2146,26 @@
         "priceAdjustment": 0,
         "stock": 45
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.9,
+      "repairabilityIndex": 5.2,
+      "recyclabilityPercent": 43,
+      "labels": [],
+      "durabilityIndex": 5.2,
+      "energyClass": null
+    }
   },
   {
     "id": 61,
     "categoryId": 7,
-    "name": "De\u0027Longhi Magnifica Evo ECAM290.61.SB",
-    "nameEn": "De\u0027Longhi Magnifica Evo ECAM290.61.SB",
-    "description": "Machine \u00E0 caf\u00E9 automatique avec broyeur, LatteCrema et 7 boissons.",
+    "name": "De'Longhi Magnifica Evo ECAM290.61.SB",
+    "nameEn": "De'Longhi Magnifica Evo ECAM290.61.SB",
+    "description": "Machine à café automatique avec broyeur, LatteCrema et 7 boissons.",
     "descriptionEn": "Automatic bean-to-cup coffee machine with LatteCrema and 7 drinks.",
     "price": 599.99,
     "promoPrice": 499.99,
-    "brand": "De\u0027Longhi",
+    "brand": "De'Longhi",
     "sku": "DEL-ECAM290",
     "stock": 15,
     "isNew": true,
@@ -1616,14 +2181,22 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.9,
+      "repairabilityIndex": 6.0,
+      "recyclabilityPercent": 46,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 62,
     "categoryId": 7,
     "name": "Krups Evidence EA891C10",
     "nameEn": "Krups Evidence EA891C10",
-    "description": "Expresso broyeur compact avec \u00E9cran OLED et 15 boissons.",
+    "description": "Expresso broyeur compact avec écran OLED et 15 boissons.",
     "descriptionEn": "Compact bean-to-cup espresso with OLED display and 15 drinks.",
     "price": 499.99,
     "brand": "Krups",
@@ -1642,14 +2215,22 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.0,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 48,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 63,
     "categoryId": 7,
     "name": "Nespresso Vertuo Next",
     "nameEn": "Nespresso Vertuo Next",
-    "description": "Machine \u00E0 caf\u00E9 Nespresso Vertuo avec lecture code-barres et 5 tailles de tasses.",
+    "description": "Machine à café Nespresso Vertuo avec lecture code-barres et 5 tailles de tasses.",
     "descriptionEn": "Nespresso Vertuo machine with barcode scanning and 5 cup sizes.",
     "price": 149.99,
     "promoPrice": 99.99,
@@ -1669,14 +2250,22 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.9,
+      "repairabilityIndex": 4.5,
+      "recyclabilityPercent": 51,
+      "labels": [],
+      "durabilityIndex": 5.0,
+      "energyClass": null
+    }
   },
   {
     "id": 64,
     "categoryId": 7,
     "name": "Jura E8 (EB) 2024",
     "nameEn": "Jura E8 (EB) 2024",
-    "description": "Machine automatique haut de gamme avec 17 sp\u00E9cialit\u00E9s et \u00E9cran couleur TFT.",
+    "description": "Machine automatique haut de gamme avec 17 spécialités et écran couleur TFT.",
     "descriptionEn": "Premium automatic machine with 17 specialties and color TFT screen.",
     "price": 1299.99,
     "brand": "Jura",
@@ -1695,14 +2284,24 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 68,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 65,
     "categoryId": 7,
-    "name": "Philips S\u00E9rie 3200 EP3246/70",
+    "name": "Philips Série 3200 EP3246/70",
     "nameEn": "Philips Series 3200 EP3246/70",
-    "description": "Expresso broyeur avec LatteGo et r\u00E9glage ar\u00F4me sur 12 niveaux.",
+    "description": "Expresso broyeur avec LatteGo et réglage arôme sur 12 niveaux.",
     "descriptionEn": "Bean-to-cup espresso with LatteGo and 12-level aroma adjustment.",
     "price": 449.99,
     "promoPrice": 399.99,
@@ -1722,14 +2321,24 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 86,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 66,
     "categoryId": 7,
-    "name": "Nespresso CitiZ\u0026Milk",
+    "name": "Nespresso CitiZ&Milk",
     "nameEn": "Nespresso CitiZ and Milk",
-    "description": "Machine Nespresso avec mousseur \u00E0 lait Aeroccino int\u00E9gr\u00E9.",
+    "description": "Machine Nespresso avec mousseur à lait Aeroccino intégré.",
     "descriptionEn": "Nespresso machine with integrated Aeroccino milk frother.",
     "price": 199.99,
     "promoPrice": 169.99,
@@ -1749,14 +2358,22 @@
         "priceAdjustment": 0,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.3,
+      "repairabilityIndex": 4.8,
+      "recyclabilityPercent": 58,
+      "labels": [],
+      "durabilityIndex": 5.2,
+      "energyClass": null
+    }
   },
   {
     "id": 67,
     "categoryId": 7,
     "name": "Sage Barista Express Impress",
     "nameEn": "Sage Barista Express Impress",
-    "description": "Machine expresso manuelle avec broyeur int\u00E9gr\u00E9 et tassage assist\u00E9.",
+    "description": "Machine expresso manuelle avec broyeur intégré et tassage assisté.",
     "descriptionEn": "Manual espresso machine with built-in grinder and assisted tamping.",
     "price": 699.99,
     "brand": "Sage",
@@ -1775,14 +2392,22 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 75,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 68,
     "categoryId": 7,
     "name": "Melitta Caffeo Barista TS Smart",
     "nameEn": "Melitta Caffeo Barista TS Smart",
-    "description": "Machine automatique connect\u00E9e avec 21 recettes et double bac \u00E0 grains.",
+    "description": "Machine automatique connectée avec 21 recettes et double bac à grains.",
     "descriptionEn": "Connected automatic machine with 21 recipes and dual bean hopper.",
     "price": 799.99,
     "promoPrice": 699.99,
@@ -1802,14 +2427,22 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.5,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 63,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
   },
   {
     "id": 69,
     "categoryId": 7,
     "name": "Tassimo Happy TAS1002",
     "nameEn": "Tassimo Happy TAS1002",
-    "description": "Machine \u00E0 capsules T-Disc compacte avec INTELLIBREW.",
+    "description": "Machine à capsules T-Disc compacte avec INTELLIBREW.",
     "descriptionEn": "Compact T-Disc capsule machine with INTELLIBREW.",
     "price": 49.99,
     "promoPrice": 34.99,
@@ -1829,14 +2462,22 @@
         "priceAdjustment": 0,
         "stock": 60
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 4.8,
+      "repairabilityIndex": 3.8,
+      "recyclabilityPercent": 66,
+      "labels": [],
+      "durabilityIndex": 4.0,
+      "energyClass": null
+    }
   },
   {
     "id": 70,
     "categoryId": 7,
     "name": "Bialetti Moka Express 6 Tasses",
     "nameEn": "Bialetti Moka Express 6 Cups",
-    "description": "Cafeti\u00E8re italienne iconique en aluminium pour 6 tasses.",
+    "description": "Cafetière italienne iconique en aluminium pour 6 tasses.",
     "descriptionEn": "Iconic Italian aluminum moka pot for 6 cups.",
     "price": 34.99,
     "brand": "Bialetti",
@@ -1855,16 +2496,26 @@
         "priceAdjustment": 0,
         "stock": 80
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.1,
+      "repairabilityIndex": 8.5,
+      "recyclabilityPercent": 68,
+      "labels": [
+        "Lifetime Warranty"
+      ],
+      "durabilityIndex": 9.0,
+      "energyClass": null
+    }
   },
   {
     "id": 71,
     "categoryId": 8,
     "name": "Thermomix TM6",
     "nameEn": "Thermomix TM6",
-    "description": "Robot cuiseur multifonction avec \u00E9cran tactile, Wi-Fi et plus de 92 000 recettes.",
-    "descriptionEn": "Multifunction food processor with touchscreen, Wi-Fi and 92,000\u002B recipes.",
-    "price": 1499.00,
+    "description": "Robot cuiseur multifonction avec écran tactile, Wi-Fi et plus de 92 000 recettes.",
+    "descriptionEn": "Multifunction food processor with touchscreen, Wi-Fi and 92,000+ recipes.",
+    "price": 1499.0,
     "brand": "Vorwerk",
     "sku": "VOR-TM6",
     "stock": 10,
@@ -1881,15 +2532,25 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 57,
+      "labels": [
+        "Refurbishment Program"
+      ],
+      "durabilityIndex": 9.0,
+      "energyClass": null
+    }
   },
   {
     "id": 72,
     "categoryId": 8,
     "name": "Moulinex Companion XL HF80CB10",
     "nameEn": "Moulinex Companion XL HF80CB10",
-    "description": "Robot cuiseur 4.5L avec 12 programmes automatiques et cuisson jusqu\u0027\u00E0 150\u00B0C.",
-    "descriptionEn": "4.5L food processor with 12 auto programs and cooking up to 150\u00B0C.",
+    "description": "Robot cuiseur 4.5L avec 12 programmes automatiques et cuisson jusqu'à 150°C.",
+    "descriptionEn": "4.5L food processor with 12 auto programs and cooking up to 150°C.",
     "price": 699.99,
     "promoPrice": 599.99,
     "brand": "Moulinex",
@@ -1908,14 +2569,22 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.0,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 44,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 73,
     "categoryId": 8,
     "name": "KitchenAid Artisan 5KSM175",
     "nameEn": "KitchenAid Artisan 5KSM175",
-    "description": "Robot p\u00E2tissier 4.8L avec moteur \u00E0 transmission directe et 10 vitesses.",
+    "description": "Robot pâtissier 4.8L avec moteur à transmission directe et 10 vitesses.",
     "descriptionEn": "4.8L stand mixer with direct-drive motor and 10 speeds.",
     "price": 599.99,
     "brand": "KitchenAid",
@@ -1934,7 +2603,17 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 62,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 9.2,
+      "energyClass": null
+    }
   },
   {
     "id": 74,
@@ -1961,15 +2640,25 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.5,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 64,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 8.0,
+      "energyClass": null
+    }
   },
   {
     "id": 75,
     "categoryId": 8,
     "name": "Kenwood Cooking Chef XL KCL95",
     "nameEn": "Kenwood Cooking Chef XL KCL95",
-    "description": "Robot cuiseur 6.7L avec cuisson par induction jusqu\u0027\u00E0 180\u00B0C.",
-    "descriptionEn": "6.7L food processor with induction cooking up to 180\u00B0C.",
+    "description": "Robot cuiseur 6.7L avec cuisson par induction jusqu'à 180°C.",
+    "descriptionEn": "6.7L food processor with induction cooking up to 180°C.",
     "price": 999.99,
     "brand": "Kenwood",
     "sku": "KNW-KCL95",
@@ -1987,14 +2676,24 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 66,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 76,
     "categoryId": 8,
     "name": "Moulinex ClickChef HF456810",
     "nameEn": "Moulinex ClickChef HF456810",
-    "description": "Robot cuiseur compact 3.6L avec 32 fonctions et recettes guid\u00E9es.",
+    "description": "Robot cuiseur compact 3.6L avec 32 fonctions et recettes guidées.",
     "descriptionEn": "Compact 3.6L food processor with 32 functions and guided recipes.",
     "price": 349.99,
     "promoPrice": 299.99,
@@ -2014,14 +2713,22 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.0,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 54,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 77,
     "categoryId": 8,
     "name": "Ninja Foodi MAX 15-in-1",
     "nameEn": "Ninja Foodi MAX 15-in-1",
-    "description": "Multicuiseur 7.5L avec air fryer, cuisson sous pression et d\u00E9shydrateur.",
+    "description": "Multicuiseur 7.5L avec air fryer, cuisson sous pression et déshydrateur.",
     "descriptionEn": "7.5L multi-cooker with air fryer, pressure cooking and dehydrator.",
     "price": 249.99,
     "promoPrice": 199.99,
@@ -2041,14 +2748,22 @@
         "priceAdjustment": 0,
         "stock": 30
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.8,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 57,
+      "labels": [],
+      "durabilityIndex": 6.0,
+      "energyClass": null
+    }
   },
   {
     "id": 78,
     "categoryId": 8,
     "name": "Bosch MUM Serie 4 MUM4880",
     "nameEn": "Bosch MUM Series 4 MUM4880",
-    "description": "Robot p\u00E2tissier 3.9L avec hachoir \u00E0 viande et presse-agrumes.",
+    "description": "Robot pâtissier 3.9L avec hachoir à viande et presse-agrumes.",
     "descriptionEn": "3.9L stand mixer with meat grinder and citrus press.",
     "price": 199.99,
     "brand": "Bosch",
@@ -2067,7 +2782,15 @@
         "priceAdjustment": 0,
         "stock": 35
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 89,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 79,
@@ -2094,7 +2817,17 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.1,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 5.8,
+      "energyClass": null
+    }
   },
   {
     "id": 80,
@@ -2120,14 +2853,22 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.7,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 64,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 81,
     "categoryId": 9,
-    "name": "Dyson Purifier Hot\u002BCool HP09",
-    "nameEn": "Dyson Purifier Hot\u002BCool HP09",
-    "description": "Purificateur d\u0027air chauffant/ventilateur avec filtration HEPA H13 et d\u00E9tection de formald\u00E9hyde.",
+    "name": "Dyson Purifier Hot+Cool HP09",
+    "nameEn": "Dyson Purifier Hot+Cool HP09",
+    "description": "Purificateur d'air chauffant/ventilateur avec filtration HEPA H13 et détection de formaldéhyde.",
     "descriptionEn": "Heating/cooling air purifier with HEPA H13 filtration and formaldehyde detection.",
     "price": 649.99,
     "promoPrice": 549.99,
@@ -2147,14 +2888,25 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 94,
+      "labels": [
+        "EU Ecolabel",
+        "Recycled ABS Plastics"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": "B"
+    }
   },
   {
     "id": 82,
     "categoryId": 9,
     "name": "Daikin FTXM35R Perfera",
     "nameEn": "Daikin FTXM35R Perfera",
-    "description": "Climatiseur mural inverter 3.5kW avec purificateur d\u0027air int\u00E9gr\u00E9.",
+    "description": "Climatiseur mural inverter 3.5kW avec purificateur d'air intégré.",
     "descriptionEn": "3.5kW wall-mounted inverter air conditioner with integrated air purifier.",
     "price": 1299.99,
     "brand": "Daikin",
@@ -2173,14 +2925,22 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.9,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 55,
+      "labels": [],
+      "durabilityIndex": 8.5,
+      "energyClass": "A"
+    }
   },
   {
     "id": 83,
     "categoryId": 9,
     "name": "Dyson Pure Cool TP07",
     "nameEn": "Dyson Pure Cool TP07",
-    "description": "Purificateur d\u0027air ventilateur tour avec filtration HEPA et connect\u00E9 Wi-Fi.",
+    "description": "Purificateur d'air ventilateur tour avec filtration HEPA et connecté Wi-Fi.",
     "descriptionEn": "Tower fan air purifier with HEPA filtration and Wi-Fi connected.",
     "price": 549.99,
     "promoPrice": 449.99,
@@ -2200,17 +2960,28 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.3,
+      "repairabilityIndex": 6.0,
+      "recyclabilityPercent": 77,
+      "labels": [
+        "EU Ecolabel",
+        "Recycled ABS Plastics"
+      ],
+      "durabilityIndex": 7.2,
+      "energyClass": "C"
+    }
   },
   {
     "id": 84,
     "categoryId": 9,
-    "name": "De\u0027Longhi Pinguino PAC EX100",
-    "nameEn": "De\u0027Longhi Pinguino PAC EX100",
-    "description": "Climatiseur mobile 10 000 BTU avec mode d\u00E9shumidificateur et t\u00E9l\u00E9commande.",
+    "name": "De'Longhi Pinguino PAC EX100",
+    "nameEn": "De'Longhi Pinguino PAC EX100",
+    "description": "Climatiseur mobile 10 000 BTU avec mode déshumidificateur et télécommande.",
     "descriptionEn": "10,000 BTU portable air conditioner with dehumidifier mode and remote.",
     "price": 599.99,
-    "brand": "De\u0027Longhi",
+    "brand": "De'Longhi",
     "sku": "DEL-PACEX100",
     "stock": 12,
     "isNew": false,
@@ -2226,7 +2997,15 @@
         "priceAdjustment": 0,
         "stock": 12
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.8,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 45,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 85,
@@ -2253,14 +3032,24 @@
         "priceAdjustment": 0,
         "stock": 45
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.1,
+      "repairabilityIndex": 5.2,
+      "recyclabilityPercent": 62,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 6.0,
+      "energyClass": "D"
+    }
   },
   {
     "id": 86,
     "categoryId": 9,
     "name": "Xiaomi Smart Air Purifier 4 Pro",
     "nameEn": "Xiaomi Smart Air Purifier 4 Pro",
-    "description": "Purificateur d\u0027air connect\u00E9 avec filtre HEPA et affichage OLED.",
+    "description": "Purificateur d'air connecté avec filtre HEPA et affichage OLED.",
     "descriptionEn": "Connected air purifier with HEPA filter and OLED display.",
     "price": 249.99,
     "promoPrice": 199.99,
@@ -2280,7 +3069,15 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.4,
+      "repairabilityIndex": 4.5,
+      "recyclabilityPercent": 50,
+      "labels": [],
+      "durabilityIndex": 5.5,
+      "energyClass": "C"
+    }
   },
   {
     "id": 87,
@@ -2306,15 +3103,25 @@
         "priceAdjustment": 0,
         "stock": 10
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.3,
+      "repairabilityIndex": 7.8,
+      "recyclabilityPercent": 67,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 8.8,
+      "energyClass": "A"
+    }
   },
   {
     "id": 88,
     "categoryId": 9,
     "name": "Philips Series 2000i AC2939/10",
     "nameEn": "Philips Series 2000i AC2939/10",
-    "description": "Purificateur air connect\u00E9 pour pi\u00E8ces 98m\u00B2 avec capteurs VitaShield IPS.",
-    "descriptionEn": "Connected air purifier for 98m\u00B2 rooms with VitaShield IPS sensors.",
+    "description": "Purificateur air connecté pour pièces 98m² avec capteurs VitaShield IPS.",
+    "descriptionEn": "Connected air purifier for 98m² rooms with VitaShield IPS sensors.",
     "price": 349.99,
     "promoPrice": 299.99,
     "brand": "Philips",
@@ -2333,14 +3140,24 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 86,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.0,
+      "energyClass": "B"
+    }
   },
   {
     "id": 89,
     "categoryId": 9,
     "name": "Dimplex Opti-Myst Pro 1500",
     "nameEn": "Dimplex Opti-Myst Pro 1500",
-    "description": "Chemin\u00E9e \u00E9lectrique d\u00E9corative avec effet flamme et brume d\u0027eau.",
+    "description": "Cheminée électrique décorative avec effet flamme et brume d'eau.",
     "descriptionEn": "Decorative electric fireplace with flame effect and water mist.",
     "price": 499.99,
     "brand": "Dimplex",
@@ -2359,14 +3176,22 @@
         "priceAdjustment": 0,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.0,
+      "repairabilityIndex": 4.0,
+      "recyclabilityPercent": 58,
+      "labels": [],
+      "durabilityIndex": 5.0,
+      "energyClass": "D"
+    }
   },
   {
     "id": 90,
     "categoryId": 9,
     "name": "Atlantic Nirvana Digital 1000W",
     "nameEn": "Atlantic Nirvana Digital 1000W",
-    "description": "Radiateur \u00E9lectrique \u00E0 inertie fluide connect\u00E9 avec d\u00E9tection de fen\u00EAtre.",
+    "description": "Radiateur électrique à inertie fluide connecté avec détection de fenêtre.",
     "descriptionEn": "Connected fluid inertia electric radiator with window detection.",
     "price": 399.99,
     "promoPrice": 349.99,
@@ -2386,14 +3211,22 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.5,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 60,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": "C"
+    }
   },
   {
     "id": 91,
     "categoryId": 10,
     "name": "Philips PerfectCare Elite Plus GC9682",
     "nameEn": "Philips PerfectCare Elite Plus GC9682",
-    "description": "Centrale vapeur avec technologie OptimalTEMP et r\u00E9servoir 1.8L.",
+    "description": "Centrale vapeur avec technologie OptimalTEMP et réservoir 1.8L.",
     "descriptionEn": "Steam generator with OptimalTEMP technology and 1.8L tank.",
     "price": 349.99,
     "promoPrice": 299.99,
@@ -2413,14 +3246,24 @@
         "priceAdjustment": 0,
         "stock": 15
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": 7.0,
+      "recyclabilityPercent": 91,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   },
   {
     "id": 92,
     "categoryId": 10,
     "name": "Calor Pro Express Ultimate GV9620",
     "nameEn": "Calor Pro Express Ultimate GV9620",
-    "description": "Centrale vapeur haute pression avec d\u00E9bit vapeur 155g/min et semelle Durilium.",
+    "description": "Centrale vapeur haute pression avec débit vapeur 155g/min et semelle Durilium.",
     "descriptionEn": "High-pressure steam generator with 155g/min steam flow and Durilium soleplate.",
     "price": 299.99,
     "brand": "Calor",
@@ -2439,14 +3282,22 @@
         "priceAdjustment": 0,
         "stock": 20
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.9,
+      "repairabilityIndex": 6.2,
+      "recyclabilityPercent": 79,
+      "labels": [],
+      "durabilityIndex": 6.5,
+      "energyClass": null
+    }
   },
   {
     "id": 93,
     "categoryId": 10,
     "name": "SteamOne S-Nomad Plus",
     "nameEn": "SteamOne S-Nomad Plus",
-    "description": "D\u00E9froisseur vapeur portable nomade avec temps de chauffe 25 secondes.",
+    "description": "Défroisseur vapeur portable nomade avec temps de chauffe 25 secondes.",
     "descriptionEn": "Portable handheld steamer with 25-second heat-up time.",
     "price": 69.99,
     "promoPrice": 59.99,
@@ -2466,7 +3317,15 @@
         "priceAdjustment": 0,
         "stock": 40
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.0,
+      "repairabilityIndex": 5.5,
+      "recyclabilityPercent": 68,
+      "labels": [],
+      "durabilityIndex": 5.8,
+      "energyClass": null
+    }
   },
   {
     "id": 94,
@@ -2492,7 +3351,15 @@
         "priceAdjustment": 0,
         "stock": 18
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.4,
+      "repairabilityIndex": 6.5,
+      "recyclabilityPercent": 56,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
   },
   {
     "id": 95,
@@ -2519,14 +3386,22 @@
         "priceAdjustment": 0,
         "stock": 14
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.6,
+      "repairabilityIndex": 6.8,
+      "recyclabilityPercent": 59,
+      "labels": [],
+      "durabilityIndex": 7.2,
+      "energyClass": null
+    }
   },
   {
     "id": 96,
     "categoryId": 10,
     "name": "Philips GC4541/20 Azur",
     "nameEn": "Philips GC4541/20 Azur",
-    "description": "Fer vapeur 2400W avec semelle SteamGlide Plus et syst\u00E8me anti-calcaire.",
+    "description": "Fer vapeur 2400W avec semelle SteamGlide Plus et système anti-calcaire.",
     "descriptionEn": "2400W steam iron with SteamGlide Plus soleplate and anti-calc system.",
     "price": 59.99,
     "promoPrice": 49.99,
@@ -2546,14 +3421,24 @@
         "priceAdjustment": 0,
         "stock": 50
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 79,
+      "labels": [
+        "EU Ecolabel"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 97,
     "categoryId": 10,
     "name": "Laurastar Lift Plus",
     "nameEn": "Laurastar Lift Plus",
-    "description": "Syst\u00E8me de repassage professionnel portable avec semelle 3D et vapeur active.",
+    "description": "Système de repassage professionnel portable avec semelle 3D et vapeur active.",
     "descriptionEn": "Portable professional ironing system with 3D soleplate and active steam.",
     "price": 599.99,
     "brand": "Laurastar",
@@ -2572,14 +3457,24 @@
         "priceAdjustment": 0,
         "stock": 8
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 63,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 8.5,
+      "energyClass": null
+    }
   },
   {
     "id": 98,
     "categoryId": 10,
     "name": "Calor Tweeny 2-en-1 NI5010C0",
     "nameEn": "Calor Tweeny 2-en-1 NI5010C0",
-    "description": "Fer \u00E0 repasser et d\u00E9froisseur 2-en-1 compact.",
+    "description": "Fer à repasser et défroisseur 2-en-1 compact.",
     "descriptionEn": "Compact 2-in-1 iron and steamer.",
     "price": 39.99,
     "promoPrice": 29.99,
@@ -2599,14 +3494,24 @@
         "priceAdjustment": 0,
         "stock": 60
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 6.2,
+      "repairabilityIndex": 5.0,
+      "recyclabilityPercent": 66,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 5.2,
+      "energyClass": null
+    }
   },
   {
     "id": 99,
     "categoryId": 10,
-    "name": "Bosch TDS6040 S\u00E9rie 6",
+    "name": "Bosch TDS6040 Série 6",
     "nameEn": "Bosch TDS6040 Series 6",
-    "description": "Centrale vapeur avec i-Temp et DripStop syst\u00E8me.",
+    "description": "Centrale vapeur avec i-Temp et DripStop système.",
     "descriptionEn": "Steam generator with i-Temp and DripStop system.",
     "price": 199.99,
     "brand": "Bosch",
@@ -2625,14 +3530,24 @@
         "priceAdjustment": 0,
         "stock": 22
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 7.8,
+      "repairabilityIndex": 7.4,
+      "recyclabilityPercent": 85,
+      "labels": [
+        "Energy Star"
+      ],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
   },
   {
     "id": 100,
     "categoryId": 10,
     "name": "Polti Vaporetto SV660",
     "nameEn": "Polti Vaporetto SV660",
-    "description": "Nettoyeur vapeur balai 2-en-1 avec 18 accessoires et vapeur d\u00E9sinfectante.",
+    "description": "Nettoyeur vapeur balai 2-en-1 avec 18 accessoires et vapeur désinfectante.",
     "descriptionEn": "2-in-1 steam mop with 18 accessories and disinfecting steam.",
     "price": 149.99,
     "promoPrice": 129.99,
@@ -2652,6 +3567,14 @@
         "priceAdjustment": 0,
         "stock": 25
       }
-    ]
+    ],
+    "sustainability": {
+      "overallScore": 5.9,
+      "repairabilityIndex": 5.8,
+      "recyclabilityPercent": 56,
+      "labels": [],
+      "durabilityIndex": 6.2,
+      "energyClass": null
+    }
   }
 ]

@@ -40,6 +40,16 @@ export interface Product {
   relatedProductIds: number[];
   createdAt: string;
   siteType: SiteType;
+  sustainability: SustainabilityRating | null;
+}
+
+export interface SustainabilityRating {
+  repairabilityIndex: number | null;
+  durabilityIndex: number | null;
+  energyClass: string | null;
+  recyclabilityPercent: number | null;
+  labels: string[];
+  overallScore: number;
 }
 
 export interface Category {
