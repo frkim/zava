@@ -68,12 +68,22 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
               ? `${lang === 'en' ? product.secondLife.conditionEn : product.secondLife.condition} — ${t('secondLife.savings')} ${Math.round((1 - product.price / product.secondLife.originalPrice) * 100)}%`
               : t('secondLife.badge')
           }>
-            <Chip
-              icon={<Recycling />}
-              label={t('secondLife.badge')}
-              size="small"
-              sx={{ position: 'absolute', top: 8, right: 8, bgcolor: '#00796b', color: 'white', '& .MuiChip-icon': { color: 'white' } }}
-            />
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+                width: 28,
+                height: 28,
+                borderRadius: '50%',
+                bgcolor: '#00796b',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Recycling sx={{ color: 'white', fontSize: 18 }} />
+            </Box>
           </Tooltip>
         )}
       </Box>
