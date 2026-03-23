@@ -393,7 +393,7 @@ export default function ProductPage() {
                 <Grid size={{ xs: 6 }}>
                   <Typography variant="caption" color="text.secondary">{t('secondLife.savings')}</Typography>
                   <Typography variant="body2" fontWeight={700} color="success.main">
-                    -{Math.round((1 - product.price / product.secondLife.originalPrice) * 100)}%
+                    -{product.secondLife.originalPrice > 0 ? Math.round((1 - product.price / product.secondLife.originalPrice) * 100) : 0}%
                   </Typography>
                 </Grid>
                 {product.secondLife.warrantyMonths && (

@@ -26,8 +26,8 @@ public class SearchService
                 p.Brand.Contains(t, StringComparison.OrdinalIgnoreCase) ||
                 p.Tags.Any(tag => tag.Contains(t, StringComparison.OrdinalIgnoreCase)) ||
                 (p.IsSecondLife && (
-                    "reconditionné".Contains(t, StringComparison.OrdinalIgnoreCase) ||
-                    "refurbished".Contains(t, StringComparison.OrdinalIgnoreCase) ||
+                    (t.Length >= 3 && "reconditionné".Contains(t, StringComparison.OrdinalIgnoreCase)) ||
+                    (t.Length >= 3 && "refurbished".Contains(t, StringComparison.OrdinalIgnoreCase)) ||
                     (p.SecondLife != null && p.SecondLife.Condition.Contains(t, StringComparison.OrdinalIgnoreCase))
                 ))
             ));

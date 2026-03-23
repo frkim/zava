@@ -64,7 +64,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         </Stack>
         {product.isSecondLife && (
           <Tooltip title={
-            product.secondLife
+            product.secondLife && product.secondLife.originalPrice > 0
               ? `${lang === 'en' ? product.secondLife.conditionEn : product.secondLife.condition} — ${t('secondLife.savings')} ${Math.round((1 - product.price / product.secondLife.originalPrice) * 100)}%`
               : t('secondLife.badge')
           }>
