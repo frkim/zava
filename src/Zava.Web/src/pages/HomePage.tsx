@@ -118,6 +118,11 @@ export default function HomePage() {
       <ProductGrid title={t('home.promotions')} products={data.promoProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
       <ProductGrid title={t('home.featured')} products={data.featuredProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
 
+      {/* Second Life products */}
+      {data.secondLifeProducts && data.secondLifeProducts.length > 0 && (
+        <ProductGrid title={t('secondLife.homeSection')} products={data.secondLifeProducts.slice(0, 8)} onAddToCart={handleAddToCart} />
+      )}
+
       {/* Brands */}
       {data.brands.length > 0 && (
         <Box sx={{ mb: 4 }}>

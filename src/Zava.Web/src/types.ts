@@ -41,6 +41,8 @@ export interface Product {
   createdAt: string;
   siteType: SiteType;
   sustainability: SustainabilityRating | null;
+  isSecondLife: boolean;
+  secondLife: SecondLifeInfo | null;
 }
 
 export interface SustainabilityRating {
@@ -50,6 +52,15 @@ export interface SustainabilityRating {
   recyclabilityPercent: number | null;
   labels: string[];
   overallScore: number;
+}
+
+export interface SecondLifeInfo {
+  condition: string;
+  conditionEn: string;
+  originalPrice: number;
+  warrantyMonths: number | null;
+  sellerType: string | null;
+  sellerTypeEn: string | null;
 }
 
 export interface Category {
@@ -160,6 +171,7 @@ export interface SearchRequest {
   brand?: string;
   minRating?: number;
   inStock?: boolean;
+  secondLife?: boolean;
   sortBy?: string;
   sortDescending?: boolean;
   page?: number;
@@ -200,6 +212,7 @@ export interface HomepageData {
   newProducts: Product[];
   promoProducts: Product[];
   selectionProducts: Product[];
+  secondLifeProducts: Product[];
   topCategories: Category[];
   brands: string[];
 }

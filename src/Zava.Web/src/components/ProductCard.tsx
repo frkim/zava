@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import {
-  Card, CardContent, CardActions, Typography, Button, Box, Chip, Rating, Stack,
+  Card, CardContent, CardActions, Typography, Button, Box, Chip, Rating, Stack, Tooltip,
 } from '@mui/material';
-import { ShoppingCart, FiberNew, LocalOffer, Star } from '@mui/icons-material';
+import { ShoppingCart, FiberNew, LocalOffer, Star, Recycling } from '@mui/icons-material';
 import type { Product } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 import { useSite } from '../context/SiteContext';
@@ -62,6 +62,30 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
           {product.isPromo && <Chip label={`-${discount}%`} size="small" color="error" icon={<LocalOffer />} />}
           {product.isBestSeller && <Chip label={t('product.bestSeller')} size="small" color="secondary" icon={<Star />} />}
         </Stack>
+        {product.isSecondLife && (
+          <Tooltip title={
+            product.secondLife && product.secondLife.originalPrice > 0
+              ? `${lang === 'en' ? product.secondLife.conditionEn : product.secondLife.condition} — ${t('secondLife.savings')} ${Math.round((1 - product.price / product.secondLife.originalPrice) * 100)}%`
+              : t('secondLife.badge')
+          }>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+                width: 28,
+                height: 28,
+                borderRadius: '50%',
+                bgcolor: '#00796b',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Recycling sx={{ color: 'white', fontSize: 18 }} />
+            </Box>
+          </Tooltip>
+        )}
       </Box>
 
       <CardContent sx={{ flex: 1 }}>
@@ -84,6 +108,11 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
           {product.promoPrice && (
             <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
               {product.price.toFixed(2)} €
+            </Typography>
+          )}
+          {product.isSecondLife && product.secondLife && !product.promoPrice && (
+            <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+              {product.secondLife.originalPrice.toFixed(2)} €
             </Typography>
           )}
         </Box>

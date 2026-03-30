@@ -5,7 +5,7 @@ import {
   InputLabel, Select, MenuItem, Checkbox, FormControlLabel, Paper,
   Chip, Stack, Accordion, AccordionSummary, AccordionDetails,
 } from '@mui/material';
-import { ExpandMore } from '@mui/icons-material';
+import { ExpandMore, Recycling } from '@mui/icons-material';
 import ProductCard from '../components/ProductCard';
 import { searchProducts, addToCart } from '../api';
 import type { SearchResult, SearchRequest, Product } from '../types';
@@ -27,6 +27,7 @@ export default function SearchPage() {
   const minPrice = searchParams.get('minPrice');
   const maxPrice = searchParams.get('maxPrice');
   const minRating = searchParams.get('minRating');
+  const secondLife = searchParams.get('secondLife') === 'true';
 
   useEffect(() => {
     setLoading(true);
@@ -42,12 +43,13 @@ export default function SearchPage() {
       minPrice: minPrice ? parseFloat(minPrice) : undefined,
       maxPrice: maxPrice ? parseFloat(maxPrice) : undefined,
       minRating: minRating ? parseInt(minRating) : undefined,
+      secondLife: secondLife || undefined,
     };
     searchProducts(req)
       .then(setResult)
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, [q, categoryId, brand, page, sortBy, sortDesc, inStock, minPrice, maxPrice, minRating]);
+  }, [q, categoryId, brand, page, sortBy, sortDesc, inStock, minPrice, maxPrice, minRating, secondLife]);
 
   const updateParam = (key: string, value: string | null) => {
     const params = new URLSearchParams(searchParams);
@@ -102,6 +104,20 @@ export default function SearchPage() {
             <FormControlLabel
               control={<Checkbox checked={inStock} onChange={(e) => updateParam('inStock', e.target.checked ? 'true' : null)} />}
               label={t('search.inStockOnly')}
+              sx={{ mb: 1 }}
+            />
+
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={secondLife}
+                  onChange={(e) => updateParam('secondLife', e.target.checked ? 'true' : null)}
+                  icon={<Recycling />}
+                  checkedIcon={<Recycling />}
+                  sx={{ color: '#00796b', '&.Mui-checked': { color: '#00796b' } }}
+                />
+              }
+              label={t('secondLife.filterLabel')}
               sx={{ mb: 2 }}
             />
 

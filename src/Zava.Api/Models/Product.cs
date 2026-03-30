@@ -25,6 +25,8 @@ public class Product
     public DateTime CreatedAt { get; set; }
     public SiteType SiteType { get; set; }
     public SustainabilityRating? Sustainability { get; set; }
+    public bool IsSecondLife { get; set; }
+    public SecondLifeInfo? SecondLife { get; set; }
 }
 
 public class SustainabilityRating
@@ -35,6 +37,16 @@ public class SustainabilityRating
     public int? RecyclabilityPercent { get; set; }
     public List<string> Labels { get; set; } = new();
     public double OverallScore { get; set; }
+}
+
+public class SecondLifeInfo
+{
+    public string Condition { get; set; } = string.Empty;
+    public string ConditionEn { get; set; } = string.Empty;
+    public decimal OriginalPrice { get; set; }
+    public int? WarrantyMonths { get; set; }
+    public string? SellerType { get; set; }
+    public string? SellerTypeEn { get; set; }
 }
 
 public class ProductVariant

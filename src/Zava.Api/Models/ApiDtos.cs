@@ -10,6 +10,7 @@ public class SearchRequest
     public double? MinRating { get; set; }
     public bool? InStock { get; set; }
     public bool? EcoResponsible { get; set; }
+    public bool? SecondLife { get; set; }
     public string? SortBy { get; set; }
     public bool SortDescending { get; set; }
     public int Page { get; set; } = 1;
@@ -55,6 +56,7 @@ public class HomepageData
     public List<Product> NewProducts { get; set; } = new();
     public List<Product> PromoProducts { get; set; } = new();
     public List<Product> SelectionProducts { get; set; } = new();
+    public List<Product> SecondLifeProducts { get; set; } = new();
     public List<Category> TopCategories { get; set; } = new();
     public List<string> Brands { get; set; } = new();
 }
