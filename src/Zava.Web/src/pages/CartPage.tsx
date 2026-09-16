@@ -8,6 +8,7 @@ import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
 import { getCart, updateCartItem, removeCartItem, clearCart } from '../api';
 import type { Cart } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import RecipeBasketLink from '../components/RecipeBasketLink';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ export default function CartPage() {
           {t('cart.emptyDesc')}
         </Typography>
         <Button variant="contained" onClick={() => navigate('/')}>{t('cart.continueShopping')}</Button>
+        <Box sx={{ maxWidth: 720, mx: 'auto', mt: 4 }}><RecipeBasketLink /></Box>
       </Box>
     );
   }
@@ -65,6 +67,7 @@ export default function CartPage() {
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: 3 }}>{t('cart.title')} ({cart.itemCount} {cart.itemCount > 1 ? t('cart.articles') : t('cart.article')})</Typography>
+      <RecipeBasketLink />
       {error && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>{error}</Alert>}
 
       <Box sx={{ display: 'flex', gap: 3, flexDirection: { xs: 'column', md: 'row' } }}>

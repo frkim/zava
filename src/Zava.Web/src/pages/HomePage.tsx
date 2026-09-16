@@ -8,6 +8,7 @@ import {
   LocalShipping, Verified, TrendingUp,
 } from '@mui/icons-material';
 import ProductGrid from '../components/ProductGrid';
+import RecipeBasketLink from '../components/RecipeBasketLink';
 import { getHomepage, addToCart } from '../api';
 import type { HomepageData, Product } from '../types';
 import { useLanguage } from '../context/LanguageContext';
@@ -93,6 +94,8 @@ export default function HomePage() {
           </Box>
         </Stack>
       </Box>
+
+      <RecipeBasketLink />
 
       {/* Top Categories */}
       {data.topCategories.length > 0 && (

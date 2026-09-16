@@ -1,5 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Azure.Core;
+using Azure.Identity;
+using Microsoft.AspNetCore.Http.Features;
 using Zava.Api.Models;
 using Zava.Api.Services;
 
@@ -9,6 +12,11 @@ builder.Services.AddOpenApi();
 builder.Services.AddSingleton<DataStore>();
 builder.Services.AddScoped<SearchService>();
 builder.Services.AddScoped<AnalyticsService>();
+builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddSingleton<TokenCredential>(_ => new DefaultAzureCredential());
+builder.Services.AddHttpClient<FoundryRecipeClient>(client => client.Timeout = Timeout.InfiniteTimeSpan)
+    .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler { AllowAutoRedirect = false });
+builder.Services.AddSingleton<RecipeBasketService>();
 
 builder.Services.AddCors(options =>
 {
@@ -41,6 +49,31 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors();
 app.UseStaticFiles(); // Serves wwwroot/ (images, etc.)
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path.StartsWithSegments("/api/recipe-basket"))
+    {
+        var bodySize = context.Features.Get<IHttpMaxRequestBodySizeFeature>();
+        if (bodySize is { IsReadOnly: false }) bodySize.MaxRequestBodySize = 4096;
+        if (context.Request.ContentLength > 4096)
+        {
+            context.Response.StatusCode = StatusCodes.Status413PayloadTooLarge;
+            return;
+        }
+    }
+    // Serialize shared demo state through response serialization, but never hold the gate during AI calls.
+    if (context.Request.Path.StartsWithSegments("/api")
+        && !string.Equals(context.Request.Path.Value?.TrimEnd('/'), "/api/recipe-basket/plan", StringComparison.OrdinalIgnoreCase))
+    {
+        await dataStore.Gate.WaitAsync(context.RequestAborted);
+        try { await next(context); }
+        finally { dataStore.Gate.Release(); }
+    }
+    else await next(context);
+});
+
+app.MapRecipeBasket();
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 

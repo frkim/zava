@@ -15,5 +15,16 @@ services:
     host: containerapp
     language: ts
     docker:
-      path: Dockerfile
-      context: .
+      path: ./src/Zava.Web/Dockerfile
+      context: ./src/Zava.Web
+hooks:
+  postprovision:
+    shell: sh
+    run: python3 ./scripts/deploy-recipe-agents.py
+    interactive: false
+    continueOnError: false
+  postdeploy:
+    shell: sh
+    run: python3 ./scripts/deploy-recipe-agents.py --smoke
+    interactive: false
+    continueOnError: false

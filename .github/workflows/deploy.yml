@@ -12,6 +12,13 @@ permissions:
 env:
   AZURE_ENV_NAME: zava-prod
   AZURE_LOCATION: swedencentral
+  # Model availability and quota are independent of the Container Apps region.
+  AZURE_AI_LOCATION: ${{ vars.AZURE_AI_LOCATION || 'eastus2' }}
+  AZURE_AI_MODEL_NAME: ${{ vars.AZURE_AI_MODEL_NAME || 'gpt-5-mini' }}
+  AZURE_AI_MODEL_VERSION: ${{ vars.AZURE_AI_MODEL_VERSION || '2025-08-07' }}
+  AZURE_AI_MODEL_SKU: ${{ vars.AZURE_AI_MODEL_SKU || 'GlobalStandard' }}
+  AZURE_AI_MODEL_CAPACITY: ${{ vars.AZURE_AI_MODEL_CAPACITY || '10' }}
+  AZURE_PRINCIPAL_TYPE: ServicePrincipal
   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
 jobs:
@@ -23,6 +30,16 @@ jobs:
 
       - name: Install azd
         uses: Azure/setup-azd@v2
+
+      - name: Validate infrastructure and agent definitions
+        run: |
+          az bicep build --file infra/main.bicep --stdout > /dev/null
+          python3 scripts/deploy-recipe-agents.py --check
+
+      - name: Build deployment images before provisioning
+        run: |
+          docker build --file src/Zava.Api/Dockerfile --tag zava-api:preflight .
+          docker build --file src/Zava.Web/Dockerfile --tag zava-web:preflight src/Zava.Web
 
       - name: Log in with Azure (Federated Credentials)
         if: ${{ env.AZURE_CLIENT_ID != '' }}
@@ -47,9 +64,9 @@ jobs:
         env:
           AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Provision and Deploy
-        run: azd up --no-prompt
-        env:
-          AZURE_ENV_NAME: ${{ env.AZURE_ENV_NAME }}
-          AZURE_LOCATION: ${{ env.AZURE_LOCATION }}
-          AZURE_SUBSCRIPTION_ID: ${{ env.AZURE_SUBSCRIPTION_ID }}
+      # postprovision deploys both Foundry agents; a failure prevents image deployment.
+      - name: Provision infrastructure and deploy Foundry agents
+        run: azd provision --no-prompt
+
+      - name: Deploy application images and run read-only smoke checks
+        run: azd deploy --no-prompt

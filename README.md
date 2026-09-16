@@ -1,6 +1,6 @@
 # Zava — E-commerce Simulation
 
-Site e-commerce polymorphique de démonstration. Changez le type de boutique en un clic et obtenez un catalogue complet avec 100 produits, 10 catégories, des avis clients et un tunnel d'achat fonctionnel.
+Site e-commerce polymorphique de démonstration. Changez le type de boutique en un clic et obtenez un catalogue complet avec 100 produits (187 en alimentaire), 10 catégories, des avis clients et un tunnel d'achat fonctionnel.
 
 ## 6 types de boutique
 
@@ -19,6 +19,7 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 - **Recherche** — Full-text avec suggestions, filtres (catégorie, marque, prix, note, stock), tri, pagination, facettes
 - **Fiche produit** — Variantes (taille, couleur) avec ajustement de prix, stock, notes et avis clients, produits associés
 - **Panier** — Ajout/suppression par variante, contrôle des quantités et du stock, erreurs visibles avec possibilité de réessayer, vidé automatiquement au changement de site
+- **Panier recette (alimentaire)** — Suggestions de plats, recette libre, 1 à 20 convives et choix grandes marques nationales / marques distributeurs / économique / mix. Deux agents Microsoft Foundry préparent un aperçu des ingrédients et produits ; la confirmation ajoute la sélection au panier.
 - **Checkout** — Tunnel en 3 étapes (adresse → paiement → confirmation), 4 moyens de paiement (CB, PayPal, Apple Pay, Google Pay), simulation d'erreurs (carte finissant par `0000`)
 - **Profil** — Infos personnelles, adresse, paiement, historique des commandes
 - **Analytics** — KPIs, graphiques (revenus par catégorie, commandes par statut, ventes journalières), top produits
@@ -103,6 +104,9 @@ npm run dev
 | `DELETE` | `/api/cart/items/{productId}?variantId=` | Supprimer une variante du panier |
 | `POST` | `/api/cart/warranty` | Ajouter une garantie calculée par le serveur (`productId` uniquement) |
 | `DELETE` | `/api/cart` | Vider le panier |
+| `GET` | `/api/recipe-basket/options` | Disponibilité du panier recette et suggestions |
+| `POST` | `/api/recipe-basket/plan` | Préparer un aperçu sans modifier le panier (`recipe`, `servings`, `brandPreference`) |
+| `POST` | `/api/recipe-basket/commit` | Confirmer un aperçu serveur (`planId`), sans doublon lors d'une nouvelle tentative |
 | `POST` | `/api/checkout` | Passer commande |
 | `GET` | `/api/orders` | Historique des commandes |
 | `GET` | `/api/orders/{id}` | Détail d'une commande |
@@ -118,6 +122,55 @@ npm run dev
 - Une mise à jour à `0` supprime la ligne ; une quantité négative est refusée. Les validations renvoient `400` avec un champ `message`, sans modifier le panier.
 - Les garanties sont disponibles uniquement pour l'électronique et l'électroménager, avec le produit déjà au panier. Leur nom et leur tarif proviennent de la même règle serveur que l'offre affichée ; les anciens champs client `warrantyName` et `warrantyPrice` sont ignorés.
 - Une seule garantie est conservée par produit, avec une quantité de `1`. Elle disparaît avec la dernière ligne du produit couvert.
+
+### Panier recette
+
+1. Dans **Paramètres**, sélectionner **Alimentaire**, puis ouvrir **Panier recette** depuis la navigation, l'accueil ou le panier.
+2. Choisir une suggestion (lasagnes, blanquette de veau, hachis parmentier, bœuf bourguignon) ou saisir un autre plat, le nombre de personnes et la gamme.
+3. Générer la sélection, vérifier les produits, les paquets entiers, le total et les ingrédients manquants, puis confirmer l'ajout groupé. Une sélection incomplète est signalée ; elle n'est pas présentée comme une recette complète.
+
+Les valeurs API des gammes sont `National`, `PrivateLabel`, `Economy` et `Mix`. Les trois premières filtrent le catalogue **côté serveur** grâce aux tags `brand:national`, `brand:private-label` et `brand:economy`. Les références Zava et Zava Essentiel et leurs prix sont des données de démonstration. Les 29 ingrédients de base disposent chacun de trois gammes ; une recette libre peut nécessiter des ingrédients non commercialisés.
+
+Le premier agent décompose la recette en ingrédients et quantités ; le second associe ces ingrédients aux références réellement disponibles et à leurs conditionnements. Les réponses sont structurées et validées : aucun identifiant, prix ou stock inventé par le modèle n'est accepté. Les agents n'ont pas d'outil de paiement ni d'accès direct au panier.
+
+Un aperçu expire après dix minutes et devient invalide après réinitialisation ou changement de boutique. La confirmation revérifie le catalogue et les stocks, conserve les variantes et ajoute tout ou rien. Réessayer la même confirmation pendant sa validité ne double pas les quantités. Les estimations culinaires restent des suggestions : vérifier les portions, les substitutions et les allergènes sur les emballages.
+
+Sans configuration Foundry, l'interface explique l'indisponibilité de l'assistant et le panier classique reste utilisable. Il n'existe pas de simulation IA cachée ni de repli vers un modèle local.
+
+#### Microsoft Foundry et monitoring
+
+L'infrastructure utilise un compte **Microsoft Foundry** (`AIServices`, projets activés), un projet et un déploiement **GPT-5 mini**, pas un hub Foundry classique. Deux agents prompt persistants, `recipe-planner` et `recipe-shopper`, sont déployés dans Agent Service. L'API appelle leurs endpoints natifs :
+
+```text
+https://<compte>.services.ai.azure.com/api/projects/<projet>/agents/<agent>/endpoint/protocols/openai/responses?api-version=v1
+```
+
+L'authentification utilise Microsoft Entra ID et l'identité managée de Container Apps, sans clé de modèle dans le navigateur. Application Insights, lié à Log Analytics, reçoit la télémétrie de l'API. Les événements applicatifs `RecipeBasketPlan` et `RecipeBasketCommit` décrivent le résultat et, pour la génération, la durée ; ils n'enregistrent pas le texte de la recette.
+
+Pour un développement local avec un projet et des agents déjà déployés :
+
+```bash
+az login
+export Foundry__ProjectEndpoint="https://<compte>.services.ai.azure.com/api/projects/<projet>"
+export Foundry__PlannerAgentName="recipe-planner"
+export Foundry__ShopperAgentName="recipe-shopper"
+dotnet run --project src/Zava.Api
+```
+
+Le compte local doit avoir le rôle d'invocation Foundry sur le projet. La variable `APPLICATIONINSIGHTS_CONNECTION_STRING`, facultative en local, active l'export de télémétrie ; ne pas publier sa valeur ni des jetons dans les logs ou dans Git.
+
+Dans les journaux Application Insights, vérifier les résultats et les durées après avoir généré puis confirmé un panier :
+
+```kusto
+customEvents
+| where name in ("RecipeBasketPlan", "RecipeBasketCommit")
+| summarize appels=count(), dureeMoyenneMs=avg(todouble(customMeasurements.durationMs))
+    by name, resultat=tostring(customDimensions.outcome), bin(timestamp, 15m)
+```
+
+La génération est bornée (deux requêtes simultanées, six par minute, quarante par heure, cent par jour par processus). Ces limites protègent le démonstrateur mais ne remplacent ni authentification, ni quotas persistants, ni budget Azure. Les paniers, aperçus et limites sont perdus au redémarrage. Avant toute exposition à des utilisateurs réels, ajouter une identité utilisateur, une persistance et une gouvernance des données envoyées au modèle.
+
+Références Microsoft : [agents prompt](https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent), [endpoints et versions d'agents](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-agent), [rôles Foundry](https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry), [régions et quotas](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/limits-quotas-regions).
 
 ## Évaluation qualité et priorités
 
@@ -150,6 +203,8 @@ npm run lint
 Les deux builds passent lors de l'évaluation. Le lint global signale neuf erreurs préexistantes dans les contextes et plusieurs pages ; les fichiers frontend modifiés passent leur lint ciblé. Le build .NET signale notamment l'avis [GHSA-v5pm-xwqc-g5wc](https://github.com/advisories/GHSA-v5pm-xwqc-g5wc) sur la dépendance transitive `Microsoft.OpenApi`. Les dépendances ne sont pas mises à jour dans cette correction fonctionnelle.
 
 Pour vérifier le panier, démarrer l'API et exécuter dans l'ordre la section **Cart regression checks** de `src/Zava.Api/Zava.Api.http` avec un client HTTP compatible. Les statuts et invariants attendus figurent dans chaque requête. **Cette section réinitialise les données partagées du démonstrateur.**
+
+La section **Recipe basket regression checks** du même fichier couvre les saisies invalides, les gammes, l'aperçu sans mutation, la confirmation répétée et l'invalidation après réinitialisation. Elle réinitialise également les données. Les scénarios positifs IA nécessitent de vrais agents déployés ; sans configuration, vérifier `available: false` et le refus explicite de génération, puis vérifier que l'ajout classique fonctionne toujours.
 
 Dans le navigateur, ajouter deux variantes du même produit, modifier/supprimer la seconde et vérifier que la première ne change pas. Couper ensuite l'API : une mutation doit afficher une erreur sans effacer le panier ; un chargement initial en échec doit proposer « Réessayer », et non afficher un panier vide. Rétablir l'API puis réessayer.
 

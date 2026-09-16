@@ -341,3 +341,80 @@ Content-Type: application/json
 
 ### Non-variant removal remains supported — 200, empty cart
 DELETE {{Zava.Api_HostAddress}}/api/cart/items/1
+
+### ─── Recipe basket regression checks (resets shared demo data) ────────────────
+### Select Grocery before the following checks
+PUT {{Zava.Api_HostAddress}}/api/config/site-type
+Content-Type: application/json
+
+{"siteType": "Grocery"}
+
+### Options — four default suggestions; available=false without Foundry configuration
+GET {{Zava.Api_HostAddress}}/api/recipe-basket/options
+
+### Empty recipe — 400, cart unchanged
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/plan
+Content-Type: application/json
+
+{"recipe": "   ", "servings": 4, "brandPreference": "Mix"}
+
+### Invalid party size — 400 (also check 0 and 21), cart unchanged
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/plan
+Content-Type: application/json
+
+{"recipe": "Lasagnes", "servings": -1, "brandPreference": "Mix"}
+
+### Invalid preference — 400, cart unchanged
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/plan
+Content-Type: application/json
+
+{"recipe": "Lasagnes", "servings": 4, "brandPreference": "Unknown"}
+
+### Unknown plan — rejected, cart unchanged
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/commit
+Content-Type: application/json
+
+{"planId": "00000000000000000000000000000000"}
+
+### Plan — 503 without Foundry; with deployed agents: 200, cart STILL empty
+### Inspect ingredient coverage, whole pack quantities, expiry and authoritative total.
+### Repeat with National, PrivateLabel, Economy, Mix and 1/4/20 servings.
+### Explicit ranges must not silently substitute another range.
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/plan
+Content-Type: application/json
+
+{"recipe": "Lasagnes", "servings": 4, "brandPreference": "PrivateLabel"}
+
+### Confirm that generation did not mutate the cart
+GET {{Zava.Api_HostAddress}}/api/cart
+
+### Replace with the returned planId, then run TWICE — only one addition
+@recipePlanId = replace-with-returned-plan-id
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/commit
+Content-Type: application/json
+
+{"planId": "{{recipePlanId}}"}
+
+### Verify quantities, variants and total after confirmation
+GET {{Zava.Api_HostAddress}}/api/cart
+
+### Reset invalidates pending plans — subsequent confirmation must not add anything
+POST {{Zava.Api_HostAddress}}/api/config/reset
+
+###
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/commit
+Content-Type: application/json
+
+{"planId": "{{recipePlanId}}"}
+
+### Recipe basket is unavailable in other shops
+PUT {{Zava.Api_HostAddress}}/api/config/site-type
+Content-Type: application/json
+
+{"siteType": "Electronics"}
+
+###
+POST {{Zava.Api_HostAddress}}/api/recipe-basket/plan
+Content-Type: application/json
+
+{"recipe": "Lasagnes", "servings": 4, "brandPreference": "Mix"}

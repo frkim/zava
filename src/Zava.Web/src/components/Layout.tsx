@@ -3,12 +3,12 @@ import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import {
   AppBar, Toolbar, Typography, IconButton, Badge, Box, InputBase, Container,
   Drawer, List, ListItemButton, ListItemText, ListItemIcon, Divider, Paper,
-  MenuItem, Select,
+  MenuItem, Select, Button,
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material';
 import {
   ShoppingCart, Person, Search, Menu as MenuIcon, Home, Category,
-  Settings, Analytics, Close, Inventory,
+  Settings, Analytics, Close, Inventory, RestaurantMenu,
   Devices, Kitchen, Spa, ElectricalServices, Construction, LocalGroceryStore,
 } from '@mui/icons-material';
 import { alpha, styled } from '@mui/material/styles';
@@ -89,6 +89,12 @@ export default function Layout({ children }: LayoutProps) {
   }, [fetchCart, siteVersion]);
 
   useEffect(() => {
+    const onCartUpdated = (event: Event) => setCart((event as CustomEvent<Cart>).detail);
+    window.addEventListener('zava:cart-updated', onCartUpdated);
+    return () => window.removeEventListener('zava:cart-updated', onCartUpdated);
+  }, []);
+
+  useEffect(() => {
     if (searchQuery.length < 2) {
       setSuggestions([]);
       return;
@@ -121,6 +127,9 @@ export default function Layout({ children }: LayoutProps) {
     { text: t('nav.home'), icon: <Home />, path: '/' },
     { text: t('nav.categories'), icon: <Category />, path: '/categories' },
     { text: t('nav.allProducts'), icon: <Inventory />, path: '/search' },
+    ...(config?.currentSiteType === 'Grocery'
+      ? [{ text: t('recipe.title'), icon: <RestaurantMenu />, path: '/recipe-basket' }]
+      : []),
     { text: t('nav.profile'), icon: <Person />, path: '/profile' },
     { text: t('nav.analytics'), icon: <Analytics />, path: '/analytics' },
     { text: t('nav.settings'), icon: <Settings />, path: '/settings' },
@@ -170,6 +179,13 @@ export default function Layout({ children }: LayoutProps) {
               )}
             </SearchBox>
           </Box>
+
+          {config?.currentSiteType === 'Grocery' && (
+            <Button component={RouterLink} to="/recipe-basket" color="inherit" startIcon={<RestaurantMenu />}
+              sx={{ display: { xs: 'none', md: 'inline-flex' }, whiteSpace: 'nowrap' }}>
+              {t('recipe.title')}
+            </Button>
+          )}
 
           <Select
             value={lang}

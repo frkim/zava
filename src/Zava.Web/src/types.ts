@@ -109,6 +109,28 @@ export interface Cart {
   itemCount: number;
 }
 
+export type RecipeBrandPreference = 'National' | 'PrivateLabel' | 'Economy' | 'Mix';
+
+export interface RecipeBasketRequest {
+  recipe: string;
+  servings: number;
+  brandPreference: RecipeBrandPreference;
+}
+
+export interface RecipeBasketOptions {
+  available: boolean;
+  suggestions: string[];
+}
+
+export interface RecipeBasketPlan extends RecipeBasketRequest {
+  planId: string;
+  items: (CartItem & { ingredient: string })[];
+  missingIngredients: string[];
+  warnings: string[];
+  total: number;
+  expiresAt: string;
+}
+
 export interface Address {
   street: string;
   city: string;

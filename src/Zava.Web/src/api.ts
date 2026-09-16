@@ -2,10 +2,21 @@ import type {
   SiteConfig, HomepageData, Product, Category, SearchRequest, SearchResult,
   SearchSuggestion, Cart, PaymentResult, CheckoutRequest, Order, User,
   AnalyticsDashboard, Review, ProductImage, CrossSellOffer,
+  RecipeBasketOptions, RecipeBasketRequest, RecipeBasketPlan,
 } from './types';
 
 export const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5014';
 const API = `${API_BASE}/api`;
+
+export class ApiError extends Error {
+  readonly status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
+}
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
   let res: Response;
@@ -26,7 +37,7 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
       const body = JSON.parse(text);
       if (typeof body?.message === 'string') message = body.message;
     } catch { /* Keep non-JSON error responses readable. */ }
-    throw new Error(message);
+    throw new ApiError(message, res.status);
   }
   return res.json();
 }
@@ -79,6 +90,21 @@ export const updateCartItem = (productId: number, quantity: number, variantId?: 
 export const removeCartItem = (productId: number, variantId?: number | null) =>
   request<Cart>(`${API}/cart/items/${productId}${variantId != null ? `?variantId=${variantId}` : ''}`, { method: 'DELETE' });
 export const clearCart = () => request<Cart>(`${API}/cart`, { method: 'DELETE' });
+
+// Recipe baskets are previews until the customer explicitly confirms a plan.
+export const getRecipeBasketOptions = (signal?: AbortSignal) =>
+  request<RecipeBasketOptions>(`${API}/recipe-basket/options`, { signal });
+export const planRecipeBasket = (data: RecipeBasketRequest, signal?: AbortSignal) =>
+  request<RecipeBasketPlan>(`${API}/recipe-basket/plan`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    signal,
+  });
+export const commitRecipeBasket = (planId: string) =>
+  request<Cart>(`${API}/recipe-basket/commit`, {
+    method: 'POST',
+    body: JSON.stringify({ planId }),
+  });
 
 // Cross-sell
 export const getCrossSell = (productId: number) =>
