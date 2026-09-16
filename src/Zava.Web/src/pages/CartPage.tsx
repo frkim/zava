@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Typography, Box, Paper, Button, IconButton, CircularProgress,
+  Typography, Box, Paper, Button, IconButton, CircularProgress, Alert,
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Stack,
 } from '@mui/material';
 import { Delete, Add, Remove, ShoppingCart } from '@mui/icons-material';
@@ -14,34 +14,42 @@ export default function CartPage() {
   const { t } = useLanguage();
   const [cart, setCart] = useState<Cart | null>(null);
   const [loading, setLoading] = useState(true);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    getCart().then(setCart).finally(() => setLoading(false));
+    getCart()
+      .then(setCart)
+      .catch((e: unknown) => setError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setLoading(false));
   }, []);
 
-  const handleUpdateQty = async (productId: number, qty: number) => {
+  const mutateCart = async (operation: () => Promise<Cart>) => {
+    if (pending) return;
+    setPending(true);
+    setError('');
     try {
-      const updated = await updateCartItem(productId, qty);
-      setCart(updated);
-    } catch { /* ignore */ }
-  };
-
-  const handleRemove = async (productId: number) => {
-    try {
-      const updated = await removeCartItem(productId);
-      setCart(updated);
-    } catch { /* ignore */ }
-  };
-
-  const handleClear = async () => {
-    try {
-      const updated = await clearCart();
-      setCart(updated);
-    } catch { /* ignore */ }
+      setCart(await operation());
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setPending(false);
+    }
   };
 
   if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
-  if (!cart || cart.items.length === 0) {
+  if (!cart) {
+    return (
+      <Alert severity="error" action={
+        <Button color="inherit" disabled={pending} onClick={() => mutateCart(getCart)}>
+          {t('cart.retry')}
+        </Button>
+      }>
+        {error || t('common.error')}
+      </Alert>
+    );
+  }
+  if (cart.items.length === 0) {
     return (
       <Box sx={{ textAlign: 'center', py: 8 }}>
         <ShoppingCart sx={{ fontSize: 64, color: 'text.secondary', opacity: 0.3, mb: 2 }} />
@@ -57,6 +65,7 @@ export default function CartPage() {
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: 3 }}>{t('cart.title')} ({cart.itemCount} {cart.itemCount > 1 ? t('cart.articles') : t('cart.article')})</Typography>
+      {error && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>{error}</Alert>}
 
       <Box sx={{ display: 'flex', gap: 3, flexDirection: { xs: 'column', md: 'row' } }}>
         <TableContainer component={Paper} sx={{ flex: 1 }}>
@@ -77,7 +86,7 @@ export default function CartPage() {
                     <Typography
                       variant="subtitle2"
                       sx={{ cursor: 'pointer', '&:hover': { color: 'primary.main' } }}
-                      onClick={() => navigate(`/products/${item.productId}`)}
+                      onClick={() => navigate(`/products/${Math.abs(item.productId)}`)}
                     >
                       {item.productName}
                     </Typography>
@@ -88,11 +97,13 @@ export default function CartPage() {
                   <TableCell align="right">{item.unitPrice.toFixed(2)} €</TableCell>
                   <TableCell align="center">
                     <Stack direction="row" spacing={0.5} alignItems="center" justifyContent="center">
-                      <IconButton size="small" onClick={() => handleUpdateQty(item.productId, item.quantity - 1)}>
+                      <IconButton size="small" disabled={pending} aria-label={t('cart.decrease')}
+                        onClick={() => mutateCart(() => updateCartItem(item.productId, item.quantity - 1, item.variantId))}>
                         <Remove fontSize="small" />
                       </IconButton>
                       <Typography>{item.quantity}</Typography>
-                      <IconButton size="small" onClick={() => handleUpdateQty(item.productId, item.quantity + 1)}>
+                      <IconButton size="small" disabled={pending || item.productId < 0} aria-label={t('cart.increase')}
+                        onClick={() => mutateCart(() => updateCartItem(item.productId, item.quantity + 1, item.variantId))}>
                         <Add fontSize="small" />
                       </IconButton>
                     </Stack>
@@ -101,7 +112,8 @@ export default function CartPage() {
                     <Typography fontWeight={600}>{item.subtotal.toFixed(2)} €</Typography>
                   </TableCell>
                   <TableCell align="center">
-                    <IconButton color="error" size="small" onClick={() => handleRemove(item.productId)}>
+                    <IconButton color="error" size="small" disabled={pending} aria-label={t('cart.remove')}
+                      onClick={() => mutateCart(() => removeCartItem(item.productId, item.variantId))}>
                       <Delete fontSize="small" />
                     </IconButton>
                   </TableCell>
@@ -126,13 +138,13 @@ export default function CartPage() {
             <Typography variant="h6">{t('cart.total')}</Typography>
             <Typography variant="h6" fontWeight={700}>{cart.total.toFixed(2)} €</Typography>
           </Box>
-          <Button variant="contained" fullWidth size="large" onClick={() => navigate('/checkout')}>
+          <Button variant="contained" fullWidth size="large" disabled={pending} onClick={() => navigate('/checkout')}>
             {t('cart.checkout')}
           </Button>
           <Button fullWidth sx={{ mt: 1 }} onClick={() => navigate('/')}>
             {t('cart.continueShopping')}
           </Button>
-          <Button fullWidth color="error" size="small" sx={{ mt: 1 }} onClick={handleClear}>
+          <Button fullWidth color="error" size="small" sx={{ mt: 1 }} disabled={pending} onClick={() => mutateCart(clearCart)}>
             {t('cart.clear')}
           </Button>
         </Paper>
