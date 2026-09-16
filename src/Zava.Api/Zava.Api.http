@@ -124,13 +124,14 @@ PUT {{Zava.Api_HostAddress}}/api/cart/items/1
 Content-Type: application/json
 
 {
-  "quantity": 3
+  "quantity": 3,
+  "variantId": 1
 }
 
 ###
 
 ### Remove cart item
-DELETE {{Zava.Api_HostAddress}}/api/cart/items/1
+DELETE {{Zava.Api_HostAddress}}/api/cart/items/1?variantId=1
 
 ###
 
@@ -227,3 +228,116 @@ GET {{Zava.Api_HostAddress}}/api/analytics
 Accept: application/json
 
 ###
+
+### Cart regression checks — run in order (resets shared demo data)
+PUT {{Zava.Api_HostAddress}}/api/config/site-type
+Content-Type: application/json
+
+{
+  "siteType": "Electronics"
+}
+
+### Add first variant — 200, quantity 2
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "variantId": 1, "quantity": 2}
+
+### Add second variant — 200, a separate line with quantity 1
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "variantId": 2, "quantity": 1}
+
+### Update second variant — 200, variant 1 stays at 2; variant 2 becomes 3
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{"variantId": 2, "quantity": 3}
+
+### Missing variant does not target another line — 404
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{"quantity": 1}
+
+### Invalid variant — 400, cart unchanged
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "variantId": 999999, "quantity": 1}
+
+### Non-positive addition — 400, cart unchanged (also try quantity -1)
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "variantId": 1, "quantity": 0}
+
+### Excessive addition — 400, no integer overflow or cart mutation
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "variantId": 1, "quantity": 2147483647}
+
+### Stock shared across variants — 400 (product 1 stock is 15; total would be 17)
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{"variantId": 2, "quantity": 15}
+
+### Negative update — 400, cart unchanged
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{"variantId": 2, "quantity": -1}
+
+### Fetch the authoritative warranty offer
+GET {{Zava.Api_HostAddress}}/api/products/1/cross-sell
+
+### Untrusted warranty fields are ignored — 200, price/name match the offer above
+POST {{Zava.Api_HostAddress}}/api/cart/warranty
+Content-Type: application/json
+
+{"productId": 1, "warrantyName": "Untrusted name", "warrantyPrice": -100}
+
+### Duplicate warranty — 200, still only one line with productId -1 and quantity 1
+POST {{Zava.Api_HostAddress}}/api/cart/warranty
+Content-Type: application/json
+
+{"productId": 1}
+
+### Warranty quantity cannot increase — 400, cart unchanged
+PUT {{Zava.Api_HostAddress}}/api/cart/items/-1
+Content-Type: application/json
+
+{"quantity": 2}
+
+### Remove second variant — 200, variant 1 and its warranty remain
+DELETE {{Zava.Api_HostAddress}}/api/cart/items/1?variantId=2
+
+### Zero removes the last product line and its warranty — 200, empty cart
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{"variantId": 1, "quantity": 0}
+
+### Warranty without its product — 400, cart stays empty
+POST {{Zava.Api_HostAddress}}/api/cart/warranty
+Content-Type: application/json
+
+{"productId": 1}
+
+### Non-variant addition remains supported — 200
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "quantity": 1}
+
+### Non-variant update remains supported — 200, quantity 2
+PUT {{Zava.Api_HostAddress}}/api/cart/items/1
+Content-Type: application/json
+
+{"quantity": 2}
+
+### Non-variant removal remains supported — 200, empty cart
+DELETE {{Zava.Api_HostAddress}}/api/cart/items/1

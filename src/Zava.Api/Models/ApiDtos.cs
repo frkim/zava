@@ -104,6 +104,7 @@ public class AddToCartRequest
 public class UpdateCartItemRequest
 {
     public int Quantity { get; set; }
+    public int? VariantId { get; set; }
 }
 
 public class AnalyticsDashboard
@@ -191,6 +192,4 @@ public class WarrantyOffer
 public class AddWarrantyToCartRequest
 {
     public int ProductId { get; set; }
-    public string WarrantyName { get; set; } = string.Empty;
-    public decimal WarrantyPrice { get; set; }
 }

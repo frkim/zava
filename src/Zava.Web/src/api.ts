@@ -21,7 +21,12 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
   }
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(text || res.statusText);
+    let message = text || res.statusText;
+    try {
+      const body = JSON.parse(text);
+      if (typeof body?.message === 'string') message = body.message;
+    } catch { /* Keep non-JSON error responses readable. */ }
+    throw new Error(message);
   }
   return res.json();
 }
@@ -66,22 +71,22 @@ export const addToCart = (productId: number, quantity: number, variantId?: numbe
     method: 'POST',
     body: JSON.stringify({ productId, variantId, quantity }),
   });
-export const updateCartItem = (productId: number, quantity: number) =>
+export const updateCartItem = (productId: number, quantity: number, variantId?: number | null) =>
   request<Cart>(`${API}/cart/items/${productId}`, {
     method: 'PUT',
-    body: JSON.stringify({ quantity }),
+    body: JSON.stringify({ quantity, variantId }),
   });
-export const removeCartItem = (productId: number) =>
-  request<Cart>(`${API}/cart/items/${productId}`, { method: 'DELETE' });
+export const removeCartItem = (productId: number, variantId?: number | null) =>
+  request<Cart>(`${API}/cart/items/${productId}${variantId != null ? `?variantId=${variantId}` : ''}`, { method: 'DELETE' });
 export const clearCart = () => request<Cart>(`${API}/cart`, { method: 'DELETE' });
 
 // Cross-sell
 export const getCrossSell = (productId: number) =>
   request<CrossSellOffer>(`${API}/products/${productId}/cross-sell`);
-export const addWarrantyToCart = (productId: number, warrantyName: string, warrantyPrice: number) =>
+export const addWarrantyToCart = (productId: number) =>
   request<Cart>(`${API}/cart/warranty`, {
     method: 'POST',
-    body: JSON.stringify({ productId, warrantyName, warrantyPrice }),
+    body: JSON.stringify({ productId }),
   });
 
 // Checkout

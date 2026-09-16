@@ -34,7 +34,7 @@ export default function CrossSellDialog({ open, onClose, offer, productId, produ
   const handleAddWarranty = async () => {
     if (!offer.warranty) return;
     try {
-      await addWarrantyToCart(productId, offer.warranty.name, offer.warranty.price);
+      await addWarrantyToCart(productId);
       setWarrantyAdded(true);
     } catch { /* ignore */ }
   };

@@ -179,25 +179,7 @@ app.MapGet("/api/products/{id:int}/cross-sell", (int id, DataStore store) =>
         }
     }
 
-    // Warranty offer based on product price
-    var effectivePrice = product.PromoPrice ?? product.Price;
-    var warrantyPrice = effectivePrice switch
-    {
-        < 100m => 9.99m,
-        < 300m => 19.99m,
-        < 500m => 29.99m,
-        < 1000m => 49.99m,
-        _ => 79.99m
-    };
-
-    offer.Warranty = new WarrantyOffer
-    {
-        Name = "Garantie Réparation 3 ans / Casse 1 an",
-        NameEn = "3-Year Repair / 1-Year Accidental Damage Warranty",
-        Description = $"Protégez votre {product.Name} contre les pannes pendant 3 ans et la casse accidentelle pendant 1 an.",
-        DescriptionEn = $"Protect your {product.NameEn} against breakdowns for 3 years and accidental damage for 1 year.",
-        Price = warrantyPrice
-    };
+    offer.Warranty = GetWarrantyOffer(product);
 
     return Results.Ok(offer);
 });
@@ -207,10 +189,17 @@ app.MapPost("/api/cart/warranty", (AddWarrantyToCartRequest req, DataStore store
     var product = store.Products.FirstOrDefault(p => p.Id == req.ProductId);
     if (product is null) return Results.NotFound(new { message = "Produit introuvable" });
 
+    if (store.CurrentSiteType is not (SiteType.Electronics or SiteType.Appliances))
+        return Results.BadRequest(new { message = "Garantie indisponible pour cette boutique" });
+    if (!store.Cart.Items.Any(i => i.ProductId == product.Id))
+        return Results.BadRequest(new { message = "Ajoutez le produit au panier avant sa garantie" });
+
+    var warranty = GetWarrantyOffer(product);
+
     // Avoid adding duplicate warranty for same product
-    var warrantyLabel = $"🛡️ {req.WarrantyName} — {product.Name}";
+    var warrantyLabel = $"🛡️ {warranty.Name} — {product.Name}";
     var existing = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductName == warrantyLabel);
+        i.ProductId == -product.Id);
 
     if (existing is null)
     {
@@ -220,7 +209,7 @@ app.MapPost("/api/cart/warranty", (AddWarrantyToCartRequest req, DataStore store
             ProductName = warrantyLabel,
             VariantId = null,
             VariantName = null,
-            UnitPrice = req.WarrantyPrice,
+            UnitPrice = warranty.Price,
             Quantity = 1
         });
     }
@@ -255,6 +244,9 @@ app.MapGet("/api/cart", (DataStore store) => Results.Ok(store.Cart));
 
 app.MapPost("/api/cart/items", (AddToCartRequest req, DataStore store) =>
 {
+    if (req.Quantity <= 0)
+        return Results.BadRequest(new { message = "La quantité doit être positive" });
+
     var product = store.Products.FirstOrDefault(p => p.Id == req.ProductId);
     if (product is null) return Results.NotFound(new { message = "Produit introuvable" });
 
@@ -264,15 +256,18 @@ app.MapPost("/api/cart/items", (AddToCartRequest req, DataStore store) =>
     if (req.VariantId.HasValue)
     {
         var variant = product.Variants.FirstOrDefault(v => v.Id == req.VariantId.Value);
-        if (variant is not null)
-        {
-            unitPrice += variant.PriceAdjustment;
-            variantName = variant.Name;
-        }
+        if (variant is null)
+            return Results.BadRequest(new { message = "Variante introuvable" });
+        unitPrice += variant.PriceAdjustment;
+        variantName = variant.Name;
     }
 
     var existingItem = store.Cart.Items.FirstOrDefault(i =>
         i.ProductId == req.ProductId && i.VariantId == req.VariantId);
+
+    var quantity = (long)(existingItem?.Quantity ?? 0) + req.Quantity;
+    if (!HasAvailableStock(store.Cart, product, req.VariantId, quantity))
+        return Results.BadRequest(new { message = "Stock insuffisant" });
 
     if (existingItem is not null)
     {
@@ -296,25 +291,39 @@ app.MapPost("/api/cart/items", (AddToCartRequest req, DataStore store) =>
 
 app.MapPut("/api/cart/items/{productId:int}", (int productId, UpdateCartItemRequest req, DataStore store) =>
 {
-    var item = store.Cart.Items.FirstOrDefault(i => i.ProductId == productId);
+    if (req.Quantity < 0)
+        return Results.BadRequest(new { message = "La quantité ne peut pas être négative" });
+
+    var item = store.Cart.Items.FirstOrDefault(i =>
+        i.ProductId == productId && i.VariantId == req.VariantId);
     if (item is null) return Results.NotFound();
 
-    if (req.Quantity <= 0)
+    if (req.Quantity == 0)
     {
-        store.Cart.Items.Remove(item);
+        RemoveCartLine(store.Cart, item);
     }
     else
     {
+        if (productId < 0 && req.Quantity != 1)
+            return Results.BadRequest(new { message = "Une seule garantie par produit" });
+
+        if (productId > 0)
+        {
+            var product = store.Products.FirstOrDefault(p => p.Id == productId);
+            if (product is null || !HasAvailableStock(store.Cart, product, req.VariantId, req.Quantity))
+                return Results.BadRequest(new { message = "Stock insuffisant" });
+        }
         item.Quantity = req.Quantity;
     }
 
     return Results.Ok(store.Cart);
 });
 
-app.MapDelete("/api/cart/items/{productId:int}", (int productId, DataStore store) =>
+app.MapDelete("/api/cart/items/{productId:int}", (int productId, int? variantId, DataStore store) =>
 {
-    var item = store.Cart.Items.FirstOrDefault(i => i.ProductId == productId);
-    if (item is not null) store.Cart.Items.Remove(item);
+    var item = store.Cart.Items.FirstOrDefault(i =>
+        i.ProductId == productId && i.VariantId == variantId);
+    if (item is not null) RemoveCartLine(store.Cart, item);
     return Results.Ok(store.Cart);
 });
 
@@ -459,3 +468,39 @@ app.UseStaticFiles();
 app.MapFallbackToFile("index.html");
 
 app.Run();
+
+static bool HasAvailableStock(Cart cart, Product product, int? variantId, long quantity)
+{
+    var otherQuantity = cart.Items
+        .Where(i => i.ProductId == product.Id && i.VariantId != variantId)
+        .Sum(i => (long)i.Quantity);
+    var variant = product.Variants.FirstOrDefault(v => v.Id == variantId);
+    return quantity > 0 && quantity + otherQuantity <= product.Stock
+        && (!variantId.HasValue || (variant is not null && quantity <= variant.Stock));
+}
+
+static void RemoveCartLine(Cart cart, CartItem item)
+{
+    cart.Items.Remove(item);
+    if (item.ProductId > 0 && !cart.Items.Any(i => i.ProductId == item.ProductId))
+        cart.Items.RemoveAll(i => i.ProductId == -item.ProductId);
+}
+
+static WarrantyOffer GetWarrantyOffer(Product product)
+{
+    return new WarrantyOffer
+    {
+        Name = "Garantie Réparation 3 ans / Casse 1 an",
+        NameEn = "3-Year Repair / 1-Year Accidental Damage Warranty",
+        Description = $"Protégez votre {product.Name} contre les pannes pendant 3 ans et la casse accidentelle pendant 1 an.",
+        DescriptionEn = $"Protect your {product.NameEn} against breakdowns for 3 years and accidental damage for 1 year.",
+        Price = (product.PromoPrice ?? product.Price) switch
+        {
+            < 100m => 9.99m,
+            < 300m => 19.99m,
+            < 500m => 29.99m,
+            < 1000m => 49.99m,
+            _ => 79.99m
+        }
+    };
+}

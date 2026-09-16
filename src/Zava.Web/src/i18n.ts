@@ -100,6 +100,10 @@ const translations = {
   'cart.total': { fr: 'Total', en: 'Total' },
   'cart.checkout': { fr: 'Passer la commande', en: 'Proceed to checkout' },
   'cart.clear': { fr: 'Vider le panier', en: 'Clear cart' },
+  'cart.retry': { fr: 'Réessayer', en: 'Retry' },
+  'cart.decrease': { fr: 'Diminuer la quantité', en: 'Decrease quantity' },
+  'cart.increase': { fr: 'Augmenter la quantité', en: 'Increase quantity' },
+  'cart.remove': { fr: 'Supprimer cet article', en: 'Remove this item' },
 
   // ─── Checkout ──────────────────────────────────────────────────────────────
   'checkout.title': { fr: 'Commande', en: 'Checkout' },
