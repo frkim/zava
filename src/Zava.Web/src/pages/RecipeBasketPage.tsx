@@ -18,7 +18,7 @@ import type {
   RecipeBasketOptions, RecipeBasketPlan, RecipeBrandPreference, RecipeHideScope,
 } from '../types';
 
-const defaultSuggestions = ['Lasagnes', 'Blanquette de veau', 'Hachis parmentier', 'Bœuf bourguignon'];
+const defaultSuggestions = ['Lasagnes', 'Blanquette de veau', 'Carbonade', 'Bœuf bourguignon', 'BBQ', 'Repas végétarien', 'Pizza'];
 const preferences = ['National', 'PrivateLabel', 'Economy', 'Mix'] as const;
 type PlanItem = RecipeBasketPlan['items'][number];
 /** Identifies a previewed line, since the same product can appear with different variants. */
@@ -194,6 +194,11 @@ function GroceryRecipeBasket() {
     if (plan) previewHeading.current?.focus();
   }, [plan]);
 
+  // The cartouche always reappears collapsed, never carrying over a previous expansion.
+  useEffect(() => {
+    if (!deselected.length) setShowDeselected(false);
+  }, [deselected]);
+
   const resetPreview = () => {
     setPlan(null);
     setError('');
@@ -252,11 +257,9 @@ function GroceryRecipeBasket() {
     if (selectionLocked) return;
     const key = itemKey(item);
     setCommitError('');
-    setDeselected((previous) => {
-      if (previous.includes(key)) return previous.filter((entry) => entry !== key);
-      setShowDeselected(true);
-      return [...previous, key];
-    });
+    setDeselected((previous) => previous.includes(key)
+      ? previous.filter((entry) => entry !== key)
+      : [...previous, key]);
   };
 
   const hideProduct = (item: PlanItem, scope: RecipeHideScope) => {
@@ -303,7 +306,7 @@ function GroceryRecipeBasket() {
   };
 
   const suggestions = options.status === 'ready' && options.data.suggestions.length
-    ? [...new Set(options.data.suggestions)].filter((item) => item.trim() && item.length <= 200).slice(0, 4)
+    ? [...new Set(options.data.suggestions)].filter((item) => item.trim() && item.length <= 200).slice(0, 8)
     : defaultSuggestions;
   const formDisabled = planning || committing;
 

@@ -11,7 +11,7 @@ public sealed class RecipeBasketService(DataStore store, FoundryRecipeClient fou
     private readonly object quotaLock = new();
     private readonly SemaphoreSlim concurrentPlans = new(2, 2);
     public static readonly string[] Suggestions =
-        ["Lasagnes", "Blanquette de veau", "Hachis parmentier", "Bœuf bourguignon"];
+        ["Lasagnes", "Blanquette de veau", "Carbonade", "Bœuf bourguignon", "BBQ", "Repas végétarien", "Pizza"];
 
     public bool Available => store.CurrentSiteType == SiteType.Grocery && foundry.Available;
 
