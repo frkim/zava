@@ -29,7 +29,7 @@ public sealed class FoundryRecipeClient(
         if (!Available) throw new RecipeProviderException();
         var token = await credential.GetTokenAsync(new TokenRequestContext(Scopes), cancellationToken);
         using var request = new HttpRequestMessage(HttpMethod.Post,
-            $"{endpoint!.AbsoluteUri.TrimEnd('/')}/openai/responses?api-version=2025-11-15-preview");
+            $"{endpoint!.AbsoluteUri.TrimEnd('/')}/openai/v1/responses");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Token);
         request.Content = new StringContent(JsonSerializer.Serialize(new
         {
@@ -37,7 +37,8 @@ public sealed class FoundryRecipeClient(
             input = JsonSerializer.Serialize(input),
             store = false,
             tool_choice = "none",
-            max_output_tokens = 2500,
+            reasoning = new { effort = "low" },
+            max_output_tokens = 4000,
             text = new
             {
                 format = new
@@ -92,22 +93,22 @@ public sealed class FoundryRecipeClient(
 
     private const string PlannerSchema = """
         {"type":"object","additionalProperties":false,"required":["ingredients"],"properties":{
-          "ingredients":{"type":"array","maxItems":25,"items":{"type":"object","additionalProperties":false,
+          "ingredients":{"type":"array","items":{"type":"object","additionalProperties":false,
             "required":["name","quantity","unit"],"properties":{
-              "name":{"type":"string","maxLength":100},
-              "quantity":{"type":"number","exclusiveMinimum":0,"maximum":100000},
+              "name":{"type":"string"},
+              "quantity":{"type":"number"},
               "unit":{"type":"string","enum":["g","kg","ml","l","piece"]}}}}}}
         """;
 
     private const string ShopperSchema = """
         {"type":"object","additionalProperties":false,"required":["selections","missingIngredientIndexes"],"properties":{
-          "selections":{"type":"array","maxItems":25,"items":{"type":"object","additionalProperties":false,
+          "selections":{"type":"array","items":{"type":"object","additionalProperties":false,
             "required":["ingredientIndex","productId","variantId","quantity"],"properties":{
-              "ingredientIndex":{"type":"integer","minimum":0,"maximum":24},
-              "productId":{"type":"integer","minimum":1},
+              "ingredientIndex":{"type":"integer"},
+              "productId":{"type":"integer"},
               "variantId":{"type":["integer","null"]},
-              "quantity":{"type":"integer","minimum":1,"maximum":100}}}},
-          "missingIngredientIndexes":{"type":"array","maxItems":25,"items":{"type":"integer","minimum":0,"maximum":24}}}}
+              "quantity":{"type":"integer"}}}},
+          "missingIngredientIndexes":{"type":"array","items":{"type":"integer"}}}}
         """;
 }
 

@@ -142,10 +142,12 @@ Sans configuration Foundry, l'interface explique l'indisponibilité de l'assista
 L'infrastructure utilise un compte **Microsoft Foundry** (`AIServices`, projets activés), un projet et un déploiement **GPT-5 mini**, pas un hub Foundry classique. Deux agents prompt persistants, `recipe-planner` et `recipe-shopper`, sont déployés dans Agent Service. L'API les sélectionne via `agent_reference` sur l'API Responses du projet :
 
 ```text
-https://<compte>.services.ai.azure.com/api/projects/<projet>/openai/responses?api-version=2025-11-15-preview
+https://<compte>.services.ai.azure.com/api/projects/<projet>/openai/v1/responses
 ```
 
 L'authentification utilise Microsoft Entra ID et l'identité managée de Container Apps, sans clé de modèle dans le navigateur. Application Insights, lié à Log Analytics, reçoit la télémétrie de l'API. Les événements applicatifs `RecipeBasketPlan` et `RecipeBasketCommit` décrivent le résultat et, pour la génération, la durée ; ils n'enregistrent pas le texte de la recette.
+
+Les traces natives des agents Foundry sont facultatives (`AZURE_AI_ENABLE_TRACING=false` par défaut). Activer cette option crée une connexion du projet à Application Insights ; ces traces peuvent enregistrer les prompts et réponses. Ne l'activer qu'après avoir défini les règles de confidentialité, d'accès et de rétention appropriées.
 
 Pour un développement local avec un projet et des agents déjà déployés :
 
@@ -184,7 +186,7 @@ azd env set AZURE_AI_LOCATION eastus2
 azd up
 ```
 
-Les paramètres `AZURE_AI_MODEL_NAME`, `AZURE_AI_MODEL_VERSION`, `AZURE_AI_MODEL_SKU` et `AZURE_AI_MODEL_CAPACITY` permettent d'adapter le modèle au quota disponible. Le hook `postprovision` crée les versions des deux agents ; une définition inchangée ne crée pas de version supplémentaire. Un échec du hook interrompt le déploiement. Le hook `postdeploy` vérifie uniquement les endpoints de lecture : il ne prouve pas qu'une génération IA complète fonctionne.
+Les paramètres `AZURE_AI_MODEL_NAME`, `AZURE_AI_MODEL_VERSION`, `AZURE_AI_MODEL_SKU` et `AZURE_AI_MODEL_CAPACITY` permettent d'adapter le modèle au quota disponible. Le runtime utilise un effort de raisonnement `low` : le modèle choisi doit prendre en charge ce paramètre et les sorties JSON structurées. Les hooks `postprovision` et `predeploy` créent les versions des deux agents ; une définition inchangée ne crée pas de version supplémentaire. Un échec du hook interrompt le déploiement. Le hook `postdeploy` vérifie uniquement les endpoints de lecture : il ne prouve pas qu'une génération IA complète fonctionne.
 
 Le workflow `.github/workflows/deploy.yml` utilise les secrets Azure existants et expose les mêmes paramètres de modèle comme variables de dépôt. Après déploiement, ouvrir l'URL `WEB_URI`, sélectionner **Alimentaire**, générer puis confirmer une recette et vérifier les événements Application Insights. Ce parcours en ligne nécessite les permissions Foundry et un quota réellement disponibles ; les tests avec réponses simulées ne le remplacent pas.
 

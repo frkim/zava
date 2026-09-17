@@ -157,13 +157,15 @@ sealed class FakeFoundry : HttpMessageHandler
     public int[] LastProductIds = [];
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        if (request.RequestUri?.AbsoluteUri != "https://explicit-test.services.ai.azure.com/api/projects/test/openai/responses?api-version=2025-11-15-preview"
+        if (request.RequestUri?.AbsoluteUri != "https://explicit-test.services.ai.azure.com/api/projects/test/openai/v1/responses"
             || request.Headers.Authorization?.Scheme != "Bearer")
             throw new Exception("Expected authenticated Foundry project Responses API");
         if (Mode == "timeout") await Task.Delay(10000, cancellationToken);
         using var body = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(cancellationToken));
         var root = body.RootElement;
-        if (root.GetProperty("max_output_tokens").GetInt32() != 2500 || !root.GetProperty("text").GetProperty("format").GetProperty("strict").GetBoolean())
+        if (root.GetProperty("max_output_tokens").GetInt32() != 4000
+            || root.GetProperty("reasoning").GetProperty("effort").GetString() != "low"
+            || !root.GetProperty("text").GetProperty("format").GetProperty("strict").GetBoolean())
             throw new Exception("Missing strict provider bounds");
         var agent = root.GetProperty("agent_reference").GetProperty("name").GetString();
         object output;
