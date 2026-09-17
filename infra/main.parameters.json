@@ -9,7 +9,7 @@
       "value": "${AZURE_LOCATION}"
     },
     "aiLocation": {
-      "value": "${AZURE_AI_LOCATION=eastus2}"
+      "value": "${AZURE_AI_LOCATION=swedencentral}"
     },
     "aiModelName": {
       "value": "${AZURE_AI_MODEL_NAME=gpt-5-mini}"

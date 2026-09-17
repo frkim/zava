@@ -15,9 +15,9 @@ concurrency:
 
 env:
   AZURE_ENV_NAME: zava-prod
-  AZURE_LOCATION: swedencentral
-  # Model availability and quota are independent of the Container Apps region.
-  AZURE_AI_LOCATION: ${{ vars.AZURE_AI_LOCATION || 'eastus2' }}
+  AZURE_LOCATION: ${{ vars.AZURE_LOCATION || 'swedencentral' }}
+  # Defaults to the application region; override only if the model is unavailable there.
+  AZURE_AI_LOCATION: ${{ vars.AZURE_AI_LOCATION || vars.AZURE_LOCATION || 'swedencentral' }}
   AZURE_AI_MODEL_NAME: ${{ vars.AZURE_AI_MODEL_NAME || 'gpt-5-mini' }}
   AZURE_AI_MODEL_VERSION: ${{ vars.AZURE_AI_MODEL_VERSION || '2025-08-07' }}
   AZURE_AI_MODEL_SKU: ${{ vars.AZURE_AI_MODEL_SKU || 'GlobalStandard' }}

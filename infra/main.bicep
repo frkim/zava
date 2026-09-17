@@ -24,8 +24,8 @@ param containerRegistryName string = ''
 @description('Name of the Log Analytics workspace')
 param logAnalyticsName string = ''
 
-@description('Foundry/model region, independent of the application region. Verify model availability and quota before provisioning.')
-param aiLocation string = 'eastus2'
+@description('Foundry/model region. Defaults to the application region; override only if the model, version and SKU are unavailable there. Verify model availability and quota before provisioning.')
+param aiLocation string = location
 
 @description('OpenAI model name. Model, version, SKU and region must be a supported combination.')
 param aiModelName string = 'gpt-5-mini'

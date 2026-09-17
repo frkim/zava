@@ -182,13 +182,23 @@ Prérequis supplémentaires : Azure Developer CLI (`azd`), Azure CLI, Python 3, 
 azd auth login
 azd env new zava-recipes-dev
 azd env set AZURE_LOCATION swedencentral
-azd env set AZURE_AI_LOCATION eastus2
 azd up
 ```
 
+Sweden Central est la région par défaut pour l'application **et** pour Foundry. Si le modèle, sa version ou son SKU n'y sont pas disponibles pour votre abonnement, déporter uniquement Foundry avec `azd env set AZURE_AI_LOCATION <région>` ; le reste des ressources demeure dans `AZURE_LOCATION`.
+
 Les paramètres `AZURE_AI_MODEL_NAME`, `AZURE_AI_MODEL_VERSION`, `AZURE_AI_MODEL_SKU` et `AZURE_AI_MODEL_CAPACITY` permettent d'adapter le modèle au quota disponible. Le runtime utilise un effort de raisonnement `low` : le modèle choisi doit prendre en charge ce paramètre et les sorties JSON structurées. Les hooks `postprovision` et `predeploy` créent les versions des deux agents ; une définition inchangée ne crée pas de version supplémentaire. Un échec du hook interrompt le déploiement. Le hook `postdeploy` vérifie uniquement les endpoints de lecture : il ne prouve pas qu'une génération IA complète fonctionne.
 
-Le workflow `.github/workflows/deploy.yml` utilise les secrets Azure existants et expose les mêmes paramètres de modèle comme variables de dépôt. Après déploiement, ouvrir l'URL `WEB_URI`, sélectionner **Alimentaire**, générer puis confirmer une recette et vérifier les événements Application Insights. Ce parcours en ligne nécessite les permissions Foundry et un quota réellement disponibles ; les tests avec réponses simulées ne le remplacent pas.
+Le workflow `.github/workflows/deploy.yml` s'authentifie avec des secrets de dépôt, selon deux modes exclusifs :
+
+| Mode | Secrets requis | Remarques |
+|------|----------------|-----------|
+| Identité fédérée OIDC (recommandé) | `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID` | Aucun secret client stocké ; nécessite une *federated credential* sur l'application Entra, limitée à ce dépôt et à sa branche |
+| Secret client | `AZURE_CREDENTIALS` (JSON `clientId`/`clientSecret`/`tenantId`), `AZURE_SUBSCRIPTION_ID` | Utilisé seulement si `AZURE_CLIENT_ID` est absent ; le secret expire et doit être renouvelé |
+
+L'identité doit pouvoir créer les ressources **et les attributions de rôles** dans l'abonnement. `azd` résout lui-même `AZURE_PRINCIPAL_ID` à partir de l'identité connectée, afin de lui accorder le rôle Foundry nécessaire à la création des agents. Les paramètres de modèle et de région sont exposés comme variables de dépôt (`AZURE_LOCATION`, `AZURE_AI_LOCATION`, `AZURE_AI_MODEL_*`) et conservent leurs valeurs par défaut si elles ne sont pas définies.
+
+Après déploiement, ouvrir l'URL `WEB_URI`, sélectionner **Alimentaire**, générer puis confirmer une recette et vérifier les événements Application Insights. Ce parcours en ligne nécessite les permissions Foundry et un quota réellement disponibles ; les tests avec réponses simulées ne le remplacent pas.
 
 ## Évaluation qualité et priorités
 
