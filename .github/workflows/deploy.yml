@@ -9,6 +9,10 @@ permissions:
   id-token: write
   contents: read
 
+concurrency:
+  group: zava-production-deployment
+  cancel-in-progress: false
+
 env:
   AZURE_ENV_NAME: zava-prod
   AZURE_LOCATION: swedencentral
@@ -18,6 +22,8 @@ env:
   AZURE_AI_MODEL_VERSION: ${{ vars.AZURE_AI_MODEL_VERSION || '2025-08-07' }}
   AZURE_AI_MODEL_SKU: ${{ vars.AZURE_AI_MODEL_SKU || 'GlobalStandard' }}
   AZURE_AI_MODEL_CAPACITY: ${{ vars.AZURE_AI_MODEL_CAPACITY || '10' }}
+  # Native Foundry traces can contain prompts and responses; explicitly opt in.
+  AZURE_AI_ENABLE_TRACING: ${{ vars.AZURE_AI_ENABLE_TRACING || 'false' }}
   AZURE_PRINCIPAL_TYPE: ServicePrincipal
   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
@@ -53,7 +59,7 @@ jobs:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
 
       - name: Log in with Azure (Client Secret)
-        if: ${{ env.AZURE_CREDENTIALS != '' }}
+        if: ${{ env.AZURE_CLIENT_ID == '' && env.AZURE_CREDENTIALS != '' }}
         run: |
           $info = $env:AZURE_CREDENTIALS | ConvertFrom-Json
           azd auth login `
@@ -62,6 +68,7 @@ jobs:
             --tenant-id $info.tenantId
         shell: pwsh
         env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
 
       # postprovision deploys both Foundry agents; a failure prevents image deployment.

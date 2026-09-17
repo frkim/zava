@@ -139,10 +139,10 @@ Sans configuration Foundry, l'interface explique l'indisponibilité de l'assista
 
 #### Microsoft Foundry et monitoring
 
-L'infrastructure utilise un compte **Microsoft Foundry** (`AIServices`, projets activés), un projet et un déploiement **GPT-5 mini**, pas un hub Foundry classique. Deux agents prompt persistants, `recipe-planner` et `recipe-shopper`, sont déployés dans Agent Service. L'API appelle leurs endpoints natifs :
+L'infrastructure utilise un compte **Microsoft Foundry** (`AIServices`, projets activés), un projet et un déploiement **GPT-5 mini**, pas un hub Foundry classique. Deux agents prompt persistants, `recipe-planner` et `recipe-shopper`, sont déployés dans Agent Service. L'API les sélectionne via `agent_reference` sur l'API Responses du projet :
 
 ```text
-https://<compte>.services.ai.azure.com/api/projects/<projet>/agents/<agent>/endpoint/protocols/openai/responses?api-version=v1
+https://<compte>.services.ai.azure.com/api/projects/<projet>/openai/responses?api-version=2025-11-15-preview
 ```
 
 L'authentification utilise Microsoft Entra ID et l'identité managée de Container Apps, sans clé de modèle dans le navigateur. Application Insights, lié à Log Analytics, reçoit la télémétrie de l'API. Les événements applicatifs `RecipeBasketPlan` et `RecipeBasketCommit` décrivent le résultat et, pour la génération, la durée ; ils n'enregistrent pas le texte de la recette.
@@ -172,6 +172,22 @@ La génération est bornée (deux requêtes simultanées, six par minute, quaran
 
 Références Microsoft : [agents prompt](https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent), [endpoints et versions d'agents](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-agent), [rôles Foundry](https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry), [régions et quotas](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/limits-quotas-regions).
 
+#### Déploiement Azure
+
+Prérequis supplémentaires : Azure Developer CLI (`azd`), Azure CLI, Python 3, Docker, un abonnement avec quota pour le modèle et une identité autorisée à créer les ressources **et les attributions de rôles**. Le déploiement crée des ressources facturables. Ne pas réutiliser le nom d'un environnement de production pour un essai.
+
+```bash
+azd auth login
+azd env new zava-recipes-dev
+azd env set AZURE_LOCATION swedencentral
+azd env set AZURE_AI_LOCATION eastus2
+azd up
+```
+
+Les paramètres `AZURE_AI_MODEL_NAME`, `AZURE_AI_MODEL_VERSION`, `AZURE_AI_MODEL_SKU` et `AZURE_AI_MODEL_CAPACITY` permettent d'adapter le modèle au quota disponible. Le hook `postprovision` crée les versions des deux agents ; une définition inchangée ne crée pas de version supplémentaire. Un échec du hook interrompt le déploiement. Le hook `postdeploy` vérifie uniquement les endpoints de lecture : il ne prouve pas qu'une génération IA complète fonctionne.
+
+Le workflow `.github/workflows/deploy.yml` utilise les secrets Azure existants et expose les mêmes paramètres de modèle comme variables de dépôt. Après déploiement, ouvrir l'URL `WEB_URI`, sélectionner **Alimentaire**, générer puis confirmer une recette et vérifier les événements Application Insights. Ce parcours en ligne nécessite les permissions Foundry et un quota réellement disponibles ; les tests avec réponses simulées ne le remplacent pas.
+
 ## Évaluation qualité et priorités
 
 Le projet convient à une **démonstration de parcours e-commerce**, pas à une boutique réelle : panier et profil partagés, données en mémoire, absence d'authentification et paiement simulé. N'y saisissez ni données personnelles réelles ni coordonnées bancaires réelles.
@@ -181,9 +197,9 @@ Les corrections de cette évaluation ciblent la confiance dans le panier : modif
 | Priorité | Suite recommandée | Valeur technique et métier |
 |----------|-------------------|----------------------------|
 | Haute, avant usage réel | Isoler les paniers par utilisateur, ajouter authentification/autorisation et persistance | Éviter le partage involontaire des commandes et la perte des données au redémarrage |
-| Haute | Rendre les mutations et le checkout transactionnels, réserver/décrémenter le stock, rendre le paiement idempotent | Les contrôles du panier ne réservent pas le stock et ne protègent pas les requêtes concurrentes ; prévenir survente et commandes en double |
+| Haute | Rendre les mutations et le checkout transactionnels, réserver/décrémenter le stock, rendre le paiement idempotent | Le verrou partagé sérialise les requêtes dans un processus, sans réservation persistante ni coordination entre instances ; prévenir survente et commandes en double |
 | Haute | Aligner la remise complémentaire annoncée avec le prix facturé | L'offre cross-sell affiche actuellement une remise de 10 %, mais l'ajout standard utilise le prix catalogue/promotion ; éviter une promesse commerciale non tenue |
-| Haute | Traiter les avis de sécurité des dépendances et ajouter des tests automatisés exécutés sur les PR | Les audits initiaux signalent des dépendances vulnérables ; les exemples HTTP actuels ne constituent pas une suite automatisée |
+| Haute | Traiter les avis de sécurité des dépendances et exécuter les tests sur les PR | Les audits initiaux signalent des dépendances vulnérables ; les contrôles locaux du panier recette ne couvrent pas encore tous les parcours du site |
 | Moyenne | Valider aussi création de produits, adresses et paiement côté serveur ; harmoniser les erreurs FR/EN | Améliorer la qualité des données et la compréhension des refus |
 | Moyenne | Charger les pages, notamment les graphiques analytics, à la demande ; mesurer le parcours mobile | Le build initial charge environ 1,82 Mo de JavaScript (573 Ko gzip) dans un seul bundle ; réduire le coût d'entrée dans la boutique |
 | Moyenne | Corriger les erreurs ESLint existantes et ajouter un contrôle build/lint avant déploiement | Détecter les régressions avant publication, sans désactiver les règles |
@@ -193,6 +209,7 @@ Les corrections de cette évaluation ciblent la confiance dans le panier : modif
 ```bash
 # Depuis la racine
 dotnet build Zava.slnx
+dotnet run --no-build --project tests/Zava.Api.RecipeChecks
 
 cd src/Zava.Web
 npm ci
@@ -205,6 +222,19 @@ Les deux builds passent lors de l'évaluation. Le lint global signale neuf erreu
 Pour vérifier le panier, démarrer l'API et exécuter dans l'ordre la section **Cart regression checks** de `src/Zava.Api/Zava.Api.http` avec un client HTTP compatible. Les statuts et invariants attendus figurent dans chaque requête. **Cette section réinitialise les données partagées du démonstrateur.**
 
 La section **Recipe basket regression checks** du même fichier couvre les saisies invalides, les gammes, l'aperçu sans mutation, la confirmation répétée et l'invalidation après réinitialisation. Elle réinitialise également les données. Les scénarios positifs IA nécessitent de vrais agents déployés ; sans configuration, vérifier `available: false` et le refus explicite de génération, puis vérifier que l'ajout classique fonctionne toujours.
+
+`tests/Zava.Api.RecipeChecks` exécute les contrôles HTTP locaux sur le port `5097`, avec une identité et des réponses Foundry explicitement simulées : aucun abonnement ni jeton réel n'est nécessaire. Il vérifie également les stocks, les variantes, l'ajout atomique et idempotent, le catalogue des trois gammes, les délais et les quotas.
+
+Les contrôles navigateur existants se trouvent dans `tests/recipe-ui`. Avec Node.js 22+ et Chromium installés, lancer ces commandes dans des terminaux séparés depuis la racine :
+
+```bash
+node tests/recipe-ui/mock.mjs
+VITE_API_BASE_URL=http://localhost:5185 npm --prefix src/Zava.Web run dev -- --host 127.0.0.1 --port 5186 --strictPort
+chromium --headless --disable-gpu --disable-background-networking --remote-debugging-port=5187 --user-data-dir=/tmp/zava-recipe-browser http://localhost:5186
+node tests/recipe-ui/check.mjs
+```
+
+Ces contrôles utilisent une API simulée sur le port `5185` pour tester les erreurs, les nouvelles tentatives, les confirmations et l'affichage mobile/FR/EN. Les captures sont écrites dans le dossier temporaire du système (`/tmp/zava-recipe-ui` sous Linux), jamais dans le dépôt. Arrêter les trois processus après les tests.
 
 Dans le navigateur, ajouter deux variantes du même produit, modifier/supprimer la seconde et vérifier que la première ne change pas. Couper ensuite l'API : une mutation doit afficher une erreur sans effacer le panier ; un chargement initial en échec doit proposer « Réessayer », et non afficher un panier vide. Rétablir l'API puis réessayer.
 

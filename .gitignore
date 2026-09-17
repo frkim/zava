@@ -301,6 +301,10 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
+# Local recipe browser verification artifacts
+.recipe-browser/
+.recipe-ui-*.png
+
 # Visual Studio 6 build log
 *.plg
 

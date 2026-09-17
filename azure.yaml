@@ -8,17 +8,22 @@ services:
     host: containerapp
     language: dotnet
     docker:
-      path: ./src/Zava.Api/Dockerfile
-      context: .
+      path: Dockerfile
+      context: ../..
   web:
     project: ./src/Zava.Web
     host: containerapp
     language: ts
     docker:
-      path: ./src/Zava.Web/Dockerfile
-      context: ./src/Zava.Web
+      path: Dockerfile
+      context: .
 hooks:
   postprovision:
+    shell: sh
+    run: python3 ./scripts/deploy-recipe-agents.py
+    interactive: false
+    continueOnError: false
+  predeploy:
     shell: sh
     run: python3 ./scripts/deploy-recipe-agents.py
     interactive: false

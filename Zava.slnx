@@ -2,4 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/Zava.Api/Zava.Api.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Zava.Api.RecipeChecks/Zava.Api.RecipeChecks.csproj" />
+  </Folder>
 </Solution>

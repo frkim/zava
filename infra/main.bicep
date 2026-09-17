@@ -39,6 +39,9 @@ param aiModelCapacity int = 10
 
 param aiModelDeploymentName string = 'recipe-model'
 
+@description('Opt in to Foundry server-side tracing, which can store recipe prompts and model outputs in Application Insights. Application request/metric monitoring remains enabled independently.')
+param enableFoundryTracing bool = false
+
 @description('Object ID of the azd deployment identity, which creates the prompt agents after provisioning.')
 @minLength(1)
 param principalId string
@@ -97,6 +100,9 @@ module foundry './modules/foundry.bicep' = {
     modelCapacity: aiModelCapacity
     deploymentPrincipalId: principalId
     deploymentPrincipalType: principalType
+    applicationInsightsResourceId: applicationInsights.outputs.id
+    applicationInsightsConnectionString: applicationInsights.outputs.connectionString
+    enableTracing: enableFoundryTracing
   }
 }
 

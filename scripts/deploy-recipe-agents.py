@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 
 
-API_VERSION = "2025-11-15-preview"
+API_VERSION = "v1"
 TOKEN_SCOPE = "https://ai.azure.com/.default"
 MAX_ATTEMPTS = 12
 RETRYABLE = {401, 403, 404, 408, 409, 429, 500, 502, 503, 504}

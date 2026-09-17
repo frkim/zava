@@ -70,6 +70,7 @@ function GroceryRecipeBasket() {
   const [error, setError] = useState('');
   const [commitError, setCommitError] = useState('');
   const [uncertainCommit, setUncertainCommit] = useState(false);
+  const [commitRequiresRefresh, setCommitRequiresRefresh] = useState(false);
   const [expired, setExpired] = useState(false);
   const busy = useRef(false);
   const active = useRef(false);
@@ -110,7 +111,7 @@ function GroceryRecipeBasket() {
   }, [plan, committed]);
 
   useEffect(() => {
-    if (plan) previewHeading.current?.focus({ preventScroll: true });
+    if (plan) previewHeading.current?.focus();
   }, [plan]);
 
   const resetPreview = () => {
@@ -119,6 +120,7 @@ function GroceryRecipeBasket() {
     setCommitError('');
     setCommitted(false);
     setUncertainCommit(false);
+    setCommitRequiresRefresh(false);
     setExpired(false);
   };
 
@@ -147,7 +149,7 @@ function GroceryRecipeBasket() {
   };
 
   const confirmPlan = async () => {
-    if (!plan || busy.current || committed || !plan.items.length) return;
+    if (!plan || busy.current || committed || commitRequiresRefresh || !plan.items.length) return;
     if (!uncertainCommit && (expired || Date.parse(plan.expiresAt) <= Date.now())) {
       setExpired(true);
       return;
@@ -165,7 +167,9 @@ function GroceryRecipeBasket() {
       if (!active.current) return;
       setCommitError(e instanceof Error ? e.message : t('common.error'));
       // A lost response may hide a successful commit. Retrying the same plan is idempotent.
-      setUncertainCommit(!(e instanceof ApiError) || e.status >= 500);
+      setUncertainCommit((previous) => !(e instanceof ApiError) || e.status >= 500
+        || e.status === 408 || (e.status === 429 && previous));
+      setCommitRequiresRefresh(e instanceof ApiError && (e.status === 409 || e.status === 410));
       if (e instanceof ApiError && e.status === 410) setExpired(true);
     } finally {
       if (active.current) {
@@ -380,13 +384,13 @@ function GroceryRecipeBasket() {
                 {expired && !committed && !uncertainCommit && <Alert severity="warning" sx={{ mb: 2 }}>{t('recipe.expired')}</Alert>}
                 {commitError && <Alert severity="error" sx={{ mb: 2 }}>
                   <AlertTitle>{commitError}</AlertTitle>
-                  {t('recipe.commitRetryHelp')}
+                  {t(commitRequiresRefresh || (expired && !uncertainCommit) ? 'recipe.commitRefreshHelp' : 'recipe.commitRetryHelp')}
                 </Alert>}
                 <Button fullWidth variant="contained" size="large" onClick={confirmPlan}
-                  disabled={committing || committed || (expired && !uncertainCommit) || !plan.items.length}
+                  disabled={committing || committed || commitRequiresRefresh || (expired && !uncertainCommit) || !plan.items.length}
                   startIcon={committing ? <CircularProgress size={18} color="inherit" /> : committed ? <CheckCircleOutline /> : <ShoppingBasket />}
                   sx={{ py: 1.5 }}>
-                  {t(committing ? 'recipe.committing' : committed ? 'recipe.addedButton' : commitError ? 'recipe.commitRetry'
+                  {t(committing ? 'recipe.committing' : committed ? 'recipe.addedButton' : commitError && !commitRequiresRefresh && (!expired || uncertainCommit) ? 'recipe.commitRetry'
                     : plan.missingIngredients.length ? 'recipe.confirmPartial' : 'recipe.confirm')}
                 </Button>
                 {committed && <Button component={RouterLink} to="/cart" fullWidth endIcon={<ArrowForward />} sx={{ mt: 1 }}>{t('recipe.viewCart')}</Button>}

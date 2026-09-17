@@ -66,6 +66,7 @@ const translations = {
   'recipe.addedButton': { fr: 'Produits ajoutés', en: 'Products added' },
   'recipe.commitRetry': { fr: 'Réessayer le même ajout', en: 'Retry the same addition' },
   'recipe.commitRetryHelp': { fr: 'La confirmation n’a pas abouti. Réessayez avec ce même aperçu : un ajout déjà reçu par le serveur ne sera pas dupliqué.', en: 'Confirmation could not be completed. Retry this same preview: an addition already received by the server will not be duplicated.' },
+  'recipe.commitRefreshHelp': { fr: 'Cet aperçu ne peut plus être ajouté. Actualisez la proposition pour vérifier les prix et les stocks avant de confirmer.', en: 'This preview can no longer be added. Refresh the suggestion to check prices and stock before confirming.' },
   'recipe.regenerate': { fr: 'Actualiser la proposition', en: 'Refresh the suggestion' },
   'recipe.expires': { fr: 'Proposition valable jusqu’à', en: 'Suggestion valid until' },
   'recipe.expired': { fr: 'Cette proposition a expiré. Actualisez-la pour vérifier les prix et les stocks avant de confirmer.', en: 'This suggestion has expired. Refresh it to check prices and stock before confirming.' },

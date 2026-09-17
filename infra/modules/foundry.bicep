@@ -9,6 +9,11 @@ param modelSku string
 param modelCapacity int
 param deploymentPrincipalId string
 param deploymentPrincipalType string
+param applicationInsightsResourceId string
+param enableTracing bool = false
+
+@secure()
+param applicationInsightsConnectionString string
 
 resource account 'Microsoft.CognitiveServices/accounts@2025-06-01' = {
   name: name
@@ -57,6 +62,24 @@ resource model 'Microsoft.CognitiveServices/accounts/deployments@2025-06-01' = {
       version: modelVersion
     }
     versionUpgradeOption: 'NoAutoUpgrade'
+  }
+}
+
+resource applicationInsightsConnection 'Microsoft.CognitiveServices/accounts/projects/connections@2025-06-01' = if (enableTracing) {
+  parent: project
+  name: 'recipe-monitoring'
+  properties: {
+    category: 'AppInsights'
+    target: applicationInsightsResourceId
+    authType: 'ApiKey'
+    isSharedToAll: false
+    credentials: {
+      key: applicationInsightsConnectionString
+    }
+    metadata: {
+      ApiType: 'Azure'
+      ResourceId: applicationInsightsResourceId
+    }
   }
 }
 

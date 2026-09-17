@@ -139,7 +139,7 @@ export default function Layout({ children }: LayoutProps) {
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="sticky">
         <Toolbar>
-          <IconButton color="inherit" edge="start" onClick={() => setDrawerOpen(true)} sx={{ mr: 1 }}>
+          <IconButton color="inherit" edge="start" aria-label={t('nav.menu')} onClick={() => setDrawerOpen(true)} sx={{ mr: 1 }}>
             <MenuIcon />
           </IconButton>
           <Typography
@@ -236,7 +236,7 @@ export default function Layout({ children }: LayoutProps) {
         <Box sx={{ width: 280, pt: 1 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, py: 1 }}>
             <Typography variant="h6" fontWeight={700}>{t('nav.menu')}</Typography>
-            <IconButton onClick={() => setDrawerOpen(false)}><Close /></IconButton>
+            <IconButton aria-label={t('product.close')} onClick={() => setDrawerOpen(false)}><Close /></IconButton>
           </Box>
           <Divider />
           <List>
