@@ -15,6 +15,12 @@ param apiContainerAppName string = ''
 @description('Name of the Web container app')
 param webContainerAppName string = ''
 
+@description('Existing API image to preserve during provisioning, before deploying a new application image.')
+param apiContainerImage string = 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
+
+@description('Existing Web image to preserve during provisioning, before deploying a new application image.')
+param webContainerImage string = 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
+
 @description('Name of the Container Apps Environment')
 param containerAppsEnvironmentName string = ''
 
@@ -140,6 +146,10 @@ module api './modules/container-app.bicep' = {
     containerAppsEnvironmentName: containerAppsEnvironment.outputs.name
     containerRegistryName: containerRegistry.outputs.name
     targetPort: 8080
+    containerImage: apiContainerImage
+    // The demo stores baskets and recipe plans in process memory.
+    minReplicas: 1
+    maxReplicas: 1
     enableManagedIdentity: true
     applicationInsightsConnectionString: applicationInsights.outputs.connectionString
     env: [
@@ -188,6 +198,7 @@ module web './modules/container-app.bicep' = {
     containerAppsEnvironmentName: containerAppsEnvironment.outputs.name
     containerRegistryName: containerRegistry.outputs.name
     targetPort: 80
+    containerImage: webContainerImage
     env: [
       {
         name: 'API_BASE_URL'

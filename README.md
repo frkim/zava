@@ -133,6 +133,8 @@ Les valeurs API des gammes sont `National`, `PrivateLabel`, `Economy` et `Mix`. 
 
 Le premier agent décompose la recette en ingrédients et quantités ; le second associe ces ingrédients aux références réellement disponibles et à leurs conditionnements. Les réponses sont structurées et validées : aucun identifiant, prix ou stock inventé par le modèle n'est accepté. Les agents n'ont pas d'outil de paiement ni d'accès direct au panier.
 
+Les schémas JSON stricts et l'effort de raisonnement sont enregistrés dans les **définitions des agents**. Une requête Responses utilisant `agent_reference` ne doit pas redéfinir `text` ni `reasoning` : Foundry rejette ces paramètres avec HTTP 400. Les tests vérifient ce contrat côté déploiement et côté client API.
+
 Un aperçu expire après dix minutes et devient invalide après réinitialisation ou changement de boutique. La confirmation revérifie le catalogue et les stocks, conserve les variantes et ajoute tout ou rien. Réessayer la même confirmation pendant sa validité ne double pas les quantités. Les estimations culinaires restent des suggestions : vérifier les portions, les substitutions et les allergènes sur les emballages.
 
 Sans configuration Foundry, l'interface explique l'indisponibilité de l'assistant et le panier classique reste utilisable. Il n'existe pas de simulation IA cachée ni de repli vers un modèle local.
@@ -189,6 +191,12 @@ Sweden Central est la région par défaut pour l'application **et** pour Foundry
 
 Les paramètres `AZURE_AI_MODEL_NAME`, `AZURE_AI_MODEL_VERSION`, `AZURE_AI_MODEL_SKU` et `AZURE_AI_MODEL_CAPACITY` permettent d'adapter le modèle au quota disponible. Le runtime utilise un effort de raisonnement `low` : le modèle choisi doit prendre en charge ce paramètre et les sorties JSON structurées. Les hooks `postprovision` et `predeploy` créent les versions des deux agents ; une définition inchangée ne crée pas de version supplémentaire. Un échec du hook interrompt le déploiement. Le hook `postdeploy` vérifie uniquement les endpoints de lecture : il ne prouve pas qu'une génération IA complète fonctionne.
 
+Le hook `preprovision` conserve les images en cours dans `SERVICE_API_IMAGE_NAME` et `SERVICE_WEB_IMAGE_NAME` : une mise à jour d'infrastructure ne remplace ainsi pas une application existante par l'image d'accueil Azure. Avec un déploiement Bicep direct, renseigner les paramètres `apiContainerImage` et `webContainerImage` à partir des applications existantes. L'API reste sur **une instance toujours active** (`minReplicas=maxReplicas=1`) : plusieurs instances ne peuvent pas partager les paniers et aperçus conservés en mémoire. Un redéploiement ou redémarrage perd toujours cet état ; obtenir l'accord des utilisateurs avant l'opération.
+
+Les Dockerfiles utilisent .NET 10 stable, `NuGet.Config` et `.npmrc`, avec les flux CFS protégés. Le frontend utilise `npm ci` et un lockfile dont toutes les URL de paquets pointent vers CFS. Ne pas activer `replace-registry-host=always` avec ces URL déjà réécrites : npm peut doubler le segment `/npm/`. Les contrôles de déploiement vérifient ce contrat en CI.
+
+Sous Windows, les hooks utilisent PowerShell et `python`. Pour employer explicitement l'identité Azure CLI plutôt que celle d'`azd`, définir `RECIPE_TOKEN_PROVIDER=az` et `AZURE_SUBSCRIPTION_ID` dans le processus qui lance le script. Cela évite de sélectionner une identité d'un autre tenant lorsque les deux CLI sont connectés à des comptes différents.
+
 Le workflow `.github/workflows/deploy.yml` s'authentifie avec des secrets de dépôt, selon deux modes exclusifs :
 
 | Mode | Secrets requis | Remarques |
@@ -196,9 +204,13 @@ Le workflow `.github/workflows/deploy.yml` s'authentifie avec des secrets de dé
 | Identité fédérée OIDC (recommandé) | `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID` | Aucun secret client stocké ; nécessite une *federated credential* sur l'application Entra, limitée à ce dépôt et à sa branche |
 | Secret client | `AZURE_CREDENTIALS` (JSON `clientId`/`clientSecret`/`tenantId`), `AZURE_SUBSCRIPTION_ID` | Utilisé seulement si `AZURE_CLIENT_ID` est absent ; le secret expire et doit être renouvelé |
 
-L'identité doit pouvoir créer les ressources **et les attributions de rôles** dans l'abonnement. `azd` résout lui-même `AZURE_PRINCIPAL_ID` à partir de l'identité connectée, afin de lui accorder le rôle Foundry nécessaire à la création des agents. Les paramètres de modèle et de région sont exposés comme variables de dépôt (`AZURE_LOCATION`, `AZURE_AI_LOCATION`, `AZURE_AI_MODEL_*`) et conservent leurs valeurs par défaut si elles ne sont pas définies.
+L'identité doit pouvoir créer les ressources et gérer les attributions **Azure AI User sur le projet Foundry**. Le rôle Contributor seul ne permet pas ces attributions. Un administrateur peut amorcer l'infrastructure, puis appliquer séparément `infra/bootstrap-ci-access.bicep` au groupe existant avec `accountName` et `ciPrincipalId` (ID objet du principal GitHub). Ce fichier accorde une délégation RBAC limitée au projet ; sa condition restreint la création et la suppression d'attributions au seul rôle Azure AI User. Ne pas donner Owner sur l'abonnement pour résoudre cette erreur. Cette opération d'administration nécessite une approbation explicite et n'est pas exécutée par le workflow CI.
+
+`azd` résout lui-même `AZURE_PRINCIPAL_ID` à partir de l'identité connectée, afin de lui accorder le rôle Foundry nécessaire à la création des agents. Les paramètres de modèle et de région sont exposés comme variables de dépôt (`AZURE_LOCATION`, `AZURE_AI_LOCATION`, `AZURE_AI_MODEL_*`) et conservent leurs valeurs par défaut si elles ne sont pas définies.
 
 Après déploiement, ouvrir l'URL `WEB_URI`, sélectionner **Alimentaire**, générer puis confirmer une recette et vérifier les événements Application Insights. Ce parcours en ligne nécessite les permissions Foundry et un quota réellement disponibles ; les tests avec réponses simulées ne le remplacent pas.
+
+Pour un contrôle reproductible avec les vrais agents, exécuter `python scripts/check-recipe-basket.py --api-uri https://<URL-du-site> --recipe Lasagnes --brand Mix`. Il vérifie les prix du catalogue, les quantités entières, le total et l'absence de mutation du panier pendant l'aperçu. Ajouter `--commit` uniquement après accord du propriétaire du démonstrateur : il ajoute réellement les produits, puis confirme à nouveau le même aperçu pour vérifier l'absence de doublon. Il ne change pas de boutique, ne réinitialise aucune donnée et ne passe aucune commande.
 
 ## Évaluation qualité et priorités
 
@@ -237,16 +249,27 @@ La section **Recipe basket regression checks** du même fichier couvre les saisi
 
 `tests/Zava.Api.RecipeChecks` exécute les contrôles HTTP locaux sur le port `5097`, avec une identité et des réponses Foundry explicitement simulées : aucun abonnement ni jeton réel n'est nécessaire. Il vérifie également les stocks, les variantes, l'ajout atomique et idempotent, le catalogue des trois gammes, les délais et les quotas.
 
-Les contrôles navigateur existants se trouvent dans `tests/recipe-ui`. Avec Node.js 22+ et Chromium installés, lancer ces commandes dans des terminaux séparés depuis la racine :
+Les contrôles navigateur existants se trouvent dans `tests/recipe-ui`. Avec Node.js 22+ et Chrome installés, utiliser les commandes PowerShell suivantes depuis la racine. Choisir un dossier d'artefacts dédié, hors du dépôt, et un profil de navigateur distinct de votre profil habituel :
 
-```bash
-node tests/recipe-ui/mock.mjs
-VITE_API_BASE_URL=http://localhost:5185 npm --prefix src/Zava.Web run dev -- --host 127.0.0.1 --port 5186 --strictPort
-chromium --headless --disable-gpu --disable-background-networking --remote-debugging-port=5187 --user-data-dir=/tmp/zava-recipe-browser http://localhost:5186
-node tests/recipe-ui/check.mjs
+```powershell
+# Terminal 1 : API simulée uniquement
+node tests\recipe-ui\mock.mjs
+
+# Terminal 2 : build de production pointant exclusivement vers l'API simulée
+$env:VITE_API_BASE_URL = 'http://localhost:5185'
+npm --prefix src\Zava.Web run build
+npm --prefix src\Zava.Web run preview -- --host 127.0.0.1 --port 5186 --strictPort
+
+# Terminal 3 : remplacer ce chemin par votre dossier d'artefacts
+$env:RECIPE_UI_ARTIFACTS_DIR = 'C:\test-artifacts\zava-recipe-ui'
+& 'C:\Program Files\Google\Chrome\Application\chrome.exe' --headless --disable-gpu --disable-background-networking --no-first-run --remote-debugging-port=5187 "--user-data-dir=$env:RECIPE_UI_ARTIFACTS_DIR\browser" about:blank
+
+# Terminal 4 : reprendre le même dossier d'artefacts
+$env:RECIPE_UI_ARTIFACTS_DIR = 'C:\test-artifacts\zava-recipe-ui'
+node tests\recipe-ui\check.mjs
 ```
 
-Ces contrôles utilisent une API simulée sur le port `5185` pour tester les erreurs, les nouvelles tentatives, les confirmations et l'affichage mobile/FR/EN. Les captures sont écrites dans le dossier temporaire du système (`/tmp/zava-recipe-ui` sous Linux), jamais dans le dépôt. Arrêter les trois processus après les tests. Sous 600 px, l'en-tête n'affiche que l'icône de l'enseigne (le nom reste disponible pour les lecteurs d'écran) afin d'éviter tout débordement horizontal.
+Ces contrôles utilisent une API simulée sur le port `5185` pour tester les erreurs, les nouvelles tentatives, les confirmations et l'affichage mobile/FR/EN. `RECIPE_UI_ARTIFACTS_DIR` est obligatoire : les captures sont écrites uniquement dans le dossier choisi. Le dossier `dist` produit ici cible le mock et ne doit pas être déployé ; reconstruire avec la configuration de l'environnement réel avant publication. Chrome peut être remplacé par Chromium ou Edge en adaptant le chemin de l'exécutable. Arrêter les trois processus après les tests. Sous 600 px, l'en-tête n'affiche que l'icône de l'enseigne (le nom reste disponible pour les lecteurs d'écran) afin d'éviter tout débordement horizontal.
 
 Dans le navigateur, ajouter deux variantes du même produit, modifier/supprimer la seconde et vérifier que la première ne change pas. Couper ensuite l'API : une mutation doit afficher une erreur sans effacer le panier ; un chargement initial en échec doit proposer « Réessayer », et non afficher un panier vide. Rétablir l'API puis réessayer.
 

@@ -6,6 +6,9 @@ param containerRegistryName string
 param targetPort int = 80
 param env array = []
 param enableManagedIdentity bool = false
+param containerImage string = 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
+param minReplicas int = 0
+param maxReplicas int = 3
 
 @secure()
 param applicationInsightsConnectionString string = ''
@@ -58,7 +61,7 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
       containers: [
         {
           name: 'main'
-          image: 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
+          image: containerImage
           env: concat(env, empty(applicationInsightsConnectionString) ? [] : [
             {
               name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
@@ -72,8 +75,8 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
         }
       ]
       scale: {
-        minReplicas: 0
-        maxReplicas: 3
+        minReplicas: minReplicas
+        maxReplicas: maxReplicas
         rules: [
           {
             name: 'http-rule'

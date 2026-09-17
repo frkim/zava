@@ -1,12 +1,14 @@
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const screenshots = join(tmpdir(), 'zava-recipe-ui');
+const screenshots = process.env.RECIPE_UI_ARTIFACTS_DIR;
+if (!screenshots) throw new Error('Set RECIPE_UI_ARTIFACTS_DIR to a dedicated artifact directory outside the repository.');
 await mkdir(screenshots, { recursive: true });
 
-const [target] = await (await fetch('http://127.0.0.1:5187/json/list')).json();
+const targets = await (await fetch('http://127.0.0.1:5187/json/list')).json();
+const target = targets.find(target => target.type === 'page');
+assert.ok(target?.webSocketDebuggerUrl, 'Start an isolated Chromium browser with a page on debugging port 5187.');
 const socket = new WebSocket(target.webSocketDebuggerUrl);
 await new Promise(resolve => socket.addEventListener('open', resolve, { once: true }));
 let id = 0;
@@ -60,6 +62,10 @@ const ready = async () => {
   await wait("!!document.querySelector('#recipe-name')", 'recipe form');
 };
 const screenshot = async file => {
+  await evaluate(`new Promise(resolve => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    requestAnimationFrame(() => requestAnimationFrame(resolve));
+  })`);
   const image = await cdp('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
   await writeFile(join(screenshots, file), Buffer.from(image.data, 'base64'));
 };

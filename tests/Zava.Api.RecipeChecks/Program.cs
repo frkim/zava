@@ -176,9 +176,11 @@ sealed class FakeFoundry : HttpMessageHandler
         using var body = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(cancellationToken));
         var root = body.RootElement;
         if (root.GetProperty("max_output_tokens").GetInt32() != 4000
-            || root.GetProperty("reasoning").GetProperty("effort").GetString() != "low"
-            || !root.GetProperty("text").GetProperty("format").GetProperty("strict").GetBoolean())
-            throw new Exception("Missing strict provider bounds");
+            || root.GetProperty("store").GetBoolean()
+            || root.GetProperty("tool_choice").GetString() != "none")
+            throw new Exception("Missing provider bounds");
+        if (root.TryGetProperty("reasoning", out _) || root.TryGetProperty("text", out _))
+            throw new Exception("Agent references forbid reasoning/text overrides; configure them on the agent definition");
         var agent = root.GetProperty("agent_reference").GetProperty("name").GetString();
         object output;
         if (agent == "recipe-planner")

@@ -8,6 +8,12 @@
     "location": {
       "value": "${AZURE_LOCATION}"
     },
+    "apiContainerImage": {
+      "value": "${SERVICE_API_IMAGE_NAME=mcr.microsoft.com/azuredocs/containerapps-helloworld:latest}"
+    },
+    "webContainerImage": {
+      "value": "${SERVICE_WEB_IMAGE_NAME=mcr.microsoft.com/azuredocs/containerapps-helloworld:latest}"
+    },
     "aiLocation": {
       "value": "${AZURE_AI_LOCATION=${AZURE_LOCATION}}"
     },
