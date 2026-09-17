@@ -18,18 +18,35 @@ services:
       path: Dockerfile
       context: .
 hooks:
+  preprovision:
+    shell: sh
+    run: python3 ./scripts/deploy-recipe-agents.py --preserve-images
+    windows:
+      shell: pwsh
+      run: python ./scripts/deploy-recipe-agents.py --preserve-images
+    interactive: false
+    continueOnError: false
   postprovision:
     shell: sh
     run: python3 ./scripts/deploy-recipe-agents.py
+    windows:
+      shell: pwsh
+      run: python ./scripts/deploy-recipe-agents.py
     interactive: false
     continueOnError: false
   predeploy:
     shell: sh
     run: python3 ./scripts/deploy-recipe-agents.py
+    windows:
+      shell: pwsh
+      run: python ./scripts/deploy-recipe-agents.py
     interactive: false
     continueOnError: false
   postdeploy:
     shell: sh
     run: python3 ./scripts/deploy-recipe-agents.py --smoke
+    windows:
+      shell: pwsh
+      run: python ./scripts/deploy-recipe-agents.py --smoke
     interactive: false
     continueOnError: false

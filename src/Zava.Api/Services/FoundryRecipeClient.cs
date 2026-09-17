@@ -18,13 +18,13 @@ public sealed class FoundryRecipeClient(
         && ValidAgentName(plannerName) && ValidAgentName(shopperName) && plannerName != shopperName;
 
     public Task<JsonDocument> PlanAsync(object input, CancellationToken cancellationToken) =>
-        RespondAsync(plannerName, "recipe_ingredients", PlannerSchema, input, cancellationToken);
+        RespondAsync(plannerName, input, cancellationToken);
 
     public Task<JsonDocument> ShopAsync(object input, CancellationToken cancellationToken) =>
-        RespondAsync(shopperName, "recipe_selection", ShopperSchema, input, cancellationToken);
+        RespondAsync(shopperName, input, cancellationToken);
 
     private async Task<JsonDocument> RespondAsync(
-        string agent, string schemaName, string schema, object input, CancellationToken cancellationToken)
+        string agent, object input, CancellationToken cancellationToken)
     {
         if (!Available) throw new RecipeProviderException();
         var token = await credential.GetTokenAsync(new TokenRequestContext(Scopes), cancellationToken);
@@ -37,18 +37,7 @@ public sealed class FoundryRecipeClient(
             input = JsonSerializer.Serialize(input),
             store = false,
             tool_choice = "none",
-            reasoning = new { effort = "low" },
-            max_output_tokens = 4000,
-            text = new
-            {
-                format = new
-                {
-                    type = "json_schema",
-                    name = schemaName,
-                    strict = true,
-                    schema = JsonSerializer.Deserialize<JsonElement>(schema)
-                }
-            }
+            max_output_tokens = 4000
         }), Encoding.UTF8, "application/json");
 
         using var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
@@ -91,25 +80,6 @@ public sealed class FoundryRecipeClient(
         && System.Text.RegularExpressions.Regex.IsMatch(uri.AbsolutePath, @"^/api/projects/[^/]+/?$")
             ? uri : null;
 
-    private const string PlannerSchema = """
-        {"type":"object","additionalProperties":false,"required":["ingredients"],"properties":{
-          "ingredients":{"type":"array","items":{"type":"object","additionalProperties":false,
-            "required":["name","quantity","unit"],"properties":{
-              "name":{"type":"string"},
-              "quantity":{"type":"number"},
-              "unit":{"type":"string","enum":["g","kg","ml","l","piece"]}}}}}}
-        """;
-
-    private const string ShopperSchema = """
-        {"type":"object","additionalProperties":false,"required":["selections","missingIngredientIndexes"],"properties":{
-          "selections":{"type":"array","items":{"type":"object","additionalProperties":false,
-            "required":["ingredientIndex","productId","variantId","quantity"],"properties":{
-              "ingredientIndex":{"type":"integer"},
-              "productId":{"type":"integer"},
-              "variantId":{"type":["integer","null"]},
-              "quantity":{"type":"integer"}}}},
-          "missingIngredientIndexes":{"type":"array","items":{"type":"integer"}}}}
-        """;
 }
 
 public sealed class RecipeProviderException : Exception;

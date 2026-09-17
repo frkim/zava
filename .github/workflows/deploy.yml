@@ -41,6 +41,7 @@ jobs:
         run: |
           az bicep build --file infra/main.bicep --stdout > /dev/null
           python3 scripts/deploy-recipe-agents.py --check
+          python3 -m unittest discover -s tests/deployment -v
 
       - name: Build deployment images before provisioning
         run: |
