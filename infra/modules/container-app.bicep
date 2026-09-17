@@ -5,6 +5,10 @@ param containerAppsEnvironmentName string
 param containerRegistryName string
 param targetPort int = 80
 param env array = []
+param enableManagedIdentity bool = false
+
+@secure()
+param applicationInsightsConnectionString string = ''
 
 resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2024-03-01' existing = {
   name: containerAppsEnvironmentName
@@ -18,6 +22,9 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
   name: name
   location: location
   tags: tags
+  identity: {
+    type: enableManagedIdentity ? 'SystemAssigned' : 'None'
+  }
   properties: {
     managedEnvironmentId: containerAppsEnvironment.id
     configuration: {
@@ -35,19 +42,29 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
           passwordSecretRef: 'registry-password'
         }
       ]
-      secrets: [
+      secrets: concat([
         {
           name: 'registry-password'
           value: containerRegistry.listCredentials().passwords[0].value
         }
-      ]
+      ], empty(applicationInsightsConnectionString) ? [] : [
+        {
+          name: 'application-insights-connection-string'
+          value: applicationInsightsConnectionString
+        }
+      ])
     }
     template: {
       containers: [
         {
           name: 'main'
           image: 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
-          env: env
+          env: concat(env, empty(applicationInsightsConnectionString) ? [] : [
+            {
+              name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
+              secretRef: 'application-insights-connection-string'
+            }
+          ])
           resources: {
             cpu: json('0.5')
             memory: '1Gi'
@@ -76,3 +93,4 @@ output id string = containerApp.id
 output name string = containerApp.name
 output fqdn string = containerApp.properties.configuration.ingress.fqdn
 output uri string = 'https://${containerApp.properties.configuration.ingress.fqdn}'
+output principalId string = enableManagedIdentity ? containerApp.identity.principalId : ''

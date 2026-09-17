@@ -3,12 +3,12 @@ import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import {
   AppBar, Toolbar, Typography, IconButton, Badge, Box, InputBase, Container,
   Drawer, List, ListItemButton, ListItemText, ListItemIcon, Divider, Paper,
-  MenuItem, Select,
+  MenuItem, Select, Button,
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material';
 import {
   ShoppingCart, Person, Search, Menu as MenuIcon, Home, Category,
-  Settings, Analytics, Close, Inventory,
+  Settings, Analytics, Close, Inventory, RestaurantMenu,
   Devices, Kitchen, Spa, ElectricalServices, Construction, LocalGroceryStore,
 } from '@mui/icons-material';
 import { alpha, styled } from '@mui/material/styles';
@@ -89,6 +89,12 @@ export default function Layout({ children }: LayoutProps) {
   }, [fetchCart, siteVersion]);
 
   useEffect(() => {
+    const onCartUpdated = (event: Event) => setCart((event as CustomEvent<Cart>).detail);
+    window.addEventListener('zava:cart-updated', onCartUpdated);
+    return () => window.removeEventListener('zava:cart-updated', onCartUpdated);
+  }, []);
+
+  useEffect(() => {
     if (searchQuery.length < 2) {
       setSuggestions([]);
       return;
@@ -121,6 +127,9 @@ export default function Layout({ children }: LayoutProps) {
     { text: t('nav.home'), icon: <Home />, path: '/' },
     { text: t('nav.categories'), icon: <Category />, path: '/categories' },
     { text: t('nav.allProducts'), icon: <Inventory />, path: '/search' },
+    ...(config?.currentSiteType === 'Grocery'
+      ? [{ text: t('recipe.title'), icon: <RestaurantMenu />, path: '/recipe-basket' }]
+      : []),
     { text: t('nav.profile'), icon: <Person />, path: '/profile' },
     { text: t('nav.analytics'), icon: <Analytics />, path: '/analytics' },
     { text: t('nav.settings'), icon: <Settings />, path: '/settings' },
@@ -130,23 +139,24 @@ export default function Layout({ children }: LayoutProps) {
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="sticky">
         <Toolbar>
-          <IconButton color="inherit" edge="start" onClick={() => setDrawerOpen(true)} sx={{ mr: 1 }}>
+          <IconButton color="inherit" edge="start" aria-label={t('nav.menu')} onClick={() => setDrawerOpen(true)} sx={{ mr: 1 }}>
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component={RouterLink}
             to="/"
-            sx={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 1 }}
+            aria-label={siteName}
+            sx={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 1, minWidth: 0 }}
           >
             {config?.currentSiteType && (() => {
               const SiteIcon = siteTypeIcons[config.currentSiteType];
               return SiteIcon ? <SiteIcon fontSize="small" /> : null;
             })()}
-            {siteName}
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>{siteName}</Box>
           </Typography>
 
-          <Box component="form" onSubmit={handleSearch} sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <Box component="form" onSubmit={handleSearch} sx={{ flexGrow: 1, minWidth: 0, display: 'flex', justifyContent: 'center' }}>
             <SearchBox>
               <SearchIconWrapper><Search /></SearchIconWrapper>
               <StyledInputBase
@@ -170,6 +180,13 @@ export default function Layout({ children }: LayoutProps) {
               )}
             </SearchBox>
           </Box>
+
+          {config?.currentSiteType === 'Grocery' && (
+            <Button component={RouterLink} to="/recipe-basket" color="inherit" startIcon={<RestaurantMenu />}
+              sx={{ display: { xs: 'none', md: 'inline-flex' }, whiteSpace: 'nowrap' }}>
+              {t('recipe.title')}
+            </Button>
+          )}
 
           <Select
             value={lang}
@@ -220,7 +237,7 @@ export default function Layout({ children }: LayoutProps) {
         <Box sx={{ width: 280, pt: 1 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, py: 1 }}>
             <Typography variant="h6" fontWeight={700}>{t('nav.menu')}</Typography>
-            <IconButton onClick={() => setDrawerOpen(false)}><Close /></IconButton>
+            <IconButton aria-label={t('product.close')} onClick={() => setDrawerOpen(false)}><Close /></IconButton>
           </Box>
           <Divider />
           <List>

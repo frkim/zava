@@ -10,6 +10,7 @@ import SearchPage from './pages/SearchPage';
 import ProductPage from './pages/ProductPage';
 import CategoriesPage from './pages/CategoriesPage';
 import CartPage from './pages/CartPage';
+import RecipeBasketPage from './pages/RecipeBasketPage';
 import CheckoutPage from './pages/CheckoutPage';
 import ProfilePage from './pages/ProfilePage';
 import OrderDetailPage from './pages/OrderDetailPage';
@@ -51,6 +52,7 @@ function App() {
               <Route path="/products/:id" element={<ProductPage />} />
               <Route path="/categories" element={<CategoriesPage />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/recipe-basket" element={<RecipeBasketPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/orders/:id" element={<OrderDetailPage />} />

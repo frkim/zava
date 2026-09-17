@@ -5,6 +5,8 @@ using Zava.Api.Models;
 public class DataStore
 {
     private readonly object _lock = new();
+    public SemaphoreSlim Gate { get; } = new(1, 1);
+    public long Version { get; private set; }
 
     public SiteType CurrentSiteType { get; private set; } = SiteType.Electronics;
     public List<Product> Products { get; private set; } = new();
@@ -18,6 +20,7 @@ public class DataStore
     {
         lock (_lock)
         {
+            Version++;
             CurrentSiteType = siteType;
             Products = DataSeeder.GenerateProducts(siteType);
             Categories = DataSeeder.GenerateCategories(siteType);

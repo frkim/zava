@@ -7,6 +7,33 @@
     },
     "location": {
       "value": "${AZURE_LOCATION}"
+    },
+    "aiLocation": {
+      "value": "${AZURE_AI_LOCATION=${AZURE_LOCATION}}"
+    },
+    "aiModelName": {
+      "value": "${AZURE_AI_MODEL_NAME=gpt-5-mini}"
+    },
+    "aiModelVersion": {
+      "value": "${AZURE_AI_MODEL_VERSION=2025-08-07}"
+    },
+    "aiModelSku": {
+      "value": "${AZURE_AI_MODEL_SKU=GlobalStandard}"
+    },
+    "aiModelCapacity": {
+      "value": "${AZURE_AI_MODEL_CAPACITY=10}"
+    },
+    "aiModelDeploymentName": {
+      "value": "${AZURE_AI_MODEL_DEPLOYMENT_NAME=recipe-model}"
+    },
+    "enableFoundryTracing": {
+      "value": "${AZURE_AI_ENABLE_TRACING=false}"
+    },
+    "principalId": {
+      "value": "${AZURE_PRINCIPAL_ID}"
+    },
+    "principalType": {
+      "value": "${AZURE_PRINCIPAL_TYPE=User}"
     }
   }
 }

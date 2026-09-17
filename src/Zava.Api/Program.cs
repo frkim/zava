@@ -1,7 +1,12 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Azure.Core;
+using Azure.Identity;
+using Microsoft.AspNetCore.Http.Features;
 using Zava.Api.Models;
 using Zava.Api.Services;
+
+const int RecipeRequestLimit = 4096;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +14,11 @@ builder.Services.AddOpenApi();
 builder.Services.AddSingleton<DataStore>();
 builder.Services.AddScoped<SearchService>();
 builder.Services.AddScoped<AnalyticsService>();
+builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddSingleton<TokenCredential>(_ => new DefaultAzureCredential());
+builder.Services.AddHttpClient<FoundryRecipeClient>(client => client.Timeout = Timeout.InfiniteTimeSpan)
+    .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler { AllowAutoRedirect = false });
+builder.Services.AddSingleton<RecipeBasketService>();
 
 builder.Services.AddCors(options =>
 {
@@ -41,6 +51,40 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors();
 app.UseStaticFiles(); // Serves wwwroot/ (images, etc.)
+
+app.Use(async (context, next) =>
+{
+    var recipeBasket = context.Request.Path.StartsWithSegments("/api/recipe-basket");
+    if (recipeBasket)
+    {
+        var bodySize = context.Features.Get<IHttpMaxRequestBodySizeFeature>();
+        if (bodySize is { IsReadOnly: false }) bodySize.MaxRequestBodySize = RecipeRequestLimit;
+    }
+    // Serialize shared demo state through response serialization, but never hold the gate during AI calls.
+    if (context.Request.Path.StartsWithSegments("/api")
+        && !string.Equals(context.Request.Path.Value?.TrimEnd('/'), "/api/recipe-basket/plan", StringComparison.OrdinalIgnoreCase))
+    {
+        await dataStore.Gate.WaitAsync(context.RequestAborted);
+        try { await next(context); }
+        finally { dataStore.Gate.Release(); }
+    }
+    else await next(context);
+    // The size limit is enforced while reading the body, and that rejection carries no body of
+    // its own; every other recipe-basket error explains itself, so this one should too.
+    if (recipeBasket && context.Response.StatusCode == StatusCodes.Status413PayloadTooLarge
+        && !context.Response.HasStarted)
+    {
+        context.Response.Clear();
+        context.Response.StatusCode = StatusCodes.Status413PayloadTooLarge;
+        var body = JsonSerializer.SerializeToUtf8Bytes(
+            new { message = "La demande est trop volumineuse (4 Ko maximum)." });
+        context.Response.ContentType = "application/json; charset=utf-8";
+        context.Response.ContentLength = body.Length;
+        await context.Response.Body.WriteAsync(body);
+    }
+});
+
+app.MapRecipeBasket();
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 

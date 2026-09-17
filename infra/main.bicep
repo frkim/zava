@@ -24,6 +24,34 @@ param containerRegistryName string = ''
 @description('Name of the Log Analytics workspace')
 param logAnalyticsName string = ''
 
+@description('Foundry/model region. Defaults to the application region; override only if the model, version and SKU are unavailable there. Verify model availability and quota before provisioning.')
+param aiLocation string = location
+
+@description('OpenAI model name. Model, version, SKU and region must be a supported combination.')
+param aiModelName string = 'gpt-5-mini'
+
+param aiModelVersion string = '2025-08-07'
+param aiModelSku string = 'GlobalStandard'
+
+@minValue(1)
+@description('Model deployment capacity in the model/SKU capacity units; subject to subscription quota.')
+param aiModelCapacity int = 10
+
+param aiModelDeploymentName string = 'recipe-model'
+
+@description('Opt in to Foundry server-side tracing, which can store recipe prompts and model outputs in Application Insights. Application request/metric monitoring remains enabled independently.')
+param enableFoundryTracing bool = false
+
+@description('Object ID of the azd deployment identity, which creates the prompt agents after provisioning.')
+@minLength(1)
+param principalId string
+
+@allowed([
+  'User'
+  'ServicePrincipal'
+])
+param principalType string = 'User'
+
 var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
 var tags = { 'azd-env-name': environmentName }
@@ -43,6 +71,38 @@ module logAnalytics './modules/log-analytics.bicep' = {
     name: !empty(logAnalyticsName) ? logAnalyticsName : '${abbrs.operationalInsightsWorkspaces}${resourceToken}'
     location: location
     tags: tags
+  }
+}
+
+module applicationInsights './modules/application-insights.bicep' = {
+  name: 'application-insights'
+  scope: rg
+  params: {
+    name: 'appi-${resourceToken}'
+    location: location
+    tags: tags
+    workspaceResourceId: logAnalytics.outputs.id
+  }
+}
+
+module foundry './modules/foundry.bicep' = {
+  name: 'foundry'
+  scope: rg
+  params: {
+    name: 'ai-${resourceToken}'
+    projectName: 'recipes'
+    location: aiLocation
+    tags: tags
+    modelDeploymentName: aiModelDeploymentName
+    modelName: aiModelName
+    modelVersion: aiModelVersion
+    modelSku: aiModelSku
+    modelCapacity: aiModelCapacity
+    deploymentPrincipalId: principalId
+    deploymentPrincipalType: principalType
+    applicationInsightsResourceId: applicationInsights.outputs.id
+    applicationInsightsConnectionString: applicationInsights.outputs.connectionString
+    enableTracing: enableFoundryTracing
   }
 }
 
@@ -80,6 +140,8 @@ module api './modules/container-app.bicep' = {
     containerAppsEnvironmentName: containerAppsEnvironment.outputs.name
     containerRegistryName: containerRegistry.outputs.name
     targetPort: 8080
+    enableManagedIdentity: true
+    applicationInsightsConnectionString: applicationInsights.outputs.connectionString
     env: [
       {
         name: 'ASPNETCORE_ENVIRONMENT'
@@ -89,7 +151,29 @@ module api './modules/container-app.bicep' = {
         name: 'ASPNETCORE_URLS'
         value: 'http://+:8080'
       }
+      {
+        name: 'Foundry__ProjectEndpoint'
+        value: foundry.outputs.projectEndpoint
+      }
+      {
+        name: 'Foundry__PlannerAgentName'
+        value: 'recipe-planner'
+      }
+      {
+        name: 'Foundry__ShopperAgentName'
+        value: 'recipe-shopper'
+      }
     ]
+  }
+}
+
+module foundryRuntimeAccess './modules/foundry-runtime-access.bicep' = {
+  name: 'foundry-runtime-access'
+  scope: rg
+  params: {
+    accountName: foundry.outputs.accountName
+    projectName: foundry.outputs.projectName
+    principalId: api.outputs.principalId
   }
 }
 
@@ -117,3 +201,8 @@ output AZURE_CONTAINER_REGISTRY_ENDPOINT string = containerRegistry.outputs.logi
 output AZURE_CONTAINER_REGISTRY_NAME string = containerRegistry.outputs.name
 output API_URI string = api.outputs.uri
 output WEB_URI string = web.outputs.uri
+output FOUNDRY_PROJECT_ENDPOINT string = foundry.outputs.projectEndpoint
+output FOUNDRY_PROJECT_ID string = foundry.outputs.projectId
+output FOUNDRY_MODEL_DEPLOYMENT_NAME string = foundry.outputs.modelDeploymentName
+output FOUNDRY_PLANNER_AGENT_NAME string = 'recipe-planner'
+output FOUNDRY_SHOPPER_AGENT_NAME string = 'recipe-shopper'
