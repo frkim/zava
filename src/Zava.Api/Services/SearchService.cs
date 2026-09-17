@@ -55,7 +55,7 @@ public class SearchService
         if (request.EcoResponsible == true)
             query = query.Where(p => p.Sustainability != null && p.Sustainability.OverallScore >= 6.0);
 
-        if (request.SecondLife == true)
+        if (request.SecondLife == true && _store.CurrentSiteType is not (SiteType.Cosmetics or SiteType.Grocery))
             query = query.Where(p => p.IsSecondLife);
 
         var filtered = query.ToList();
@@ -191,16 +191,19 @@ public class SearchService
             });
         }
 
-        // Second Life facet
-        var secondLifeCount = products.Count(p => p.IsSecondLife);
-        if (secondLifeCount > 0)
+        // Second Life is not offered in the cosmetics or grocery stores.
+        if (_store.CurrentSiteType is not (SiteType.Cosmetics or SiteType.Grocery))
         {
-            facets.Add(new FacetGroup
+            var secondLifeCount = products.Count(p => p.IsSecondLife);
+            if (secondLifeCount > 0)
             {
-                Name = "Seconde Vie",
-                NameEn = "Second Life",
-                Values = [new FacetValue { Value = "Produit seconde vie", FilterValue = "true", Count = secondLifeCount }]
-            });
+                facets.Add(new FacetGroup
+                {
+                    Name = "Seconde Vie",
+                    NameEn = "Second Life",
+                    Values = [new FacetValue { Value = "Produit seconde vie", FilterValue = "true", Count = secondLifeCount }]
+                });
+            }
         }
 
         return facets;

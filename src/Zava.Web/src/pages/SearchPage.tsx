@@ -10,12 +10,14 @@ import ProductCard from '../components/ProductCard';
 import { searchProducts, addToCart } from '../api';
 import type { SearchResult, SearchRequest, Product } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import { useSite } from '../context/SiteContext';
 
 export default function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [result, setResult] = useState<SearchResult | null>(null);
   const [loading, setLoading] = useState(true);
   const { lang, t } = useLanguage();
+  const { config } = useSite();
 
   const q = searchParams.get('q') ?? '';
   const categoryId = searchParams.get('categoryId');
@@ -27,7 +29,9 @@ export default function SearchPage() {
   const minPrice = searchParams.get('minPrice');
   const maxPrice = searchParams.get('maxPrice');
   const minRating = searchParams.get('minRating');
-  const secondLife = searchParams.get('secondLife') === 'true';
+  const secondLifeFilterAvailable =
+    config != null && config.currentSiteType !== 'Cosmetics' && config.currentSiteType !== 'Grocery';
+  const secondLife = secondLifeFilterAvailable && searchParams.get('secondLife') === 'true';
 
   useEffect(() => {
     setLoading(true);
@@ -49,7 +53,7 @@ export default function SearchPage() {
       .then(setResult)
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, [q, categoryId, brand, page, sortBy, sortDesc, inStock, minPrice, maxPrice, minRating, secondLife]);
+  }, [q, categoryId, brand, page, sortBy, sortDesc, inStock, minPrice, maxPrice, minRating, secondLife, config?.currentSiteType]);
 
   const updateParam = (key: string, value: string | null) => {
     const params = new URLSearchParams(searchParams);
@@ -107,19 +111,21 @@ export default function SearchPage() {
               sx={{ mb: 1 }}
             />
 
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={secondLife}
-                  onChange={(e) => updateParam('secondLife', e.target.checked ? 'true' : null)}
-                  icon={<Recycling />}
-                  checkedIcon={<Recycling />}
-                  sx={{ color: '#00796b', '&.Mui-checked': { color: '#00796b' } }}
-                />
-              }
-              label={t('secondLife.filterLabel')}
-              sx={{ mb: 2 }}
-            />
+            {secondLifeFilterAvailable && (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={secondLife}
+                    onChange={(e) => updateParam('secondLife', e.target.checked ? 'true' : null)}
+                    icon={<Recycling />}
+                    checkedIcon={<Recycling />}
+                    sx={{ color: '#00796b', '&.Mui-checked': { color: '#00796b' } }}
+                  />
+                }
+                label={t('secondLife.filterLabel')}
+                sx={{ mb: 2 }}
+              />
+            )}
 
             {/* Facets from search results */}
             {result?.facets.map((facet) => (
