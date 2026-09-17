@@ -115,15 +115,15 @@ export default function HomePage() {
         </Box>
       )}
 
-      <ProductGrid title={t('home.selection')} products={data.selectionProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
-      <ProductGrid title={t('home.bestSellers')} products={data.bestSellers.slice(0, 5)} onAddToCart={handleAddToCart} />
-      <ProductGrid title={t('home.newArrivals')} products={data.newProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
-      <ProductGrid title={t('home.promotions')} products={data.promoProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
-      <ProductGrid title={t('home.featured')} products={data.featuredProducts.slice(0, 5)} onAddToCart={handleAddToCart} />
+      <ProductGrid title={t('home.selection')} products={data.selectionProducts.slice(0, 5)} onAddToCart={handleAddToCart} accentColor="primary" />
+      <ProductGrid title={t('home.bestSellers')} products={data.bestSellers.slice(0, 5)} onAddToCart={handleAddToCart} accentColor="secondary" />
+      <ProductGrid title={t('home.newArrivals')} products={data.newProducts.slice(0, 5)} onAddToCart={handleAddToCart} accentColor="info" />
+      <ProductGrid title={t('home.promotions')} products={data.promoProducts.slice(0, 5)} onAddToCart={handleAddToCart} accentColor="error" />
+      <ProductGrid title={t('home.featured')} products={data.featuredProducts.slice(0, 5)} onAddToCart={handleAddToCart} accentColor="warning" />
 
       {/* Second Life products */}
       {data.secondLifeProducts && data.secondLifeProducts.length > 0 && (
-        <ProductGrid title={t('secondLife.homeSection')} products={data.secondLifeProducts.slice(0, 8)} onAddToCart={handleAddToCart} />
+        <ProductGrid title={t('secondLife.homeSection')} products={data.secondLifeProducts.slice(0, 8)} onAddToCart={handleAddToCart} accentColor="success" />
       )}
 
       {/* Brands */}
