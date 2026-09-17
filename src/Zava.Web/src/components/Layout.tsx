@@ -146,16 +146,17 @@ export default function Layout({ children }: LayoutProps) {
             variant="h6"
             component={RouterLink}
             to="/"
-            sx={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 1 }}
+            aria-label={siteName}
+            sx={{ color: 'inherit', textDecoration: 'none', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: 1, minWidth: 0 }}
           >
             {config?.currentSiteType && (() => {
               const SiteIcon = siteTypeIcons[config.currentSiteType];
               return SiteIcon ? <SiteIcon fontSize="small" /> : null;
             })()}
-            {siteName}
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>{siteName}</Box>
           </Typography>
 
-          <Box component="form" onSubmit={handleSearch} sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <Box component="form" onSubmit={handleSearch} sx={{ flexGrow: 1, minWidth: 0, display: 'flex', justifyContent: 'center' }}>
             <SearchBox>
               <SearchIconWrapper><Search /></SearchIconWrapper>
               <StyledInputBase

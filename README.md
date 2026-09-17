@@ -236,7 +236,7 @@ chromium --headless --disable-gpu --disable-background-networking --remote-debug
 node tests/recipe-ui/check.mjs
 ```
 
-Ces contrôles utilisent une API simulée sur le port `5185` pour tester les erreurs, les nouvelles tentatives, les confirmations et l'affichage mobile/FR/EN. Les captures sont écrites dans le dossier temporaire du système (`/tmp/zava-recipe-ui` sous Linux), jamais dans le dépôt. Arrêter les trois processus après les tests.
+Ces contrôles utilisent une API simulée sur le port `5185` pour tester les erreurs, les nouvelles tentatives, les confirmations et l'affichage mobile/FR/EN. Les captures sont écrites dans le dossier temporaire du système (`/tmp/zava-recipe-ui` sous Linux), jamais dans le dépôt. Arrêter les trois processus après les tests. Sous 600 px, l'en-tête n'affiche que l'icône de l'enseigne (le nom reste disponible pour les lecteurs d'écran) afin d'éviter tout débordement horizontal.
 
 Dans le navigateur, ajouter deux variantes du même produit, modifier/supprimer la seconde et vérifier que la première ne change pas. Couper ensuite l'API : une mutation doit afficher une erreur sans effacer le panier ; un chargement initial en échec doit proposer « Réessayer », et non afficher un panier vide. Rétablir l'API puis réessayer.
 
