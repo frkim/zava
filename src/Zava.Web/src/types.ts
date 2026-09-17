@@ -115,7 +115,17 @@ export interface RecipeBasketRequest {
   recipe: string;
   servings: number;
   brandPreference: RecipeBrandPreference;
+  /** Products the customer asked never to be suggested again. */
+  excludedProductIds?: number[];
 }
+
+export interface RecipeBasketItemKey {
+  productId: number;
+  variantId: number | null;
+}
+
+/** How long a product stays out of future suggestions. */
+export type RecipeHideScope = 'session' | 'forever';
 
 export interface RecipeBasketOptions {
   available: boolean;

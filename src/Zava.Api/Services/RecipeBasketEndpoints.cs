@@ -22,7 +22,7 @@ public static class RecipeBasketEndpoints
             HttpContext context, TelemetryClient telemetry, ILogger<RecipeBasketService> logger) =>
         {
             if (!RecipeBasketService.ValidRequest(request))
-                return Results.BadRequest(new { message = "Indiquez une recette (200 caractères maximum), 1 à 20 personnes et une préférence valide." });
+                return Results.BadRequest(new { message = "Indiquez une recette (200 caractères maximum), 1 à 20 personnes, une préférence valide et au plus 100 produits exclus." });
             var started = Stopwatch.GetTimestamp();
             var outcome = "unavailable";
             using var timeout = CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);
@@ -64,9 +64,11 @@ public static class RecipeBasketEndpoints
         {
             if (request.PlanId is null || !Guid.TryParseExact(request.PlanId, "N", out _))
                 return Results.BadRequest(new { message = "Identifiant de panier recette invalide." });
+            if (!RecipeBasketService.ValidExcludedItems(request.ExcludedItems))
+                return Results.BadRequest(new { message = "Sélection de produits invalide." });
             try
             {
-                var cart = service.Commit(request.PlanId);
+                var cart = service.Commit(request.PlanId, request.ExcludedItems);
                 telemetry.TrackEvent("RecipeBasketCommit", new Dictionary<string, string> { ["outcome"] = "success" });
                 return Results.Ok(cart);
             }

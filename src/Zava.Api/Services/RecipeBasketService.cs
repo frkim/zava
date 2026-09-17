@@ -18,7 +18,16 @@ public sealed class RecipeBasketService(DataStore store, FoundryRecipeClient fou
     public static bool ValidRequest(RecipeBasketRequest request) =>
         !string.IsNullOrWhiteSpace(request.Recipe) && request.Recipe.Length <= 200
         && !request.Recipe.Any(char.IsControl) && request.Servings is >= 1 and <= 20
-        && request.BrandPreference is "National" or "PrivateLabel" or "Economy" or "Mix";
+        && request.BrandPreference is "National" or "PrivateLabel" or "Economy" or "Mix"
+        && ValidExclusions(request.ExcludedProductIds);
+
+    // Never-suggest-again lists come from the browser, so bound them like every other client input.
+    private static bool ValidExclusions(IReadOnlyList<int>? excludedProductIds) =>
+        excludedProductIds is null || (excludedProductIds.Count <= 100 && excludedProductIds.All(id => id > 0));
+
+    public static bool ValidExcludedItems(IReadOnlyList<RecipeBasketItemKey>? excludedItems) =>
+        excludedItems is null || (excludedItems.Count <= 25
+            && excludedItems.All(item => item.ProductId > 0 && item.VariantId is null or > 0));
 
     public async Task<RecipeBasketPlan> PlanAsync(RecipeBasketRequest request, CancellationToken cancellationToken)
     {
@@ -32,7 +41,7 @@ public sealed class RecipeBasketService(DataStore store, FoundryRecipeClient fou
             PrunePlans();
             if (plans.Count >= MaxPlans)
                 throw new RecipeBasketException(503, "L’assistant recettes est occupé. Réessayez plus tard.");
-            snapshot = CreateSnapshot(request.BrandPreference);
+            snapshot = CreateSnapshot(request.BrandPreference, request.ExcludedProductIds);
         }
         finally { store.Gate.Release(); }
 
@@ -95,18 +104,25 @@ public sealed class RecipeBasketService(DataStore store, FoundryRecipeClient fou
     }
 
     // Called under DataStore.Gate, shared with all cart, checkout and site mutations.
-    public Cart Commit(string? planId)
+    public Cart Commit(string? planId, IReadOnlyList<RecipeBasketItemKey>? excludedItems)
     {
         RequireGrocery();
         PrunePlans();
         if (string.IsNullOrEmpty(planId) || !plans.TryGetValue(planId, out var saved) || saved.Version != store.Version)
             throw new RecipeBasketException(409, "Ce panier recette a expiré ou la boutique a changé. Générez un nouvel aperçu.");
+        // Retrying the same plan stays idempotent, whatever selection the retry carries.
         if (saved.Committed) return store.Cart;
         if (saved.Plan.Items.Count == 0)
             throw new RecipeBasketException(409, "Aucun produit à ajouter. Choisissez une autre recette ou préférence.");
+        var excluded = excludedItems is null
+            ? []
+            : excludedItems.Select(item => (item.ProductId, item.VariantId)).ToHashSet();
+        var selectedItems = saved.Plan.Items.Where(item => !excluded.Contains((item.ProductId, item.VariantId))).ToList();
+        if (selectedItems.Count == 0)
+            throw new RecipeBasketException(409, "Aucun produit sélectionné. Remettez au moins un produit dans la sélection.");
 
         var updated = store.Cart.Items.Select(CloneItem).ToList();
-        foreach (var selected in saved.Plan.Items)
+        foreach (var selected in selectedItems)
         {
             var product = store.Products.FirstOrDefault(p => p.Id == selected.ProductId && p.SiteType == SiteType.Grocery);
             var variant = product?.Variants.FirstOrDefault(v => v.Id == selected.VariantId);
@@ -136,12 +152,13 @@ public sealed class RecipeBasketService(DataStore store, FoundryRecipeClient fou
         return store.Cart;
     }
 
-    private CatalogSnapshot CreateSnapshot(string preference)
+    private CatalogSnapshot CreateSnapshot(string preference, IReadOnlyList<int>? excludedProductIds)
     {
+        var excluded = excludedProductIds is null ? [] : excludedProductIds.ToHashSet();
         var catalog = new List<CatalogEntry>();
         foreach (var product in store.Products.Where(p => p.SiteType == SiteType.Grocery && MatchesPreference(p, preference)))
         {
-            if (product.Id <= 0 || product.Name.Length > 200) continue;
+            if (product.Id <= 0 || product.Name.Length > 200 || excluded.Contains(product.Id)) continue;
             var available = Math.Max(0, product.Stock - store.Cart.Items.Where(i => i.ProductId == product.Id).Sum(i => (long)i.Quantity));
             if (available == 0) continue;
             var price = product.PromoPrice ?? product.Price;

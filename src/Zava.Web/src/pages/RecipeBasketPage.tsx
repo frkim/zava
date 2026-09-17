@@ -1,22 +1,29 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
-  Alert, AlertTitle, Box, Button, Chip, CircularProgress, Divider, FormControl,
+  Alert, AlertTitle, Box, Button, Chip, CircularProgress, Collapse, Divider, FormControl,
   FormControlLabel, FormLabel, LinearProgress, Link, Paper, Radio, RadioGroup,
-  Stack, TextField, Typography,
+  Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
 } from '@mui/material';
 import {
-  ArrowForward, CheckCircleOutline, MenuBook, RestaurantMenu, ShoppingBasket,
-  ShoppingCartOutlined,
+  AddCircleOutline, ArrowForward, CheckCircleOutline, ExpandMore, MenuBook, RemoveCircleOutline,
+  RestaurantMenu, ShoppingBasket, ShoppingCartOutlined, VisibilityOff,
 } from '@mui/icons-material';
 import { alpha } from '@mui/material/styles';
 import { ApiError, commitRecipeBasket, getRecipeBasketOptions, planRecipeBasket } from '../api';
 import { useLanguage } from '../context/LanguageContext';
 import { useSite } from '../context/SiteContext';
-import type { RecipeBasketOptions, RecipeBasketPlan, RecipeBrandPreference } from '../types';
+import { useHiddenRecipeProducts } from '../hooks/useHiddenRecipeProducts';
+import type {
+  RecipeBasketOptions, RecipeBasketPlan, RecipeBrandPreference, RecipeHideScope,
+} from '../types';
 
 const defaultSuggestions = ['Lasagnes', 'Blanquette de veau', 'Hachis parmentier', 'Bœuf bourguignon'];
 const preferences = ['National', 'PrivateLabel', 'Economy', 'Mix'] as const;
+type PlanItem = RecipeBasketPlan['items'][number];
+/** Identifies a previewed line, since the same product can appear with different variants. */
+const itemKey = (item: { productId: number; variantId?: number | null }) =>
+  `${item.productId}:${item.variantId ?? ''}`;
 type OptionsState =
   | { status: 'loading' }
   | { status: 'ready'; data: RecipeBasketOptions }
@@ -29,6 +36,75 @@ function CatalogueLinks() {
       <Button component={RouterLink} to="/search" variant="outlined">{t('recipe.browse')}</Button>
       <Button component={RouterLink} to="/cart">{t('recipe.viewCart')}</Button>
     </Stack>
+  );
+}
+
+/** A disclosure panel that keeps secondary product lists out of the way without hiding them. */
+function CollapsibleSection({ id, title, count, description, open, onToggle, children, sx }: {
+  id: string; title: string; count: number; description: string; open: boolean;
+  onToggle: () => void; children: React.ReactNode; sx?: object;
+}) {
+  return (
+    <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2, mb: 2, ...sx }}>
+      <Button fullWidth onClick={onToggle} aria-expanded={open} aria-controls={`${id}-panel`} id={`${id}-button`}
+        endIcon={<ExpandMore sx={{ transition: 'transform .2s', transform: open ? 'rotate(180deg)' : 'none' }} />}
+        sx={{ justifyContent: 'space-between', textAlign: 'left', px: 2, py: 1.5, color: 'text.primary' }}>
+        <Box component="span" sx={{ fontWeight: 600 }}>{title} ({count})</Box>
+      </Button>
+      <Collapse in={open} unmountOnExit>
+        <Box id={`${id}-panel`} role="region" aria-labelledby={`${id}-button`} sx={{ px: 2, pb: 2 }}>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>{description}</Typography>
+          {children}
+        </Box>
+      </Collapse>
+    </Box>
+  );
+}
+
+/** One previewed product, in the selection or moved out of it. */
+function PlanItemRow({ item, selected, disabled, hiddenScope, money, onToggleSelection, onHide, onUnhide }: {
+  item: PlanItem; selected: boolean; disabled: boolean; hiddenScope: RecipeHideScope | null;
+  money: (value: number) => string; onToggleSelection: () => void;
+  onHide: (scope: RecipeHideScope) => void; onUnhide: () => void;
+}) {
+  const { t } = useLanguage();
+  const label = `${item.productName}${item.variantName ? ` – ${item.variantName}` : ''}`;
+  return (
+    <Box component="li" sx={{ py: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+      <Typography variant="caption" color="text.secondary" sx={{ overflowWrap: 'anywhere' }}>{item.ingredient}</Typography>
+      <Link component={RouterLink} to={`/products/${item.productId}`} underline="hover" color="text.primary"
+        sx={{ display: 'block', fontWeight: 600, overflowWrap: 'anywhere' }}>{item.productName}</Link>
+      {item.variantName && <Typography variant="body2" color="text.secondary">{item.variantName}</Typography>}
+      <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between', mt: 1 }}>
+        <Typography variant="body2" color={selected ? 'text.secondary' : 'text.disabled'}>
+          {item.quantity} {t('recipe.pack')} × {money(item.unitPrice)}
+        </Typography>
+        <Typography variant="body2" fontWeight={700}
+          color={selected ? 'text.primary' : 'text.disabled'}
+          sx={{ whiteSpace: 'nowrap', textDecoration: selected ? 'none' : 'line-through' }}>
+          {money(item.subtotal)}
+        </Typography>
+      </Box>
+      <Button size="small" disabled={disabled} onClick={onToggleSelection}
+        startIcon={selected ? <RemoveCircleOutline /> : <AddCircleOutline />}
+        aria-label={`${t(selected ? 'recipe.deselect' : 'recipe.reselect')} : ${label}`}
+        sx={{ mt: 1, ml: -1 }}>
+        {t(selected ? 'recipe.deselect' : 'recipe.reselect')}
+      </Button>
+      {!selected && (
+        <Box sx={{ mt: 1 }}>
+          <Typography component="p" variant="caption" color="text.secondary" id={`hide-${itemKey(item)}`} sx={{ mb: 0.5 }}>
+            {t('recipe.hideTitle')}
+          </Typography>
+          <ToggleButtonGroup size="small" exclusive disabled={disabled} value={hiddenScope}
+            aria-labelledby={`hide-${itemKey(item)}`}
+            onChange={(_, scope: RecipeHideScope | null) => (scope ? onHide(scope) : onUnhide())}>
+            <ToggleButton value="session" sx={{ textTransform: 'none' }}>{t('recipe.hideSession')}</ToggleButton>
+            <ToggleButton value="forever" sx={{ textTransform: 'none' }}>{t('recipe.hideForever')}</ToggleButton>
+          </ToggleButtonGroup>
+        </Box>
+      )}
+    </Box>
   );
 }
 
@@ -72,6 +148,10 @@ function GroceryRecipeBasket() {
   const [uncertainCommit, setUncertainCommit] = useState(false);
   const [commitRequiresRefresh, setCommitRequiresRefresh] = useState(false);
   const [expired, setExpired] = useState(false);
+  const [deselected, setDeselected] = useState<string[]>([]);
+  const [showDeselected, setShowDeselected] = useState(false);
+  const [showHidden, setShowHidden] = useState(false);
+  const { hidden, hiddenIds, hide, unhide, scopeOf } = useHiddenRecipeProducts();
   const busy = useRef(false);
   const active = useRef(false);
   const planController = useRef<AbortController | null>(null);
@@ -122,6 +202,8 @@ function GroceryRecipeBasket() {
     setUncertainCommit(false);
     setCommitRequiresRefresh(false);
     setExpired(false);
+    setDeselected([]);
+    setShowDeselected(false);
   };
 
   const validServings = Number.isInteger(Number(servings)) && Number(servings) >= 1 && Number(servings) <= 20;
@@ -136,7 +218,9 @@ function GroceryRecipeBasket() {
     const controller = new AbortController();
     planController.current = controller;
     try {
-      const result = await planRecipeBasket({ recipe: recipe.trim(), servings: Number(servings), brandPreference }, controller.signal);
+      const result = await planRecipeBasket({
+        recipe: recipe.trim(), servings: Number(servings), brandPreference, excludedProductIds: hiddenIds,
+      }, controller.signal);
       if (active.current && !controller.signal.aborted) setPlan(result);
     } catch (e) {
       if (active.current && !controller.signal.aborted) setError(e instanceof Error ? e.message : t('recipe.planError'));
@@ -148,8 +232,45 @@ function GroceryRecipeBasket() {
     }
   };
 
+  const planItems = useMemo(() => plan?.items ?? [], [plan]);
+  const selectedItems = useMemo(
+    () => planItems.filter((item) => !deselected.includes(itemKey(item))),
+    [planItems, deselected],
+  );
+  const deselectedItems = useMemo(
+    () => planItems.filter((item) => deselected.includes(itemKey(item))),
+    [planItems, deselected],
+  );
+  const selectedTotal = useMemo(
+    () => selectedItems.reduce((total, item) => total + item.subtotal, 0),
+    [selectedItems],
+  );
+  // A commit that may already have been received must be retried with the very same selection.
+  const selectionLocked = committing || committed || uncertainCommit || commitRequiresRefresh;
+
+  const toggleSelection = (item: PlanItem) => {
+    if (selectionLocked) return;
+    const key = itemKey(item);
+    setCommitError('');
+    setDeselected((previous) => {
+      if (previous.includes(key)) return previous.filter((entry) => entry !== key);
+      setShowDeselected(true);
+      return [...previous, key];
+    });
+  };
+
+  const hideProduct = (item: PlanItem, scope: RecipeHideScope) => {
+    if (selectionLocked) return;
+    hide({ productId: item.productId, productName: item.productName }, scope);
+    // Hiding only takes effect on the next suggestion, so keep it out of this basket too.
+    setDeselected((previous) => [...new Set([
+      ...previous,
+      ...planItems.filter((entry) => entry.productId === item.productId).map(itemKey),
+    ])]);
+  };
+
   const confirmPlan = async () => {
-    if (!plan || busy.current || committed || commitRequiresRefresh || !plan.items.length) return;
+    if (!plan || busy.current || committed || commitRequiresRefresh || !selectedItems.length) return;
     if (!uncertainCommit && (expired || Date.parse(plan.expiresAt) <= Date.now())) {
       setExpired(true);
       return;
@@ -158,7 +279,9 @@ function GroceryRecipeBasket() {
     setCommitting(true);
     setCommitError('');
     try {
-      const cart = await commitRecipeBasket(plan.planId);
+      const cart = await commitRecipeBasket(plan.planId, deselectedItems.map((item) => ({
+        productId: item.productId, variantId: item.variantId ?? null,
+      })));
       if (!active.current) return;
       window.dispatchEvent(new CustomEvent('zava:cart-updated', { detail: cart }));
       setCommitted(true);
@@ -355,29 +478,71 @@ function GroceryRecipeBasket() {
                     </Box>
                   </Alert>
                 )}
-                <Typography variant="body2" fontWeight={600} sx={{ mt: 3, mb: 1 }}>{plan.items.length} {t('recipe.products')}</Typography>
+                <Typography variant="body2" fontWeight={600} sx={{ mt: 3 }}>
+                  {t('recipe.selected')} ({selectedItems.length})
+                </Typography>
+                <Typography variant="caption" color="text.secondary" component="p" sx={{ mb: 1 }}>
+                  {t('recipe.selectedDesc')}
+                </Typography>
                 <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
-                  {plan.items.map((item, index) => (
-                    <Box component="li" key={`${item.productId}-${item.variantId}-${index}`}
-                      sx={{ py: 2, borderTop: '1px solid', borderColor: 'divider' }}>
-                      <Typography variant="caption" color="text.secondary" sx={{ overflowWrap: 'anywhere' }}>{item.ingredient}</Typography>
-                      <Link component={RouterLink} to={`/products/${item.productId}`} underline="hover" color="text.primary"
-                        sx={{ display: 'block', fontWeight: 600, overflowWrap: 'anywhere' }}>{item.productName}</Link>
-                      {item.variantName && <Typography variant="body2" color="text.secondary">{item.variantName}</Typography>}
-                      <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between', mt: 1 }}>
-                        <Typography variant="body2" color="text.secondary">{item.quantity} {t('recipe.pack')} × {money(item.unitPrice)}</Typography>
-                        <Typography variant="body2" fontWeight={700} sx={{ whiteSpace: 'nowrap' }}>{money(item.subtotal)}</Typography>
-                      </Box>
-                    </Box>
+                  {selectedItems.map((item, index) => (
+                    <PlanItemRow key={`${itemKey(item)}-${index}`} item={item} selected disabled={selectionLocked}
+                      hiddenScope={scopeOf(item.productId)} money={money}
+                      onToggleSelection={() => toggleSelection(item)}
+                      onHide={(scope) => hideProduct(item, scope)} onUnhide={() => unhide(item.productId)} />
                   ))}
                 </Box>
-                {plan.items.length === 0 ? <Alert severity="info" sx={{ my: 2 }}>{t('recipe.noProducts')}</Alert> : (
+                {planItems.length > 0 && selectedItems.length === 0 && (
+                  <Alert severity="warning" sx={{ my: 2 }}>{t('recipe.noSelection')}</Alert>
+                )}
+                {deselectedItems.length > 0 && (
+                  <CollapsibleSection id="recipe-deselected" title={t('recipe.deselected')}
+                    count={deselectedItems.length} description={t('recipe.deselectedDesc')}
+                    open={showDeselected} onToggle={() => setShowDeselected((open) => !open)}
+                    sx={{ mt: 2 }}>
+                    <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
+                      {deselectedItems.map((item, index) => (
+                        <PlanItemRow key={`${itemKey(item)}-${index}`} item={item} selected={false} disabled={selectionLocked}
+                          hiddenScope={scopeOf(item.productId)} money={money}
+                          onToggleSelection={() => toggleSelection(item)}
+                          onHide={(scope) => hideProduct(item, scope)} onUnhide={() => unhide(item.productId)} />
+                      ))}
+                    </Box>
+                  </CollapsibleSection>
+                )}
+                {hidden.length > 0 && (
+                  <CollapsibleSection id="recipe-hidden" title={t('recipe.hidden')} count={hidden.length}
+                    description={t('recipe.hiddenDesc')} open={showHidden}
+                    onToggle={() => setShowHidden((open) => !open)}>
+                    <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
+                      {hidden.map((entry) => (
+                        <Box component="li" key={entry.productId}
+                          sx={{ py: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
+                          <Typography variant="body2" fontWeight={600} sx={{ overflowWrap: 'anywhere' }}>
+                            {entry.productName || `#${entry.productId}`}
+                          </Typography>
+                          <Chip size="small" variant="outlined" icon={<VisibilityOff />} sx={{ mt: 0.5 }}
+                            label={t(entry.scope === 'session' ? 'recipe.hiddenSession' : 'recipe.hiddenForever')} />
+                          <Button size="small" sx={{ display: 'block', mt: 0.5, ml: -1 }}
+                            onClick={() => unhide(entry.productId)}
+                            aria-label={`${t('recipe.unhide')} : ${entry.productName || `#${entry.productId}`}`}>
+                            {t('recipe.unhide')}
+                          </Button>
+                        </Box>
+                      ))}
+                    </Box>
+                    <Typography variant="caption" color="text.secondary" component="p" sx={{ mt: 1 }}>
+                      {t('recipe.hiddenRegenerate')}
+                    </Typography>
+                  </CollapsibleSection>
+                )}
+                {planItems.length === 0 ? <Alert severity="info" sx={{ my: 2 }}>{t('recipe.noProducts')}</Alert> : (
                   <Typography variant="caption" color="text.secondary" component="p" sx={{ mb: 2 }}>{t('recipe.packHelp')}</Typography>
                 )}
                 <Box sx={{ p: 2, borderRadius: 2, bgcolor: (theme) => alpha(theme.palette.primary.main, 0.05), mb: 2 }}>
                   <Stack direction="row" justifyContent="space-between" alignItems="baseline" gap={2}>
                     <Typography fontWeight={600}>{t('recipe.total')}</Typography>
-                    <Typography variant="h5" color="primary" sx={{ whiteSpace: 'nowrap' }}>{money(plan.total)}</Typography>
+                    <Typography variant="h5" color="primary" sx={{ whiteSpace: 'nowrap' }}>{money(selectedTotal)}</Typography>
                   </Stack>
                   <Typography variant="caption" color="text.secondary">{t('recipe.totalHelp')}</Typography>
                 </Box>
@@ -387,11 +552,11 @@ function GroceryRecipeBasket() {
                   {t(commitRequiresRefresh || (expired && !uncertainCommit) ? 'recipe.commitRefreshHelp' : 'recipe.commitRetryHelp')}
                 </Alert>}
                 <Button fullWidth variant="contained" size="large" onClick={confirmPlan}
-                  disabled={committing || committed || commitRequiresRefresh || (expired && !uncertainCommit) || !plan.items.length}
+                  disabled={committing || committed || commitRequiresRefresh || (expired && !uncertainCommit) || !selectedItems.length}
                   startIcon={committing ? <CircularProgress size={18} color="inherit" /> : committed ? <CheckCircleOutline /> : <ShoppingBasket />}
                   sx={{ py: 1.5 }}>
                   {t(committing ? 'recipe.committing' : committed ? 'recipe.addedButton' : commitError && !commitRequiresRefresh && (!expired || uncertainCommit) ? 'recipe.commitRetry'
-                    : plan.missingIngredients.length ? 'recipe.confirmPartial' : 'recipe.confirm')}
+                    : plan.missingIngredients.length || deselectedItems.length ? 'recipe.confirmPartial' : 'recipe.confirm')}
                 </Button>
                 {committed && <Button component={RouterLink} to="/cart" fullWidth endIcon={<ArrowForward />} sx={{ mt: 1 }}>{t('recipe.viewCart')}</Button>}
                 {!committed && !expired && <Typography variant="caption" color="text.secondary" component="p" sx={{ textAlign: 'center', mt: 1.5 }}>
