@@ -35,7 +35,35 @@ public static class GrocerySeeder
         ("Clous de girofle", "Cloves", "25g", 6, "Ducros", 2.29m),
         ("Huile d'olive", "Olive oil", "750ml", 6, "Puget", 7.49m),
         ("Jus de citron", "Lemon juice", "200ml", 6, "Sicilia", 1.49m),
-        ("Riz long", "Long grain rice", "1kg", 6, "Taureau Ailé", 2.99m)
+        ("Riz long", "Long grain rice", "1kg", 6, "Taureau Ailé", 2.99m),
+        // Carbonade
+        ("Bière brune de dégustation", "Brown ale", "33cl", 8, "Ch'ti", 1.79m),
+        ("Pain d'épices", "Gingerbread", "300g", 7, "Brossard", 2.59m),
+        ("Moutarde de Dijon", "Dijon mustard", "350g", 6, "Amora", 1.99m),
+        ("Cassonade", "Brown sugar", "750g", 7, "Daddy", 2.39m),
+        ("Frites allumettes surgelées", "Frozen French fries", "1kg", 9, "McCain", 2.99m),
+        // BBQ
+        ("Merguez", "Merguez sausages", "6 pièces / 6 pieces", 4, "Charal", 4.99m),
+        ("Chipolatas", "Chipolata sausages", "6 pièces / 6 pieces", 4, "Herta", 3.99m),
+        ("Filets de poulet", "Chicken breasts", "500g", 4, "Le Gaulois", 7.49m),
+        ("Sauce barbecue", "Barbecue sauce", "340g", 6, "Heinz", 2.79m),
+        ("Ketchup", "Ketchup", "570g", 6, "Heinz", 3.29m),
+        ("Pains à burger", "Burger buns", "4 pièces / 4 pieces", 3, "Harrys", 1.99m),
+        ("Salade verte en sachet", "Bagged green salad", "125g", 1, "Florette", 1.79m),
+        ("Tomates rondes", "Round tomatoes", "1kg", 1, "Prince de Bretagne", 2.99m),
+        // Repas végétarien
+        ("Lentilles vertes", "Green lentils", "500g", 6, "Sabarot", 3.19m),
+        ("Pois chiches", "Chickpeas", "400g", 6, "Cassegrain", 1.89m),
+        ("Tofu nature", "Plain tofu", "400g", 10, "Bjorg", 3.49m),
+        ("Courgettes", "Courgettes", "1kg", 1, "Prince de Bretagne", 2.79m),
+        ("Poivrons", "Bell peppers", "3 pièces / 3 pieces", 1, "Prince de Bretagne", 2.99m),
+        ("Semoule de couscous", "Couscous semolina", "500g", 6, "Tipiak", 2.19m),
+        // Pizza
+        ("Pâte à pizza", "Pizza dough", "260g", 3, "Herta", 2.49m),
+        ("Mozzarella", "Mozzarella", "125g", 2, "Galbani", 1.59m),
+        ("Jambon blanc", "Cooked ham", "4 tranches / 4 slices", 4, "Herta", 3.29m),
+        ("Olives noires dénoyautées", "Pitted black olives", "200g", 6, "Tramier", 2.29m),
+        ("Herbes de Provence", "Herbes de Provence", "30g", 6, "Ducros", 2.19m)
     ];
 
     public static List<Category> GenerateCategories()

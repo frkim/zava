@@ -349,7 +349,7 @@ Content-Type: application/json
 
 {"siteType": "Grocery"}
 
-### Options — four default suggestions; available=false without Foundry configuration
+### Options — seven default suggestions; available=false without Foundry configuration
 GET {{Zava.Api_HostAddress}}/api/recipe-basket/options
 
 ### Empty recipe — 400, cart unchanged

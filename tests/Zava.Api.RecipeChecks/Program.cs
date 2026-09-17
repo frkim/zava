@@ -45,9 +45,9 @@ try
     var unavailable = new FoundryRecipeClient(new HttpClient(fake), new TestCredential(), new ConfigurationBuilder().Build());
     Assert(!unavailable.Available, "missing Foundry configuration disables recipe planning");
     var staples = GrocerySeeder.GenerateProducts().Where(p => p.Tags.Contains("recette")).ToArray();
-    Assert(staples.Length == 87 && staples.Select(p => p.Id).Distinct().Count() == 87, "unique recipe catalogue products");
+    Assert(staples.Length == 159 && staples.Select(p => p.Id).Distinct().Count() == 159, "unique recipe catalogue products");
     foreach (var tier in new[] { "national", "private-label", "economy" })
-        Assert(staples.Count(p => p.Tags.Contains($"brand:{tier}") && p.Stock > 0 && p.Variants.Count == 1) == 29, $"complete {tier} catalogue");
+        Assert(staples.Count(p => p.Tags.Contains($"brand:{tier}") && p.Stock > 0 && p.Variants.Count == 1) == 53, $"complete {tier} catalogue");
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "National" }), 409);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = (string?)null, servings = 4, brandPreference = "Mix" }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = " \t ", servings = 4, brandPreference = "Mix" }), 400);
@@ -72,7 +72,7 @@ try
     }
     await Setup();
     var options = await client.GetFromJsonAsync<JsonElement>("/api/recipe-basket/options");
-    Assert(options.GetProperty("available").GetBoolean() && options.GetProperty("suggestions").GetArrayLength() == 4, "options");
+    Assert(options.GetProperty("available").GetBoolean() && options.GetProperty("suggestions").GetArrayLength() == 7, "options");
     var plan = await Plan("National", trailingSlash: true);
     Assert(plan.GetProperty("items").GetArrayLength() == 2 && plan.GetProperty("total").GetDecimal() == 23m, "authoritative prices and duplicate aggregation");
     Assert((await client.GetFromJsonAsync<JsonElement>("/api/cart")).GetProperty("itemCount").GetInt32() == 0, "preview does not mutate");

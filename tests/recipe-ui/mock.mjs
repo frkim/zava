@@ -29,7 +29,7 @@ http.createServer(async (req, res) => {
   if (req.url === '/api/recipe-basket/options') {
     calls.push({ path: req.url });
     if (settings.optionsUnavailable) return send(res, 503, { message: 'Service temporairement inaccessible' });
-    return send(res, 200, { available: settings.available, suggestions: ['Lasagnes', 'Blanquette de veau', 'Hachis parmentier', 'Bœuf bourguignon'] });
+    return send(res, 200, { available: settings.available, suggestions: ['Lasagnes', 'Blanquette de veau', 'Carbonade', 'Bœuf bourguignon', 'BBQ', 'Repas végétarien', 'Pizza'] });
   }
   if (req.url === '/api/recipe-basket/plan') {
     calls.push({ path: req.url, body });

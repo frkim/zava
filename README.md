@@ -126,10 +126,10 @@ npm run dev
 ### Panier recette
 
 1. Dans **Paramètres**, sélectionner **Alimentaire**, puis ouvrir **Panier recette** depuis la navigation, l'accueil ou le panier.
-2. Choisir une suggestion (lasagnes, blanquette de veau, hachis parmentier, bœuf bourguignon) ou saisir un autre plat, le nombre de personnes et la gamme.
+2. Choisir une suggestion (lasagnes, blanquette de veau, carbonade, bœuf bourguignon, BBQ, repas végétarien, pizza) ou saisir un autre plat, le nombre de personnes et la gamme.
 3. Générer la sélection, vérifier les produits, les paquets entiers, le total et les ingrédients manquants, puis confirmer l'ajout groupé. Une sélection incomplète est signalée ; elle n'est pas présentée comme une recette complète.
 
-Les valeurs API des gammes sont `National`, `PrivateLabel`, `Economy` et `Mix`. Les trois premières filtrent le catalogue **côté serveur** grâce aux tags `brand:national`, `brand:private-label` et `brand:economy`. Les références Zava et Zava Essentiel et leurs prix sont des données de démonstration. Les 29 ingrédients de base disposent chacun de trois gammes ; une recette libre peut nécessiter des ingrédients non commercialisés.
+Les valeurs API des gammes sont `National`, `PrivateLabel`, `Economy` et `Mix`. Les trois premières filtrent le catalogue **côté serveur** grâce aux tags `brand:national`, `brand:private-label` et `brand:economy`. Les références Zava et Zava Essentiel et leurs prix sont des données de démonstration. Les 53 ingrédients de base disposent chacun de trois gammes ; une recette libre peut nécessiter des ingrédients non commercialisés. Les photos de ces ingrédients proviennent de Wikimedia Commons sous licence libre : l'attribution complète (fichier, licence, auteur) est listée dans [`Docs/image-credits.md`](Docs/image-credits.md).
 
 Le premier agent décompose la recette en ingrédients et quantités ; le second associe ces ingrédients aux références réellement disponibles et à leurs conditionnements. Les réponses sont structurées et validées : aucun identifiant, prix ou stock inventé par le modèle n'est accepté. Les agents n'ont pas d'outil de paiement ni d'accès direct au panier.
 
