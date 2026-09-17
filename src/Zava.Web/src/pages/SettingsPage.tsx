@@ -1,43 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Typography, Box, Paper,
-  CircularProgress, Alert, Snackbar, Grid,
+  CircularProgress, Snackbar, Grid,
 } from '@mui/material';
 import {
   Devices, Kitchen, Spa, ElectricalServices, Construction, LocalGroceryStore,
 } from '@mui/icons-material';
-import { getConfig, changeSiteType } from '../api';
 import { useSite } from '../context/SiteContext';
 import { useLanguage } from '../context/LanguageContext';
-import type { SiteConfig } from '../types';
+import type { SiteType } from '../types';
 
 export default function SettingsPage() {
   const navigate = useNavigate();
-  const { refreshConfig } = useSite();
+  const { config, selectSiteType } = useSite();
   const { lang, t } = useLanguage();
-  const [config, setConfig] = useState<SiteConfig | null>(null);
-  const [loading, setLoading] = useState(true);
   const [snackbar, setSnackbar] = useState('');
 
-  const load = async () => {
+  const handleChangeSiteType = async (siteType: SiteType) => {
     try {
-      const c = await getConfig();
-      setConfig(c);
-    } catch { /* ignore */ }
-    setLoading(false);
-  };
-
-  useEffect(() => { load(); }, []);
-
-  const handleChangeSiteType = async (siteType: string) => {
-    try {
-      const updated = await changeSiteType(siteType);
-      setConfig(updated);
-      // Refresh global context (title, cart badge, etc.)
-      await refreshConfig();
+      const updated = await selectSiteType(siteType);
       setSnackbar(`${t('settings.siteChanged')} : ${lang === 'en' ? (updated.availableSiteTypes.find(s => s.type === siteType)?.nameEn) : (updated.availableSiteTypes.find(s => s.type === siteType)?.name)}`);
-      // Navigate home so the user sees the new site
       navigate('/');
     } catch {
       setSnackbar(t('settings.changeError'));
@@ -53,8 +36,7 @@ export default function SettingsPage() {
     Grocery: <LocalGroceryStore sx={{ fontSize: 48, color: 'primary.main' }} />,
   };
 
-  if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
-  if (!config) return <Alert severity="error">{t('common.error')}</Alert>;
+  if (!config) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
 
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto' }}>
