@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http.Features;
 using Zava.Api.Models;
 using Zava.Api.Services;
 
+const int RecipeRequestLimit = 4096;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
@@ -52,15 +54,11 @@ app.UseStaticFiles(); // Serves wwwroot/ (images, etc.)
 
 app.Use(async (context, next) =>
 {
-    if (context.Request.Path.StartsWithSegments("/api/recipe-basket"))
+    var recipeBasket = context.Request.Path.StartsWithSegments("/api/recipe-basket");
+    if (recipeBasket)
     {
         var bodySize = context.Features.Get<IHttpMaxRequestBodySizeFeature>();
-        if (bodySize is { IsReadOnly: false }) bodySize.MaxRequestBodySize = 4096;
-        if (context.Request.ContentLength > 4096)
-        {
-            context.Response.StatusCode = StatusCodes.Status413PayloadTooLarge;
-            return;
-        }
+        if (bodySize is { IsReadOnly: false }) bodySize.MaxRequestBodySize = RecipeRequestLimit;
     }
     // Serialize shared demo state through response serialization, but never hold the gate during AI calls.
     if (context.Request.Path.StartsWithSegments("/api")
@@ -71,6 +69,19 @@ app.Use(async (context, next) =>
         finally { dataStore.Gate.Release(); }
     }
     else await next(context);
+    // The size limit is enforced while reading the body, and that rejection carries no body of
+    // its own; every other recipe-basket error explains itself, so this one should too.
+    if (recipeBasket && context.Response.StatusCode == StatusCodes.Status413PayloadTooLarge
+        && !context.Response.HasStarted)
+    {
+        context.Response.Clear();
+        context.Response.StatusCode = StatusCodes.Status413PayloadTooLarge;
+        var body = JsonSerializer.SerializeToUtf8Bytes(
+            new { message = "La demande est trop volumineuse (4 Ko maximum)." });
+        context.Response.ContentType = "application/json; charset=utf-8";
+        context.Response.ContentLength = body.Length;
+        await context.Response.Body.WriteAsync(body);
+    }
 });
 
 app.MapRecipeBasket();

@@ -57,7 +57,19 @@ try
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 21, brandPreference = "Mix" }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Other" }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", unitPrice = 0.01 }), 400);
-    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = new string('a', 5000), servings = 4, brandPreference = "Mix" }), 413);
+    // Oversize bodies are refused both when declared (Content-Length) and while streaming (chunked).
+    var oversizedBody = JsonSerializer.Serialize(new { recipe = new string('a', 5000), servings = 4, brandPreference = "Mix" });
+    foreach (var chunked in new[] { false, true })
+    {
+        var content = new StringContent(oversizedBody, Encoding.UTF8, "application/json");
+        if (chunked) content.Headers.ContentLength = null;
+        var oversized = await client.PostAsync("/api/recipe-basket/plan", content);
+        await Expect(oversized, 413);
+        using var refusal = JsonDocument.Parse(await oversized.Content.ReadAsStringAsync());
+        Assert(refusal.RootElement.TryGetProperty("message", out var refusalMessage)
+            && !string.IsNullOrWhiteSpace(refusalMessage.GetString()),
+            $"oversized {(chunked ? "chunked" : "declared")} requests explain the size limit like every other recipe error");
+    }
     await Setup();
     var options = await client.GetFromJsonAsync<JsonElement>("/api/recipe-basket/options");
     Assert(options.GetProperty("available").GetBoolean() && options.GetProperty("suggestions").GetArrayLength() == 4, "options");
