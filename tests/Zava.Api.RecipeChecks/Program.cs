@@ -98,21 +98,44 @@ try
         && cart.GetProperty("itemCount").GetInt32() == 3, "classic cart mutations preserve other recipe variants");
     fake.Mode = "normal";
     await client.DeleteAsync("/api/cart");
-    var stale = await Plan("National");
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", excludedProductIds = new[] { 0 } }), 400);
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", excludedProductIds = Enumerable.Range(1, 101).ToArray() }), 400);
+    var staleResponse = await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", excludedProductIds = new[] { 9001 } });
+    await Expect(staleResponse, 200);
+    var stale = await staleResponse.Content.ReadFromJsonAsync<JsonElement>();
+    Assert(fake.LastProductIds.SequenceEqual(new[] { 9002 }), "products the shopper must never suggest again leave the catalogue sent to the AI");
     await client.PostAsync("/api/config/reset", null);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = stale.GetProperty("planId").GetString() }), 409);
     await Setup();
     var partial = await Plan("National");
+    var partialId = partial.GetProperty("planId").GetString()!;
     await Expect(await client.PostAsJsonAsync("/api/cart/items", new { productId = 9001, variantId = 2, quantity = 18 }), 200);
-    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = partial.GetProperty("planId").GetString() }), 409);
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = partialId }), 409);
     Assert((await client.GetFromJsonAsync<JsonElement>("/api/cart")).GetProperty("itemCount").GetInt32() == 18, "all-or-nothing stock failure");
+    await client.DeleteAsync("/api/cart");
+    // The stock failure left the plan uncommitted, so it still exercises the selection sent at confirmation time.
+    var dropped = partial.GetProperty("items")[0];
+    var kept = partial.GetProperty("items")[1];
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = partialId, excludedItems = new[] { new { productId = 0, variantId = (int?)null } } }), 400);
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit",
+        new { planId = partialId, excludedItems = Enumerable.Range(1, 26).Select(i => new { productId = i, variantId = (int?)null }).ToArray() }), 400);
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = partialId,
+        excludedItems = partial.GetProperty("items").EnumerateArray()
+            .Select(item => new { productId = item.GetProperty("productId").GetInt32(), variantId = item.GetProperty("variantId").GetInt32() }).ToArray() }), 409);
+    Assert((await client.GetFromJsonAsync<JsonElement>("/api/cart")).GetProperty("itemCount").GetInt32() == 0, "an invalid or fully emptied selection never touches the cart");
+    await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = partialId,
+        excludedItems = new[] { new { productId = dropped.GetProperty("productId").GetInt32(), variantId = dropped.GetProperty("variantId").GetInt32() } } }), 200);
+    cart = await client.GetFromJsonAsync<JsonElement>("/api/cart");
+    Assert(cart.GetProperty("items").GetArrayLength() == 1
+        && cart.GetProperty("items")[0].GetProperty("variantId").GetInt32() == kept.GetProperty("variantId").GetInt32()
+        && cart.GetProperty("itemCount").GetInt32() == kept.GetProperty("quantity").GetInt32(), "commit only adds the products left in the selection");
     await client.DeleteAsync("/api/cart");
     var economy = await Plan("Economy");
     Assert(fake.LastProductIds.SequenceEqual(new[] { 9002 }) && economy.GetProperty("items")[0].GetProperty("productId").GetInt32() == 9002, "strict preference filtering");
     fake.Mode = "timeout";
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 504);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 429);
-    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, preview, concurrent idempotency, variants, stock atomicity, stale reset, preference, timeout and quota.");
+    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, stock atomicity, stale reset, preference, timeout and quota.");
 }
 finally
 {

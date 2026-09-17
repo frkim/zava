@@ -2,7 +2,7 @@ import type {
   SiteConfig, HomepageData, Product, Category, SearchRequest, SearchResult,
   SearchSuggestion, Cart, PaymentResult, CheckoutRequest, Order, User,
   AnalyticsDashboard, Review, ProductImage, CrossSellOffer,
-  RecipeBasketOptions, RecipeBasketRequest, RecipeBasketPlan,
+  RecipeBasketOptions, RecipeBasketRequest, RecipeBasketPlan, RecipeBasketItemKey,
 } from './types';
 
 export const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5014';
@@ -100,10 +100,10 @@ export const planRecipeBasket = (data: RecipeBasketRequest, signal?: AbortSignal
     body: JSON.stringify(data),
     signal,
   });
-export const commitRecipeBasket = (planId: string) =>
+export const commitRecipeBasket = (planId: string, excludedItems: RecipeBasketItemKey[] = []) =>
   request<Cart>(`${API}/recipe-basket/commit`, {
     method: 'POST',
-    body: JSON.stringify({ planId }),
+    body: JSON.stringify({ planId, excludedItems }),
   });
 
 // Cross-sell

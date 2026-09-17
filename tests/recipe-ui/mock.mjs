@@ -35,17 +35,18 @@ http.createServer(async (req, res) => {
     calls.push({ path: req.url, body });
     await new Promise(resolve => setTimeout(resolve, settings.planDelay));
     if (settings.planFailures-- > 0) return send(res, 503, { message: 'Réessayez la préparation dans un instant.' });
+    const excluded = new Set(body.excludedProductIds ?? []);
+    const items = settings.empty ? [] : [
+      { productId: 101, productName: 'Pâtes à lasagnes aux œufs', variantId: 1001, variantName: 'Paquet de 500 g', quantity: 1, unitPrice: 2.49, subtotal: 2.49, ingredient: 'Feuilles de lasagnes' },
+      { productId: 102, productName: 'Pur bœuf haché 15 % MG', variantId: 1002, variantName: 'Barquette de 350 g', quantity: 2, unitPrice: 4.9, subtotal: 9.8, ingredient: 'Bœuf haché' },
+      { productId: 103, productName: 'Tomates concassées', variantId: null, variantName: null, quantity: 2, unitPrice: 1.25, subtotal: 2.5, ingredient: 'Tomates' },
+      { productId: 104, productName: 'Emmental râpé', variantId: 1004, variantName: 'Sachet de 200 g', quantity: 1, unitPrice: 2.19, subtotal: 2.19, ingredient: 'Fromage râpé' },
+    ].filter(item => !excluded.has(item.productId));
     const plan = {
-      planId: `plan-${plans.size + 1}`, ...body,
-      items: settings.empty ? [] : [
-        { productId: 101, productName: 'Pâtes à lasagnes aux œufs', variantId: 1001, variantName: 'Paquet de 500 g', quantity: 1, unitPrice: 2.49, subtotal: 2.49, ingredient: 'Feuilles de lasagnes' },
-        { productId: 102, productName: 'Pur bœuf haché 15 % MG', variantId: 1002, variantName: 'Barquette de 350 g', quantity: 2, unitPrice: 4.9, subtotal: 9.8, ingredient: 'Bœuf haché' },
-        { productId: 103, productName: 'Tomates concassées', variantId: null, variantName: null, quantity: 2, unitPrice: 1.25, subtotal: 2.5, ingredient: 'Tomates' },
-        { productId: 104, productName: 'Emmental râpé', variantId: 1004, variantName: 'Sachet de 200 g', quantity: 1, unitPrice: 2.19, subtotal: 2.19, ingredient: 'Fromage râpé' },
-      ],
+      planId: `plan-${plans.size + 1}`, ...body, items,
       missingIngredients: ['Noix de muscade'],
       warnings: ['Vérifiez si vous avez déjà de l’huile, du sel et du poivre.', 'Le choix de marque demandé n’est pas disponible pour tous les ingrédients.'],
-      total: settings.empty ? 0 : 16.98,
+      total: Math.round(items.reduce((sum, item) => sum + item.subtotal, 0) * 100) / 100,
       expiresAt: new Date(Date.now() + settings.expiryMs).toISOString(),
     };
     plans.set(plan.planId, plan);
@@ -60,9 +61,11 @@ http.createServer(async (req, res) => {
     if (!plan || Date.parse(plan.expiresAt) <= Date.now()) return send(res, 409, { message: 'Ce panier recette a expiré ou la boutique a changé.' });
     if (!committed.has(body.planId)) {
       committed.add(body.planId);
-      cart.items.push(...plan.items);
-      cart.total += plan.total;
-      cart.itemCount += plan.items.reduce((count, item) => count + item.quantity, 0);
+      const skipped = new Set((body.excludedItems ?? []).map(item => `${item.productId}:${item.variantId ?? ''}`));
+      const selected = plan.items.filter(item => !skipped.has(`${item.productId}:${item.variantId ?? ''}`));
+      cart.items.push(...selected);
+      cart.total = Math.round((cart.total + selected.reduce((sum, item) => sum + item.subtotal, 0)) * 100) / 100;
+      cart.itemCount += selected.reduce((count, item) => count + item.quantity, 0);
     }
     if (settings.dropCommitResponses-- > 0) {
       res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Content-Length': '1000', Connection: 'close' });
