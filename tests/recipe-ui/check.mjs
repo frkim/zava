@@ -37,7 +37,7 @@ const wait = async (expression, label) => {
   }
   throw new Error(`Timeout: ${label}\n${await evaluate('document.body.innerText')}`);
 };
-const text = string => `document.body.innerText.includes(${JSON.stringify(string)})`;
+const text = string => `document.body?.innerText.includes(${JSON.stringify(string)})`;
 const click = label => evaluate(`(() => {
   const element = [...document.querySelectorAll('button,[role="button"]')].find(el => el.innerText.trim() === ${JSON.stringify(label)});
   if (!element) throw new Error('Missing button: ' + ${JSON.stringify(label)});
@@ -71,7 +71,7 @@ const prepare = async () => {
 await cdp('Runtime.enable');
 await cdp('Page.enable');
 await cdp('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1100, deviceScaleFactor: 1, mobile: false });
-await configure({ site: 'Grocery', available: true, optionFailures: 0, planFailures: 0, commitFailures: 0, planDelay: 800, expiryMs: 600000, empty: false });
+await configure({ site: 'Grocery', available: true, optionsUnavailable: false, planFailures: 0, commitFailures: 0, commitStatus: 503, dropCommitResponses: 0, planDelay: 800, expiryMs: 600000, empty: false });
 await ready();
 assert.equal(await evaluate("document.querySelector('#recipe-name').maxLength"), 200);
 assert.equal(await evaluate("document.querySelector('#recipe-servings').value"), '4');
@@ -143,6 +143,37 @@ await wait(text('Votre liste à vérifier'), 'refreshed preview');
 await wait(`!(${text('Cette proposition a expiré.')})`, 'cleared expiration');
 console.log('PASS expiration blocks stale confirmation and regeneration restores preview');
 
+for (const commitStatus of [409, 410]) {
+  await configure({ commitFailures: 1, commitStatus });
+  await ready();
+  await prepare();
+  await click('Confirmer et ajouter les produits disponibles');
+  await wait(text('Ce panier recette a expiré ou la boutique a changé.'), `HTTP ${commitStatus} conflict`);
+  assert.equal(await evaluate("[...document.querySelectorAll('button')].find(el => el.innerText.startsWith('Confirmer')).disabled"), true);
+  assert.equal(await evaluate(text('Réessayer le même ajout')), false);
+  await click('Actualiser la proposition');
+  await wait(text('Votre liste à vérifier'), 'new preview after conflict');
+  await wait(`!(${text('Ce panier recette a expiré ou la boutique a changé.')})`, 'conflict cleared');
+}
+console.log('PASS 409/410 require a fresh preview instead of repeating rejected commits');
+
+await configure({ commitStatus: 503, dropCommitResponses: 1 });
+await ready();
+await prepare();
+const cartBeforeLostResponse = (await state()).cart.itemCount;
+await click('Confirmer et ajouter les produits disponibles');
+await wait(text('Réessayer le même ajout'), 'lost successful commit response');
+assert.equal((await state()).cart.itemCount, cartBeforeLostResponse + 6);
+await configure({ commitFailures: 1, commitStatus: 429 });
+await click('Réessayer le même ajout');
+await wait(text('Connexion interrompue pendant la confirmation.'), 'rate limited uncertain retry');
+await click('Réessayer le même ajout');
+await wait(text('Les produits de votre recette ont été ajoutés au panier.'), 'recovered committed basket');
+const uncertainCalls = (await state()).calls.filter(call => call.path.endsWith('/commit')).slice(-3);
+assert.equal(new Set(uncertainCalls.map(call => call.body.planId)).size, 1);
+assert.equal((await state()).cart.itemCount, cartBeforeLostResponse + 6, 'Lost-response retries must not duplicate products');
+console.log('PASS a lost successful response and a 429 retry preserve the same plan without duplicate additions');
+
 await configure({ empty: true });
 await ready();
 await prepare();
@@ -153,9 +184,10 @@ await navigate();
 await wait(text('L’assistant recette est indisponible'), 'unavailable service');
 assert.equal(await evaluate("document.querySelector('#recipe-name') === null"), true);
 assert.equal(await evaluate("!!document.querySelector('a[href=\"/cart\"]') && !!document.querySelector('a[href=\"/search\"]')"), true);
-await configure({ available: true, optionFailures: 1 });
+await configure({ available: true, optionsUnavailable: true });
 await navigate();
 await wait(text('Impossible de vérifier la disponibilité'), 'options failure');
+await configure({ optionsUnavailable: false });
 await click('Réessayer');
 await wait("!!document.querySelector('#recipe-name')", 'options retry');
 console.log('PASS empty results, unavailable AI keeps normal shopping accessible, options failure retry');

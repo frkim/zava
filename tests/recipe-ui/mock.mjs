@@ -1,6 +1,6 @@
 import http from 'node:http';
 
-let settings = { site: 'Grocery', available: true, optionFailures: 0, planFailures: 0, commitFailures: 0, planDelay: 800, commitDelay: 500, expiryMs: 600000, empty: false };
+let settings = { site: 'Grocery', available: true, optionsUnavailable: false, planFailures: 0, commitFailures: 0, commitStatus: 503, dropCommitResponses: 0, planDelay: 800, commitDelay: 500, expiryMs: 600000, empty: false };
 let calls = [];
 let cart = { items: [{ productId: 99, productName: 'Produit déjà au panier', variantId: 999, variantName: '500 g', quantity: 1, unitPrice: 2, subtotal: 2 }], total: 2, itemCount: 1 };
 const plans = new Map();
@@ -28,7 +28,7 @@ http.createServer(async (req, res) => {
   if (req.url === '/api/cart') return send(res, 200, cart);
   if (req.url === '/api/recipe-basket/options') {
     calls.push({ path: req.url });
-    if (settings.optionFailures-- > 0) return send(res, 503, { message: 'Service temporairement inaccessible' });
+    if (settings.optionsUnavailable) return send(res, 503, { message: 'Service temporairement inaccessible' });
     return send(res, 200, { available: settings.available, suggestions: ['Lasagnes', 'Blanquette de veau', 'Hachis parmentier', 'Bœuf bourguignon'] });
   }
   if (req.url === '/api/recipe-basket/plan') {
@@ -54,14 +54,19 @@ http.createServer(async (req, res) => {
   if (req.url === '/api/recipe-basket/commit') {
     calls.push({ path: req.url, body });
     await new Promise(resolve => setTimeout(resolve, settings.commitDelay));
-    if (settings.commitFailures-- > 0) return send(res, 503, { message: 'Connexion interrompue pendant la confirmation.' });
+    if (settings.commitFailures-- > 0) return send(res, settings.commitStatus, { message: settings.commitStatus === 409 || settings.commitStatus === 410
+      ? 'Ce panier recette a expiré ou la boutique a changé.' : 'Connexion interrompue pendant la confirmation.' });
+    const plan = plans.get(body.planId);
+    if (!plan || Date.parse(plan.expiresAt) <= Date.now()) return send(res, 409, { message: 'Ce panier recette a expiré ou la boutique a changé.' });
     if (!committed.has(body.planId)) {
-      const plan = plans.get(body.planId);
-      if (Date.parse(plan.expiresAt) <= Date.now()) return send(res, 410, { message: 'La proposition a expiré.' });
       committed.add(body.planId);
       cart.items.push(...plan.items);
       cart.total += plan.total;
       cart.itemCount += plan.items.reduce((count, item) => count + item.quantity, 0);
+    }
+    if (settings.dropCommitResponses-- > 0) {
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Content-Length': '1000', Connection: 'close' });
+      return res.end('{"items":');
     }
     return send(res, 200, cart);
   }
