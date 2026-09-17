@@ -3576,5 +3576,244 @@
       "durabilityIndex": 6.2,
       "energyClass": null
     }
+  },
+  {
+    "id": 101,
+    "categoryId": 11,
+    "name": "De'Longhi Magnifica Start ECAM220.22.GB",
+    "nameEn": "De'Longhi Magnifica Start ECAM220.22.GB",
+    "description": "Machine expresso avec broyeur à grains, panneau tactile et buse vapeur pour cappuccino.",
+    "descriptionEn": "Bean-to-cup espresso machine with touch controls and a steam wand for cappuccino.",
+    "price": 399.99,
+    "brand": "De'Longhi",
+    "sku": "DEL-ECAM22022GB",
+    "stock": 14,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1010,
+        "name": "Coloris",
+        "nameEn": "Color",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ],
+    "sustainability": {
+      "overallScore": 7.1,
+      "repairabilityIndex": 7.2,
+      "recyclabilityPercent": 72,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
+  },
+  {
+    "id": 102,
+    "categoryId": 11,
+    "name": "Bosch TKA6A041 ComfortLine",
+    "nameEn": "Bosch TKA6A041 ComfortLine",
+    "description": "Cafetière filtre 15 tasses avec réservoir amovible, système anti-goutte et maintien au chaud.",
+    "descriptionEn": "15-cup filter coffee maker with removable tank, drip stop and keep-warm plate.",
+    "price": 69.99,
+    "brand": "Bosch",
+    "sku": "BOS-TKA6A041",
+    "stock": 27,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1020,
+        "name": "Coloris",
+        "nameEn": "Color",
+        "value": "Blanc",
+        "priceAdjustment": 0,
+        "stock": 27
+      }
+    ],
+    "sustainability": {
+      "overallScore": 7.4,
+      "repairabilityIndex": 7.6,
+      "recyclabilityPercent": 78,
+      "labels": [],
+      "durabilityIndex": 7.5,
+      "energyClass": null
+    }
+  },
+  {
+    "id": 103,
+    "categoryId": 11,
+    "name": "Moulinex HV4 ME452839",
+    "nameEn": "Moulinex HV4 ME452839",
+    "description": "Hachoir à viande électrique 2000 W, capacité jusqu'à 2,3 kg/min avec trois grilles inox.",
+    "descriptionEn": "2,000 W electric meat grinder processing up to 2.3 kg/min with three stainless-steel plates.",
+    "price": 119.99,
+    "brand": "Moulinex",
+    "sku": "MOU-ME452839",
+    "stock": 19,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1030,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 19
+      }
+    ],
+    "sustainability": {
+      "overallScore": 6.8,
+      "repairabilityIndex": 6.9,
+      "recyclabilityPercent": 70,
+      "labels": [],
+      "durabilityIndex": 6.8,
+      "energyClass": null
+    }
+  },
+  {
+    "id": 104,
+    "categoryId": 11,
+    "name": "Bosch TWK3P420 DesignLine",
+    "nameEn": "Bosch TWK3P420 DesignLine",
+    "description": "Bouilloire électrique inox 1,7 L, 2400 W, socle 360° et arrêt automatique.",
+    "descriptionEn": "1.7 L stainless-steel electric kettle with 2,400 W output, 360° base and auto shut-off.",
+    "price": 44.99,
+    "brand": "Bosch",
+    "sku": "BOS-TWK3P420",
+    "stock": 34,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1040,
+        "name": "Coloris",
+        "nameEn": "Color",
+        "value": "Inox",
+        "priceAdjustment": 0,
+        "stock": 34
+      }
+    ],
+    "sustainability": {
+      "overallScore": 7.0,
+      "repairabilityIndex": 7.1,
+      "recyclabilityPercent": 81,
+      "labels": [],
+      "durabilityIndex": 7.0,
+      "energyClass": null
+    }
+  },
+  {
+    "id": 105,
+    "categoryId": 11,
+    "name": "Weber Compact Kettle 47 cm",
+    "nameEn": "Weber Compact Kettle 47 cm",
+    "description": "Barbecue à charbon compact avec cuve et couvercle émaillés, grille de cuisson de 47 cm.",
+    "descriptionEn": "Compact charcoal barbecue with porcelain-enamelled bowl and lid, plus a 47 cm cooking grate.",
+    "price": 159.99,
+    "promoPrice": 129.99,
+    "brand": "Weber",
+    "sku": "WEB-COMPACT47",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1050,
+        "name": "Diamètre",
+        "nameEn": "Diameter",
+        "value": "47 cm",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ],
+    "sustainability": {
+      "overallScore": 7.7,
+      "repairabilityIndex": 8.0,
+      "recyclabilityPercent": 84,
+      "labels": [],
+      "durabilityIndex": 8.2,
+      "energyClass": null
+    }
+  },
+  {
+    "id": 106,
+    "categoryId": 11,
+    "name": "Campingaz 3 Series Classic LS Plus",
+    "nameEn": "Campingaz 3 Series Classic LS Plus",
+    "description": "Barbecue à gaz 3 brûleurs en acier inoxydable, plancha réversible et surface de cuisson 2 800 cm².",
+    "descriptionEn": "Three-burner stainless-steel gas barbecue with reversible griddle and 2,800 cm² cooking surface.",
+    "price": 499.99,
+    "brand": "Campingaz",
+    "sku": "CAM-3SCLSPLUS",
+    "stock": 8,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1060,
+        "name": "Standard",
+        "nameEn": "Standard",
+        "value": "Standard",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ],
+    "sustainability": {
+      "overallScore": 7.2,
+      "repairabilityIndex": 7.3,
+      "recyclabilityPercent": 79,
+      "labels": [],
+      "durabilityIndex": 7.4,
+      "energyClass": null
+    }
+  },
+  {
+    "id": 107,
+    "categoryId": 11,
+    "name": "Weber Spirit II E-310",
+    "nameEn": "Weber Spirit II E-310",
+    "description": "Barbecue à gaz 3 brûleurs avec système GS4, grille Gourmet BBQ System et tablettes latérales.",
+    "descriptionEn": "Three-burner gas barbecue with the GS4 system, Gourmet BBQ System grate and side tables.",
+    "price": 699.99,
+    "brand": "Weber",
+    "sku": "WEB-SPIRIT2E310",
+    "stock": 11,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1070,
+        "name": "Coloris",
+        "nameEn": "Color",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 11
+      }
+    ],
+    "sustainability": {
+      "overallScore": 8.0,
+      "repairabilityIndex": 8.4,
+      "recyclabilityPercent": 86,
+      "labels": [],
+      "durabilityIndex": 8.3,
+      "energyClass": null
+    }
   }
 ]
