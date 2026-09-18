@@ -82,7 +82,7 @@ public static class GrocerySeeder
             new() { Id = 8, Name = "Boissons", NameEn = "Beverages", Description = "Eaux, jus, sodas et boissons chaudes", DescriptionEn = "Water, juices, sodas and hot drinks", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "LocalDrink" },
             new() { Id = 9, Name = "Surgelés", NameEn = "Frozen Foods", Description = "Plats cuisinés, glaces et légumes surgelés", DescriptionEn = "Ready meals, ice cream and frozen vegetables", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "AcUnit" },
             new() { Id = 10, Name = "Bio & Bien-être", NameEn = "Organic & Wellness", Description = "Produits bio, sans gluten et compléments alimentaires", DescriptionEn = "Organic, gluten-free products and food supplements", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "Eco" },
-            new() { Id = SmallApplianceCategoryId, Name = "Petit électroménager", NameEn = "Small Appliances", Description = "Cafetières, hachoirs électriques, bouilloires et barbecues", DescriptionEn = "Coffee makers, electric meat grinders, kettles and barbecues", ProductCount = 7, SiteType = SiteType.Grocery, Icon = "CoffeeMaker" }
+            new() { Id = SmallApplianceCategoryId, Name = "Petit électroménager", NameEn = "Small Appliances", Description = "Cafetières, multicuiseurs, hachoirs électriques, bouilloires et barbecues", DescriptionEn = "Coffee makers, multi-cookers, electric meat grinders, kettles and barbecues", ProductCount = 8, SiteType = SiteType.Grocery, Icon = "CoffeeMaker" }
         };
         foreach (var category in categories)
             category.ProductCount += RecipeStaples.Count(s => s.CategoryId == category.Id) * 3;
@@ -270,7 +270,27 @@ public static class GrocerySeeder
                 "Coloris",
                 "Color",
                 "Noir",
-                1070)
+                1070),
+            CreateSmallApplianceProduct(
+                267,
+                "Instant Pot 921267 Classic Mini 3,8 L",
+                "Instant Pot 921267 Classic Mini 3.8 L",
+                "Cocotte électrique multicuiseur 7-en-1 de 3,8 L et 800 W avec cuisson sous pression, mijotage, vapeur, sauté, yaourt et maintien au chaud.",
+                "3.8 L, 800 W 7-in-1 electric multi-cooker with pressure cooking, slow cooking, steaming, sautéing, yoghurt making and keep-warm functions.",
+                149.99m,
+                89.99m,
+                "Instant Pot",
+                "GROCERY-SMALL-INS-921267",
+                32,
+                isNew: true,
+                isBestSeller: false,
+                isFeatured: true,
+                isPromo: true,
+                "Coloris",
+                "Color",
+                "Noir",
+                2670,
+                "multicuiseur")
         ]);
     }
 
@@ -292,7 +312,8 @@ public static class GrocerySeeder
         string variantName,
         string variantNameEn,
         string variantValue,
-        int variantId)
+        int variantId,
+        string productTypeTag = "barbecue")
     {
         return new Product
         {
@@ -313,7 +334,7 @@ public static class GrocerySeeder
             IsPromo = isPromo,
             SiteType = SiteType.Grocery,
             CreatedAt = new DateTime(2026, 1, 1),
-            Tags = [brand, "petit électroménager", "barbecue"],
+            Tags = [brand, "petit électroménager", productTypeTag],
             Variants = [new ProductVariant
             {
                 Id = variantId,
