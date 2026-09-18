@@ -2,6 +2,8 @@ name: Diagnose recipe basket
 
 on:
   workflow_dispatch:
+  push:
+    branches: [frkim-azure-redeploy]
 
 permissions:
   contents: read
