@@ -3815,5 +3815,40 @@
       "durabilityIndex": 8.3,
       "energyClass": null
     }
+  },
+  {
+    "id": 108,
+    "categoryId": 11,
+    "name": "Instant Pot 921267 Classic Mini 3,8 L",
+    "nameEn": "Instant Pot 921267 Classic Mini 3.8 L",
+    "description": "Cocotte électrique multicuiseur 7-en-1 de 3,8 L et 800 W avec cuisson sous pression, mijotage, vapeur, sauté, yaourt et maintien au chaud.",
+    "descriptionEn": "3.8 L, 800 W 7-in-1 electric multi-cooker with pressure cooking, slow cooking, steaming, sautéing, yoghurt making and keep-warm functions.",
+    "price": 149.99,
+    "promoPrice": 89.99,
+    "brand": "Instant Pot",
+    "sku": "INS-921267",
+    "stock": 32,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 1080,
+        "name": "Coloris",
+        "nameEn": "Color",
+        "value": "Noir",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ],
+    "sustainability": {
+      "overallScore": 7.6,
+      "repairabilityIndex": 7.5,
+      "recyclabilityPercent": 82,
+      "labels": [],
+      "durabilityIndex": 7.8,
+      "energyClass": null
+    }
   }
 ]
