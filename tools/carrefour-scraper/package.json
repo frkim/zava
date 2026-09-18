@@ -1,0 +1,23 @@
+{
+  "name": "@zava/carrefour-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Collects product name, description, features and pictures from carrefour.fr with human-like browsing, storing everything in the OS temp folder.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "carrefour-scraper": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "browsers": "playwright install chromium",
+    "test": "node --test tests/"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
+}
