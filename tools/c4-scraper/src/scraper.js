@@ -1,5 +1,5 @@
 /**
- * Carrefour navigation flow.
+ * C4 navigation flow.
  *
  * The scraper walks the site the way a shopper would: open the home page,
  * dismiss the cookie banner, type in the search box, look at the result list,

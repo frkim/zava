@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Carrefour product collector.
+ * C4 product collector.
  *
  * Browses https://www.carrefour.fr/ in a real (visible) browser the way a person
  * would — search, scroll, click, read — and stores the product name, description,
@@ -93,7 +93,7 @@ function parseArgs(argv) {
 }
 
 const HELP = `
-Carrefour product collector — browses carrefour.fr like a human and stores products in the temp folder.
+C4 product collector — browses carrefour.fr like a human and stores products in the temp folder.
 
 Options:
   -s, --search <query>     Search term (repeatable)
@@ -103,7 +103,7 @@ Options:
       --category-id <n>    Force the Zava category id instead of guessing
       --start-id <n>       First id assigned to the generated Zava products (default 1)
       --stock <n>          Stock value for the generated Zava products (default 100)
-      --out <dir>          Override the storage root (default <temp>/zava-carrefour)
+      --out <dir>          Override the storage root (default <temp>/zava-c4)
       --channel <name>     Browser channel: chrome | msedge | chromium
       --headless           Run without a visible window (less human-like)
       --save-html          Also save the raw product page HTML

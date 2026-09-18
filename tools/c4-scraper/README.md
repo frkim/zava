@@ -1,4 +1,4 @@
-# Carrefour product collector
+# C4 product collector
 
 Small Node.js app that browses [carrefour.fr](https://www.carrefour.fr/) **like a human** and
 collects, for each product: **name, description, features, price and pictures**.
@@ -26,7 +26,7 @@ Images are downloaded through the browser context, so they carry the same cookie
 ## Install
 
 ```powershell
-cd tools/carrefour-scraper
+cd tools/c4-scraper
 npm install
 npm run browsers   # one-time Chromium download (skip if you use --channel chrome)
 ```
@@ -58,7 +58,7 @@ node src/index.js --search "jus d'orange" --category-id 8 --start-id 200
 | `--category-id <n>` | guessed | Force the Zava category id |
 | `--start-id <n>` | `1` | First id given to the generated Zava products |
 | `--stock <n>` | `100` | Stock value for the generated products |
-| `--out <dir>` | `<temp>/zava-carrefour` | Override the storage root |
+| `--out <dir>` | `<temp>/zava-c4` | Override the storage root |
 | `--channel <name>` | auto | `chrome`, `msedge` or `chromium` |
 | `--headless` | off | Run without a window (faster, less human-like) |
 | `--save-html` | off | Also save the raw product page HTML |
@@ -66,7 +66,7 @@ node src/index.js --search "jus d'orange" --category-id 8 --start-id 200
 ## Output layout
 
 ```
-%TEMP%/zava-carrefour/
+%TEMP%/zava-c4/
   profile/                          persistent browser profile
   runs/<timestamp>/
     index.json                      run summary (products, failures)
