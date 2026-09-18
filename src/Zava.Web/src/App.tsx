@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme, { siteThemes } from './theme';
+import theme, { getSiteTheme } from './theme';
 import { SiteProvider, useSite } from './context/SiteContext';
 import { LanguageProvider } from './context/LanguageContext';
-import type { SiteType } from './types';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
@@ -27,9 +26,9 @@ import LegalNoticePage from './pages/info/LegalNoticePage';
 import PrivacyPolicyPage from './pages/info/PrivacyPolicyPage';
 
 function ThemedApp({ children }: { children: React.ReactNode }) {
-  const { config } = useSite();
+  const { config, selectedThemeId } = useSite();
   const currentTheme = config
-    ? siteThemes[config.currentSiteType as SiteType] ?? theme
+    ? getSiteTheme(config.currentSiteType, selectedThemeId)
     : theme;
   return (
     <ThemeProvider theme={currentTheme}>
