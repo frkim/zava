@@ -1,0 +1,60 @@
+name: Diagnose recipe basket
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in with Azure
+        run: |
+          $info = $env:AZURE_CREDENTIALS | ConvertFrom-Json
+          az login --service-principal -u $info.clientId -p $info.clientSecret --tenant $info.tenantId -o none
+          az account set --subscription $info.subscriptionId
+        shell: pwsh
+        env:
+          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Container app configuration
+        run: |
+          az containerapp show -n ca-api-2nrdhe4muv4vc -g rg-zava-prod \
+            --query "properties.template.containers[0].env" -o json
+          echo "=== identity ==="
+          az containerapp show -n ca-api-2nrdhe4muv4vc -g rg-zava-prod --query identity -o json
+
+      - name: Role assignments for the API managed identity
+        run: |
+          PID=$(az containerapp show -n ca-api-2nrdhe4muv4vc -g rg-zava-prod --query identity.principalId -o tsv)
+          echo "principalId=$PID"
+          az role assignment list --assignee "$PID" --all -o table || true
+
+      - name: Foundry agents
+        run: |
+          TOKEN=$(az account get-access-token --scope https://ai.azure.com/.default --query accessToken -o tsv)
+          EP="https://ai-2nrdhe4muv4vc.services.ai.azure.com/api/projects/recipes"
+          for NAME in recipe-planner recipe-shopper; do
+            echo "=== $NAME versions ==="
+            curl -sS -w "\nHTTP %{http_code}\n" -H "Authorization: Bearer $TOKEN" \
+              "$EP/agents/$NAME/versions?api-version=v1" | head -c 2000
+            echo
+          done
+
+      - name: Direct responses call (same shape as the API)
+        run: |
+          TOKEN=$(az account get-access-token --scope https://ai.azure.com/.default --query accessToken -o tsv)
+          EP="https://ai-2nrdhe4muv4vc.services.ai.azure.com/api/projects/recipes"
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST "$EP/openai/v1/responses" \
+            -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+            -d '{"agent_reference":{"type":"agent_reference","name":"recipe-planner"},"input":"{\"task\":\"List ingredients\",\"recipe\":\"Lasagnes\",\"servings\":4}","store":false,"tool_choice":"none","max_output_tokens":4000}' \
+            | head -c 3000
+          echo
+
+      - name: Recent API container logs
+        run: |
+          az containerapp logs show -n ca-api-2nrdhe4muv4vc -g rg-zava-prod --type console --tail 200 || true
+          echo "=== system ==="
+          az containerapp logs show -n ca-api-2nrdhe4muv4vc -g rg-zava-prod --type system --tail 100 || true
