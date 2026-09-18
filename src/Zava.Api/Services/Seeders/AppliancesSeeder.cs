@@ -18,7 +18,7 @@ public static class AppliancesSeeder
             new() { Id = 8, Name = "Robots cuiseurs", NameEn = "Food Processors", Description = "Robots cuiseurs multifonctions et mixeurs", DescriptionEn = "Multi-function food processors and blenders", ProductCount = 10, SiteType = SiteType.Appliances, Icon = "Blender" },
             new() { Id = 9, Name = "Climatisation", NameEn = "Air Conditioning", Description = "Climatiseurs, ventilateurs et purificateurs", DescriptionEn = "Air conditioners, fans and purifiers", ProductCount = 10, SiteType = SiteType.Appliances, Icon = "AcUnit" },
             new() { Id = 10, Name = "Soin du linge", NameEn = "Laundry Care", Description = "Centrales vapeur, fers et défroisseurs", DescriptionEn = "Steam generators, irons and steamers", ProductCount = 10, SiteType = SiteType.Appliances, Icon = "Iron" },
-            new() { Id = 11, Name = "Petit électroménager", NameEn = "Small Appliances", Description = "Cafetières, hachoirs électriques, bouilloires et barbecues", DescriptionEn = "Coffee makers, electric meat grinders, kettles and barbecues", ProductCount = 7, SiteType = SiteType.Appliances, Icon = "CoffeeMaker" }
+            new() { Id = 11, Name = "Petit électroménager", NameEn = "Small Appliances", Description = "Cafetières, multicuiseurs, hachoirs électriques, bouilloires et barbecues", DescriptionEn = "Coffee makers, multi-cookers, electric meat grinders, kettles and barbecues", ProductCount = 8, SiteType = SiteType.Appliances, Icon = "CoffeeMaker" }
         };
     }
 
