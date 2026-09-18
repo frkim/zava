@@ -1,12 +1,12 @@
 {
-  "name": "@zava/carrefour-scraper",
+  "name": "@zava/c4-scraper",
   "version": "1.0.0",
   "private": true,
   "description": "Collects product name, description, features and pictures from carrefour.fr with human-like browsing, storing everything in the OS temp folder.",
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "carrefour-scraper": "src/index.js"
+    "c4-scraper": "src/index.js"
   },
   "scripts": {
     "start": "node src/index.js",

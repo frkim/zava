@@ -3,7 +3,7 @@
  *
  * Everything the scraper produces lives under the OS temp directory:
  *
- *   <temp>/zava-carrefour/
+ *   <temp>/zava-c4/
  *     profile/                       persistent browser profile (cookies, consent)
  *     runs/<run-id>/
  *       index.json                   summary of the run
@@ -18,7 +18,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
-const ROOT_NAME = 'zava-carrefour';
+const ROOT_NAME = 'zava-c4';
 
 /** Root of all scraper artifacts inside the OS temp folder. */
 export function rootDir(customRoot) {
