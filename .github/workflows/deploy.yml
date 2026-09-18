@@ -48,25 +48,31 @@ jobs:
           docker build --file src/Zava.Api/Dockerfile --tag zava-api:preflight .
           docker build --file src/Zava.Web/Dockerfile --tag zava-web:preflight src/Zava.Web
 
-      - name: Log in with Azure (Federated Credentials)
-        if: ${{ env.AZURE_CLIENT_ID != '' }}
-        run: |
-          azd auth login `
-            --client-id "${{ secrets.AZURE_CLIENT_ID }}" `
-            --federated-credential-provider "github" `
-            --tenant-id "${{ secrets.AZURE_TENANT_ID }}"
-        shell: pwsh
-        env:
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-
+      # A client secret in AZURE_CREDENTIALS is authoritative: it carries the
+      # tenant and subscription the deployment must target.
       - name: Log in with Azure (Client Secret)
-        if: ${{ env.AZURE_CLIENT_ID == '' && env.AZURE_CREDENTIALS != '' }}
+        if: ${{ env.AZURE_CREDENTIALS != '' }}
         run: |
           $info = $env:AZURE_CREDENTIALS | ConvertFrom-Json
           azd auth login `
             --client-id $info.clientId `
             --client-secret $info.clientSecret `
             --tenant-id $info.tenantId
+          "AZURE_TENANT_ID=$($info.tenantId)" | Out-File -FilePath $env:GITHUB_ENV -Append
+          if ($info.subscriptionId) {
+            "AZURE_SUBSCRIPTION_ID=$($info.subscriptionId)" | Out-File -FilePath $env:GITHUB_ENV -Append
+          }
+        shell: pwsh
+        env:
+          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Log in with Azure (Federated Credentials)
+        if: ${{ env.AZURE_CREDENTIALS == '' && env.AZURE_CLIENT_ID != '' }}
+        run: |
+          azd auth login `
+            --client-id "${{ secrets.AZURE_CLIENT_ID }}" `
+            --federated-credential-provider "github" `
+            --tenant-id "${{ secrets.AZURE_TENANT_ID }}"
         shell: pwsh
         env:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
