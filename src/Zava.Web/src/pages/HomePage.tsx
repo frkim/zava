@@ -12,10 +12,12 @@ import RecipeBasketLink from '../components/RecipeBasketLink';
 import { getHomepage, addToCart } from '../api';
 import type { HomepageData, Product } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import { useSite } from '../context/SiteContext';
 
 export default function HomePage() {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
+  const { config } = useSite();
   const theme = useTheme();
   const [data, setData] = useState<HomepageData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -38,6 +40,8 @@ export default function HomePage() {
   if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
   if (error) return <Alert severity="error">{error}</Alert>;
   if (!data) return null;
+  const secondLifeAvailable =
+    config != null && config.currentSiteType !== 'Cosmetics' && config.currentSiteType !== 'Grocery';
 
   return (
     <Box>
@@ -122,7 +126,7 @@ export default function HomePage() {
       <ProductGrid title={t('home.featured')} products={data.featuredProducts.slice(0, 5)} onAddToCart={handleAddToCart} accentColor="warning" />
 
       {/* Second Life products */}
-      {data.secondLifeProducts && data.secondLifeProducts.length > 0 && (
+      {secondLifeAvailable && data.secondLifeProducts && data.secondLifeProducts.length > 0 && (
         <ProductGrid title={t('secondLife.homeSection')} products={data.secondLifeProducts.slice(0, 8)} onAddToCart={handleAddToCart} accentColor="success" />
       )}
 
