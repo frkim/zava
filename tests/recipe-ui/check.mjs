@@ -157,6 +157,7 @@ const cartBeforeInstantPot = (await state()).cart.itemCount;
 await click('Confirmer et ajouter les produits disponibles');
 await wait(text('Offre spéciale pour cette recette'), 'carbonade promotion');
 assert.equal(await expanded('Offre spéciale pour cette recette (1)'), 'true', 'The recipe promotion cartouche is expanded by default');
+assert.equal(await evaluate("document.querySelector('#recipe-total').compareDocumentPosition(document.querySelector('#recipe-promotion-carbonade-instant-pot-button')) & Node.DOCUMENT_POSITION_FOLLOWING"), 4, 'The promotion follows the selected products total');
 assert.equal(await evaluate(text('Instant Pot 921267 Classic Mini 3,8 L')), true);
 assert.equal(await evaluate(text('89,99')), true);
 assert.equal(await evaluate("!!document.querySelector('img[alt=\"Instant Pot 921267 Classic Mini 3,8 L\"][src$=\"/images/products/Grocery/267/1_medium.jpg\"]')"), true);

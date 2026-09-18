@@ -612,7 +612,6 @@ function GroceryRecipeBasket() {
                 {committed && <Alert severity="success" sx={{ mt: 2 }} action={
                   <Button component={RouterLink} to="/cart" color="inherit" size="small">{t('recipe.viewCart')}</Button>
                 }>{t('recipe.added')}</Alert>}
-                {promotionOffer && <RecipePromotionSection offer={promotionOffer} money={money} onDismiss={dismissPromotion} />}
                 {plan.missingIngredients.length > 0 && (
                   <Alert severity="warning" sx={{ mt: 2 }}>
                     <AlertTitle>{t('recipe.missing')}</AlertTitle>
@@ -691,13 +690,14 @@ function GroceryRecipeBasket() {
                 {planItems.length === 0 ? <Alert severity="info" sx={{ my: 2 }}>{t('recipe.noProducts')}</Alert> : (
                   <Typography variant="caption" color="text.secondary" component="p" sx={{ mb: 2 }}>{t('recipe.packHelp')}</Typography>
                 )}
-                <Box sx={{ p: 2, borderRadius: 2, bgcolor: (theme) => alpha(theme.palette.primary.main, 0.05), mb: 2 }}>
+                <Box id="recipe-total" sx={{ p: 2, borderRadius: 2, bgcolor: (theme) => alpha(theme.palette.primary.main, 0.05), mb: 2 }}>
                   <Stack direction="row" justifyContent="space-between" alignItems="baseline" gap={2}>
                     <Typography fontWeight={600}>{t('recipe.total')}</Typography>
                     <Typography variant="h5" color="primary" sx={{ whiteSpace: 'nowrap' }}>{money(selectedTotal)}</Typography>
                   </Stack>
                   <Typography variant="caption" color="text.secondary">{t('recipe.totalHelp')}</Typography>
                 </Box>
+                {promotionOffer && <RecipePromotionSection offer={promotionOffer} money={money} onDismiss={dismissPromotion} />}
                 {expired && !committed && !uncertainCommit && <Alert severity="warning" sx={{ mb: 2 }}>{t('recipe.expired')}</Alert>}
                 {commitError && <Alert severity="error" sx={{ mb: 2 }}>
                   <AlertTitle>{commitError}</AlertTitle>
