@@ -4,6 +4,8 @@ using Zava.Api.Models;
 
 public static class GrocerySeeder
 {
+    private const int SmallApplianceCategoryId = 11;
+
     // Demo staples in three explicit ranges; quantities always refer to whole packs.
     private static readonly (string Name, string NameEn, string Pack, int CategoryId, string Brand, decimal Price)[] RecipeStaples =
     [
@@ -79,7 +81,8 @@ public static class GrocerySeeder
             new() { Id = 7, Name = "Épicerie Sucrée", NameEn = "Sweet Grocery", Description = "Biscuits, chocolat, céréales et confitures", DescriptionEn = "Cookies, chocolate, cereals and jams", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "Cookie" },
             new() { Id = 8, Name = "Boissons", NameEn = "Beverages", Description = "Eaux, jus, sodas et boissons chaudes", DescriptionEn = "Water, juices, sodas and hot drinks", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "LocalDrink" },
             new() { Id = 9, Name = "Surgelés", NameEn = "Frozen Foods", Description = "Plats cuisinés, glaces et légumes surgelés", DescriptionEn = "Ready meals, ice cream and frozen vegetables", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "AcUnit" },
-            new() { Id = 10, Name = "Bio & Bien-être", NameEn = "Organic & Wellness", Description = "Produits bio, sans gluten et compléments alimentaires", DescriptionEn = "Organic, gluten-free products and food supplements", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "Eco" }
+            new() { Id = 10, Name = "Bio & Bien-être", NameEn = "Organic & Wellness", Description = "Produits bio, sans gluten et compléments alimentaires", DescriptionEn = "Organic, gluten-free products and food supplements", ProductCount = 10, SiteType = SiteType.Grocery, Icon = "Eco" },
+            new() { Id = SmallApplianceCategoryId, Name = "Petit électroménager", NameEn = "Small Appliances", Description = "Cafetières, hachoirs électriques, bouilloires et barbecues", DescriptionEn = "Coffee makers, electric meat grinders, kettles and barbecues", ProductCount = 7, SiteType = SiteType.Grocery, Icon = "CoffeeMaker" }
         };
         foreach (var category in categories)
             category.ProductCount += RecipeStaples.Count(s => s.CategoryId == category.Id) * 3;
@@ -128,6 +131,197 @@ public static class GrocerySeeder
                 });
             }
         }
+        AddSmallApplianceProducts(products);
         return products;
+    }
+
+    private static void AddSmallApplianceProducts(List<Product> products)
+    {
+        products.AddRange([
+            CreateSmallApplianceProduct(
+                260,
+                "De'Longhi Magnifica Start ECAM220.22.GB",
+                "De'Longhi Magnifica Start ECAM220.22.GB",
+                "Machine expresso avec broyeur à grains, panneau tactile et buse vapeur pour cappuccino.",
+                "Bean-to-cup espresso machine with touch controls and a steam wand for cappuccino.",
+                399.99m,
+                null,
+                "De'Longhi",
+                "GROCERY-SMALL-DEL-ECAM22022GB",
+                14,
+                isNew: true,
+                isBestSeller: true,
+                isFeatured: true,
+                isPromo: false,
+                "Coloris",
+                "Color",
+                "Noir",
+                1010),
+            CreateSmallApplianceProduct(
+                261,
+                "Bosch TKA6A041 ComfortLine",
+                "Bosch TKA6A041 ComfortLine",
+                "Cafetière filtre 15 tasses avec réservoir amovible, système anti-goutte et maintien au chaud.",
+                "15-cup filter coffee maker with removable tank, drip stop and keep-warm plate.",
+                69.99m,
+                null,
+                "Bosch",
+                "GROCERY-SMALL-BOS-TKA6A041",
+                27,
+                isNew: false,
+                isBestSeller: true,
+                isFeatured: false,
+                isPromo: false,
+                "Coloris",
+                "Color",
+                "Blanc",
+                1020),
+            CreateSmallApplianceProduct(
+                262,
+                "Moulinex HV4 ME452839",
+                "Moulinex HV4 ME452839",
+                "Hachoir à viande électrique 2000 W, capacité jusqu'à 2,3 kg/min avec trois grilles inox.",
+                "2,000 W electric meat grinder processing up to 2.3 kg/min with three stainless-steel plates.",
+                119.99m,
+                null,
+                "Moulinex",
+                "GROCERY-SMALL-MOU-ME452839",
+                19,
+                isNew: false,
+                isBestSeller: false,
+                isFeatured: false,
+                isPromo: false,
+                "Standard",
+                "Standard",
+                "Standard",
+                1030),
+            CreateSmallApplianceProduct(
+                263,
+                "Bosch TWK3P420 DesignLine",
+                "Bosch TWK3P420 DesignLine",
+                "Bouilloire électrique inox 1,7 L, 2400 W, socle 360° et arrêt automatique.",
+                "1.7 L stainless-steel electric kettle with 2,400 W output, 360° base and auto shut-off.",
+                44.99m,
+                null,
+                "Bosch",
+                "GROCERY-SMALL-BOS-TWK3P420",
+                34,
+                isNew: false,
+                isBestSeller: true,
+                isFeatured: false,
+                isPromo: false,
+                "Coloris",
+                "Color",
+                "Inox",
+                1040),
+            CreateSmallApplianceProduct(
+                264,
+                "Weber Compact Kettle 47 cm",
+                "Weber Compact Kettle 47 cm",
+                "Barbecue à charbon compact avec cuve et couvercle émaillés, grille de cuisson de 47 cm.",
+                "Compact charcoal barbecue with porcelain-enamelled bowl and lid, plus a 47 cm cooking grate.",
+                159.99m,
+                129.99m,
+                "Weber",
+                "GROCERY-SMALL-WEB-COMPACT47",
+                22,
+                isNew: false,
+                isBestSeller: true,
+                isFeatured: true,
+                isPromo: true,
+                "Diamètre",
+                "Diameter",
+                "47 cm",
+                1050),
+            CreateSmallApplianceProduct(
+                265,
+                "Campingaz 3 Series Classic LS Plus",
+                "Campingaz 3 Series Classic LS Plus",
+                "Barbecue à gaz 3 brûleurs en acier inoxydable, plancha réversible et surface de cuisson 2 800 cm².",
+                "Three-burner stainless-steel gas barbecue with reversible griddle and 2,800 cm² cooking surface.",
+                499.99m,
+                null,
+                "Campingaz",
+                "GROCERY-SMALL-CAM-3SCLSPLUS",
+                8,
+                isNew: true,
+                isBestSeller: false,
+                isFeatured: true,
+                isPromo: false,
+                "Standard",
+                "Standard",
+                "Standard",
+                1060),
+            CreateSmallApplianceProduct(
+                266,
+                "Weber Spirit II E-310",
+                "Weber Spirit II E-310",
+                "Barbecue à gaz 3 brûleurs avec système GS4, grille Gourmet BBQ System et tablettes latérales.",
+                "Three-burner gas barbecue with the GS4 system, Gourmet BBQ System grate and side tables.",
+                699.99m,
+                null,
+                "Weber",
+                "GROCERY-SMALL-WEB-SPIRIT2E310",
+                11,
+                isNew: false,
+                isBestSeller: true,
+                isFeatured: false,
+                isPromo: false,
+                "Coloris",
+                "Color",
+                "Noir",
+                1070)
+        ]);
+    }
+
+    private static Product CreateSmallApplianceProduct(
+        int id,
+        string name,
+        string nameEn,
+        string description,
+        string descriptionEn,
+        decimal price,
+        decimal? promoPrice,
+        string brand,
+        string sku,
+        int stock,
+        bool isNew,
+        bool isBestSeller,
+        bool isFeatured,
+        bool isPromo,
+        string variantName,
+        string variantNameEn,
+        string variantValue,
+        int variantId)
+    {
+        return new Product
+        {
+            Id = id,
+            CategoryId = SmallApplianceCategoryId,
+            Name = name,
+            NameEn = nameEn,
+            Description = description,
+            DescriptionEn = descriptionEn,
+            Price = price,
+            PromoPrice = promoPrice,
+            Brand = brand,
+            Sku = sku,
+            Stock = stock,
+            IsNew = isNew,
+            IsBestSeller = isBestSeller,
+            IsFeatured = isFeatured,
+            IsPromo = isPromo,
+            SiteType = SiteType.Grocery,
+            CreatedAt = new DateTime(2026, 1, 1),
+            Tags = [brand, "petit électroménager", "barbecue"],
+            Variants = [new ProductVariant
+            {
+                Id = variantId,
+                Name = variantName,
+                NameEn = variantNameEn,
+                Value = variantValue,
+                Stock = stock
+            }]
+        };
     }
 }
