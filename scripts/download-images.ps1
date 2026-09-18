@@ -65,26 +65,27 @@ function Search-BingImageUrls {
     )
 
     $encodedQuery = [System.Uri]::EscapeDataString($Query)
-    $searchUrl = "https://www.bing.com/images/search?q=$encodedQuery&first=1"
+    $searchUrl = "https://www.bing.com/images/search?q=$encodedQuery&form=HDRSC2&first=1"
 
     $response = Invoke-WebRequest -Uri $searchUrl -Headers $script:browserHeaders -UseBasicParsing -TimeoutSec 15
 
     $html = $response.Content
 
-    # Bing embeds image metadata as HTML-encoded JSON with &quot; delimiters
-    # Extract full-size image URLs from "murl" (media URL) fields
-    $murlMatches = [regex]::Matches($html, '&quot;murl&quot;:&quot;(https?://[^&]+(?:&amp;[^&]*)*?)&quot;')
+    # Each result tile is an <a class="iusc"> whose m="..." attribute holds an
+    # HTML-encoded JSON blob; "murl" is the full-size image URL.
+    $tileMatches = [regex]::Matches($html, 'class="iusc"[^>]*\sm="([^"]+)"')
 
     $jpegUrls = @()
     $otherUrls = @()
-    foreach ($m in $murlMatches) {
-        $candidate = $m.Groups[1].Value -replace '&amp;', '&'
-        if ($candidate -notmatch 'bing\.com|microsoft\.com|msn\.com') {
-            if ($candidate -match '\.(jpg|jpeg|png)([\?&]|$)') {
-                $jpegUrls += $candidate
-            } else {
-                $otherUrls += $candidate
-            }
+    foreach ($m in $tileMatches) {
+        $meta = [System.Net.WebUtility]::HtmlDecode($m.Groups[1].Value)
+        if ($meta -notmatch '"murl"\s*:\s*"([^"]+)"') { continue }
+        $candidate = $matches[1]
+        if ($candidate -match 'bing\.com|bing\.net|microsoft\.com|msn\.com') { continue }
+        if ($candidate -match '\.(jpg|jpeg|png)([\?&]|$)') {
+            $jpegUrls += $candidate
+        } else {
+            $otherUrls += $candidate
         }
     }
 
@@ -114,7 +115,13 @@ function Save-ResizedImage {
         $graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
         $graphics.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
         $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
-        $graphics.DrawImage($srcImage, 0, 0, $Width, $Height)
+        $graphics.Clear([System.Drawing.Color]::White)
+
+        # Letterbox onto the white square so the product is not stretched
+        $scale = [Math]::Min($Width / $srcImage.Width, $Height / $srcImage.Height)
+        $drawW = [int][Math]::Round($srcImage.Width * $scale)
+        $drawH = [int][Math]::Round($srcImage.Height * $scale)
+        $graphics.DrawImage($srcImage, [int](($Width - $drawW) / 2), [int](($Height - $drawH) / 2), $drawW, $drawH)
 
         # Save as JPEG with quality 90
         $jpegEncoder = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq "image/jpeg" }
