@@ -21,7 +21,9 @@ env:
   AZURE_AI_MODEL_NAME: ${{ vars.AZURE_AI_MODEL_NAME || 'gpt-5-mini' }}
   AZURE_AI_MODEL_VERSION: ${{ vars.AZURE_AI_MODEL_VERSION || '2025-08-07' }}
   AZURE_AI_MODEL_SKU: ${{ vars.AZURE_AI_MODEL_SKU || 'GlobalStandard' }}
-  AZURE_AI_MODEL_CAPACITY: ${{ vars.AZURE_AI_MODEL_CAPACITY || '10' }}
+  # The shopper agent sends the whole grocery catalogue in one prompt, so a
+  # 10K TPM deployment rate-limits every plan. Keep enough headroom for it.
+  AZURE_AI_MODEL_CAPACITY: ${{ vars.AZURE_AI_MODEL_CAPACITY || '100' }}
   # Native Foundry traces can contain prompts and responses; explicitly opt in.
   AZURE_AI_ENABLE_TRACING: ${{ vars.AZURE_AI_ENABLE_TRACING || 'false' }}
   AZURE_PRINCIPAL_TYPE: ServicePrincipal

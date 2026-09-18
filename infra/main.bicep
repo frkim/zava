@@ -40,8 +40,8 @@ param aiModelVersion string = '2025-08-07'
 param aiModelSku string = 'GlobalStandard'
 
 @minValue(1)
-@description('Model deployment capacity in the model/SKU capacity units; subject to subscription quota.')
-param aiModelCapacity int = 10
+@description('Model deployment capacity in the model/SKU capacity units; subject to subscription quota. The shopper agent sends the whole grocery catalogue in a single prompt, so low capacity rate-limits recipe baskets.')
+param aiModelCapacity int = 100
 
 param aiModelDeploymentName string = 'recipe-model'
 
