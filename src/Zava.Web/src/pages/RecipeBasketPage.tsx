@@ -7,20 +7,27 @@ import {
 } from '@mui/material';
 import {
   AddCircleOutline, ArrowForward, CheckCircleOutline, ExpandMore, MenuBook, RemoveCircleOutline,
-  RestaurantMenu, ShoppingBasket, ShoppingCartOutlined, VisibilityOff,
+  LocalOffer, RestaurantMenu, ShoppingBasket, ShoppingCartOutlined, VisibilityOff,
 } from '@mui/icons-material';
 import { alpha } from '@mui/material/styles';
-import { ApiError, commitRecipeBasket, getRecipeBasketOptions, planRecipeBasket } from '../api';
+import type { SxProps, Theme } from '@mui/material/styles';
+import { addToCart, API_BASE, ApiError, commitRecipeBasket, getProduct, planRecipeBasket, getRecipeBasketOptions } from '../api';
 import { useLanguage } from '../context/LanguageContext';
 import { useSite } from '../context/SiteContext';
 import { useHiddenRecipeProducts } from '../hooks/useHiddenRecipeProducts';
 import type {
-  RecipeBasketOptions, RecipeBasketPlan, RecipeBrandPreference, RecipeHideScope,
+  Product, RecipeBasketOptions, RecipeBasketPlan, RecipeBrandPreference, RecipeHideScope,
 } from '../types';
 
 const defaultSuggestions = ['Lasagnes', 'Blanquette de veau', 'Carbonade', 'Bœuf bourguignon', 'BBQ', 'Repas végétarien', 'Pizza'];
 const preferences = ['National', 'PrivateLabel', 'Economy', 'Mix'] as const;
+const recipePromotionDismissedKey = 'zava-recipe-promotion-dismissed';
+const recipePromotionOffers = [
+  { id: 'carbonade-instant-pot', recipePattern: /\bcarbonade\b/i, productId: 267 },
+  { id: 'bbq-barbecue', recipePattern: /\bbbq\b|barbecue/i, productId: 264 },
+] as const;
 type PlanItem = RecipeBasketPlan['items'][number];
+type RecipePromotionOffer = typeof recipePromotionOffers[number];
 /** Identifies a previewed line, since the same product can appear with different variants. */
 const itemKey = (item: { productId: number; variantId?: number | null }) =>
   `${item.productId}:${item.variantId ?? ''}`;
@@ -42,7 +49,7 @@ function CatalogueLinks() {
 /** A disclosure panel that keeps secondary product lists out of the way without hiding them. */
 function CollapsibleSection({ id, title, count, description, open, onToggle, children, sx }: {
   id: string; title: string; count: number; description: string; open: boolean;
-  onToggle: () => void; children: React.ReactNode; sx?: object;
+  onToggle: () => void; children: React.ReactNode; sx?: SxProps<Theme>;
 }) {
   return (
     <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2, mb: 2, ...sx }}>
@@ -58,6 +65,134 @@ function CollapsibleSection({ id, title, count, description, open, onToggle, chi
         </Box>
       </Collapse>
     </Box>
+  );
+}
+
+function readDismissedRecipePromotions() {
+  try {
+    const value = window.localStorage.getItem(recipePromotionDismissedKey);
+    const parsed = value ? JSON.parse(value) : [];
+    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+function findRecipePromotion(recipe: string, dismissed: string[]) {
+  return recipePromotionOffers.find((offer) => offer.recipePattern.test(recipe) && !dismissed.includes(offer.id)) ?? null;
+}
+
+function RecipePromotionSection({ offer, money, onDismiss }: {
+  offer: RecipePromotionOffer; money: (value: number) => string; onDismiss: (offerId: string) => void;
+}) {
+  const { lang, t } = useLanguage();
+  const [open, setOpen] = useState(true);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [adding, setAdding] = useState(false);
+  const [added, setAdded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    setError('');
+    setProduct(null);
+    setImageError(false);
+    getProduct(offer.productId)
+      .then(({ product }) => {
+        if (active) setProduct(product);
+      })
+      .catch((e: unknown) => {
+        if (active) setError(e instanceof Error ? e.message : t('recipe.promotionLoadError'));
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [offer.productId, t]);
+
+  const addPromotionToCart = async () => {
+    if (!product || adding || added) return;
+    setAdding(true);
+    setError('');
+    try {
+      const cart = await addToCart(product.id, 1, product.variants[0]?.id);
+      window.dispatchEvent(new CustomEvent('zava:cart-updated', { detail: cart }));
+      setAdded(true);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : t('recipe.promotionAddError'));
+    } finally {
+      setAdding(false);
+    }
+  };
+
+  const productName = product ? (lang === 'en' && product.nameEn ? product.nameEn : product.name) : '';
+  const productDescription = product ? (lang === 'en' && product.descriptionEn ? product.descriptionEn : product.description) : '';
+  const effectivePrice = product ? product.promoPrice ?? product.price : 0;
+  const discount = product?.promoPrice ? Math.round((1 - product.promoPrice / product.price) * 100) : 0;
+  const imageUrl = product ? `${API_BASE}/images/products/${product.siteType}/${product.id}/1_medium.jpg` : '';
+
+  return (
+    <CollapsibleSection id={`recipe-promotion-${offer.id}`} title={t('recipe.promotionTitle')} count={1}
+      description={t('recipe.promotionDesc')} open={open} onToggle={() => setOpen((value) => !value)}
+      sx={{ mt: 2, borderColor: 'primary.light', bgcolor: (theme) => alpha(theme.palette.primary.main, 0.035) }}>
+      {loading && (
+        <Stack direction="row" gap={1.5} alignItems="center" role="status">
+          <CircularProgress size={20} aria-label={t('recipe.promotionLoading')} />
+          <Typography variant="body2">{t('recipe.promotionLoading')}</Typography>
+        </Stack>
+      )}
+      {product && (
+        <Stack direction={{ xs: 'column', sm: 'row' }} gap={2} alignItems={{ xs: 'stretch', sm: 'center' }}>
+          <Box sx={{
+            width: { xs: '100%', sm: 128 }, height: { xs: 170, sm: 128 }, flexShrink: 0,
+            borderRadius: 2, overflow: 'hidden', bgcolor: 'background.paper',
+            border: '1px solid', borderColor: 'divider', display: 'grid', placeItems: 'center',
+          }}>
+            {!imageError ? (
+              <Box component="img" src={imageUrl} alt={productName} onError={() => setImageError(true)}
+                sx={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            ) : (
+              <Typography variant="h3" color="text.disabled" fontWeight={800}>{productName.charAt(0)}</Typography>
+            )}
+          </Box>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Stack direction="row" useFlexGap flexWrap="wrap" gap={1} alignItems="center" sx={{ mb: 0.5 }}>
+              <Chip color="error" size="small" icon={<LocalOffer />} label={discount ? `-${discount}%` : t('recipe.promotionBadge')} />
+              <Typography variant="caption" color="text.secondary">{product.brand}</Typography>
+            </Stack>
+            <Link component={RouterLink} to={`/products/${product.id}`} underline="hover" color="text.primary"
+              sx={{ display: 'block', fontWeight: 700, overflowWrap: 'anywhere' }}>
+              {productName}
+            </Link>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, overflowWrap: 'anywhere' }}>
+              {productDescription}
+            </Typography>
+            <Stack direction="row" gap={1} alignItems="baseline" sx={{ mt: 1 }}>
+              <Typography variant="h6" color="primary" fontWeight={800}>{money(effectivePrice)}</Typography>
+              {product.promoPrice && (
+                <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+                  {money(product.price)}
+                </Typography>
+              )}
+            </Stack>
+          </Box>
+          <Stack gap={1} sx={{ minWidth: { sm: 190 } }}>
+            <Button variant="contained" disabled={adding || added || product.stock === 0}
+              startIcon={adding ? <CircularProgress size={18} color="inherit" /> : <ShoppingCartOutlined />}
+              onClick={addPromotionToCart}>
+              {t(adding ? 'recipe.promotionAdding' : added ? 'recipe.promotionAdded' : 'recipe.promotionAdd')}
+            </Button>
+            <Button size="small" onClick={() => onDismiss(offer.id)}>{t('recipe.promotionDismiss')}</Button>
+          </Stack>
+        </Stack>
+      )}
+      {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>}
+    </CollapsibleSection>
   );
 }
 
@@ -151,6 +286,7 @@ function GroceryRecipeBasket() {
   const [deselected, setDeselected] = useState<string[]>([]);
   const [showDeselected, setShowDeselected] = useState(false);
   const [showHidden, setShowHidden] = useState(false);
+  const [dismissedPromotions, setDismissedPromotions] = useState<string[]>(() => readDismissedRecipePromotions());
   const { hidden, hiddenIds, hide, unhide, scopeOf } = useHiddenRecipeProducts();
   const busy = useRef(false);
   const active = useRef(false);
@@ -309,6 +445,18 @@ function GroceryRecipeBasket() {
     ? [...new Set(options.data.suggestions)].filter((item) => item.trim() && item.length <= 200).slice(0, 8)
     : defaultSuggestions;
   const formDisabled = planning || committing;
+  const promotionOffer = committed && plan ? findRecipePromotion(plan.recipe, dismissedPromotions) : null;
+  const dismissPromotion = (offerId: string) => {
+    setDismissedPromotions((previous) => {
+      const next = [...new Set([...previous, offerId])];
+      try {
+        window.localStorage.setItem(recipePromotionDismissedKey, JSON.stringify(next));
+      } catch (error) {
+        console.warn('Unable to persist the dismissed recipe promotion.', error);
+      }
+      return next;
+    });
+  };
 
   return (
     <Box sx={{ maxWidth: 1180, mx: 'auto' }}>
@@ -464,6 +612,7 @@ function GroceryRecipeBasket() {
                 {committed && <Alert severity="success" sx={{ mt: 2 }} action={
                   <Button component={RouterLink} to="/cart" color="inherit" size="small">{t('recipe.viewCart')}</Button>
                 }>{t('recipe.added')}</Alert>}
+                {promotionOffer && <RecipePromotionSection offer={promotionOffer} money={money} onDismiss={dismissPromotion} />}
                 {plan.missingIngredients.length > 0 && (
                   <Alert severity="warning" sx={{ mt: 2 }}>
                     <AlertTitle>{t('recipe.missing')}</AlertTitle>

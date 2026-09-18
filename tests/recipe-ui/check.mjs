@@ -79,8 +79,8 @@ const screenshot = async file => {
   const image = await cdp('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
   await writeFile(join(screenshots, file), Buffer.from(image.data, 'base64'));
 };
-const prepare = async () => {
-  await click('Lasagnes');
+const prepare = async (recipe = 'Lasagnes') => {
+  await click(recipe);
   await click('Préparer ma liste de courses');
   await wait(text('Votre liste à vérifier'), 'preview');
 };
@@ -89,7 +89,7 @@ await cdp('Page.enable');
 await cdp('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1100, deviceScaleFactor: 1, mobile: false });
 await configure({ site: 'Grocery', available: true, optionsUnavailable: false, planFailures: 0, commitFailures: 0, commitStatus: 503, dropCommitResponses: 0, planDelay: 800, expiryMs: 600000, empty: false });
 await ready();
-await evaluate("sessionStorage.removeItem('zava-recipe-hidden-session'); localStorage.removeItem('zava-recipe-hidden-forever')");
+await evaluate("sessionStorage.removeItem('zava-recipe-hidden-session'); localStorage.removeItem('zava-recipe-hidden-forever'); localStorage.removeItem('zava-recipe-promotion-dismissed')");
 await ready();
 assert.equal(await evaluate("document.querySelector('#recipe-name').maxLength"), 200);
 assert.equal(await evaluate("document.querySelector('#recipe-servings').value"), '4');
@@ -150,6 +150,35 @@ assert.equal((await state()).cart.itemCount, 7);
 assert.equal(await evaluate("document.querySelector('.MuiBadge-badge').innerText"), '7');
 assert.equal(await evaluate("[...document.querySelectorAll('button')].find(el => el.innerText.trim() === 'Produits ajoutés').disabled"), true);
 console.log('PASS explicit partial confirmation, duplicate commit guard, idempotent retry ID, preserved basket and immediate badge/success notification');
+
+await ready();
+await prepare('Carbonade');
+const cartBeforeInstantPot = (await state()).cart.itemCount;
+await click('Confirmer et ajouter les produits disponibles');
+await wait(text('Offre spéciale pour cette recette'), 'carbonade promotion');
+assert.equal(await expanded('Offre spéciale pour cette recette (1)'), 'true', 'The recipe promotion cartouche is expanded by default');
+assert.equal(await evaluate(text('Instant Pot 921267 Classic Mini 3,8 L')), true);
+assert.equal(await evaluate(text('89,99')), true);
+assert.equal(await evaluate("!!document.querySelector('img[alt=\"Instant Pot 921267 Classic Mini 3,8 L\"][src$=\"/images/products/Grocery/267/1_medium.jpg\"]')"), true);
+await click('Ajouter au panier');
+await wait(text('Ajouté au panier'), 'instant pot added');
+assert.equal((await state()).cart.itemCount, cartBeforeInstantPot + 7, 'Carbonade products plus the Instant Pot reach the basket');
+assert.equal((await state()).cart.items.at(-1).productId, 267);
+console.log('PASS Carbonade confirmation shows the Instant Pot promotion expanded by default and can add it to the cart');
+
+await ready();
+await prepare('BBQ');
+await click('Confirmer et ajouter les produits disponibles');
+await wait(text('Weber Compact Kettle 47 cm'), 'BBQ barbecue promotion');
+assert.equal(await evaluate("!!document.querySelector('img[alt=\"Weber Compact Kettle 47 cm\"][src$=\"/images/products/Grocery/264/1_medium.jpg\"]')"), true);
+await click('Ne plus me proposer ce choix');
+await wait(`!(${text('Offre spéciale pour cette recette')})`, 'dismissed BBQ offer');
+await ready();
+await prepare('BBQ');
+await click('Confirmer et ajouter les produits disponibles');
+await wait(text('Les produits de votre recette ont été ajoutés au panier.'), 'BBQ commit after dismissal');
+assert.equal(await evaluate(text('Weber Compact Kettle 47 cm')), false, 'Dismissed BBQ promotion does not reappear');
+console.log('PASS BBQ confirmation shows the barbecue promotion and the dismiss option prevents future prompts');
 
 await configure({ expiryMs: 100 });
 await ready();
@@ -227,7 +256,7 @@ console.log('PASS Grocery-only route, header, home and cart discoverability');
 
 await configure({ site: 'Grocery', available: true, empty: false, planFailures: 0, commitFailures: 0, commitStatus: 503, dropCommitResponses: 0, expiryMs: 600000 });
 await ready();
-await evaluate("sessionStorage.removeItem('zava-recipe-hidden-session'); localStorage.removeItem('zava-recipe-hidden-forever')");
+await evaluate("sessionStorage.removeItem('zava-recipe-hidden-session'); localStorage.removeItem('zava-recipe-hidden-forever'); localStorage.removeItem('zava-recipe-promotion-dismissed')");
 await ready();
 await prepare();
 assert.equal(await evaluate(text('Produits sélectionnés (4)')), true);
