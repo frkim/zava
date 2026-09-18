@@ -21,7 +21,9 @@ env:
   AZURE_AI_MODEL_NAME: ${{ vars.AZURE_AI_MODEL_NAME || 'gpt-5-mini' }}
   AZURE_AI_MODEL_VERSION: ${{ vars.AZURE_AI_MODEL_VERSION || '2025-08-07' }}
   AZURE_AI_MODEL_SKU: ${{ vars.AZURE_AI_MODEL_SKU || 'GlobalStandard' }}
-  AZURE_AI_MODEL_CAPACITY: ${{ vars.AZURE_AI_MODEL_CAPACITY || '10' }}
+  # The shopper agent sends the whole grocery catalogue in one prompt, so a
+  # 10K TPM deployment rate-limits every plan. Keep enough headroom for it.
+  AZURE_AI_MODEL_CAPACITY: ${{ vars.AZURE_AI_MODEL_CAPACITY || '100' }}
   # Native Foundry traces can contain prompts and responses; explicitly opt in.
   AZURE_AI_ENABLE_TRACING: ${{ vars.AZURE_AI_ENABLE_TRACING || 'false' }}
   AZURE_PRINCIPAL_TYPE: ServicePrincipal
@@ -48,25 +50,35 @@ jobs:
           docker build --file src/Zava.Api/Dockerfile --tag zava-api:preflight .
           docker build --file src/Zava.Web/Dockerfile --tag zava-web:preflight src/Zava.Web
 
+      # A client secret in AZURE_CREDENTIALS is authoritative: it carries the
+      # tenant and subscription the deployment must target.
+      - name: Log in with Azure (Client Secret)
+        if: ${{ env.AZURE_CREDENTIALS != '' }}
+        run: |
+          try { $info = $env:AZURE_CREDENTIALS | ConvertFrom-Json -ErrorAction Stop }
+          catch { throw "AZURE_CREDENTIALS is not valid JSON. Re-create it with 'az ad sp create-for-rbac --sdk-auth'." }
+          if (-not $info.clientId -or -not $info.clientSecret -or -not $info.tenantId) {
+            throw "AZURE_CREDENTIALS must contain clientId, clientSecret and tenantId."
+          }
+          azd auth login `
+            --client-id $info.clientId `
+            --client-secret $info.clientSecret `
+            --tenant-id $info.tenantId
+          "AZURE_TENANT_ID=$($info.tenantId)" | Out-File -FilePath $env:GITHUB_ENV -Append
+          if ($info.subscriptionId) {
+            "AZURE_SUBSCRIPTION_ID=$($info.subscriptionId)" | Out-File -FilePath $env:GITHUB_ENV -Append
+          }
+        shell: pwsh
+        env:
+          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Log in with Azure (Federated Credentials)
-        if: ${{ env.AZURE_CLIENT_ID != '' }}
+        if: ${{ env.AZURE_CREDENTIALS == '' && env.AZURE_CLIENT_ID != '' }}
         run: |
           azd auth login `
             --client-id "${{ secrets.AZURE_CLIENT_ID }}" `
             --federated-credential-provider "github" `
             --tenant-id "${{ secrets.AZURE_TENANT_ID }}"
-        shell: pwsh
-        env:
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-
-      - name: Log in with Azure (Client Secret)
-        if: ${{ env.AZURE_CLIENT_ID == '' && env.AZURE_CREDENTIALS != '' }}
-        run: |
-          $info = $env:AZURE_CREDENTIALS | ConvertFrom-Json
-          azd auth login `
-            --client-id $info.clientId `
-            --client-secret $info.clientSecret `
-            --tenant-id $info.tenantId
         shell: pwsh
         env:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
