@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
-  Alert, AlertTitle, Box, Button, Chip, CircularProgress, Collapse, Divider, FormControl,
+  Alert, AlertTitle, Box, Button, Checkbox, Chip, CircularProgress, Collapse, Divider, FormControl,
   FormControlLabel, FormLabel, LinearProgress, Link, Paper, Radio, RadioGroup,
   Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
 } from '@mui/material';
@@ -274,6 +274,7 @@ function GroceryRecipeBasket() {
   const [recipe, setRecipe] = useState('');
   const [servings, setServings] = useState('4');
   const [brandPreference, setBrandPreference] = useState<RecipeBrandPreference>('Mix');
+  const [includePantry, setIncludePantry] = useState(true);
   const [plan, setPlan] = useState<RecipeBasketPlan | null>(null);
   const [planning, setPlanning] = useState(false);
   const [committing, setCommitting] = useState(false);
@@ -362,7 +363,11 @@ function GroceryRecipeBasket() {
       const result = await planRecipeBasket({
         recipe: recipe.trim(), servings: Number(servings), brandPreference, excludedProductIds: hiddenIds,
       }, controller.signal);
-      if (active.current && !controller.signal.aborted) setPlan(result);
+      if (active.current && !controller.signal.aborted) {
+        setPlan(result);
+        // Pantry extras start outside the selection when the customer asked for main ingredients only.
+        if (!includePantry) setDeselected(result.items.filter((item) => item.essential === false).map(itemKey));
+      }
     } catch (e) {
       if (active.current && !controller.signal.aborted) setError(e instanceof Error ? e.message : t('recipe.planError'));
     } finally {
@@ -406,6 +411,19 @@ function GroceryRecipeBasket() {
       ...previous,
       ...planItems.filter((entry) => entry.productId === item.productId).map(itemKey),
     ])]);
+  };
+
+  // Pantry extras move in and out of the selection without regenerating the preview.
+  const togglePantry = (checked: boolean) => {
+    setIncludePantry(checked);
+    if (selectionLocked) return;
+    setCommitError('');
+    const pantryKeys = planItems
+      .filter((item) => item.essential === false && (!checked || !scopeOf(item.productId)))
+      .map(itemKey);
+    setDeselected((previous) => checked
+      ? previous.filter((entry) => !pantryKeys.includes(entry))
+      : [...new Set([...previous, ...pantryKeys])]);
   };
 
   const confirmPlan = async () => {
@@ -556,6 +574,16 @@ function GroceryRecipeBasket() {
                 ))}
               </RadioGroup>
             </FormControl>
+            <Box sx={{ mb: 3 }}>
+              <FormControlLabel
+                control={<Checkbox checked={includePantry} disabled={formDisabled} name="recipe-include-pantry"
+                  onChange={(event) => togglePantry(event.target.checked)} />}
+                label={<Typography variant="body2" fontWeight={600}>{t('recipe.pantry')}</Typography>}
+                sx={{ m: 0, alignItems: 'flex-start', '& .MuiCheckbox-root': { pt: 0.25 } }} />
+              <Typography variant="caption" color="text.secondary" component="p" sx={{ mt: 0.5 }}>
+                {t('recipe.pantryHelp')}
+              </Typography>
+            </Box>
             {error && <Alert severity="error" sx={{ mb: 2 }}><AlertTitle>{t('recipe.planError')}</AlertTitle>{error}</Alert>}
             <Button type="submit" variant="contained" fullWidth size="large" disabled={!validForm || formDisabled}
               startIcon={planning ? <CircularProgress size={18} color="inherit" /> : <ShoppingBasket />}

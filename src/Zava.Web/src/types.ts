@@ -134,7 +134,8 @@ export interface RecipeBasketOptions {
 
 export interface RecipeBasketPlan extends RecipeBasketRequest {
   planId: string;
-  items: (CartItem & { ingredient: string })[];
+  /** `essential` is false for pantry extras (condiments, flours, oils, etc.). */
+  items: (CartItem & { ingredient: string; essential: boolean })[];
   missingIngredients: string[];
   warnings: string[];
   total: number;

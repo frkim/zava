@@ -19,7 +19,9 @@ public sealed record CommitRecipeBasketRequest(
 
 public sealed record RecipeBasketItem(
     int ProductId, string ProductName, int? VariantId, string? VariantName,
-    int Quantity, decimal UnitPrice, decimal Subtotal, string Ingredient);
+    int Quantity, decimal UnitPrice, decimal Subtotal, string Ingredient,
+    // False for pantry extras (condiments, flours, oils, etc.) the customer may already have.
+    bool Essential = true);
 
 public sealed record RecipeBasketPlan(
     string PlanId, string Recipe, int Servings, string BrandPreference,
