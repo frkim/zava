@@ -1,11 +1,19 @@
+import common from './locales/common';
+import shell from './locales/shell';
+import discovery from './locales/discovery';
+import commerce from './locales/commerce';
+import secondary from './locales/secondary';
+import settingsInfo from './locales/settingsInfo';
+import { COMPANY } from './company';
+
 export type Lang = 'fr' | 'en';
 
-const translations = {
+const baseTranslations = {
   // ─── Navigation ────────────────────────────────────────────────────────────
   'nav.home': { fr: 'Accueil', en: 'Home' },
   'nav.categories': { fr: 'Catégories', en: 'Categories' },
   'nav.allProducts': { fr: 'Tous les produits', en: 'All products' },
-  'nav.profile': { fr: 'Mon profil', en: 'My profile' },
+  'nav.profile': { fr: 'Mon profil / compte', en: 'Profile / account' },
   'nav.analytics': { fr: 'Analytics', en: 'Analytics' },
   'nav.settings': { fr: 'Paramètres', en: 'Settings' },
   'nav.menu': { fr: 'Menu', en: 'Menu' },
@@ -109,7 +117,7 @@ const translations = {
   'recipe.optionsError': { fr: 'Impossible de vérifier la disponibilité de l’assistant.', en: 'Unable to check assistant availability.' },
 
   // ─── Search ────────────────────────────────────────────────────────────────
-  'search.placeholder': { fr: 'Rechercher un produit...', en: 'Search for a product...' },
+  'search.placeholder': { fr: 'Rechercher un produit…', en: 'Search for a product…' },
   'search.resultsFor': { fr: 'Résultats pour', en: 'Results for' },
   'search.allProducts': { fr: 'Tous les produits', en: 'All products' },
   'search.results': { fr: 'résultats', en: 'results' },
@@ -329,8 +337,8 @@ const translations = {
   'settings.title': { fr: '⚙️ Paramètres', en: '⚙️ Settings' },
   'settings.siteType': { fr: 'Type de site e-commerce', en: 'E-commerce site type' },
   'settings.siteTypeDesc': {
-    fr: 'Changez le type de site pour charger un catalogue de produits différent. Toutes les données (panier, commandes) seront réinitialisées.',
-    en: 'Change the site type to load a different product catalogue. All data (cart, orders) will be reset.',
+    fr: 'Changez de type de boutique pour charger un autre catalogue. Les thèmes et la préférence par défaut conservent vos données.',
+    en: 'Change the store type to load another catalogue. Themes and the default preference keep your data.',
   },
   'settings.theme': { fr: 'Code couleur', en: 'Colour theme' },
   'settings.makeDefault': { fr: 'Faire de ce type de site par défaut', en: 'Make this site type the default' },
@@ -360,11 +368,11 @@ const translations = {
   'settings.create': { fr: 'Créer', en: 'Create' },
 
   // ─── Footer ────────────────────────────────────────────────────────────────
-  'footer.freeDelivery': { fr: '🚚 Livraison offerte* — Partout en France', en: '🚚 Free delivery* — Nationwide' },
+  'footer.freeDelivery': { fr: '🚚 Livraison offerte* — Sous conditions', en: '🚚 Free delivery* — Conditions apply' },
   'footer.premium': { fr: '⭐ Abonnement Premium — Tous les avantages', en: '⭐ Premium Subscription — All benefits' },
   'footer.returns': { fr: '↩️ Retours sous 15 jours', en: '↩️ Returns within 15 days' },
   'footer.support': { fr: '🛠️ Service après-vente', en: '🛠️ After-sales service' },
-  'footer.bestPrices': { fr: '💰 Meilleurs prix garantis', en: '💰 Best prices guaranteed' },
+  'footer.bestPrices': { fr: '💰 Engagement prix', en: '💰 Price commitment' },
   'footer.drive': { fr: '🚗 Le Drive — Gagner du temps', en: '🚗 Drive — Save time' },
   'footer.demo': { fr: 'Site de démonstration e-commerce', en: 'E-commerce demo site' },
   'footer.legal': {
@@ -378,11 +386,11 @@ const translations = {
   'info.backToHome': { fr: "Retour à l'accueil", en: 'Back to home' },
 
   // Free delivery
-  'info.delivery.title': { fr: '🚚 Livraison offerte', en: '🚚 Free Delivery' },
-  'info.delivery.heroTitle': { fr: 'Livraison gratuite partout en France', en: 'Free delivery nationwide' },
+  'info.delivery.title': { fr: '🚚 Livraison offerte sous conditions', en: '🚚 Conditional free delivery' },
+  'info.delivery.heroTitle': { fr: 'Livraison offerte sous conditions', en: 'Free delivery with conditions' },
   'info.delivery.heroSubtitle': {
-    fr: 'Profitez de la livraison offerte dès 25 € d\'achat sur tous nos produits, sans exception.',
-    en: 'Enjoy free delivery on all orders over €25, on every product, no exceptions.',
+    fr: 'Dans cette démo, la livraison standard est offerte dès 25 € d’achat sur les articles éligibles.',
+    en: 'In this demo, standard delivery is free from €25 on eligible items.',
   },
   'info.delivery.standardTitle': { fr: 'Livraison standard', en: 'Standard delivery' },
   'info.delivery.standardDesc': {
@@ -391,8 +399,8 @@ const translations = {
   },
   'info.delivery.expressTitle': { fr: 'Livraison express', en: 'Express delivery' },
   'info.delivery.expressDesc': {
-    fr: 'Recevez votre commande en 24h. Disponible pour 9,99 €, gratuite pour les abonnés Premium.',
-    en: 'Receive your order within 24 hours. Available for €9.99, free for Premium subscribers.',
+    fr: 'Scénario illustratif : livraison accélérée proposée à 9,99 €, incluse dans l’offre Premium de démonstration.',
+    en: 'Illustrative scenario: faster delivery offered for €9.99, included in the demo Premium offer.',
   },
   'info.delivery.relayTitle': { fr: 'Livraison en point relais', en: 'Pickup point delivery' },
   'info.delivery.relayDesc': {
@@ -401,8 +409,8 @@ const translations = {
   },
   'info.delivery.trackingTitle': { fr: 'Suivi en temps réel', en: 'Real-time tracking' },
   'info.delivery.trackingDesc': {
-    fr: 'Suivez votre colis en temps réel depuis votre espace client. Notifications par e-mail et SMS à chaque étape.',
-    en: 'Track your parcel in real-time from your account. Email and SMS notifications at every step.',
+    fr: 'Le suivi détaillé est illustratif. Dans la démo, consultez surtout vos commandes depuis la page Profil.',
+    en: 'Detailed tracking is illustrative. In the demo, use the Profile page to review your orders.',
   },
   'info.delivery.conditionsTitle': { fr: '*Conditions de livraison gratuite', en: '*Free delivery conditions' },
   'info.delivery.conditionsDesc': {
@@ -414,13 +422,13 @@ const translations = {
   'info.premium.title': { fr: '⭐ Abonnement Premium', en: '⭐ Premium Subscription' },
   'info.premium.heroTitle': { fr: 'Rejoignez le programme Premium', en: 'Join the Premium program' },
   'info.premium.heroSubtitle': {
-    fr: 'Profitez d\'avantages exclusifs pour seulement 49 €/an.',
-    en: 'Enjoy exclusive benefits for just €49/year.',
+    fr: 'Présentation illustrative des avantages Premium, sans abonnement réel dans cette démo.',
+    en: 'Illustrative presentation of Premium benefits, with no real subscription in this demo.',
   },
   'info.premium.freeExpressTitle': { fr: 'Livraison express gratuite', en: 'Free express delivery' },
   'info.premium.freeExpressDesc': {
-    fr: 'Recevez toutes vos commandes en 24h sans frais supplémentaires, sans minimum d\'achat.',
-    en: 'Get all your orders within 24 hours at no extra cost, with no minimum purchase.',
+    fr: 'Avantage illustratif : livraison accélérée incluse sur les articles éligibles.',
+    en: 'Illustrative benefit: faster delivery included on eligible items.',
   },
   'info.premium.privateSalesTitle': { fr: 'Accès ventes privées', en: 'Private sales access' },
   'info.premium.privateSalesDesc': {
@@ -434,13 +442,13 @@ const translations = {
   },
   'info.premium.supportTitle': { fr: 'Support prioritaire', en: 'Priority support' },
   'info.premium.supportDesc': {
-    fr: 'Un conseiller dédié disponible par téléphone et chat, 7j/7 avec temps d\'attente réduit.',
-    en: 'A dedicated advisor available by phone and chat, 7 days a week with reduced waiting times.',
+    fr: 'Scénario illustratif de support prioritaire. Dans la démo, les contacts restent ceux du service après-vente.',
+    en: 'Illustrative priority-support scenario. In the demo, support contacts remain the after-sales contacts.',
   },
   'info.premium.cashbackTitle': { fr: '5 % de cashback', en: '5% cashback' },
   'info.premium.cashbackDesc': {
-    fr: 'Cumulez 5 % de cashback sur tous vos achats, utilisable dès votre prochaine commande.',
-    en: 'Earn 5% cashback on all purchases, redeemable on your next order.',
+    fr: 'Avantage illustratif : 5 % de cagnotte seraient affichés sur les achats éligibles dans un service réel.',
+    en: 'Illustrative benefit: 5% rewards would be shown on eligible purchases in a real service.',
   },
   'info.premium.priceLabel': { fr: '49 €/an', en: '€49/year' },
   'info.premium.subscribe': { fr: 'S\'abonner maintenant', en: 'Subscribe now' },
@@ -459,8 +467,8 @@ const translations = {
   },
   'info.returns.step1Title': { fr: 'Étape 1 : Demande de retour', en: 'Step 1: Return request' },
   'info.returns.step1Desc': {
-    fr: 'Connectez-vous à votre espace client, accédez à votre commande et cliquez sur "Demander un retour". Sélectionnez les articles et le motif.',
-    en: 'Log into your account, go to your order and click "Request a return". Select the items and the reason.',
+    fr: 'Dans cette démo, consultez votre commande depuis la page Profil puis utilisez cette page comme scénario de retour indicatif.',
+    en: 'In this demo, review your order from the Profile page and use this page as an indicative returns scenario.',
   },
   'info.returns.step2Title': { fr: 'Étape 2 : Préparation du colis', en: 'Step 2: Package preparation' },
   'info.returns.step2Desc': {
@@ -469,8 +477,8 @@ const translations = {
   },
   'info.returns.step3Title': { fr: 'Étape 3 : Expédition', en: 'Step 3: Shipping' },
   'info.returns.step3Desc': {
-    fr: 'Déposez votre colis dans un point relais ou un bureau de poste. Vous pouvez suivre le retour depuis votre espace client.',
-    en: 'Drop your package at a pickup point or post office. You can track the return from your account.',
+    fr: 'Déposez le colis selon l’étiquette fournie. Le suivi retour est illustratif et n’est pas envoyé dans la démo.',
+    en: 'Drop the package according to the provided label. Return tracking is illustrative and is not submitted in the demo.',
   },
   'info.returns.refundTitle': { fr: 'Remboursement', en: 'Refund' },
   'info.returns.refundDesc': {
@@ -487,18 +495,18 @@ const translations = {
   },
   'info.aftersales.phoneTitle': { fr: 'Par téléphone', en: 'By phone' },
   'info.aftersales.phoneDesc': {
-    fr: 'Appelez le 01 23 45 67 89 (prix d\'un appel local), du lundi au samedi, de 8h à 20h.',
-    en: 'Call 01 23 45 67 89 (local rate), Monday to Saturday, 8am to 8pm.',
+    fr: `Appelez le ${COMPANY.phone} (prix d’un appel local), du lundi au samedi, de 8h à 20h.`,
+    en: `Call ${COMPANY.phone} (local rate), Monday to Saturday, 8am to 8pm.`,
   },
   'info.aftersales.emailTitle': { fr: 'Par e-mail', en: 'By email' },
   'info.aftersales.emailDesc': {
-    fr: 'Envoyez-nous un e-mail à sav@zava.fr. Nous vous répondons sous 24h ouvrées.',
-    en: 'Send us an email at support@zava.com. We respond within 24 business hours.',
+    fr: `Envoyez-nous un e-mail à ${COMPANY.supportEmail}. Nous vous répondons sous 24h ouvrées.`,
+    en: `Send us an email at ${COMPANY.supportEmail}. We respond within 24 business hours.`,
   },
-  'info.aftersales.chatTitle': { fr: 'Chat en ligne', en: 'Live chat' },
+  'info.aftersales.chatTitle': { fr: 'Assistance dans la démo', en: 'Demo assistance' },
   'info.aftersales.chatDesc': {
-    fr: 'Discutez en direct avec un conseiller depuis votre espace client, 7j/7 de 9h à 22h.',
-    en: 'Chat live with an advisor from your account, 7 days a week from 9am to 10pm.',
+    fr: 'Aucun chat n’est connecté dans cette démo. Pour vérifier un achat fictif, ouvrez la page Profil et consultez vos commandes.',
+    en: 'No live chat is connected in this demo. To review a fictitious purchase, open the Profile page and check your orders.',
   },
   'info.aftersales.warrantyTitle': { fr: 'Garantie', en: 'Warranty' },
   'info.aftersales.warrantyDesc': {
@@ -507,26 +515,26 @@ const translations = {
   },
   'info.aftersales.repairTitle': { fr: 'Réparation', en: 'Repair' },
   'info.aftersales.repairDesc': {
-    fr: 'En cas de panne, nous proposons un service de réparation. Envoyez votre produit en atelier et suivez l\'avancement depuis votre compte.',
-    en: 'In case of malfunction, we offer a repair service. Send your product to our workshop and track progress from your account.',
+    fr: 'Scénario illustratif : préparez les informations de commande depuis la page Profil, puis contactez le SAV par téléphone ou e-mail.',
+    en: 'Illustrative scenario: gather the order information from the Profile page, then contact support by phone or email.',
   },
 
   // Best prices
-  'info.bestprices.title': { fr: '💰 Meilleurs prix garantis', en: '💰 Best Prices Guaranteed' },
+  'info.bestprices.title': { fr: '💰 Engagement prix', en: '💰 Price commitment' },
   'info.bestprices.heroTitle': { fr: 'Notre engagement prix', en: 'Our price commitment' },
   'info.bestprices.heroSubtitle': {
-    fr: 'Nous vous garantissons les meilleurs prix sur l\'ensemble de notre catalogue.',
-    en: 'We guarantee the best prices across our entire catalogue.',
+    fr: 'Engagement présenté à titre illustratif pour comparer clairement les prix affichés.',
+    en: 'Commitment shown as an illustrative scenario to make displayed prices easy to compare.',
   },
   'info.bestprices.matchTitle': { fr: 'Alignement de prix', en: 'Price matching' },
   'info.bestprices.matchDesc': {
-    fr: 'Vous trouvez moins cher ailleurs ? Nous nous alignons sur le prix du concurrent et vous offrons en plus 5 % de réduction supplémentaire.',
-    en: 'Found it cheaper elsewhere? We\'ll match the competitor\'s price and give you an additional 5% discount.',
+    fr: 'Scénario illustratif : une équipe commerciale vérifierait une preuve concurrente avant tout alignement.',
+    en: 'Illustrative scenario: a commercial team would verify competitor evidence before any match.',
   },
   'info.bestprices.alertsTitle': { fr: 'Alertes de prix', en: 'Price alerts' },
   'info.bestprices.alertsDesc': {
-    fr: 'Activez les alertes prix sur vos produits favoris et soyez notifié dès qu\'une baisse de prix intervient.',
-    en: 'Set price alerts on your favorite products and get notified as soon as a price drop occurs.',
+    fr: 'Les alertes prix ne sont pas activables dans la démo. Utilisez plutôt le catalogue et les filtres pour comparer les offres visibles.',
+    en: 'Price alerts cannot be enabled in the demo. Use the catalogue and filters to compare visible offers instead.',
   },
   'info.bestprices.promosTitle': { fr: 'Promotions permanentes', en: 'Ongoing promotions' },
   'info.bestprices.promosDesc': {
@@ -543,31 +551,31 @@ const translations = {
   'info.drive.title': { fr: '🚗 Le Drive — Gagner du temps', en: '🚗 Drive — Save Time' },
   'info.drive.heroTitle': { fr: 'Commandez en ligne, récupérez en magasin', en: 'Order online, pick up in store' },
   'info.drive.heroSubtitle': {
-    fr: 'Votre commande prête en 2 heures. Faites vos courses en quelques clics et passez les récupérer sans descendre de voiture.',
-    en: 'Your order ready in 2 hours. Shop in a few clicks and pick up your order without leaving your car.',
+    fr: 'Scénario Drive illustratif : la commande et le retrait ne sont pas activables dans le checkout de démonstration.',
+    en: 'Illustrative Drive scenario: ordering for pickup is not available in the demo checkout.',
   },
   'info.drive.howItWorksTitle': { fr: 'Comment ça marche ?', en: 'How does it work?' },
   'info.drive.step1': {
-    fr: '1. Ajoutez vos articles au panier et choisissez l\'option "Drive" au moment de la commande.',
-    en: '1. Add your items to cart and select the "Drive" option at checkout.',
+    fr: '1. Explorez le catalogue et ajoutez des articles au panier pour simuler votre sélection.',
+    en: '1. Browse the catalogue and add items to the cart to simulate your selection.',
   },
   'info.drive.step2': {
-    fr: '2. Sélectionnez le magasin et le créneau horaire qui vous conviennent.',
-    en: '2. Select the store and time slot that suits you.',
+    fr: '2. Dans un service réel, vous choisiriez ensuite un point de retrait et un créneau.',
+    en: '2. In a real service, you would then choose a pickup point and time slot.',
   },
   'info.drive.step3': {
-    fr: '3. Rendez-vous au point de retrait à l\'heure convenue. Nos équipiers chargent vos courses dans votre coffre.',
-    en: '3. Go to the pickup point at the scheduled time. Our team loads your groceries into your trunk.',
+    fr: '3. La démo s’arrête à la commande fictive ; aucun retrait magasin n’est réservé.',
+    en: '3. The demo stops at the fictitious order; no store pickup is reserved.',
   },
   'info.drive.freeTitle': { fr: 'Service gratuit', en: 'Free service' },
   'info.drive.freeDesc': {
-    fr: 'Le service Drive est entièrement gratuit, sans minimum d\'achat. Les mêmes prix qu\'en ligne sont appliqués.',
-    en: 'The Drive service is completely free, with no minimum purchase. Same prices as online apply.',
+    fr: 'Dans ce scénario, le retrait n’ajoute pas de frais aux articles éligibles. Aucun frais réel n’est calculé dans la démo.',
+    en: 'In this scenario, pickup adds no fee to eligible items. No real fee is calculated in the demo.',
   },
   'info.drive.storesTitle': { fr: 'Magasins disponibles', en: 'Available stores' },
   'info.drive.storesDesc': {
-    fr: 'Plus de 200 points de retrait Drive à travers la France. Trouvez le plus proche dans votre espace client.',
-    en: 'Over 200 Drive pickup points across the country. Find the nearest one in your account.',
+    fr: 'Les points de retrait sont des exemples de scénario. La page Profil affiche uniquement vos données et commandes de démonstration.',
+    en: 'Pickup points are scenario examples. The Profile page only shows your demo data and orders.',
   },
 
   // Terms of service
@@ -575,8 +583,8 @@ const translations = {
   'info.terms.lastUpdate': { fr: 'Dernière mise à jour : 1er janvier 2026', en: 'Last updated: January 1, 2026' },
   'info.terms.s1Title': { fr: 'Article 1 — Objet', en: 'Article 1 — Purpose' },
   'info.terms.s1Desc': {
-    fr: 'Les présentes conditions générales de vente régissent l\'ensemble des ventes réalisées sur le site zava.fr, exploité par la société Zava SAS, au capital de 100 000 €, immatriculée au RCS de Paris sous le numéro 123 456 789.',
-    en: 'These terms of service govern all sales made on the zava.com website, operated by Zava Inc., a company registered in Delaware with registration number 123 456 789.',
+    fr: `Les présentes conditions générales de vente régissent l’ensemble des ventes réalisées sur le site ${COMPANY.website}, exploité par ${COMPANY.name}, au capital de ${COMPANY.capital}, immatriculée ${COMPANY.registration}.`,
+    en: `These terms of service govern all sales made on the ${COMPANY.website} website, operated by ${COMPANY.name}, with share capital of ${COMPANY.capital}, registered as ${COMPANY.registration}.`,
   },
   'info.terms.s2Title': { fr: 'Article 2 — Prix', en: 'Article 2 — Pricing' },
   'info.terms.s2Desc': {
@@ -608,8 +616,8 @@ const translations = {
   'info.legal.title': { fr: 'Mentions Légales', en: 'Legal Notice' },
   'info.legal.editorTitle': { fr: 'Éditeur du site', en: 'Website publisher' },
   'info.legal.editorDesc': {
-    fr: 'Zava SAS au capital de 100 000 €\nSiège social : 42 rue du Commerce, 75015 Paris, France\nRCS Paris 123 456 789\nN° TVA : FR 12 345678901\nDirecteur de la publication : Jean Dupont',
-    en: 'Zava Inc.\nRegistered office: 42 Commerce Street, 75015 Paris, France\nRegistration: 123 456 789\nVAT: FR 12 345678901\nPublication director: Jean Dupont',
+    fr: `${COMPANY.name} au capital de ${COMPANY.capital}\nSiège social : ${COMPANY.address}\n${COMPANY.registration}\nN° TVA : ${COMPANY.vat}\nDirecteur de la publication : ${COMPANY.publicationDirector}`,
+    en: `${COMPANY.name} with share capital of ${COMPANY.capital}\nRegistered office: ${COMPANY.address}\n${COMPANY.registration}\nVAT: ${COMPANY.vat}\nPublication director: ${COMPANY.publicationDirector}`,
   },
   'info.legal.hostingTitle': { fr: 'Hébergement', en: 'Hosting' },
   'info.legal.hostingDesc': {
@@ -623,8 +631,8 @@ const translations = {
   },
   'info.legal.contactTitle': { fr: 'Contact', en: 'Contact' },
   'info.legal.contactDesc': {
-    fr: 'E-mail : contact@zava.fr\nTéléphone : 01 23 45 67 89\nFormulaire de contact disponible dans votre espace client.',
-    en: 'Email: contact@zava.com\nPhone: 01 23 45 67 89\nContact form available in your account.',
+    fr: `E-mail : ${COMPANY.contactEmail}\nTéléphone : ${COMPANY.phone}`,
+    en: `Email: ${COMPANY.contactEmail}\nPhone: ${COMPANY.phone}`,
   },
 
   // Privacy policy
@@ -632,8 +640,8 @@ const translations = {
   'info.privacy.lastUpdate': { fr: 'Dernière mise à jour : 1er janvier 2026', en: 'Last updated: January 1, 2026' },
   'info.privacy.introTitle': { fr: 'Introduction', en: 'Introduction' },
   'info.privacy.introDesc': {
-    fr: 'Zava SAS s\'engage à protéger la vie privée de ses utilisateurs. Cette politique décrit comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD.',
-    en: 'Zava Inc. is committed to protecting the privacy of its users. This policy describes how we collect, use and protect your personal data in accordance with GDPR.',
+    fr: `${COMPANY.name} s’engage à protéger la vie privée de ses utilisateurs. Cette politique décrit comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD.`,
+    en: `${COMPANY.name} is committed to protecting the privacy of its users. This policy describes how we collect, use and protect your personal data in accordance with GDPR.`,
   },
   'info.privacy.collectionTitle': { fr: 'Données collectées', en: 'Data collected' },
   'info.privacy.collectionDesc': {
@@ -652,8 +660,8 @@ const translations = {
   },
   'info.privacy.rightsTitle': { fr: 'Vos droits', en: 'Your rights' },
   'info.privacy.rightsDesc': {
-    fr: 'Conformément au RGPD, vous disposez d\'un droit d\'accès, de rectification, de suppression, de portabilité de vos données et d\'un droit d\'opposition au traitement. Pour exercer ces droits, contactez-nous à dpo@zava.fr.',
-    en: 'Under GDPR, you have the right to access, rectify, delete, port your data, and the right to object to processing. To exercise these rights, contact us at dpo@zava.com.',
+    fr: `Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, de suppression, de portabilité de vos données et d’un droit d’opposition au traitement. Pour exercer ces droits, contactez-nous à ${COMPANY.dpoEmail}.`,
+    en: `Under GDPR, you have the right to access, rectify, delete, port your data, and object to processing. To exercise these rights, contact us at ${COMPANY.dpoEmail}.`,
   },
   'info.privacy.cookiesTitle': { fr: 'Cookies', en: 'Cookies' },
   'info.privacy.cookiesDesc': {
@@ -680,6 +688,16 @@ const translations = {
   'common.loading': { fr: 'Chargement...', en: 'Loading...' },
   'common.error': { fr: 'Erreur de chargement', en: 'Loading error' },
   'common.postalCodeShort': { fr: 'CP', en: 'ZIP' },
+} as const;
+
+const translations = {
+  ...baseTranslations,
+  ...common,
+  ...shell,
+  ...discovery,
+  ...commerce,
+  ...secondary,
+  ...settingsInfo,
 } as const;
 
 export type TranslationKey = keyof typeof translations;

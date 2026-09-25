@@ -8,7 +8,7 @@ export default function AfterSalesPage() {
     <InfoPage
       heroTitleKey="info.aftersales.heroTitle"
       heroSubtitleKey="info.aftersales.heroSubtitle"
-      heroGradient="linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%)"
+      heroGradientStops={['#6a1b9a', '#ab47bc']}
       heroIcon={<Build />}
       sections={[
         { titleKey: 'info.aftersales.phoneTitle', descKey: 'info.aftersales.phoneDesc', icon: <Phone /> },

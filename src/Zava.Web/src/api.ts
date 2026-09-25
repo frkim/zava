@@ -25,7 +25,8 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
       headers: { 'Content-Type': 'application/json' },
       ...options,
     });
-  } catch {
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') throw error;
     throw new Error(
       'Le serveur ne répond pas. Vérifiez que le backend est lancé sur ' + API_BASE
     );
@@ -57,8 +58,8 @@ export const getHomepage = () => request<HomepageData>(`${API}/homepage`);
 
 // Products
 export const getProducts = () => request<Product[]>(`${API}/products`);
-export const getProduct = (id: number) =>
-  request<{ product: Product; reviews: Review[]; relatedProducts: Product[]; category: Category | null; images: ProductImage[] }>(`${API}/products/${id}`);
+export const getProduct = (id: number, signal?: AbortSignal) =>
+  request<{ product: Product; reviews: Review[]; relatedProducts: Product[]; category: Category | null; images: ProductImage[] }>(`${API}/products/${id}`, { signal });
 export const createProduct = (data: {
   name: string; description: string; price: number; categoryId: number; brand: string; stock: number;
 }) =>
@@ -82,13 +83,18 @@ export const addToCart = (productId: number, quantity: number, variantId?: numbe
     method: 'POST',
     body: JSON.stringify({ productId, variantId, quantity }),
   });
-export const updateCartItem = (productId: number, quantity: number, variantId?: number | null) =>
+export const updateCartItem = (productId: number, quantity: number, variantId?: number | null, offerTriggerProductId?: number | null) =>
   request<Cart>(`${API}/cart/items/${productId}`, {
     method: 'PUT',
-    body: JSON.stringify({ quantity, variantId }),
+    body: JSON.stringify({ quantity, variantId, offerTriggerProductId }),
   });
-export const removeCartItem = (productId: number, variantId?: number | null) =>
-  request<Cart>(`${API}/cart/items/${productId}${variantId != null ? `?variantId=${variantId}` : ''}`, { method: 'DELETE' });
+export const removeCartItem = (productId: number, variantId?: number | null, offerTriggerProductId?: number | null) => {
+  const params = new URLSearchParams();
+  if (variantId != null) params.set('variantId', String(variantId));
+  if (offerTriggerProductId != null) params.set('offerTriggerProductId', String(offerTriggerProductId));
+  const query = params.toString();
+  return request<Cart>(`${API}/cart/items/${productId}${query ? `?${query}` : ''}`, { method: 'DELETE' });
+};
 export const clearCart = () => request<Cart>(`${API}/cart`, { method: 'DELETE' });
 
 // Recipe baskets are previews until the customer explicitly confirms a plan.
@@ -109,6 +115,11 @@ export const commitRecipeBasket = (planId: string, excludedItems: RecipeBasketIt
 // Cross-sell
 export const getCrossSell = (productId: number) =>
   request<CrossSellOffer>(`${API}/products/${productId}/cross-sell`);
+export const addCrossSellToCart = (triggerProductId: number) =>
+  request<Cart>(`${API}/cart/cross-sell`, {
+    method: 'POST',
+    body: JSON.stringify({ triggerProductId }),
+  });
 export const addWarrantyToCart = (productId: number) =>
   request<Cart>(`${API}/cart/warranty`, {
     method: 'POST',

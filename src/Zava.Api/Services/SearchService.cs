@@ -70,6 +70,11 @@ public class SearchService
                 ? filtered.OrderByDescending(p => p.PromoPrice ?? p.Price).ToList()
                 : filtered.OrderBy(p => p.PromoPrice ?? p.Price).ToList(),
             "rating" => filtered.OrderByDescending(p => p.Rating).ToList(),
+            "bestseller" => filtered
+                .OrderByDescending(p => p.IsBestSeller)
+                .ThenByDescending(p => p.Rating)
+                .ThenByDescending(p => p.ReviewCount)
+                .ToList(),
             "name" => request.SortDescending
                 ? filtered.OrderByDescending(p => p.Name).ToList()
                 : filtered.OrderBy(p => p.Name).ToList(),

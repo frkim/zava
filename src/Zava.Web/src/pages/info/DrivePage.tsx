@@ -8,7 +8,7 @@ export default function DrivePage() {
     <InfoPage
       heroTitleKey="info.drive.heroTitle"
       heroSubtitleKey="info.drive.heroSubtitle"
-      heroGradient="linear-gradient(135deg, #00695c 0%, #4db6ac 100%)"
+      heroGradientStops={['#00695c', '#4db6ac']}
       heroIcon={<DirectionsCar />}
       sections={[
         { titleKey: 'info.drive.howItWorksTitle', descKey: 'info.drive.step1', icon: <ShoppingCart /> },

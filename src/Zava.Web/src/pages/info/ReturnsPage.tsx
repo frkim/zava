@@ -8,7 +8,7 @@ export default function ReturnsPage() {
     <InfoPage
       heroTitleKey="info.returns.heroTitle"
       heroSubtitleKey="info.returns.heroSubtitle"
-      heroGradient="linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%)"
+      heroGradientStops={['#2e7d32', '#66bb6a']}
       heroIcon={<AssignmentReturn />}
       sections={[
         { titleKey: 'info.returns.eligibilityTitle', descKey: 'info.returns.eligibilityDesc', icon: <CheckCircle /> },

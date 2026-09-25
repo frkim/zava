@@ -216,13 +216,13 @@ Pour un contrôle reproductible avec les vrais agents, exécuter `python scripts
 
 Le projet convient à une **démonstration de parcours e-commerce**, pas à une boutique réelle : panier et profil partagés, données en mémoire, absence d'authentification et paiement simulé. N'y saisissez ni données personnelles réelles ni coordonnées bancaires réelles.
 
-Les corrections de cette évaluation ciblent la confiance dans le panier : modifier la bonne variante, éviter les quantités invalides, calculer les garanties côté serveur et rendre les échecs visibles plutôt que silencieux. Elles réduisent les erreurs de commande et les écarts de prix sur les garanties sans changer l'architecture du démonstrateur.
+Les corrections de cette évaluation ciblent la confiance dans le panier : modifier la bonne variante, éviter les quantités invalides, calculer les garanties et les offres complémentaires côté serveur, puis rendre les échecs visibles plutôt que silencieux. Elles réduisent les erreurs de commande et les écarts de prix sans changer l'architecture du démonstrateur.
 
 | Priorité | Suite recommandée | Valeur technique et métier |
 |----------|-------------------|----------------------------|
 | Haute, avant usage réel | Isoler les paniers par utilisateur, ajouter authentification/autorisation et persistance | Éviter le partage involontaire des commandes et la perte des données au redémarrage |
 | Haute | Rendre les mutations et le checkout transactionnels, réserver/décrémenter le stock, rendre le paiement idempotent | Le verrou partagé sérialise les requêtes dans un processus, sans réservation persistante ni coordination entre instances ; prévenir survente et commandes en double |
-| Haute | Aligner la remise complémentaire annoncée avec le prix facturé | L'offre cross-sell affiche actuellement une remise de 10 %, mais l'ajout standard utilise le prix catalogue/promotion ; éviter une promesse commerciale non tenue |
+| Haute | Maintenir l'offre complémentaire autoritaire | `POST /api/cart/cross-sell` recalcule l'offre à partir de `{ "triggerProductId": 1 }`, exige que le produit déclencheur soit déjà au panier au prix normal (une ligne elle-même remisée ne compte pas), limite l'offre à une unité remisée par unité déclencheur, ajoute une ligne distincte au prix remisé et copie ce prix au checkout. Si le déclencheur est retiré ou sa quantité réduite sous celle de l'offre, la ligne remisée repasse au prix catalogue/promotion régulier. |
 | Haute | Traiter les avis de sécurité des dépendances et exécuter les tests sur les PR | Les audits initiaux signalent des dépendances vulnérables ; les contrôles locaux du panier recette ne couvrent pas encore tous les parcours du site |
 | Moyenne | Valider aussi création de produits, adresses et paiement côté serveur ; harmoniser les erreurs FR/EN | Améliorer la qualité des données et la compréhension des refus |
 | Moyenne | Charger les pages, notamment les graphiques analytics, à la demande ; mesurer le parcours mobile | Le build initial charge environ 1,82 Mo de JavaScript (573 Ko gzip) dans un seul bundle ; réduire le coût d'entrée dans la boutique |

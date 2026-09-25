@@ -1,9 +1,24 @@
-import { createTheme, type Theme } from '@mui/material/styles';
+import { createTheme, darken, getContrastRatio, type Theme } from '@mui/material/styles';
 import type { SiteType } from './types';
+
+/** WCAG AA contrast for body text; every palette text/background pairing is derived to meet it. */
+export const MIN_TEXT_CONTRAST = 4.5;
+
+/** Darkens a brand colour until white text on it reaches the requested contrast ratio. */
+export function surfaceForWhiteText(color: string, minimum = MIN_TEXT_CONTRAST) {
+  let surface = color;
+  for (let i = 0; i < 20 && getContrastRatio(surface, '#ffffff') < minimum; i += 1) {
+    surface = darken(surface, 0.08);
+  }
+  return surface;
+}
 
 const baseThemeOptions = {
   typography: {
     fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: { fontSize: '2.25rem', fontWeight: 800, letterSpacing: '-0.02em' },
+    h2: { fontSize: '1.75rem', fontWeight: 700 },
+    h3: { fontSize: '1.5rem', fontWeight: 700 },
     h4: { fontWeight: 700 },
     h5: { fontWeight: 600 },
     h6: { fontWeight: 600 },
@@ -12,12 +27,34 @@ const baseThemeOptions = {
     borderRadius: 8,
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        ':focus-visible': {
+          outline: '3px solid #1565c0',
+          outlineOffset: 2,
+        },
+        '@media (prefers-reduced-motion: reduce)': {
+          '*, *::before, *::after': {
+            animationDuration: '0.01ms !important',
+            animationIterationCount: '1 !important',
+            transitionDuration: '0.01ms !important',
+            scrollBehavior: 'auto !important',
+          },
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: 'none' as const,
           fontWeight: 600,
+          minHeight: 40,
         },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: { minWidth: 44, minHeight: 44 },
       },
     },
     MuiCard: {
@@ -27,12 +64,14 @@ const baseThemeOptions = {
           '&:hover': {
             boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
           },
+          '&:focus-within': {
+            boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+          },
         },
       },
     },
   },
 };
-
 export interface SiteThemeChoice {
   id: string;
   name: string;
@@ -100,6 +139,8 @@ const themes = Object.fromEntries(
       createTheme({
         ...baseThemeOptions,
         palette: {
+          // contrastThreshold 4.5 makes MUI choose white or dark text per colour at AA level.
+          contrastThreshold: MIN_TEXT_CONTRAST,
           primary: { main: choice.primary },
           secondary: { main: choice.secondary },
           background: { default: choice.background },

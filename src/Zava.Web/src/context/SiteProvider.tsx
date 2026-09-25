@@ -1,39 +1,15 @@
-import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { changeSiteType, getConfig } from '../api';
-import type { SiteConfig, SiteType } from '../types';
+import type { SiteConfig } from '../types';
 import { getDefaultThemeId, isThemeIdForSite } from '../theme';
 import { useLanguage } from './LanguageContext';
+import { SiteContext, type SiteSelection } from './SiteContext';
 
 const DEFAULT_SITE_KEY = 'zava-default-site';
 
-export interface SiteSelection {
-  siteType: SiteType;
-  themeId: string;
-}
-
-interface SiteContextValue {
-  config: SiteConfig | null;
-  siteName: string;
-  selectedThemeId: string;
-  defaultSelection: SiteSelection | null;
-  refreshConfig: () => Promise<void>;
-  selectSiteType: (selection: SiteSelection, makeDefault: boolean) => Promise<SiteConfig>;
-  /** Incremented on every site change so components can react */
-  siteVersion: number;
-}
-
-const SiteContext = createContext<SiteContextValue>({
-  config: null,
-  siteName: 'Zava',
-  selectedThemeId: getDefaultThemeId('Electronics'),
-  defaultSelection: null,
-  refreshConfig: async () => {},
-  selectSiteType: async () => { throw new Error('SiteProvider is not available'); },
-  siteVersion: 0,
-});
-
 export function SiteProvider({ children }: { children: React.ReactNode }) {
   const [config, setConfig] = useState<SiteConfig | null>(null);
+  const [configError, setConfigError] = useState<string | null>(null);
   const [selectedThemeId, setSelectedThemeId] = useState(getDefaultThemeId('Electronics'));
   const [defaultSelection, setDefaultSelection] = useState<SiteSelection | null>(null);
   const [siteVersion, setSiteVersion] = useState(0);
@@ -44,9 +20,11 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
     try {
       const c = await getConfig();
       setConfig(c);
+      setConfigError(null);
       setSiteVersion((v) => v + 1);
     } catch (error) {
       console.error('Unable to refresh the storefront configuration.', error);
+      setConfigError(error instanceof Error ? error.message : String(error));
     }
   }, []);
 
@@ -55,10 +33,15 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
       throw new Error('The selected theme is not available for this storefront.');
     }
 
-    const updated = await changeSiteType(selection.siteType);
-    setConfig(updated);
+    // Only a real storefront change goes to the server: it rebuilds the catalogue and resets
+    // cart, orders and profile. A theme or default-preference change stays local.
+    const storeReset = !config || config.currentSiteType !== selection.siteType;
+    const updated = storeReset ? await changeSiteType(selection.siteType) : config;
+    if (storeReset) {
+      setConfig(updated);
+      setSiteVersion((v) => v + 1);
+    }
     setSelectedThemeId(selection.themeId);
-    setSiteVersion((v) => v + 1);
 
     try {
       if (makeDefault) {
@@ -75,8 +58,8 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
       console.warn('Unable to update the default storefront.', error);
     }
 
-    return updated;
-  }, [defaultSelection]);
+    return { config: updated, storeReset };
+  }, [config, defaultSelection]);
 
   useEffect(() => {
     if (initializationStarted.current) return;
@@ -140,9 +123,11 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
 
         setDefaultSelection(savedSelection);
         setConfig(restored);
+        setConfigError(null);
         setSiteVersion((v) => v + 1);
       } catch (error) {
         console.error('Unable to initialize the storefront configuration.', error);
+        setConfigError(error instanceof Error ? error.message : String(error));
       }
     };
 
@@ -159,6 +144,7 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
   return (
     <SiteContext.Provider value={{
       config,
+      configError,
       siteName,
       selectedThemeId,
       defaultSelection,
@@ -170,5 +156,3 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
     </SiteContext.Provider>
   );
 }
-
-export const useSite = () => useContext(SiteContext);

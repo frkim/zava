@@ -99,6 +99,9 @@ export interface CartItem {
   variantId: number | null;
   variantName: string | null;
   unitPrice: number;
+  regularUnitPrice: number | null;
+  offerTriggerProductId: number | null;
+  discountPercent: number | null;
   quantity: number;
   subtotal: number;
 }
