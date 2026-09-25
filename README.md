@@ -19,7 +19,7 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 - **Recherche** — Full-text avec suggestions, filtres (catégorie, marque, prix, note, stock), tri, pagination, facettes
 - **Fiche produit** — Variantes (taille, couleur) avec ajustement de prix, stock, notes et avis clients, produits associés
 - **Panier** — Ajout/suppression par variante, contrôle des quantités et du stock, erreurs visibles avec possibilité de réessayer, vidé automatiquement au changement de site
-- **Panier recette (alimentaire)** — Suggestions de plats, recette libre, 1 à 20 convives et choix grandes marques nationales / marques distributeurs / économique / mix. Deux agents Microsoft Foundry préparent un aperçu des ingrédients et produits ; la confirmation ajoute la sélection au panier.
+- **Panier recette (alimentaire)** — Suggestions de plats, recette libre, 1 à 20 convives et choix grandes marques nationales / marques distributeurs / économique / mix, avec une option cochée par défaut pour proposer les produits principaux **et** annexes (condiments, farines, huiles, etc.). Deux agents Microsoft Foundry préparent un aperçu des ingrédients et produits ; la confirmation ajoute la sélection au panier.
 - **Checkout** — Tunnel en 3 étapes (adresse → paiement → confirmation), 4 moyens de paiement (CB, PayPal, Apple Pay, Google Pay), simulation d'erreurs (carte finissant par `0000`)
 - **Profil** — Infos personnelles, adresse, paiement, historique des commandes
 - **Analytics** — KPIs, graphiques (revenus par catégorie, commandes par statut, ventes journalières), top produits
@@ -126,12 +126,12 @@ npm run dev
 ### Panier recette
 
 1. Dans **Paramètres**, sélectionner **Alimentaire**, puis ouvrir **Panier recette** depuis la navigation, l'accueil ou le panier.
-2. Choisir une suggestion (lasagnes, blanquette de veau, carbonade, bœuf bourguignon, BBQ, repas végétarien, pizza) ou saisir un autre plat, le nombre de personnes et la gamme.
+2. Choisir une suggestion (lasagnes, blanquette de veau, carbonade, bœuf bourguignon, BBQ, repas végétarien, pizza) ou saisir un autre plat, le nombre de personnes et la gamme. L'option **Proposer les produits principaux et annexes (condiments, etc.)**, cochée par défaut, sélectionne tous les ingrédients ; décochée, elle place les ingrédients annexes (condiments, farines, huiles, etc.) dans le cartouche **Produits non sélectionnés**, sans les supprimer de l'aperçu.
 3. Générer la sélection, vérifier les produits, les paquets entiers, le total et les ingrédients manquants, puis confirmer l'ajout groupé. Une sélection incomplète est signalée ; elle n'est pas présentée comme une recette complète.
 
 Les valeurs API des gammes sont `National`, `PrivateLabel`, `Economy` et `Mix`. Les trois premières filtrent le catalogue **côté serveur** grâce aux tags `brand:national`, `brand:private-label` et `brand:economy`. Les références Zava et Zava Essentiel et leurs prix sont des données de démonstration. Les 53 ingrédients de base disposent chacun de trois gammes ; une recette libre peut nécessiter des ingrédients non commercialisés. Les photos de ces ingrédients proviennent de Wikimedia Commons sous licence libre : l'attribution complète (fichier, licence, auteur) est listée dans [`Docs/image-credits.md`](Docs/image-credits.md).
 
-Le premier agent décompose la recette en ingrédients et quantités ; le second associe ces ingrédients aux références réellement disponibles et à leurs conditionnements. Les réponses sont structurées et validées : aucun identifiant, prix ou stock inventé par le modèle n'est accepté. Les agents n'ont pas d'outil de paiement ni d'accès direct au panier.
+Le premier agent décompose la recette en ingrédients et quantités, et marque chaque ingrédient comme principal ou annexe (`essential`) ; le second associe ces ingrédients aux références réellement disponibles et à leurs conditionnements. Les réponses sont structurées et validées : aucun identifiant, prix ou stock inventé par le modèle n'est accepté. Les agents n'ont pas d'outil de paiement ni d'accès direct au panier.
 
 Les schémas JSON stricts et l'effort de raisonnement sont enregistrés dans les **définitions des agents**. Une requête Responses utilisant `agent_reference` ne doit pas redéfinir `text` ni `reasoning` : Foundry rejette ces paramètres avec HTTP 400. Les tests vérifient ce contrat côté déploiement et côté client API.
 
@@ -247,7 +247,7 @@ Pour vérifier le panier, démarrer l'API et exécuter dans l'ordre la section *
 
 La section **Recipe basket regression checks** du même fichier couvre les saisies invalides, les gammes, l'aperçu sans mutation, la confirmation répétée et l'invalidation après réinitialisation. Elle réinitialise également les données. Les scénarios positifs IA nécessitent de vrais agents déployés ; sans configuration, vérifier `available: false` et le refus explicite de génération, puis vérifier que l'ajout classique fonctionne toujours.
 
-`tests/Zava.Api.RecipeChecks` exécute les contrôles HTTP locaux sur le port `5097`, avec une identité et des réponses Foundry explicitement simulées : aucun abonnement ni jeton réel n'est nécessaire. Il vérifie également les stocks, les variantes, l'ajout atomique et idempotent, le catalogue des trois gammes, les délais et les quotas, ainsi que la validation des exclusions (`excludedProductIds` au plan, `excludedItems` à la confirmation) et le refus d'une sélection entièrement vidée.
+`tests/Zava.Api.RecipeChecks` exécute les contrôles HTTP locaux sur le port `5097`, avec une identité et des réponses Foundry explicitement simulées : aucun abonnement ni jeton réel n'est nécessaire. Il vérifie également les stocks, les variantes, l'ajout atomique et idempotent, le catalogue des trois gammes, les délais et les quotas, ainsi que la validation des exclusions (`excludedProductIds` au plan, `excludedItems` à la confirmation), le marquage des ingrédients annexes (`essential`) et le refus d'une sélection entièrement vidée.
 
 Les contrôles navigateur existants se trouvent dans `tests/recipe-ui`. Avec Node.js 22+ et Chrome installés, utiliser les commandes PowerShell suivantes depuis la racine. Choisir un dossier d'artefacts dédié, hors du dépôt, et un profil de navigateur distinct de votre profil habituel :
 

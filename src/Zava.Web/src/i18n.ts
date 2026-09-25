@@ -35,6 +35,8 @@ const translations = {
   'recipe.PrivateLabelDesc': { fr: 'Les marques de l’enseigne', en: 'The retailer’s own brands' },
   'recipe.EconomyDesc': { fr: 'Priorité aux petits prix', en: 'Prioritise lower prices' },
   'recipe.MixDesc': { fr: 'Un peu de chaque gamme', en: 'A little of each range' },
+  'recipe.pantry': { fr: 'Proposer les produits principaux et annexes (condiments, etc.)', en: 'Suggest both main and pantry products (condiments, etc.)' },
+  'recipe.pantryHelp': { fr: 'Décochez pour ne sélectionner que les ingrédients principaux : les ingrédients annexes (condiments, farines, huiles, etc.) sont écartés de la sélection.', en: 'Untick to select only the main ingredients: pantry extras (condiments, flours, oils, etc.) are set aside from the selection.' },
   'recipe.generate': { fr: 'Préparer ma liste de courses', en: 'Prepare my shopping list' },
   'recipe.noAdd': { fr: 'Rien n’est ajouté sans votre confirmation.', en: 'Nothing is added without your confirmation.' },
   'recipe.planning': { fr: 'Votre liste de courses se prépare…', en: 'Your shopping list is being prepared…' },
