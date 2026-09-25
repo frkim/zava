@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
-  Alert, AlertTitle, Box, Button, Chip, CircularProgress, Collapse, Divider, FormControl,
+  Alert, AlertTitle, Box, Button, Checkbox, Chip, CircularProgress, Collapse, Divider, FormControl,
   FormControlLabel, FormLabel, Link, Paper, Radio, RadioGroup,
   Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
 } from '@mui/material';
@@ -47,6 +47,7 @@ interface RecipeDraft {
   plan: RecipeBasketPlan | null;
   planSavedAt: number | null;
   deselected: string[];
+  includePantry: boolean;
 }
 
 function planExpiry(plan: RecipeBasketPlan, savedAt: number | null) {
@@ -72,6 +73,7 @@ function readRecipeDraft(siteType: string): RecipeDraft | null {
       plan: parsed.plan && typeof parsed.plan === 'object' ? parsed.plan as RecipeBasketPlan : null,
       planSavedAt: typeof parsed.planSavedAt === 'number' ? parsed.planSavedAt : null,
       deselected: Array.isArray(parsed.deselected) ? parsed.deselected.filter((item): item is string => typeof item === 'string') : [],
+      includePantry: typeof parsed.includePantry === 'boolean' ? parsed.includePantry : true,
     };
   } catch {
     return null;
@@ -370,6 +372,7 @@ function GroceryRecipeBasket() {
   const [recipe, setRecipe] = useState(restoredDraft?.recipe ?? '');
   const [servings, setServings] = useState(restoredDraft?.servings ?? '4');
   const [brandPreference, setBrandPreference] = useState<RecipeBrandPreference>(restoredDraft?.brandPreference ?? 'Mix');
+  const [includePantry, setIncludePantry] = useState(restoredDraft?.includePantry ?? true);
   const [plan, setPlan] = useState<RecipeBasketPlan | null>(restoredDraft?.plan ?? null);
   const [planSavedAt, setPlanSavedAt] = useState<number | null>(restoredDraft?.planSavedAt ?? null);
   const [planning, setPlanning] = useState(false);
@@ -402,8 +405,8 @@ function GroceryRecipeBasket() {
   }, []);
 
   useEffect(() => {
-    writeRecipeDraft({ siteType, recipe, servings, brandPreference, plan, planSavedAt, deselected });
-  }, [siteType, recipe, servings, brandPreference, plan, planSavedAt, deselected]);
+    writeRecipeDraft({ siteType, recipe, servings, brandPreference, plan, planSavedAt, deselected, includePantry });
+  }, [siteType, recipe, servings, brandPreference, plan, planSavedAt, deselected, includePantry]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -471,6 +474,8 @@ function GroceryRecipeBasket() {
       if (active.current && !controller.signal.aborted) {
         setPlan(result);
         setPlanSavedAt(Date.now());
+        // Pantry extras start outside the selection when the customer asked for main ingredients only.
+        if (!includePantry) setDeselected(result.items.filter((item) => item.essential === false).map(itemKey));
       }
     } catch (e) {
       if (active.current && !controller.signal.aborted) setError(e instanceof Error ? e.message : t('recipe.planError'));
@@ -536,6 +541,19 @@ function GroceryRecipeBasket() {
       ...previous,
       ...planItems.filter((entry) => entry.productId === item.productId).map(itemKey),
     ])]);
+  };
+
+  // Pantry extras move in and out of the selection without regenerating the preview.
+  const togglePantry = (checked: boolean) => {
+    setIncludePantry(checked);
+    if (selectionLocked) return;
+    setCommitError('');
+    const pantryKeys = planItems
+      .filter((item) => item.essential === false && (!checked || !scopeOf(item.productId)))
+      .map(itemKey);
+    setDeselected((previous) => checked
+      ? previous.filter((entry) => !pantryKeys.includes(entry))
+      : [...new Set([...previous, ...pantryKeys])]);
   };
 
   const confirmPlan = async () => {
@@ -693,6 +711,16 @@ function GroceryRecipeBasket() {
                 ))}
               </RadioGroup>
             </FormControl>
+            <Box sx={{ mb: 3 }}>
+              <FormControlLabel
+                control={<Checkbox checked={includePantry} disabled={formDisabled} name="recipe-include-pantry"
+                  onChange={(event) => togglePantry(event.target.checked)} />}
+                label={<Typography variant="body2" fontWeight={600}>{t('recipe.pantry')}</Typography>}
+                sx={{ m: 0, alignItems: 'flex-start', '& .MuiCheckbox-root': { pt: 0.25 } }} />
+              <Typography variant="caption" color="text.secondary" component="p" sx={{ mt: 0.5 }}>
+                {t('recipe.pantryHelp')}
+              </Typography>
+            </Box>
             <HiddenProductsSection hidden={hidden} open={showHidden} disabled={formDisabled}
               onToggle={() => setShowHidden((open) => !open)} onUnhide={unhide} />
             {error && <Alert severity="error" sx={{ mb: 2 }}><AlertTitle>{t('recipe.planError')}</AlertTitle>{error}</Alert>}

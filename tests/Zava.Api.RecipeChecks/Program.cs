@@ -78,6 +78,9 @@ try
     Assert(options.GetProperty("available").GetBoolean() && options.GetProperty("suggestions").GetArrayLength() == 7, "options");
     var plan = await Plan("National", trailingSlash: true);
     Assert(plan.GetProperty("items").GetArrayLength() == 2 && plan.GetProperty("total").GetDecimal() == 23m, "authoritative prices and duplicate aggregation");
+    Assert(plan.GetProperty("items")[0].GetProperty("essential").GetBoolean()
+        && !plan.GetProperty("items")[1].GetProperty("essential").GetBoolean(),
+        "pantry extras are flagged for the browser, and a pack also covering a main ingredient stays a main product");
     Assert((await client.GetFromJsonAsync<JsonElement>("/api/cart")).GetProperty("itemCount").GetInt32() == 0, "preview does not mutate");
     var id = plan.GetProperty("planId").GetString()!;
     var commits = await Task.WhenAll(Enumerable.Range(0, 8).Select(_ => client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = id })));
@@ -103,9 +106,13 @@ try
     await client.DeleteAsync("/api/cart");
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", excludedProductIds = new[] { 0 } }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", excludedProductIds = Enumerable.Range(1, 101).ToArray() }), 400);
+    fake.Mode = "legacy";
     var staleResponse = await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", excludedProductIds = new[] { 9001 } });
     await Expect(staleResponse, 200);
     var stale = await staleResponse.Content.ReadFromJsonAsync<JsonElement>();
+    Assert(stale.GetProperty("items").EnumerateArray().All(item => item.GetProperty("essential").GetBoolean()),
+        "ingredients from an agent version without staple detection stay main products");
+    fake.Mode = "normal";
     Assert(fake.LastProductIds.SequenceEqual(new[] { 9002 }), "products the shopper must never suggest again leave the catalogue sent to the AI");
     await client.PostAsync("/api/config/reset", null);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/commit", new { planId = stale.GetProperty("planId").GetString() }), 409);
@@ -138,7 +145,7 @@ try
     fake.Mode = "timeout";
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 504);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 429);
-    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, authoritative cross-sell, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, stock atomicity, stale reset, preference, timeout and quota.");
+    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, authoritative cross-sell, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, staple flags, stock atomicity, stale reset, preference, timeout and quota.");
 }
 finally
 {
@@ -267,7 +274,13 @@ sealed class FakeFoundry : HttpMessageHandler
         var agent = root.GetProperty("agent_reference").GetProperty("name").GetString();
         object output;
         if (agent == "recipe-planner")
-            output = new { ingredients = new[] { new { name = "pâtes", quantity = 500, unit = "g" }, new { name = "tomates", quantity = 200, unit = "g" }, new { name = "bœuf", quantity = 300, unit = "g" } } };
+            // "legacy" reproduces an agent version deployed before staple detection, which omits essential.
+            output = Mode == "legacy"
+                ? new { ingredients = new[] { new { name = "pâtes", quantity = 500, unit = "g" }, new { name = "tomates", quantity = 200, unit = "g" }, new { name = "bœuf", quantity = 300, unit = "g" } } }
+                : (object)new { ingredients = new[] {
+                    new { name = "pâtes", quantity = 500, unit = "g", essential = true },
+                    new { name = "tomates", quantity = 200, unit = "g", essential = false },
+                    new { name = "bœuf", quantity = 300, unit = "g", essential = false } } };
         else if (agent == "recipe-shopper")
         {
             using var input = JsonDocument.Parse(root.GetProperty("input").GetString()!);

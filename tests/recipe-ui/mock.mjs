@@ -125,10 +125,10 @@ http.createServer(async (req, res) => {
     if (settings.planFailures-- > 0) return send(res, 503, { message: 'Réessayez la préparation dans un instant.' });
     const excluded = new Set(body.excludedProductIds ?? []);
     const items = settings.empty ? [] : [
-      { productId: 101, productName: 'Pâtes à lasagnes aux œufs', variantId: 1001, variantName: 'Paquet de 500 g', quantity: 1, unitPrice: 2.49, subtotal: 2.49, ingredient: 'Feuilles de lasagnes' },
-      { productId: 102, productName: 'Pur bœuf haché 15 % MG', variantId: 1002, variantName: 'Barquette de 350 g', quantity: 2, unitPrice: 4.9, subtotal: 9.8, ingredient: 'Bœuf haché' },
-      { productId: 103, productName: 'Tomates concassées', variantId: null, variantName: null, quantity: 2, unitPrice: 1.25, subtotal: 2.5, ingredient: 'Tomates' },
-      { productId: 104, productName: 'Emmental râpé', variantId: 1004, variantName: 'Sachet de 200 g', quantity: 1, unitPrice: 2.19, subtotal: 2.19, ingredient: 'Fromage râpé' },
+      { productId: 101, productName: 'Pâtes à lasagnes aux œufs', variantId: 1001, variantName: 'Paquet de 500 g', quantity: 1, unitPrice: 2.49, subtotal: 2.49, ingredient: 'Feuilles de lasagnes', essential: true },
+      { productId: 102, productName: 'Pur bœuf haché 15 % MG', variantId: 1002, variantName: 'Barquette de 350 g', quantity: 2, unitPrice: 4.9, subtotal: 9.8, ingredient: 'Bœuf haché', essential: true },
+      { productId: 103, productName: 'Tomates concassées', variantId: null, variantName: null, quantity: 2, unitPrice: 1.25, subtotal: 2.5, ingredient: 'Tomates', essential: true },
+      { productId: 104, productName: 'Huile d’olive vierge extra', variantId: 1004, variantName: 'Bouteille de 50 cl', quantity: 1, unitPrice: 2.19, subtotal: 2.19, ingredient: 'Huile d’olive', essential: false },
     ].filter(item => !excluded.has(item.productId));
     const plan = {
       planId: `plan-${plans.size + 1}`, ...body, items,
