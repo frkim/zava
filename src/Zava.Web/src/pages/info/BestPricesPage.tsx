@@ -8,7 +8,7 @@ export default function BestPricesPage() {
     <InfoPage
       heroTitleKey="info.bestprices.heroTitle"
       heroSubtitleKey="info.bestprices.heroSubtitle"
-      heroGradient="linear-gradient(135deg, #c62828 0%, #ef5350 100%)"
+      heroGradientStops={['#c62828', '#ef5350']}
       heroIcon={<PriceCheck />}
       sections={[
         { titleKey: 'info.bestprices.matchTitle', descKey: 'info.bestprices.matchDesc', icon: <Balance /> },

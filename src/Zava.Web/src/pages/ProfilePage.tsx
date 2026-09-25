@@ -1,58 +1,177 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   Typography, Box, Paper, TextField, Button, Grid, Switch,
-  FormControlLabel, CircularProgress, Alert, Snackbar, Divider, Chip,
-  Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
-  Tabs, Tab, RadioGroup, Radio, FormControl, FormLabel,
+  FormControlLabel, Divider, Chip, Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
+  Tabs, Tab, RadioGroup, Radio, FormControl, FormLabel, Alert, CircularProgress, Link,
 } from '@mui/material';
 import {
   Person, LocalShipping, Payment, ShoppingBag, Home, Store, Lock,
-  DirectionsCar, Speed, CreditCard, AccountBalanceWallet,
+  DirectionsCar, Speed, CreditCard, AccountBalanceWallet, Save,
 } from '@mui/icons-material';
 import { getUser, updateUser, getOrders } from '../api';
-import type { User, Order, DeliveryMethod, PaymentMethod as PaymentMethodType } from '../types';
-import { useLanguage } from '../context/LanguageContext';
+import type { User, Order, DeliveryMethod, PaymentMethod as PaymentMethodType, Address } from '../types';
+import { useFormatters, useLanguage } from '../context/LanguageContext';
+import { useFeedback } from '../context/FeedbackContext';
 import type { TranslationKey } from '../i18n';
+import PageTitle from '../components/PageTitle';
+import { EmptyState, ErrorState, LoadingState } from '../components/PageState';
 
 interface TabPanelProps {
   children: React.ReactNode;
   value: number;
   index: number;
+  id: string;
+  labelledBy: string;
 }
 
-function TabPanel({ children, value, index }: TabPanelProps) {
-  return value === index ? <Box sx={{ py: 3 }}>{children}</Box> : null;
+function TabPanel({ children, value, index, id, labelledBy }: TabPanelProps) {
+  return (
+    <Box id={id} role="tabpanel" aria-labelledby={labelledBy} hidden={value !== index} sx={{ py: 3 }}>
+      {value === index && children}
+    </Box>
+  );
+}
+
+const blankAddress = (): Address => ({ street: '', city: '', postalCode: '', country: '' });
+
+function text(value: string | null | undefined) {
+  return value?.trim() ?? '';
+}
+
+function serialiseUser(user: User) {
+  return JSON.stringify(user);
+}
+
+function trimmedUser(user: User): User {
+  return {
+    ...user,
+    firstName: text(user.firstName),
+    lastName: text(user.lastName),
+    email: text(user.email),
+    phone: text(user.phone),
+    shippingAddress: {
+      ...(user.shippingAddress ?? blankAddress()),
+      street: text(user.shippingAddress?.street),
+      city: text(user.shippingAddress?.city),
+      postalCode: text(user.shippingAddress?.postalCode),
+      country: text(user.shippingAddress?.country),
+    },
+  };
 }
 
 export default function ProfilePage() {
-  const navigate = useNavigate();
-  const { lang, t } = useLanguage();
-  const [user, setUser] = useState<User | null>(null);
+  const { t } = useLanguage();
+  const { price, date } = useFormatters();
+  const { notify } = useFeedback();
+  const [form, setForm] = useState<User | null>(null);
+  const formRef = useRef<User | null>(null);
+  const saveSeq = useRef(0);
   const [orders, setOrders] = useState<Order[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [snackbar, setSnackbar] = useState('');
+  const [userLoading, setUserLoading] = useState(true);
+  const [ordersLoading, setOrdersLoading] = useState(true);
+  const [userError, setUserError] = useState<string | null>(null);
+  const [ordersError, setOrdersError] = useState<string | null>(null);
+  const [userAttempt, setUserAttempt] = useState(0);
+  const [ordersAttempt, setOrdersAttempt] = useState(0);
+  const [saving, setSaving] = useState(false);
+  const [saveMessage, setSaveMessage] = useState<{ severity: 'success' | 'error'; text: string } | null>(null);
   const [tab, setTab] = useState(0);
 
-  useEffect(() => {
-    Promise.all([getUser(), getOrders()])
-      .then(([u, o]) => { setUser(u); setOrders(o); })
-      .finally(() => setLoading(false));
-  }, []);
+  useEffect(() => { formRef.current = form; }, [form]);
+  // Kept in a ref so that switching language never reloads the profile over unsaved edits.
+  const tRef = useRef(t);
+  useEffect(() => { tRef.current = t; }, [t]);
 
-  const handleSave = async () => {
-    if (!user) return;
-    try {
-      const updated = await updateUser(user);
-      setUser(updated);
-      setSnackbar(t('profile.saved'));
-    } catch {
-      setSnackbar(t('profile.saveError'));
-    }
+  useEffect(() => {
+    let active = true;
+    setUserLoading(true);
+    setUserError(null);
+    getUser()
+      .then((user) => {
+        if (!active) return;
+        setForm(user);
+      })
+      .catch((error: unknown) => {
+        if (active) setUserError(error instanceof Error ? error.message : tRef.current('profile.userNotFound'));
+      })
+      .finally(() => {
+        if (active) setUserLoading(false);
+      });
+    return () => { active = false; };
+  }, [userAttempt]);
+
+  useEffect(() => {
+    let active = true;
+    setOrdersLoading(true);
+    setOrdersError(null);
+    getOrders()
+      .then((nextOrders) => {
+        if (active) setOrders(nextOrders);
+      })
+      .catch((error: unknown) => {
+        if (active) setOrdersError(error instanceof Error ? error.message : tRef.current('common.error'));
+      })
+      .finally(() => {
+        if (active) setOrdersLoading(false);
+      });
+    return () => { active = false; };
+  }, [ordersAttempt]);
+
+  const errors = useMemo(() => {
+    if (!form) return {} as Record<string, string>;
+    return {
+      firstName: text(form.firstName) ? '' : t('sec.profile.required'),
+      lastName: text(form.lastName) ? '' : t('sec.profile.required'),
+      email: text(form.email) ? '' : t('sec.profile.required'),
+      phone: text(form.phone) ? '' : t('sec.profile.required'),
+      street: text(form.shippingAddress?.street) ? '' : t('sec.profile.required'),
+      city: text(form.shippingAddress?.city) ? '' : t('sec.profile.required'),
+      postalCode: text(form.shippingAddress?.postalCode) ? '' : t('sec.profile.required'),
+      country: text(form.shippingAddress?.country) ? '' : t('sec.profile.required'),
+    };
+  }, [form, t]);
+
+  const hasErrors = Object.values(errors).some(Boolean);
+
+  const setField = <Key extends keyof User>(key: Key, value: User[Key]) => {
+    setForm((current) => current ? { ...current, [key]: value } : current);
   };
 
-  if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
-  if (!user) return <Alert severity="error">{t('profile.userNotFound')}</Alert>;
+  const setAddressField = <Key extends keyof Address>(key: Key, value: Address[Key]) => {
+    setForm((current) => current ? {
+      ...current,
+      shippingAddress: { ...(current.shippingAddress ?? blankAddress()), [key]: value },
+    } : current);
+  };
+
+  const handleSave = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!form || saving || hasErrors) return;
+    const seq = saveSeq.current + 1;
+    saveSeq.current = seq;
+    const submitted = trimmedUser(form);
+    const snapshot = serialiseUser(submitted);
+    setSaving(true);
+    setSaveMessage(null);
+    try {
+      const updated = await updateUser(submitted);
+      if (seq !== saveSeq.current) return;
+      const latest = formRef.current;
+      const unchanged = latest ? serialiseUser(trimmedUser(latest)) === snapshot : true;
+      if (unchanged) setForm(updated);
+      const message = unchanged ? t('sec.profile.saveSuccess') : t('sec.profile.saveLocalEdits');
+      setSaveMessage({ severity: 'success', text: message });
+      notify({ severity: 'success', message });
+    } catch (error: unknown) {
+      if (seq !== saveSeq.current) return;
+      const message = error instanceof Error ? error.message : t('sec.profile.saveError');
+      setSaveMessage({ severity: 'error', text: message });
+      notify({ severity: 'error', message });
+    } finally {
+      if (seq === saveSeq.current) setSaving(false);
+    }
+  };
 
   const statusColors: Record<string, 'default' | 'warning' | 'info' | 'success' | 'error'> = {
     Pending: 'warning', Processing: 'info', Shipped: 'info', Delivered: 'success', Cancelled: 'error',
@@ -79,156 +198,181 @@ export default function ProfilePage() {
     { value: 'GiftCard', labelKey: 'profile.payment.giftCard', icon: <CreditCard /> },
   ];
 
+  const disabled = saving || userLoading || !form;
+
   return (
     <Box>
-      <Typography variant="h5" sx={{ mb: 3 }}>{t('profile.title')}</Typography>
+      <PageTitle>{t('profile.title')}</PageTitle>
 
-      <Paper sx={{ mb: 3 }}>
-        <Tabs value={tab} onChange={(_, v) => setTab(v)} variant="fullWidth">
-          <Tab icon={<Person />} iconPosition="start" label={t('profile.tab.personal')} />
-          <Tab icon={<LocalShipping />} iconPosition="start" label={t('profile.tab.delivery')} />
-          <Tab icon={<Payment />} iconPosition="start" label={t('profile.tab.payment')} />
-        </Tabs>
+      {userLoading && !form && <LoadingState label={t('sec.profile.loadingUser')} />}
+      {userError && <ErrorState title={t('sec.profile.userError')} detail={userError} onRetry={() => setUserAttempt((attempt) => attempt + 1)} />}
 
-        {/* Tab 0 — Personal information */}
-        <TabPanel value={tab} index={0}>
-          <Box sx={{ p: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-              <Person sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
-              <Box>
-                <Typography variant="h6">{t('profile.personalInfo')}</Typography>
-                <Typography variant="body2" color="text.secondary">{user.firstName} {user.lastName}</Typography>
+      {form && (
+        <Paper component="form" onSubmit={handleSave} sx={{ mb: 3 }} noValidate>
+          <Tabs value={tab} onChange={(_, value) => setTab(value)} variant="fullWidth" aria-label={t('profile.title')}>
+            <Tab id="profile-tab-personal" aria-controls="profile-panel-personal" icon={<Person />} iconPosition="start" label={t('profile.tab.personal')} />
+            <Tab id="profile-tab-delivery" aria-controls="profile-panel-delivery" icon={<LocalShipping />} iconPosition="start" label={t('profile.tab.delivery')} />
+            <Tab id="profile-tab-payment" aria-controls="profile-panel-payment" icon={<Payment />} iconPosition="start" label={t('profile.tab.payment')} />
+          </Tabs>
+
+          <TabPanel value={tab} index={0} id="profile-panel-personal" labelledBy="profile-tab-personal">
+            <Box sx={{ p: 3 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <Person sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+                <Box>
+                  <Typography component="h2" variant="h6">{t('profile.personalInfo')}</Typography>
+                  <Typography variant="body2" color="text.secondary">{form.firstName} {form.lastName}</Typography>
+                </Box>
               </Box>
+              <Grid container spacing={2}>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth required disabled={disabled} label={t('profile.firstName')} value={form.firstName}
+                    autoComplete="given-name" error={!!errors.firstName} helperText={errors.firstName || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.firstName } }}
+                    onChange={(event) => setField('firstName', event.target.value)} />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth required disabled={disabled} label={t('profile.lastName')} value={form.lastName}
+                    autoComplete="family-name" error={!!errors.lastName} helperText={errors.lastName || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.lastName } }}
+                    onChange={(event) => setField('lastName', event.target.value)} />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth required disabled={disabled} type="email" label={t('profile.email')} value={form.email}
+                    autoComplete="email" error={!!errors.email} helperText={errors.email || t('sec.profile.emailHelp')}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.email } }}
+                    onChange={(event) => setField('email', event.target.value)} />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth required disabled={disabled} type="tel" label={t('profile.phone')} value={form.phone}
+                    autoComplete="tel" error={!!errors.phone} helperText={errors.phone || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.phone } }}
+                    onChange={(event) => setField('phone', event.target.value)} />
+                </Grid>
+              </Grid>
+              <FormControlLabel
+                control={<Switch checked={form.isPremium} disabled={disabled} onChange={(event) => setField('isPremium', event.target.checked)} />}
+                label={t('profile.premium')}
+                sx={{ mt: 2 }}
+              />
             </Box>
-            <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('profile.firstName')} value={user.firstName}
-                  onChange={(e) => setUser({ ...user, firstName: e.target.value })} />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('profile.lastName')} value={user.lastName}
-                  onChange={(e) => setUser({ ...user, lastName: e.target.value })} />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('profile.email')} value={user.email}
-                  onChange={(e) => setUser({ ...user, email: e.target.value })} />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('profile.phone')} value={user.phone}
-                  onChange={(e) => setUser({ ...user, phone: e.target.value })} />
-              </Grid>
-            </Grid>
-            <FormControlLabel
-              control={<Switch checked={user.isPremium} onChange={(e) => setUser({ ...user, isPremium: e.target.checked })} />}
-              label={t('profile.premium')}
-              sx={{ mt: 2 }}
-            />
-          </Box>
-        </TabPanel>
+          </TabPanel>
 
-        {/* Tab 1 — Delivery address + preferred method */}
-        <TabPanel value={tab} index={1}>
-          <Box sx={{ p: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-              <LocalShipping sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
-              <Box>
-                <Typography variant="h6">{t('profile.shippingAddress')}</Typography>
-                <Typography variant="body2" color="text.secondary">{user.shippingAddress?.city ?? ''}</Typography>
+          <TabPanel value={tab} index={1} id="profile-panel-delivery" labelledBy="profile-tab-delivery">
+            <Box sx={{ p: 3 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <LocalShipping sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+                <Box>
+                  <Typography component="h2" variant="h6">{t('profile.shippingAddress')}</Typography>
+                  <Typography variant="body2" color="text.secondary">{form.shippingAddress?.city ?? ''}</Typography>
+                </Box>
               </Box>
+              <Grid container spacing={2}>
+                <Grid size={{ xs: 12 }}>
+                  <TextField fullWidth required disabled={disabled} label={t('checkout.street')} value={form.shippingAddress?.street ?? ''}
+                    autoComplete="street-address" error={!!errors.street} helperText={errors.street || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.street } }}
+                    onChange={(event) => setAddressField('street', event.target.value)} />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 5 }}>
+                  <TextField fullWidth required disabled={disabled} label={t('checkout.city')} value={form.shippingAddress?.city ?? ''}
+                    autoComplete="address-level2" error={!!errors.city} helperText={errors.city || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.city } }}
+                    onChange={(event) => setAddressField('city', event.target.value)} />
+                </Grid>
+                <Grid size={{ xs: 6, sm: 3 }}>
+                  <TextField fullWidth required disabled={disabled} label={t('common.postalCodeShort')} value={form.shippingAddress?.postalCode ?? ''}
+                    autoComplete="postal-code" error={!!errors.postalCode} helperText={errors.postalCode || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.postalCode } }}
+                    onChange={(event) => setAddressField('postalCode', event.target.value)} />
+                </Grid>
+                <Grid size={{ xs: 6, sm: 4 }}>
+                  <TextField fullWidth required disabled={disabled} label={t('checkout.country')} value={form.shippingAddress?.country ?? ''}
+                    autoComplete="country-name" error={!!errors.country} helperText={errors.country || ' '}
+                    slotProps={{ htmlInput: { 'aria-invalid': !!errors.country } }}
+                    onChange={(event) => setAddressField('country', event.target.value)} />
+                </Grid>
+              </Grid>
+
+              <Divider sx={{ my: 3 }} />
+
+              <FormControl component="fieldset" disabled={disabled}>
+                <FormLabel component="legend" sx={{ mb: 1, fontWeight: 600 }}>{t('profile.deliveryMethod')}</FormLabel>
+                <RadioGroup
+                  value={form.preferredDeliveryMethod}
+                  onChange={(event) => setField('preferredDeliveryMethod', event.target.value as DeliveryMethod)}
+                >
+                  {deliveryOptions.map((opt) => (
+                    <FormControlLabel key={opt.value} value={opt.value} control={<Radio />}
+                      label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>{opt.icon} {t(opt.labelKey)}</Box>} />
+                  ))}
+                </RadioGroup>
+              </FormControl>
             </Box>
-            <Grid container spacing={2}>
-              <Grid size={{ xs: 12 }}>
-                <TextField fullWidth label={t('checkout.street')} value={user.shippingAddress?.street ?? ''}
-                  onChange={(e) => setUser({ ...user, shippingAddress: { ...user.shippingAddress!, street: e.target.value } })} />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 5 }}>
-                <TextField fullWidth label={t('checkout.city')} value={user.shippingAddress?.city ?? ''}
-                  onChange={(e) => setUser({ ...user, shippingAddress: { ...user.shippingAddress!, city: e.target.value } })} />
-              </Grid>
-              <Grid size={{ xs: 6, sm: 3 }}>
-                <TextField fullWidth label={t('common.postalCodeShort')} value={user.shippingAddress?.postalCode ?? ''}
-                  onChange={(e) => setUser({ ...user, shippingAddress: { ...user.shippingAddress!, postalCode: e.target.value } })} />
-              </Grid>
-              <Grid size={{ xs: 6, sm: 4 }}>
-                <TextField fullWidth label={t('checkout.country')} value={user.shippingAddress?.country ?? ''}
-                  onChange={(e) => setUser({ ...user, shippingAddress: { ...user.shippingAddress!, country: e.target.value } })} />
-              </Grid>
-            </Grid>
+          </TabPanel>
 
-            <Divider sx={{ my: 3 }} />
-
-            <FormControl component="fieldset">
-              <FormLabel component="legend" sx={{ mb: 1, fontWeight: 600 }}>{t('profile.deliveryMethod')}</FormLabel>
-              <RadioGroup
-                value={user.preferredDeliveryMethod}
-                onChange={(e) => setUser({ ...user, preferredDeliveryMethod: e.target.value as DeliveryMethod })}
-              >
-                {deliveryOptions.map((opt) => (
-                  <FormControlLabel key={opt.value} value={opt.value} control={<Radio />}
-                    label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>{opt.icon} {t(opt.labelKey)}</Box>} />
-                ))}
-              </RadioGroup>
-            </FormControl>
-          </Box>
-        </TabPanel>
-
-        {/* Tab 2 — Payment info + preferred method */}
-        <TabPanel value={tab} index={2}>
-          <Box sx={{ p: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-              <Payment sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
-              <Box>
-                <Typography variant="h6">{t('profile.paymentInfo')}</Typography>
-                <Typography variant="body2" color="text.secondary">{user.paymentInfo?.cardType ?? ''} ····{user.paymentInfo?.lastFourDigits ?? ''}</Typography>
+          <TabPanel value={tab} index={2} id="profile-panel-payment" labelledBy="profile-tab-payment">
+            <Box sx={{ p: 3 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <Payment sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
+                <Box>
+                  <Typography component="h2" variant="h6">{t('profile.paymentInfo')}</Typography>
+                  <Typography variant="body2" color="text.secondary">{form.paymentInfo?.cardType ?? ''} ····{form.paymentInfo?.lastFourDigits ?? ''}</Typography>
+                </Box>
               </Box>
+              <Grid container spacing={2}>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth label={t('profile.cardType')} value={form.paymentInfo?.cardType ?? ''} disabled autoComplete="cc-type" />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth label={t('profile.lastDigits')} value={form.paymentInfo?.lastFourDigits ?? ''} disabled autoComplete="cc-number" />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth label={t('checkout.cardHolder')} value={form.paymentInfo?.cardHolderName ?? ''} disabled autoComplete="cc-name" />
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }}>
+                  <TextField fullWidth label={t('checkout.cardExpiry')} value={form.paymentInfo?.expiryDate ?? ''} disabled autoComplete="cc-exp" />
+                </Grid>
+              </Grid>
+
+              <Divider sx={{ my: 3 }} />
+
+              <FormControl component="fieldset" disabled={disabled}>
+                <FormLabel component="legend" sx={{ mb: 1, fontWeight: 600 }}>{t('profile.paymentMethod')}</FormLabel>
+                <RadioGroup
+                  value={form.preferredPaymentMethod}
+                  onChange={(event) => setField('preferredPaymentMethod', event.target.value as PaymentMethodType)}
+                >
+                  {paymentOptions.map((opt) => (
+                    <FormControlLabel key={opt.value} value={opt.value} control={<Radio />}
+                      label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>{opt.icon} {t(opt.labelKey)}</Box>} />
+                  ))}
+                </RadioGroup>
+              </FormControl>
             </Box>
-            <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('profile.cardType')} value={user.paymentInfo?.cardType ?? ''} disabled />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('profile.lastDigits')} value={user.paymentInfo?.lastFourDigits ?? ''} disabled />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('checkout.cardHolder')} value={user.paymentInfo?.cardHolderName ?? ''} disabled />
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <TextField fullWidth label={t('checkout.cardExpiry')} value={user.paymentInfo?.expiryDate ?? ''} disabled />
-              </Grid>
-            </Grid>
+          </TabPanel>
 
-            <Divider sx={{ my: 3 }} />
-
-            <FormControl component="fieldset">
-              <FormLabel component="legend" sx={{ mb: 1, fontWeight: 600 }}>{t('profile.paymentMethod')}</FormLabel>
-              <RadioGroup
-                value={user.preferredPaymentMethod}
-                onChange={(e) => setUser({ ...user, preferredPaymentMethod: e.target.value as PaymentMethodType })}
-              >
-                {paymentOptions.map((opt) => (
-                  <FormControlLabel key={opt.value} value={opt.value} control={<Radio />}
-                    label={<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>{opt.icon} {t(opt.labelKey)}</Box>} />
-                ))}
-              </RadioGroup>
-            </FormControl>
+          {saveMessage && <Alert severity={saveMessage.severity} sx={{ mx: 3, mb: 2 }}>{saveMessage.text}</Alert>}
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 3, pt: 0 }}>
+            <Button type="submit" variant="contained" disabled={disabled || hasErrors} startIcon={saving ? <CircularProgress size={18} color="inherit" /> : <Save />}>
+              {saving ? t('sec.profile.saving') : t('profile.save')}
+            </Button>
           </Box>
-        </TabPanel>
-      </Paper>
-
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 3 }}>
-        <Button variant="contained" onClick={handleSave}>{t('profile.save')}</Button>
-      </Box>
+        </Paper>
+      )}
 
       <Divider sx={{ my: 4 }} />
 
-      {/* Orders */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
         <ShoppingBag sx={{ fontSize: 48, color: 'primary.main', opacity: 0.8 }} />
-        <Typography variant="h5">{t('profile.orders')}</Typography>
+        <Typography component="h2" variant="h5">{t('profile.orders')}</Typography>
       </Box>
-      {orders.length === 0 ? (
-        <Alert severity="info">{t('profile.noOrders')}</Alert>
-      ) : (
+      {ordersLoading && <LoadingState label={t('sec.profile.loadingOrders')} />}
+      {ordersError && <ErrorState title={t('sec.profile.ordersError')} detail={ordersError} onRetry={() => setOrdersAttempt((attempt) => attempt + 1)} />}
+      {!ordersLoading && !ordersError && orders.length === 0 && (
+        <EmptyState title={t('profile.noOrders')} description={t('sec.profile.noOrdersDesc')} icon={<ShoppingBag />} />
+      )}
+      {!ordersLoading && !ordersError && orders.length > 0 && (
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
@@ -243,12 +387,15 @@ export default function ProfilePage() {
             </TableHead>
             <TableBody>
               {orders.map((order) => (
-                <TableRow key={order.id} hover sx={{ cursor: 'pointer' }}
-                  onClick={() => navigate(`/orders/${order.id}`)}>
-                  <TableCell>{order.id}</TableCell>
-                  <TableCell>{new Date(order.createdAt).toLocaleDateString(lang === 'en' ? 'en-GB' : 'fr-FR')}</TableCell>
+                <TableRow key={order.id} hover>
+                  <TableCell>
+                    <Link component={RouterLink} to={`/orders/${order.id}`} aria-label={`${t('sec.profile.openOrder')} ${order.id}`}>
+                      {order.id}
+                    </Link>
+                  </TableCell>
+                  <TableCell>{date(order.createdAt)}</TableCell>
                   <TableCell>{order.items.length} {order.items.length > 1 ? t('cart.articles') : t('cart.article')}</TableCell>
-                  <TableCell align="right">{order.total.toFixed(2)} €</TableCell>
+                  <TableCell align="right">{price(order.total)}</TableCell>
                   <TableCell>
                     <Chip label={statusLabels[order.status] ?? order.status} size="small"
                       color={statusColors[order.status] ?? 'default'} />
@@ -262,8 +409,6 @@ export default function ProfilePage() {
           </Table>
         </TableContainer>
       )}
-
-      <Snackbar open={!!snackbar} autoHideDuration={3000} onClose={() => setSnackbar('')} message={snackbar} />
     </Box>
   );
 }

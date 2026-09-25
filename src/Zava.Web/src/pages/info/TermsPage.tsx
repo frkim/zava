@@ -6,7 +6,7 @@ export default function TermsPage() {
     <InfoPage
       heroTitleKey="info.terms.title"
       heroSubtitleKey="info.terms.lastUpdate"
-      heroGradient="linear-gradient(135deg, #37474f 0%, #78909c 100%)"
+      heroGradientStops={['#37474f', '#78909c']}
       sections={[
         { titleKey: 'info.terms.s1Title', descKey: 'info.terms.s1Desc' },
         { titleKey: 'info.terms.s2Title', descKey: 'info.terms.s2Desc' },

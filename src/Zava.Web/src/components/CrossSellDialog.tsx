@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Dialog, DialogTitle, DialogContent, DialogActions, Button, Box, Typography,
-  Card, CardContent, Stack, Chip, Divider, IconButton, Alert,
+  Card, CardContent, Stack, Chip, Divider, IconButton, Alert, CircularProgress,
 } from '@mui/material';
 import { Close, ShoppingCart, Shield, LocalOffer, CheckCircle } from '@mui/icons-material';
-import { addToCart, addWarrantyToCart } from '../api';
+import { addCrossSellToCart, addWarrantyToCart } from '../api';
 import type { CrossSellOffer } from '../types';
-import { useLanguage } from '../context/LanguageContext';
+import { useFormatters, useLanguage } from '../context/LanguageContext';
+import { publishCart } from '../cartEvents';
 
 interface CrossSellDialogProps {
   open: boolean;
@@ -20,28 +21,49 @@ interface CrossSellDialogProps {
 export default function CrossSellDialog({ open, onClose, offer, productId, productName }: CrossSellDialogProps) {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
+  const { price } = useFormatters();
   const [complementAdded, setComplementAdded] = useState(false);
   const [warrantyAdded, setWarrantyAdded] = useState(false);
+  const [complementPending, setComplementPending] = useState(false);
+  const [warrantyPending, setWarrantyPending] = useState(false);
+  const [error, setError] = useState('');
 
   const handleAddComplement = async () => {
-    if (!offer.complementaryProduct) return;
+    if (!offer.complementaryProduct || complementPending) return;
+    setComplementPending(true);
+    setError('');
     try {
-      await addToCart(offer.complementaryProduct.product.id, 1);
+      const cart = await addCrossSellToCart(productId);
+      publishCart(cart);
       setComplementAdded(true);
-    } catch { /* ignore */ }
+    } catch (e) {
+      const detail = e instanceof Error ? e.message : String(e);
+      setError(`${t('com.crossSell.addError')} ${detail}`);
+    } finally {
+      setComplementPending(false);
+    }
   };
 
   const handleAddWarranty = async () => {
-    if (!offer.warranty) return;
+    if (!offer.warranty || warrantyPending) return;
+    setWarrantyPending(true);
+    setError('');
     try {
-      await addWarrantyToCart(productId);
+      const cart = await addWarrantyToCart(productId);
+      publishCart(cart);
       setWarrantyAdded(true);
-    } catch { /* ignore */ }
+    } catch (e) {
+      const detail = e instanceof Error ? e.message : String(e);
+      setError(`${t('com.crossSell.warrantyError')} ${detail}`);
+    } finally {
+      setWarrantyPending(false);
+    }
   };
 
   const handleClose = () => {
     setComplementAdded(false);
     setWarrantyAdded(false);
+    setError('');
     onClose();
   };
 
@@ -64,6 +86,7 @@ export default function CrossSellDialog({ open, onClose, offer, productId, produ
         <Alert severity="success" sx={{ mb: 2 }} icon={<ShoppingCart />}>
           <strong>{productName}</strong>
         </Alert>
+        {error && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setError('')}>{error}</Alert>}
 
         <Stack spacing={3}>
           {/* Complementary product */}
@@ -96,10 +119,10 @@ export default function CrossSellDialog({ open, onClose, offer, productId, produ
                           color="error"
                         />
                         <Typography variant="h6" color="primary" fontWeight={700}>
-                          {comp.discountedPrice.toFixed(2)} €
+                          {price(comp.discountedPrice)}
                         </Typography>
                         <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
-                          {(comp.product.promoPrice ?? comp.product.price).toFixed(2)} €
+                          {price(comp.product.promoPrice ?? comp.product.price)}
                         </Typography>
                       </Stack>
                     </Box>
@@ -112,9 +135,10 @@ export default function CrossSellDialog({ open, onClose, offer, productId, produ
                         variant="contained"
                         size="small"
                         startIcon={<ShoppingCart />}
+                        disabled={complementPending}
                         onClick={handleAddComplement}
                       >
-                        {t('crossSell.addComplement')} — {comp.discountedPrice.toFixed(2)} €
+                        {complementPending ? t('com.crossSell.adding') : `${t('crossSell.addComplement')} — ${price(comp.discountedPrice)}`}
                       </Button>
                     )}
                   </Box>
@@ -143,7 +167,7 @@ export default function CrossSellDialog({ open, onClose, offer, productId, produ
                         {lang === 'en' ? warranty.descriptionEn : warranty.description}
                       </Typography>
                       <Typography variant="h6" color="warning.dark" fontWeight={700} sx={{ mt: 1 }}>
-                        {warranty.price.toFixed(2)} €
+                        {price(warranty.price)}
                       </Typography>
                     </Box>
                   </Stack>
@@ -155,10 +179,11 @@ export default function CrossSellDialog({ open, onClose, offer, productId, produ
                         variant="contained"
                         color="warning"
                         size="small"
-                        startIcon={<Shield />}
+                        startIcon={warrantyPending ? <CircularProgress size={16} color="inherit" /> : <Shield />}
+                        disabled={warrantyPending}
                         onClick={handleAddWarranty}
                       >
-                        {t('crossSell.addWarranty')} — {warranty.price.toFixed(2)} €
+                        {warrantyPending ? t('com.crossSell.warrantyAdding') : `${t('crossSell.addWarranty')} — ${price(warranty.price)}`}
                       </Button>
                     )}
                   </Box>

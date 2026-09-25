@@ -6,7 +6,7 @@ const STORAGE_KEYS: Record<RecipeHideScope, string> = {
   forever: 'zava-recipe-hidden-forever',
 };
 // The API refuses longer exclusion lists, so never let the browser build one it cannot send.
-const MAX_HIDDEN = 100;
+export const MAX_HIDDEN_RECIPE_PRODUCTS = 100;
 
 export interface HiddenRecipeProduct {
   productId: number;
@@ -44,7 +44,7 @@ function read(scope: RecipeHideScope): StoredProduct[] {
       seen.add(productId);
       products.push({ productId, productName: typeof productName === 'string' ? productName : '' });
     }
-    return products.slice(0, MAX_HIDDEN);
+    return products.slice(0, MAX_HIDDEN_RECIPE_PRODUCTS);
   } catch {
     return [];
   }
@@ -70,7 +70,7 @@ export function useHiddenRecipeProducts() {
   const update = useCallback((scope: RecipeHideScope, next: (previous: StoredProduct[]) => StoredProduct[]) => {
     const setter = scope === 'session' ? setSessionHidden : setForeverHidden;
     setter((previous) => {
-      const updated = next(previous).slice(0, MAX_HIDDEN);
+      const updated = next(previous).slice(0, MAX_HIDDEN_RECIPE_PRODUCTS);
       write(scope, updated);
       return updated;
     });
@@ -102,7 +102,7 @@ export function useHiddenRecipeProducts() {
   [sessionHidden, foreverHidden]);
 
   const hiddenIds = useMemo(
-    () => [...new Set(hidden.map((entry) => entry.productId))].slice(0, MAX_HIDDEN),
+    () => [...new Set(hidden.map((entry) => entry.productId))].slice(0, MAX_HIDDEN_RECIPE_PRODUCTS),
     [hidden],
   );
 

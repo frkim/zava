@@ -1,20 +1,29 @@
-import { useState, useEffect, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import {
-  Typography, Box, Grid, Chip, Rating, Button, CircularProgress, Alert,
-  Paper, Divider, Stack, ToggleButtonGroup, ToggleButton, Snackbar,
-  Card, CardContent, Dialog, IconButton,
+  Typography, Box, Grid, Chip, Rating, Button, Alert,
+  Paper, Divider, Stack, ToggleButtonGroup, ToggleButton,
+  Card, CardContent, Dialog, IconButton, CardActionArea,
 } from '@mui/material';
-import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon, Close, ChevronLeft, ChevronRight, Recycling } from '@mui/icons-material';
-import { getProduct, addToCart, getCrossSell, API_BASE } from '../api';
+import { ShoppingCart, LocalOffer, FiberNew, ArrowBack, Category as CategoryIcon, Close, ChevronLeft, ChevronRight, Recycling, Home, Search } from '@mui/icons-material';
+import { getProduct, getCrossSell, API_BASE, ApiError } from '../api';
 import type { Product, Review, Category, ProductImage, CrossSellOffer } from '../types';
-import { useLanguage } from '../context/LanguageContext';
+import { useFormatters, useLanguage } from '../context/LanguageContext';
 import CrossSellDialog from '../components/CrossSellDialog';
+import PageTitle from '../components/PageTitle';
+import { EmptyState, ErrorState, LoadingState } from '../components/PageState';
+import { useAddToCart } from '../hooks/useAddToCart';
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
+  return <ProductPageContent key={id ?? 'missing'} id={id} />;
+}
+
+function ProductPageContent({ id }: { id?: string }) {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
+  const { price, date } = useFormatters();
+  const { add, isPending } = useAddToCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
@@ -23,9 +32,10 @@ export default function ProductPage() {
   const [selectedImageIdx, setSelectedImageIdx] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [notFound, setNotFound] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState<number | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [snackbar, setSnackbar] = useState('');
+  const [formError, setFormError] = useState('');
   const [visibleReviews, setVisibleReviews] = useState(3);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [zoomVisible, setZoomVisible] = useState(false);
@@ -34,54 +44,125 @@ export default function ProductPage() {
   const [crossSellOffer, setCrossSellOffer] = useState<CrossSellOffer | null>(null);
   const [crossSellOpen, setCrossSellOpen] = useState(false);
 
-  useEffect(() => {
-    if (!id) return;
+  const productId = Number(id);
+  const loadProduct = useCallback(async (signal?: AbortSignal) => {
+    if (!Number.isInteger(productId) || productId <= 0) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    }
     setLoading(true);
-    getProduct(parseInt(id))
-      .then((data) => {
-        setProduct(data.product);
-        setReviews(data.reviews);
-        setRelatedProducts(data.relatedProducts);
-        setCategory(data.category);
-        setImages(data.images ?? []);
-        setSelectedImageIdx(0);
-        if (data.product.variants.length > 0) {
-          setSelectedVariant(data.product.variants[0].id);
-        }
-      })
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
-  }, [id]);
+    setError('');
+    setNotFound(false);
+    try {
+      const data = await getProduct(productId, signal);
+      if (signal?.aborted) return;
+      setProduct(data.product);
+      setReviews(data.reviews);
+      setRelatedProducts(data.relatedProducts);
+      setCategory(data.category);
+      setImages(data.images ?? []);
+      setSelectedImageIdx(0);
+    } catch (e) {
+      if (signal?.aborted) return;
+      if (e instanceof ApiError && e.status === 404) setNotFound(true);
+      else setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      if (!signal?.aborted) setLoading(false);
+    }
+  }, [productId]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void loadProduct(controller.signal);
+    return () => controller.abort();
+  }, [loadProduct]);
+
+  const productName = product ? (lang === 'en' && product.nameEn ? product.nameEn : product.name) : '';
+  const productDescription = product ? (lang === 'en' && product.descriptionEn ? product.descriptionEn : product.description) : '';
+  const firstAvailableVariantId = useMemo(() => {
+    if (!product || product.variants.length === 0) return null;
+    return product.variants.find(v => v.stock > 0)?.id ?? product.variants[0].id;
+  }, [product]);
+  const selectedVariantId = selectedVariant ?? firstAvailableVariantId;
+  const selectedVar = product?.variants.find(v => v.id === selectedVariantId) ?? null;
+  const variantAdjustment = selectedVar?.priceAdjustment ?? 0;
+  const availableStock = product
+    ? selectedVar
+      ? Math.min(product.stock, selectedVar.stock)
+      : product.variants.length > 0 ? 0 : product.stock
+    : 0;
+  const purchasable = !!product && availableStock > 0;
+  const safeQuantity = Math.min(Math.max(quantity, 1), Math.max(availableStock, 1));
+  const finalPrice = product ? (product.promoPrice ?? product.price) + variantAdjustment : 0;
+  const referencePrice = product?.promoPrice
+    ? product.price + variantAdjustment
+    : product?.isSecondLife && product.secondLife
+      ? product.secondLife.originalPrice + variantAdjustment
+      : null;
+  const discount = referencePrice && referencePrice > finalPrice
+    ? Math.round((1 - finalPrice / referencePrice) * 100)
+    : 0;
+
+  const handleVariantChange = (_: React.MouseEvent<HTMLElement>, value: number | null) => {
+    if (value === null) return;
+    setSelectedVariant(value);
+    setQuantity(1);
+    setFormError('');
+  };
 
   const handleAddToCart = async () => {
     if (!product) return;
+    if (!purchasable) {
+      setFormError(t('com.product.unavailableVariant'));
+      return;
+    }
+    const cart = await add(product, safeQuantity, selectedVariantId ?? undefined);
+    if (!cart) return;
     try {
-      await addToCart(product.id, quantity, selectedVariant ?? undefined);
-      // Fetch cross-sell offers for Electronics & Appliances
-      try {
-        const offer = await getCrossSell(product.id);
-        if (offer.complementaryProduct || offer.warranty) {
-          setCrossSellOffer(offer);
-          setCrossSellOpen(true);
-          return; // Don't show snackbar, the dialog handles it
-        }
-      } catch { /* no cross-sell available, fall through to snackbar */ }
-      setSnackbar(t('product.addedToCart'));
+      const offer = await getCrossSell(product.id);
+      if (offer.complementaryProduct || offer.warranty) {
+        setCrossSellOffer(offer);
+        setCrossSellOpen(true);
+      }
     } catch {
-      setSnackbar(t('product.addError'));
+      // Cross-sell is optional; the add-to-cart feedback has already been shown.
     }
   };
 
-  if (loading) return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress /></Box>;
-  if (error) return <Alert severity="error">{error}</Alert>;
-  if (!product) return <Alert severity="error">{t('product.notFound')}</Alert>;
-
-  const effectivePrice = product.promoPrice ?? product.price;
-  const selectedVar = product.variants.find(v => v.id === selectedVariant);
-  const finalPrice = effectivePrice + (selectedVar?.priceAdjustment ?? 0);
-  const discount = product.promoPrice ? Math.round((1 - product.promoPrice / product.price) * 100) : 0;
-  const productName = lang === 'en' && product.nameEn ? product.nameEn : product.name;
-  const productDescription = lang === 'en' && product.descriptionEn ? product.descriptionEn : product.description;
+  if (loading) {
+    return (
+      <Box>
+        <PageTitle>{t('com.product.title')}</PageTitle>
+        <LoadingState />
+      </Box>
+    );
+  }
+  if (error) {
+    return (
+      <Box>
+        <PageTitle>{t('com.product.title')}</PageTitle>
+        <ErrorState detail={error} onRetry={() => void loadProduct()} />
+      </Box>
+    );
+  }
+  if (notFound || !product) {
+    return (
+      <Box>
+        <PageTitle>{t('product.notFound')}</PageTitle>
+        <EmptyState
+          title={t('product.notFound')}
+          description={t('com.product.notFoundDesc')}
+          action={(
+            <>
+              <Button variant="contained" component={RouterLink} to="/search" startIcon={<Search />} sx={{ m: 0.5 }}>{t('notFound.catalog')}</Button>
+              <Button variant="outlined" component={RouterLink} to="/" startIcon={<Home />} sx={{ m: 0.5 }}>{t('notFound.home')}</Button>
+            </>
+          )}
+        />
+      </Box>
+    );
+  }
 
   const ratingDistribution = [5, 4, 3, 2, 1].map(r => ({
     stars: r,
@@ -94,20 +175,12 @@ export default function ProductPage() {
       <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} sx={{ mb: 2 }}>{t('product.back')}</Button>
 
       <Grid container spacing={4}>
-        {/* Image gallery */}
         <Grid size={{ xs: 12, md: 5 }}>
           {images.length > 0 ? (
             <Box>
-              {/* Main image with zoom */}
               <Paper
                 ref={mainImageRef}
-                sx={{
-                  height: 400,
-                  position: 'relative',
-                  overflow: 'hidden',
-                  cursor: 'crosshair',
-                  bgcolor: 'grey.50',
-                }}
+                sx={{ height: 400, position: 'relative', overflow: 'hidden', cursor: 'crosshair', bgcolor: 'grey.50' }}
                 onMouseEnter={() => setZoomVisible(true)}
                 onMouseLeave={() => setZoomVisible(false)}
                 onMouseMove={(e) => {
@@ -120,59 +193,44 @@ export default function ProductPage() {
                 }}
                 onClick={() => setLightboxOpen(true)}
               >
-                <Box
-                  component="img"
-                  src={`${API_BASE}${images[selectedImageIdx].main}`}
-                  alt={productName}
-                  sx={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                />
-                {/* Zoom lens overlay */}
+                <Box component="img" src={`${API_BASE}${images[selectedImageIdx].main}`} alt={productName}
+                  sx={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 {zoomVisible && (
                   <Box
                     sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      pointerEvents: 'none',
+                      position: 'absolute', inset: 0, pointerEvents: 'none',
                       backgroundImage: `url(${API_BASE}${images[selectedImageIdx].main})`,
                       backgroundSize: '250%',
                       backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`,
                       backgroundRepeat: 'no-repeat',
-                      opacity: 1,
                       zIndex: 2,
                     }}
                   />
                 )}
               </Paper>
 
-              {/* Thumbnails */}
               {images.length > 1 && (
                 <Stack direction="row" spacing={1} sx={{ mt: 1, justifyContent: 'center' }}>
                   {images.map((img, idx) => (
                     <Box
                       key={img.index}
+                      component="button"
+                      type="button"
+                      aria-label={`${t('com.product.imageSelect')} ${idx + 1}`}
+                      aria-pressed={idx === selectedImageIdx}
+                      aria-current={idx === selectedImageIdx ? 'true' : undefined}
                       onClick={() => setSelectedImageIdx(idx)}
                       sx={{
-                        width: 64,
-                        height: 64,
+                        width: 64, height: 64, p: 0, bgcolor: 'transparent',
                         border: idx === selectedImageIdx ? '2px solid' : '2px solid transparent',
                         borderColor: idx === selectedImageIdx ? 'primary.main' : 'transparent',
-                        borderRadius: 1,
-                        overflow: 'hidden',
-                        cursor: 'pointer',
+                        borderRadius: 1, overflow: 'hidden', cursor: 'pointer',
                         opacity: idx === selectedImageIdx ? 1 : 0.6,
                         transition: 'all 0.2s',
                         '&:hover': { opacity: 1 },
                       }}
                     >
-                      <Box
-                        component="img"
-                        src={`${API_BASE}${img.thumb}`}
-                        alt={`${productName} ${idx + 1}`}
-                        sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
+                      <Box component="img" src={`${API_BASE}${img.thumb}`} alt="" sx={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </Box>
                   ))}
                 </Stack>
@@ -180,49 +238,33 @@ export default function ProductPage() {
             </Box>
           ) : (
             <Paper sx={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'grey.100' }}>
-              <Typography variant="h1" sx={{ opacity: 0.15, fontWeight: 700 }}>{productName.charAt(0)}</Typography>
+              <Typography component="span" variant="h1" sx={{ opacity: 0.15, fontWeight: 700 }}>{productName.charAt(0)}</Typography>
             </Paper>
           )}
 
-          {/* Lightbox dialog */}
-          <Dialog
-            open={lightboxOpen}
-            onClose={() => setLightboxOpen(false)}
-            maxWidth="lg"
-            fullWidth
-            PaperProps={{ sx: { bgcolor: 'black', position: 'relative' } }}
-          >
-            <IconButton
-              onClick={() => setLightboxOpen(false)}
+          <Dialog open={lightboxOpen} onClose={() => setLightboxOpen(false)} maxWidth="lg" fullWidth
+            PaperProps={{ sx: { bgcolor: 'black', position: 'relative' } }}>
+            <IconButton onClick={() => setLightboxOpen(false)}
               sx={{ position: 'absolute', top: 8, right: 8, color: 'white', zIndex: 10 }}
               aria-label={t('product.close')}
             >
               <Close />
             </IconButton>
-
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '70vh', position: 'relative' }}>
               {images.length > 1 && (
-                <IconButton
-                  onClick={() => setSelectedImageIdx((prev) => (prev - 1 + images.length) % images.length)}
+                <IconButton onClick={() => setSelectedImageIdx((prev) => (prev - 1 + images.length) % images.length)}
                   sx={{ position: 'absolute', left: 8, color: 'white', bgcolor: 'rgba(255,255,255,0.15)', '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' } }}
                   aria-label={t('product.previousImage')}
                 >
                   <ChevronLeft fontSize="large" />
                 </IconButton>
               )}
-
               {images.length > 0 && (
-                <Box
-                  component="img"
-                  src={`${API_BASE}${images[selectedImageIdx].main}`}
-                  alt={productName}
-                  sx={{ maxWidth: '90%', maxHeight: '70vh', objectFit: 'contain' }}
-                />
+                <Box component="img" src={`${API_BASE}${images[selectedImageIdx].main}`} alt={productName}
+                  sx={{ maxWidth: '90%', maxHeight: '70vh', objectFit: 'contain' }} />
               )}
-
               {images.length > 1 && (
-                <IconButton
-                  onClick={() => setSelectedImageIdx((prev) => (prev + 1) % images.length)}
+                <IconButton onClick={() => setSelectedImageIdx((prev) => (prev + 1) % images.length)}
                   sx={{ position: 'absolute', right: 8, color: 'white', bgcolor: 'rgba(255,255,255,0.15)', '&:hover': { bgcolor: 'rgba(255,255,255,0.3)' } }}
                   aria-label={t('product.nextImage')}
                 >
@@ -230,32 +272,27 @@ export default function ProductPage() {
                 </IconButton>
               )}
             </Box>
-
-            {/* Lightbox thumbnails */}
             {images.length > 1 && (
               <Stack direction="row" spacing={1} sx={{ justifyContent: 'center', py: 2 }}>
                 {images.map((img, idx) => (
                   <Box
                     key={img.index}
+                    component="button"
+                    type="button"
+                    aria-label={`${t('com.product.imageSelect')} ${idx + 1}`}
+                    aria-pressed={idx === selectedImageIdx}
+                    aria-current={idx === selectedImageIdx ? 'true' : undefined}
                     onClick={() => setSelectedImageIdx(idx)}
                     sx={{
-                      width: 56,
-                      height: 56,
+                      width: 56, height: 56, p: 0, bgcolor: 'transparent',
                       border: idx === selectedImageIdx ? '2px solid white' : '2px solid transparent',
-                      borderRadius: 1,
-                      overflow: 'hidden',
-                      cursor: 'pointer',
+                      borderRadius: 1, overflow: 'hidden', cursor: 'pointer',
                       opacity: idx === selectedImageIdx ? 1 : 0.5,
                       transition: 'all 0.2s',
                       '&:hover': { opacity: 1 },
                     }}
                   >
-                    <Box
-                      component="img"
-                      src={`${API_BASE}${img.thumb}`}
-                      alt={`${productName} ${idx + 1}`}
-                      sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
+                    <Box component="img" src={`${API_BASE}${img.thumb}`} alt="" sx={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </Box>
                 ))}
               </Stack>
@@ -263,28 +300,21 @@ export default function ProductPage() {
           </Dialog>
         </Grid>
 
-        {/* Product info */}
         <Grid size={{ xs: 12, md: 7 }}>
           <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
             {product.isNew && <Chip label={t('product.new')} size="small" color="info" icon={<FiberNew />} />}
-            {product.isPromo && <Chip label={`-${discount}%`} size="small" color="error" icon={<LocalOffer />} />}
+            {discount > 0 && <Chip label={`-${discount}%`} size="small" color="error" icon={<LocalOffer />} />}
             {product.isBestSeller && <Chip label={t('product.bestSeller')} size="small" color="secondary" />}
           </Stack>
 
           <Stack direction="row" spacing={1} alignItems="center">
             <Typography variant="caption" color="text.secondary">{product.brand} · SKU: {product.sku}</Typography>
             {category && (
-              <Chip
-                icon={<CategoryIcon />}
-                label={lang === 'en' && category.nameEn ? category.nameEn : category.name}
-                size="small"
-                variant="outlined"
-                clickable
-                onClick={() => navigate(`/search?categoryId=${category.id}`)}
-              />
+              <Chip icon={<CategoryIcon />} label={lang === 'en' && category.nameEn ? category.nameEn : category.name}
+                size="small" variant="outlined" clickable onClick={() => navigate(`/search?categoryId=${category.id}`)} />
             )}
           </Stack>
-          <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>{productName}</Typography>
+          <PageTitle sx={{ mb: 1 }}>{productName}</PageTitle>
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
             <Rating value={product.rating} precision={0.1} readOnly />
@@ -294,94 +324,72 @@ export default function ProductPage() {
           </Box>
 
           <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 2, mb: 2 }}>
-            <Typography variant="h4" color="primary" fontWeight={700}>{finalPrice.toFixed(2)} €</Typography>
-            {product.promoPrice && (
+            <Typography variant="h4" color="primary" fontWeight={700}>{price(finalPrice)}</Typography>
+            {referencePrice && referencePrice > finalPrice && (
               <Typography variant="h6" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
-                {product.price.toFixed(2)} €
-              </Typography>
-            )}
-            {product.isSecondLife && product.secondLife && !product.promoPrice && (
-              <Typography variant="h6" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
-                {product.secondLife.originalPrice.toFixed(2)} €
+                {price(referencePrice)}
               </Typography>
             )}
           </Box>
 
           <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>{productDescription}</Typography>
 
-          {/* Variants */}
           {product.variants.length > 0 && (
             <Box sx={{ mb: 3 }}>
               <Typography variant="subtitle2" sx={{ mb: 1 }}>{t('product.variant')}</Typography>
-              <ToggleButtonGroup
-                value={selectedVariant}
-                exclusive
-                onChange={(_, v) => v !== null && setSelectedVariant(v)}
-                size="small"
-              >
+              <ToggleButtonGroup value={selectedVariantId} exclusive onChange={handleVariantChange} size="small">
                 {product.variants.map((v) => (
-                  <ToggleButton key={v.id} value={v.id}>
+                  <ToggleButton key={v.id} value={v.id} color={v.stock > 0 ? 'standard' : 'error'}>
                     {lang === 'en' && v.nameEn ? v.nameEn : v.name}
                     {v.priceAdjustment !== 0 && (
                       <Typography variant="caption" sx={{ ml: 0.5 }}>
-                        ({v.priceAdjustment > 0 ? '+' : ''}{v.priceAdjustment.toFixed(2)} €)
+                        ({v.priceAdjustment > 0 ? '+' : ''}{price(v.priceAdjustment)})
                       </Typography>
                     )}
+                    {v.stock === 0 && <Chip label={t('product.outOfStock')} size="small" color="error" sx={{ ml: 1 }} />}
                   </ToggleButton>
                 ))}
               </ToggleButtonGroup>
+              {!purchasable && <Alert severity="warning" sx={{ mt: 1 }}>{t('com.product.unavailableVariant')}</Alert>}
             </Box>
           )}
 
-          {/* Stock & Add to cart */}
-          <Typography variant="body2" sx={{ mb: 2 }} color={product.stock > 0 ? 'success.main' : 'error.main'}>
-            {product.stock > 0 ? `${t('product.inStock')} (${product.stock} ${t('product.available')})` : t('product.outOfStock')}
+          <Typography variant="body2" sx={{ mb: 2 }} color={purchasable ? 'success.main' : 'error.main'}>
+            {purchasable ? `${t('product.inStock')} (${availableStock} ${t('product.available')})` : t('product.outOfStock')}
           </Typography>
+          {formError && <Alert severity="error" sx={{ mb: 2 }} onClose={() => setFormError('')}>{formError}</Alert>}
 
-          <Stack direction="row" spacing={2} alignItems="center">
-            <Button variant="outlined" size="small" onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</Button>
-            <Typography>{quantity}</Typography>
-            <Button variant="outlined" size="small" onClick={() => setQuantity(quantity + 1)}>+</Button>
+          <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
+            <Button variant="outlined" size="small" disabled={safeQuantity <= 1 || !purchasable}
+              onClick={() => setQuantity(Math.max(1, safeQuantity - 1))}>-</Button>
+            <Typography aria-label={t('com.product.quantity')}>{safeQuantity}</Typography>
+            <Button variant="outlined" size="small" disabled={!purchasable || safeQuantity >= availableStock}
+              onClick={() => setQuantity(Math.min(availableStock, safeQuantity + 1))}>+</Button>
             <Button
               variant="contained"
               size="large"
               startIcon={<ShoppingCart />}
-              disabled={product.stock === 0}
+              disabled={!purchasable || isPending(product.id)}
               onClick={handleAddToCart}
             >
-              {t('product.addToCart')} — {(finalPrice * quantity).toFixed(2)} €
+              {isPending(product.id) ? t('common.adding') : `${t('product.addToCart')} — ${price(finalPrice * safeQuantity)}`}
             </Button>
           </Stack>
 
-          {/* Tags */}
           {product.tags.length > 0 && (
             <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ mt: 2 }}>
               {product.tags.map((tag) => (
-                <Chip
-                  key={tag}
-                  label={tag}
-                  size="small"
-                  variant="outlined"
-                  clickable
-                  onClick={() => navigate(
-                    tag === product.brand
-                      ? `/search?brand=${encodeURIComponent(tag)}`
-                      : `/search?q=${encodeURIComponent(tag)}`
-                  )}
-                />
+                <Chip key={tag} label={tag} size="small" variant="outlined" clickable
+                  onClick={() => navigate(tag === product.brand ? `/search?brand=${encodeURIComponent(tag)}` : `/search?q=${encodeURIComponent(tag)}`)} />
               ))}
             </Stack>
           )}
 
-          {/* Second Life Section */}
           {product.isSecondLife && product.secondLife && (
             <Paper sx={{ mt: 3, p: 2, border: '1px solid #00796b', borderRadius: 2 }}>
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 2 }}>
-                <Chip
-                  icon={<Recycling />}
-                  label={t('secondLife.sectionTitle')}
-                  sx={{ bgcolor: '#00796b', color: 'white', '& .MuiChip-icon': { color: 'white' } }}
-                />
+                <Chip icon={<Recycling />} label={t('secondLife.sectionTitle')}
+                  sx={{ bgcolor: '#00796b', color: 'white', '& .MuiChip-icon': { color: 'white' } }} />
               </Stack>
               <Grid container spacing={2}>
                 <Grid size={{ xs: 6 }}>
@@ -392,31 +400,23 @@ export default function ProductPage() {
                 </Grid>
                 <Grid size={{ xs: 6 }}>
                   <Typography variant="caption" color="text.secondary">{t('secondLife.savings')}</Typography>
-                  <Typography variant="body2" fontWeight={700} color="success.main">
-                    -{product.secondLife.originalPrice > 0 ? Math.round((1 - product.price / product.secondLife.originalPrice) * 100) : 0}%
-                  </Typography>
+                  <Typography variant="body2" fontWeight={700} color="success.main">-{discount}%</Typography>
                 </Grid>
                 {product.secondLife.warrantyMonths && (
                   <Grid size={{ xs: 6 }}>
                     <Typography variant="caption" color="text.secondary">{t('secondLife.warranty')}</Typography>
-                    <Typography variant="body2" fontWeight={600}>
-                      {product.secondLife.warrantyMonths} {t('secondLife.months')}
-                    </Typography>
+                    <Typography variant="body2" fontWeight={600}>{product.secondLife.warrantyMonths} {t('secondLife.months')}</Typography>
                   </Grid>
                 )}
                 {product.secondLife.sellerType && (
                   <Grid size={{ xs: 6 }}>
                     <Typography variant="caption" color="text.secondary">{t('secondLife.seller')}</Typography>
-                    <Typography variant="body2" fontWeight={600}>
-                      {lang === 'en' ? product.secondLife.sellerTypeEn : product.secondLife.sellerType}
-                    </Typography>
+                    <Typography variant="body2" fontWeight={600}>{lang === 'en' ? product.secondLife.sellerTypeEn : product.secondLife.sellerType}</Typography>
                   </Grid>
                 )}
                 <Grid size={{ xs: 12 }}>
                   <Typography variant="caption" color="text.secondary">{t('secondLife.originalPrice')}</Typography>
-                  <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
-                    {product.secondLife.originalPrice.toFixed(2)} €
-                  </Typography>
+                  <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>{price(referencePrice ?? product.secondLife.originalPrice)}</Typography>
                 </Grid>
               </Grid>
             </Paper>
@@ -426,8 +426,7 @@ export default function ProductPage() {
 
       <Divider sx={{ my: 4 }} />
 
-      {/* Reviews Section */}
-      <Typography variant="h5" sx={{ mb: 2 }}>{t('product.customerReviews')} ({reviews.length})</Typography>
+      <Typography variant="h5" component="h2" sx={{ mb: 2 }}>{t('product.customerReviews')} ({reviews.length})</Typography>
 
       <Grid container spacing={3}>
         <Grid size={{ xs: 12, md: 4 }}>
@@ -465,17 +464,13 @@ export default function ProductPage() {
                   </Box>
                   <Typography variant="body2">{review.comment}</Typography>
                   <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-                    {new Date(review.createdAt).toLocaleDateString(lang === 'en' ? 'en-GB' : 'fr-FR')} · {review.helpfulCount} {t('product.helpfulCount')}
+                    {date(review.createdAt)} · {review.helpfulCount} {t('product.helpfulCount')}
                   </Typography>
                 </CardContent>
               </Card>
             ))}
             {reviews.length > visibleReviews && (
-              <Button
-                variant="outlined"
-                onClick={() => setVisibleReviews((prev) => prev + 5)}
-                sx={{ alignSelf: 'center' }}
-              >
+              <Button variant="outlined" onClick={() => setVisibleReviews((prev) => prev + 5)} sx={{ alignSelf: 'center' }}>
                 {t('product.viewMoreReviews')} ({reviews.length - visibleReviews})
               </Button>
             )}
@@ -483,33 +478,26 @@ export default function ProductPage() {
         </Grid>
       </Grid>
 
-      {/* Related products */}
       {relatedProducts.length > 0 && (
         <Box sx={{ mt: 4 }}>
-          <Typography variant="h5" sx={{ mb: 2 }}>{t('product.relatedProducts')}</Typography>
+          <Typography variant="h5" component="h2" sx={{ mb: 2 }}>{t('product.relatedProducts')}</Typography>
           <Grid container spacing={2}>
             {relatedProducts.slice(0, 4).map((p) => (
               <Grid key={p.id} size={{ xs: 6, sm: 3 }}>
-                <Card
-                  sx={{ cursor: 'pointer', '&:hover': { boxShadow: 4 } }}
-                  onClick={() => navigate(`/products/${p.id}`)}
-                >
-                  <Box sx={{ height: 120, bgcolor: 'grey.100', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                    <Box
-                      component="img"
-                      src={`${API_BASE}/images/products/${product.siteType}/${p.id}/1_medium.jpg`}
-                      alt={(lang === 'en' && p.nameEn ? p.nameEn : p.name)}
-                      onError={(e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.style.display = 'none'; }}
-                      sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  </Box>
-                  <CardContent>
-                    <Typography variant="caption" color="text.secondary">{p.brand}</Typography>
-                    <Typography variant="subtitle2" noWrap>{lang === 'en' && p.nameEn ? p.nameEn : p.name}</Typography>
-                    <Typography variant="subtitle1" color="primary" fontWeight={700}>
-                      {(p.promoPrice ?? p.price).toFixed(2)} €
-                    </Typography>
-                  </CardContent>
+                <Card sx={{ height: '100%', '&:hover': { boxShadow: 4 } }}>
+                  <CardActionArea component={RouterLink} to={`/products/${p.id}`} aria-label={`${t('com.product.relatedLink')} ${lang === 'en' && p.nameEn ? p.nameEn : p.name}`}>
+                    <Box sx={{ height: 120, bgcolor: 'grey.100', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                      <Box component="img" src={`${API_BASE}/images/products/${product.siteType}/${p.id}/1_medium.jpg`}
+                        alt={lang === 'en' && p.nameEn ? p.nameEn : p.name}
+                        onError={(e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.style.display = 'none'; }}
+                        sx={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </Box>
+                    <CardContent>
+                      <Typography variant="caption" color="text.secondary">{p.brand}</Typography>
+                      <Typography variant="subtitle2" noWrap>{lang === 'en' && p.nameEn ? p.nameEn : p.name}</Typography>
+                      <Typography variant="subtitle1" color="primary" fontWeight={700}>{price(p.promoPrice ?? p.price)}</Typography>
+                    </CardContent>
+                  </CardActionArea>
                 </Card>
               </Grid>
             ))}
@@ -517,23 +505,15 @@ export default function ProductPage() {
         </Box>
       )}
 
-      {/* Cross-sell dialog */}
-      {crossSellOffer && product && (
+      {crossSellOffer && (
         <CrossSellDialog
           open={crossSellOpen}
           onClose={() => setCrossSellOpen(false)}
           offer={crossSellOffer}
           productId={product.id}
-          productName={lang === 'en' && product.nameEn ? product.nameEn : product.name}
+          productName={productName}
         />
       )}
-
-      <Snackbar
-        open={!!snackbar}
-        autoHideDuration={3000}
-        onClose={() => setSnackbar('')}
-        message={snackbar}
-      />
     </Box>
   );
 }

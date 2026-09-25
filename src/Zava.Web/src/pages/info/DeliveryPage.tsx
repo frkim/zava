@@ -8,7 +8,7 @@ export default function DeliveryPage() {
     <InfoPage
       heroTitleKey="info.delivery.heroTitle"
       heroSubtitleKey="info.delivery.heroSubtitle"
-      heroGradient="linear-gradient(135deg, #1565c0 0%, #42a5f5 100%)"
+      heroGradientStops={['#1565c0', '#42a5f5']}
       heroIcon={<LocalShipping />}
       sections={[
         { titleKey: 'info.delivery.standardTitle', descKey: 'info.delivery.standardDesc', icon: <LocalShipping /> },

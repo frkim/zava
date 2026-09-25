@@ -327,6 +327,30 @@ Content-Type: application/json
 
 {"productId": 1}
 
+### Complementary offer without trigger — 400, cart unchanged
+POST {{Zava.Api_HostAddress}}/api/cart/cross-sell
+Content-Type: application/json
+
+{"triggerProductId": 1}
+
+### Add trigger for authoritative complementary offer — 200
+POST {{Zava.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{"productId": 1, "quantity": 1}
+
+### Add authoritative complementary offer — 200, discounted line has offerTriggerProductId/discountPercent/regularUnitPrice
+POST {{Zava.Api_HostAddress}}/api/cart/cross-sell
+Content-Type: application/json
+
+{"triggerProductId": 1}
+
+### Remove trigger — 200, discounted complementary line reverts to regular catalogue/promo price
+DELETE {{Zava.Api_HostAddress}}/api/cart/items/1
+
+### Clear reverted complementary line before classic checks
+DELETE {{Zava.Api_HostAddress}}/api/cart
+
 ### Non-variant addition remains supported — 200
 POST {{Zava.Api_HostAddress}}/api/cart/items
 Content-Type: application/json

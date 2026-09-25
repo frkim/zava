@@ -5,7 +5,7 @@ export default function PrivacyPolicyPage() {
     <InfoPage
       heroTitleKey="info.privacy.title"
       heroSubtitleKey="info.privacy.lastUpdate"
-      heroGradient="linear-gradient(135deg, #37474f 0%, #78909c 100%)"
+      heroGradientStops={['#37474f', '#78909c']}
       sections={[
         { titleKey: 'info.privacy.introTitle', descKey: 'info.privacy.introDesc' },
         { titleKey: 'info.privacy.collectionTitle', descKey: 'info.privacy.collectionDesc' },

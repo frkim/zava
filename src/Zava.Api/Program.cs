@@ -199,35 +199,61 @@ app.MapGet("/api/products/{id:int}/cross-sell", (int id, DataStore store) =>
     var product = store.Products.FirstOrDefault(p => p.Id == id);
     if (product is null) return Results.NotFound();
 
-    var offer = new CrossSellOffer();
+    return Results.Ok(BuildCrossSellOffer(product, store));
+});
 
-    // Complementary product: pick first related product with stock
-    if (product.RelatedProductIds.Count > 0)
+app.MapPost("/api/cart/cross-sell", (AddCrossSellToCartRequest req, DataStore store) =>
+{
+    if (store.CurrentSiteType is not (SiteType.Electronics or SiteType.Appliances))
+        return Results.BadRequest(new { message = "Offre complémentaire indisponible pour cette boutique" });
+
+    var trigger = store.Products.FirstOrDefault(p => p.Id == req.TriggerProductId);
+    if (trigger is null) return Results.NotFound(new { message = "Produit déclencheur introuvable" });
+
+    var triggerQuantity = FullPriceQuantity(store.Cart, trigger.Id);
+    if (triggerQuantity == 0)
+        return Results.BadRequest(new { message = "Ajoutez le produit déclencheur au panier avant son offre complémentaire" });
+
+    var offer = BuildCrossSellOffer(trigger, store);
+    var complementary = offer.ComplementaryProduct;
+    if (complementary is null)
+        return Results.BadRequest(new { message = "Aucune offre complémentaire disponible" });
+
+    var product = complementary.Product;
+    var existingItem = store.Cart.Items.FirstOrDefault(i =>
+        i.ProductId == product.Id
+        && i.VariantId is null
+        && i.OfferTriggerProductId == trigger.Id);
+    var quantity = (long)(existingItem?.Quantity ?? 0) + 1;
+    if (quantity > triggerQuantity)
+        return Results.BadRequest(new { message = "L'offre est limitée à une unité par produit déclencheur acheté au prix normal" });
+    if (!HasAvailableStock(store.Cart, product, null, quantity, existingItem))
+        return Results.BadRequest(new { message = "Stock insuffisant" });
+
+    if (existingItem is not null)
     {
-        var complementary = store.Products
-            .Where(p => product.RelatedProductIds.Contains(p.Id) && p.Stock > 0 && p.Id != id)
-            .OrderByDescending(p => p.IsBestSeller)
-            .ThenBy(p => p.Price)
-            .FirstOrDefault();
-
-        if (complementary is not null)
+        existingItem.Quantity++;
+        existingItem.UnitPrice = complementary.DiscountedPrice;
+        existingItem.RegularUnitPrice = product.PromoPrice ?? product.Price;
+        existingItem.DiscountPercent = complementary.DiscountPercent;
+    }
+    else
+    {
+        store.Cart.Items.Add(new CartItem
         {
-            const int discountPercent = 10;
-            var basePrice = complementary.PromoPrice ?? complementary.Price;
-            var discountedPrice = Math.Round(basePrice * (1 - discountPercent / 100m), 2);
-
-            offer.ComplementaryProduct = new CrossSellProduct
-            {
-                Product = complementary,
-                DiscountPercent = discountPercent,
-                DiscountedPrice = discountedPrice
-            };
-        }
+            ProductId = product.Id,
+            ProductName = product.Name,
+            VariantId = null,
+            VariantName = null,
+            UnitPrice = complementary.DiscountedPrice,
+            RegularUnitPrice = product.PromoPrice ?? product.Price,
+            OfferTriggerProductId = trigger.Id,
+            DiscountPercent = complementary.DiscountPercent,
+            Quantity = 1
+        });
     }
 
-    offer.Warranty = GetWarrantyOffer(product);
-
-    return Results.Ok(offer);
+    return Results.Ok(store.Cart);
 });
 
 app.MapPost("/api/cart/warranty", (AddWarrantyToCartRequest req, DataStore store) =>
@@ -309,10 +335,13 @@ app.MapPost("/api/cart/items", (AddToCartRequest req, DataStore store) =>
     }
 
     var existingItem = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductId == req.ProductId && i.VariantId == req.VariantId);
+        i.ProductId == req.ProductId
+        && i.VariantId == req.VariantId
+        && i.OfferTriggerProductId is null
+        && i.DiscountPercent is null);
 
     var quantity = (long)(existingItem?.Quantity ?? 0) + req.Quantity;
-    if (!HasAvailableStock(store.Cart, product, req.VariantId, quantity))
+    if (!HasAvailableStock(store.Cart, product, req.VariantId, quantity, existingItem))
         return Results.BadRequest(new { message = "Stock insuffisant" });
 
     if (existingItem is not null)
@@ -341,35 +370,48 @@ app.MapPut("/api/cart/items/{productId:int}", (int productId, UpdateCartItemRequ
         return Results.BadRequest(new { message = "La quantité ne peut pas être négative" });
 
     var item = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductId == productId && i.VariantId == req.VariantId);
+        i.ProductId == productId
+        && i.VariantId == req.VariantId
+        && i.OfferTriggerProductId == req.OfferTriggerProductId);
     if (item is null) return Results.NotFound();
 
     if (req.Quantity == 0)
     {
-        RemoveCartLine(store.Cart, item);
+        RemoveCartLine(store, item);
     }
     else
     {
         if (productId < 0 && req.Quantity != 1)
             return Results.BadRequest(new { message = "Une seule garantie par produit" });
 
+        if (item.OfferTriggerProductId is int offerTriggerId && req.Quantity > FullPriceQuantity(store.Cart, offerTriggerId))
+            return Results.BadRequest(new { message = "L'offre est limitée à une unité par produit déclencheur acheté au prix normal" });
+
         if (productId > 0)
         {
             var product = store.Products.FirstOrDefault(p => p.Id == productId);
-            if (product is null || !HasAvailableStock(store.Cart, product, req.VariantId, req.Quantity))
+            if (product is null || !HasAvailableStock(store.Cart, product, req.VariantId, req.Quantity, item))
                 return Results.BadRequest(new { message = "Stock insuffisant" });
         }
         item.Quantity = req.Quantity;
+        if (productId > 0 && item.OfferTriggerProductId is null && item.DiscountPercent is null)
+        {
+            var offerQuantity = store.Cart.Items.Where(i => i.OfferTriggerProductId == productId).Sum(i => i.Quantity);
+            if (offerQuantity > FullPriceQuantity(store.Cart, productId))
+                RevertCrossSellLinesForTrigger(store, productId);
+        }
     }
 
     return Results.Ok(store.Cart);
 });
 
-app.MapDelete("/api/cart/items/{productId:int}", (int productId, int? variantId, DataStore store) =>
+app.MapDelete("/api/cart/items/{productId:int}", (int productId, int? variantId, int? offerTriggerProductId, DataStore store) =>
 {
     var item = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductId == productId && i.VariantId == variantId);
-    if (item is not null) RemoveCartLine(store.Cart, item);
+        i.ProductId == productId
+        && i.VariantId == variantId
+        && i.OfferTriggerProductId == offerTriggerProductId);
+    if (item is not null) RemoveCartLine(store, item);
     return Results.Ok(store.Cart);
 });
 
@@ -433,6 +475,9 @@ app.MapPost("/api/checkout", (CheckoutRequest req, DataStore store) =>
             VariantId = i.VariantId,
             VariantName = i.VariantName,
             UnitPrice = i.UnitPrice,
+            RegularUnitPrice = i.RegularUnitPrice,
+            OfferTriggerProductId = i.OfferTriggerProductId,
+            DiscountPercent = i.DiscountPercent,
             Quantity = i.Quantity
         }).ToList(),
         Total = store.Cart.Total,
@@ -515,21 +560,109 @@ app.MapFallbackToFile("index.html");
 
 app.Run();
 
-static bool HasAvailableStock(Cart cart, Product product, int? variantId, long quantity)
+static bool HasAvailableStock(Cart cart, Product product, int? variantId, long quantity, CartItem? currentItem = null)
 {
-    var otherQuantity = cart.Items
-        .Where(i => i.ProductId == product.Id && i.VariantId != variantId)
+    var otherProductQuantity = cart.Items
+        .Where(i => i.ProductId == product.Id && !ReferenceEquals(i, currentItem))
         .Sum(i => (long)i.Quantity);
     var variant = product.Variants.FirstOrDefault(v => v.Id == variantId);
-    return quantity > 0 && quantity + otherQuantity <= product.Stock
-        && (!variantId.HasValue || (variant is not null && quantity <= variant.Stock));
+    if (quantity <= 0 || quantity + otherProductQuantity > product.Stock) return false;
+    if (!variantId.HasValue) return true;
+
+    var otherVariantQuantity = cart.Items
+        .Where(i => i.ProductId == product.Id && i.VariantId == variantId && !ReferenceEquals(i, currentItem))
+        .Sum(i => (long)i.Quantity);
+    return variant is not null && quantity + otherVariantQuantity <= variant.Stock;
 }
 
-static void RemoveCartLine(Cart cart, CartItem item)
+static void RemoveCartLine(DataStore store, CartItem item)
 {
+    var cart = store.Cart;
     cart.Items.Remove(item);
-    if (item.ProductId > 0 && !cart.Items.Any(i => i.ProductId == item.ProductId))
+    if (item.ProductId <= 0) return;
+    if (!cart.Items.Any(i => i.ProductId == item.ProductId))
         cart.Items.RemoveAll(i => i.ProductId == -item.ProductId);
+    // Offer lines only count as triggers when bought at full price, so offer chains cannot sustain each other.
+    if (FullPriceQuantity(cart, item.ProductId) == 0)
+        RevertCrossSellLinesForTrigger(store, item.ProductId);
+}
+
+static int FullPriceQuantity(Cart cart, int productId) => cart.Items
+    .Where(i => i.ProductId == productId && i.OfferTriggerProductId is null && i.DiscountPercent is null)
+    .Sum(i => i.Quantity);
+
+static void RevertCrossSellLinesForTrigger(DataStore store, int triggerProductId)
+{
+    foreach (var offerLine in store.Cart.Items
+        .Where(i => i.OfferTriggerProductId == triggerProductId)
+        .ToList())
+    {
+        var product = store.Products.FirstOrDefault(p => p.Id == offerLine.ProductId);
+        if (product is null)
+        {
+            offerLine.OfferTriggerProductId = null;
+            offerLine.DiscountPercent = null;
+            offerLine.RegularUnitPrice = null;
+            continue;
+        }
+
+        var regularPrice = product.PromoPrice ?? product.Price;
+        if (offerLine.VariantId.HasValue)
+        {
+            var variant = product.Variants.FirstOrDefault(v => v.Id == offerLine.VariantId.Value);
+            if (variant is not null) regularPrice += variant.PriceAdjustment;
+        }
+
+        var existingRegular = store.Cart.Items.FirstOrDefault(i =>
+            !ReferenceEquals(i, offerLine)
+            && i.ProductId == offerLine.ProductId
+            && i.VariantId == offerLine.VariantId
+            && i.OfferTriggerProductId is null
+            && i.DiscountPercent is null);
+        if (existingRegular is not null)
+        {
+            existingRegular.Quantity += offerLine.Quantity;
+            store.Cart.Items.Remove(offerLine);
+        }
+        else
+        {
+            offerLine.UnitPrice = regularPrice;
+            offerLine.OfferTriggerProductId = null;
+            offerLine.DiscountPercent = null;
+            offerLine.RegularUnitPrice = null;
+        }
+    }
+}
+
+static CrossSellOffer BuildCrossSellOffer(Product product, DataStore store)
+{
+    var offer = new CrossSellOffer();
+
+    if (product.RelatedProductIds.Count > 0)
+    {
+        var complementary = store.Products
+            .Where(p => product.RelatedProductIds.Contains(p.Id) && p.Stock > 0 && p.Id != product.Id)
+            .OrderByDescending(p => p.IsBestSeller)
+            .ThenBy(p => p.Price)
+            .FirstOrDefault();
+
+        if (complementary is not null)
+        {
+            const int discountPercent = 10;
+            var basePrice = complementary.PromoPrice ?? complementary.Price;
+            var discountedPrice = Math.Round(basePrice * (1 - discountPercent / 100m), 2);
+
+            offer.ComplementaryProduct = new CrossSellProduct
+            {
+                Product = complementary,
+                DiscountPercent = discountPercent,
+                DiscountedPrice = discountedPrice
+            };
+        }
+    }
+
+    offer.Warranty = GetWarrantyOffer(product);
+    return offer;
 }
 
 static WarrantyOffer GetWarrantyOffer(Product product)

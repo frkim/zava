@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http.Json;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using Azure.Core;
@@ -10,6 +11,7 @@ using Zava.Api.Services;
 
 var fake = new FakeFoundry();
 IHost? host = null;
+var port = FreeTcpPort();
 using var listener = DiagnosticListener.AllListeners.Subscribe(new Observer<DiagnosticListener>(source =>
 {
     if (source.Name == "Microsoft.Extensions.Hosting")
@@ -26,13 +28,13 @@ using var listener = DiagnosticListener.AllListeners.Subscribe(new Observer<Diag
 }));
 var server = Task.Run(() => typeof(DataStore).Assembly.EntryPoint!.Invoke(null, [new[]
 {
-    "--urls=http://127.0.0.1:5097",
+    $"--urls=http://127.0.0.1:{port}",
     "--contentRoot=" + AppContext.BaseDirectory,
     "--Foundry:ProjectEndpoint=https://explicit-test.services.ai.azure.com/api/projects/test",
     "--Foundry:TimeoutSeconds=5",
     "--Logging:LogLevel:Default=Warning"
 }]));
-using var client = new HttpClient { BaseAddress = new Uri("http://127.0.0.1:5097") };
+using var client = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{port}") };
 for (var i = 0; i < 100; i++)
 {
     if (server.IsCompleted) await server;
@@ -57,6 +59,7 @@ try
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 21, brandPreference = "Mix" }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Other" }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", unitPrice = 0.01 }), 400);
+    await CrossSellChecks();
     // Oversize bodies are refused both when declared (Content-Length) and while streaming (chunked).
     var oversizedBody = JsonSerializer.Serialize(new { recipe = new string('a', 5000), servings = 4, brandPreference = "Mix" });
     foreach (var chunked in new[] { false, true })
@@ -135,7 +138,7 @@ try
     fake.Mode = "timeout";
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 504);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 429);
-    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, stock atomicity, stale reset, preference, timeout and quota.");
+    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, authoritative cross-sell, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, stock atomicity, stale reset, preference, timeout and quota.");
 }
 finally
 {
@@ -161,6 +164,57 @@ async Task Setup()
     }
     finally { store.Gate.Release(); }
 }
+async Task CrossSellChecks()
+{
+    await Expect(await client.PutAsJsonAsync("/api/config/site-type", new { siteType = "Electronics" }), 200);
+    await Expect(await client.DeleteAsync("/api/cart"), 200);
+
+    var products = await client.GetFromJsonAsync<JsonElement>("/api/products");
+    int triggerProductId = 0;
+    JsonElement complementary = default;
+    foreach (var product in products.EnumerateArray())
+    {
+        var productId = product.GetProperty("id").GetInt32();
+        var offer = await client.GetFromJsonAsync<JsonElement>($"/api/products/{productId}/cross-sell");
+        if (offer.TryGetProperty("complementaryProduct", out complementary)
+            && complementary.ValueKind == JsonValueKind.Object)
+        {
+            triggerProductId = productId;
+            break;
+        }
+    }
+    Assert(triggerProductId > 0, "test catalogue exposes a complementary cross-sell offer");
+
+    await Expect(await client.PostAsJsonAsync("/api/cart/cross-sell", new { triggerProductId }), 400);
+    await Expect(await client.PostAsJsonAsync("/api/cart/items", new { productId = triggerProductId, quantity = 1 }), 200);
+    await Expect(await client.PostAsJsonAsync("/api/cart/cross-sell", new { triggerProductId }), 200);
+    await Expect(await client.PostAsJsonAsync("/api/cart/cross-sell", new { triggerProductId }), 400);
+    var chainedComplementaryId = complementary.GetProperty("product").GetProperty("id").GetInt32();
+    var chainedOffer = await client.GetFromJsonAsync<JsonElement>($"/api/products/{chainedComplementaryId}/cross-sell");
+    if (chainedOffer.TryGetProperty("complementaryProduct", out var chained) && chained.ValueKind == JsonValueKind.Object)
+        await Expect(await client.PostAsJsonAsync("/api/cart/cross-sell", new { triggerProductId = chainedComplementaryId }), 400);
+
+    var discountedCart = await client.GetFromJsonAsync<JsonElement>("/api/cart");
+    var complementaryProductId = complementary.GetProperty("product").GetProperty("id").GetInt32();
+    var expectedDiscountedPrice = complementary.GetProperty("discountedPrice").GetDecimal();
+    var offerLine = discountedCart.GetProperty("items").EnumerateArray().Single(i =>
+        i.GetProperty("productId").GetInt32() == complementaryProductId
+        && i.TryGetProperty("offerTriggerProductId", out var trigger)
+        && trigger.GetInt32() == triggerProductId);
+    Assert(offerLine.GetProperty("unitPrice").GetDecimal() == expectedDiscountedPrice, "cart uses authoritative discounted cross-sell price");
+
+    var expectedRegularPrice = offerLine.GetProperty("regularUnitPrice").GetDecimal();
+    await Expect(await client.DeleteAsync($"/api/cart/items/{triggerProductId}"), 200);
+    var revertedCart = await client.GetFromJsonAsync<JsonElement>("/api/cart");
+    var revertedLine = revertedCart.GetProperty("items").EnumerateArray().Single(i =>
+        i.GetProperty("productId").GetInt32() == complementaryProductId);
+    Assert(revertedLine.GetProperty("unitPrice").GetDecimal() == expectedRegularPrice
+        && (!revertedLine.TryGetProperty("offerTriggerProductId", out var revertedTrigger) || revertedTrigger.ValueKind == JsonValueKind.Null)
+        && (!revertedLine.TryGetProperty("discountPercent", out var discount) || discount.ValueKind == JsonValueKind.Null),
+        "removing the trigger reverts cross-sell line to regular price");
+
+    await Expect(await client.DeleteAsync("/api/cart"), 200);
+}
 static object Request(string preference) => new { recipe = "Lasagnes", servings = 4, brandPreference = preference };
 async Task<JsonElement> Plan(string preference, bool trailingSlash = false)
 {
@@ -172,6 +226,12 @@ static async Task Expect(HttpResponseMessage response, int expected)
 {
     if ((int)response.StatusCode != expected)
         throw new Exception($"Expected HTTP {expected}, got {(int)response.StatusCode}: {await response.Content.ReadAsStringAsync()}");
+}
+static int FreeTcpPort()
+{
+    using var listener = new TcpListener(IPAddress.Loopback, 0);
+    listener.Start();
+    return ((IPEndPoint)listener.LocalEndpoint).Port;
 }
 static void Assert(bool condition, string message) { if (!condition) throw new Exception(message); }
 

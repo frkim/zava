@@ -105,6 +105,7 @@ public class UpdateCartItemRequest
 {
     public int Quantity { get; set; }
     public int? VariantId { get; set; }
+    public int? OfferTriggerProductId { get; set; }
 }
 
 public class AnalyticsDashboard
@@ -192,4 +193,9 @@ public class WarrantyOffer
 public class AddWarrantyToCartRequest
 {
     public int ProductId { get; set; }
+}
+
+public class AddCrossSellToCartRequest
+{
+    public int TriggerProductId { get; set; }
 }

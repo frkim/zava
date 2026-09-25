@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Alert, AlertTitle, Box, Button, Chip, CircularProgress, Collapse, Divider, FormControl,
-  FormControlLabel, FormLabel, LinearProgress, Link, Paper, Radio, RadioGroup,
+  FormControlLabel, FormLabel, Link, Paper, Radio, RadioGroup,
   Stack, TextField, ToggleButton, ToggleButtonGroup, Typography,
 } from '@mui/material';
 import {
@@ -12,9 +12,10 @@ import {
 import { alpha } from '@mui/material/styles';
 import type { SxProps, Theme } from '@mui/material/styles';
 import { addToCart, API_BASE, ApiError, commitRecipeBasket, getProduct, planRecipeBasket, getRecipeBasketOptions } from '../api';
-import { useLanguage } from '../context/LanguageContext';
+import { publishCart } from '../cartEvents';
+import { useFormatters, useLanguage } from '../context/LanguageContext';
 import { useSite } from '../context/SiteContext';
-import { useHiddenRecipeProducts } from '../hooks/useHiddenRecipeProducts';
+import { MAX_HIDDEN_RECIPE_PRODUCTS, useHiddenRecipeProducts } from '../hooks/useHiddenRecipeProducts';
 import type {
   Product, RecipeBasketOptions, RecipeBasketPlan, RecipeBrandPreference, RecipeHideScope,
 } from '../types';
@@ -22,6 +23,8 @@ import type {
 const defaultSuggestions = ['Lasagnes', 'Blanquette de veau', 'Carbonade', 'Bœuf bourguignon', 'BBQ', 'Repas végétarien', 'Pizza'];
 const preferences = ['National', 'PrivateLabel', 'Economy', 'Mix'] as const;
 const recipePromotionDismissedKey = 'zava-recipe-promotion-dismissed';
+const recipeDraftKey = 'zava-recipe-draft';
+const fallbackPlanLifetimeMs = 30 * 60 * 1000;
 const recipePromotionOffers = [
   { id: 'carbonade-instant-pot', recipePattern: /\bcarbonade\b/i, productId: 267 },
   { id: 'bbq-barbecue', recipePattern: /\bbbq\b|barbecue/i, productId: 264 },
@@ -35,6 +38,51 @@ type OptionsState =
   | { status: 'loading' }
   | { status: 'ready'; data: RecipeBasketOptions }
   | { status: 'error'; message: string };
+
+interface RecipeDraft {
+  siteType: string;
+  recipe: string;
+  servings: string;
+  brandPreference: RecipeBrandPreference;
+  plan: RecipeBasketPlan | null;
+  planSavedAt: number | null;
+  deselected: string[];
+}
+
+function planExpiry(plan: RecipeBasketPlan, savedAt: number | null) {
+  const explicitExpiry = Date.parse(plan.expiresAt);
+  if (Number.isFinite(explicitExpiry)) return explicitExpiry;
+  const createdAt = Date.parse(String((plan as RecipeBasketPlan & { createdAt?: string }).createdAt ?? ''));
+  if (Number.isFinite(createdAt)) return createdAt + fallbackPlanLifetimeMs;
+  return (savedAt ?? Date.now()) + fallbackPlanLifetimeMs;
+}
+
+function readRecipeDraft(siteType: string): RecipeDraft | null {
+  try {
+    const raw = window.sessionStorage.getItem(recipeDraftKey);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<RecipeDraft>;
+    if (parsed.siteType !== siteType) return null;
+    return {
+      siteType,
+      recipe: typeof parsed.recipe === 'string' ? parsed.recipe : '',
+      servings: typeof parsed.servings === 'string' ? parsed.servings : '4',
+      brandPreference: preferences.includes(parsed.brandPreference as RecipeBrandPreference)
+        ? parsed.brandPreference as RecipeBrandPreference : 'Mix',
+      plan: parsed.plan && typeof parsed.plan === 'object' ? parsed.plan as RecipeBasketPlan : null,
+      planSavedAt: typeof parsed.planSavedAt === 'number' ? parsed.planSavedAt : null,
+      deselected: Array.isArray(parsed.deselected) ? parsed.deselected.filter((item): item is string => typeof item === 'string') : [],
+    };
+  } catch {
+    return null;
+  }
+}
+
+function writeRecipeDraft(draft: RecipeDraft) {
+  try {
+    window.sessionStorage.setItem(recipeDraftKey, JSON.stringify(draft));
+  } catch { /* Storage failure must not interrupt the recipe flow. */ }
+}
 
 function CatalogueLinks() {
   const { t } = useLanguage();
@@ -121,7 +169,7 @@ function RecipePromotionSection({ offer, money, onDismiss }: {
     setError('');
     try {
       const cart = await addToCart(product.id, 1, product.variants[0]?.id);
-      window.dispatchEvent(new CustomEvent('zava:cart-updated', { detail: cart }));
+      publishCart(cart);
       setAdded(true);
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : t('recipe.promotionAddError'));
@@ -197,10 +245,11 @@ function RecipePromotionSection({ offer, money, onDismiss }: {
 }
 
 /** One previewed product, in the selection or moved out of it. */
-function PlanItemRow({ item, selected, disabled, hiddenScope, money, onToggleSelection, onHide, onUnhide }: {
+function PlanItemRow({ item, selected, disabled, hiddenScope, money, onToggleSelection, onHide, onUnhide, actionRef }: {
   item: PlanItem; selected: boolean; disabled: boolean; hiddenScope: RecipeHideScope | null;
   money: (value: number) => string; onToggleSelection: () => void;
   onHide: (scope: RecipeHideScope) => void; onUnhide: () => void;
+  actionRef?: (element: HTMLButtonElement | null) => void;
 }) {
   const { t } = useLanguage();
   const label = `${item.productName}${item.variantName ? ` – ${item.variantName}` : ''}`;
@@ -220,7 +269,7 @@ function PlanItemRow({ item, selected, disabled, hiddenScope, money, onToggleSel
           {money(item.subtotal)}
         </Typography>
       </Box>
-      <Button size="small" disabled={disabled} onClick={onToggleSelection}
+      <Button size="small" disabled={disabled} onClick={onToggleSelection} ref={actionRef}
         startIcon={selected ? <RemoveCircleOutline /> : <AddCircleOutline />}
         aria-label={`${t(selected ? 'recipe.deselect' : 'recipe.reselect')} : ${label}`}
         sx={{ mt: 1, ml: -1 }}>
@@ -243,9 +292,52 @@ function PlanItemRow({ item, selected, disabled, hiddenScope, money, onToggleSel
   );
 }
 
+function HiddenProductsSection({ hidden, open, disabled, onToggle, onUnhide }: {
+  hidden: ReturnType<typeof useHiddenRecipeProducts>['hidden']; open: boolean; disabled?: boolean;
+  onToggle: () => void; onUnhide: (productId: number) => void;
+}) {
+  const { t } = useLanguage();
+  return (
+    <CollapsibleSection id="recipe-hidden" title={t('recipe.hidden')} count={hidden.length}
+      description={t('recipe.hiddenDesc')} open={open} onToggle={onToggle}>
+      <Typography variant="caption" color="text.secondary" component="p" sx={{ mb: 1 }}>
+        {t('sec.recipe.hiddenLimit')} ({hidden.length}/{MAX_HIDDEN_RECIPE_PRODUCTS})
+      </Typography>
+      {hidden.length === 0 ? (
+        <Typography variant="body2" color="text.secondary">{t('sec.recipe.hiddenEmpty')}</Typography>
+      ) : (
+        <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
+          {hidden.map((entry) => (
+            <Box component="li" key={entry.productId}
+              sx={{ py: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
+              <Typography variant="body2" fontWeight={600} sx={{ overflowWrap: 'anywhere' }}>
+                {entry.productName || `#${entry.productId}`}
+              </Typography>
+              <Chip size="small" variant="outlined" icon={<VisibilityOff />} sx={{ mt: 0.5 }}
+                label={t(entry.scope === 'session' ? 'recipe.hiddenSession' : 'recipe.hiddenForever')} />
+              <Button size="small" sx={{ display: 'block', mt: 0.5, ml: -1 }} disabled={disabled}
+                onClick={() => onUnhide(entry.productId)}
+                aria-label={`${t('recipe.unhide')} : ${entry.productName || `#${entry.productId}`}`}>
+                {t('recipe.unhide')}
+              </Button>
+            </Box>
+          ))}
+        </Box>
+      )}
+      <Typography variant="caption" color="text.secondary" component="p" sx={{ mt: 1 }}>
+        {t('recipe.hiddenRegenerate')}
+      </Typography>
+    </CollapsibleSection>
+  );
+}
+
 export default function RecipeBasketPage() {
   const { config, siteVersion } = useSite();
   const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t('recipe.title')} · Zava`;
+  }, [t]);
 
   if (!config) {
     return <Box role="status" sx={{ textAlign: 'center', py: 8 }}><CircularProgress aria-label={t('recipe.optionsLoading')} /></Box>;
@@ -254,7 +346,7 @@ export default function RecipeBasketPage() {
     return (
       <Paper variant="outlined" sx={{ maxWidth: 760, mx: 'auto', p: { xs: 3, md: 5 } }}>
         <RestaurantMenu color="primary" sx={{ fontSize: 40, mb: 2 }} />
-        <Typography component="h1" variant="h4" gutterBottom>{t('recipe.title')}</Typography>
+        <Typography component="h1" variant="h4" gutterBottom tabIndex={-1} data-page-title sx={{ outline: 'none' }}>{t('recipe.title')}</Typography>
         <Alert severity="info" sx={{ my: 3 }}>
           <AlertTitle>{t('recipe.groceryOnly')}</AlertTitle>
           {t('recipe.groceryOnlyDesc')}
@@ -268,13 +360,18 @@ export default function RecipeBasketPage() {
 }
 
 function GroceryRecipeBasket() {
-  const { lang, t } = useLanguage();
+  const { t } = useLanguage();
+  const { price, date } = useFormatters();
+  const { config } = useSite();
+  const siteType = config?.currentSiteType ?? 'Grocery';
+  const restoredDraft = useMemo(() => readRecipeDraft(siteType), [siteType]);
   const [options, setOptions] = useState<OptionsState>({ status: 'loading' });
   const [optionsAttempt, setOptionsAttempt] = useState(0);
-  const [recipe, setRecipe] = useState('');
-  const [servings, setServings] = useState('4');
-  const [brandPreference, setBrandPreference] = useState<RecipeBrandPreference>('Mix');
-  const [plan, setPlan] = useState<RecipeBasketPlan | null>(null);
+  const [recipe, setRecipe] = useState(restoredDraft?.recipe ?? '');
+  const [servings, setServings] = useState(restoredDraft?.servings ?? '4');
+  const [brandPreference, setBrandPreference] = useState<RecipeBrandPreference>(restoredDraft?.brandPreference ?? 'Mix');
+  const [plan, setPlan] = useState<RecipeBasketPlan | null>(restoredDraft?.plan ?? null);
+  const [planSavedAt, setPlanSavedAt] = useState<number | null>(restoredDraft?.planSavedAt ?? null);
   const [planning, setPlanning] = useState(false);
   const [committing, setCommitting] = useState(false);
   const [committed, setCommitted] = useState(false);
@@ -282,19 +379,19 @@ function GroceryRecipeBasket() {
   const [commitError, setCommitError] = useState('');
   const [uncertainCommit, setUncertainCommit] = useState(false);
   const [commitRequiresRefresh, setCommitRequiresRefresh] = useState(false);
-  const [expired, setExpired] = useState(false);
-  const [deselected, setDeselected] = useState<string[]>([]);
+  const [expired, setExpired] = useState(() => restoredDraft?.plan ? planExpiry(restoredDraft.plan, restoredDraft.planSavedAt) <= Date.now() : false);
+  const [deselected, setDeselected] = useState<string[]>(restoredDraft?.deselected ?? []);
   const [showDeselected, setShowDeselected] = useState(false);
   const [showHidden, setShowHidden] = useState(false);
+  const [liveMessage, setLiveMessage] = useState('');
   const [dismissedPromotions, setDismissedPromotions] = useState<string[]>(() => readDismissedRecipePromotions());
   const { hidden, hiddenIds, hide, unhide, scopeOf } = useHiddenRecipeProducts();
   const busy = useRef(false);
   const active = useRef(false);
   const planController = useRef<AbortController | null>(null);
   const previewHeading = useRef<HTMLHeadingElement>(null);
-  const money = (value: number) => new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : 'en-GB', {
-    style: 'currency', currency: 'EUR',
-  }).format(value);
+  const rowActionRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const money = price;
 
   useEffect(() => {
     active.current = true;
@@ -303,6 +400,10 @@ function GroceryRecipeBasket() {
       planController.current?.abort();
     };
   }, []);
+
+  useEffect(() => {
+    writeRecipeDraft({ siteType, recipe, servings, brandPreference, plan, planSavedAt, deselected });
+  }, [siteType, recipe, servings, brandPreference, plan, planSavedAt, deselected]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -320,11 +421,15 @@ function GroceryRecipeBasket() {
 
   useEffect(() => {
     if (!plan || committed) return;
-    const expiry = Date.parse(plan.expiresAt);
+    const expiry = planExpiry(plan, planSavedAt);
+    if (expiry <= Date.now()) {
+      setExpired(true);
+      return;
+    }
     const timeout = window.setTimeout(() => setExpired(true),
-      Number.isFinite(expiry) ? Math.max(0, expiry - Date.now()) : 0);
+      Math.max(0, expiry - Date.now()));
     return () => window.clearTimeout(timeout);
-  }, [plan, committed]);
+  }, [plan, planSavedAt, committed]);
 
   useEffect(() => {
     if (plan) previewHeading.current?.focus();
@@ -337,6 +442,7 @@ function GroceryRecipeBasket() {
 
   const resetPreview = () => {
     setPlan(null);
+    setPlanSavedAt(null);
     setError('');
     setCommitError('');
     setCommitted(false);
@@ -362,15 +468,28 @@ function GroceryRecipeBasket() {
       const result = await planRecipeBasket({
         recipe: recipe.trim(), servings: Number(servings), brandPreference, excludedProductIds: hiddenIds,
       }, controller.signal);
-      if (active.current && !controller.signal.aborted) setPlan(result);
+      if (active.current && !controller.signal.aborted) {
+        setPlan(result);
+        setPlanSavedAt(Date.now());
+      }
     } catch (e) {
       if (active.current && !controller.signal.aborted) setError(e instanceof Error ? e.message : t('recipe.planError'));
     } finally {
       if (active.current) {
         busy.current = false;
         setPlanning(false);
+        if (planController.current === controller) planController.current = null;
       }
     }
+  };
+
+  const cancelPlan = () => {
+    if (!planning) return;
+    planController.current?.abort();
+    planController.current = null;
+    busy.current = false;
+    setPlanning(false);
+    setError(t('sec.recipe.cancelled'));
   };
 
   const planItems = useMemo(() => plan?.items ?? [], [plan]);
@@ -392,10 +511,21 @@ function GroceryRecipeBasket() {
   const toggleSelection = (item: PlanItem) => {
     if (selectionLocked) return;
     const key = itemKey(item);
+    const wasDeselected = deselected.includes(key);
+    if (!wasDeselected) {
+      const index = selectedItems.findIndex((entry) => itemKey(entry) === key);
+      const nextFocusKey = selectedItems[index + 1] ? itemKey(selectedItems[index + 1])
+        : selectedItems[index - 1] ? itemKey(selectedItems[index - 1]) : null;
+      window.requestAnimationFrame(() => {
+        if (nextFocusKey) rowActionRefs.current[nextFocusKey]?.focus();
+        else previewHeading.current?.focus();
+      });
+    }
     setCommitError('');
     setDeselected((previous) => previous.includes(key)
       ? previous.filter((entry) => entry !== key)
       : [...previous, key]);
+    setLiveMessage(`${item.productName} ${t(wasDeselected ? 'sec.recipe.restoredAnnounce' : 'sec.recipe.removedAnnounce')}`);
   };
 
   const hideProduct = (item: PlanItem, scope: RecipeHideScope) => {
@@ -410,7 +540,7 @@ function GroceryRecipeBasket() {
 
   const confirmPlan = async () => {
     if (!plan || busy.current || committed || commitRequiresRefresh || !selectedItems.length) return;
-    if (!uncertainCommit && (expired || Date.parse(plan.expiresAt) <= Date.now())) {
+    if (!uncertainCommit && (expired || planExpiry(plan, planSavedAt) <= Date.now())) {
       setExpired(true);
       return;
     }
@@ -422,7 +552,7 @@ function GroceryRecipeBasket() {
         productId: item.productId, variantId: item.variantId ?? null,
       })));
       if (!active.current) return;
-      window.dispatchEvent(new CustomEvent('zava:cart-updated', { detail: cart }));
+      publishCart(cart);
       setCommitted(true);
       setUncertainCommit(false);
     } catch (e) {
@@ -460,6 +590,9 @@ function GroceryRecipeBasket() {
 
   return (
     <Box sx={{ maxWidth: 1180, mx: 'auto' }}>
+      <Box aria-live="polite" sx={{ position: 'absolute', width: '1px', height: '1px', p: 0, m: '-1px', overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: 0 }}>
+        {liveMessage}
+      </Box>
       <Box component="header" sx={{
         position: 'relative', overflow: 'hidden', borderRadius: 4, mb: 3,
         p: { xs: 3, sm: 4, md: 5 }, color: 'white',
@@ -467,7 +600,7 @@ function GroceryRecipeBasket() {
       }}>
         <Box sx={{ position: 'relative', zIndex: 1, maxWidth: { xs: '100%', md: '76%' } }}>
           <Typography variant="overline" sx={{ letterSpacing: 2, opacity: 0.85 }}>{t('recipe.eyebrow')}</Typography>
-          <Typography component="h1" variant="h3" fontWeight={800} sx={{ mt: 0.5, mb: 1.5, fontSize: { xs: '2.2rem', md: '3rem' } }}>
+          <Typography component="h1" variant="h3" fontWeight={800} tabIndex={-1} data-page-title sx={{ outline: 'none', mt: 0.5, mb: 1.5, fontSize: { xs: '2.2rem', md: '3rem' } }}>
             {t('recipe.title')}
           </Typography>
           <Typography variant="h6" component="p" sx={{ mb: 1 }}>{t('recipe.intro')}</Typography>
@@ -503,6 +636,10 @@ function GroceryRecipeBasket() {
             </Button>
             <CatalogueLinks />
           </Stack>
+          <Box sx={{ mt: 3 }}>
+            <HiddenProductsSection hidden={hidden} open={showHidden}
+              onToggle={() => setShowHidden((open) => !open)} onUnhide={unhide} />
+          </Box>
         </Paper>
       )}
       {options.status === 'ready' && options.data.available && (
@@ -556,6 +693,8 @@ function GroceryRecipeBasket() {
                 ))}
               </RadioGroup>
             </FormControl>
+            <HiddenProductsSection hidden={hidden} open={showHidden} disabled={formDisabled}
+              onToggle={() => setShowHidden((open) => !open)} onUnhide={unhide} />
             {error && <Alert severity="error" sx={{ mb: 2 }}><AlertTitle>{t('recipe.planError')}</AlertTitle>{error}</Alert>}
             <Button type="submit" variant="contained" fullWidth size="large" disabled={!validForm || formDisabled}
               startIcon={planning ? <CircularProgress size={18} color="inherit" /> : <ShoppingBasket />}
@@ -579,7 +718,11 @@ function GroceryRecipeBasket() {
                     {t(planning ? 'recipe.progressDetail' : 'recipe.previewEmptyDesc')}
                   </Typography>
                 </Box>
-                {planning && <LinearProgress aria-label={t('recipe.planning')} sx={{ mt: 3, borderRadius: 1 }} />}
+                {planning && (
+                  <Button variant="outlined" sx={{ mt: 3 }} onClick={cancelPlan}>
+                    {t('common.cancel')}
+                  </Button>
+                )}
                 <Divider sx={{ my: 3 }} />
                 <Stack gap={2.5}>
                   {[
@@ -639,6 +782,7 @@ function GroceryRecipeBasket() {
                   {selectedItems.map((item, index) => (
                     <PlanItemRow key={`${itemKey(item)}-${index}`} item={item} selected disabled={selectionLocked}
                       hiddenScope={scopeOf(item.productId)} money={money}
+                      actionRef={(element) => { rowActionRefs.current[itemKey(item)] = element; }}
                       onToggleSelection={() => toggleSelection(item)}
                       onHide={(scope) => hideProduct(item, scope)} onUnhide={() => unhide(item.productId)} />
                   ))}
@@ -655,36 +799,11 @@ function GroceryRecipeBasket() {
                       {deselectedItems.map((item, index) => (
                         <PlanItemRow key={`${itemKey(item)}-${index}`} item={item} selected={false} disabled={selectionLocked}
                           hiddenScope={scopeOf(item.productId)} money={money}
+                          actionRef={(element) => { rowActionRefs.current[itemKey(item)] = element; }}
                           onToggleSelection={() => toggleSelection(item)}
                           onHide={(scope) => hideProduct(item, scope)} onUnhide={() => unhide(item.productId)} />
                       ))}
                     </Box>
-                  </CollapsibleSection>
-                )}
-                {hidden.length > 0 && (
-                  <CollapsibleSection id="recipe-hidden" title={t('recipe.hidden')} count={hidden.length}
-                    description={t('recipe.hiddenDesc')} open={showHidden}
-                    onToggle={() => setShowHidden((open) => !open)}>
-                    <Box component="ul" sx={{ listStyle: 'none', m: 0, p: 0 }}>
-                      {hidden.map((entry) => (
-                        <Box component="li" key={entry.productId}
-                          sx={{ py: 1.25, borderTop: '1px solid', borderColor: 'divider' }}>
-                          <Typography variant="body2" fontWeight={600} sx={{ overflowWrap: 'anywhere' }}>
-                            {entry.productName || `#${entry.productId}`}
-                          </Typography>
-                          <Chip size="small" variant="outlined" icon={<VisibilityOff />} sx={{ mt: 0.5 }}
-                            label={t(entry.scope === 'session' ? 'recipe.hiddenSession' : 'recipe.hiddenForever')} />
-                          <Button size="small" sx={{ display: 'block', mt: 0.5, ml: -1 }}
-                            onClick={() => unhide(entry.productId)}
-                            aria-label={`${t('recipe.unhide')} : ${entry.productName || `#${entry.productId}`}`}>
-                            {t('recipe.unhide')}
-                          </Button>
-                        </Box>
-                      ))}
-                    </Box>
-                    <Typography variant="caption" color="text.secondary" component="p" sx={{ mt: 1 }}>
-                      {t('recipe.hiddenRegenerate')}
-                    </Typography>
                   </CollapsibleSection>
                 )}
                 {planItems.length === 0 ? <Alert severity="info" sx={{ my: 2 }}>{t('recipe.noProducts')}</Alert> : (
@@ -712,7 +831,7 @@ function GroceryRecipeBasket() {
                 </Button>
                 {committed && <Button component={RouterLink} to="/cart" fullWidth endIcon={<ArrowForward />} sx={{ mt: 1 }}>{t('recipe.viewCart')}</Button>}
                 {!committed && !expired && <Typography variant="caption" color="text.secondary" component="p" sx={{ textAlign: 'center', mt: 1.5 }}>
-                  {t('recipe.expires')} {new Date(plan.expiresAt).toLocaleTimeString(lang === 'fr' ? 'fr-FR' : 'en-GB', { hour: '2-digit', minute: '2-digit' })}
+                  {t('recipe.expires')} {date(new Date(planExpiry(plan, planSavedAt)), { hour: '2-digit', minute: '2-digit' })}
                 </Typography>}
               </Paper>
             )}

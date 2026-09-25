@@ -14,6 +14,9 @@ public class CartItem
     public int? VariantId { get; set; }
     public string? VariantName { get; set; }
     public decimal UnitPrice { get; set; }
+    public decimal? RegularUnitPrice { get; set; }
+    public int? OfferTriggerProductId { get; set; }
+    public int? DiscountPercent { get; set; }
     public int Quantity { get; set; }
     public decimal Subtotal => UnitPrice * Quantity;
 }
