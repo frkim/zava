@@ -1,7 +1,7 @@
 /**
- * Offline tests: the extraction function is run against a fake Carrefour-like
- * product page served from a local HTTP server, so the parsing and the Zava
- * mapping can be validated without hitting carrefour.fr.
+ * Offline tests: the extraction function is run against fake Carrefour-, Celio-
+ * and Decathlon-like product pages served from a local HTTP server, so the
+ * parsing and the Zava mapping can be validated without hitting the real sites.
  */
 
 import assert from 'node:assert/strict';
@@ -10,6 +10,7 @@ import test from 'node:test';
 import { chromium } from 'playwright';
 import { extractProductInPage, extractSearchResultsInPage } from '../src/extract.js';
 import { guessCategoryId, toZavaProduct } from '../src/mapToZava.js';
+import { SITES, extractionConfig, getSite, searchUrl } from '../src/sites.js';
 import { slugify } from '../src/store.js';
 
 const PRODUCT_HTML = `<!doctype html>
@@ -87,10 +88,76 @@ const SEARCH_HTML = `<!doctype html><html><body>
 <a href="/p/nutella-pate-a-tartiner-750g/3017620425035?utm=1">Nutella again</a>
 </body></html>`;
 
+
+const CELIO_HTML = `<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Chemise coupe droite en lin | Celio</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Chemise coupe droite en lin bleu",
+ "description":"Chemise 100% lin, coupe droite, col français, idéale pour l'été.",
+ "brand":{"@type":"Brand","name":"Celio"},"sku":"NALINO_BLEU",
+ "image":["https://www.celio.com/dw/image/v2/BDPQ/on/demandware.static/chemise-lin-1500x1500.jpg"],
+ "offers":{"@type":"Offer","price":"39.99","priceCurrency":"EUR"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Accueil"},
+ {"@type":"ListItem","position":2,"name":"Chemises Homme"}]}
+</script>
+</head><body>
+<h1>Chemise coupe droite en lin bleu</h1>
+<dl><dt>Composition</dt><dd>100% lin</dd><dt>Taille</dt><dd>M</dd></dl>
+<div class="gallery">
+  <img src="https://www.celio.com/dw/image/v2/BDPQ/on/demandware.static/chemise-lin-1500x1500.jpg">
+  <img src="https://www.facebook.com/tr?id=1">
+</div>
+</body></html>`;
+
+const CELIO_SEARCH_HTML = `<!doctype html><html><body>
+<a href="/fr-fr/chemise-coupe-droite-lin/NALINO_BLEU.html">Chemise</a>
+<a href="/fr-fr/pull-col-rond/NAPULL_GRIS.html">Pull</a>
+<a href="/fr-fr/c/homme/chemises">Rayon chemises</a>
+</body></html>`;
+
+const DECATHLON_HTML = `<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Chaussures de running Kiprun KS500 - Decathlon</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Chaussures de running Kiprun KS500",
+ "description":"Chaussure de running polyvalente avec amorti dynamique pour vos sorties longues.",
+ "brand":{"@type":"Brand","name":"Kiprun"},"sku":"8600821",
+ "image":["https://contents.mediadecathlon.com/p2394806/ks500.jpg"],
+ "offers":{"@type":"Offer","price":"59.99","priceCurrency":"EUR"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Accueil"},
+ {"@type":"ListItem","position":2,"name":"Running"},
+ {"@type":"ListItem","position":3,"name":"Chaussures de running homme"}]}
+</script>
+</head><body>
+<h1>Chaussures de running Kiprun KS500</h1>
+<table><tr><th>Pointure</th><td>42</td></tr></table>
+<div class="gallery">
+  <img src="https://contents.mediadecathlon.com/p2394806/ks500.jpg">
+  <img src="https://www.google-analytics.com/collect.png">
+</div>
+</body></html>`;
+
+const DECATHLON_SEARCH_HTML = `<!doctype html><html><body>
+<a href="/p/chaussures-running-kiprun-ks500/_/R-p-306045">KS500</a>
+<a href="/p/velo-vtt-rockrider-st100/_/R-p-301234?mc=8512345">Rockrider</a>
+<a href="/tous-les-sports/running">Univers running</a>
+</body></html>`;
+
 function startServer() {
   const server = http.createServer((req, res) => {
     res.setHeader('content-type', 'text/html; charset=utf-8');
-    if (req.url.startsWith('/s')) res.end(SEARCH_HTML);
+    if (req.url.startsWith('/celio-search')) res.end(CELIO_SEARCH_HTML);
+    else if (req.url.startsWith('/decathlon-search')) res.end(DECATHLON_SEARCH_HTML);
+    else if (req.url.startsWith('/celio')) res.end(CELIO_HTML);
+    else if (req.url.startsWith('/decathlon')) res.end(DECATHLON_HTML);
+    else if (req.url.startsWith('/s')) res.end(SEARCH_HTML);
     else if (req.url.startsWith('/pdp')) res.end(PDP_HTML);
     else res.end(PRODUCT_HTML);
   });
@@ -245,6 +312,115 @@ test('category guessing ignores accents and prefers the aisle crumb', () => {
     name: 'Boisson en poudre vanille Milk mix NESQUIK',
   };
   assert.equal(guessCategoryId(nesquik), 7, 'unaccented aisle crumb must still map to Épicerie sucrée');
+});
+
+test('extracts a Celio product with the clothing profile', async (t) => {
+  const server = await startServer();
+  const port = server.address().port;
+  const browser = await chromium.launch();
+  t.after(async () => {
+    await browser.close();
+    server.close();
+  });
+
+  const site = getSite('celio');
+  const page = await browser.newPage();
+  await page.goto(`http://127.0.0.1:${port}/celio/chemise.html`);
+  const product = await page.evaluate(extractProductInPage, extractionConfig(site));
+
+  assert.equal(product.name, 'Chemise coupe droite en lin bleu');
+  assert.equal(product.brand, 'Celio');
+  assert.equal(product.price, 39.99);
+  assert.ok(
+    product.features.some((f) => f.label === 'Composition' && f.value === '100% lin'),
+    'definition list should become features',
+  );
+  assert.deepEqual(
+    product.images,
+    ['https://www.celio.com/dw/image/v2/BDPQ/on/demandware.static/chemise-lin-1500x1500.jpg'],
+    'only Celio hosted pictures should be kept',
+  );
+
+  const zava = toZavaProduct(product, { id: 1, stock: 40, site });
+  assert.equal(zava.categoryId, 1, '"Chemises Homme" maps to the first clothing category');
+  assert.equal(zava.variants[0].value, 'M', 'the size feature becomes the variant');
+  assert.equal(zava.sku, 'CELIO-CHEMISECOU');
+});
+
+test('extracts a Decathlon product with the sports profile', async (t) => {
+  const server = await startServer();
+  const port = server.address().port;
+  const browser = await chromium.launch();
+  t.after(async () => {
+    await browser.close();
+    server.close();
+  });
+
+  const site = getSite('decathlon');
+  const page = await browser.newPage();
+  await page.goto(`http://127.0.0.1:${port}/decathlon/p/ks500`);
+  const product = await page.evaluate(extractProductInPage, extractionConfig(site));
+
+  assert.equal(product.name, 'Chaussures de running Kiprun KS500');
+  assert.equal(product.brand, 'Kiprun');
+  assert.equal(product.price, 59.99);
+  assert.deepEqual(
+    product.images,
+    ['https://contents.mediadecathlon.com/p2394806/ks500.jpg'],
+    'only Decathlon media hosts should be kept',
+  );
+
+  const zava = toZavaProduct(product, { id: 1, stock: 40, site });
+  assert.equal(zava.categoryId, 1, '"Running" maps to the first sports category');
+  assert.equal(zava.variants[0].value, '42', 'the pointure feature becomes the variant');
+});
+
+test('collects product links with the per-site link patterns', async (t) => {
+  const server = await startServer();
+  const port = server.address().port;
+  const browser = await chromium.launch();
+  t.after(async () => {
+    await browser.close();
+    server.close();
+  });
+
+  const page = await browser.newPage();
+
+  await page.goto(`http://127.0.0.1:${port}/celio-search?q=chemise`);
+  const celioLinks = await page.evaluate(extractSearchResultsInPage, extractionConfig(getSite('celio')));
+  assert.deepEqual(
+    celioLinks.map((link) => new URL(link).pathname).sort(),
+    ['/fr-fr/chemise-coupe-droite-lin/NALINO_BLEU.html', '/fr-fr/pull-col-rond/NAPULL_GRIS.html'],
+  );
+
+  await page.goto(`http://127.0.0.1:${port}/decathlon-search?Ntt=running`);
+  const decathlonLinks = await page.evaluate(
+    extractSearchResultsInPage,
+    extractionConfig(getSite('decathlon')),
+  );
+  assert.deepEqual(
+    decathlonLinks.map((link) => new URL(link).pathname).sort(),
+    ['/p/chaussures-running-kiprun-ks500/_/R-p-306045', '/p/velo-vtt-rockrider-st100/_/R-p-301234'],
+    'query strings should be normalised and non-product links dropped',
+  );
+});
+
+test('site profiles expose the Zava store types and search urls', () => {
+  assert.deepEqual(
+    Object.values(SITES).map((site) => site.siteType),
+    ['Grocery', 'Clothing', 'Sports'],
+  );
+  assert.equal(searchUrl(SITES.carrefour, 'café'), 'https://www.carrefour.fr/s?q=caf%C3%A9');
+  assert.equal(searchUrl(SITES.celio, 'chemise'), 'https://www.celio.com/fr-fr/search?q=chemise');
+  assert.equal(searchUrl(SITES.decathlon, 'running'), 'https://www.decathlon.fr/search?Ntt=running');
+  assert.throws(() => getSite('unknown'), /Known sites: carrefour, celio, decathlon/);
+});
+
+test('category guessing uses the categories of the selected site', () => {
+  const site = getSite('decathlon');
+  assert.equal(guessCategoryId({ breadcrumbs: ['Accueil', 'Vélo'], name: 'VTT' }, site), 5);
+  assert.equal(guessCategoryId({ breadcrumbs: [], name: 'Tapis de yoga confort' }, site), 10);
+  assert.equal(guessCategoryId({ breadcrumbs: ['Accueil'], name: 'Objet inconnu' }, site), 2);
 });
 
 test('slugify produces safe folder names', () => {

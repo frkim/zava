@@ -2,7 +2,7 @@
 
 Site e-commerce polymorphique de démonstration. Changez le type de boutique en un clic et obtenez un catalogue complet avec 100 produits (187 en alimentaire), 10 catégories, des avis clients et un tunnel d'achat fonctionnel.
 
-## 6 types de boutique
+## 8 types de boutique
 
 | Type | Exemple |
 |------|---------|
@@ -12,6 +12,8 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 | Matériel Électrique | Câbles, disjoncteurs, outillage |
 | Bricolage | Perceuses, peinture, plomberie |
 | Alimentaire | Épicerie, frais, boissons |
+| Mode Homme & Femme | Chemises, pulls, jeans, robes |
+| Articles de Sport | Running, fitness, vélo, randonnée |
 
 ## Fonctionnalités
 
