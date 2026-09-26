@@ -7,7 +7,9 @@ public enum SiteType
     Cosmetics,
     Electrical,
     DIY,
-    Grocery
+    Grocery,
+    Clothing,
+    Sports
 }
 
 public enum PaymentStatus

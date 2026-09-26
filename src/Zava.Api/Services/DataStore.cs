@@ -63,7 +63,9 @@ public class DataStore
                 new() { Type = SiteType.Cosmetics, Name = "Beauté & Parfums", NameEn = "Beauty & Fragrances", Description = "Maquillage, soins, parfums", DescriptionEn = "Makeup, skincare, fragrances" },
                 new() { Type = SiteType.Electrical, Name = "Matériel Électrique", NameEn = "Electrical Equipment", Description = "Câbles, disjoncteurs, outillage", DescriptionEn = "Cables, circuit breakers, tools" },
                 new() { Type = SiteType.DIY, Name = "Bricolage", NameEn = "DIY", Description = "Perceuses, peinture, plomberie", DescriptionEn = "Drills, paint, plumbing" },
-                new() { Type = SiteType.Grocery, Name = "Alimentaire", NameEn = "Grocery", Description = "Épicerie, frais, boissons", DescriptionEn = "Groceries, fresh food, beverages" }
+                new() { Type = SiteType.Grocery, Name = "Alimentaire", NameEn = "Grocery", Description = "Épicerie, frais, boissons", DescriptionEn = "Groceries, fresh food, beverages" },
+                new() { Type = SiteType.Clothing, Name = "Mode Homme & Femme", NameEn = "Men's & Women's Fashion", Description = "Chemises, pulls, jeans, robes", DescriptionEn = "Shirts, jumpers, jeans, dresses" },
+                new() { Type = SiteType.Sports, Name = "Articles de Sport", NameEn = "Sporting Goods", Description = "Running, fitness, vélo, randonnée", DescriptionEn = "Running, fitness, cycling, hiking" }
             }
         };
     }

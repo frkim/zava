@@ -1,0 +1,5635 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Chemise Oxford coupe droite bleu ciel",
+    "nameEn": "Sky Blue Oxford Regular-Fit Shirt",
+    "description": "Chemise Oxford en coton doux, col boutonné et coupe droite, à porter au bureau comme le week-end.",
+    "descriptionEn": "Soft cotton Oxford shirt with button-down collar and regular fit, for the office or the weekend.",
+    "price": 34.99,
+    "brand": "Celio",
+    "sku": "CEL-CHOXF01",
+    "stock": 74,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 2,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 3,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 4,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 5,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Chemise en lin manches courtes blanche",
+    "nameEn": "White Short-Sleeve Linen Shirt",
+    "description": "Chemise 100% lin lavé, respirante et légère, idéale pour les journées chaudes.",
+    "descriptionEn": "100% washed linen shirt, breathable and light, ideal for hot days.",
+    "price": 39.99,
+    "promoPrice": 35.99,
+    "brand": "Celio",
+    "sku": "CEL-CHLIN02",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 6,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 7,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 8,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 9,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 10,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Chemise slim à carreaux vichy",
+    "nameEn": "Slim-Fit Gingham Check Shirt",
+    "description": "Chemise ajustée en popeline à carreaux vichy, col italien et poignets simples.",
+    "descriptionEn": "Slim gingham poplin shirt with cutaway collar and single cuffs.",
+    "price": 32.99,
+    "brand": "Celio Club",
+    "sku": "CEL-CHVIC03",
+    "stock": 85,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 11,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 12,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 13,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 14,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 15,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 36
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Chemise en denim délavé",
+    "nameEn": "Washed Denim Shirt",
+    "description": "Chemise en denim léger délavé avec double poche poitrine, un basique du vestiaire masculin.",
+    "descriptionEn": "Light washed denim shirt with two chest pockets, a men's wardrobe staple.",
+    "price": 44.99,
+    "brand": "Jules",
+    "sku": "JUL-CHDEN04",
+    "stock": 128,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 16,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 17,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 18,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 19,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 20,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Chemise popeline blanche coupe ajustée",
+    "nameEn": "White Fitted Poplin Shirt",
+    "description": "Chemise en popeline de coton blanche, coupe ajustée et finitions soignées pour les occasions habillées.",
+    "descriptionEn": "White cotton poplin shirt, fitted cut and neat finishing for dressy occasions.",
+    "price": 29.99,
+    "promoPrice": 22.99,
+    "brand": "Celio",
+    "sku": "CEL-CHPOP05",
+    "stock": 89,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 21,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 22,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 23,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 24,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 25,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Chemise en flanelle à carreaux",
+    "nameEn": "Checked Flannel Shirt",
+    "description": "Chemise en flanelle de coton brossé, chaude et confortable pour la mi-saison.",
+    "descriptionEn": "Brushed cotton flannel shirt, warm and comfortable for mid-season.",
+    "price": 39.99,
+    "brand": "Celio",
+    "sku": "CEL-CHFLA06",
+    "stock": 101,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 26,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 27,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 28,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 29,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 30,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "Chemise col mao en coton bio",
+    "nameEn": "Organic Cotton Mandarin Collar Shirt",
+    "description": "Chemise col mao en coton biologique certifié, coupe décontractée et tombé souple.",
+    "descriptionEn": "Mandarin collar shirt in certified organic cotton, relaxed cut and soft drape.",
+    "price": 49.99,
+    "brand": "Armor-Lux",
+    "sku": "ARM-CHMAO07",
+    "stock": 83,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 31,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 32,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 33,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 34,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 35,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 26
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Chemise imprimé feuillage manches courtes",
+    "nameEn": "Leaf Print Short-Sleeve Shirt",
+    "description": "Chemise manches courtes à imprimé feuillage all-over, en viscose fluide.",
+    "descriptionEn": "Short-sleeve shirt with all-over leaf print in flowing viscose.",
+    "price": 27.99,
+    "promoPrice": 25.99,
+    "brand": "Celio",
+    "sku": "CEL-CHFEU08",
+    "stock": 123,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 36,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 37,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 38,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 39,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 40,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 38
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Chemise business sans repassage",
+    "nameEn": "Non-Iron Business Shirt",
+    "description": "Chemise business traitée sans repassage, coupe droite et col semi-italien.",
+    "descriptionEn": "Non-iron business shirt with regular fit and semi-spread collar.",
+    "price": 54.99,
+    "brand": "Jules",
+    "sku": "JUL-CHBUS09",
+    "stock": 125,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 41,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 42,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 43,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 44,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 45,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Chemise en velours côtelé kaki",
+    "nameEn": "Khaki Corduroy Shirt",
+    "description": "Chemise en velours côtelé fin kaki, à porter fermée ou ouverte sur un t-shirt.",
+    "descriptionEn": "Fine khaki corduroy shirt, to wear buttoned up or open over a t-shirt.",
+    "price": 45.99,
+    "brand": "Celio Club",
+    "sku": "CEL-CHVEL10",
+    "stock": 88,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 46,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 47,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 48,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 49,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 50,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "T-shirt col rond coton bio blanc",
+    "nameEn": "White Organic Cotton Crew Neck T-Shirt",
+    "description": "T-shirt uni en jersey de coton biologique, col rond côtelé et coupe régulière.",
+    "descriptionEn": "Plain organic cotton jersey t-shirt with ribbed crew neck and regular fit.",
+    "price": 12.99,
+    "promoPrice": 10.49,
+    "brand": "Celio",
+    "sku": "CEL-TSBIO11",
+    "stock": 87,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 51,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 52,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 53,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 54,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 55,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Polo piqué manches courtes marine",
+    "nameEn": "Navy Short-Sleeve Piqué Polo",
+    "description": "Polo en maille piquée de coton, col côtelé et patte 2 boutons.",
+    "descriptionEn": "Cotton piqué polo shirt with ribbed collar and two-button placket.",
+    "price": 24.99,
+    "brand": "Celio",
+    "sku": "CEL-POPIQ12",
+    "stock": 127,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 56,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 57,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 58,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 59,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 60,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 26
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Marinière rayée en coton",
+    "nameEn": "Striped Breton T-Shirt",
+    "description": "Marinière en jersey de coton épais, rayures tissées et encolure bateau.",
+    "descriptionEn": "Breton top in thick cotton jersey with woven stripes and boat neck.",
+    "price": 39.99,
+    "brand": "Armor-Lux",
+    "sku": "ARM-TSMAR13",
+    "stock": 98,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 61,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 62,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 63,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 64,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 65,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 38
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Polo coupe ajustée bordeaux",
+    "nameEn": "Burgundy Slim-Fit Polo",
+    "description": "Polo ajusté en coton stretch, coloris bordeaux profond et logo brodé ton sur ton.",
+    "descriptionEn": "Slim-fit stretch cotton polo in deep burgundy with tonal embroidered logo.",
+    "price": 29.99,
+    "promoPrice": 20.99,
+    "brand": "Jules",
+    "sku": "JUL-POAJU14",
+    "stock": 115,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 66,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 67,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 68,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 69,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 70,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "T-shirt imprimé graphique noir",
+    "nameEn": "Black Graphic Print T-Shirt",
+    "description": "T-shirt noir à imprimé graphique poitrine, coupe droite et coton peigné.",
+    "descriptionEn": "Black t-shirt with graphic chest print, straight cut and combed cotton.",
+    "price": 16.99,
+    "brand": "Celio Club",
+    "sku": "CEL-TSGRA15",
+    "stock": 73,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 71,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 72,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 73,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 74,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 75,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "T-shirt manches longues chiné",
+    "nameEn": "Heathered Long-Sleeve T-Shirt",
+    "description": "T-shirt manches longues en jersey chiné, col rond et bas de manches côtelés.",
+    "descriptionEn": "Long-sleeve t-shirt in heathered jersey with crew neck and ribbed cuffs.",
+    "price": 19.99,
+    "brand": "Celio",
+    "sku": "CEL-TSCHI16",
+    "stock": 99,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 76,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 77,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 78,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 79,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 80,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Polo manches longues maille piquée",
+    "nameEn": "Long-Sleeve Piqué Polo",
+    "description": "Polo manches longues en maille piquée, col et poignets côtelés.",
+    "descriptionEn": "Long-sleeve piqué polo with ribbed collar and cuffs.",
+    "price": 32.99,
+    "promoPrice": 24.99,
+    "brand": "Celio",
+    "sku": "CEL-POLML17",
+    "stock": 145,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 81,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 82,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 83,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 84,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 85,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 29
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Lot de 3 t-shirts col V",
+    "nameEn": "Pack of 3 V-Neck T-Shirts",
+    "description": "Lot de trois t-shirts col V en coton, coloris blanc, gris chiné et marine.",
+    "descriptionEn": "Pack of three cotton V-neck t-shirts in white, heather grey and navy.",
+    "price": 29.99,
+    "brand": "Celio",
+    "sku": "CEL-TSLOT18",
+    "stock": 103,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 86,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 87,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 88,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 89,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 90,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 39
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "T-shirt poche poitrine kaki",
+    "nameEn": "Khaki Chest Pocket T-Shirt",
+    "description": "T-shirt kaki avec poche poitrine plaquée, jersey flammé légèrement texturé.",
+    "descriptionEn": "Khaki t-shirt with patch chest pocket in slightly textured slub jersey.",
+    "price": 14.99,
+    "brand": "Jules",
+    "sku": "JUL-TSPOC19",
+    "stock": 145,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 91,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 92,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 93,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 94,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 95,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Polo zippé en maille piquée",
+    "nameEn": "Zipped Piqué Polo",
+    "description": "Polo à col zippé en maille piquée, finition côtelée et coupe droite.",
+    "descriptionEn": "Zip-neck piqué polo with ribbed finish and straight cut.",
+    "price": 34.99,
+    "promoPrice": 31.99,
+    "brand": "Celio Club",
+    "sku": "CEL-POZIP20",
+    "stock": 110,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 96,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 97,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 98,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 99,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 100,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Pull col rond maille fine marine",
+    "nameEn": "Navy Fine Knit Crew Neck Jumper",
+    "description": "Pull en maille fine de coton, col rond et bords côtelés, facile à superposer.",
+    "descriptionEn": "Fine cotton knit jumper with crew neck and ribbed edges, easy to layer.",
+    "price": 34.99,
+    "brand": "Celio",
+    "sku": "CEL-PUFIN21",
+    "stock": 77,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 101,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 102,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 103,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 104,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 105,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Sweat à capuche molleton gris chiné",
+    "nameEn": "Heather Grey Fleece Hoodie",
+    "description": "Sweat à capuche en molleton gratté, poche kangourou et cordon de serrage.",
+    "descriptionEn": "Brushed fleece hoodie with kangaroo pocket and drawstring.",
+    "price": 39.99,
+    "brand": "Celio",
+    "sku": "CEL-SWCAP22",
+    "stock": 146,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 106,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 107,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 108,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 109,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 110,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Pull col roulé laine mélangée",
+    "nameEn": "Wool Blend Roll Neck Jumper",
+    "description": "Pull col roulé en laine mélangée, maille dense et chaude pour l'hiver.",
+    "descriptionEn": "Roll neck jumper in wool blend with dense, warm knit for winter.",
+    "price": 59.99,
+    "promoPrice": 47.99,
+    "brand": "Celio Club",
+    "sku": "CEL-PUROU23",
+    "stock": 113,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 111,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 112,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 113,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 114,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 115,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Sweat col rond logo brodé",
+    "nameEn": "Embroidered Logo Sweatshirt",
+    "description": "Sweat col rond en coton mélangé avec logo brodé poitrine.",
+    "descriptionEn": "Cotton blend crew neck sweatshirt with embroidered chest logo.",
+    "price": 32.99,
+    "brand": "Celio",
+    "sku": "CEL-SWLOG24",
+    "stock": 111,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 116,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 117,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 118,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 119,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 120,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Cardigan boutonné camel",
+    "nameEn": "Camel Buttoned Cardigan",
+    "description": "Cardigan boutonné en maille douce camel, deux poches plaquées.",
+    "descriptionEn": "Buttoned cardigan in soft camel knit with two patch pockets.",
+    "price": 49.99,
+    "brand": "Jules",
+    "sku": "JUL-CAMEL25",
+    "stock": 111,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 121,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 122,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 123,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 124,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 125,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 36
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Pull torsadé col V",
+    "nameEn": "Cable Knit V-Neck Jumper",
+    "description": "Pull col V en maille torsadée, coton mélangé confortable toute la saison.",
+    "descriptionEn": "V-neck jumper in cable knit, comfortable cotton blend all season.",
+    "price": 44.99,
+    "promoPrice": 35.99,
+    "brand": "Celio",
+    "sku": "CEL-PUTOR26",
+    "stock": 98,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 126,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 127,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 128,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 129,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 130,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "Sweat zippé doublé sherpa",
+    "nameEn": "Sherpa-Lined Zip Sweatshirt",
+    "description": "Sweat zippé doublé sherpa, col montant et poches latérales zippées.",
+    "descriptionEn": "Sherpa-lined zip sweatshirt with high collar and zipped side pockets.",
+    "price": 54.99,
+    "brand": "Celio Club",
+    "sku": "CEL-SWSHE27",
+    "stock": 117,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 131,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 132,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 133,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 134,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 135,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 24
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Pull jacquard motif nordique",
+    "nameEn": "Nordic Jacquard Jumper",
+    "description": "Pull en maille jacquard à motif nordique, chaud et graphique.",
+    "descriptionEn": "Jacquard knit jumper with Nordic pattern, warm and graphic.",
+    "price": 45.99,
+    "brand": "Celio",
+    "sku": "CEL-PUJAC28",
+    "stock": 101,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 136,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 137,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 138,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 139,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 140,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Sweat à capuche oversize coton bio",
+    "nameEn": "Organic Cotton Oversize Hoodie",
+    "description": "Sweat à capuche oversize en coton biologique, épaules tombantes et molleton épais.",
+    "descriptionEn": "Oversize organic cotton hoodie with dropped shoulders and thick fleece.",
+    "price": 44.99,
+    "promoPrice": 40.99,
+    "brand": "Celio",
+    "sku": "CEL-HOOVE29",
+    "stock": 94,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 141,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 142,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 143,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 144,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 145,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Pull fin col camionneur",
+    "nameEn": "Fine Knit Funnel Neck Jumper",
+    "description": "Pull fin à col camionneur zippé, maille légère pour la mi-saison.",
+    "descriptionEn": "Fine knit jumper with zipped funnel neck, light knit for mid-season.",
+    "price": 39.99,
+    "brand": "Jules",
+    "sku": "JUL-PUCAM30",
+    "stock": 105,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 146,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 147,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 148,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 149,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 150,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Jean slim stretch brut",
+    "nameEn": "Raw Slim Stretch Jeans",
+    "description": "Jean slim en denim stretch brut, confortable et facile à assortir.",
+    "descriptionEn": "Slim jeans in raw stretch denim, comfortable and easy to match.",
+    "price": 49.99,
+    "brand": "Celio",
+    "sku": "CEL-JESLI31",
+    "stock": 144,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 151,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 152,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 153,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 154,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 155,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Chino coupe droite beige",
+    "nameEn": "Beige Straight-Fit Chinos",
+    "description": "Pantalon chino en twill de coton, coupe droite et taille ajustable.",
+    "descriptionEn": "Cotton twill chinos with straight fit and adjustable waist.",
+    "price": 39.99,
+    "promoPrice": 29.99,
+    "brand": "Celio",
+    "sku": "CEL-CHIBE32",
+    "stock": 125,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 156,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 157,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 158,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 159,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 160,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Jean regular délavé bleu",
+    "nameEn": "Blue Washed Regular Jeans",
+    "description": "Jean coupe regular en denim délavé, 5 poches et passants de ceinture larges.",
+    "descriptionEn": "Regular-fit jeans in washed denim with five pockets and wide belt loops.",
+    "price": 44.99,
+    "brand": "Celio",
+    "sku": "CEL-JEREG33",
+    "stock": 139,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 161,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 162,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 163,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 164,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 165,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 11
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Pantalon de costume slim anthracite",
+    "nameEn": "Anthracite Slim Suit Trousers",
+    "description": "Pantalon de costume slim en tissu structuré anthracite, doublure partielle.",
+    "descriptionEn": "Slim suit trousers in structured anthracite fabric with partial lining.",
+    "price": 69.99,
+    "brand": "Jules",
+    "sku": "JUL-PACOS34",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 166,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 167,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 168,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 169,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 170,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "Jean straight noir",
+    "nameEn": "Black Straight Jeans",
+    "description": "Jean coupe droite noir en denim stretch confort, finition brute.",
+    "descriptionEn": "Black straight-cut jeans in comfort stretch denim with raw finish.",
+    "price": 45.99,
+    "promoPrice": 41.99,
+    "brand": "Celio Club",
+    "sku": "CEL-JESTR35",
+    "stock": 87,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 171,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 172,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 173,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 174,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 175,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "Jogger chino taille élastiquée",
+    "nameEn": "Elastic Waist Chino Joggers",
+    "description": "Pantalon jogger en twill avec taille élastiquée et cordon, bas resserrés.",
+    "descriptionEn": "Twill joggers with elasticated drawstring waist and cuffed hems.",
+    "price": 34.99,
+    "brand": "Celio",
+    "sku": "CEL-JOGCH36",
+    "stock": 65,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 176,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 177,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 178,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 179,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 180,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Jean bootcut délavé clair",
+    "nameEn": "Light Washed Bootcut Jeans",
+    "description": "Jean bootcut délavé clair, légèrement évasé sous le genou.",
+    "descriptionEn": "Light washed bootcut jeans, slightly flared below the knee.",
+    "price": 49.99,
+    "brand": "Le Temps des Cerises",
+    "sku": "LTC-JEBOO37",
+    "stock": 128,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 181,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 182,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 183,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 184,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 185,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Pantalon en velours côtelé",
+    "nameEn": "Corduroy Trousers",
+    "description": "Pantalon en velours côtelé large, coupe droite et toucher doux.",
+    "descriptionEn": "Wide-wale corduroy trousers with straight cut and soft hand feel.",
+    "price": 54.99,
+    "promoPrice": 46.99,
+    "brand": "Celio",
+    "sku": "CEL-PAVEL38",
+    "stock": 164,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 186,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 187,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 188,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 189,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 190,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 34
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Jean skinny enduit noir",
+    "nameEn": "Coated Black Skinny Jeans",
+    "description": "Jean skinny enduit noir à l'aspect légèrement brillant, denim stretch.",
+    "descriptionEn": "Coated black skinny jeans with a slightly shiny finish in stretch denim.",
+    "price": 59.99,
+    "brand": "Le Temps des Cerises",
+    "sku": "LTC-JESKI39",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 191,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 192,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 193,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 194,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 195,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "Short chino en coton",
+    "nameEn": "Cotton Chino Shorts",
+    "description": "Short chino en coton, longueur au-dessus du genou et poches italiennes.",
+    "descriptionEn": "Cotton chino shorts with above-the-knee length and slant pockets.",
+    "price": 29.99,
+    "brand": "Celio",
+    "sku": "CEL-SHCHI40",
+    "stock": 151,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 196,
+        "name": "W30 L32",
+        "nameEn": "W30 L32",
+        "value": "W30 L32",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 197,
+        "name": "W32 L32",
+        "nameEn": "W32 L32",
+        "value": "W32 L32",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 198,
+        "name": "W34 L32",
+        "nameEn": "W34 L32",
+        "value": "W34 L32",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 199,
+        "name": "W36 L34",
+        "nameEn": "W36 L34",
+        "value": "W36 L34",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 200,
+        "name": "W38 L34",
+        "nameEn": "W38 L34",
+        "value": "W38 L34",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "Veste en jean trucker",
+    "nameEn": "Trucker Denim Jacket",
+    "description": "Veste en jean coupe trucker, denim rigide et poches poitrine boutonnées.",
+    "descriptionEn": "Trucker-cut denim jacket in rigid denim with buttoned chest pockets.",
+    "price": 69.99,
+    "promoPrice": 62.99,
+    "brand": "Celio",
+    "sku": "CEL-VEJEA41",
+    "stock": 78,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 201,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 202,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 203,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 204,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 205,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "Doudoune légère matelassée",
+    "nameEn": "Lightweight Quilted Puffer Jacket",
+    "description": "Doudoune légère matelassée, garnissage isolant et rangement compact.",
+    "descriptionEn": "Lightweight quilted puffer jacket with insulating fill, packs down small.",
+    "price": 79.99,
+    "brand": "Celio",
+    "sku": "CEL-DOULE42",
+    "stock": 121,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 206,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 207,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 208,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 209,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 210,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Manteau en laine mélangée marine",
+    "nameEn": "Navy Wool Blend Coat",
+    "description": "Manteau droit en laine mélangée, col cranté et doublure satinée.",
+    "descriptionEn": "Straight wool blend coat with notched lapel and satin lining.",
+    "price": 149.99,
+    "brand": "Jules",
+    "sku": "JUL-MALAI43",
+    "stock": 112,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 211,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 212,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 213,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 214,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 215,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Blouson bomber kaki",
+    "nameEn": "Khaki Bomber Jacket",
+    "description": "Blouson bomber kaki, bords côtelés et poche manche zippée.",
+    "descriptionEn": "Khaki bomber jacket with ribbed trims and zipped sleeve pocket.",
+    "price": 64.99,
+    "promoPrice": 58.99,
+    "brand": "Celio Club",
+    "sku": "CEL-BLBOM44",
+    "stock": 108,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 216,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 217,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 218,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 219,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 220,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Parka à capuche déperlante",
+    "nameEn": "Water-Repellent Hooded Parka",
+    "description": "Parka déperlante à capuche amovible, coutures renforcées et poches zippées.",
+    "descriptionEn": "Water-repellent parka with removable hood, reinforced seams and zipped pockets.",
+    "price": 119.99,
+    "brand": "Celio",
+    "sku": "CEL-PARKA45",
+    "stock": 84,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 221,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 222,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 223,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 224,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 225,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Veste de costume slim anthracite",
+    "nameEn": "Anthracite Slim Suit Jacket",
+    "description": "Veste de costume slim en tissu anthracite, 2 boutons et doublure intérieure.",
+    "descriptionEn": "Slim anthracite suit jacket with two buttons and inner lining.",
+    "price": 129.99,
+    "brand": "Jules",
+    "sku": "JUL-VECOS46",
+    "stock": 145,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 226,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 227,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 228,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 229,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 230,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 29
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Trench en coton beige",
+    "nameEn": "Beige Cotton Trench Coat",
+    "description": "Trench beige en gabardine de coton, ceinture à nouer et double boutonnage.",
+    "descriptionEn": "Beige cotton gabardine trench coat with tie belt and double-breasted front.",
+    "price": 139.99,
+    "promoPrice": 111.99,
+    "brand": "Celio Club",
+    "sku": "CEL-TRENC47",
+    "stock": 81,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 231,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 232,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 233,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 234,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 235,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Veste softshell coupe-vent",
+    "nameEn": "Windproof Softshell Jacket",
+    "description": "Veste softshell coupe-vent et déperlante, intérieur micropolaire.",
+    "descriptionEn": "Windproof, water-repellent softshell jacket with microfleece lining.",
+    "price": 89.99,
+    "brand": "Celio",
+    "sku": "CEL-VESOF48",
+    "stock": 160,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 236,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 237,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 238,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 239,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 240,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Blouson en cuir synthétique noir",
+    "nameEn": "Black Faux Leather Jacket",
+    "description": "Blouson en cuir synthétique noir, col zippé et poches latérales.",
+    "descriptionEn": "Black faux leather jacket with zip collar and side pockets.",
+    "price": 99.99,
+    "brand": "Celio Club",
+    "sku": "CEL-BLCUI49",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 241,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 242,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 243,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 244,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 245,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Surchemise matelassée",
+    "nameEn": "Quilted Overshirt",
+    "description": "Surchemise matelassée à porter en veste légère, poches poitrine plaquées.",
+    "descriptionEn": "Quilted overshirt to wear as a light jacket, with patch chest pockets.",
+    "price": 59.99,
+    "promoPrice": 41.99,
+    "brand": "Celio",
+    "sku": "CEL-SURCH50",
+    "stock": 83,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 246,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 247,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 248,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 249,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 250,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Chemisier satiné manches longues",
+    "nameEn": "Long-Sleeve Satin Blouse",
+    "description": "Chemisier fluide en satin, col chemise et poignets boutonnés.",
+    "descriptionEn": "Flowing satin blouse with shirt collar and buttoned cuffs.",
+    "price": 39.99,
+    "brand": "Promod",
+    "sku": "PRO-CHSAT51",
+    "stock": 128,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 251,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 252,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 253,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 254,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 255,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Blouse fleurie col V",
+    "nameEn": "Floral V-Neck Blouse",
+    "description": "Blouse imprimée fleurs avec col V et manches légèrement bouffantes.",
+    "descriptionEn": "Floral print blouse with V-neck and slightly puffed sleeves.",
+    "price": 34.99,
+    "brand": "Promod",
+    "sku": "PRO-BLFLE52",
+    "stock": 76,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 256,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 257,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 258,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 259,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 260,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Top côtelé manches courtes",
+    "nameEn": "Short-Sleeve Ribbed Top",
+    "description": "Top en maille côtelée stretch, encolure ronde et coupe près du corps.",
+    "descriptionEn": "Stretch ribbed knit top with round neck and close fit.",
+    "price": 19.99,
+    "promoPrice": 13.99,
+    "brand": "Etam",
+    "sku": "ETA-TOCOT53",
+    "stock": 118,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 261,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 262,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 263,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 264,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 265,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Chemise Oxford oversize",
+    "nameEn": "Oversize Oxford Shirt",
+    "description": "Chemise oversize en coton Oxford, épaules tombantes et pan arrondi.",
+    "descriptionEn": "Oversize cotton Oxford shirt with dropped shoulders and curved hem.",
+    "price": 44.99,
+    "brand": "Celio",
+    "sku": "CEL-CHOVE54",
+    "stock": 122,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 266,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 267,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 268,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 269,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 270,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "Body côtelé col rond",
+    "nameEn": "Ribbed Round Neck Bodysuit",
+    "description": "Body en maille côtelée avec pressions à l'entrejambe, maintien confortable.",
+    "descriptionEn": "Ribbed knit bodysuit with snap fastening, comfortable hold.",
+    "price": 24.99,
+    "brand": "Etam",
+    "sku": "ETA-BOCOT55",
+    "stock": 104,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 271,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 272,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 273,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 274,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 275,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Blouse brodée en coton",
+    "nameEn": "Embroidered Cotton Blouse",
+    "description": "Blouse en voile de coton avec broderie anglaise et encolure élastiquée.",
+    "descriptionEn": "Cotton voile blouse with broderie anglaise and elasticated neckline.",
+    "price": 42.99,
+    "promoPrice": 34.99,
+    "brand": "Promod",
+    "sku": "PRO-BLBRO56",
+    "stock": 117,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 276,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 277,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 278,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 279,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 280,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Débardeur en dentelle",
+    "nameEn": "Lace Camisole Top",
+    "description": "Débardeur en dentelle avec fines bretelles réglables.",
+    "descriptionEn": "Lace camisole top with thin adjustable straps.",
+    "price": 22.99,
+    "brand": "Etam",
+    "sku": "ETA-DEDEN57",
+    "stock": 95,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 281,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 282,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 283,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 284,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 285,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "Chemisier en lin manches ballon",
+    "nameEn": "Linen Puff Sleeve Blouse",
+    "description": "Chemisier en lin mélangé à manches ballon, boutonnage nacré.",
+    "descriptionEn": "Linen blend blouse with puff sleeves and mother-of-pearl buttons.",
+    "price": 49.99,
+    "brand": "Promod",
+    "sku": "PRO-CHLIN58",
+    "stock": 119,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 286,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 287,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 288,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 289,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 290,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Top cache-cœur uni",
+    "nameEn": "Plain Wrap Top",
+    "description": "Top cache-cœur en jersey fluide, décolleté croisé et taille ajustée.",
+    "descriptionEn": "Wrap top in flowing jersey with crossover neckline and fitted waist.",
+    "price": 29.99,
+    "promoPrice": 23.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-TOCAC59",
+    "stock": 92,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 291,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 292,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 293,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 294,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 295,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Marinière femme en coton bio",
+    "nameEn": "Women's Organic Cotton Breton Top",
+    "description": "Marinière en coton biologique, rayures tissées et encolure bateau.",
+    "descriptionEn": "Organic cotton Breton top with woven stripes and boat neck.",
+    "price": 45.99,
+    "brand": "Armor-Lux",
+    "sku": "ARM-MAFEM60",
+    "stock": 144,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 296,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 297,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 298,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 299,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 300,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Robe chemise midi ceinturée",
+    "nameEn": "Belted Midi Shirt Dress",
+    "description": "Robe chemise mi-longue avec ceinture à nouer et boutonnage sur le devant.",
+    "descriptionEn": "Midi shirt dress with tie belt and front button fastening.",
+    "price": 59.99,
+    "brand": "Promod",
+    "sku": "PRO-ROCHE61",
+    "stock": 88,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 301,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 302,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 303,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 304,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 305,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Robe pull col roulé",
+    "nameEn": "Roll Neck Jumper Dress",
+    "description": "Robe pull en maille douce avec col roulé, longueur genou.",
+    "descriptionEn": "Soft knit jumper dress with roll neck, knee length.",
+    "price": 49.99,
+    "promoPrice": 39.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-ROPUL62",
+    "stock": 93,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 306,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 307,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 308,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 309,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 310,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Jupe plissée midi",
+    "nameEn": "Pleated Midi Skirt",
+    "description": "Jupe midi plissée en tissu fluide, taille élastiquée confortable.",
+    "descriptionEn": "Pleated midi skirt in flowing fabric with comfortable elasticated waist.",
+    "price": 39.99,
+    "brand": "Promod",
+    "sku": "PRO-JUPLI63",
+    "stock": 101,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 311,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 312,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 313,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 314,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 315,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Robe portefeuille fleurie",
+    "nameEn": "Floral Wrap Dress",
+    "description": "Robe portefeuille à imprimé floral, manches 3/4 et ceinture intégrée.",
+    "descriptionEn": "Floral print wrap dress with 3/4 sleeves and integrated belt.",
+    "price": 54.99,
+    "brand": "Promod",
+    "sku": "PRO-ROPOR64",
+    "stock": 107,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 316,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 317,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 318,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 319,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 320,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Jupe en jean taille haute",
+    "nameEn": "High-Waisted Denim Skirt",
+    "description": "Jupe en denim taille haute, fente devant et finition brute.",
+    "descriptionEn": "High-waisted denim skirt with front slit and raw hem.",
+    "price": 35.99,
+    "promoPrice": 30.99,
+    "brand": "Celio",
+    "sku": "CEL-JUJEA65",
+    "stock": 87,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 321,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 322,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 323,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 324,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 325,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "Robe longue bohème",
+    "nameEn": "Bohemian Maxi Dress",
+    "description": "Robe longue bohème en viscose imprimée, manches volantées.",
+    "descriptionEn": "Bohemian maxi dress in printed viscose with ruffled sleeves.",
+    "price": 64.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-ROLON66",
+    "stock": 136,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 326,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 327,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 328,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 329,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 330,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Jupe crayon stretch",
+    "nameEn": "Stretch Pencil Skirt",
+    "description": "Jupe crayon en tissu stretch, fente au dos et doublure.",
+    "descriptionEn": "Stretch pencil skirt with back slit and lining.",
+    "price": 37.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-JUCRA67",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 331,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 332,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 333,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 334,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 335,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Robe droite sans manches",
+    "nameEn": "Sleeveless Shift Dress",
+    "description": "Robe droite sans manches en crêpe, coupe sobre pour le bureau.",
+    "descriptionEn": "Sleeveless crepe shift dress with a clean cut for the office.",
+    "price": 44.99,
+    "promoPrice": 33.99,
+    "brand": "Promod",
+    "sku": "PRO-RODRO68",
+    "stock": 123,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 336,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 337,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 338,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 339,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 340,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Jupe trapèze en velours",
+    "nameEn": "Velvet A-Line Skirt",
+    "description": "Jupe trapèze en velours souple, taille haute et fermeture zippée.",
+    "descriptionEn": "A-line skirt in soft velvet with high waist and zip fastening.",
+    "price": 42.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-JUTRA69",
+    "stock": 74,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 341,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 342,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 343,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 344,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 345,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Robe de soirée satinée",
+    "nameEn": "Satin Evening Dress",
+    "description": "Robe de soirée en satin fluide, dos nu et longueur midi.",
+    "descriptionEn": "Evening dress in flowing satin with open back and midi length.",
+    "price": 79.99,
+    "brand": "Promod",
+    "sku": "PRO-ROSOI70",
+    "stock": 98,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 346,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 347,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 348,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 349,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 350,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 26
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Pull col rond maille douce",
+    "nameEn": "Soft Knit Crew Neck Jumper",
+    "description": "Pull col rond en maille douce, coupe droite et bords côtelés.",
+    "descriptionEn": "Soft knit crew neck jumper with straight cut and ribbed edges.",
+    "price": 32.99,
+    "promoPrice": 28.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-PUDOU71",
+    "stock": 115,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 351,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 352,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 353,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 354,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 355,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Sweat à capuche femme en molleton",
+    "nameEn": "Women's Fleece Hoodie",
+    "description": "Sweat à capuche en molleton gratté, poche kangourou et coupe décontractée.",
+    "descriptionEn": "Brushed fleece hoodie with kangaroo pocket and relaxed fit.",
+    "price": 34.99,
+    "brand": "Celio",
+    "sku": "CEL-SWFEM72",
+    "stock": 105,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 356,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 357,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 358,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 359,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 360,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Gilet long maille côtelée",
+    "nameEn": "Long Ribbed Knit Cardigan",
+    "description": "Gilet long en maille côtelée, poches plaquées et tombé fluide.",
+    "descriptionEn": "Long ribbed knit cardigan with patch pockets and fluid drape.",
+    "price": 49.99,
+    "brand": "Promod",
+    "sku": "PRO-GILON73",
+    "stock": 92,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 361,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 362,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 363,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 364,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 365,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Pull col V laine mérinos",
+    "nameEn": "Merino Wool V-Neck Jumper",
+    "description": "Pull col V en laine mérinos fine, chaud et léger.",
+    "descriptionEn": "V-neck jumper in fine merino wool, warm and light.",
+    "price": 69.99,
+    "promoPrice": 55.99,
+    "brand": "Promod",
+    "sku": "PRO-PUMER74",
+    "stock": 107,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 366,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 367,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 368,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 369,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 370,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Sweat court logo brodé",
+    "nameEn": "Cropped Embroidered Logo Sweatshirt",
+    "description": "Sweat court à logo brodé, bords côtelés et coupe boxy.",
+    "descriptionEn": "Cropped sweatshirt with embroidered logo, ribbed trims and boxy fit.",
+    "price": 29.99,
+    "brand": "Celio",
+    "sku": "CEL-SWCOU75",
+    "stock": 80,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 371,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 372,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 373,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 374,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 375,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Pull torsadé oversize",
+    "nameEn": "Oversize Cable Knit Jumper",
+    "description": "Pull oversize en maille torsadée, épaules tombantes et maille épaisse.",
+    "descriptionEn": "Oversize cable knit jumper with dropped shoulders and chunky knit.",
+    "price": 54.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-PUTOR76",
+    "stock": 104,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 376,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 377,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 378,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 379,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 380,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Cardigan court boutonné",
+    "nameEn": "Short Buttoned Cardigan",
+    "description": "Cardigan court boutonné en maille fine, parfait sur une robe.",
+    "descriptionEn": "Short buttoned cardigan in fine knit, perfect over a dress.",
+    "price": 39.99,
+    "promoPrice": 35.99,
+    "brand": "Promod",
+    "sku": "PRO-CACOU77",
+    "stock": 154,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 381,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 382,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 383,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 384,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 385,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Pull col montant lurex",
+    "nameEn": "Lurex High Neck Jumper",
+    "description": "Pull col montant en maille lurex, effet brillant discret.",
+    "descriptionEn": "High neck jumper in lurex knit with a subtle shimmer.",
+    "price": 44.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-PULUR78",
+    "stock": 72,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 386,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 387,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 388,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 389,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 390,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Sweat zippé sport chic",
+    "nameEn": "Sporty Chic Zip Sweatshirt",
+    "description": "Sweat zippé en molleton avec col montant et bandes contrastées.",
+    "descriptionEn": "Fleece zip sweatshirt with high collar and contrast stripes.",
+    "price": 42.99,
+    "brand": "Celio",
+    "sku": "CEL-SWZIP79",
+    "stock": 122,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 391,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 392,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 393,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 394,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 395,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "Pull fin manches bouffantes",
+    "nameEn": "Fine Knit Puff Sleeve Jumper",
+    "description": "Pull fin à manches bouffantes, maille souple et encolure ronde.",
+    "descriptionEn": "Fine knit jumper with puff sleeves, soft knit and round neck.",
+    "price": 37.99,
+    "promoPrice": 30.99,
+    "brand": "Promod",
+    "sku": "PRO-PUBOU80",
+    "stock": 131,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 396,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 397,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 398,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 399,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 400,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Jean mom taille haute",
+    "nameEn": "High-Waisted Mom Jeans",
+    "description": "Jean mom taille haute en denim rigide, coupe droite légèrement fuselée.",
+    "descriptionEn": "High-waisted mom jeans in rigid denim with straight, slightly tapered cut.",
+    "price": 45.99,
+    "brand": "Celio",
+    "sku": "CEL-JEMOM81",
+    "stock": 116,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 401,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 402,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 403,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 404,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 405,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 38
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Jean skinny push-up",
+    "nameEn": "Push-Up Skinny Jeans",
+    "description": "Jean skinny effet push-up en denim stretch, taille mi-haute.",
+    "descriptionEn": "Push-up skinny jeans in stretch denim with mid-high waist.",
+    "price": 49.99,
+    "brand": "Le Temps des Cerises",
+    "sku": "LTC-JEPUS82",
+    "stock": 107,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 406,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 407,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 408,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 409,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 410,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Pantalon large fluide",
+    "nameEn": "Wide Leg Flowing Trousers",
+    "description": "Pantalon large en tissu fluide, taille élastiquée et plis marqués.",
+    "descriptionEn": "Wide leg trousers in flowing fabric with elasticated waist and pressed pleats.",
+    "price": 39.99,
+    "promoPrice": 29.99,
+    "brand": "Promod",
+    "sku": "PRO-PALAR83",
+    "stock": 117,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 411,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 412,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 413,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 414,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 415,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Jean slim taille haute noir",
+    "nameEn": "Black High-Waisted Slim Jeans",
+    "description": "Jean slim taille haute noir en denim stretch confortable.",
+    "descriptionEn": "Black high-waisted slim jeans in comfortable stretch denim.",
+    "price": 42.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-JESLI84",
+    "stock": 126,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 416,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 417,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 418,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 419,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 420,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Pantalon tailleur carotte",
+    "nameEn": "Tapered Tailored Trousers",
+    "description": "Pantalon tailleur coupe carotte, pinces devant et ceinture à passants.",
+    "descriptionEn": "Tapered tailored trousers with front darts and belt loops.",
+    "price": 49.99,
+    "brand": "Promod",
+    "sku": "PRO-PATAI85",
+    "stock": 129,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 421,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 422,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 423,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 424,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 425,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Jean bootcut délavé",
+    "nameEn": "Washed Bootcut Jeans",
+    "description": "Jean bootcut délavé, taille mi-haute et jambe évasée.",
+    "descriptionEn": "Washed bootcut jeans with mid-high waist and flared leg.",
+    "price": 47.99,
+    "promoPrice": 38.99,
+    "brand": "Le Temps des Cerises",
+    "sku": "LTC-JEBOO86",
+    "stock": 118,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 426,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 427,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 428,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 429,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 430,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Pantalon jogger satiné",
+    "nameEn": "Satin Jogger Trousers",
+    "description": "Pantalon jogger en satin, taille élastiquée et bas resserrés.",
+    "descriptionEn": "Satin jogger trousers with elasticated waist and cuffed hems.",
+    "price": 35.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-PAJOG87",
+    "stock": 137,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 431,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 432,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 433,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 434,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 435,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Jean straight taille haute écru",
+    "nameEn": "Ecru High-Waisted Straight Jeans",
+    "description": "Jean droit taille haute coloris écru, denim légèrement stretch.",
+    "descriptionEn": "Ecru high-waisted straight jeans in slightly stretchy denim.",
+    "price": 44.99,
+    "brand": "Celio",
+    "sku": "CEL-JESTR88",
+    "stock": 133,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 436,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 32
+      },
+      {
+        "id": 437,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 438,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 439,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 440,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Pantalon en velours côtelé femme",
+    "nameEn": "Women's Corduroy Trousers",
+    "description": "Pantalon en velours côtelé fin, coupe droite et taille haute.",
+    "descriptionEn": "Fine corduroy trousers with straight cut and high waist.",
+    "price": 43.99,
+    "promoPrice": 37.99,
+    "brand": "Promod",
+    "sku": "PRO-PAVEL89",
+    "stock": 101,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 441,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 442,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 22
+      },
+      {
+        "id": 443,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 444,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 445,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Short en jean taille haute",
+    "nameEn": "High-Waisted Denim Shorts",
+    "description": "Short en jean taille haute, revers cousus et finition 5 poches.",
+    "descriptionEn": "High-waisted denim shorts with sewn turn-ups and five-pocket finish.",
+    "price": 29.99,
+    "brand": "Camaïeu",
+    "sku": "CAM-SHJEA90",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 446,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 447,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 448,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 449,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 450,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "Lot de 3 boxers coton stretch",
+    "nameEn": "Pack of 3 Stretch Cotton Boxers",
+    "description": "Lot de trois boxers en coton stretch, ceinture élastique logotée.",
+    "descriptionEn": "Pack of three stretch cotton boxers with logo elastic waistband.",
+    "price": 19.99,
+    "brand": "Celio",
+    "sku": "CEL-BOXER91",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 451,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 452,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 453,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 454,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 455,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Ceinture en cuir boucle métal",
+    "nameEn": "Leather Belt with Metal Buckle",
+    "description": "Ceinture en cuir de vachette avec boucle en métal brossé.",
+    "descriptionEn": "Cowhide leather belt with brushed metal buckle.",
+    "price": 24.99,
+    "promoPrice": 18.99,
+    "brand": "Celio",
+    "sku": "CEL-CEICU92",
+    "stock": 86,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 456,
+        "name": "85 cm",
+        "nameEn": "85 cm",
+        "value": "85 cm",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 457,
+        "name": "95 cm",
+        "nameEn": "95 cm",
+        "value": "95 cm",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 458,
+        "name": "105 cm",
+        "nameEn": "105 cm",
+        "value": "105 cm",
+        "priceAdjustment": 2.00,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "Écharpe en maille douce",
+    "nameEn": "Soft Knit Scarf",
+    "description": "Écharpe en maille douce et chaude, finition à franges.",
+    "descriptionEn": "Soft, warm knit scarf with fringed finish.",
+    "price": 17.99,
+    "brand": "Celio",
+    "sku": "CEL-ECHAR93",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 459,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Lot de 5 paires de chaussettes",
+    "nameEn": "Pack of 5 Pairs of Socks",
+    "description": "Lot de cinq paires de chaussettes en coton mélangé, coloris assortis.",
+    "descriptionEn": "Pack of five pairs of cotton blend socks in assorted colours.",
+    "price": 12.99,
+    "brand": "Celio",
+    "sku": "CEL-CHAUS94",
+    "stock": 48,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 460,
+        "name": "39/42",
+        "nameEn": "39/42",
+        "value": "39/42",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 461,
+        "name": "43/46",
+        "nameEn": "43/46",
+        "value": "43/46",
+        "priceAdjustment": 0,
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Bonnet côtelé uni",
+    "nameEn": "Plain Ribbed Beanie",
+    "description": "Bonnet en maille côtelée avec revers, doublure douce.",
+    "descriptionEn": "Ribbed knit beanie with turn-up and soft lining.",
+    "price": 14.99,
+    "promoPrice": 13.49,
+    "brand": "Celio",
+    "sku": "CEL-BONNE95",
+    "stock": 13,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 462,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Casquette en coton brodée",
+    "nameEn": "Embroidered Cotton Cap",
+    "description": "Casquette 6 panneaux en coton avec broderie frontale et fermeture réglable.",
+    "descriptionEn": "Six-panel cotton cap with front embroidery and adjustable strap.",
+    "price": 15.99,
+    "brand": "Celio Club",
+    "sku": "CEL-CASQU96",
+    "stock": 10,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 463,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Soutien-gorge sans armatures",
+    "nameEn": "Non-Wired Bra",
+    "description": "Soutien-gorge sans armatures en microfibre, bretelles réglables.",
+    "descriptionEn": "Non-wired microfibre bra with adjustable straps.",
+    "price": 22.99,
+    "brand": "Etam",
+    "sku": "ETA-SOUGO97",
+    "stock": 101,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 464,
+        "name": "85B",
+        "nameEn": "85B",
+        "value": "85B",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 465,
+        "name": "90B",
+        "nameEn": "90B",
+        "value": "90B",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 466,
+        "name": "90C",
+        "nameEn": "90C",
+        "value": "90C",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 467,
+        "name": "95C",
+        "nameEn": "95C",
+        "value": "95C",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Portefeuille en cuir grainé",
+    "nameEn": "Grained Leather Wallet",
+    "description": "Portefeuille en cuir grainé avec porte-cartes et poche monnaie.",
+    "descriptionEn": "Grained leather wallet with card slots and coin pocket.",
+    "price": 29.99,
+    "promoPrice": 26.99,
+    "brand": "Celio",
+    "sku": "CEL-PORTE98",
+    "stock": 33,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 468,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "Gants tactiles en maille",
+    "nameEn": "Touchscreen Knit Gloves",
+    "description": "Gants en maille compatibles écrans tactiles, doublure polaire.",
+    "descriptionEn": "Knit gloves compatible with touchscreens, fleece lined.",
+    "price": 13.99,
+    "brand": "Celio",
+    "sku": "CEL-GANTS99",
+    "stock": 58,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 469,
+        "name": "S/M",
+        "nameEn": "S/M",
+        "value": "S/M",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 470,
+        "name": "L/XL",
+        "nameEn": "L/XL",
+        "value": "L/XL",
+        "priceAdjustment": 0,
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Lot de 3 culottes en coton",
+    "nameEn": "Pack of 3 Cotton Briefs",
+    "description": "Lot de trois culottes en coton doux, coupe classique.",
+    "descriptionEn": "Pack of three soft cotton briefs with classic cut.",
+    "price": 16.99,
+    "brand": "Etam",
+    "sku": "ETA-CULOT100",
+    "stock": 126,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 471,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 472,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 473,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 474,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 475,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  }
+]
