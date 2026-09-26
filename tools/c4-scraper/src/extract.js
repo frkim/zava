@@ -1,14 +1,33 @@
 /**
  * Product data extraction.
  *
- * Carrefour product pages expose a schema.org Product payload in a JSON-LD
- * script tag, which is the most stable source for name / description / brand /
- * price / images. DOM selectors are used as a fallback and to collect the
+ * Retail product pages expose a schema.org Product payload in a JSON-LD script
+ * tag, which is the most stable source for name / description / brand / price /
+ * images. DOM selectors are used as a fallback and to collect the
  * "caractéristiques" feature list and the full gallery.
+ *
+ * Both functions run inside the browser page, so they only receive plain
+ * serialisable data: the site profile is passed as string patterns (see
+ * `sites.js`) and turned back into regular expressions here.
  */
 
-/** Runs inside the page and returns the raw product payload. */
-export function extractProductInPage() {
+/**
+ * Runs inside the page and returns the raw product payload.
+ * The Carrefour profile is inlined as the default because the function body is
+ * serialised into the page and cannot reach module scope.
+ */
+export function extractProductInPage(config) {
+  const settings = {
+    productPathPattern: '/p/',
+    imageHostPattern: '(^|\\.)carrefour\\.(fr|com|eu)$',
+    imageSelector:
+      'img[src*="carrefour"], [class*="gallery"] img, [class*="carousel"] img, [class*="product-media"] img, picture img',
+    titleSuffixPattern: '\\s*\\|\\s*Carrefour.*$',
+    ...(config ?? {}),
+  };
+  const imageHostRegex = new RegExp(settings.imageHostPattern, 'i');
+  const titleSuffixRegex = new RegExp(settings.titleSuffixPattern, 'i');
+
   const text = (node) => (node?.textContent ?? '').replace(/\s+/g, ' ').trim();
 
   const jsonLd = [];
@@ -49,7 +68,7 @@ export function extractProductInPage() {
     product?.name ||
     text(document.querySelector('h1')) ||
     meta('meta[property="og:title"]') ||
-    document.title.replace(/\s*\|\s*Carrefour.*$/i, '').trim();
+    document.title.replace(titleSuffixRegex, '').trim();
 
   // --- Description ----------------------------------------------------------
   const descriptionSelectors = [
@@ -182,10 +201,10 @@ export function extractProductInPage() {
   }
 
   // --- Images ---------------------------------------------------------------
-  // Carrefour serves the same media in several sizes
+  // Shops serve the same media in several sizes
   // (.../media/<id>/p_200x200/file.png, .../p_1500x1500/file.png) and the page
   // also contains third-party tracking pixels: keep one entry per media, at the
-  // largest available size, and only from Carrefour hosts.
+  // largest available size, and only from the shop's own hosts.
   const imageBySignature = new Map();
   const addImage = (value) => {
     if (!value) return;
@@ -198,7 +217,7 @@ export function extractProductInPage() {
     } catch {
       return;
     }
-    if (!/(^|\.)carrefour\.(fr|com|eu)$/i.test(parsed.hostname)) return;
+    if (!imageHostRegex.test(parsed.hostname)) return;
 
     const sizeMatch = parsed.pathname.match(/\/[a-z]*_?(\d{2,5})x(\d{2,5})\//i);
     const area = sizeMatch ? Number(sizeMatch[1]) * Number(sizeMatch[2]) : 0;
@@ -214,9 +233,7 @@ export function extractProductInPage() {
   else if (typeof productImage === 'string') addImage(productImage);
   else if (productImage?.url) addImage(productImage.url);
   addImage(meta('meta[property="og:image"]'));
-  for (const img of document.querySelectorAll(
-    'img[src*="carrefour"], [class*="gallery"] img, [class*="carousel"] img, [class*="product-media"] img, picture img',
-  )) {
+  for (const img of document.querySelectorAll(settings.imageSelector)) {
     addImage(img.getAttribute('src'));
     const srcset = img.getAttribute('srcset');
     if (srcset) {
@@ -286,13 +303,20 @@ export function extractProductInPage() {
 }
 
 /** Collects product links from a search-result or category page. */
-export function extractSearchResultsInPage() {
+export function extractSearchResultsInPage(config) {
+  const pattern = new RegExp((config ?? {}).productPathPattern ?? '/p/', 'i');
   const links = new Set();
-  for (const anchor of document.querySelectorAll('a[href*="/p/"]')) {
+  for (const anchor of document.querySelectorAll('a[href]')) {
     const href = anchor.getAttribute('href');
-    if (!href) continue;
-    const url = new URL(href, location.origin);
-    if (!url.pathname.includes('/p/')) continue;
+    if (!href || /^(javascript|mailto|tel):/i.test(href)) continue;
+    let url;
+    try {
+      url = new URL(href, location.href);
+    } catch {
+      continue;
+    }
+    if (!/^https?:$/i.test(url.protocol)) continue;
+    if (!pattern.test(url.pathname)) continue;
     links.add(`${url.origin}${url.pathname}`);
   }
   return [...links];

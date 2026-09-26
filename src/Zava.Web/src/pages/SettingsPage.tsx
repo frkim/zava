@@ -9,6 +9,7 @@ import {
 import type { SelectChangeEvent } from '@mui/material';
 import {
   Devices, Kitchen, Spa, ElectricalServices, Construction, LocalGroceryStore,
+  Checkroom, SportsTennis,
 } from '@mui/icons-material';
 import { useSite } from '../context/SiteContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -99,6 +100,8 @@ export default function SettingsPage() {
     Electrical: <ElectricalServices sx={{ fontSize: 48, color: 'primary.main' }} />,
     DIY: <Construction sx={{ fontSize: 48, color: 'primary.main' }} />,
     Grocery: <LocalGroceryStore sx={{ fontSize: 48, color: 'primary.main' }} />,
+    Clothing: <Checkroom sx={{ fontSize: 48, color: 'primary.main' }} />,
+    Sports: <SportsTennis sx={{ fontSize: 48, color: 'primary.main' }} />,
   };
 
   if (configError && !config) {

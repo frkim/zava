@@ -1,10 +1,14 @@
 /**
- * C4 navigation flow.
+ * Navigation flow.
  *
  * The scraper walks the site the way a shopper would: open the home page,
  * dismiss the cookie banner, type in the search box, look at the result list,
  * click a product tile, read the sheet and open the picture gallery.
  * Direct URL navigation is only used when the caller passes explicit product URLs.
+ *
+ * Everything shop specific (URLs, banners, link shape, image hosts) comes from
+ * the site profile in `sites.js`, so the same flow serves carrefour.fr,
+ * celio.com and decathlon.fr.
  */
 
 import path from 'node:path';
@@ -20,30 +24,14 @@ import {
   withTimeout,
 } from './human.js';
 import { ensureDir, slugify, writeBinary, writeJson, writeText } from './store.js';
-
-const HOME = 'https://www.carrefour.fr/';
-
-const COOKIE_SELECTORS = [
-  '#onetrust-accept-btn-handler',
-  'button:has-text("Tout accepter")',
-  'button:has-text("Accepter tout")',
-  'button:has-text("J\'accepte")',
-  '[data-testid="accept-all-cookies"]',
-];
-
-const SEARCH_SELECTORS = [
-  'input[name="q"]',
-  'input[type="search"]',
-  'input[placeholder*="recherch" i]',
-  '[data-testid*="search"] input',
-];
+import { DEFAULT_SITE, extractionConfig, searchUrl } from './sites.js';
 
 /** Opens the home page and settles the session (cookie banner, first look around). */
-export async function openHomePage(page, log) {
-  log('Opening carrefour.fr…');
-  await page.goto(HOME, { waitUntil: 'domcontentloaded' });
+export async function openHomePage(page, log, site = DEFAULT_SITE) {
+  log(`Opening ${new URL(site.home).hostname}…`);
+  await page.goto(site.home, { waitUntil: 'domcontentloaded' });
   await pause(1200, 2600);
-  await acceptCookies(page, log);
+  await acceptCookies(page, log, site);
   await read(page, 1200, 2600);
   await humanScroll(page, { steps: 2 });
   await scrollToTop(page);
@@ -61,8 +49,8 @@ async function reportChallenge(page, log) {
   return blocked;
 }
 
-async function acceptCookies(page, log) {
-  for (const selector of COOKIE_SELECTORS) {
+async function acceptCookies(page, log, site = DEFAULT_SITE) {
+  for (const selector of site.cookieSelectors) {
     const button = page.locator(selector).first();
     if ((await withTimeout(button.count(), 5000, 0)) === 0) continue;
     if (await humanClick(page, button, { timeout: 4000 })) {
@@ -75,11 +63,11 @@ async function acceptCookies(page, log) {
 }
 
 /** Types a query in the search bar and returns the product URLs found. */
-export async function searchProducts(page, query, limit, log) {
+export async function searchProducts(page, query, limit, log, site = DEFAULT_SITE) {
   log(`Searching for "${query}"…`);
 
   let searchBox = null;
-  for (const selector of SEARCH_SELECTORS) {
+  for (const selector of site.searchSelectors) {
     const candidate = page.locator(selector).first();
     const count = await withTimeout(candidate.count(), 5000, 0);
     if (count > 0 && (await withTimeout(candidate.isVisible(), 5000, false))) {
@@ -95,23 +83,23 @@ export async function searchProducts(page, query, limit, log) {
   } else {
     // The header search is sometimes rendered late; fall back to the search URL.
     log('Search box not reachable, using the search page directly.');
-    await page.goto(searchUrl(query), { waitUntil: 'domcontentloaded' });
+    await page.goto(searchUrl(site, query), { waitUntil: 'domcontentloaded' });
   }
 
   await pause(1500, 3000);
-  await acceptCookies(page, log);
+  await acceptCookies(page, log, site);
   await humanScroll(page, { steps: 4 });
 
-  let urls = await collectResultLinks(page);
+  let urls = await collectResultLinks(page, site);
 
   // The header search sometimes lands on a suggestion page; retry on the search URL.
-  if (!urls.length && !page.url().includes('/s?')) {
+  if (!urls.length && page.url() !== searchUrl(site, query)) {
     log('No result on this page, opening the search results page…');
-    await page.goto(searchUrl(query), { waitUntil: 'domcontentloaded' });
+    await page.goto(searchUrl(site, query), { waitUntil: 'domcontentloaded' });
     await pause(1500, 3000);
-    await acceptCookies(page, log);
+    await acceptCookies(page, log, site);
     await humanScroll(page, { steps: 4 });
-    urls = await collectResultLinks(page);
+    urls = await collectResultLinks(page, site);
   }
 
   if (!urls.length) await reportChallenge(page, log);
@@ -119,20 +107,18 @@ export async function searchProducts(page, query, limit, log) {
   return urls.slice(0, limit);
 }
 
-const searchUrl = (query) => `${HOME}s?q=${encodeURIComponent(query)}`;
-
-const collectResultLinks = (page) =>
-  withTimeout(page.evaluate(extractSearchResultsInPage), 15000, []);
+const collectResultLinks = (page, site) =>
+  withTimeout(page.evaluate(extractSearchResultsInPage, extractionConfig(site)), 15000, []);
 
 /**
  * Opens a product page, reads it like a human and extracts the product data.
  * @returns {Promise<object>} raw product payload
  */
-export async function scrapeProduct(page, url, log, { saveHtml = false } = {}) {
+export async function scrapeProduct(page, url, log, { saveHtml = false, site = DEFAULT_SITE } = {}) {
   log(`Opening product page: ${url}`);
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await pause(1200, 2600);
-  await acceptCookies(page, log);
+  await acceptCookies(page, log, site);
 
   // Read the sheet top-to-bottom, expanding the collapsible detail sections.
   await read(page, 1400, 3000);
@@ -141,7 +127,11 @@ export async function scrapeProduct(page, url, log, { saveHtml = false } = {}) {
   await humanScroll(page, { steps: 4 });
   await browseGallery(page);
 
-  const product = await withTimeout(page.evaluate(extractProductInPage), 20000, null);
+  const product = await withTimeout(
+    page.evaluate(extractProductInPage, extractionConfig(site)),
+    20000,
+    null,
+  );
   if (!product) throw new Error('Product extraction timed out');
   product.sourceUrl = url;
 
@@ -190,14 +180,14 @@ async function browseGallery(page) {
  * Downloads product pictures through the browser context so cookies and headers
  * match the browsing session.
  */
-export async function downloadImages(context, product, targetDir, log, limit = 6) {
+export async function downloadImages(context, product, targetDir, log, limit = 6, site = DEFAULT_SITE) {
   const dir = await ensureDir(path.join(targetDir, 'images'));
   const saved = [];
 
   for (const [index, url] of product.images.slice(0, limit).entries()) {
     try {
       const response = await context.request.get(url, {
-        headers: { referer: product.sourceUrl ?? HOME },
+        headers: { referer: product.sourceUrl ?? site.home },
         timeout: 20000,
       });
       if (!response.ok()) continue;

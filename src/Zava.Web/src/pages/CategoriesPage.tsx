@@ -11,6 +11,9 @@ import {
   Cable, ElectricalServices, Power, Lightbulb, LightMode, Dashboard, SmartToy, Build, Thermostat,
   EggAlt, BakeryDining, LunchDining, SetMeal, RiceBowl, Cookie, LocalDrink, EnergySavingsLeaf,
   Hardware, FormatPaint, Carpenter, Plumbing, Settings, GridView, Grass, Inventory, Security,
+  Checkroom, Man, Man2, Woman, Woman2, DryCleaning, Umbrella, Straighten, ShoppingBag,
+  DirectionsRun, FitnessCenter, SportsSoccer, Hiking, DirectionsBike, Pool, SportsTennis,
+  DownhillSkiing, SportsBasketball, SelfImprovement,
   Category as CategoryFallback, SearchOff,
 } from '@mui/icons-material';
 import { getCategories } from '../api';
@@ -28,6 +31,9 @@ const iconMap: Record<string, SvgIconComponent> = {
   Cable, ElectricalServices, Power, Lightbulb, LightMode, Dashboard, SmartToy, Build, Thermostat,
   EggAlt, BakeryDining, LunchDining, SetMeal, RiceBowl, Cookie, LocalDrink, Eco: EnergySavingsLeaf,
   Hardware, FormatPaint, Carpenter, Plumbing, Settings, GridView, Grass, Inventory, Security,
+  Checkroom, Man, Man2, Woman, Woman2, DryCleaning, Umbrella, Straighten, ShoppingBag,
+  DirectionsRun, FitnessCenter, SportsSoccer, Hiking, DirectionsBike, Pool, SportsTennis,
+  DownhillSkiing, SportsBasketball, SelfImprovement,
 };
 
 export default function CategoriesPage() {

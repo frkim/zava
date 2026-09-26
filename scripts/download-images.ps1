@@ -32,7 +32,7 @@ if (-not $OutputDir) {
     $OutputDir = Join-Path $PSScriptRoot ".." "src" "Zava.Api" "wwwroot" "images" "products"
 }
 
-$siteTypes = @("Electronics", "Appliances", "Cosmetics", "Electrical", "DIY", "Grocery")
+$siteTypes = @("Electronics", "Appliances", "Cosmetics", "Electrical", "DIY", "Grocery", "Clothing", "Sports")
 
 $sizes = @(
     @{ name = "main";   w = 600; h = 600 },

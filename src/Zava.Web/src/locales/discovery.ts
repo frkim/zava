@@ -45,6 +45,12 @@ const discovery = {
   'disc.home.hero.diy.title': { fr: 'Vos projets bricolage, du bon outil au bon matériau', en: 'DIY projects, from the right tool to the right material' },
   'disc.home.hero.diy.intro': { fr: 'Accédez vite aux catégories utiles, aux valeurs sûres et aux bonnes affaires.', en: 'Quickly reach useful categories, reliable picks and deals.' },
   'disc.home.hero.diy.cta': { fr: 'Préparer mon projet', en: 'Plan my project' },
+  'disc.home.hero.clothing.title': { fr: 'La mode homme et femme, du basique au coup de cœur', en: 'Men\u2019s and women\u2019s fashion, from basics to favourites' },
+  'disc.home.hero.clothing.intro': { fr: 'Chemises, mailles, jeans, robes et accessoires : trouvez votre taille en quelques clics.', en: 'Shirts, knitwear, jeans, dresses and accessories: find your size in a few clicks.' },
+  'disc.home.hero.clothing.cta': { fr: 'Composer ma tenue', en: 'Build my outfit' },
+  'disc.home.hero.sports.title': { fr: 'Tous les sports, du débutant au passionné', en: 'Every sport, from beginner to enthusiast' },
+  'disc.home.hero.sports.intro': { fr: 'Running, fitness, vélo, randonnée ou natation : l’équipement juste, au bon prix.', en: 'Running, fitness, cycling, hiking or swimming: the right gear at the right price.' },
+  'disc.home.hero.sports.cta': { fr: 'Trouver mon équipement', en: 'Find my gear' },
 
   'disc.categories.loading': { fr: 'Chargement des catégories…', en: 'Loading categories…' },
   'disc.categories.loadError': { fr: 'Impossible de charger les catégories.', en: 'Unable to load categories.' },

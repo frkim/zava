@@ -10,6 +10,7 @@ import {
   ShoppingCart, Person, Search, Menu as MenuIcon, Home, Category,
   Settings, Analytics, Close, Inventory, RestaurantMenu,
   Devices, Kitchen, Spa, ElectricalServices, Construction, LocalGroceryStore,
+  Checkroom, SportsTennis, GitHub,
 } from '@mui/icons-material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 import { getCart, getSuggestions } from '../api';
@@ -29,6 +30,8 @@ const siteTypeIcons: Record<SiteType, SvgIconComponent> = {
   Electrical: ElectricalServices,
   DIY: Construction,
   Grocery: LocalGroceryStore,
+  Clothing: Checkroom,
+  Sports: SportsTennis,
 };
 
 const visuallyHidden = {
@@ -556,27 +559,41 @@ export default function Layout({ children }: LayoutProps) {
             ))}
           </Box>
           <Divider sx={{ bgcolor: alpha(theme.palette.common.white, 0.3), my: 2 }} />
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
             <Typography variant="caption" sx={{ color: 'common.white' }}>
               © {new Date().getFullYear()} Zava — {t('footer.demo')}
             </Typography>
-            <Box
-              component="nav"
-              aria-label={t('shell.legalNavLabel')}
-              sx={{ display: 'flex', gap: 1, color: 'common.white' }}
-            >
-              {([
-                { label: t('footer.terms'), path: '/info/terms' },
-                { label: t('footer.legalNotice'), path: '/info/legal' },
-                { label: t('footer.privacy'), path: '/info/privacy' },
-              ]).map((item, index, arr) => (
-                <Typography key={item.path} variant="caption" component="span">
-                  <RouterLink to={item.path} style={{ color: 'inherit', textDecoration: 'none' }}>
-                    {item.label}
-                  </RouterLink>
-                  {index < arr.length - 1 ? ' · ' : ''}
-                </Typography>
-              ))}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Box
+                component="nav"
+                aria-label={t('shell.legalNavLabel')}
+                sx={{ display: 'flex', gap: 1, color: 'common.white' }}
+              >
+                {([
+                  { label: t('footer.terms'), path: '/info/terms' },
+                  { label: t('footer.legalNotice'), path: '/info/legal' },
+                  { label: t('footer.privacy'), path: '/info/privacy' },
+                ]).map((item, index, arr) => (
+                  <Typography key={item.path} variant="caption" component="span">
+                    <RouterLink to={item.path} style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {item.label}
+                    </RouterLink>
+                    {index < arr.length - 1 ? ' · ' : ''}
+                  </Typography>
+                ))}
+              </Box>
+              <IconButton
+                component="a"
+                href="https://github.com/frkim/zava"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('shell.githubLabel')}
+                title={t('shell.githubLabel')}
+                size="small"
+                sx={{ color: 'common.white' }}
+              >
+                <GitHub fontSize="small" />
+              </IconButton>
             </Box>
           </Box>
         </Container>

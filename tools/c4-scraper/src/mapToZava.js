@@ -1,5 +1,5 @@
 /**
- * Maps a scraped Carrefour product onto the Zava seeder product shape
+ * Maps a scraped product onto the Zava seeder product shape
  * (src/Zava.Api/Services/Seeders/Data/*-products.json).
  *
  * The English fields are pre-filled with the French text so the JSON is usable
@@ -7,20 +7,7 @@
  */
 
 import { slugify } from './store.js';
-
-/** Grocery categories declared in GrocerySeeder.GenerateCategories(). */
-const GROCERY_CATEGORIES = [
-  { id: 1, name: 'fruits & légumes', keywords: ['fruit', 'legume', 'légume', 'salade', 'pomme', 'banane'] },
-  { id: 2, name: 'produits laitiers', keywords: ['lait', 'laitier', 'yaourt', 'fromage', 'beurre', 'creme', 'crème', 'oeuf', 'œuf'] },
-  { id: 3, name: 'boulangerie & pâtisserie', keywords: ['pain', 'boulangerie', 'patisserie', 'pâtisserie', 'viennoiserie', 'brioche'] },
-  { id: 4, name: 'viandes & charcuterie', keywords: ['viande', 'boeuf', 'bœuf', 'volaille', 'porc', 'charcuterie', 'jambon', 'poulet'] },
-  { id: 5, name: 'poissonnerie', keywords: ['poisson', 'saumon', 'crustace', 'crustacé', 'sushi', 'marée', 'maree'] },
-  { id: 6, name: 'épicerie salée', keywords: ['epicerie salee', 'épicerie salée', 'pate', 'pâte', 'riz', 'conserve', 'sauce', 'huile'] },
-  { id: 7, name: 'épicerie sucrée', keywords: ['epicerie sucree', 'épicerie sucrée', 'biscuit', 'chocolat', 'cereale', 'céréale', 'confiture', 'gouter', 'goûter', 'tartiner'] },
-  { id: 8, name: 'boissons', keywords: ['boisson', 'eau', 'jus', 'soda', 'cafe', 'café', 'the', 'thé', 'biere', 'bière', 'vin'] },
-  { id: 9, name: 'surgelés', keywords: ['surgel', 'glace', 'congel'] },
-  { id: 10, name: 'bio & bien-être', keywords: ['bio', 'sans gluten', 'complement', 'complément', 'bien-etre', 'bien-être'] },
-];
+import { DEFAULT_SITE } from './sites.js';
 
 /** Strips accents/case so "Epicerie sucrée" and "épicerie sucree" compare equal. */
 function normalize(value) {
@@ -40,12 +27,12 @@ function normalize(value) {
  * (the aisle) also outrank deep ones (the shelf), so a hot-chocolate powder
  * filed under "Epicerie sucrée > Boissons chaudes" stays in the sweet aisle.
  */
-export function guessCategoryId(product, fallback = 6) {
+export function guessCategoryId(product, site = DEFAULT_SITE, fallback = site.fallbackCategoryId) {
   const breadcrumbs = (product.breadcrumbs ?? []).map(normalize).filter(Boolean);
   const name = normalize(product.name);
 
   let best = { id: fallback, score: 0 };
-  for (const category of GROCERY_CATEGORIES) {
+  for (const category of site.categories) {
     const categoryName = normalize(category.name);
     const keywords = category.keywords.map(normalize);
     let score = 0;
@@ -66,15 +53,15 @@ export function guessCategoryId(product, fallback = 6) {
 }
 
 /** Builds a deterministic SKU from the brand and the EAN (or the product name). */
-function buildSku(product) {
-  const brandPart = slugify(product.brand || 'carrefour')
+function buildSku(product, site) {
+  const brandPart = slugify(product.brand || site.key)
     .replace(/-/g, '')
     .slice(0, 6)
     .toUpperCase();
   const idPart = product.ean
     ? String(product.ean).slice(-8)
     : slugify(product.name).replace(/-/g, '').slice(0, 10).toUpperCase();
-  return `${brandPart || 'CRF'}-${idPart || 'PRODUCT'}`;
+  return `${brandPart || site.skuPrefix}-${idPart || 'PRODUCT'}`;
 }
 
 /**
@@ -100,14 +87,16 @@ function composeDescription(product) {
 
 /**
  * @param {object} product raw scraped product
- * @param {{ id?: number, categoryId?: number, stock?: number }} options
+ * @param {{ id?: number, categoryId?: number, stock?: number, site?: object }} options
  * @returns {object} product in the Zava seeder JSON shape
  */
-export function toZavaProduct(product, { id = 0, categoryId, stock = 100 } = {}) {
+export function toZavaProduct(product, { id = 0, categoryId, stock = 100, site = DEFAULT_SITE } = {}) {
   const description = composeDescription(product);
   const price = Number.isFinite(product.price) && product.price > 0 ? Number(product.price) : 0;
+  // Grocery sheets describe a pack size, fashion and sports sheets a size or a
+  // colour: both end up as the single variant of the generated product.
   const size = (product.features ?? []).find((feature) =>
-    /contenance|poids|quantit|volume|format/i.test(feature.label ?? ''),
+    /contenance|poids|quantit|volume|format|taille|pointure|couleur|coloris|dimension/i.test(feature.label ?? ''),
   )?.value;
 
   const tags = [product.brand, ...(product.breadcrumbs ?? []).slice(1)]
@@ -117,14 +106,14 @@ export function toZavaProduct(product, { id = 0, categoryId, stock = 100 } = {})
 
   return {
     id,
-    categoryId: categoryId ?? guessCategoryId(product),
+    categoryId: categoryId ?? guessCategoryId(product, site),
     name: product.name ?? '',
     nameEn: product.name ?? '',
     description,
     descriptionEn: description,
     price: Number(price.toFixed(2)),
     brand: product.brand ?? '',
-    sku: buildSku(product),
+    sku: buildSku(product, site),
     stock,
     isNew: false,
     isBestSeller: false,

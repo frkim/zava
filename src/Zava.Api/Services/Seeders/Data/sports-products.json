@@ -1,0 +1,3859 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Chaussures de running Kiprun KS500",
+    "nameEn": "Kiprun KS500 Running Shoes",
+    "description": "Chaussure de running polyvalente avec amorti dynamique pour les sorties de 10 à 30 km.",
+    "descriptionEn": "Versatile running shoe with dynamic cushioning for 10 to 30 km outings.",
+    "price": 59.99,
+    "brand": "Kiprun",
+    "sku": "KIP-KS500R1",
+    "stock": 74,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 1,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 2,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 5
+      },
+      {
+        "id": 3,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 4,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 5,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Chaussures de running Jogflow 500.1",
+    "nameEn": "Jogflow 500.1 Running Shoes",
+    "description": "Chaussure de running pour débutant, amorti souple et maintien confortable.",
+    "descriptionEn": "Beginner running shoe with soft cushioning and comfortable hold.",
+    "price": 34.99,
+    "promoPrice": 31.99,
+    "brand": "Kalenji",
+    "sku": "KAL-JOG501",
+    "stock": 100,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 6,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 7,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 8,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 9,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 10,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Montre GPS running Kiprun 550",
+    "nameEn": "Kiprun 550 GPS Running Watch",
+    "description": "Montre GPS avec cardio au poignet, plans d'entraînement et autonomie de 14 heures.",
+    "descriptionEn": "GPS watch with wrist heart rate, training plans and 14-hour battery life.",
+    "price": 79.99,
+    "brand": "Kiprun",
+    "sku": "KIP-GPS550",
+    "stock": 5,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 11,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Short running 2 en 1 Dry+",
+    "nameEn": "Dry+ 2-in-1 Running Shorts",
+    "description": "Short running 2 en 1 avec cuissard intégré et poche zippée au dos.",
+    "descriptionEn": "2-in-1 running shorts with built-in inner short and zipped back pocket.",
+    "price": 19.99,
+    "brand": "Kalenji",
+    "sku": "KAL-SHDRY2",
+    "stock": 85,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 12,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 13,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 14,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 15,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 16,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Veste coupe-vent running Kiprun Light",
+    "nameEn": "Kiprun Light Running Windbreaker",
+    "description": "Veste coupe-vent ultra-légère compressible dans sa poche, respirante.",
+    "descriptionEn": "Ultra-light windbreaker that packs into its own pocket, breathable.",
+    "price": 39.99,
+    "promoPrice": 29.99,
+    "brand": "Kiprun",
+    "sku": "KIP-VCVLIG",
+    "stock": 141,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 17,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 18,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 19,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 20,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 21,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Ceinture porte-bidon trail 5 L",
+    "nameEn": "5L Trail Running Waist Pack",
+    "description": "Ceinture de trail 5 L avec deux porte-bidons et maintien sans rebond.",
+    "descriptionEn": "5L trail running belt with two bottle holders and bounce-free hold.",
+    "price": 24.99,
+    "brand": "Evadict",
+    "sku": "EVA-CEIN5L",
+    "stock": 21,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 22,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryId": 1,
+    "name": "T-shirt running respirant Dry",
+    "nameEn": "Dry Breathable Running T-Shirt",
+    "description": "T-shirt running en maille respirante évacuant la transpiration.",
+    "descriptionEn": "Running t-shirt in breathable mesh that wicks away perspiration.",
+    "price": 12.99,
+    "brand": "Kalenji",
+    "sku": "KAL-TSDRY7",
+    "stock": 95,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 23,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 24,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 25,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 26,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 27,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "name": "Chaussures de trail Evadict TR2",
+    "nameEn": "Evadict TR2 Trail Running Shoes",
+    "description": "Chaussure de trail avec semelle crantée et protection renforcée à l'avant.",
+    "descriptionEn": "Trail running shoe with lugged outsole and reinforced toe protection.",
+    "price": 69.99,
+    "promoPrice": 52.99,
+    "brand": "Evadict",
+    "sku": "EVA-TR2RUN",
+    "stock": 74,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 28,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 29,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 17
+      },
+      {
+        "id": 30,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 31,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 32,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "categoryId": 1,
+    "name": "Collant running thermique",
+    "nameEn": "Thermal Running Tights",
+    "description": "Collant running chaud pour les sorties hivernales, tissu brossé à l'intérieur.",
+    "descriptionEn": "Warm running tights for winter outings with brushed inner fabric.",
+    "price": 29.99,
+    "brand": "Kalenji",
+    "sku": "KAL-COLTHE",
+    "stock": 88,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 33,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 34,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 35,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 36,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 37,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoryId": 1,
+    "name": "Brassière running maintien fort",
+    "nameEn": "High-Support Running Bra",
+    "description": "Brassière de running à maintien fort, bretelles croisées et dos respirant.",
+    "descriptionEn": "High-support running bra with cross-back straps and breathable back.",
+    "price": 22.99,
+    "brand": "Kalenji",
+    "sku": "KAL-BRAFOR",
+    "stock": 119,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 38,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 39,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 40,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 41,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 42,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Tapis de course pliable Run 100",
+    "nameEn": "Run 100 Folding Treadmill",
+    "description": "Tapis de course pliable jusqu'à 13 km/h avec 12 programmes d'entraînement.",
+    "descriptionEn": "Folding treadmill up to 13 km/h with 12 training programmes.",
+    "price": 399.99,
+    "promoPrice": 319.99,
+    "brand": "Domyos",
+    "sku": "DOM-RUN100",
+    "stock": 39,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 43,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 39
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Haltères réglables 20 kg",
+    "nameEn": "20 kg Adjustable Dumbbells",
+    "description": "Paire d'haltères réglables de 2 à 20 kg avec disques en fonte et barres antidérapantes.",
+    "descriptionEn": "Pair of adjustable dumbbells from 2 to 20 kg with cast iron plates and non-slip bars.",
+    "price": 59.99,
+    "brand": "Corength",
+    "sku": "COR-HALT20",
+    "stock": 67,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 44,
+        "name": "20 kg",
+        "nameEn": "20 kg",
+        "value": "20 kg",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 45,
+        "name": "30 kg",
+        "nameEn": "30 kg",
+        "value": "30 kg",
+        "priceAdjustment": 25.00,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "name": "Banc de musculation pliable 500",
+    "nameEn": "500 Folding Weight Bench",
+    "description": "Banc de musculation pliable et inclinable, structure acier et assise rembourrée.",
+    "descriptionEn": "Folding incline weight bench with steel frame and padded seat.",
+    "price": 129.99,
+    "brand": "Corength",
+    "sku": "COR-BANC500",
+    "stock": 16,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 46,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "categoryId": 2,
+    "name": "Tapis de sol fitness 180 cm",
+    "nameEn": "180 cm Fitness Floor Mat",
+    "description": "Tapis de sol 180 x 60 cm épaisseur 10 mm, antidérapant et facile à rouler.",
+    "descriptionEn": "180 x 60 cm floor mat, 10 mm thick, non-slip and easy to roll up.",
+    "price": 19.99,
+    "promoPrice": 17.99,
+    "brand": "Domyos",
+    "sku": "DOM-TAPS180",
+    "stock": 8,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 47,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "categoryId": 2,
+    "name": "Barre de traction pour porte",
+    "nameEn": "Doorway Pull-Up Bar",
+    "description": "Barre de traction à fixer dans l'encadrement de porte, jusqu'à 100 kg.",
+    "descriptionEn": "Pull-up bar to fit in a door frame, supports up to 100 kg.",
+    "price": 29.99,
+    "brand": "Corength",
+    "sku": "COR-BARTRA",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 48,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "categoryId": 2,
+    "name": "Kettlebell en fonte 12 kg",
+    "nameEn": "12 kg Cast Iron Kettlebell",
+    "description": "Kettlebell en fonte avec revêtement protecteur et poignée large.",
+    "descriptionEn": "Cast iron kettlebell with protective coating and wide handle.",
+    "price": 34.99,
+    "brand": "Corength",
+    "sku": "COR-KETT12",
+    "stock": 49,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 49,
+        "name": "8 kg",
+        "nameEn": "8 kg",
+        "value": "8 kg",
+        "priceAdjustment": -10.00,
+        "stock": 22
+      },
+      {
+        "id": 50,
+        "name": "12 kg",
+        "nameEn": "12 kg",
+        "value": "12 kg",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 51,
+        "name": "16 kg",
+        "nameEn": "16 kg",
+        "value": "16 kg",
+        "priceAdjustment": 12.00,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "categoryId": 2,
+    "name": "Corde à sauter à roulements",
+    "nameEn": "Ball Bearing Skipping Rope",
+    "description": "Corde à sauter à roulements à billes, longueur réglable et poignées antidérapantes.",
+    "descriptionEn": "Ball bearing skipping rope with adjustable length and non-slip handles.",
+    "price": 9.99,
+    "promoPrice": 7.49,
+    "brand": "Domyos",
+    "sku": "DOM-CORDSA",
+    "stock": 10,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 52,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "categoryId": 2,
+    "name": "Lot de 3 élastiques de résistance",
+    "nameEn": "Pack of 3 Resistance Bands",
+    "description": "Trois élastiques de résistance faible, moyenne et forte pour le renforcement musculaire.",
+    "descriptionEn": "Three light, medium and strong resistance bands for strength training.",
+    "price": 14.99,
+    "brand": "Domyos",
+    "sku": "DOM-ELAST3",
+    "stock": 21,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 53,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "categoryId": 2,
+    "name": "Rameur pliable Rowing 120",
+    "nameEn": "Rowing 120 Folding Rower",
+    "description": "Rameur pliable à résistance magnétique, 8 niveaux et console d'entraînement.",
+    "descriptionEn": "Folding rower with magnetic resistance, 8 levels and training console.",
+    "price": 299.99,
+    "brand": "Domyos",
+    "sku": "DOM-RAM120",
+    "stock": 33,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 54,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "categoryId": 2,
+    "name": "Gants de musculation",
+    "nameEn": "Weight Training Gloves",
+    "description": "Gants de musculation avec paume renforcée et fermeture auto-agrippante.",
+    "descriptionEn": "Weight training gloves with reinforced palm and hook-and-loop fastening.",
+    "price": 12.99,
+    "promoPrice": 10.49,
+    "brand": "Corength",
+    "sku": "COR-GANTMU",
+    "stock": 111,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 55,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 56,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 57,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 58,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 26
+      },
+      {
+        "id": 59,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "categoryId": 3,
+    "name": "Ballon de football F500 taille 5",
+    "nameEn": "F500 Size 5 Football",
+    "description": "Ballon hybride taille 5 homologué FIFA Basic, bonne tenue de trajectoire.",
+    "descriptionEn": "FIFA Basic approved size 5 hybrid ball with a stable flight path.",
+    "price": 24.99,
+    "brand": "Kipsta",
+    "sku": "KIP-BALF500",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 60,
+        "name": "Taille 4",
+        "nameEn": "Size 4",
+        "value": "Taille 4",
+        "priceAdjustment": -3.00,
+        "stock": 8
+      },
+      {
+        "id": 61,
+        "name": "Taille 5",
+        "nameEn": "Size 5",
+        "value": "Taille 5",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "name": "Chaussures de football Viralto I FG",
+    "nameEn": "Viralto I FG Football Boots",
+    "description": "Chaussures à crampons moulés pour terrain sec, tige enduite pour un toucher de balle précis.",
+    "descriptionEn": "Firm ground moulded stud boots with coated upper for precise ball touch.",
+    "price": 49.99,
+    "brand": "Kipsta",
+    "sku": "KIP-VIRAFG",
+    "stock": 132,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 62,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 63,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 64,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 65,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 66,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "name": "Maillot de football Viralto Club",
+    "nameEn": "Viralto Club Football Shirt",
+    "description": "Maillot de football respirant en maille aérée, coupe ajustée.",
+    "descriptionEn": "Breathable football shirt in airy mesh with a fitted cut.",
+    "price": 14.99,
+    "promoPrice": 12.49,
+    "brand": "Kipsta",
+    "sku": "KIP-MAIVIR",
+    "stock": 109,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 67,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 68,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 69,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 70,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 71,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "name": "Protège-tibias F500",
+    "nameEn": "F500 Shin Guards",
+    "description": "Protège-tibias avec coque rigide et mousse absorbante, sangle de maintien.",
+    "descriptionEn": "Shin guards with rigid shell and absorbing foam, held by a strap.",
+    "price": 9.99,
+    "brand": "Kipsta",
+    "sku": "KIP-PROTIB",
+    "stock": 59,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 72,
+        "name": "Taille S",
+        "nameEn": "Size S",
+        "value": "Taille S",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 73,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 74,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 29
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "name": "Gants de gardien First",
+    "nameEn": "First Goalkeeper Gloves",
+    "description": "Gants de gardien d'initiation avec paume en latex et serrage au poignet.",
+    "descriptionEn": "Entry-level goalkeeper gloves with latex palm and wrist strap.",
+    "price": 12.99,
+    "brand": "Kipsta",
+    "sku": "KIP-GANGAR",
+    "stock": 46,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 75,
+        "name": "Taille 7",
+        "nameEn": "Size 7",
+        "value": "Taille 7",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 76,
+        "name": "Taille 8",
+        "nameEn": "Size 8",
+        "value": "Taille 8",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 77,
+        "name": "Taille 9",
+        "nameEn": "Size 9",
+        "value": "Taille 9",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "name": "Lot de 2 paires de chaussettes Viralto",
+    "nameEn": "Pack of 2 Viralto Football Socks",
+    "description": "Deux paires de chaussettes de football hautes avec maintien de la cheville.",
+    "descriptionEn": "Two pairs of high football socks with ankle support.",
+    "price": 11.99,
+    "promoPrice": 9.99,
+    "brand": "Kipsta",
+    "sku": "KIP-CHAUS2",
+    "stock": 64,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 78,
+        "name": "39/42",
+        "nameEn": "39/42",
+        "value": "39/42",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 79,
+        "name": "43/46",
+        "nameEn": "43/46",
+        "value": "43/46",
+        "priceAdjustment": 0,
+        "stock": 24
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "name": "But de football pliable 120 cm",
+    "nameEn": "120 cm Folding Football Goal",
+    "description": "But pliable 120 x 90 cm à montage rapide, livré avec un sac de transport.",
+    "descriptionEn": "Quick-assembly 120 x 90 cm folding goal, supplied with a carry bag.",
+    "price": 39.99,
+    "brand": "Kipsta",
+    "sku": "KIP-BUT120",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 80,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "name": "Short de football Viralto",
+    "nameEn": "Viralto Football Shorts",
+    "description": "Short de football léger avec taille élastiquée et cordon de serrage.",
+    "descriptionEn": "Lightweight football shorts with elasticated waist and drawstring.",
+    "price": 9.99,
+    "brand": "Kipsta",
+    "sku": "KIP-SHOVIR",
+    "stock": 107,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 81,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 82,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 83,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 84,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 85,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "name": "Sac de sport Essential 55 L",
+    "nameEn": "Essential 55L Sports Bag",
+    "description": "Sac de sport 55 L avec compartiment chaussures et bandoulière rembourrée.",
+    "descriptionEn": "55L sports bag with shoe compartment and padded shoulder strap.",
+    "price": 24.99,
+    "promoPrice": 19.99,
+    "brand": "Kipsta",
+    "sku": "KIP-SAC55L",
+    "stock": 96,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 86,
+        "name": "35 L",
+        "nameEn": "35L",
+        "value": "35 L",
+        "priceAdjustment": -8.00,
+        "stock": 19
+      },
+      {
+        "id": 87,
+        "name": "55 L",
+        "nameEn": "55L",
+        "value": "55 L",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 88,
+        "name": "75 L",
+        "nameEn": "75L",
+        "value": "75 L",
+        "priceAdjustment": 10.00,
+        "stock": 38
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "name": "Chaussures de futsal Agility",
+    "nameEn": "Agility Indoor Football Shoes",
+    "description": "Chaussures de futsal à semelle gomme non marquante pour terrains stabilisés.",
+    "descriptionEn": "Futsal shoes with non-marking rubber sole for indoor pitches.",
+    "price": 44.99,
+    "brand": "Kipsta",
+    "sku": "KIP-AGIIND",
+    "stock": 117,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 89,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 90,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 91,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 92,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 93,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "categoryId": 4,
+    "name": "Tente 2 Seconds Easy 3 places",
+    "nameEn": "2 Seconds Easy 3-Person Tent",
+    "description": "Tente à ouverture instantanée pour 3 personnes, imperméabilité 2000 mm.",
+    "descriptionEn": "Instant-opening tent for 3 people with 2000 mm waterproof rating.",
+    "price": 129.99,
+    "brand": "Quechua",
+    "sku": "QUE-TEN2SE",
+    "stock": 80,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 94,
+        "name": "2 places",
+        "nameEn": "2 people",
+        "value": "2 places",
+        "priceAdjustment": -30.00,
+        "stock": 36
+      },
+      {
+        "id": 95,
+        "name": "3 places",
+        "nameEn": "3 people",
+        "value": "3 places",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 96,
+        "name": "4 places",
+        "nameEn": "4 people",
+        "value": "4 places",
+        "priceAdjustment": 40.00,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "Sac à dos de randonnée MH500 30 L",
+    "nameEn": "MH500 30L Hiking Backpack",
+    "description": "Sac à dos 30 L avec dos ventilé, compatible poche à eau et housse de pluie.",
+    "descriptionEn": "30L backpack with ventilated back, hydration compatible and rain cover.",
+    "price": 49.99,
+    "promoPrice": 42.99,
+    "brand": "Quechua",
+    "sku": "QUE-SADMH5",
+    "stock": 31,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 97,
+        "name": "20 L",
+        "nameEn": "20L",
+        "value": "20 L",
+        "priceAdjustment": -12.00,
+        "stock": 7
+      },
+      {
+        "id": 98,
+        "name": "30 L",
+        "nameEn": "30L",
+        "value": "30 L",
+        "priceAdjustment": 0,
+        "stock": 11
+      },
+      {
+        "id": 99,
+        "name": "40 L",
+        "nameEn": "40L",
+        "value": "40 L",
+        "priceAdjustment": 15.00,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "Chaussures de randonnée MH100 Mid",
+    "nameEn": "MH100 Mid Hiking Shoes",
+    "description": "Chaussures de randonnée imperméables à tige mi-haute, semelle adhérente.",
+    "descriptionEn": "Waterproof mid-cut hiking shoes with grippy outsole.",
+    "price": 44.99,
+    "brand": "Quechua",
+    "sku": "QUE-MH100M",
+    "stock": 128,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 100,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 101,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 102,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 103,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 104,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "categoryId": 4,
+    "name": "Veste imperméable de randonnée MH150",
+    "nameEn": "MH150 Waterproof Hiking Jacket",
+    "description": "Veste imperméable 2000 mm avec capuche ajustable et coutures étanches.",
+    "descriptionEn": "2000 mm waterproof jacket with adjustable hood and taped seams.",
+    "price": 39.99,
+    "brand": "Quechua",
+    "sku": "QUE-VESMH1",
+    "stock": 111,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 105,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 106,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 107,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 108,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 109,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 11
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "categoryId": 4,
+    "name": "Sac de couchage Arpenaz 10°",
+    "nameEn": "Arpenaz 10° Sleeping Bag",
+    "description": "Sac de couchage confort 10 °C, compact et lavable en machine.",
+    "descriptionEn": "10°C comfort sleeping bag, compact and machine washable.",
+    "price": 24.99,
+    "promoPrice": 19.99,
+    "brand": "Quechua",
+    "sku": "QUE-SACARP",
+    "stock": 59,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 110,
+        "name": "10 °C",
+        "nameEn": "10°C",
+        "value": "10 °C",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 111,
+        "name": "0 °C",
+        "nameEn": "0°C",
+        "value": "0 °C",
+        "priceAdjustment": 20.00,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "categoryId": 4,
+    "name": "Bâtons de randonnée MT100 (paire)",
+    "nameEn": "MT100 Hiking Poles (Pair)",
+    "description": "Paire de bâtons télescopiques en aluminium avec poignées en mousse.",
+    "descriptionEn": "Pair of telescopic aluminium poles with foam grips.",
+    "price": 19.99,
+    "brand": "Forclaz",
+    "sku": "FOR-BATMT1",
+    "stock": 11,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 112,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 11
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "categoryId": 4,
+    "name": "Réchaud à gaz compact",
+    "nameEn": "Compact Gas Camping Stove",
+    "description": "Réchaud à gaz pliable de 120 g avec allumage piézo, pour cartouche à vis.",
+    "descriptionEn": "120 g folding gas stove with piezo ignition, for screw-on cartridges.",
+    "price": 22.99,
+    "brand": "Forclaz",
+    "sku": "FOR-RECGAZ",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 113,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "categoryId": 4,
+    "name": "Matelas autogonflant MT500",
+    "nameEn": "MT500 Self-Inflating Mattress",
+    "description": "Matelas autogonflant de 5 cm d'épaisseur, isolation et confort de couchage.",
+    "descriptionEn": "5 cm thick self-inflating mattress for insulation and sleeping comfort.",
+    "price": 69.99,
+    "promoPrice": 59.99,
+    "brand": "Forclaz",
+    "sku": "FOR-MATMT5",
+    "stock": 31,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 114,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "categoryId": 4,
+    "name": "Lampe frontale 100 lumens",
+    "nameEn": "100 Lumen Head Torch",
+    "description": "Lampe frontale 100 lumens avec 3 modes d'éclairage et bandeau réglable.",
+    "descriptionEn": "100 lumen head torch with 3 lighting modes and adjustable headband.",
+    "price": 11.99,
+    "brand": "Forclaz",
+    "sku": "FOR-LAMFRO",
+    "stock": 33,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 115,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 4,
+    "name": "Gourde inox isotherme 0,8 L",
+    "nameEn": "0.8L Insulated Stainless Steel Flask",
+    "description": "Gourde isotherme 0,8 L en inox, garde le chaud 12 h et le froid 24 h.",
+    "descriptionEn": "0.8L insulated stainless steel flask, keeps drinks hot 12h and cold 24h.",
+    "price": 16.99,
+    "brand": "Quechua",
+    "sku": "QUE-GOUISO",
+    "stock": 60,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 116,
+        "name": "0,5 L",
+        "nameEn": "0.5L",
+        "value": "0,5 L",
+        "priceAdjustment": -4.00,
+        "stock": 4
+      },
+      {
+        "id": 117,
+        "name": "0,8 L",
+        "nameEn": "0.8L",
+        "value": "0,8 L",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 118,
+        "name": "1,2 L",
+        "nameEn": "1.2L",
+        "value": "1,2 L",
+        "priceAdjustment": 5.00,
+        "stock": 36
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "categoryId": 5,
+    "name": "VTT Rockrider ST100 27,5 pouces",
+    "nameEn": "Rockrider ST100 27.5-inch Mountain Bike",
+    "description": "VTT loisir 27,5 pouces, cadre aluminium, 21 vitesses et freins V-brake.",
+    "descriptionEn": "27.5-inch leisure mountain bike with aluminium frame, 21 speeds and V-brakes.",
+    "price": 299.99,
+    "promoPrice": 269.99,
+    "brand": "Rockrider",
+    "sku": "ROC-ST100V",
+    "stock": 51,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 119,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 120,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 36
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "categoryId": 5,
+    "name": "Vélo de ville Elops 520",
+    "nameEn": "Elops 520 City Bike",
+    "description": "Vélo de ville confort avec porte-bagages, éclairage intégré et 6 vitesses.",
+    "descriptionEn": "Comfort city bike with rack, integrated lighting and 6 speeds.",
+    "price": 429.99,
+    "brand": "Elops",
+    "sku": "ELO-520CIT",
+    "stock": 59,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 121,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": 0,
+        "stock": 23
+      },
+      {
+        "id": 122,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 36
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 5,
+    "name": "Casque de vélo City 500",
+    "nameEn": "City 500 Bike Helmet",
+    "description": "Casque de vélo urbain avec molette de réglage et éclairage arrière intégré.",
+    "descriptionEn": "Urban bike helmet with adjustment dial and integrated rear light.",
+    "price": 34.99,
+    "brand": "Btwin",
+    "sku": "BTW-CAS500",
+    "stock": 29,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 123,
+        "name": "Taille M (55-59 cm)",
+        "nameEn": "Size M (55-59 cm)",
+        "value": "Taille M (55-59 cm)",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 124,
+        "name": "Taille L (59-62 cm)",
+        "nameEn": "Size L (59-62 cm)",
+        "value": "Taille L (59-62 cm)",
+        "priceAdjustment": 0,
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 5,
+    "name": "Antivol en U vélo 900",
+    "nameEn": "900 U-Lock Bike Lock",
+    "description": "Antivol en U de niveau de sécurité élevé, livré avec un support de cadre.",
+    "descriptionEn": "High security U-lock supplied with a frame bracket.",
+    "price": 44.99,
+    "promoPrice": 38.99,
+    "brand": "Btwin",
+    "sku": "BTW-ANTU90",
+    "stock": 27,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 125,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "categoryId": 5,
+    "name": "Cuissard vélo route Van Rysel",
+    "nameEn": "Van Rysel Road Cycling Bib Shorts",
+    "description": "Cuissard à bretelles avec peau de chamois dense pour les sorties longues.",
+    "descriptionEn": "Bib shorts with dense chamois pad for long rides.",
+    "price": 59.99,
+    "brand": "Van Rysel",
+    "sku": "VAN-CUIROU",
+    "stock": 138,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 126,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 127,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 128,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 4
+      },
+      {
+        "id": 129,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 24
+      },
+      {
+        "id": 130,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "categoryId": 5,
+    "name": "Pompe à pied double valve",
+    "nameEn": "Dual Valve Floor Pump",
+    "description": "Pompe à pied avec manomètre et embout double valve Presta/Schrader.",
+    "descriptionEn": "Floor pump with pressure gauge and dual Presta/Schrader head.",
+    "price": 19.99,
+    "brand": "Btwin",
+    "sku": "BTW-POMPIE",
+    "stock": 5,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 131,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "categoryId": 5,
+    "name": "Porte-bagages universel",
+    "nameEn": "Universal Bike Rack",
+    "description": "Porte-bagages arrière en aluminium, charge maximale de 25 kg.",
+    "descriptionEn": "Rear aluminium bike rack with a 25 kg maximum load.",
+    "price": 24.99,
+    "promoPrice": 19.99,
+    "brand": "Btwin",
+    "sku": "BTW-PORBAG",
+    "stock": 11,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 132,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 11
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "categoryId": 5,
+    "name": "Éclairage vélo LED avant et arrière",
+    "nameEn": "Front/Rear LED Bike Light Set",
+    "description": "Kit d'éclairage LED rechargeable en USB, visible à 300 m.",
+    "descriptionEn": "USB rechargeable LED light set, visible up to 300 m.",
+    "price": 29.99,
+    "brand": "Btwin",
+    "sku": "BTW-ECLLED",
+    "stock": 23,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 133,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "categoryId": 5,
+    "name": "Vélo électrique Elops 120E",
+    "nameEn": "Elops 120E Electric Bike",
+    "description": "Vélo de ville électrique avec assistance jusqu'à 25 km/h et autonomie de 35 km.",
+    "descriptionEn": "Electric city bike with assistance up to 25 km/h and 35 km range.",
+    "price": 899.99,
+    "brand": "Elops",
+    "sku": "ELO-120ELE",
+    "stock": 26,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 134,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 135,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "categoryId": 5,
+    "name": "Kit de réparation crevaison",
+    "nameEn": "Puncture Repair Kit",
+    "description": "Kit complet avec rustines, démonte-pneus et mini-pompe de secours.",
+    "descriptionEn": "Complete kit with patches, tyre levers and an emergency mini pump.",
+    "price": 12.99,
+    "promoPrice": 8.99,
+    "brand": "Btwin",
+    "sku": "BTW-KITCRE",
+    "stock": 19,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 136,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "categoryId": 6,
+    "name": "Maillot de bain homme Jammer 500",
+    "nameEn": "Jammer 500 Men's Swimsuit",
+    "description": "Jammer de natation résistant au chlore, maintien ferme et séchage rapide.",
+    "descriptionEn": "Chlorine-resistant swim jammer with firm hold and fast drying.",
+    "price": 19.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-JAM500",
+    "stock": 99,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 137,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 138,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 139,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 140,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 141,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 38
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "categoryId": 6,
+    "name": "Maillot de bain 1 pièce femme Heva",
+    "nameEn": "Heva Women's One-Piece Swimsuit",
+    "description": "Maillot 1 pièce résistant au chlore, bretelles croisées et dos nageur.",
+    "descriptionEn": "Chlorine-resistant one-piece swimsuit with cross-back straps.",
+    "price": 24.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-HEVA1P",
+    "stock": 111,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 142,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 143,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 12
+      },
+      {
+        "id": 144,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 145,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 146,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "categoryId": 6,
+    "name": "Lunettes de natation Spirit",
+    "nameEn": "Spirit Swimming Goggles",
+    "description": "Lunettes de natation avec joints souples et verres traités anti-buée.",
+    "descriptionEn": "Swimming goggles with soft seals and anti-fog treated lenses.",
+    "price": 12.99,
+    "promoPrice": 8.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-LUNSPI",
+    "stock": 57,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 147,
+        "name": "Taille S",
+        "nameEn": "Size S",
+        "value": "Taille S",
+        "priceAdjustment": 0,
+        "stock": 20
+      },
+      {
+        "id": 148,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "categoryId": 6,
+    "name": "Bonnet de bain en silicone",
+    "nameEn": "Silicone Swim Cap",
+    "description": "Bonnet de bain en silicone souple, confortable et étanche.",
+    "descriptionEn": "Soft silicone swim cap, comfortable and watertight.",
+    "price": 6.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-BONSIL",
+    "stock": 31,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 149,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "categoryId": 6,
+    "name": "Planche de natation",
+    "nameEn": "Swimming Kickboard",
+    "description": "Planche de natation en mousse pour le travail des jambes.",
+    "descriptionEn": "Foam kickboard for leg work drills.",
+    "price": 9.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-PLANAT",
+    "stock": 17,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 150,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "categoryId": 6,
+    "name": "Serviette microfibre taille L",
+    "nameEn": "Size L Microfibre Towel",
+    "description": "Serviette microfibre ultra-absorbante 80 x 130 cm, livrée avec son étui.",
+    "descriptionEn": "Ultra-absorbent 80 x 130 cm microfibre towel supplied with a case.",
+    "price": 11.99,
+    "promoPrice": 9.49,
+    "brand": "Nabaiji",
+    "sku": "NAB-SERMIC",
+    "stock": 54,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 151,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": -3.00,
+        "stock": 38
+      },
+      {
+        "id": 152,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "categoryId": 6,
+    "name": "Palmes courtes d'entraînement",
+    "nameEn": "Short Training Fins",
+    "description": "Palmes courtes pour renforcer le battement et améliorer la propulsion.",
+    "descriptionEn": "Short fins to strengthen your kick and improve propulsion.",
+    "price": 19.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-PALCOU",
+    "stock": 88,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 153,
+        "name": "39/40",
+        "nameEn": "39/40",
+        "value": "39/40",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 154,
+        "name": "41/42",
+        "nameEn": "41/42",
+        "value": "41/42",
+        "priceAdjustment": 0,
+        "stock": 27
+      },
+      {
+        "id": 155,
+        "name": "43/44",
+        "nameEn": "43/44",
+        "value": "43/44",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "categoryId": 6,
+    "name": "Pull-buoy en mousse",
+    "nameEn": "Foam Pull Buoy",
+    "description": "Pull-buoy en mousse pour isoler le travail des bras.",
+    "descriptionEn": "Foam pull buoy to isolate arm work.",
+    "price": 8.99,
+    "brand": "Nabaiji",
+    "sku": "NAB-PULBUO",
+    "stock": 37,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 156,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 37
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "categoryId": 6,
+    "name": "Sac étanche 10 L",
+    "nameEn": "10L Dry Bag",
+    "description": "Sac étanche 10 L à fermeture roulée, idéal pour la piscine et la plage.",
+    "descriptionEn": "10L roll-top dry bag, ideal for the pool and the beach.",
+    "price": 13.99,
+    "promoPrice": 12.49,
+    "brand": "Tribord",
+    "sku": "TRI-SACETA",
+    "stock": 32,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 157,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "categoryId": 6,
+    "name": "Combinaison néoprène 3/2 mm",
+    "nameEn": "3/2 mm Neoprene Wetsuit",
+    "description": "Combinaison de surf 3/2 mm en néoprène souple avec zip dorsal.",
+    "descriptionEn": "3/2 mm surf wetsuit in flexible neoprene with back zip.",
+    "price": 99.99,
+    "brand": "Olaian",
+    "sku": "OLA-COMNEO",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 158,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 159,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 160,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 161,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 162,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "categoryId": 7,
+    "name": "Raquette de tennis TR160 Graph",
+    "nameEn": "TR160 Graph Tennis Racket",
+    "description": "Raquette en graphite de 270 g, tolérante et maniable pour joueur intermédiaire.",
+    "descriptionEn": "270 g graphite racket, forgiving and manoeuvrable for intermediate players.",
+    "price": 59.99,
+    "brand": "Artengo",
+    "sku": "ART-TR160G",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 163,
+        "name": "Grip 1",
+        "nameEn": "Grip 1",
+        "value": "Grip 1",
+        "priceAdjustment": 0,
+        "stock": 39
+      },
+      {
+        "id": 164,
+        "name": "Grip 2",
+        "nameEn": "Grip 2",
+        "value": "Grip 2",
+        "priceAdjustment": 0,
+        "stock": 18
+      },
+      {
+        "id": 165,
+        "name": "Grip 3",
+        "nameEn": "Grip 3",
+        "value": "Grip 3",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "categoryId": 7,
+    "name": "Lot de 4 balles de tennis TB530",
+    "nameEn": "Pack of 4 TB530 Tennis Balls",
+    "description": "Tube de 4 balles pressurisées homologuées pour la compétition.",
+    "descriptionEn": "Tube of 4 pressurised balls approved for competition.",
+    "price": 9.99,
+    "promoPrice": 8.99,
+    "brand": "Artengo",
+    "sku": "ART-TB530B",
+    "stock": 4,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 166,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "categoryId": 7,
+    "name": "Raquette de badminton BR560",
+    "nameEn": "BR560 Badminton Racket",
+    "description": "Raquette de badminton légère de 83 g, cadre acier-graphite pour joueur régulier.",
+    "descriptionEn": "Lightweight 83 g badminton racket with steel-graphite frame for regular players.",
+    "price": 34.99,
+    "brand": "Perfly",
+    "sku": "PER-BR560B",
+    "stock": 7,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 167,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "categoryId": 7,
+    "name": "Lot de 6 volants plastique PSC500",
+    "nameEn": "Pack of 6 PSC500 Plastic Shuttlecocks",
+    "description": "Six volants plastique durables pour l'entraînement en salle comme en extérieur.",
+    "descriptionEn": "Six durable plastic shuttlecocks for indoor and outdoor practice.",
+    "price": 12.99,
+    "brand": "Perfly",
+    "sku": "PER-PSC500",
+    "stock": 18,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 168,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "categoryId": 7,
+    "name": "Chaussures de tennis TS560 Multicourt",
+    "nameEn": "TS560 Multicourt Tennis Shoes",
+    "description": "Chaussures de tennis multicourt avec semelle résistante à l'abrasion.",
+    "descriptionEn": "Multicourt tennis shoes with abrasion-resistant outsole.",
+    "price": 54.99,
+    "promoPrice": 46.99,
+    "brand": "Artengo",
+    "sku": "ART-TS560M",
+    "stock": 83,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 169,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 170,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 171,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 172,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 173,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 36
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "categoryId": 7,
+    "name": "Raquette de padel PR590",
+    "nameEn": "PR590 Padel Racket",
+    "description": "Raquette de padel en forme de diamant, cœur carbone et surface rugueuse.",
+    "descriptionEn": "Diamond-shaped padel racket with carbon core and rough surface.",
+    "price": 89.99,
+    "brand": "Kuikma",
+    "sku": "KUI-PR590P",
+    "stock": 21,
+    "isNew": true,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 174,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "categoryId": 7,
+    "name": "Sac de raquettes 3 compartiments",
+    "nameEn": "3-Compartment Racket Bag",
+    "description": "Sac thermique pour 3 raquettes avec poche accessoires et bretelles.",
+    "descriptionEn": "Thermal bag for 3 rackets with accessory pocket and shoulder straps.",
+    "price": 39.99,
+    "brand": "Artengo",
+    "sku": "ART-SACRAQ",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 175,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "categoryId": 7,
+    "name": "Table de ping-pong pliable PPT 500",
+    "nameEn": "PPT 500 Folding Table Tennis Table",
+    "description": "Table de ping-pong outdoor pliable avec filet et roulettes de transport.",
+    "descriptionEn": "Folding outdoor table tennis table with net and transport wheels.",
+    "price": 349.99,
+    "promoPrice": 244.99,
+    "brand": "Pongori",
+    "sku": "PON-PPT500",
+    "stock": 17,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 176,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "categoryId": 7,
+    "name": "Lot de 2 raquettes de ping-pong TTR 130",
+    "nameEn": "Pack of 2 TTR 130 Table Tennis Bats",
+    "description": "Deux raquettes de ping-pong loisir avec revêtement 1,5 mm et housse.",
+    "descriptionEn": "Two leisure table tennis bats with 1.5 mm rubber and a cover.",
+    "price": 19.99,
+    "brand": "Pongori",
+    "sku": "PON-TTR130",
+    "stock": 12,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 177,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "categoryId": 7,
+    "name": "Lot de 3 surgrips confort",
+    "nameEn": "Pack of 3 Comfort Overgrips",
+    "description": "Trois surgrips absorbants pour un meilleur maintien de la raquette.",
+    "descriptionEn": "Three absorbent overgrips for a better grip on the racket.",
+    "price": 7.99,
+    "brand": "Artengo",
+    "sku": "ART-SURGR3",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 178,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "categoryId": 8,
+    "name": "Skis all mountain Boost 500 et fixations",
+    "nameEn": "Boost 500 All-Mountain Skis with Bindings",
+    "description": "Skis polyvalents all mountain livrés avec des fixations réglées en magasin.",
+    "descriptionEn": "Versatile all-mountain skis supplied with bindings adjusted in store.",
+    "price": 249.99,
+    "promoPrice": 187.99,
+    "brand": "Wedze",
+    "sku": "WED-BOO500",
+    "stock": 93,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 179,
+        "name": "155 cm",
+        "nameEn": "155 cm",
+        "value": "155 cm",
+        "priceAdjustment": 0,
+        "stock": 40
+      },
+      {
+        "id": 180,
+        "name": "165 cm",
+        "nameEn": "165 cm",
+        "value": "165 cm",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 181,
+        "name": "175 cm",
+        "nameEn": "175 cm",
+        "value": "175 cm",
+        "priceAdjustment": 10.00,
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "categoryId": 8,
+    "name": "Chaussures de ski Fit 500",
+    "nameEn": "Fit 500 Ski Boots",
+    "description": "Chaussures de ski flex 80 avec chausson thermoformable et 4 crochets.",
+    "descriptionEn": "Flex 80 ski boots with heat-mouldable liner and 4 buckles.",
+    "price": 149.99,
+    "brand": "Wedze",
+    "sku": "WED-FIT500",
+    "stock": 56,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 182,
+        "name": "Pointure 40",
+        "nameEn": "Size 40",
+        "value": "Pointure 40",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 183,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 184,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "categoryId": 8,
+    "name": "Casque de ski H-FS 300",
+    "nameEn": "H-FS 300 Ski Helmet",
+    "description": "Casque de ski avec molette d'ajustement et aérations réglables.",
+    "descriptionEn": "Ski helmet with adjustment dial and adjustable vents.",
+    "price": 44.99,
+    "brand": "Wedze",
+    "sku": "WED-HFS300",
+    "stock": 41,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 185,
+        "name": "Taille M (55-58 cm)",
+        "nameEn": "Size M (55-58 cm)",
+        "value": "Taille M (55-58 cm)",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 186,
+        "name": "Taille L (59-62 cm)",
+        "nameEn": "Size L (59-62 cm)",
+        "value": "Taille L (59-62 cm)",
+        "priceAdjustment": 0,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "categoryId": 8,
+    "name": "Masque de ski G 500 S3",
+    "nameEn": "G 500 S3 Ski Goggles",
+    "description": "Masque de ski catégorie 3 pour temps ensoleillé, traitement anti-buée.",
+    "descriptionEn": "Category 3 ski goggles for sunny weather with anti-fog treatment.",
+    "price": 29.99,
+    "promoPrice": 22.99,
+    "brand": "Wedze",
+    "sku": "WED-G500S3",
+    "stock": 26,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 187,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 26
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "categoryId": 8,
+    "name": "Veste de ski Fr 100",
+    "nameEn": "Fr 100 Ski Jacket",
+    "description": "Veste de ski imperméable 5000 mm avec jupe pare-neige et poche forfait.",
+    "descriptionEn": "5000 mm waterproof ski jacket with snow skirt and pass pocket.",
+    "price": 79.99,
+    "brand": "Wedze",
+    "sku": "WED-VESFR1",
+    "stock": 87,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 188,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 189,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 190,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 191,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 192,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "categoryId": 8,
+    "name": "Pantalon de ski chaud Ski-P",
+    "nameEn": "Ski-P Warm Ski Trousers",
+    "description": "Pantalon de ski chaud et imperméable avec bretelles amovibles.",
+    "descriptionEn": "Warm, waterproof ski trousers with removable braces.",
+    "price": 59.99,
+    "brand": "Wedze",
+    "sku": "WED-PANSKI",
+    "stock": 99,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 193,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 194,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 25
+      },
+      {
+        "id": 195,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 10
+      },
+      {
+        "id": 196,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 197,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "categoryId": 8,
+    "name": "Gants de ski chauds 500",
+    "nameEn": "500 Warm Ski Gloves",
+    "description": "Gants de ski isolants avec membrane imperméable et serrage au poignet.",
+    "descriptionEn": "Insulating ski gloves with waterproof membrane and wrist strap.",
+    "price": 29.99,
+    "promoPrice": 25.99,
+    "brand": "Wedze",
+    "sku": "WED-GAN500",
+    "stock": 86,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 198,
+        "name": "Taille S",
+        "nameEn": "Size S",
+        "value": "Taille S",
+        "priceAdjustment": 0,
+        "stock": 16
+      },
+      {
+        "id": 199,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": 0,
+        "stock": 38
+      },
+      {
+        "id": 200,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "categoryId": 8,
+    "name": "Snowboard All Road 500",
+    "nameEn": "All Road 500 Snowboard",
+    "description": "Snowboard polyvalent pistes et hors-piste, cambre hybride.",
+    "descriptionEn": "Versatile on and off-piste snowboard with hybrid camber.",
+    "price": 269.99,
+    "brand": "Dreamscape",
+    "sku": "DRE-ALL500",
+    "stock": 46,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 201,
+        "name": "152 cm",
+        "nameEn": "152 cm",
+        "value": "152 cm",
+        "priceAdjustment": 0,
+        "stock": 31
+      },
+      {
+        "id": 202,
+        "name": "158 cm",
+        "nameEn": "158 cm",
+        "value": "158 cm",
+        "priceAdjustment": 0,
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "categoryId": 8,
+    "name": "Sous-vêtement thermique 2Warm",
+    "nameEn": "2Warm Thermal Base Layer",
+    "description": "Haut technique chaud à séchage rapide, à porter sous la veste de ski.",
+    "descriptionEn": "Warm, quick-drying technical top to wear under a ski jacket.",
+    "price": 24.99,
+    "brand": "Wedze",
+    "sku": "WED-2WARMT",
+    "stock": 113,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 203,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 21
+      },
+      {
+        "id": 204,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 33
+      },
+      {
+        "id": 205,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 206,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 8
+      },
+      {
+        "id": 207,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 32
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "categoryId": 8,
+    "name": "Luge à freins Snow Sledge",
+    "nameEn": "Snow Sledge with Brakes",
+    "description": "Luge avec volant et freins pour une conduite sécurisée dès 5 ans.",
+    "descriptionEn": "Sledge with steering wheel and brakes for safe riding from age 5.",
+    "price": 39.99,
+    "promoPrice": 35.99,
+    "brand": "Wedze",
+    "sku": "WED-LUGFRE",
+    "stock": 39,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 208,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 39
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "categoryId": 9,
+    "name": "Ballon de basket BT500 taille 7",
+    "nameEn": "BT500 Size 7 Basketball",
+    "description": "Ballon de basket taille 7 au toucher souple, pour l'intérieur et l'extérieur.",
+    "descriptionEn": "Size 7 basketball with soft touch, for indoor and outdoor use.",
+    "price": 29.99,
+    "brand": "Tarmak",
+    "sku": "TAR-BT500B",
+    "stock": 49,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 209,
+        "name": "Taille 5",
+        "nameEn": "Size 5",
+        "value": "Taille 5",
+        "priceAdjustment": -6.00,
+        "stock": 7
+      },
+      {
+        "id": 210,
+        "name": "Taille 6",
+        "nameEn": "Size 6",
+        "value": "Taille 6",
+        "priceAdjustment": -3.00,
+        "stock": 38
+      },
+      {
+        "id": 211,
+        "name": "Taille 7",
+        "nameEn": "Size 7",
+        "value": "Taille 7",
+        "priceAdjustment": 0,
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "categoryId": 9,
+    "name": "Panier de basket sur pied B400",
+    "nameEn": "B400 Freestanding Basketball Hoop",
+    "description": "Panier de basket réglable de 2,40 m à 3,05 m, montage sans outil.",
+    "descriptionEn": "Basketball hoop adjustable from 2.40 m to 3.05 m, tool-free assembly.",
+    "price": 249.99,
+    "brand": "Tarmak",
+    "sku": "TAR-B400PA",
+    "stock": 9,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 212,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "categoryId": 9,
+    "name": "Chaussures de basket SS500H",
+    "nameEn": "SS500H Basketball Shoes",
+    "description": "Chaussures de basket montantes avec maintien de la cheville et amorti.",
+    "descriptionEn": "High-top basketball shoes with ankle support and cushioning.",
+    "price": 54.99,
+    "promoPrice": 46.99,
+    "brand": "Tarmak",
+    "sku": "TAR-SS500H",
+    "stock": 132,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 213,
+        "name": "Pointure 41",
+        "nameEn": "Size 41",
+        "value": "Pointure 41",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 214,
+        "name": "Pointure 42",
+        "nameEn": "Size 42",
+        "value": "Pointure 42",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 215,
+        "name": "Pointure 43",
+        "nameEn": "Size 43",
+        "value": "Pointure 43",
+        "priceAdjustment": 0,
+        "stock": 30
+      },
+      {
+        "id": 216,
+        "name": "Pointure 44",
+        "nameEn": "Size 44",
+        "value": "Pointure 44",
+        "priceAdjustment": 0,
+        "stock": 35
+      },
+      {
+        "id": 217,
+        "name": "Pointure 45",
+        "nameEn": "Size 45",
+        "value": "Pointure 45",
+        "priceAdjustment": 0,
+        "stock": 34
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "categoryId": 9,
+    "name": "Maillot de basket réversible",
+    "nameEn": "Reversible Basketball Jersey",
+    "description": "Maillot réversible deux coloris, maille respirante pour les matchs.",
+    "descriptionEn": "Two-colour reversible jersey in breathable mesh for games.",
+    "price": 19.99,
+    "brand": "Tarmak",
+    "sku": "TAR-MAIREV",
+    "stock": 82,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 218,
+        "name": "S",
+        "nameEn": "S",
+        "value": "S",
+        "priceAdjustment": 0,
+        "stock": 29
+      },
+      {
+        "id": 219,
+        "name": "M",
+        "nameEn": "M",
+        "value": "M",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 220,
+        "name": "L",
+        "nameEn": "L",
+        "value": "L",
+        "priceAdjustment": 0,
+        "stock": 14
+      },
+      {
+        "id": 221,
+        "name": "XL",
+        "nameEn": "XL",
+        "value": "XL",
+        "priceAdjustment": 0,
+        "stock": 28
+      },
+      {
+        "id": 222,
+        "name": "XXL",
+        "nameEn": "XXL",
+        "value": "XXL",
+        "priceAdjustment": 0,
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "categoryId": 9,
+    "name": "Ballon de handball H500 taille 3",
+    "nameEn": "H500 Size 3 Handball",
+    "description": "Ballon de handball taille 3 avec grip renforcé pour les adultes.",
+    "descriptionEn": "Size 3 handball with reinforced grip for adults.",
+    "price": 22.99,
+    "brand": "Atorka",
+    "sku": "ATO-H500BA",
+    "stock": 81,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 223,
+        "name": "Taille 1",
+        "nameEn": "Size 1",
+        "value": "Taille 1",
+        "priceAdjustment": -5.00,
+        "stock": 28
+      },
+      {
+        "id": 224,
+        "name": "Taille 2",
+        "nameEn": "Size 2",
+        "value": "Taille 2",
+        "priceAdjustment": -2.00,
+        "stock": 20
+      },
+      {
+        "id": 225,
+        "name": "Taille 3",
+        "nameEn": "Size 3",
+        "value": "Taille 3",
+        "priceAdjustment": 0,
+        "stock": 33
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "categoryId": 9,
+    "name": "Ballon de volley V500",
+    "nameEn": "V500 Volleyball",
+    "description": "Ballon de volley-ball souple et stable, pour l'entraînement en salle.",
+    "descriptionEn": "Soft, stable volleyball for indoor training.",
+    "price": 24.99,
+    "promoPrice": 18.99,
+    "brand": "Allsix",
+    "sku": "ALL-V500BA",
+    "stock": 22,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 226,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "categoryId": 9,
+    "name": "Filet de volley avec poteaux",
+    "nameEn": "Volleyball Net with Posts",
+    "description": "Filet de volley de 9,5 m avec poteaux réglables et sac de transport.",
+    "descriptionEn": "9.5 m volleyball net with adjustable posts and carry bag.",
+    "price": 79.99,
+    "brand": "Allsix",
+    "sku": "ALL-FILVOL",
+    "stock": 39,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 227,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 39
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "categoryId": 9,
+    "name": "Ballon de rugby R500 taille 5",
+    "nameEn": "R500 Size 5 Rugby Ball",
+    "description": "Ballon de rugby taille 5 avec grip pastillé pour un meilleur contrôle.",
+    "descriptionEn": "Size 5 rugby ball with pimpled grip for better control.",
+    "price": 24.99,
+    "brand": "Offload",
+    "sku": "OFF-R500BA",
+    "stock": 35,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 228,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 35
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "categoryId": 9,
+    "name": "Lot de 6 chasubles d'entraînement",
+    "nameEn": "Pack of 6 Training Bibs",
+    "description": "Six chasubles légères et ajourées pour différencier les équipes.",
+    "descriptionEn": "Six lightweight mesh bibs to tell teams apart.",
+    "price": 14.99,
+    "promoPrice": 11.99,
+    "brand": "Kipsta",
+    "sku": "KIP-CHASU6",
+    "stock": 29,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 229,
+        "name": "Taille M",
+        "nameEn": "Size M",
+        "value": "Taille M",
+        "priceAdjustment": 0,
+        "stock": 13
+      },
+      {
+        "id": 230,
+        "name": "Taille L",
+        "nameEn": "Size L",
+        "value": "Taille L",
+        "priceAdjustment": 0,
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "categoryId": 9,
+    "name": "Sac à ballons 6 places",
+    "nameEn": "6-Ball Carry Bag",
+    "description": "Sac de transport pour 6 ballons, toile résistante et bandoulière.",
+    "descriptionEn": "Carry bag for 6 balls in hard-wearing fabric with shoulder strap.",
+    "price": 19.99,
+    "brand": "Kipsta",
+    "sku": "KIP-SACBAL",
+    "stock": 17,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 231,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 17
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "categoryId": 10,
+    "name": "Tapis de yoga confort 8 mm",
+    "nameEn": "8 mm Comfort Yoga Mat",
+    "description": "Tapis de yoga 8 mm à la surface antidérapante, confortable pour les articulations.",
+    "descriptionEn": "8 mm yoga mat with non-slip surface, gentle on the joints.",
+    "price": 24.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-TAPYOG",
+    "stock": 45,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 232,
+        "name": "5 mm",
+        "nameEn": "5 mm",
+        "value": "5 mm",
+        "priceAdjustment": -5.00,
+        "stock": 7
+      },
+      {
+        "id": 233,
+        "name": "8 mm",
+        "nameEn": "8 mm",
+        "value": "8 mm",
+        "priceAdjustment": 0,
+        "stock": 38
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "categoryId": 10,
+    "name": "Brique de yoga en liège",
+    "nameEn": "Cork Yoga Block",
+    "description": "Brique de yoga en liège naturel pour faciliter les postures.",
+    "descriptionEn": "Natural cork yoga block to make postures easier.",
+    "price": 12.99,
+    "promoPrice": 10.49,
+    "brand": "Kimjaly",
+    "sku": "KIM-BRILIE",
+    "stock": 7,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 234,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "categoryId": 10,
+    "name": "Sangle de yoga en coton",
+    "nameEn": "Cotton Yoga Strap",
+    "description": "Sangle de yoga en coton avec boucle métal pour travailler la souplesse.",
+    "descriptionEn": "Cotton yoga strap with metal buckle for flexibility work.",
+    "price": 8.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-SANYOG",
+    "stock": 7,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 235,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "categoryId": 10,
+    "name": "Legging de yoga taille haute",
+    "nameEn": "High-Waisted Yoga Leggings",
+    "description": "Legging taille haute en maille douce et opaque, ceinture large confortable.",
+    "descriptionEn": "High-waisted leggings in soft, opaque knit with comfortable wide waistband.",
+    "price": 29.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-LEGYOG",
+    "stock": 128,
+    "isNew": true,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 236,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 237,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 34
+      },
+      {
+        "id": 238,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 239,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 37
+      },
+      {
+        "id": 240,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "categoryId": 10,
+    "name": "Brassière de yoga maintien léger",
+    "nameEn": "Light Support Yoga Bra",
+    "description": "Brassière de yoga à maintien léger, dos ouvert et coussinets amovibles.",
+    "descriptionEn": "Light support yoga bra with open back and removable pads.",
+    "price": 19.99,
+    "promoPrice": 13.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-BRAYOG",
+    "stock": 75,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 241,
+        "name": "34",
+        "nameEn": "34",
+        "value": "34",
+        "priceAdjustment": 0,
+        "stock": 7
+      },
+      {
+        "id": 242,
+        "name": "36",
+        "nameEn": "36",
+        "value": "36",
+        "priceAdjustment": 0,
+        "stock": 36
+      },
+      {
+        "id": 243,
+        "name": "38",
+        "nameEn": "38",
+        "value": "38",
+        "priceAdjustment": 0,
+        "stock": 9
+      },
+      {
+        "id": 244,
+        "name": "40",
+        "nameEn": "40",
+        "value": "40",
+        "priceAdjustment": 0,
+        "stock": 15
+      },
+      {
+        "id": 245,
+        "name": "42",
+        "nameEn": "42",
+        "value": "42",
+        "priceAdjustment": 0,
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "categoryId": 10,
+    "name": "Ballon de gym 65 cm",
+    "nameEn": "65 cm Gym Ball",
+    "description": "Ballon de gym antiéclatement de 65 cm livré avec une pompe manuelle.",
+    "descriptionEn": "65 cm anti-burst gym ball supplied with a hand pump.",
+    "price": 17.99,
+    "brand": "Domyos",
+    "sku": "DOM-BALGYM",
+    "stock": 56,
+    "isNew": false,
+    "isBestSeller": true,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 246,
+        "name": "55 cm",
+        "nameEn": "55 cm",
+        "value": "55 cm",
+        "priceAdjustment": -3.00,
+        "stock": 8
+      },
+      {
+        "id": 247,
+        "name": "65 cm",
+        "nameEn": "65 cm",
+        "value": "65 cm",
+        "priceAdjustment": 0,
+        "stock": 19
+      },
+      {
+        "id": 248,
+        "name": "75 cm",
+        "nameEn": "75 cm",
+        "value": "75 cm",
+        "priceAdjustment": 4.00,
+        "stock": 29
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "categoryId": 10,
+    "name": "Rouleau de massage foam roller",
+    "nameEn": "Foam Roller",
+    "description": "Rouleau de massage en mousse haute densité pour la récupération musculaire.",
+    "descriptionEn": "High-density foam roller for muscle recovery.",
+    "price": 19.99,
+    "brand": "Domyos",
+    "sku": "DOM-FOAMRO",
+    "stock": 11,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 249,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 11
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "categoryId": 10,
+    "name": "Bolster de yoga",
+    "nameEn": "Yoga Bolster",
+    "description": "Coussin bolster rembourré pour les postures de yoga restauratif.",
+    "descriptionEn": "Padded bolster cushion for restorative yoga postures.",
+    "price": 34.99,
+    "promoPrice": 29.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-BOLYOG",
+    "stock": 40,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": true,
+    "isPromo": true,
+    "variants": [
+      {
+        "id": 250,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 40
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "categoryId": 10,
+    "name": "Chaussettes antidérapantes de yoga",
+    "nameEn": "Non-Slip Yoga Socks",
+    "description": "Chaussettes de yoga avec picots antidérapants sous la semelle.",
+    "descriptionEn": "Yoga socks with non-slip grips on the sole.",
+    "price": 9.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-CHAANT",
+    "stock": 15,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 251,
+        "name": "39/42",
+        "nameEn": "39/42",
+        "value": "39/42",
+        "priceAdjustment": 0,
+        "stock": 6
+      },
+      {
+        "id": 252,
+        "name": "43/46",
+        "nameEn": "43/46",
+        "value": "43/46",
+        "priceAdjustment": 0,
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "categoryId": 10,
+    "name": "Kit méditation coussin et housse",
+    "nameEn": "Meditation Cushion and Cover Kit",
+    "description": "Coussin de méditation garni de sarrasin avec housse lavable en coton.",
+    "descriptionEn": "Buckwheat-filled meditation cushion with washable cotton cover.",
+    "price": 39.99,
+    "brand": "Kimjaly",
+    "sku": "KIM-KITMED",
+    "stock": 30,
+    "isNew": false,
+    "isBestSeller": false,
+    "isFeatured": false,
+    "isPromo": false,
+    "variants": [
+      {
+        "id": 253,
+        "name": "Taille unique",
+        "nameEn": "One size",
+        "value": "Taille unique",
+        "priceAdjustment": 0,
+        "stock": 30
+      }
+    ]
+  }
+]

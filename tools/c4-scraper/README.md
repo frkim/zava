@@ -1,9 +1,22 @@
 # C4 product collector
 
-Small Node.js app that browses [carrefour.fr](https://www.carrefour.fr/) **like a human** and
-collects, for each product: **name, description, features, price and pictures**.
+Small Node.js app that browses a French retail site **like a human** and collects, for each
+product: **name, description, features, price and pictures**.
 Everything is written to the **OS temp folder** — nothing is committed to the repo — so the
 captured data can be reviewed before being used to create new Zava products.
+
+## Supported shops
+
+Each shop is a profile in [`src/sites.js`](src/sites.js) (home page, search URL, cookie banner,
+product-link shape, image hosts and Zava category table); `--site` selects the profile.
+
+| `--site` | Shop | Zava store type |
+| --- | --- | --- |
+| `carrefour` *(default)* | [carrefour.fr](https://www.carrefour.fr/) | `Grocery` |
+| `celio` | [celio.com](https://www.celio.com/fr-fr/) | `Clothing` |
+| `decathlon` | [decathlon.fr](https://www.decathlon.fr/) | `Sports` |
+
+Adding a shop means adding one entry to `SITES` — the browsing flow itself is shop agnostic.
 
 ## Why it looks human
 
@@ -45,12 +58,19 @@ node src/index.js --url "https://www.carrefour.fr/p/pate-a-tartiner-nutella-3017
 
 # Force the target Zava category and the first generated id
 node src/index.js --search "jus d'orange" --category-id 8 --start-id 200
+
+# Clothing pictures for the Celio store (SiteType Clothing)
+node src/index.js --site celio --search "chemise homme" --search "robe" --max 5
+
+# Sports pictures for the Decathlon store (SiteType Sports)
+node src/index.js --site decathlon --search "chaussures running" --max 5
 ```
 
 ### Options
 
 | Option | Default | Description |
 | --- | --- | --- |
+| `--site <name>` | `carrefour` | Shop to browse: `carrefour`, `celio` or `decathlon` |
 | `-s, --search <query>` | — | Search term, repeatable |
 | `-u, --url <url>` | — | Product page to scrape directly, repeatable |
 | `-m, --max <n>` | `3` | Max products per search term |
@@ -96,8 +116,13 @@ and the description bullets.
 4. Copy the pictures to `src/Zava.Api/wwwroot/images/products/<SiteType>/<ProductId>/`,
    following the `main` / `medium` / `thumb` convention used by `scripts/download-images.ps1`.
 
-The category id is guessed from the Carrefour breadcrumb trail using the grocery categories
-declared in `GrocerySeeder.GenerateCategories()`; override it with `--category-id` when needed.
+The category id is guessed from the breadcrumb trail using the category table of the selected
+shop — grocery for `carrefour`, `ClothingSeeder` categories for `celio`, `SportsSeeder`
+categories for `decathlon`; override it with `--category-id` when needed.
+
+Pictures are for **local demo preparation only**: check the terms of use of the source site and
+the rights attached to each visual before committing an image to the repository (see
+`Docs/image-credits.md` for the licensing convention used by the existing pictures).
 
 ## Tests
 
@@ -105,11 +130,12 @@ declared in `GrocerySeeder.GenerateCategories()`; override it with `--category-i
 npm test
 ```
 
-The tests serve two Carrefour-like pages from a local HTTP server: a schema.org-rich page and
-a replica of the current grocery layout (price split across nodes, `infos-accordion` sections,
-div-based nutrition grid, multi-size media URLs). They assert the extraction (name, description,
-features, nutrition, images, EAN, breadcrumbs), the search-link collection and the Zava mapping —
-no request is made to carrefour.fr.
+The tests serve fake shop pages from a local HTTP server: two Carrefour-like pages (a
+schema.org-rich page and a replica of the current grocery layout — price split across nodes,
+`infos-accordion` sections, div-based nutrition grid, multi-size media URLs), plus a Celio-like
+and a Decathlon-like product and search page. They assert the extraction (name, description,
+features, nutrition, images, EAN, breadcrumbs), the per-site search-link collection and the Zava
+mapping — no request is made to the real sites.
 
 ## What is extracted, and from where
 
@@ -120,13 +146,15 @@ no request is made to carrefour.fr.
 | description | JSON-LD description when it is substantial, else the `Nom légal` / description accordion, else the meta description with the store SEO copy stripped |
 | features | `.infos-accordion__section` panels (opened first), characteristic tables, `<dl>`, JSON-LD `additionalProperty` |
 | nutrition | `.nutritional-details__table-row` cells |
-| images | JSON-LD + gallery `<img>`, restricted to Carrefour hosts, deduplicated per media id keeping the largest size variant |
+| images | JSON-LD + gallery `<img>`, restricted to the hosts of the selected shop, deduplicated per media id keeping the largest size variant |
 | categoryId | breadcrumb trail, accent-insensitive, aisle crumbs weighted above shelf crumbs |
 
 ## Notes
 
-- Respect Carrefour's terms of use; keep the volume low and the pacing slow (the defaults
-  already do). This tool is meant for occasional demo-content preparation, not bulk harvesting.
+- Respect the terms of use of the visited site; keep the volume low and the pacing slow (the
+  defaults already do). This tool is meant for occasional demo-content preparation, not bulk
+  harvesting.
 - Prices and availability are captured at a point in time and are not refreshed.
 - If a run finds no product link, the page layout has probably changed: run without
-  `--headless` to watch the session and adjust the selectors in `src/scraper.js`.
+  `--headless` to watch the session and adjust the profile in `src/sites.js` (or the shared
+  selectors in `src/scraper.js`).

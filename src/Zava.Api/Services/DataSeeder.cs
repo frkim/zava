@@ -19,6 +19,8 @@ public static class DataSeeder
             SiteType.Electrical => ElectricalSeeder.GenerateProducts(),
             SiteType.DIY => DiySeeder.GenerateProducts(),
             SiteType.Grocery => GrocerySeeder.GenerateProducts(),
+            SiteType.Clothing => ClothingSeeder.GenerateProducts(),
+            SiteType.Sports => SportsSeeder.GenerateProducts(),
             _ => ElectronicsSeeder.GenerateProducts()
         };
     }
@@ -33,6 +35,8 @@ public static class DataSeeder
             SiteType.Electrical => ElectricalSeeder.GenerateCategories(),
             SiteType.DIY => DiySeeder.GenerateCategories(),
             SiteType.Grocery => GrocerySeeder.GenerateCategories(),
+            SiteType.Clothing => ClothingSeeder.GenerateCategories(),
+            SiteType.Sports => SportsSeeder.GenerateCategories(),
             _ => ElectronicsSeeder.GenerateCategories()
         };
     }
