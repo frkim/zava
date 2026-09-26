@@ -130,6 +130,22 @@ export const siteThemeChoices: Record<SiteType, readonly SiteThemeChoice[]> = {
     { id: 'burgundy-cream', name: 'Bordeaux crème', nameEn: 'Burgundy cream', primary: '#7f1734', secondary: '#c89b3c', background: '#fffaf2' },
     { id: 'teal-coral', name: 'Sarcelle corail', nameEn: 'Teal coral', primary: '#00695c', secondary: '#e05d4f', background: '#f3faf8' },
   ],
+  Clothing: [
+    { id: 'navy-camel', name: 'Marine camel', nameEn: 'Navy camel', primary: '#1f2a44', secondary: '#c08a4b', background: '#faf8f4' },
+    { id: 'denim-rose', name: 'Denim rose', nameEn: 'Denim rose', primary: '#31517a', secondary: '#d98aa3', background: '#f7f9fd' },
+    { id: 'black-ecru', name: 'Noir écru', nameEn: 'Black ecru', primary: '#1c1c1c', secondary: '#b09a7d', background: '#fbf9f6' },
+    { id: 'plum-gold', name: 'Prune doré', nameEn: 'Plum gold', primary: '#5e2750', secondary: '#c9a84c', background: '#fdf7fb' },
+    { id: 'olive-sand', name: 'Olive sable', nameEn: 'Olive sand', primary: '#4f5b3a', secondary: '#c2a878', background: '#f8f9f3' },
+    { id: 'bordeaux-blush', name: 'Bordeaux poudré', nameEn: 'Bordeaux blush', primary: '#7b263c', secondary: '#e0a9a9', background: '#fff6f6' },
+  ],
+  Sports: [
+    { id: 'blue-lime', name: 'Bleu citron', nameEn: 'Lime blue', primary: '#0a4f8f', secondary: '#7cb518', background: '#f3f8fd' },
+    { id: 'navy-orange', name: 'Marine orange', nameEn: 'Navy orange', primary: '#12284c', secondary: '#f26522', background: '#f5f7fb' },
+    { id: 'green-graphite', name: 'Vert graphite', nameEn: 'Graphite green', primary: '#1b7a43', secondary: '#37474f', background: '#f3faf5' },
+    { id: 'cyan-magenta', name: 'Cyan magenta', nameEn: 'Cyan magenta', primary: '#00727f', secondary: '#c2185b', background: '#f1fafb' },
+    { id: 'red-steel', name: 'Rouge acier', nameEn: 'Red steel', primary: '#c62828', secondary: '#546e7a', background: '#fff5f5' },
+    { id: 'violet-lime', name: 'Violet citron', nameEn: 'Violet lime', primary: '#4527a0', secondary: '#9ccc65', background: '#f7f5ff' },
+  ],
 };
 
 const themes = Object.fromEntries(

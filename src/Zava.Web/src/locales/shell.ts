@@ -11,6 +11,7 @@ const shell = {
   'shell.languageGroup': { fr: 'Langue', en: 'Language' },
   'shell.footerNavLabel': { fr: 'Services Zava', en: 'Zava services' },
   'shell.legalNavLabel': { fr: 'Liens légaux', en: 'Legal links' },
+  'shell.githubLabel': { fr: 'Projet Zava sur GitHub', en: 'Zava project on GitHub' },
 } as const satisfies Record<string, { fr: string; en: string }>;
 
 export default shell;

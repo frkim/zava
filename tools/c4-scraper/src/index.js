@@ -2,19 +2,23 @@
 /**
  * C4 product collector.
  *
- * Browses https://www.carrefour.fr/ in a real (visible) browser the way a person
- * would — search, scroll, click, read — and stores the product name, description,
- * features and pictures in the OS temp folder, ready to seed new Zava products.
+ * Browses a retail site (carrefour.fr, celio.com or decathlon.fr) in a real
+ * (visible) browser the way a person would — search, scroll, click, read — and
+ * stores the product name, description, features and pictures in the OS temp
+ * folder, ready to seed new Zava products.
  *
  * Usage:
  *   node src/index.js --search "nutella" --max 3
  *   node src/index.js --url https://www.carrefour.fr/p/...
  *   node src/index.js --search "café" --headless --max 5 --category-id 8
+ *   node src/index.js --site celio --search "chemise" --max 5
+ *   node src/index.js --site decathlon --search "chaussures running" --max 5
  */
 
 import path from 'node:path';
 import { launchSession } from './browser.js';
 import { toZavaProduct } from './mapToZava.js';
+import { getSite } from './sites.js';
 import { pause, sleep } from './human.js';
 import {
   downloadImages,
@@ -27,6 +31,7 @@ import { createRunDir, rootDir, writeJson } from './store.js';
 
 function parseArgs(argv) {
   const options = {
+    site: 'carrefour',
     search: [],
     urls: [],
     max: 3,
@@ -74,6 +79,9 @@ function parseArgs(argv) {
       case '--channel':
         options.channel = next();
         break;
+      case '--site':
+        options.site = next();
+        break;
       case '--headless':
         options.headless = true;
         break;
@@ -93,9 +101,10 @@ function parseArgs(argv) {
 }
 
 const HELP = `
-C4 product collector — browses carrefour.fr like a human and stores products in the temp folder.
+C4 product collector — browses a retail site like a human and stores products in the temp folder.
 
 Options:
+      --site <name>        Shop to browse: carrefour | celio | decathlon (default carrefour)
   -s, --search <query>     Search term (repeatable)
   -u, --url <url>          Scrape a product page directly (repeatable)
   -m, --max <n>            Max products per search term (default 3)
@@ -125,8 +134,10 @@ async function main() {
     process.exit(options.help ? 0 : 1);
   }
 
+  const site = getSite(options.site);
   const log = createLogger();
   const runDir = await createRunDir(options.out);
+  log(`Shop: ${site.label} (${site.home}) — Zava store type ${site.siteType}`);
   log(`Storage root: ${rootDir(options.out)}`);
   log(`Run folder:   ${runDir}`);
 
@@ -141,11 +152,11 @@ async function main() {
   const failures = [];
 
   try {
-    await openHomePage(page, log);
+    await openHomePage(page, log, site);
 
     const targets = [...options.urls];
     for (const query of options.search) {
-      const found = await searchProducts(page, query, options.max, log);
+      const found = await searchProducts(page, query, options.max, log, site);
       targets.push(...found);
       await pause(900, 2000);
     }
@@ -156,17 +167,18 @@ async function main() {
     let nextId = options.startId;
     for (const [index, url] of unique.entries()) {
       try {
-        const product = await scrapeProduct(page, url, log, { saveHtml: options.saveHtml });
+        const product = await scrapeProduct(page, url, log, { saveHtml: options.saveHtml, site });
         if (!product.name) throw new Error('No product name found on the page');
 
         const zavaProduct = toZavaProduct(product, {
           id: nextId,
           categoryId: options.categoryId,
           stock: options.stock,
+          site,
         });
 
         const dir = await persistProduct(runDir, product, zavaProduct, product.html);
-        const images = await downloadImages(context, product, dir, log, options.images);
+        const images = await downloadImages(context, product, dir, log, options.images, site);
         await writeJson(path.join(dir, 'images', 'images.json'), images);
 
         collected.push({
@@ -194,6 +206,8 @@ async function main() {
     const summary = {
       runDir,
       startedAt: new Date().toISOString(),
+      site: site.key,
+      siteType: site.siteType,
       searches: options.search,
       directUrls: options.urls,
       browser: channel,

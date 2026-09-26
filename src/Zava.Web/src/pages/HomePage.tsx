@@ -53,6 +53,16 @@ const heroBySite = {
     intro: 'disc.home.hero.diy.intro',
     cta: 'disc.home.hero.diy.cta',
   },
+  Clothing: {
+    title: 'disc.home.hero.clothing.title',
+    intro: 'disc.home.hero.clothing.intro',
+    cta: 'disc.home.hero.clothing.cta',
+  },
+  Sports: {
+    title: 'disc.home.hero.sports.title',
+    intro: 'disc.home.hero.sports.intro',
+    cta: 'disc.home.hero.sports.cta',
+  },
 } satisfies Record<SiteType, HeroCopy>;
 
 function hasHomepageContent(data: HomepageData) {

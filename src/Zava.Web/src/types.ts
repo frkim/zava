@@ -1,4 +1,12 @@
-export type SiteType = 'Electronics' | 'Appliances' | 'Cosmetics' | 'Electrical' | 'DIY' | 'Grocery';
+export type SiteType =
+  | 'Electronics'
+  | 'Appliances'
+  | 'Cosmetics'
+  | 'Electrical'
+  | 'DIY'
+  | 'Grocery'
+  | 'Clothing'
+  | 'Sports';
 
 export type OrderStatus = 'Pending' | 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
 
