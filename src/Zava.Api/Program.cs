@@ -5,6 +5,7 @@ using Azure.Identity;
 using Microsoft.AspNetCore.Http.Features;
 using Zava.Api.Models;
 using Zava.Api.Services;
+using static Zava.Api.Services.CartOperations;
 
 const int RecipeRequestLimit = 4096;
 
@@ -19,6 +20,10 @@ builder.Services.AddSingleton<TokenCredential>(_ => new DefaultAzureCredential()
 builder.Services.AddHttpClient<FoundryRecipeClient>(client => client.Timeout = Timeout.InfiniteTimeSpan)
     .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler { AllowAutoRedirect = false });
 builder.Services.AddSingleton<RecipeBasketService>();
+// Stateless Streamable HTTP keeps MCP working behind load balancers without session affinity.
+builder.Services.AddMcpServer()
+    .WithHttpTransport(options => options.Stateless = true)
+    .WithTools<ZavaMcpTools>();
 
 builder.Services.AddCors(options =>
 {
@@ -85,6 +90,7 @@ app.Use(async (context, next) =>
 });
 
 app.MapRecipeBasket();
+app.MapMcp("/mcp");
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
@@ -315,103 +321,14 @@ app.MapGet("/api/search/suggestions", (string q, SearchService searchService) =>
 app.MapGet("/api/cart", (DataStore store) => Results.Ok(store.Cart));
 
 app.MapPost("/api/cart/items", (AddToCartRequest req, DataStore store) =>
-{
-    if (req.Quantity <= 0)
-        return Results.BadRequest(new { message = "La quantité doit être positive" });
-
-    var product = store.Products.FirstOrDefault(p => p.Id == req.ProductId);
-    if (product is null) return Results.NotFound(new { message = "Produit introuvable" });
-
-    decimal unitPrice = product.PromoPrice ?? product.Price;
-    string? variantName = null;
-
-    if (req.VariantId.HasValue)
-    {
-        var variant = product.Variants.FirstOrDefault(v => v.Id == req.VariantId.Value);
-        if (variant is null)
-            return Results.BadRequest(new { message = "Variante introuvable" });
-        unitPrice += variant.PriceAdjustment;
-        variantName = variant.Name;
-    }
-
-    var existingItem = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductId == req.ProductId
-        && i.VariantId == req.VariantId
-        && i.OfferTriggerProductId is null
-        && i.DiscountPercent is null);
-
-    var quantity = (long)(existingItem?.Quantity ?? 0) + req.Quantity;
-    if (!HasAvailableStock(store.Cart, product, req.VariantId, quantity, existingItem))
-        return Results.BadRequest(new { message = "Stock insuffisant" });
-
-    if (existingItem is not null)
-    {
-        existingItem.Quantity += req.Quantity;
-    }
-    else
-    {
-        store.Cart.Items.Add(new CartItem
-        {
-            ProductId = product.Id,
-            ProductName = product.Name,
-            VariantId = req.VariantId,
-            VariantName = variantName,
-            UnitPrice = unitPrice,
-            Quantity = req.Quantity
-        });
-    }
-
-    return Results.Ok(store.Cart);
-});
+    ToHttpResult(CartOperations.AddItem(store, req), store));
 
 app.MapPut("/api/cart/items/{productId:int}", (int productId, UpdateCartItemRequest req, DataStore store) =>
-{
-    if (req.Quantity < 0)
-        return Results.BadRequest(new { message = "La quantité ne peut pas être négative" });
-
-    var item = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductId == productId
-        && i.VariantId == req.VariantId
-        && i.OfferTriggerProductId == req.OfferTriggerProductId);
-    if (item is null) return Results.NotFound();
-
-    if (req.Quantity == 0)
-    {
-        RemoveCartLine(store, item);
-    }
-    else
-    {
-        if (productId < 0 && req.Quantity != 1)
-            return Results.BadRequest(new { message = "Une seule garantie par produit" });
-
-        if (item.OfferTriggerProductId is int offerTriggerId && req.Quantity > FullPriceQuantity(store.Cart, offerTriggerId))
-            return Results.BadRequest(new { message = "L'offre est limitée à une unité par produit déclencheur acheté au prix normal" });
-
-        if (productId > 0)
-        {
-            var product = store.Products.FirstOrDefault(p => p.Id == productId);
-            if (product is null || !HasAvailableStock(store.Cart, product, req.VariantId, req.Quantity, item))
-                return Results.BadRequest(new { message = "Stock insuffisant" });
-        }
-        item.Quantity = req.Quantity;
-        if (productId > 0 && item.OfferTriggerProductId is null && item.DiscountPercent is null)
-        {
-            var offerQuantity = store.Cart.Items.Where(i => i.OfferTriggerProductId == productId).Sum(i => i.Quantity);
-            if (offerQuantity > FullPriceQuantity(store.Cart, productId))
-                RevertCrossSellLinesForTrigger(store, productId);
-        }
-    }
-
-    return Results.Ok(store.Cart);
-});
+    ToHttpResult(CartOperations.UpdateItem(store, productId, req), store));
 
 app.MapDelete("/api/cart/items/{productId:int}", (int productId, int? variantId, int? offerTriggerProductId, DataStore store) =>
 {
-    var item = store.Cart.Items.FirstOrDefault(i =>
-        i.ProductId == productId
-        && i.VariantId == variantId
-        && i.OfferTriggerProductId == offerTriggerProductId);
-    if (item is not null) RemoveCartLine(store, item);
+    CartOperations.RemoveItem(store, productId, variantId, offerTriggerProductId);
     return Results.Ok(store.Cart);
 });
 
@@ -560,79 +477,13 @@ app.MapFallbackToFile("index.html");
 
 app.Run();
 
-static bool HasAvailableStock(Cart cart, Product product, int? variantId, long quantity, CartItem? currentItem = null)
+static IResult ToHttpResult(CartOperationResult result, DataStore store) => result.Status switch
 {
-    var otherProductQuantity = cart.Items
-        .Where(i => i.ProductId == product.Id && !ReferenceEquals(i, currentItem))
-        .Sum(i => (long)i.Quantity);
-    var variant = product.Variants.FirstOrDefault(v => v.Id == variantId);
-    if (quantity <= 0 || quantity + otherProductQuantity > product.Stock) return false;
-    if (!variantId.HasValue) return true;
-
-    var otherVariantQuantity = cart.Items
-        .Where(i => i.ProductId == product.Id && i.VariantId == variantId && !ReferenceEquals(i, currentItem))
-        .Sum(i => (long)i.Quantity);
-    return variant is not null && quantity + otherVariantQuantity <= variant.Stock;
-}
-
-static void RemoveCartLine(DataStore store, CartItem item)
-{
-    var cart = store.Cart;
-    cart.Items.Remove(item);
-    if (item.ProductId <= 0) return;
-    if (!cart.Items.Any(i => i.ProductId == item.ProductId))
-        cart.Items.RemoveAll(i => i.ProductId == -item.ProductId);
-    // Offer lines only count as triggers when bought at full price, so offer chains cannot sustain each other.
-    if (FullPriceQuantity(cart, item.ProductId) == 0)
-        RevertCrossSellLinesForTrigger(store, item.ProductId);
-}
-
-static int FullPriceQuantity(Cart cart, int productId) => cart.Items
-    .Where(i => i.ProductId == productId && i.OfferTriggerProductId is null && i.DiscountPercent is null)
-    .Sum(i => i.Quantity);
-
-static void RevertCrossSellLinesForTrigger(DataStore store, int triggerProductId)
-{
-    foreach (var offerLine in store.Cart.Items
-        .Where(i => i.OfferTriggerProductId == triggerProductId)
-        .ToList())
-    {
-        var product = store.Products.FirstOrDefault(p => p.Id == offerLine.ProductId);
-        if (product is null)
-        {
-            offerLine.OfferTriggerProductId = null;
-            offerLine.DiscountPercent = null;
-            offerLine.RegularUnitPrice = null;
-            continue;
-        }
-
-        var regularPrice = product.PromoPrice ?? product.Price;
-        if (offerLine.VariantId.HasValue)
-        {
-            var variant = product.Variants.FirstOrDefault(v => v.Id == offerLine.VariantId.Value);
-            if (variant is not null) regularPrice += variant.PriceAdjustment;
-        }
-
-        var existingRegular = store.Cart.Items.FirstOrDefault(i =>
-            !ReferenceEquals(i, offerLine)
-            && i.ProductId == offerLine.ProductId
-            && i.VariantId == offerLine.VariantId
-            && i.OfferTriggerProductId is null
-            && i.DiscountPercent is null);
-        if (existingRegular is not null)
-        {
-            existingRegular.Quantity += offerLine.Quantity;
-            store.Cart.Items.Remove(offerLine);
-        }
-        else
-        {
-            offerLine.UnitPrice = regularPrice;
-            offerLine.OfferTriggerProductId = null;
-            offerLine.DiscountPercent = null;
-            offerLine.RegularUnitPrice = null;
-        }
-    }
-}
+    CartOperationStatus.Ok => Results.Ok(store.Cart),
+    CartOperationStatus.NotFound when result.Message is null => Results.NotFound(),
+    CartOperationStatus.NotFound => Results.NotFound(new { message = result.Message }),
+    _ => Results.BadRequest(new { message = result.Message })
+};
 
 static CrossSellOffer BuildCrossSellOffer(Product product, DataStore store)
 {
