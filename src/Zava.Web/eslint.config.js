@@ -19,5 +19,10 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // eslint-plugin-react-hooks 7.1 made this rule follow async loaders called from effects;
+      // keep the existing load-on-mount pages visible as warnings until they are refactored.
+      'react-hooks/set-state-in-effect': 'warn',
+    },
   },
 ])

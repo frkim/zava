@@ -26,7 +26,7 @@ const storage = (scope: RecipeHideScope): Storage | null => {
 };
 
 function read(scope: RecipeHideScope): StoredProduct[] {
-  let raw: string | null = null;
+  let raw: string | null;
   try {
     raw = storage(scope)?.getItem(STORAGE_KEYS[scope]) ?? null;
   } catch { return []; }
