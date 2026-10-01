@@ -30,9 +30,13 @@ class DeploymentChecks(unittest.TestCase):
 
     def test_npm_tarballs_use_protected_feed(self):
         lock = json.loads((ROOT / "src" / "Zava.Web" / "package-lock.json").read_text(encoding="utf-8"))
+        manifest = json.loads((ROOT / "src" / "Zava.Web" / "package.json").read_text(encoding="utf-8"))
         resolved = [package["resolved"] for package in lock["packages"].values() if "resolved" in package]
         self.assertTrue(resolved)
         self.assertTrue(all(url.startswith("https://packagefeedproxy.microsoft.io/npm/") for url in resolved))
+        self.assertEqual(manifest["overrides"]["source-map-js"], "1.2.1")
+        source_map = lock["packages"]["node_modules/postcss/node_modules/source-map-js"]
+        self.assertEqual(source_map["version"], "1.2.1")
         npmrc = (ROOT / "src" / "Zava.Web" / ".npmrc").read_text(encoding="utf-8")
         self.assertNotIn("replace-registry-host=always", npmrc)
 
