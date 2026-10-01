@@ -254,6 +254,8 @@ Pour explorer les outils manuellement : `npx @modelcontextprotocol/inspector`, p
 
 Le projet convient à une **démonstration de parcours e-commerce**, pas à une boutique réelle : panier et profil partagés, données en mémoire, absence d'authentification et paiement simulé. N'y saisissez ni données personnelles réelles ni coordonnées bancaires réelles.
 
+La revue de code d'octobre 2026, avec les recommandations classées par risque puis par complexité, se trouve dans [`Docs/code-review-2026-10.md`](Docs/code-review-2026-10.md).
+
 Les corrections de cette évaluation ciblent la confiance dans le panier : modifier la bonne variante, éviter les quantités invalides, calculer les garanties et les offres complémentaires côté serveur, puis rendre les échecs visibles plutôt que silencieux. Elles réduisent les erreurs de commande et les écarts de prix sans changer l'architecture du démonstrateur.
 
 | Priorité | Suite recommandée | Valeur technique et métier |
