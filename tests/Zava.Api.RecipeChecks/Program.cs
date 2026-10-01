@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using Azure.Core;
 using Microsoft.Extensions.Hosting;
+using ModelContextProtocol.Client;
 using Zava.Api.Models;
 using Zava.Api.Services;
 
@@ -60,6 +61,7 @@ try
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Other" }), 400);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", new { recipe = "Lasagnes", servings = 4, brandPreference = "Mix", unitPrice = 0.01 }), 400);
     await CrossSellChecks();
+    await McpChecks();
     // Oversize bodies are refused both when declared (Content-Length) and while streaming (chunked).
     var oversizedBody = JsonSerializer.Serialize(new { recipe = new string('a', 5000), servings = 4, brandPreference = "Mix" });
     foreach (var chunked in new[] { false, true })
@@ -145,7 +147,7 @@ try
     fake.Mode = "timeout";
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 504);
     await Expect(await client.PostAsJsonAsync("/api/recipe-basket/plan", Request("National")), 429);
-    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, authoritative cross-sell, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, staple flags, stock atomicity, stale reset, preference, timeout and quota.");
+    Console.WriteLine("PASS: HTTP bounds/config, two agents, strict schema, price authority, authoritative cross-sell, MCP tools, preview, concurrent idempotency, variants, selective commit, never-suggest-again exclusions, staple flags, stock atomicity, stale reset, preference, timeout and quota.");
 }
 finally
 {
@@ -221,6 +223,74 @@ async Task CrossSellChecks()
         "removing the trigger reverts cross-sell line to regular price");
 
     await Expect(await client.DeleteAsync("/api/cart"), 200);
+}
+async Task McpChecks()
+{
+    await Expect(await client.PutAsJsonAsync("/api/config/site-type", new { siteType = "Electronics" }), 200);
+    await using var mcp = await McpClient.CreateAsync(new HttpClientTransport(new HttpClientTransportOptions { Endpoint = new Uri(client.BaseAddress!, "/mcp") }));
+    var tools = await mcp.ListToolsAsync();
+    string[] readTools = ["get_store_info", "list_categories", "search_products", "get_product", "get_cart", "list_orders", "get_order"];
+    string[] cartTools = ["add_to_cart", "update_cart_item", "remove_from_cart", "clear_cart"];
+    Assert(readTools.Concat(cartTools).All(name => tools.Any(t => t.Name == name)), "MCP server lists catalogue, basket and order tools");
+    Assert(tools.Where(t => readTools.Contains(t.Name)).All(t => t.ProtocolTool.Annotations?.ReadOnlyHint == true)
+        && tools.Where(t => cartTools.Contains(t.Name)).All(t => t.ProtocolTool.Annotations?.ReadOnlyHint != true),
+        "MCP tools advertise whether they modify the basket");
+
+    Assert((await CallMcp(mcp, "get_store_info")).GetProperty("currentSiteType").GetString() == "Electronics", "MCP reports the active store");
+    var product = (await client.GetFromJsonAsync<JsonElement>("/api/products")).EnumerateArray().First(p =>
+        p.GetProperty("stock").GetInt32() >= 10 && p.GetProperty("variants").GetArrayLength() > 0
+        && p.GetProperty("variants")[0].GetProperty("stock").GetInt32() >= 10);
+    var productId = product.GetProperty("id").GetInt32();
+    var variantId = product.GetProperty("variants")[0].GetProperty("id").GetInt32();
+    var search = await CallMcp(mcp, "search_products", new() { ["brand"] = product.GetProperty("brand").GetString(), ["pageSize"] = 500 });
+    Assert(search.GetProperty("pageSize").GetInt32() == 50
+        && search.GetProperty("products").EnumerateArray().Any(p => p.GetProperty("id").GetInt32() == productId && p.GetProperty("hasVariants").GetBoolean()),
+        "MCP search filters the catalogue and bounds the page size");
+    var details = await CallMcp(mcp, "get_product", new() { ["productId"] = productId });
+    Assert(details.GetProperty("product").GetProperty("variants").GetArrayLength() == product.GetProperty("variants").GetArrayLength(), "MCP product details include variants");
+    await ExpectMcpError(mcp, "get_product", new() { ["productId"] = -1 }, "Produit introuvable");
+
+    var added = await Task.WhenAll(Enumerable.Range(0, 8).Select(_ =>
+        CallMcp(mcp, "add_to_cart", new() { ["productId"] = productId, ["variantId"] = variantId })));
+    var cart = await client.GetFromJsonAsync<JsonElement>("/api/cart");
+    Assert(cart.GetProperty("itemCount").GetInt32() == 8 && cart.GetProperty("items").GetArrayLength() == 1
+        && cart.GetProperty("items")[0].GetProperty("variantId").GetInt32() == variantId,
+        "concurrent MCP additions share the REST basket without losing updates");
+    await ExpectMcpError(mcp, "add_to_cart", new() { ["productId"] = productId, ["variantId"] = variantId, ["quantity"] = int.MaxValue }, "Stock insuffisant");
+    await ExpectMcpError(mcp, "add_to_cart", new() { ["productId"] = productId, ["quantity"] = 0 }, "La quantité doit être positive");
+    await ExpectMcpError(mcp, "update_cart_item", new() { ["productId"] = productId, ["quantity"] = 1 }, "Ligne de panier introuvable");
+    Assert((await CallMcp(mcp, "update_cart_item", new() { ["productId"] = productId, ["variantId"] = variantId, ["quantity"] = 1 }))
+        .GetProperty("itemCount").GetInt32() == 1, "MCP updates the targeted variant line");
+    Assert((await CallMcp(mcp, "remove_from_cart", new() { ["productId"] = productId })).GetProperty("itemCount").GetInt32() == 1,
+        "MCP removal without variant leaves variant lines untouched");
+    Assert((await CallMcp(mcp, "remove_from_cart", new() { ["productId"] = productId, ["variantId"] = variantId })).GetProperty("itemCount").GetInt32() == 0,
+        "MCP removes the targeted variant line");
+    await CallMcp(mcp, "add_to_cart", new() { ["productId"] = productId, ["variantId"] = variantId });
+    await CallMcp(mcp, "clear_cart");
+    Assert((await client.GetFromJsonAsync<JsonElement>("/api/cart")).GetProperty("itemCount").GetInt32() == 0, "MCP empties the basket");
+
+    var restOrders = await client.GetFromJsonAsync<JsonElement>("/api/orders");
+    var orders = await CallMcp(mcp, "list_orders", new() { ["limit"] = 100 });
+    Assert(orders.GetArrayLength() == Math.Min(50, restOrders.GetArrayLength())
+        && orders[0].GetProperty("id").GetInt32() == restOrders[0].GetProperty("id").GetInt32(), "MCP lists the most recent orders first");
+    var order = await CallMcp(mcp, "get_order", new() { ["orderId"] = restOrders[0].GetProperty("id").GetInt32() });
+    Assert(order.GetProperty("total").GetDecimal() == restOrders[0].GetProperty("total").GetDecimal()
+        && order.GetProperty("items").GetArrayLength() == restOrders[0].GetProperty("items").GetArrayLength(), "MCP order details match the REST API");
+    await ExpectMcpError(mcp, "get_order", new() { ["orderId"] = -1 }, "Commande introuvable");
+}
+static async Task<JsonElement> CallMcp(McpClient mcp, string tool, Dictionary<string, object?>? arguments = null)
+{
+    var result = await mcp.CallToolAsync(tool, arguments);
+    var text = result.Content.OfType<ModelContextProtocol.Protocol.TextContentBlock>().Single().Text;
+    if (result.IsError == true) throw new Exception($"MCP {tool} failed: {text}");
+    using var document = JsonDocument.Parse(text);
+    return document.RootElement.Clone();
+}
+static async Task ExpectMcpError(McpClient mcp, string tool, Dictionary<string, object?> arguments, string message)
+{
+    var result = await mcp.CallToolAsync(tool, arguments);
+    var text = result.Content.OfType<ModelContextProtocol.Protocol.TextContentBlock>().Single().Text;
+    Assert(result.IsError == true && text.Contains(message), $"MCP {tool} refuses with '{message}', got: {text}");
 }
 static object Request(string preference) => new { recipe = "Lasagnes", servings = 4, brandPreference = preference };
 async Task<JsonElement> Plan(string preference, bool trailingSlash = false)

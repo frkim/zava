@@ -26,6 +26,7 @@ Site e-commerce polymorphique de démonstration. Changez le type de boutique en 
 - **Profil** — Infos personnelles, adresse, paiement, historique des commandes
 - **Analytics** — KPIs, graphiques (revenus par catégorie, commandes par statut, ventes journalières), top produits
 - **Paramètres** — Changement de type de site, réinitialisation des données, création de produit
+- **Serveur MCP** — Outils [Model Context Protocol](https://modelcontextprotocol.io) pour qu'un agent IA consulte le catalogue, les commandes et gère le panier
 
 ## Stack technique
 
@@ -84,6 +85,7 @@ npm run dev
 | Frontend | http://localhost:5173 |
 | Backend API | http://localhost:5014/api |
 | OpenAPI | http://localhost:5014/openapi/v1.json |
+| Serveur MCP | http://localhost:5014/mcp |
 
 ## Endpoints API
 
@@ -214,6 +216,40 @@ Après déploiement, ouvrir l'URL `WEB_URI`, sélectionner **Alimentaire**, gén
 
 Pour un contrôle reproductible avec les vrais agents, exécuter `python scripts/check-recipe-basket.py --api-uri https://<URL-du-site> --recipe Lasagnes --brand Mix`. Il vérifie les prix du catalogue, les quantités entières, le total et l'absence de mutation du panier pendant l'aperçu. Ajouter `--commit` uniquement après accord du propriétaire du démonstrateur : il ajoute réellement les produits, puis confirme à nouveau le même aperçu pour vérifier l'absence de doublon. Il ne change pas de boutique, ne réinitialise aucune donnée et ne passe aucune commande.
 
+## Serveur MCP
+
+L'API expose un serveur [Model Context Protocol](https://modelcontextprotocol.io) sur `/mcp` (transport Streamable HTTP, sans état, donc compatible avec plusieurs réplicas). Un agent IA (GitHub Copilot, Claude, Microsoft Foundry, etc.) peut ainsi interroger la boutique active et manipuler le panier.
+
+| Outil | Lecture seule | Description |
+|-------|---------------|-------------|
+| `get_store_info` | ✔ | Type de boutique actif, description, nombre de produits et de catégories |
+| `list_categories` | ✔ | Catégories de la boutique active |
+| `search_products` | ✔ | Recherche full-text et filtres (`query`, `categoryId`, `brand`, `minPrice`, `maxPrice`, `inStockOnly`, `sortBy`, `sortDescending`, `page`, `pageSize` ≤ 50) ; renvoie des résumés de produits |
+| `get_product` | ✔ | Détail d'un produit (variantes, stock, produits associés), sa catégorie et ses 5 avis les plus récents |
+| `get_cart` | ✔ | Contenu du panier, total et nombre d'articles |
+| `add_to_cart` | | Ajouter un produit (`productId`, `quantity`, `variantId` optionnel) |
+| `update_cart_item` | | Modifier la quantité d'une ligne (`0` la supprime) |
+| `remove_from_cart` | | Supprimer une ligne `(productId, variantId, offerTriggerProductId)` |
+| `clear_cart` | | Vider le panier |
+| `list_orders` | ✔ | Résumés des commandes, les plus récentes d'abord (`limit` ≤ 50) |
+| `get_order` | ✔ | Détail d'une commande (lignes, statut, adresse, suivi) |
+
+- Les outils partagent l'état de l'API REST : le panier modifié par un agent est celui affiché par le site. Ils appliquent les mêmes règles que le [contrat du panier](#contrat-du-panier) (`CartOperations`), et les réponses JSON ont la même forme que l'API REST.
+- Un refus métier (produit ou commande introuvable, stock insuffisant, quantité invalide…) est renvoyé comme résultat d'outil en erreur (`isError: true`) avec le message de l'API.
+- Aucun outil ne passe commande ni ne manipule de moyen de paiement. Comme le reste du démonstrateur, le serveur MCP n'a pas d'authentification : ne l'exposez pas au-delà d'un usage de démonstration.
+
+Exemple de configuration pour VS Code (`.vscode/mcp.json`) :
+
+```json
+{
+  "servers": {
+    "zava": { "type": "http", "url": "http://localhost:5014/mcp" }
+  }
+}
+```
+
+Pour explorer les outils manuellement : `npx @modelcontextprotocol/inspector`, puis se connecter à `http://localhost:5014/mcp` en « Streamable HTTP ». Une fois déployé, utiliser l'URL de l'API Container App suivie de `/mcp`.
+
 ## Évaluation qualité et priorités
 
 Le projet convient à une **démonstration de parcours e-commerce**, pas à une boutique réelle : panier et profil partagés, données en mémoire, absence d'authentification et paiement simulé. N'y saisissez ni données personnelles réelles ni coordonnées bancaires réelles.
@@ -249,7 +285,7 @@ Pour vérifier le panier, démarrer l'API et exécuter dans l'ordre la section *
 
 La section **Recipe basket regression checks** du même fichier couvre les saisies invalides, les gammes, l'aperçu sans mutation, la confirmation répétée et l'invalidation après réinitialisation. Elle réinitialise également les données. Les scénarios positifs IA nécessitent de vrais agents déployés ; sans configuration, vérifier `available: false` et le refus explicite de génération, puis vérifier que l'ajout classique fonctionne toujours.
 
-`tests/Zava.Api.RecipeChecks` exécute les contrôles HTTP locaux sur le port `5097`, avec une identité et des réponses Foundry explicitement simulées : aucun abonnement ni jeton réel n'est nécessaire. Il vérifie également les stocks, les variantes, l'ajout atomique et idempotent, le catalogue des trois gammes, les délais et les quotas, ainsi que la validation des exclusions (`excludedProductIds` au plan, `excludedItems` à la confirmation), le marquage des ingrédients annexes (`essential`) et le refus d'une sélection entièrement vidée.
+`tests/Zava.Api.RecipeChecks` exécute les contrôles HTTP locaux sur le port `5097`, avec une identité et des réponses Foundry explicitement simulées : aucun abonnement ni jeton réel n'est nécessaire. Il vérifie également les stocks, les variantes, l'ajout atomique et idempotent, le catalogue des trois gammes, les délais et les quotas, ainsi que la validation des exclusions (`excludedProductIds` au plan, `excludedItems` à la confirmation), le marquage des ingrédients annexes (`essential`) et le refus d'une sélection entièrement vidée. Il contrôle enfin le serveur MCP avec le client officiel : liste et annotations des outils, recherche, détail produit, ajouts concurrents, variantes, refus métier, commandes et partage du panier avec l'API REST.
 
 Les contrôles navigateur existants se trouvent dans `tests/recipe-ui`. Avec Node.js 22+ et Chrome installés, utiliser les commandes PowerShell suivantes depuis la racine. Choisir un dossier d'artefacts dédié, hors du dépôt, et un profil de navigateur distinct de votre profil habituel :
 
@@ -282,7 +318,7 @@ zava/
 ├── src/
 │   ├── Zava.Api/                  # Backend .NET 10
 │   │   ├── Models/                # Entités et DTOs
-│   │   ├── Services/              # DataStore, Search, Analytics
+│   │   ├── Services/              # DataStore, Search, Analytics, CartOperations, ZavaMcpTools (MCP)
 │   │   │   └── Seeders/           # 6 seeders (un par type de site)
 │   │   └── Program.cs             # Endpoints Minimal API
 │   └── Zava.Web/                  # Frontend React
