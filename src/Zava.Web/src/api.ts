@@ -28,7 +28,8 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') throw error;
     throw new Error(
-      'Le serveur ne répond pas. Vérifiez que le backend est lancé sur ' + API_BASE
+      'Le serveur ne répond pas. Vérifiez que le backend est lancé sur ' + API_BASE,
+      { cause: error }
     );
   }
   if (!res.ok) {
